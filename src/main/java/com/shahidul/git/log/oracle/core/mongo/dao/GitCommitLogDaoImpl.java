@@ -2,8 +2,8 @@ package com.shahidul.git.log.oracle.core.mongo.dao;
 
 import com.shahidul.git.log.oracle.core.model.GitCommit;
 import com.shahidul.git.log.oracle.core.model.GitLog;
-import com.shahidul.git.log.oracle.core.mongo.entity.GitCommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.GitLogEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -15,8 +15,8 @@ import java.util.Date;
 @Repository
 public class GitCommitLogDaoImpl implements GitCommitLogDao {
     @Override
-    public GitLogEntity toGitLogEntity(GitLog gitLog) {
-        return GitLogEntity.builder()
+    public TraceEntity toGitLogEntity(GitLog gitLog) {
+        return TraceEntity.builder()
                 .repositoryName(gitLog.getRepositoryName())
                 .repositoryUrl(gitLog.getRepositoryWebURL())
                 .startCommitId(gitLog.getStartCommitId())
@@ -28,8 +28,8 @@ public class GitCommitLogDaoImpl implements GitCommitLogDao {
     }
 
     @Override
-    public GitCommitEntity gotCommitEntity(GitCommit commit) {
-        return GitCommitEntity.builder()
+    public CommitEntity gotCommitEntity(GitCommit commit) {
+        return CommitEntity.builder()
                 .parentCommitId(commit.getParentCommitId())
                 .commitId(commit.getCommitId())
                 .commitTime(new Date(commit.getCommitTime()))

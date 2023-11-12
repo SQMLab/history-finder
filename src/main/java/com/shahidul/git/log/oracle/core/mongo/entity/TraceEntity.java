@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
 import java.util.List;
@@ -23,8 +22,8 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Document("gitLog")
-public class GitLogEntity {
+@Document("trace")
+public class TraceEntity {
     @Id
     @Field("_id")
     ObjectId id;
@@ -43,11 +42,11 @@ public class GitLogEntity {
     @Field
     String functionKey;
     @Field Integer startLine;
-    List<GitCommitEntity> expectedCommitList;
+    List<CommitEntity> expectedCommitList;
     @Field
-    List<GitCommitEntity> aggregatedCommitList;
+    List<CommitEntity> aggregatedCommitList;
     @Field
-    Map<String, GitCommitTraceEntity> output;
+    Map<String, DiscreteTraceEntity> output;
     @Field
     @Version
     Integer version;

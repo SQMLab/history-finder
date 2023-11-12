@@ -1,6 +1,6 @@
 package com.shahidul.git.log.oracle.core.model;
 
-import com.shahidul.git.log.oracle.core.mongo.entity.GitLogEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,5 +13,5 @@ import java.util.List;
 @Data
 @Builder
 public class LogTracerOutput {
-    List<GitLogEntity> gitLogList;
+    List<TraceEntity> gitLogList;
 }

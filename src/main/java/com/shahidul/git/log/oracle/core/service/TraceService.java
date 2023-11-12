@@ -1,0 +1,13 @@
+package com.shahidul.git.log.oracle.core.service;
+
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+
+/**
+ * @author Shahidul Islam
+ * @since 11/10/2023
+ */
+public interface TraceService {
+    String getTracerName();
+    String parseChangeType(String rawChangeType);
+    TraceEntity trace(TraceEntity traceEntity);
+}

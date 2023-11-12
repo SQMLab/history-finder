@@ -1,0 +1,75 @@
+package com.shahidul.git.log.oracle.core.service;
+
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.DiscreteTraceEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import org.codetracker.api.CodeTracker;
+import org.codetracker.api.History;
+import org.codetracker.api.MethodTracker;
+import org.codetracker.element.Method;
+import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.api.GitService;
+import org.refactoringminer.util.GitServiceImpl;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * @author Shahidul Islam
+ * @since 11/10/2023
+ */
+@Service
+public class CodeTrackerTraceServiceImpl implements TraceService {
+
+    @Override
+    public String getTracerName() {
+        return "codeTracker";
+    }
+
+    @Override
+    public String parseChangeType(String rawChangeType) {
+        return rawChangeType;
+    }
+
+    @Override
+    public TraceEntity trace(TraceEntity traceEntity) {
+        GitService gitService = new GitServiceImpl();
+        try (Repository repository = gitService.cloneIfNotExists("/dev/project/tmp/" + traceEntity.getRepositoryName(),
+                traceEntity.getRepositoryUrl())) {
+            MethodTracker methodTracker = CodeTracker.methodTracker()
+                    .repository(repository)
+                    .filePath(traceEntity.getFilePath())
+                    .startCommitId(traceEntity.getStartCommitId())
+                    .methodName(traceEntity.getFunctionName())
+                    .methodDeclarationLineNumber(traceEntity.getStartLine())
+                    .build();
+
+            History<Method> methodHistory = methodTracker.track();
+
+
+            List<CommitEntity> gitCommitList = methodHistory.getHistoryInfoList().stream()
+                    .map(this::toCommitDiff)
+                    .collect(Collectors.toList());
+            traceEntity.getOutput().put(getTracerName(), DiscreteTraceEntity.builder().commitList(gitCommitList).build());
+            return traceEntity;
+        }catch (Exception ex){
+            throw new RuntimeException(ex);
+        }
+
+    }
+
+    private CommitEntity toCommitDiff(History.HistoryInfo<Method> historyInfo) {
+        return CommitEntity.builder()
+                .parentCommitId(historyInfo.getParentCommitId())
+                .commitId(historyInfo.getCommitId())
+                .commitTime(new Date(historyInfo.getCommitTime()))
+                .changeType(parseChangeType(historyInfo.getChangeType().toString()))
+                .elementFileBefore(historyInfo.getElementBefore().getFilePath())
+                .elementFileAfter(historyInfo.getElementAfter().getFilePath())
+                .elementNameBefore(historyInfo.getElementBefore().getName())
+                .elementNameAfter(historyInfo.getElementAfter().getName())
+                .build();
+    }
+}

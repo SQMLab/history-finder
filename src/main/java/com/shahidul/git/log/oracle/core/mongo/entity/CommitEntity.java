@@ -15,13 +15,22 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class GitCommitEntity {
+public class CommitEntity {
     String parentCommitId;
     String commitId;
     Date commitTime;
+    Date parentCommitTime;
     String changeType;
     String elementFileBefore;
     String elementFileAfter;
     String elementNameBefore;
     String elementNameAfter;
+    String diff;
+    String diffDetail;
+    String author;
+    String parentAuthor;
+    String commitMessage;
+    Integer commitsBetweenForRepo;
+    Integer commitsBetweenForFile;
+
 }

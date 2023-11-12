@@ -15,6 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class GitCommitTraceEntity {
-    List<GitCommitEntity> commitList;
+public class DiscreteTraceEntity {
+    List<CommitEntity> commitList;
 }

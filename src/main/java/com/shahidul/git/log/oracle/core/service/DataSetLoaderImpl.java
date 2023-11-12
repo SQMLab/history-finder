@@ -2,15 +2,13 @@ package com.shahidul.git.log.oracle.core.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.git.log.oracle.core.model.GitLog;
-import com.shahidul.git.log.oracle.core.mongo.entity.GitCommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.GitLogEntity;
-import com.shahidul.git.log.oracle.core.mongo.repository.GitLogRepository;
-import jakarta.annotation.PostConstruct;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.codetracker.api.MethodTracker;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.util.Arrays;
@@ -25,27 +23,26 @@ import java.util.stream.Collectors;
  */
 @Service
 @Slf4j
+@AllArgsConstructor
 public class DataSetLoaderImpl implements DataSetLoader {
-    @Autowired
     ObjectMapper objectMapper;
-    @Autowired
-    GitLogRepository gitLogRepository;
+    TraceRepository traceRepository;
 
     @Override
     //@PostConstruct
-    public void loadDataSet() {
+    public void load() {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
             File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("oracle/method/training").getFile());
             //rootFileDir = classPathResource.getFile();
-            List<GitLogEntity> gitLogEntityList = Arrays.stream(rootFileDir.listFiles())
+            List<TraceEntity> traceEntityList = Arrays.stream(rootFileDir.listFiles())
                     .limit(2)
                     .map(file -> {
                         try {
                             GitLog gitLog = objectMapper.readValue(file, GitLog.class);
 
-                            return GitLogEntity.builder()
+                            return TraceEntity.builder()
                                     .repositoryName(gitLog.getRepositoryName())
                                     .repositoryUrl(gitLog.getRepositoryWebURL())
                                     .startCommitId(gitLog.getStartCommitId())
@@ -54,7 +51,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .functionKey(gitLog.getFunctionKey())
                                     .startLine(gitLog.getFunctionStartLine())
                                     .expectedCommitList(
-                                            gitLog.getExpectedChanges().stream().map(commit -> GitCommitEntity.builder()
+                                            gitLog.getExpectedChanges().stream().map(commit -> CommitEntity.builder()
                                                             .parentCommitId(commit.getParentCommitId())
                                                             .commitId(commit.getCommitId())
                                                             .commitTime(new Date(commit.getCommitTime()))
@@ -73,7 +70,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         }
                     }).collect(Collectors.toList());
 
-            gitLogRepository.saveAll(gitLogEntityList);
+            traceRepository.saveAll(traceEntityList);
             log.info("save completed");
         } catch (Exception e) {
             throw new RuntimeException(e);
