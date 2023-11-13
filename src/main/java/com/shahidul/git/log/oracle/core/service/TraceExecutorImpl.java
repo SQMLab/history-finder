@@ -23,7 +23,7 @@ public class TraceExecutorImpl implements TraceExecutor {
         traceServiceList.stream()
                 .map(traceService -> {
                     traceEntityList.stream()
-                            .filter(traceEntity -> traceEntity.getOutput().containsKey(traceService.getTracerName()) == false)
+                            .filter(traceEntity -> traceEntity.getAnalysis().containsKey(traceService.getTracerName()) == false)
                             .map(traceEntity -> {
                                 traceService.trace(traceEntity);
                                 traceEntity = traceRepository.save(traceEntity);

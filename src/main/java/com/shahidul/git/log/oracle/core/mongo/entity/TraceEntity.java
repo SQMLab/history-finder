@@ -34,7 +34,7 @@ public class TraceEntity {
     @Field
     String repositoryUrl;
     @Field
-    String startCommitId;
+    String commitHash;
     @Field
     String filePath;
     @Field
@@ -42,11 +42,11 @@ public class TraceEntity {
     @Field
     String functionKey;
     @Field Integer startLine;
-    List<CommitEntity> expectedCommitList;
+    List<CommitEntity> expectedCommits;
     @Field
-    List<CommitEntity> aggregatedCommitList;
+    List<CommitEntity> aggregatedCommits;
     @Field
-    Map<String, DiscreteTraceEntity> output;
+    Map<String, TraceAnalysisEntity> analysis;
     @Field
     @Version
     Integer version;

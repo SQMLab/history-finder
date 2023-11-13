@@ -1,7 +1,8 @@
 package com.shahidul.git.log.oracle.core.service;
 
+import com.shahidul.git.log.oracle.core.enums.TrackerName;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.DiscreteTraceEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import org.codetracker.api.CodeTracker;
 import org.codetracker.api.History;
@@ -25,7 +26,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return "codeTracker";
+        return TrackerName.CODE_TRACKER.getCode();
     }
 
     @Override
@@ -41,7 +42,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)
                     .filePath(traceEntity.getFilePath())
-                    .startCommitId(traceEntity.getStartCommitId())
+                    .startCommitId(traceEntity.getCommitHash())
                     .methodName(traceEntity.getFunctionName())
                     .methodDeclarationLineNumber(traceEntity.getStartLine())
                     .build();
@@ -52,7 +53,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             List<CommitEntity> gitCommitList = methodHistory.getHistoryInfoList().stream()
                     .map(this::toCommitDiff)
                     .collect(Collectors.toList());
-            traceEntity.getOutput().put(getTracerName(), DiscreteTraceEntity.builder().commitList(gitCommitList).build());
+            traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(gitCommitList).build());
             return traceEntity;
         }catch (Exception ex){
             throw new RuntimeException(ex);
@@ -62,8 +63,9 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
 
     private CommitEntity toCommitDiff(History.HistoryInfo<Method> historyInfo) {
         return CommitEntity.builder()
-                .parentCommitId(historyInfo.getParentCommitId())
-                .commitId(historyInfo.getCommitId())
+                .tracerName(getTracerName())
+                .parentCommitHash(historyInfo.getParentCommitId())
+                .commitHash(historyInfo.getCommitId())
                 .commitTime(new Date(historyInfo.getCommitTime()))
                 .changeType(parseChangeType(historyInfo.getChangeType().toString()))
                 .elementFileBefore(historyInfo.getElementBefore().getFilePath())

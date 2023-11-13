@@ -19,7 +19,7 @@ public class GitCommitLogDaoImpl implements GitCommitLogDao {
         return TraceEntity.builder()
                 .repositoryName(gitLog.getRepositoryName())
                 .repositoryUrl(gitLog.getRepositoryWebURL())
-                .startCommitId(gitLog.getStartCommitId())
+                .commitHash(gitLog.getStartCommitId())
                 .filePath(gitLog.getFilePath())
                 .functionName(gitLog.getFunctionName())
                 .functionKey(gitLog.getFunctionKey())
@@ -30,8 +30,8 @@ public class GitCommitLogDaoImpl implements GitCommitLogDao {
     @Override
     public CommitEntity gotCommitEntity(GitCommit commit) {
         return CommitEntity.builder()
-                .parentCommitId(commit.getParentCommitId())
-                .commitId(commit.getCommitId())
+                .parentCommitHash(commit.getParentCommitId())
+                .commitHash(commit.getCommitId())
                 .commitTime(new Date(commit.getCommitTime()))
                 .changeType(commit.getChangeType())
                 .elementFileBefore(commit.getElementFileBefore())

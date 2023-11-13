@@ -45,15 +45,15 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             return TraceEntity.builder()
                                     .repositoryName(gitLog.getRepositoryName())
                                     .repositoryUrl(gitLog.getRepositoryWebURL())
-                                    .startCommitId(gitLog.getStartCommitId())
+                                    .commitHash(gitLog.getStartCommitId())
                                     .filePath(gitLog.getFilePath())
                                     .functionName(gitLog.getFunctionName())
                                     .functionKey(gitLog.getFunctionKey())
                                     .startLine(gitLog.getFunctionStartLine())
-                                    .expectedCommitList(
+                                    .expectedCommits(
                                             gitLog.getExpectedChanges().stream().map(commit -> CommitEntity.builder()
-                                                            .parentCommitId(commit.getParentCommitId())
-                                                            .commitId(commit.getCommitId())
+                                                            .parentCommitHash(commit.getParentCommitId())
+                                                            .commitHash(commit.getCommitId())
                                                             .commitTime(new Date(commit.getCommitTime()))
                                                             .changeType(commit.getChangeType())
                                                             .elementFileBefore(commit.getElementFileBefore())
@@ -63,7 +63,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                                             .build())
                                                     .toList()
                                     )
-                                    .output(new HashMap<>())
+                                    .analysis(new HashMap<>())
                                     .build();
                         } catch (Exception e) {
                             throw new RuntimeException(e);

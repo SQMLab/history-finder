@@ -16,8 +16,9 @@ import java.util.Date;
 @AllArgsConstructor
 @Data
 public class CommitEntity {
-    String parentCommitId;
-    String commitId;
+    String tracerName;
+    String parentCommitHash;
+    String commitHash;
     Date commitTime;
     Date parentCommitTime;
     String changeType;

@@ -8,10 +8,10 @@ import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
-import com.google.gson.JsonObject;
 import com.shahidul.git.log.oracle.config.AppProperty;
+import com.shahidul.git.log.oracle.core.enums.TrackerName;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.DiscreteTraceEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -34,7 +33,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return "codeShovel";
+        return TrackerName.CODE_SHOVEL.getCode();
     }
 
     @Override
@@ -50,19 +49,19 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             Repository repository = Utl.createRepository(repositoryPath);
             Git git = new Git(repository);
             RepositoryService repositoryService = new CachingRepositoryService(git, repository, traceEntity.getRepositoryName(), repositoryPath);
-            Commit startCommit = repositoryService.findCommitByName(traceEntity.getStartCommitId());
+            Commit startCommit = repositoryService.findCommitByName(traceEntity.getCommitHash());
 
             StartEnvironment startEnv = new StartEnvironment(repositoryService);
             startEnv.setRepositoryPath(repositoryPath);
             startEnv.setFilePath(traceEntity.getFilePath());
             startEnv.setFunctionName(traceEntity.getFunctionName());
             startEnv.setFunctionStartLine(traceEntity.getStartLine());
-            startEnv.setStartCommitName(traceEntity.getStartCommitId());
+            startEnv.setStartCommitName(traceEntity.getCommitHash());
             startEnv.setStartCommit(startCommit);
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
-            traceEntity.getOutput().put(getTracerName(), DiscreteTraceEntity.builder().commitList(output.entrySet()
+            traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(output.entrySet()
                     .stream().map(this::toCommitEntity).toList()).build());
             return traceEntity;
         } catch (Exception e) {
@@ -73,11 +72,11 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     private CommitEntity toCommitEntity(Map.Entry<String, Ychange> commitEntry) {
         com.google.gson.JsonObject json = commitEntry.getValue().toJsonObject();
-        CommitEntity.CommitEntityBuilder commitBuilder = CommitEntity.builder();
+        CommitEntity.CommitEntityBuilder commitBuilder = CommitEntity.builder().tracerName(getTracerName());
         if (json.has("commitNameOld")){
-            commitBuilder.parentCommitId(json.get("commitNameOld").getAsString());
+            commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
         }
-        commitBuilder.commitId(commitEntry.getKey());
+        commitBuilder.commitHash(commitEntry.getKey());
         if (json.has("commitDate")){
             try {
                 commitBuilder.commitTime(new SimpleDateFormat().parse(json.get("commitDate").getAsString()));
