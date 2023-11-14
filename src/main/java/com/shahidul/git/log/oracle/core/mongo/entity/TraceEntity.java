@@ -28,6 +28,8 @@ public class TraceEntity {
     @Field("_id")
     ObjectId id;
     @Field
+    String uid;
+    @Field
     String uri; // repositoryName || blob || commitHash ||filePath || #startLine No
     @Field
     String repositoryName;
@@ -52,7 +54,6 @@ public class TraceEntity {
     Integer version;
     @Field
     Date createdAt;
-
     @Field
     Date updatedAt;
 }
