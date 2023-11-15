@@ -53,7 +53,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
-            File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("oracle/method/training").getFile());
+            File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile());
             Map<String, TraceEntity> entityMap = traceRepository.findAll()
                     .stream()
                     .collect(Collectors.toMap(TraceEntity::getUid, Function.identity()));
