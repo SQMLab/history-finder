@@ -6,4 +6,5 @@ package com.shahidul.git.log.oracle.core.service;
  */
 public interface DataSetLoader {
     void load();
+    void codeShovelToUniformFormat();
 }

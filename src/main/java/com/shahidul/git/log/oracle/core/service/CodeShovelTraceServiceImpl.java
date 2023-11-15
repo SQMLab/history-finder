@@ -54,7 +54,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             StartEnvironment startEnv = new StartEnvironment(repositoryService);
             startEnv.setRepositoryPath(repositoryPath);
             startEnv.setFilePath(traceEntity.getFilePath());
-            startEnv.setFunctionName(traceEntity.getFunctionName());
+            startEnv.setFunctionName(traceEntity.getElementName());
             startEnv.setFunctionStartLine(traceEntity.getStartLine());
             startEnv.setStartCommitName(traceEntity.getCommitHash());
             startEnv.setStartCommit(startCommit);

@@ -43,7 +43,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                     .repository(repository)
                     .filePath(traceEntity.getFilePath())
                     .startCommitId(traceEntity.getCommitHash())
-                    .methodName(traceEntity.getFunctionName())
+                    .methodName(traceEntity.getElementName())
                     .methodDeclarationLineNumber(traceEntity.getStartLine())
                     .build();
 

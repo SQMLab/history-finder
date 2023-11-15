@@ -1,17 +1,35 @@
 {
-  "repositoryName": "commons-io",
-  "functionName": "flush",
-  "filePath": "src/main/java/org/apache/commons/io/output/DemuxOutputStream.java",
-  "functionStartLine": 63,
-  "startCommitName": "559de2c461e94ab636c959149c775bb27111fb48",
-  "expectedResult": {
-    "426cd8c52ef1732ad3a57171429bf7704d80bcc0": "Ybodychange",
-    "1d031d6eb6e6861f38e228bd587ff74e7f6fcce8": "Ybodychange",
-    "6aa00766b9103d75c763160280429af8e1f0549e": "Ybodychange",
-    "83f7246c3e9fe1d3f1ad6cf7ea0715a573fe2f2a": "Yfilerename",
-    "a74a5a0c6ff41a4ca0a08caf740ebce1dc3c6d10": "Ybodychange",
-    "c77a476ee86b107745267bdfc9fc210201e6d414": "Ybodychange",
-    "1be498782acbf507108e14f75034b242833e8bdc": "Yfilerename",
-    "c360a10db25701f682849e5913d150f13a09f3bb": "Yintroduced"
-  }
+  "repositoryName" : "commons-io",
+  "repositoryUrl" : "https://commons-io/commons-io",
+  "commitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
+  "filePath" : "src/main/java/org/apache/commons/io/output/DemuxOutputStream.java",
+  "elementType" : "method",
+  "elementName" : "flush",
+  "startLine" : 63,
+  "endLine" : null,
+  "expectedCommits" : [ {
+    "commitHash" : "426cd8c52ef1732ad3a57171429bf7704d80bcc0",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1d031d6eb6e6861f38e228bd587ff74e7f6fcce8",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "83f7246c3e9fe1d3f1ad6cf7ea0715a573fe2f2a",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "a74a5a0c6ff41a4ca0a08caf740ebce1dc3c6d10",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "c77a476ee86b107745267bdfc9fc210201e6d414",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1be498782acbf507108e14f75034b242833e8bdc",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "c360a10db25701f682849e5913d150f13a09f3bb",
+    "changeType" : "Yintroduced"
+  } ]
 }

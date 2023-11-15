@@ -30,6 +30,8 @@ public class TraceEntity {
     @Field
     String uid;
     @Field
+    String inputLabel;
+    @Field
     String uri; // repositoryName || blob || commitHash ||filePath || #startLine No
     @Field
     String repositoryName;
@@ -39,11 +41,15 @@ public class TraceEntity {
     String commitHash;
     @Field
     String filePath;
+    @Field String filePathAndLine;
     @Field
-    String functionName;
+    String elementType;
     @Field
-    String functionKey;
-    @Field Integer startLine;
+    String elementName;
+    @Field
+    Integer startLine;
+    @Field
+    Integer endLine;
     List<CommitEntity> expectedCommits;
     @Field
     List<CommitEntity> aggregatedCommits;
