@@ -3,6 +3,7 @@
   "functionName": "processAfters",
   "filePath": "jetty-webapp/src/main/java/org/eclipse/jetty/webapp/FragmentDescriptor.java",
   "functionStartLine": 123,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "6d26b45afed18dd5fe1211ccfbac7eb2587aa9a9": "Ybodychange",

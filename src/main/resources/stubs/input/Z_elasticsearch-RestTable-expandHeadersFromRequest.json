@@ -3,6 +3,7 @@
   "functionName": "expandHeadersFromRequest",
   "filePath": "server/src/main/java/org/elasticsearch/rest/action/cat/RestTable.java",
   "functionStartLine": 222,
+  "functionEndLine": null,
   "startCommitName": "767c69593c67befb843686de8ea51b7bc87728c9",
   "expectedResult": {
     "99f88f15c5febbca2d13b5b5fda27b844153bf1a": "Yfilerename",

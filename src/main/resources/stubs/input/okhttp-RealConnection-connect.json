@@ -3,6 +3,7 @@
   "filePath": "okhttp/src/main/java/okhttp3/internal/connection/RealConnection.java",
   "functionName": "connect",
   "functionStartLine": 130,
+  "functionEndLine": null,
   "startCommitName": "5224f3045ba9b171fce521777edf389f9206173c",
   "expectedResult": {
     "db18f0e404ab35c7b23e8ecc27913d717e96eb84": "Ybodychange",

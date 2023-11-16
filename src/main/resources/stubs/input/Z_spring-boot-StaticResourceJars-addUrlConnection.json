@@ -3,6 +3,7 @@
   "functionName": "addUrlConnection",
   "filePath": "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/server/StaticResourceJars.java",
   "functionStartLine": 113,
+  "functionEndLine": null,
   "startCommitName": "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
   "expectedResult": {
     "64c324612e9690ee477bebb5d2532bb5843fbdd2": "Ybodychange",

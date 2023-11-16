@@ -3,6 +3,7 @@
   "functionName": "getFileToArtifactsMap",
   "filePath": "java/compiler/impl/src/com/intellij/packaging/impl/artifacts/ArtifactBySourceFileFinderImpl.java",
   "functionStartLine": 53,
+  "functionEndLine": null,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "67e051b43a00fbcfec4a648fc68446907839d7f2": "Ybodychange",

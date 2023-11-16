@@ -3,6 +3,7 @@
   "functionName": "doWorkInSync",
   "filePath": "engine/src/main/java/org/hibernate/search/backend/impl/batch/DefaultBatchBackend.java",
   "functionStartLine": 66,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a": "Ybodychange",

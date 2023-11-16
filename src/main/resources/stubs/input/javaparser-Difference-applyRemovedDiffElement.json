@@ -3,6 +3,7 @@
   "filePath": "javaparser-core/src/main/java/com/github/javaparser/printer/lexicalpreservation/Difference.java",
   "functionName": "applyRemovedDiffElement",
   "functionStartLine": 339,
+  "functionEndLine": null,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "4f9e0c67e6f11738be45155bd5606f18445fcec7": "Ybodychange",

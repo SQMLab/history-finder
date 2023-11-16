@@ -3,6 +3,7 @@
   "functionName": "updateMergeThreads",
   "filePath": "lucene/core/src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java",
   "functionStartLine": 300,
+  "functionEndLine": null,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "9540bc37583dfd4e995b893154039fcf031dc3c3":"Ybodychange",

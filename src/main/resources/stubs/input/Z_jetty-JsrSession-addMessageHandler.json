@@ -3,6 +3,7 @@
   "functionName": "addMessageHandler",
   "filePath": "jetty-websocket/javax-websocket-client-impl/src/main/java/org/eclipse/jetty/websocket/jsr356/JsrSession.java",
   "functionStartLine": 95,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "05c534275253ba65a23863b5ef976636fcd8da4c": "Ybodychange",

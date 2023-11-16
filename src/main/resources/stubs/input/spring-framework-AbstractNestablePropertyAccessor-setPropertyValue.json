@@ -3,6 +3,7 @@
   "filePath": "spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java",
   "functionName": "setPropertyValue",
   "functionStartLine": 273,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "64d6561cbbda4d5a74cd0f3ce5983e29c9d42b89": "Ybodychange",

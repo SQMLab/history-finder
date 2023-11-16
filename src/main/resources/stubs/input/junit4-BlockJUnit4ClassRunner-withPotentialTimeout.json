@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "withPotentialTimeout",
   "functionStartLine": 356,
+  "functionEndLine": null,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "1e55e32ba3dab864b20e9c162c5b421f99a11c6d": "Ybodychange",

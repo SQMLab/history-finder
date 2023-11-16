@@ -3,6 +3,7 @@
   "filePath": "org.eclipse.jgit/src/org/eclipse/jgit/transport/UploadPack.java",
   "functionName": "sendPack",
   "functionStartLine": 1983,
+  "functionEndLine": null,
   "startCommitName": "bd1a82502680b5de5bf86f6c4470185fd1602386",
   "expectedResult": {
     "cd0d69ffec9eedff24a2692d18024e752cadc7c8": "Yparameterchange",

@@ -3,6 +3,7 @@
   "functionName": "setCapability",
   "filePath": "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/api/records/impl/pb/NodeReportPBImpl.java",
   "functionStartLine": 180,
+  "functionEndLine": null,
   "startCommitName": "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
   "expectedResult": {
     "b46ca7e73b8bac3fdbff0b13afe009308078acf2": "Ybodychange",

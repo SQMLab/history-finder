@@ -3,6 +3,7 @@
   "functionName": "escape",
   "filePath": "jetty-util/src/main/java/org/eclipse/jetty/util/log/StdErrLog.java",
   "functionStartLine": 573,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "c48cb240a172c3964c2bdfc9b8c535bbab47c31c": "Ybodychange",

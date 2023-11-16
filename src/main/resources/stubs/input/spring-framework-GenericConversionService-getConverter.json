@@ -3,6 +3,7 @@
   "filePath": "spring-core/src/main/java/org/springframework/core/convert/support/GenericConversionService.java",
   "functionName": "getConverter",
   "functionStartLine": 253,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "4dc289592d0072c7472ab455522362f8db42b4a7": "Ybodychange",

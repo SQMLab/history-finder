@@ -3,6 +3,7 @@
   "filePath": "okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java",
   "functionName": "getResponse",
   "functionStartLine": 443,
+  "functionEndLine": null,
   "startCommitName": "5224f3045ba9b171fce521777edf389f9206173c",
   "expectedResult": {
     "aac684aeae32ff18e443799a3ccff6de9d68a684": "Ybodychange",

@@ -3,6 +3,7 @@
   "functionName": "getJsonParser",
   "filePath": "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/json/JsonParserFactory.java",
   "functionStartLine": 37,
+  "functionEndLine": null,
   "startCommitName": "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
   "expectedResult": {
     "0c4176f596f97217fe85d2d18a1b7c468c297477": "Ybodychange",

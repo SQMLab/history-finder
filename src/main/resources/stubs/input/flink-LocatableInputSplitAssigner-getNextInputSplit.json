@@ -4,6 +4,7 @@
     "filePath": "flink-core/src/main/java/org/apache/flink/api/common/io/LocatableInputSplitAssigner.java",
     "functionName": "getNextInputSplit",
     "functionStartLine": 76,
+    "functionEndLine": null,
     "startCommitName": "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
     "expectedResult": {
         "7452802bc25c0915b7347d4faf2d60adcfc27644": "Yparameterchange",
@@ -17,5 +18,6 @@
         "86d206c41922a1b7b8c2839b65d3568f9be55e0c": "Ybodychange",
         "33cb2ca9898809d2fc90765996ea56bbea458e59": "Yfilerename",
         "8f7484000ae40ae1b5c68e2d21b9e5a44d984234": "Yintroduced"
-    }
+    },
+    "intelliJ": "-----------------"
 }

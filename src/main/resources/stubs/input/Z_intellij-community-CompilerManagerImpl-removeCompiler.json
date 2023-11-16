@@ -3,6 +3,7 @@
   "functionName": "removeCompiler",
   "filePath": "java/compiler/impl/src/com/intellij/compiler/CompilerManagerImpl.java",
   "functionStartLine": 148,
+  "functionEndLine": null,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "06156396fa4af916d45b846ee045bdbaea79b6c1": "Ybodychange",

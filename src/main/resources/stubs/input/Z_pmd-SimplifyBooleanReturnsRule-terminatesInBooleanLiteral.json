@@ -1,8 +1,10 @@
+
 {
   "repositoryName": "pmd",
   "functionName": "terminatesInBooleanLiteral",
   "filePath": "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/design/SimplifyBooleanReturnsRule.java",
   "functionStartLine": 209,
+  "functionEndLine": null,
   "startCommitName": "d528dcd5d45582229ab3410deb7c40b2143d015d",
   "expectedResult": {
     "e57007e1bef8b6de966f607fe1d79d3ecabe6884": "Ybodychange",

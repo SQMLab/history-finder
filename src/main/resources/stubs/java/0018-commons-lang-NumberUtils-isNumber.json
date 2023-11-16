@@ -1,0 +1,91 @@
+{
+  "repositoryName" : "commons-lang",
+  "repositoryUrl" : "https://commons-lang/commons-lang",
+  "commitHash" : "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
+  "filePath" : "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+  "elementType" : "method",
+  "elementName" : "isNumber",
+  "startLine" : 1372,
+  "endLine" : 1374,
+  "expectedCommits" : [ {
+    "commitHash" : "c503d742f094dc2048b72c3f78f5e2e6070a44e1",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "cf03e6173b70ad64337704402bea51600cddd1ba",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "9397608dd35a335d5e14813c0923f9419782980a",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "5a509030a946646780e963b9f492a4eaff734116",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "5292526e476ffbb19c6613a98464054236c86ace",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "5bd622dab027ef37001a630a7c825c5b8c19d1db",
+    "changeType" : "Yparametermetachange"
+  }, {
+    "commitHash" : "2b5f7a79b0fc561a0dee8dddc46e31c2c8bf6818",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "8e2f4ddb9a1ecd7a1bf7d752c2c891d630287036",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "fc5c081e22a61bb5a6810af302be3f22f7966df4",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "26bc3fe010d5154d3ccac526ec22c429fc3af499",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "debc02c6d9b94c717b4182ae4dd7a97d47293a52",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "0531f837cba9ad5a34b12f26310f05f593b3b7e0",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "fd3bd5bdd2ef9f6dd184a2d3c587d1a73e19334c",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "2d06a7ce861432fc702168fd4c94bc00ddfc39eb",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "d16c62aed209aada9868c07e139d2dd48dc81536",
+        "changeType" : null
+      }, {
+        "commitHash" : "c503d742f094dc2048b72c3f78f5e2e6070a44e1",
+        "changeType" : null
+      }, {
+        "commitHash" : "a2d41db55aa46bd4fedb215c978f03e282cf1ffb",
+        "changeType" : null
+      }, {
+        "commitHash" : "8f9271399aca64a6f5afe36d3eec365eb68e310e",
+        "changeType" : null
+      }, {
+        "commitHash" : "7477a1e08fae75215763db8a837b8ca2a2bc9e6b",
+        "changeType" : null
+      }, {
+        "commitHash" : "71d9e00d42b278ce9d216b33bf1a9c8606fbcb49",
+        "changeType" : null
+      }, {
+        "commitHash" : "6627f7ad8fb08d6c23b83d6c9f0a6830e9e7085a",
+        "changeType" : null
+      }, {
+        "commitHash" : "5bd622dab027ef37001a630a7c825c5b8c19d1db",
+        "changeType" : null
+      }, {
+        "commitHash" : "3269d1bc7a28ba4536d4c1ac5a9aaadf5b8f48c3",
+        "changeType" : null
+      }, {
+        "commitHash" : "21cbe9553f0c1b96493eccc7d5e048358b56d7f3",
+        "changeType" : null
+      }, {
+        "commitHash" : "05763470e5a067eb153533d47baa73174ad9bd46",
+        "changeType" : null
+      } ]
+    }
+  }
+}

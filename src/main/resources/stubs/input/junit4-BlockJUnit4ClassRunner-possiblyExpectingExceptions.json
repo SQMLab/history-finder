@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "possiblyExpectingExceptions",
   "functionStartLine": 342,
+  "functionEndLine": null,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "6838ac0ec19918990d28ea81176cdd065aaf7c34": "Ybodychange",

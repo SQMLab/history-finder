@@ -3,6 +3,7 @@
   "filePath": "hibernate-core/src/main/java/org/hibernate/cfg/annotations/QueryBinder.java",
   "functionName": "bindNativeQuery",
   "functionStartLine": 142,
+  "functionEndLine": null,
   "startCommitName": "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
   "expectedResult": {
     "9caca0ce37d5a2763d476c6fa2471addcca710ca": "Ymultichange(Yparameterchange,Ybodychange)",
@@ -18,5 +19,6 @@
     "1ca2bc19a5f667e10f9a2c2b10320b9c40921563": "Yfilerename",
     "9d7a03a5f7f03bc803d897baa590861154b39f5e": "Yfilerename",
     "7337743c93574823424ed6c399cfcf6bd75614f8": "Yintroduced"
-  }
+  },
+  "intelliJ": "-----------------"
 }

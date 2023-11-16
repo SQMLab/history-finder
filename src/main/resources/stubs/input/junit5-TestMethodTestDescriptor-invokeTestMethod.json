@@ -3,6 +3,7 @@
   "filePath": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.java",
   "functionName": "invokeTestMethod",
   "functionStartLine": 163,
+  "functionEndLine": null,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "b2cc5f49d5f892dbf022c62ec48f4e4bd95cf7cd": "Yfilerename",

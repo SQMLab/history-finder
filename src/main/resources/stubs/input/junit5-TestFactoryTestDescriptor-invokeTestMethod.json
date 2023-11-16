@@ -3,6 +3,7 @@
   "filePath": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/TestFactoryTestDescriptor.java",
   "functionName": "invokeTestMethod",
   "functionStartLine": 81,
+  "functionEndLine": null,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "5cb71ec0e66a7e411c7d238d4b4e53b1c2c27316": "Ybodychange",

@@ -3,6 +3,7 @@
   "filePath": "hibernate-core/src/main/java/org/hibernate/event/internal/DefaultRefreshEventListener.java",
   "functionName": "onRefresh",
   "functionStartLine": 56,
+  "functionEndLine": null,
   "startCommitName": "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
   "expectedResult": {
     "12b79a59383d1b647c9957815ef53861f0752dad": "Ybodychange",
@@ -37,5 +38,6 @@
     "35ca4c35635f26b9a86b260ad974ba7da429950b": "Ybodychange",
     "a797998927e2cbba9ec34ca7dc31b42a192fa2f1": "Yfilerename",
     "d8d6d82e30960e0c255950eaf875ad48831b12b0": "Yintroduced"
-  }
+  },
+  "intelliJ": "-----------------"
 }

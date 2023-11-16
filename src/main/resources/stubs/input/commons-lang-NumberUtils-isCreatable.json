@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
   "functionName": "isCreatable",
   "functionStartLine": 1398,
+  "functionEndLine": 1509,
   "startCommitName": "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
   "expectedResult": {
     "c8e61afdb89c58ea8ffaf04593da41ff0888d30e": "Ybodychange",
@@ -23,5 +24,6 @@
     "0531f837cba9ad5a34b12f26310f05f593b3b7e0": "Ybodychange",
     "fd3bd5bdd2ef9f6dd184a2d3c587d1a73e19334c": "Ybodychange",
     "2d06a7ce861432fc702168fd4c94bc00ddfc39eb": "Yintroduced"
-  }
+  },
+  "intelliJ": "6627f7ad8fb08d6c23b83d6c9f0a6830e9e7085a fd6d8a4a3db42c950e6d6d0267fca8abf15b4325 4920a1da320677108c98bc191bdbffe7169983ba fd3bd5bdd2ef9f6dd184a2d3c587d1a73e19334c 0531f837cba9ad5a34b12f26310f05f593b3b7e0 26bc3fe010d5154d3ccac526ec22c429fc3af499 8e2f4ddb9a1ecd7a1bf7d752c2c891d630287036 2b5f7a79b0fc561a0dee8dddc46e31c2c8bf6818 5292526e476ffbb19c6613a98464054236c86ace 5a509030a946646780e963b9f492a4eaff734116 9397608dd35a335d5e14813c0923f9419782980a cf03e6173b70ad64337704402bea51600cddd1ba c503d742f094dc2048b72c3f78f5e2e6070a44e1 a2d41db55aa46bd4fedb215c978f03e282cf1ffb b3c31a379e9ad7cd22cb7f0669b82361ced84992 e64b51c70fa9f5e2795e91e6729ebd895f7f3c01 9c5b6cdc7108eb071785b0c4edd205650cdf1ca4 8f9271399aca64a6f5afe36d3eec365eb68e310e 1da8ccdbfe2faa3e6801fe44eaf3c336aab48bec c3b1fefbad0c67c8556ba6b4573f135197f87598 c8e61afdb89c58ea8ffaf04593da41ff0888d30e"
 }

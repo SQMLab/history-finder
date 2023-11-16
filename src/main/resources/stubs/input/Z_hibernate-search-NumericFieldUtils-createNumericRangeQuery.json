@@ -3,6 +3,7 @@
   "functionName": "createNumericRangeQuery",
   "filePath": "engine/src/main/java/org/hibernate/search/bridge/util/impl/NumericFieldUtils.java",
   "functionStartLine": 36,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "0e8203f804d5a84f1d85267893bc827f75529584": "Ybodychange",

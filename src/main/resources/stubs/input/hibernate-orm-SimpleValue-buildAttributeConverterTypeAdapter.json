@@ -3,6 +3,7 @@
   "filePath": "hibernate-core/src/main/java/org/hibernate/mapping/SimpleValue.java",
   "functionName": "buildAttributeConverterTypeAdapter",
   "functionStartLine": 565,
+  "functionEndLine": null,
   "startCommitName": "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
   "expectedResult": {
     "c14180ea5b16b69cdd06eb5bb159f7da1ff4db54": "Ybodychange",
@@ -20,5 +21,6 @@
     "9f86babd880b785b965f7f1b55d58dc6a6943ada": "Ybodychange",
     "bf168ca24ef0c328bd53d6d32e79f66b99ac56db": "Ybodychange",
     "7bcf161d36d5b1e59fba1ae32e8e2d692c2fd33d": "Yintroduced"
-  }
+  },
+  "intelliJ": "-----------------"
 }

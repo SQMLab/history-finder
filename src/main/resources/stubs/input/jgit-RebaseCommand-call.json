@@ -3,6 +3,7 @@
   "filePath": "org.eclipse.jgit/src/org/eclipse/jgit/api/RebaseCommand.java",
   "functionName": "call",
   "functionStartLine": 263,
+  "functionEndLine": null,
   "startCommitName": "bd1a82502680b5de5bf86f6c4470185fd1602386",
   "expectedResult": {
     "26c5d0e56a8c5adb2c93cda45e25175363798516": "Ybodychange",

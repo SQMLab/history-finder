@@ -2,7 +2,9 @@ package com.shahidul.git.log.oracle.core.model;
 
 import lombok.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Shahidul Islam
@@ -22,4 +24,5 @@ public class Trace {
     Integer startLine;
     Integer endLine;
     List<Commit> expectedCommits;
+    Map<String, Analysis> analysis = new HashMap<>();
 }

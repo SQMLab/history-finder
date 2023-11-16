@@ -3,6 +3,7 @@
   "filePath": "junit-platform-engine/src/main/java/org/junit/platform/engine/support/hierarchical/NodeTestTask.java",
   "functionName": "execute",
   "functionStartLine": 100,
+  "functionEndLine": null,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "137f831bba9d0f45085d64fad47947cbc91a30e9": "Ybodychange",

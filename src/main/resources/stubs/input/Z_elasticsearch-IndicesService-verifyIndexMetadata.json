@@ -3,6 +3,7 @@
   "functionName": "verifyIndexMetadata",
   "filePath": "server/src/main/java/org/elasticsearch/indices/IndicesService.java",
   "functionStartLine": 550,
+  "functionEndLine": null,
   "startCommitName": "767c69593c67befb843686de8ea51b7bc87728c9",
   "expectedResult": {
     "700d9ecc953fa30df0d12d086f0e9d9322446459": "Ybodychange",

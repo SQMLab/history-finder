@@ -3,6 +3,7 @@
   "functionName": "sync",
   "filePath": "lucene/core/src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java",
   "functionStartLine": 447,
+  "functionEndLine": null,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "926397824e9fd4b7f480cff547a73aad3c056974":"Ybodychange",

@@ -3,6 +3,7 @@
     "filePath": "okhttp-urlconnection/src/main/java/okhttp3/JavaNetAuthenticator.java",
     "functionName": "authenticate",
     "functionStartLine": 32,
+    "functionEndLine": null,
     "startCommitName": "8e2116fddcc1f9ad2b15d03fbc8918e30831d6a2",
     "expectedResult": {
         "b3ecb0a6c9bf3a213377b889f2b3077a940363e2": "Ybodychange",

@@ -3,6 +3,7 @@
   "functionName": "write",
   "filePath": "src/main/java/org/apache/commons/io/output/ProxyWriter.java",
   "functionStartLine": 169,
+  "functionEndLine": null,
   "startCommitName": "559de2c461e94ab636c959149c775bb27111fb48",
   "expectedResult": {
     "6aa00766b9103d75c763160280429af8e1f0549e": "Ymultichange(Ybodychange,Yparametermetachange)",

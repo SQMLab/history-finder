@@ -3,6 +3,7 @@
   "functionName": "doNothing",
   "filePath": "src/main/java/org/mockito/internal/stubbing/StubberImpl.java",
   "functionStartLine": 117,
+  "functionEndLine": null,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "275586ecf3a00da078b6fb7e9cc4508231cc4301": "Ybodychange",

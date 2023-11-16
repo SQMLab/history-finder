@@ -4,6 +4,7 @@
     "filePath": "flink-runtime/src/main/java/org/apache/flink/runtime/checkpoint/CheckpointCoordinator.java",
     "functionName": "receiveAcknowledgeMessage",
     "functionStartLine": 726,
+    "functionEndLine": null,
     "startCommitName": "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
     "expectedResult": {
         "aa21f853ab0380ec1f68ae1d0b7c8d9268da4533": "Ybodychange",
@@ -35,5 +36,6 @@
         "59bee4ad825d7252c791e0376ea2504602134fe7": "Ybodychange",
         "9b7f8aa121e4a231632296d0809029aca9ebde6a": "Ybodychange",
         "7f0ce1428bc32181d6d79ca6f1226b9e2e3d93be": "Yintroduced"
-    }
+    },
+    "intelliJ": "-----------------"
 }

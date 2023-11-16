@@ -3,6 +3,7 @@
   "filePath": "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassPostProcessor.java",
   "functionName": "processConfigBeanDefinitions",
   "functionStartLine": 261,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "4fef1fe820627e6462413f4c4b658d24146367a2": "Ybodychange",

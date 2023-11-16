@@ -4,6 +4,7 @@
     "filePath": "flink-core/src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializer.java",
     "functionName": "checkKryoInitialized",
     "functionStartLine": 426,
+    "functionEndLine": null,
     "startCommitName": "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
     "expectedResult": {
         "8aa5e05733655e7b3d1f11ed15f61672d61e5cb5": "Ybodychange",
@@ -20,5 +21,6 @@
         "a70aa67a0881afc5d66329d46fe536d7a0b89fa8": "Ybodychange",
         "f5898a01e7877afa3df06223713db211708eaf9a": "Ymodifierchange",
         "22203e75f8a0d193ce0187396d0b267e05e9b58e": "Yintroduced"
-    }
+    },
+    "intelliJ": "-----------------"
 }

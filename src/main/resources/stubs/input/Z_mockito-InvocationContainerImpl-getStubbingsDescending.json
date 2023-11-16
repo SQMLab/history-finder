@@ -3,6 +3,7 @@
   "functionName": "getStubbingsDescending",
   "filePath": "src/main/java/org/mockito/internal/stubbing/InvocationContainerImpl.java",
   "functionStartLine": 143,
+  "functionEndLine": null,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c": "Yrename",

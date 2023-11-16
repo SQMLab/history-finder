@@ -3,6 +3,7 @@
   "functionName": "doAction",
   "filePath": "java/compiler/impl/src/com/intellij/compiler/actions/CompileDirtyAction.java",
   "functionStartLine": 27,
+  "functionEndLine": null,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "53ddd10a442a5001ea580cfc4850648b506c868e": "Ybodychange",

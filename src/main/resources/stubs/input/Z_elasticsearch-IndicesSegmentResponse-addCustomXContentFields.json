@@ -3,6 +3,7 @@
   "functionName": "addCustomXContentFields",
   "filePath": "server/src/main/java/org/elasticsearch/action/admin/indices/segments/IndicesSegmentResponse.java",
   "functionStartLine": 105,
+  "functionEndLine": null,
   "startCommitName": "767c69593c67befb843686de8ea51b7bc87728c9",
   "expectedResult": {
     "b4c78019b02313bd1eaa61e0752ef3c2cf34f5a4": "Ybodychange",

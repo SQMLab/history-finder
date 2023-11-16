@@ -3,6 +3,7 @@
   "functionName": "indexNotNullArray",
   "filePath": "engine/src/main/java/org/hibernate/search/bridge/builtin/ArrayBridge.java",
   "functionStartLine": 46,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "7c1e5321baf4322da71ca747d75c771b9103e412": "Ybodychange",

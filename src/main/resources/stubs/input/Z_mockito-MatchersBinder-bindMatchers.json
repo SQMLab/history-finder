@@ -3,6 +3,7 @@
   "functionName": "bindMatchers",
   "filePath": "src/main/java/org/mockito/internal/invocation/MatchersBinder.java",
   "functionStartLine": 23,
+  "functionEndLine": null,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "fe7bbabb82ce3d1000c13d39d6355c134e94ac27": "Yfilerename",

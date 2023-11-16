@@ -3,6 +3,7 @@
   "functionName": "contentEqualsIgnoreEOL",
   "filePath": "src/main/java/org/apache/commons/io/IOUtils.java",
   "functionStartLine": 2794,
+  "functionEndLine": null,
   "startCommitName": "559de2c461e94ab636c959149c775bb27111fb48",
   "expectedResult": {
     "0cee0fe1d42f73933d8fdfedfe91bff8013f0bb3": "Ybodychange",

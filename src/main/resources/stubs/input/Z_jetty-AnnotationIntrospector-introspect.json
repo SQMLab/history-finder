@@ -3,6 +3,7 @@
   "functionName": "introspect",
   "filePath": "jetty-annotations/src/main/java/org/eclipse/jetty/annotations/AnnotationIntrospector.java",
   "functionStartLine": 86,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "5e83df20c8842f3da1ccdec7c3152da6b8e5beac": "Yparameterchange",

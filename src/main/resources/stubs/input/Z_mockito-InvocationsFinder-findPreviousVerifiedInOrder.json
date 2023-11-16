@@ -3,6 +3,7 @@
   "functionName": "findPreviousVerifiedInOrder",
   "filePath": "src/main/java/org/mockito/internal/invocation/InvocationsFinder.java",
   "functionStartLine": 119,
+  "functionEndLine": null,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "ae1af27799f53dfeeb23cda187a9247afc0cd951": "Ymodifierchange",

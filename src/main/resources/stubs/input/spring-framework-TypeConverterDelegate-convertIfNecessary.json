@@ -3,6 +3,7 @@
   "filePath": "spring-beans/src/main/java/org/springframework/beans/TypeConverterDelegate.java",
   "functionName": "convertIfNecessary",
   "functionStartLine": 152,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "f813712f5b413b354560cd7cc006352e9defa9a3": "Ymultichange(Ybodychange,Yparametermetachange)",

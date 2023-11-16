@@ -3,6 +3,7 @@
   "functionName": "getExpressionInfoAtOffset",
   "filePath": "java/debugger/impl/src/com/intellij/debugger/engine/JavaDebuggerEvaluator.java",
   "functionStartLine": 164,
+  "functionEndLine": null,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "adc4d91f33d13281a462628dd27dbaf70c6fb9fa": "Ybodychange",

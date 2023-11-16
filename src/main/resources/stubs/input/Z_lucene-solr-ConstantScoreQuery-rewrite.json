@@ -3,6 +3,7 @@
   "functionName": "rewrite",
   "filePath": "lucene/core/src/java/org/apache/lucene/search/ConstantScoreQuery.java",
   "functionStartLine": 49,
+  "functionEndLine": null,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "962313b83ba9c69379e1f84dffc881a361713ce9":"Ybodychange",

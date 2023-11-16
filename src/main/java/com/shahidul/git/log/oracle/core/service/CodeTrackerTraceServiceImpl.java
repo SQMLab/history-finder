@@ -37,7 +37,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         GitService gitService = new GitServiceImpl();
-        try (Repository repository = gitService.cloneIfNotExists("/dev/project/tmp/" + traceEntity.getRepositoryName(),
+        try (Repository repository = gitService.cloneIfNotExists("../tmp/" + traceEntity.getRepositoryName(),
                 traceEntity.getRepositoryUrl())) {
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)

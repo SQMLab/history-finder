@@ -3,6 +3,7 @@
   "functionName": "instanceFromName",
   "filePath": "engine/src/main/java/org/hibernate/search/util/impl/ClassLoaderHelper.java",
   "functionStartLine": 59,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "3db8c2dfa425219fd0d660c6c0e4194bfb818a38":"Ymultichange(Yparameterchange,Ybodychange)",

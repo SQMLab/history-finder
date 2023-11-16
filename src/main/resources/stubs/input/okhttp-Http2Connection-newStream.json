@@ -3,6 +3,7 @@
   "filePath": "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
   "functionName": "newStream",
   "functionStartLine": 233,
+  "functionEndLine": null,
   "startCommitName": "5224f3045ba9b171fce521777edf389f9206173c",
   "expectedResult": {
     "8f56e81f938c6f68d9e15f9b43f3f17ab467faa2": "Ybodychange",

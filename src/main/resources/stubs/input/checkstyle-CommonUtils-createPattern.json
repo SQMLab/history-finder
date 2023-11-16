@@ -4,6 +4,7 @@
     "filePath": "src/main/java/com/puppycrawl/tools/checkstyle/utils/CommonUtils.java",
     "functionName": "createPattern",
     "functionStartLine": 104,
+    "functionEndLine": 112,
     "startCommitName": "119fd4fb33bef9f5c66fc950396669af842c21a3",
     "expectedResult": {
         "ce21086e087661553f3a774c38362327ee88996a": "Ybodychange",
@@ -26,5 +27,6 @@
         "8d6fa332a9c8b0c350dfcb1d923d70bc5f3d921b": "Ymovefromfile",
         "f0f7f3e762ffef78dcf82bf1611c10da48b96cb9": "Ybodychange",
         "0fd69594a4c3e82f92f93f0371791da66938f8c3": "Yintroduced"
-    }
+    },
+    "intelliJ": "2864c10cd45d23b91717299954aaaf41d36a6cb0 ce21086e087661553f3a774c38362327ee88996a"
 }

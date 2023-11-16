@@ -3,6 +3,7 @@
   "functionName": "buildScopedAnalyzerReference",
   "filePath": "elasticsearch/src/main/java/org/hibernate/search/elasticsearch/analyzer/impl/Elasticsearch2AnalyzerStrategy.java",
   "functionStartLine": 273,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "d2dd845f749594b15127ac5d9943b0b3a11b4370": "Yfilerename",

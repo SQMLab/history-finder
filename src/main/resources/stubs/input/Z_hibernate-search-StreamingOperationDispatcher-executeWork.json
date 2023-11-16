@@ -3,6 +3,7 @@
   "functionName": "executeWork",
   "filePath": "engine/src/main/java/org/hibernate/search/backend/impl/StreamingOperationDispatcher.java",
   "functionStartLine": 49,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "1cf93d1325d9c1635bf919198916f2fdf6977dd6": "Ybodychange",

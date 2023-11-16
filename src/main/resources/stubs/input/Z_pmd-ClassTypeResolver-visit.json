@@ -3,6 +3,7 @@
   "functionName": "visit",
   "filePath": "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/typeresolution/ClassTypeResolver.java",
   "functionStartLine": 186,
+  "functionEndLine": null,
   "startCommitName": "d528dcd5d45582229ab3410deb7c40b2143d015d",
   "expectedResult": {
     "30afff46c65d17dd4974f4831b1ea0f0232bdf75": "Ybodychange",

@@ -3,6 +3,7 @@
   "filePath": "org.eclipse.jgit/src/org/eclipse/jgit/api/PullCommand.java",
   "functionName": "call",
   "functionStartLine": 206,
+  "functionEndLine": null,
   "startCommitName": "bd1a82502680b5de5bf86f6c4470185fd1602386",
   "expectedResult": {
     "df638e0cfc628469eee9a91df5b2b65634e274d7": "Ybodychange",

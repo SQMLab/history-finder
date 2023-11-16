@@ -3,6 +3,7 @@
   "functionName": "doHttpStream",
   "filePath": "src/main/java/org/apache/commons/io/input/XmlStreamReader.java",
   "functionStartLine": 449,
+  "functionEndLine": null,
   "startCommitName": "559de2c461e94ab636c959149c775bb27111fb48",
   "expectedResult": {
     "8993c0060e4eb2d5bca20e3529a829a9dd90efdf": "Ybodychange",

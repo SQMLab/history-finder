@@ -3,6 +3,7 @@
   "functionName": "getPortFromChannel",
   "filePath": "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java",
   "functionStartLine": 184,
+  "functionEndLine": null,
   "startCommitName": "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
   "expectedResult": {
     "7fc455654a19c3a988c6ca2116ce04001163adb4": "Ybodychange",

@@ -3,6 +3,7 @@
   "filePath": "spring-beans/src/main/java/org/springframework/beans/factory/support/ConstructorResolver.java",
   "functionName": "instantiateUsingFactoryMethod",
   "functionStartLine": 360,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "1603c4ab2fc49d1bd65f55e35ca899044835ca94": "Ybodychange",

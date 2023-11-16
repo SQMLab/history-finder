@@ -1,0 +1,61 @@
+{
+  "repositoryName" : "flink",
+  "repositoryUrl" : "https://flink/flink",
+  "commitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
+  "filePath" : "flink-core/src/main/java/org/apache/flink/core/fs/FileSystem.java",
+  "elementType" : "method",
+  "elementName" : "getUnguardedFileSystem",
+  "startLine" : 322,
+  "endLine" : 0,
+  "expectedCommits" : [ {
+    "commitHash" : "d7c2c417213502130b1aeab1868313df178555cc",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "536675b03a5050fda9c3e1fd403818cb50dcc6ff",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "3b786844dd9c0ce176eac98c8a05ebe50cb1ebe7",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "ba8ed263695d16eacb4bdfdf195dd22c83bb53ed",
+    "changeType" : "Yrename"
+  }, {
+    "commitHash" : "a3d1a17406749e41185a77a64c23fc1cb3eabc76",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "76d3a6353a0a3f8960dc2b49d9eac6a4a279ea9e",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1c8d866a83065e3d1bc9707dab81117f24c9f678",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "2af658673f877a7e0fd73fdd2907f88824d793a5",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "39fb7c945359465ce5241539559daac416e210b8",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "f2909293cbb37cc4b4516e3bef4db66376159e52",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "bbe54ac09154dd3e60870b0d26085e2e2ee564af",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "4203bf99ddd009b72681ba0dc554cabd47e1c85c",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "8b39ba9e45145a30c2b95c47d7b03bc3ed2a8a3a",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "8563d511da8ab8ac0e1362775f11aef7b67375be",
+    "changeType" : "Yfilerename"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "-----------------",
+        "changeType" : null
+      } ]
+    }
+  }
+}

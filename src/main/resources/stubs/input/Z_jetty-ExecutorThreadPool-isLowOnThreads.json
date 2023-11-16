@@ -3,6 +3,7 @@
   "functionName": "isLowOnThreads",
   "filePath": "jetty-util/src/main/java/org/eclipse/jetty/util/thread/ExecutorThreadPool.java",
   "functionStartLine": 264,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "a272fb6e391e126bbdd851bccfc6bde25870570e": "Ybodychange",

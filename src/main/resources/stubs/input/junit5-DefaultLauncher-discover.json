@@ -3,6 +3,7 @@
   "filePath": "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/DefaultLauncher.java",
   "functionName": "discover",
   "functionStartLine": 82,
+  "functionEndLine": null,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "402c756a056e13f5f49634616d87b1333e3c211e": "Ymultichange(Yparameterchange,Ybodychange)",

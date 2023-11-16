@@ -3,6 +3,7 @@
   "functionName": "createComponents",
   "filePath": "engine/src/main/java/org/hibernate/search/engine/impl/TokenizerChain.java",
   "functionStartLine": 48,
+  "functionEndLine": null,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "b3dc2cfffa7e016c288eaeb9e82443572a6c081d": "Ymultichange(Yparameterchange,Ybodychange,Yparametermetachange)",

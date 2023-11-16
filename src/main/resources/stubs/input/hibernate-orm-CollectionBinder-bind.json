@@ -3,6 +3,7 @@
   "filePath": "hibernate-core/src/main/java/org/hibernate/cfg/annotations/CollectionBinder.java",
   "functionName": "bind",
   "functionStartLine": 386,
+  "functionEndLine": null,
   "startCommitName": "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
   "expectedResult": {
     "f49efc7864ad2809e2cc42ec0185c2b07b8c4b83": "Ybodychange",
@@ -37,5 +38,6 @@
     "11668ca67c916595d2789787e37b3ed1affc1aa8": "Ybodychange",
     "9d7a03a5f7f03bc803d897baa590861154b39f5e": "Yfilerename",
     "7337743c93574823424ed6c399cfcf6bd75614f8": "Yintroduced"
-  }
+  },
+  "intelliJ": "-----------------"
 }

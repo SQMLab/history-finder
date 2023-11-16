@@ -3,6 +3,7 @@
   "functionName": "createCachedEvaluator",
   "filePath": "java/debugger/impl/src/com/intellij/debugger/ui/tree/render/TypeRenderer.java",
   "functionStartLine": 61,
+  "functionEndLine": null,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "3a1ed388b11d11e0c6185b353358368a8bd34daf": "Ybodychange",

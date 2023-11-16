@@ -3,6 +3,7 @@
   "filePath": "org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/pack/PackWriter.java",
   "functionName": "findObjectsToPack",
   "functionStartLine": 1775,
+  "functionEndLine": null,
   "startCommitName": "bd1a82502680b5de5bf86f6c4470185fd1602386",
   "expectedResult": {
     "32798dcfdb00662a640f0ff2915766591d21e287": "Ybodychange",

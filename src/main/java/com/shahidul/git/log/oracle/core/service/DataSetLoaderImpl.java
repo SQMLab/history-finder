@@ -2,6 +2,8 @@ package com.shahidul.git.log.oracle.core.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shahidul.git.log.oracle.core.enums.TrackerName;
+import com.shahidul.git.log.oracle.core.model.Analysis;
 import com.shahidul.git.log.oracle.core.model.Commit;
 import com.shahidul.git.log.oracle.core.model.Trace;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
@@ -19,6 +21,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -106,6 +109,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
             File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/input").getFile());
 
 
+            AtomicInteger fileNo = new AtomicInteger(0);
             //rootFileDir = classPathResource.getFile();
             List<Trace> traceEntityList = Arrays.stream(rootFileDir.listFiles())
                     .map(file -> {
@@ -120,7 +124,12 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .forEachRemaining(commit -> {
                                         commits.add(Commit.builder().commitHash(commit.getKey()).changeType(commit.getValue().asText()).build());
                                     });
+                            List<Commit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
+                                    .sorted(Comparator.reverseOrder())
+                                    .map(hash -> Commit.builder().commitHash(hash).build()).toList();
 
+                            HashMap<String, Analysis> analysis = new HashMap<>();
+                            analysis.put(TrackerName.INTELLI_J.getCode(), Analysis.builder().commits(ideaCommits).build());
                             Trace trace = Trace.builder()
                                     .repositoryName(repositoryName)
                                     .repositoryUrl("https://" + repositoryName + "/" + repositoryName)
@@ -129,10 +138,11 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .elementType("method")
                                     .elementName(json.get("functionName").asText())
                                     .startLine(json.get("functionStartLine").asInt())
-                                    .endLine(null)
+                                    .endLine(json.get("functionEndLine").asInt())
                                     .expectedCommits(commits)
+                                    .analysis(analysis)
                                     .build();
-                            File outputFile = new File( "./src/main/resources/stubs/java", file.getName());
+                            File outputFile = new File( "./src/main/resources/stubs/java", String.format("%04d", fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
 
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, trace);

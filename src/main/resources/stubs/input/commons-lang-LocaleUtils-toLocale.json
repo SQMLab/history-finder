@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/apache/commons/lang3/LocaleUtils.java",
   "functionName": "toLocale",
   "functionStartLine": 90,
+  "functionEndLine": 127,
   "startCommitName": "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
   "expectedResult": {
     "d3146a545612422d3f8078f10afa00342b327199": "Ybodychange",
@@ -26,5 +27,6 @@
     "75d931a3264b73caa9cdd7d3373375cc33008ddf": "Ybodychange",
     "d1f5ebf4122aaf0675ef5547c2a6733f52a892d4": "Ybodychange",
     "04e1537d3c41646fdb56b60fae70a630ae177796": "Yintroduced"
-  }
+  },
+  "intelliJ": "04e1537d3c41646fdb56b60fae70a630ae177796 d1f5ebf4122aaf0675ef5547c2a6733f52a892d4 cfd9081647e732143fbdc2db99681afa5b403a0f 4d46f014fb8ee44386feb5fec52509f35d0e36ea dcde57852a97a9ac8021d2440b3de5be4870ecf6 d77fe491fd4e5bed5319379c23893d92ed7fc9da 8303f1efa3141509441c9268f292941e3b161355 c99a4a3ee24758ae6e2271752d91b58c116e81e9 24b6a468ae6ba138c4f4a1f4793fed4e73bf3c15 8ea0c0284810bd6ec00f608be31abd20dbd4b72b 15b80753a6e8f481ea5029bc278e362994cb7bee 4bd982d1a1df87724682c17c39bf27b5cbe389be 3c89994355f3574078c832b2dcacba0e65e87ed1 d547412bbd2a1ca56769a2bfa13b7ed9547310ca d3146a545612422d3f8078f10afa00342b327199"
 }

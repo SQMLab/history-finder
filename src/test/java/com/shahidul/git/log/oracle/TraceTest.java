@@ -29,12 +29,12 @@ class TraceTest {
     @Autowired
     TraceAnalyzer traceAnalyzer;
 
- /*   @Test
+    @Test
     @Order(-1)
     public void preProcessCodeShovelTest() {
         dataSetLoader.codeShovelToUniformFormat();
 
-    }*/
+    }
 
     @Test
     @Order(0)

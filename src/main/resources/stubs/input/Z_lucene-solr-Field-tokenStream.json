@@ -3,6 +3,7 @@
   "functionName": "tokenStream",
   "filePath": "lucene/core/src/java/org/apache/lucene/document/Field.java",
   "functionStartLine": 472,
+  "functionEndLine": null,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "105c7eae87896762cbcb295c73c8e8b1fd8f71f8":"Ybodychange",

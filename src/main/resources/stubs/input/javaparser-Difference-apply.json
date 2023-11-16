@@ -3,6 +3,7 @@
   "filePath": "javaparser-core/src/main/java/com/github/javaparser/printer/lexicalpreservation/Difference.java",
   "functionName": "apply",
   "functionStartLine": 115,
+  "functionEndLine": null,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "2d3f5e219af9d1ba916f1dc21a6169a41a254632": "Ybodychange",
@@ -71,5 +72,6 @@
     "6f102302a83146e02d13ff476f39fc8a86710e38": "Ybodychange",
     "cc13f68e3655ea43b56dd13ee55a81f3a2d37fee": "Ybodychange",
     "c73ae5d79b62de91209477538b45ab5216fb108e": "Yintroduced"
-  }
+  },
+  "intelliJ": "-----------------"
 }

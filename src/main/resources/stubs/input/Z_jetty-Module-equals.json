@@ -3,6 +3,7 @@
   "functionName": "equals",
   "filePath": "jetty-start/src/main/java/org/eclipse/jetty/start/Module.java",
   "functionStartLine": 160,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "bbc84a3d0121b851fa55e1f3d90c7010ff4b4c13": "Ybodychange",

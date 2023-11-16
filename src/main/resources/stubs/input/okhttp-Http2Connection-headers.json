@@ -3,6 +3,7 @@
   "filePath": "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
   "functionName": "headers",
   "functionStartLine": 644,
+  "functionEndLine": null,
   "startCommitName": "5224f3045ba9b171fce521777edf389f9206173c",
   "expectedResult": {
     "abb0a790802996d1039c35424b70b0f3f06b94b7": "Ybodychange",

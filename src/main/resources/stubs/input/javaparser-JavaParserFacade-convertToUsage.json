@@ -3,6 +3,7 @@
   "filePath": "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/JavaParserFacade.java",
   "functionName": "convertToUsage",
   "functionStartLine": 519,
+  "functionEndLine": null,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "427dd53b9ebedcb0bdb687007eb0faf2de734df4": "Ybodychange",

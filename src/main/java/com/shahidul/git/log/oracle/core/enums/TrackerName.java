@@ -16,7 +16,7 @@ public enum TrackerName {
     CODE_TRACKER("codeTracker"),
     CODE_SHOVEL("codeShovel"),
     GIT_REGEX("gitRegex"),
-    JET_BRAINS("jetBrains");
+    INTELLI_J("intelliJ");
     String code;
     public static TrackerName fromCode(String code){
         for (TrackerName trackerName : values()){
@@ -27,5 +27,5 @@ public enum TrackerName {
         throw new RuntimeException("Illegal argument exception : " + code);
     }
 
-    public static final List<TrackerName> AGGREGATION_PRIORITY = Arrays.asList(CODE_SHOVEL, CODE_TRACKER, GIT_REGEX, JET_BRAINS);
+    public static final List<TrackerName> AGGREGATION_PRIORITY = Arrays.asList(CODE_SHOVEL, CODE_TRACKER, GIT_REGEX, INTELLI_J);
 }

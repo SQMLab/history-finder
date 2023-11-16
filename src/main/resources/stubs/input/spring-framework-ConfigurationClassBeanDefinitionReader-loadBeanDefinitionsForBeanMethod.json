@@ -3,6 +3,7 @@
   "filePath": "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassBeanDefinitionReader.java",
   "functionName": "loadBeanDefinitionsForBeanMethod",
   "functionStartLine": 174,
+  "functionEndLine": null,
   "startCommitName": "b325c74216fd9564a36602158fa1269e2e832874",
   "expectedResult": {
     "c037e75f26ac5ef69e4d5fc3045e101ca674dcaf": "Ybodychange",

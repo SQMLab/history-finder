@@ -3,6 +3,7 @@
   "functionName": "doStart",
   "filePath": "jetty-osgi/jetty-osgi-boot/src/main/java/org/eclipse/jetty/osgi/boot/ServiceWebAppProvider.java",
   "functionStartLine": 267,
+  "functionEndLine": null,
   "startCommitName": "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
   "expectedResult": {
     "96218e8bc42390c9ff6bb3c72f7deb6c5a0a7880": "Ybodychange",

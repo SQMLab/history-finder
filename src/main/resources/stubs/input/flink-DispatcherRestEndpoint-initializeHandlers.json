@@ -4,6 +4,7 @@
     "filePath": "flink-runtime/src/main/java/org/apache/flink/runtime/dispatcher/DispatcherRestEndpoint.java",
     "functionName": "initializeHandlers",
     "functionStartLine": 83,
+    "functionEndLine": null,
     "startCommitName": "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
     "expectedResult": {
         "0a5aebb0149d3660e549446a3d46df34ef1fb4d2": "Ybodychange",
@@ -56,5 +57,6 @@
         "dbabdb1cc2c122dbf1e83ffb9960491eaf4914bb": "Ybodychange",
         "55b76d54f0dcc4bdaa96eaa463ce0bfcad23d239": "Ymultichange(Yparameterchange,Yreturntypechange,Ybodychange)",
         "6a62f1455313ee8fae0ff79945da61fb67ec8edb": "Yintroduced"
-    }
+    },
+    "intelliJ": "-----------------"
 }

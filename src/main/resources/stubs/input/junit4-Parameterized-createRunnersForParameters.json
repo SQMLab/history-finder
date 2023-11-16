@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/Parameterized.java",
   "functionName": "createRunnersForParameters",
   "functionStartLine": 439,
+  "functionEndLine": null,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "1bf8438b65858565dbb64736bfe13aae9cfc1b5a": "Ybodychange",

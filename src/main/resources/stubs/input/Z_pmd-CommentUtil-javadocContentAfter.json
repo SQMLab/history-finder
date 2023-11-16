@@ -3,6 +3,7 @@
   "functionName": "javadocContentAfter",
   "filePath": "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/CommentUtil.java",
   "functionStartLine": 78,
+  "functionEndLine": null,
   "startCommitName": "d528dcd5d45582229ab3410deb7c40b2143d015d",
   "expectedResult": {
     "b5cb2bbb854e22783baf7227b2c3bf739e072461": "Ybodychange",

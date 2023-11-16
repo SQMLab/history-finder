@@ -3,6 +3,7 @@
   "functionName": "addClause",
   "filePath": "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
   "functionStartLine": 374,
+  "functionEndLine": null,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "4aafacfbef423a25a349dd8c6e5e6178ac1ba334":"Ybodychange",

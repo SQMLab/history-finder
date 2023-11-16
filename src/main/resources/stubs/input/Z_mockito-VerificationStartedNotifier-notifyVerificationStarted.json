@@ -3,6 +3,7 @@
   "functionName": "notifyVerificationStarted",
   "filePath": "src/main/java/org/mockito/internal/listeners/VerificationStartedNotifier.java",
   "functionStartLine": 20,
+  "functionEndLine": null,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "4bc732153e83b9490d6d94c2e27ea2f6ac9dc10c": "Ymultichange(Yparameterchange,Ybodychange)",

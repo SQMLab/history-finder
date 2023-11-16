@@ -3,6 +3,7 @@
   "filePath": "junit-platform-console/src/main/java/org/junit/platform/console/options/AvailableOptions.java",
   "functionName": "toCommandLineOptions",
   "functionStartLine": 220,
+  "functionEndLine": null,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "c52afe0668c462a5935a708cb396d234eeb018d4": "Ybodychange",

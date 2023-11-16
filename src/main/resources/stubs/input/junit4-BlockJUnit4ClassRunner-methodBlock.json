@@ -3,6 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "methodBlock",
   "functionStartLine": 303,
+  "functionEndLine": null,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "bd5b90f75908b7a3ed074a7be29823170f008fb4": "Ymultichange(Ybodychange,Yparametermetachange)",

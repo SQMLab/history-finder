@@ -4,6 +4,7 @@
     "filePath": "flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/ConnectedStreams.java",
     "functionName": "map",
     "functionStartLine": 226,
+    "functionEndLine": null,
     "startCommitName": "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
     "expectedResult": {
         "ddba1b69f43cbb885e178dfaafa120f1fe196a13": "Ybodychange",
@@ -22,5 +23,6 @@
         "1b046f4e334926e560456c2b2ef3b67e635e4700": "Ybodychange",
         "696bce02f42973777304b0ad3fe4cc62a4f5e976": "Ymovefromfile",
         "d56d48f1a1933f138f5d97f42b71aa64fad6bc6f": "Yintroduced"
-    }
+    },
+    "intelliJ": "-----------------"
 }
