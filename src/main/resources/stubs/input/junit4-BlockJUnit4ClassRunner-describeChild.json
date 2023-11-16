@@ -3,7 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "describeChild",
   "functionStartLine": 117,
-  "functionEndLine": null,
+  "functionEndLine": 127,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "df00d5eced3a7737b88de0f6f9e3673f0cf88f88": "Ybodychange",
@@ -26,5 +26,5 @@
     "40cc52cf5f5dc1dd1ee513410536bdc11422307d": "Yfilerename",
     "478f7f9217cf5da219a7ba298e3a87f405378194": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "30f2b16525dabb477373be9ed3e76bb98b200806 bbacbd93334540a5054bb50488f662c3f81a9c00 bb91daf8e0939d787ffb5a3eda05c2d626cd9851 08719e9b61d07c17b6a4f599ecd2cd1a1519120a 2918286bf4a010c9ac8eadffb958ff10fb41ad62 df00d5eced3a7737b88de0f6f9e3673f0cf88f88"
 }

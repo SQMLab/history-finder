@@ -3,7 +3,7 @@
   "filePath": "junit-platform-engine/src/main/java/org/junit/platform/engine/support/hierarchical/NodeTestTask.java",
   "functionName": "execute",
   "functionStartLine": 100,
-  "functionEndLine": null,
+  "functionEndLine": 113,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "137f831bba9d0f45085d64fad47947cbc91a30e9": "Ybodychange",
@@ -39,5 +39,5 @@
     "57b31220d25f59bb4aa4903dfee4b8ec2be4525e": "Ymultichange(Yparameterchange,Ybodychange)",
     "28ffd5ee9d1e996133445cac2256407f28380e91": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "2f3440e0f221255a83b28c42cf77407bde92a8b4 c1d682aee5da5738fc3be071df45330c005f4cf1 137f831bba9d0f45085d64fad47947cbc91a30e9"
 }

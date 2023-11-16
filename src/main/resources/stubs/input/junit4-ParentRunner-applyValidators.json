@@ -3,10 +3,10 @@
   "filePath": "src/main/java/org/junit/runners/ParentRunner.java",
   "functionName": "applyValidators",
   "functionStartLine": 154,
-  "functionEndLine": null,
+  "functionEndLine": 160,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "1d97da73fdafce8f5cf9d722f23c5cba41b26b70": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "d3ee5d06c0b797ce812cbfe35addc6146d5f07cb a14fc5f174c08a9ff6e97b266ae3d84efcbd84e6 9d3821f6411ad85a683b8d38e4d42411229f2eec 1d97da73fdafce8f5cf9d722f23c5cba41b26b70"
 }

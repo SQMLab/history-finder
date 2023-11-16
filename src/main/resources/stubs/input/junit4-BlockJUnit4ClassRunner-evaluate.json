@@ -3,10 +3,10 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "evaluate",
   "functionStartLine": 99,
-  "functionEndLine": null,
+  "functionEndLine": 101,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "3f736cf514b0421a82383db74188f6c0e3dfef1a": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "7a3e99635d7ffcc4d730f27835eeaeb082003199 7a2b0460c7abd7573faa9d7845a5b1169dcdcb7f 4abb65c56382cdd4ff453ddceb70b5944e6e0b38 b5fb9c92dfb1380b8a8b0b53aea3e7f7627ee03c 79ef5a7e1d7fa144cc81c9414f4791aaea8b3d75 56743a446c8fe01319c6588c1709bcf1a090ccde bed58a573c373d57d64fa369f58b2a8f0dbee3d7 b3789b3f879d34bbe968d5aa51d15c8856b9d102 a49240ade1974b948b20cf2c45d9129f04122735 30f2b16525dabb477373be9ed3e76bb98b200806 bbacbd93334540a5054bb50488f662c3f81a9c00 bb91daf8e0939d787ffb5a3eda05c2d626cd9851 a90b496a6595856066504baf4f737fb853a6e45d 3f736cf514b0421a82383db74188f6c0e3dfef1a"
 }

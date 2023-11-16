@@ -3,7 +3,7 @@
   "filePath": "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/SourceFileInfoExtractor.java",
   "functionName": "solve",
   "functionStartLine": 114,
-  "functionEndLine": null,
+  "functionEndLine": 138,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "b54617e765d73b3ce0d187cf12ad8da382bce439": "Ybodychange",
@@ -38,5 +38,5 @@
     "bf2f13e26271634e5c0742392c1f5d0de2cad171": "Ybodychange",
     "0c4c859f472f7243919f1af7a0871cf8155af1ba": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "37f93be6476b00be051173d0cde614fc8a3677e5 34c91d23e99607ae236a5a5ef74ea2ac60befa7b 4b4544995752d3f5be9519a472d4b1810f1a6d1c 9ad141ca3325e35ce5e1348f782c5dcc93dc13af 49719b4acbe10e3714ceb4f7040acac34709f558 29909336231ebe9473edc4bfaaccdbfdebceb72a 82eb44707b620803d424188a1eb8708fcaf093cb 3e4b012ca278ee33e9e02984367028cb1adf4bf5 53afb5bd2717dfdefd3c3c37fa8520b5482082dd 52b60cf471dc9d7b53d8f22018d9c4e4fcc15923 e15d5a8aa84a34917e4ef47135dfc62e58ea7650 b54617e765d73b3ce0d187cf12ad8da382bce439"
 }

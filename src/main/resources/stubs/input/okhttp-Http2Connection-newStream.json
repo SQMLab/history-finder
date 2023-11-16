@@ -3,7 +3,7 @@
   "filePath": "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
   "functionName": "newStream",
   "functionStartLine": 233,
-  "functionEndLine": null,
+  "functionEndLine": 271,
   "startCommitName": "5224f3045ba9b171fce521777edf389f9206173c",
   "expectedResult": {
     "8f56e81f938c6f68d9e15f9b43f3f17ab467faa2": "Ybodychange",
@@ -44,5 +44,5 @@
     "2bd54fa72fe72f92212428a024050838c2b62d57": "Ybodychange",
     "ea63463c2ff8a67f63e541036f0d5998b5bb1f3e": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "d4508141fc9fa1b816c5a1ff3f39149d4dfb22de 358169b89f32c00bf229b4e42ccef756588da71f ab78dadb4bb94db74770e179e04e2ed791c4a51e fb46f100a4d66342a0b101624fd351a51b6f14a9 a5ba3e9062f3bde4bb6896f1db433a2408119e94 1ab398fb93f61e6053ba0190fb76b2d312b83800 cc38140be4c7e41330cf7749c3eeba23c85f9522 c753d2e41ba667f9b5a31451a16ecbaecdc65d80 1503e362f61ca8c55adebcce802a724ae375debe a18d4e184b224d1567ffc1faa5502a5eeaf5445c 0c04821a25c83fddebb29e8cd590609142ba20a2 3d43a8dba89ccd7333c3ebcf74928e441790d943 86be1c3acdf3c7b26c57cae17612b74ada5ce1a1 8f56e81f938c6f68d9e15f9b43f3f17ab467faa2"
 }

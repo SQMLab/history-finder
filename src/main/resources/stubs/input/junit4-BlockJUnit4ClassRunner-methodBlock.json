@@ -3,7 +3,7 @@
   "filePath": "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "functionName": "methodBlock",
   "functionStartLine": 303,
-  "functionEndLine": null,
+  "functionEndLine": 323,
   "startCommitName": "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
   "expectedResult": {
     "bd5b90f75908b7a3ed074a7be29823170f008fb4": "Ymultichange(Ybodychange,Yparametermetachange)",
@@ -36,5 +36,5 @@
     "4081076e513e84bb2376f889d4108e64e9a18653": "Ymultichange(Ymodifierchange,Ybodychange)",
     "679e5dd3e4af3115492fabed45ea8c48bfa9d9bf": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "e6769d4009db8030661815965e2e22829a4619ff 409a8e06c9f2ec5aa0d9db8a3d413f394c290f6d a1813f62876a6c7227ec5c866b621e01cda79664 dee8a47af11dd88139f4d46a1ebee7fc613e367e 54917b88aab026dabb4541276ed875117c1e1faa d2da6a55bca4582c9a469f568df472a00e90ddf4 a68ae0886c1c6274943e6f99d70816d162273d9c 7a2b0460c7abd7573faa9d7845a5b1169dcdcb7f 86abf33f863fee1db3ba7dd8ee3e9910f105f57d 12b9b787a161d4b460d4d6a14da6ac53cac3713b 4abb65c56382cdd4ff453ddceb70b5944e6e0b38 b5fb9c92dfb1380b8a8b0b53aea3e7f7627ee03c 79ef5a7e1d7fa144cc81c9414f4791aaea8b3d75 56743a446c8fe01319c6588c1709bcf1a090ccde 5f25ca318bc2b35ecf8526c08a1e3b3e17d375da bed58a573c373d57d64fa369f58b2a8f0dbee3d7 e7a0111ce26bbce9c81f471ff925653fe0ead70d 7f6173aa593b07856c1ca73ffaf87ff10ea15d4c 9d8bb069f68e2194db742981972c8930381b62c2 b3789b3f879d34bbe968d5aa51d15c8856b9d102 a49240ade1974b948b20cf2c45d9129f04122735 de86eb205637ea755909554b93d6da89353414dd 30f2b16525dabb477373be9ed3e76bb98b200806 bbacbd93334540a5054bb50488f662c3f81a9c00 bb91daf8e0939d787ffb5a3eda05c2d626cd9851 bd5b90f75908b7a3ed074a7be29823170f008fb4 113e8b7c6fd3f96ddbd9c759c58a27877f0f854b"
 }

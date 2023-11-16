@@ -3,7 +3,7 @@
   "filePath": "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/DefaultLauncher.java",
   "functionName": "discover",
   "functionStartLine": 82,
-  "functionEndLine": null,
+  "functionEndLine": 85,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "402c756a056e13f5f49634616d87b1333e3c211e": "Ymultichange(Yparameterchange,Ybodychange)",
@@ -39,5 +39,5 @@
     "2e1ad2e7fc7fbc71b12027f9777bbbd2a7a8667a": "Ymultichange(Yparameterchange,Ybodychange)",
     "cbf97077bae0db71dc3a7cade28c3b00587a8699": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "75a91267a92e9fd4d171a3f18f2135e675687961 226ecd8efc45e4540bba43f6c604e891b5a94689 f6372b05546e29c74e6809f4e54a096f537bcd5d cbf97077bae0db71dc3a7cade28c3b00587a8699 2e1ad2e7fc7fbc71b12027f9777bbbd2a7a8667a 62a0ab3e60e4a1c62c806934158444f901d8e22c cdaf66815c7308c9d5a430f08c7bc0d790a80534 830b6d5976b6db01dad3866cfb3d54c6216b1252 1c6a2598fb0bed05dc746a207ab1057550819bf0 d6b17576a2b7e2d1ba28dbef2430c042ad1b887a cfed3cac24530762a6a8b99627b17f5b00ac9260 ad553b10b4b2b1a78c9a0c91a6d50ebb1421ff3f 9162134ee3dfc3e80a45d08e32fdbf8ed06e87be 9da25e126d174ba6e6ae02596afa538a7cafe17b 961fd47344c55d21907607ec9672df6d4f3d2362 57b07e0594875902399805d6e41514f03a4b2f31 0d96e17fb66ba6e7dc174c5c87a1c4cfc3fade33 35d4733fea906c6853ef0f12ba4bb86c838d6046 402c756a056e13f5f49634616d87b1333e3c211e"
 }

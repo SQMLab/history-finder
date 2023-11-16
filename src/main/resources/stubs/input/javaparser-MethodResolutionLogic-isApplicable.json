@@ -3,7 +3,7 @@
   "filePath": "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/resolution/MethodResolutionLogic.java",
   "functionName": "isApplicable",
   "functionStartLine": 71,
-  "functionEndLine": null,
+  "functionEndLine": 143,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "09232ff6b0ea19e850482f3a87ac6ef1c063c759": "Yfilerename",
@@ -39,5 +39,5 @@
     "80f951258992f75441239c79e0f31eda7d47e107": "Ymultichange(Yparameterchange,Ybodychange)",
     "d420a496cd03b7e9b5c4cce5074d8a74da69f3cd": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "39477e7f9375d6a539eb0ddc69eb69d986b2a8c8 49719b4acbe10e3714ceb4f7040acac34709f558 ead147279ca0b84d2f479a714943b20cd689e7c7 e2cc24a4f5a54a058c1d9ba971b7c8aa0a445601 e3e4b88ee821fdcec76aa3c940cb4b4f466bc2cd c48864ccaea00039c2f6a8390d21cffd3fbde054 b20f28d6034a54108c056947c631c360fa079138 6e654694b8d141fd5503b46f9e77b8763cfa9a81 82eb44707b620803d424188a1eb8708fcaf093cb ecc78c8b480ceb41019f764c983aaa69c2dabfe3 051dbd94c17c4f142d3fe9e8fbd03c29d09ace54 69e724f5a168e148ea4479c872cfbf656fce8acc 88db8b2a8b93bcc692cb8fd5085ba68b8bcf1968 1e7780e554428a10c73de88ca64e5933b2291593 b32947e8c85bc21fe533173f50d4a0a91036fdaf c990d23490f5c4ac4322119b03d5951b63eef055 e15d5a8aa84a34917e4ef47135dfc62e58ea7650 7d9373000da5ce39672d8be6a269a01a54cf1e8d"
 }

@@ -3,7 +3,7 @@
   "filePath": "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/contexts/MethodCallExprContext.java",
   "functionName": "solveMethodAsUsage",
   "functionStartLine": 76,
-  "functionEndLine": null,
+  "functionEndLine": 121,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "791449a6ab0696f4c0109908a4a0925e514b10d9": "Ybodychange",
@@ -50,5 +50,5 @@
     "627b56302d259409e9bc50b20d77803484f18b5c": "Ybodychange",
     "fd2e083224d3ee0e9ccca4431d63a84601e0d606": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "27f0f20ee38a85d0d7a476f9a49d15325d4d660e 03055f925053b3970b9d14cce3a3b9a0d002366d ca3e3a946698cf3a4f93e6fb7b4d2b16ee2e3ed5 6e1380f412d334f1c887d15edf0b4610c3cf0da2 065875981b4d1ffa4bf3535d7c89319a4a3345f1 17ac5ada0476c72aa79a2e0c39311e90bfa0fe60 acdac6790f4424f8097b3aa6c888e825cac485f9 dd5c0a00fb9cbd9995d9141907848ec5a3342760 5d8d0cb7947efcf2282f7d056302dd905f348532 791449a6ab0696f4c0109908a4a0925e514b10d9"
 }

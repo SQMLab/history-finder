@@ -36,10 +36,23 @@ public class DataSetLoaderImpl implements DataSetLoader {
     ObjectMapper objectMapper;
     TraceRepository traceRepository;
     private static final MessageDigest DIGESTER;
+    static final Map<String, String> repoMap = new HashMap<>();
+
 
     static {
         try {
             DIGESTER = MessageDigest.getInstance("SHA-256");
+            repoMap.put("checkstyle", "https://github.com/checkstyle/checkstyle.git");
+            repoMap.put("commons-lang", "https://github.com/apache/commons-lang.git");
+            repoMap.put("flink", "https://github.com/apache/flink.git");
+            repoMap.put("hibernate-orm", "https://github.com/hibernate/hibernate-orm.git");
+            repoMap.put("javaparser", "https://github.com/javaparser/javaparser.git");
+            repoMap.put("jgit", "https://gerrit.googlesource.com/jgit");
+            repoMap.put("junit4", "https://github.com/junit-team/junit4.git");
+            repoMap.put("junit5", "https://github.com/junit-team/junit5.git");
+            repoMap.put("okhttp", "https://github.com/square/okhttp.git");
+            repoMap.put("spring-framework", "https://github.com/spring-projects/spring-framework.git");
+
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
@@ -132,7 +145,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             analysis.put(TrackerName.INTELLI_J.getCode(), Analysis.builder().commits(ideaCommits).build());
                             Trace trace = Trace.builder()
                                     .repositoryName(repositoryName)
-                                    .repositoryUrl("https://" + repositoryName + "/" + repositoryName)
+                                    .repositoryUrl(repoMap.get(repositoryName))
                                     .commitHash(json.get("startCommitName").asText())
                                     .filePath(json.get("filePath").asText())
                                     .elementType("method")
@@ -171,6 +184,6 @@ public class DataSetLoaderImpl implements DataSetLoader {
                 .append(trace.getStartLine())
                 .toString();
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
-
     }
+
 }

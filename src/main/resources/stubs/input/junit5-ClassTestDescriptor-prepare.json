@@ -3,7 +3,7 @@
   "filePath": "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.java",
   "functionName": "prepare",
   "functionStartLine": 140,
-  "functionEndLine": null,
+  "functionEndLine": 172,
   "startCommitName": "77cfe71e7f787c59626198e25350545f41e968bd",
   "expectedResult": {
     "137f831bba9d0f45085d64fad47947cbc91a30e9": "Ybodychange",
@@ -48,5 +48,5 @@
     "57b31220d25f59bb4aa4903dfee4b8ec2be4525e": "Ymultichange(Yparameterchange,Yreturntypechange,Ybodychange)",
     "28ffd5ee9d1e996133445cac2256407f28380e91": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "b4957a135bb9b9eba12c8bcb154c8cfbfb4cc566 c0a0e14d2c11bb77bfe25aee9594b04e793b04aa b2ba6b95138382f25ca757a5ca2a7295bee4c3b8 b691e6a02b9436939bf1867156aa8d8cea4e3fbf 6b575f2ee5f02288a774ff0a85ce3a3e3cb6946f dfe33b0e7e22b64b712593ea3b635675edbd6f73 65e0bd5483c8923393fa85955ddaf24d68fd8042 babcc661bd906b38a272f287ac8779669268fc58 c95005adbe2f754997a43009a47124f725496530 bf1e000a7f68076e2921ac4f020e5f8c24330e84 902d36a3e915aed15063764f108ace96a41140b4 323dac88536a9768ea92183598e695b39da62a1a 83b3eb665aa35a87cfd8484e0d06cc3b3d0478c7 17360a5a086050e41718aa11d7e7c19c02c79d72 6229d4cad76364862667f8f609f880fd9eed43eb f750c85946939119d05966c65fc81ce68444b2b9 5d7d85d0b0fb8b7e9e811b2dd28c955a891d4c55 788ec1aa3ff5103aeb622c252a15036dd7fa70d4 65d54b1a0e9d73d0e4cb64cc219b7d6cb13be314 27ae8cf548cf70e4c671705d2e03777f3bf19d1a 479491f2f417a553238f28ab196a23b9c2b9099e 920f6ea401ff38d1d66b594ddddfedb98bc8b68c 4c55c3a6f31ab205ff426cbb1f5a4589a95f2776 137f831bba9d0f45085d64fad47947cbc91a30e9"
 }

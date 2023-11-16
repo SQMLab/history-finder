@@ -3,7 +3,7 @@
   "filePath": "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/contexts/MethodCallExprContext.java",
   "functionName": "solveMethod",
   "functionStartLine": 153,
-  "functionEndLine": null,
+  "functionEndLine": 162,
   "startCommitName": "97555053af3025556efe1a168fd7943dac28a2a6",
   "expectedResult": {
     "09232ff6b0ea19e850482f3a87ac6ef1c063c759": "Yfilerename",
@@ -43,5 +43,5 @@
     "8b8cc6cddbf5af0c93c4ceffd015f6328c932149": "Ymultichange(Yparameterchange,Ybodychange)",
     "2f49331fb22511346eea8800d27907de44409d5b": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "27f0f20ee38a85d0d7a476f9a49d15325d4d660e 03055f925053b3970b9d14cce3a3b9a0d002366d ca3e3a946698cf3a4f93e6fb7b4d2b16ee2e3ed5 6e1380f412d334f1c887d15edf0b4610c3cf0da2 c990d23490f5c4ac4322119b03d5951b63eef055 e47162df70ac5344d1a7b8c08220474224e64536 065875981b4d1ffa4bf3535d7c89319a4a3345f1 e5fe2b597be66d230f8824277c1d4167fa2bb609 17ac5ada0476c72aa79a2e0c39311e90bfa0fe60 acdac6790f4424f8097b3aa6c888e825cac485f9 5d8d0cb7947efcf2282f7d056302dd905f348532 1db4cd7914d4f36224a4a8944e546650d5fc5a4d"
 }
