@@ -3,7 +3,7 @@
   "functionName": "copy",
   "filePath": "src/main/java/org/apache/commons/io/CopyUtils.java",
   "functionStartLine": 134,
-  "functionEndLine": null,
+  "functionEndLine": 137,
   "startCommitName": "559de2c461e94ab636c959149c775bb27111fb48",
   "expectedResult": {
     "6aa00766b9103d75c763160280429af8e1f0549e": "Yparametermetachange",
@@ -12,5 +12,5 @@
     "d5e24a4f1a2ff0e5c565f5b78fc0691e639b876e": "Yparametermetachange",
     "6a1bb4d53562a50bbaad48ee2c94971649e24cf5": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "6a1bb4d53562a50bbaad48ee2c94971649e24cf5 d5e24a4f1a2ff0e5c565f5b78fc0691e639b876e 8ab260ef261f794ec394043f496d985411ad396f 6afa3db854c9b574faaf1499247a898c524eded7 ceb601db78aff9eeeef35a32b9a6fda26dbce555 f0c9d8d08404ba2bad6c581bc76ecb1eef6c9bff 6aa00766b9103d75c763160280429af8e1f0549e"
 }

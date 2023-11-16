@@ -52,6 +52,16 @@ public class DataSetLoaderImpl implements DataSetLoader {
             repoMap.put("junit5", "https://github.com/junit-team/junit5.git");
             repoMap.put("okhttp", "https://github.com/square/okhttp.git");
             repoMap.put("spring-framework", "https://github.com/spring-projects/spring-framework.git");
+            repoMap.put("commons-io", "https://github.com/apache/commons-io.git");
+            repoMap.put("elasticsearch", "https://github.com/elastic/elasticsearch.git");
+            repoMap.put("hadoop", "https://github.com/apache/hadoop.git");
+            repoMap.put("hibernate-search", "https://github.com/hibernate/hibernate-search.git");
+            repoMap.put("intellij-community", "https://github.com/JetBrains/intellij-community.git");
+            repoMap.put("jetty.project", "https://github.com/eclipse/jetty.project.git");
+            repoMap.put("lucene-solr", "https://github.com/apache/lucene-solr.git");
+            repoMap.put("mockito", "https://github.com/mockito/mockito.git");
+            repoMap.put("pmd", "https://github.com/pmd/pmd.git");
+            repoMap.put("spring-boot", "https://github.com/spring-projects/spring-boot.git");
 
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);

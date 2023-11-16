@@ -3,7 +3,7 @@
   "functionName": "toXContent",
   "filePath": "server/src/main/java/org/elasticsearch/action/admin/indices/segments/IndicesSegmentResponse.java",
   "functionStartLine": 196,
-  "functionEndLine": null,
+  "functionEndLine": 209,
   "startCommitName": "767c69593c67befb843686de8ea51b7bc87728c9",
   "expectedResult": {
     "4a8099c6962da1e68309e0e382d0e6198a3937c2": "Ymodifierchange",
@@ -12,5 +12,5 @@
     "15a62448343fd24f8e63f43b1e4b16f50005e4a5": "Yfilerename",
     "f7f99b8dbfe4cc10612faceec8f82e03884f0d6d": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "f7f99b8dbfe4cc10612faceec8f82e03884f0d6d 4bd217c94f4cea806b1ab41b359908355ac2984c 4a8099c6962da1e68309e0e382d0e6198a3937c2"
 }
