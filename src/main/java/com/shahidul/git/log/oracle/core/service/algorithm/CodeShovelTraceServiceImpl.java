@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.service;
+package com.shahidul.git.log.oracle.core.service.algorithm;
 
 import com.felixgrund.codeshovel.changes.Ychange;
 import com.felixgrund.codeshovel.entities.Yresult;
@@ -97,12 +97,12 @@ public class CodeShovelTraceServiceImpl implements TraceService {
       /*  if (json.has("extendedDetails")){
             commitBuilder.diffDetail(json.get("extendedDetails").getAsString());
         }*/
-        if (json.has("commitsBetweenForRepo")){
+     /*   if (json.has("commitsBetweenForRepo")){
             commitBuilder.commitsBetweenForRepo(json.get("commitsBetweenForRepo").getAsInt());
         }
         if (json.has("commitsBetweenForFile")){
             commitBuilder.commitsBetweenForFile(json.get("commitsBetweenForFile").getAsInt());
-        }
+        }*/
 
 
  /*       if (json.has("commitDateOld")){

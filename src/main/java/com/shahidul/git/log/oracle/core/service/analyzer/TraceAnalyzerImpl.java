@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.service;
+package com.shahidul.git.log.oracle.core.service.analyzer;
 
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;

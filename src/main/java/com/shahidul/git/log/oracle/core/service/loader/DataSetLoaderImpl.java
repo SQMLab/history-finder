@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.service;
+package com.shahidul.git.log.oracle.core.service.loader;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

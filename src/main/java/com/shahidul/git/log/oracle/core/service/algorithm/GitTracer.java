@@ -1,9 +1,8 @@
-package com.shahidul.git.log.oracle.core.service;
+package com.shahidul.git.log.oracle.core.service.algorithm;
 
 import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.shahidul.git.log.oracle.config.AppProperty;
-import com.shahidul.git.log.oracle.core.enums.TrackerName;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
@@ -17,7 +16,6 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.filter.RevFilter;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,6 +24,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -62,7 +61,7 @@ public abstract class GitTracer implements TraceService {
 
 
             Process process = runtime.exec(cmd, null, new File(repositoryLocation));
-            process.waitFor();
+            process.waitFor(30, TimeUnit.SECONDS );
 
             Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getCommitHash());
 

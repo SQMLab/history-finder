@@ -1,9 +1,9 @@
 package com.shahidul.git.log.oracle;
 
-import com.shahidul.git.log.oracle.core.service.DataSetLoader;
-import com.shahidul.git.log.oracle.core.service.TraceAggregatorService;
-import com.shahidul.git.log.oracle.core.service.TraceAnalyzer;
-import com.shahidul.git.log.oracle.core.service.TraceExecutor;
+import com.shahidul.git.log.oracle.core.service.loader.DataSetLoader;
+import com.shahidul.git.log.oracle.core.service.aggregator.TraceAggregatorService;
+import com.shahidul.git.log.oracle.core.service.analyzer.TraceAnalyzer;
+import com.shahidul.git.log.oracle.core.service.executor.TraceExecutor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;

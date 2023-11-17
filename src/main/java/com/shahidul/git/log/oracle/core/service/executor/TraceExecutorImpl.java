@@ -1,7 +1,8 @@
-package com.shahidul.git.log.oracle.core.service;
+package com.shahidul.git.log.oracle.core.service.executor;
 
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.git.log.oracle.core.service.algorithm.TraceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class TraceExecutorImpl implements TraceExecutor {
 
     @Override
     public void execute() {
-        List<TraceEntity> traceEntityList = traceRepository.findAll().stream().limit(10).toList();
+        List<TraceEntity> traceEntityList = traceRepository.findAll().stream().limit(100).toList();
         traceServiceList.stream()
                 .map(traceService -> {
                     traceEntityList.stream()

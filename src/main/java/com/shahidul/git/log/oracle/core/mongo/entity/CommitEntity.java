@@ -30,6 +30,4 @@ public class CommitEntity {
     String elementNameAfter;
     String diff;
     String diffDetail;
-    Integer commitsBetweenForRepo;
-    Integer commitsBetweenForFile;
 }
