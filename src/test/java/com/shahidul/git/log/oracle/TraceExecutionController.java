@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 @Slf4j
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class TraceTest {
+class TraceExecutionController {
 
     @Autowired
     TraceExecutor traceExecutor;

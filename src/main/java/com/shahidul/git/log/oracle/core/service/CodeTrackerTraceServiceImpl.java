@@ -13,7 +13,6 @@ import org.codetracker.element.Method;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -27,7 +26,6 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class CodeTrackerTraceServiceImpl implements TraceService {
-    @Autowired
     AppProperty appProperty;
 
     @Override
@@ -61,7 +59,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                     .collect(Collectors.toList());
             traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(gitCommitList).build());
             return traceEntity;
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
 

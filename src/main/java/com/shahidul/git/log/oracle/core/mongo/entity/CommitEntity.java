@@ -21,6 +21,8 @@ public class CommitEntity {
     String parentCommitHash;
     Date committedAt;
     String author;
+    String email;
+    String message;
     String changeType;
     String elementFileBefore;
     String elementFileAfter;
@@ -30,5 +32,4 @@ public class CommitEntity {
     String diffDetail;
     Integer commitsBetweenForRepo;
     Integer commitsBetweenForFile;
-
 }
