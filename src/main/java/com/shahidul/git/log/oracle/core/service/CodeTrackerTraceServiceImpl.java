@@ -1,9 +1,11 @@
 package com.shahidul.git.log.oracle.core.service;
 
+import com.shahidul.git.log.oracle.config.AppProperty;
 import com.shahidul.git.log.oracle.core.enums.TrackerName;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
 import org.codetracker.api.History;
 import org.codetracker.api.MethodTracker;
@@ -11,6 +13,7 @@ import org.codetracker.element.Method;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -22,7 +25,10 @@ import java.util.stream.Collectors;
  * @since 11/10/2023
  */
 @Service
+@AllArgsConstructor
 public class CodeTrackerTraceServiceImpl implements TraceService {
+    @Autowired
+    AppProperty appProperty;
 
     @Override
     public String getTracerName() {
@@ -37,7 +43,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         GitService gitService = new GitServiceImpl();
-        try (Repository repository = gitService.cloneIfNotExists("../tmp/" + traceEntity.getRepositoryName(),
+        try (Repository repository = gitService.cloneIfNotExists(appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName(),
                 traceEntity.getRepositoryUrl())) {
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)
@@ -66,7 +72,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .tracerName(getTracerName())
                 .parentCommitHash(historyInfo.getParentCommitId())
                 .commitHash(historyInfo.getCommitId())
-                .commitTime(new Date(historyInfo.getCommitTime()))
+                .committedAt(new Date(historyInfo.getCommitTime()))
                 .changeType(parseChangeType(historyInfo.getChangeType().toString()))
                 .elementFileBefore(historyInfo.getElementBefore().getFilePath())
                 .elementFileAfter(historyInfo.getElementAfter().getFilePath())

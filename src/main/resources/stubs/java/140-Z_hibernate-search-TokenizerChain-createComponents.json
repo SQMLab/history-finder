@@ -1,0 +1,31 @@
+{
+  "repositoryName" : "hibernate-search",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
+  "commitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
+  "filePath" : "engine/src/main/java/org/hibernate/search/engine/impl/TokenizerChain.java",
+  "elementType" : "method",
+  "elementName" : "createComponents",
+  "startLine" : 48,
+  "endLine" : 55,
+  "expectedCommits" : [ {
+    "commitHash" : "b3dc2cfffa7e016c288eaeb9e82443572a6c081d",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange,Yparametermetachange)"
+  }, {
+    "commitHash" : "bdf7b30992aba220399e67c032f5b3ef61c9e080",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "6e432d32793618c49eec5234e14048f0dbd59943",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "b3dc2cfffa7e016c288eaeb9e82443572a6c081d",
+        "changeType" : null
+      }, {
+        "commitHash" : "6e432d32793618c49eec5234e14048f0dbd59943",
+        "changeType" : null
+      } ]
+    }
+  }
+}

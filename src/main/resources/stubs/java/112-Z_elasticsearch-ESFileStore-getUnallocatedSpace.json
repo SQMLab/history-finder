@@ -1,0 +1,34 @@
+{
+  "repositoryName" : "elasticsearch",
+  "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
+  "commitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
+  "filePath" : "server/src/main/java/org/elasticsearch/env/ESFileStore.java",
+  "elementType" : "method",
+  "elementName" : "getUnallocatedSpace",
+  "startLine" : 121,
+  "endLine" : 128,
+  "expectedCommits" : [ {
+    "commitHash" : "99f88f15c5febbca2d13b5b5fda27b844153bf1a",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "ef15e1b91f93e0b3c825c1cf86e20ee37720de01",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "15a62448343fd24f8e63f43b1e4b16f50005e4a5",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "a66cf85f37a016d30a473dd29951e05c5857f24d",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "ef15e1b91f93e0b3c825c1cf86e20ee37720de01",
+        "changeType" : null
+      }, {
+        "commitHash" : "a66cf85f37a016d30a473dd29951e05c5857f24d",
+        "changeType" : null
+      } ]
+    }
+  }
+}

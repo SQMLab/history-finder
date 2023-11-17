@@ -1,0 +1,79 @@
+{
+  "repositoryName" : "elasticsearch",
+  "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
+  "commitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
+  "filePath" : "server/src/main/java/org/elasticsearch/action/bulk/BulkRequest.java",
+  "elementType" : "method",
+  "elementName" : "add",
+  "startLine" : 102,
+  "endLine" : 107,
+  "expectedCommits" : [ {
+    "commitHash" : "86ab3a2d1a3bc5f4478d25cd28906915c2ec03fd",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "99f88f15c5febbca2d13b5b5fda27b844153bf1a",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "0e8b6532ecc9e38c689b64ebb178271085e69c80",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "661067d160e9ace12a8bbe3b12a783dd97bf78e6",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "396f80c963a44992d3e60531c15adee8c50aaed5",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "b5079ce0092e2dfd742fbe3aed8a8f95931a378d",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "bdea0e2eddb4373b850e00d8e363c5240d78d180",
+        "changeType" : null
+      }, {
+        "commitHash" : "bd4a03a426eb088ffcf78bb653edfb5879f9b7a0",
+        "changeType" : null
+      }, {
+        "commitHash" : "bac12061619247965df861549d814f6f8de96dc4",
+        "changeType" : null
+      }, {
+        "commitHash" : "b5079ce0092e2dfd742fbe3aed8a8f95931a378d",
+        "changeType" : null
+      }, {
+        "commitHash" : "86ab3a2d1a3bc5f4478d25cd28906915c2ec03fd",
+        "changeType" : null
+      }, {
+        "commitHash" : "80ca78479f5046f58374ed831f6b2c3d51f530f9",
+        "changeType" : null
+      }, {
+        "commitHash" : "6e597ffccb1ae0b0bc61466b9219cbdbc4aed558",
+        "changeType" : null
+      }, {
+        "commitHash" : "661067d160e9ace12a8bbe3b12a783dd97bf78e6",
+        "changeType" : null
+      }, {
+        "commitHash" : "602a0f183ed055ae4e0688fc0aa14cfb13c96306",
+        "changeType" : null
+      }, {
+        "commitHash" : "57af01451045984812f247c99c099e723fd49433",
+        "changeType" : null
+      }, {
+        "commitHash" : "574d1b35b35e2eb511cd42ab32d3d945b9852e47",
+        "changeType" : null
+      }, {
+        "commitHash" : "51d53791fe71c9cb62bc992588a57cdfb500383f",
+        "changeType" : null
+      }, {
+        "commitHash" : "3d0cedbabbedca4649f8778cb3e6329717db4b7a",
+        "changeType" : null
+      }, {
+        "commitHash" : "396f80c963a44992d3e60531c15adee8c50aaed5",
+        "changeType" : null
+      }, {
+        "commitHash" : "0e8b6532ecc9e38c689b64ebb178271085e69c80",
+        "changeType" : null
+      } ]
+    }
+  }
+}

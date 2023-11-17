@@ -1,0 +1,73 @@
+{
+  "repositoryName" : "lucene-solr",
+  "repositoryUrl" : null,
+  "commitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
+  "filePath" : "lucene/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java",
+  "elementType" : "method",
+  "elementName" : "keywordTokenStream",
+  "startLine" : 334,
+  "endLine" : 361,
+  "expectedCommits" : [ {
+    "commitHash" : "e8e4245d9b36123446546ff15967ac95429ea2b0",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "ad0e49591148340418569d7c650761a6d41cf1b1",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "778d96752fa94636a2136ea2b4d58a3fcbe283ec",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "3f722b66a55ace117de6458f5b7d52f5bbc20c62",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "786eb6ce0d19c6459f204b5d4ab0dc72245888cb",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "786457c0e3ae6afa610788a9ffdfe6bf01c1f976",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "ec90bc2202ef501e257eaf235be5ca15239c03c2",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1743081b078a3206e676bdd4ebe9203f5bad6c90",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "bb6b7117186b656b4777850fdc463e0eaa541130",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "e28541354d496a43078c1bc281076f97ed7d008c",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "f0bfc02d4d8fb5655f1eb78ae3020f6e8957e496",
+        "changeType" : null
+      }, {
+        "commitHash" : "ec90bc2202ef501e257eaf235be5ca15239c03c2",
+        "changeType" : null
+      }, {
+        "commitHash" : "e28541354d496a43078c1bc281076f97ed7d008c",
+        "changeType" : null
+      }, {
+        "commitHash" : "bb6b7117186b656b4777850fdc463e0eaa541130",
+        "changeType" : null
+      }, {
+        "commitHash" : "ad0e49591148340418569d7c650761a6d41cf1b1",
+        "changeType" : null
+      }, {
+        "commitHash" : "786eb6ce0d19c6459f204b5d4ab0dc72245888cb",
+        "changeType" : null
+      }, {
+        "commitHash" : "786457c0e3ae6afa610788a9ffdfe6bf01c1f976",
+        "changeType" : null
+      }, {
+        "commitHash" : "3f722b66a55ace117de6458f5b7d52f5bbc20c62",
+        "changeType" : null
+      }, {
+        "commitHash" : "1743081b078a3206e676bdd4ebe9203f5bad6c90",
+        "changeType" : null
+      } ]
+    }
+  }
+}

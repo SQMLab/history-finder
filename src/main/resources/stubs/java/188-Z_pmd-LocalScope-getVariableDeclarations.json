@@ -1,0 +1,58 @@
+{
+  "repositoryName" : "pmd",
+  "repositoryUrl" : "https://github.com/pmd/pmd.git",
+  "commitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
+  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/symboltable/LocalScope.java",
+  "elementType" : "method",
+  "elementName" : "getVariableDeclarations",
+  "startLine" : 23,
+  "endLine" : 25,
+  "expectedCommits" : [ {
+    "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "eee76b024859186dba321912a08e43d9bd5ba8a7",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "75daf38ed303bcdbfe1034fd3a070a4306402c2d",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "f1d5f356ffec6e0df3834dcce9a722778d9d63ca",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "45e310cfe42b76d53e81989ea956b9e306b5d421",
+    "changeType" : "Yreturntypechange"
+  }, {
+    "commitHash" : "538c94e77f9158ca084b2f4e8acd2b9c3837f151",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "b5731b6858c6bb508f70b7b8f2ad3951442fdf4f",
+    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "443d3fcf0f735408192ab4cd6e35041587894361",
+    "changeType" : "Ymultichange(Yrename,Yparameterchange,Ybodychange)"
+  }, {
+    "commitHash" : "8154b6698832b9aac3bcd52029f88b7deafc9a59",
+    "changeType" : "Ymultichange(Yrename,Ybodychange)"
+  }, {
+    "commitHash" : "32ffc26f8ecfb2611143c2c78b8a38ae890bb691",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "873a1b37be109f1839a5e0043a3e7d07c25819ce",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "eee76b024859186dba321912a08e43d9bd5ba8a7",
+        "changeType" : null
+      }, {
+        "commitHash" : "538c94e77f9158ca084b2f4e8acd2b9c3837f151",
+        "changeType" : null
+      }, {
+        "commitHash" : "45e310cfe42b76d53e81989ea956b9e306b5d421",
+        "changeType" : null
+      } ]
+    }
+  }
+}

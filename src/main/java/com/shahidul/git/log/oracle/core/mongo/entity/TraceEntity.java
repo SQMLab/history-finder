@@ -5,7 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -32,8 +34,6 @@ public class TraceEntity {
     @Field
     String inputLabel;
     @Field
-    String uri; // repositoryName || blob || commitHash ||filePath || #startLine No
-    @Field
     String repositoryName;
     @Field
     String repositoryUrl;
@@ -41,7 +41,6 @@ public class TraceEntity {
     String commitHash;
     @Field
     String filePath;
-    @Field String filePathAndLine;
     @Field
     String elementType;
     @Field
@@ -56,10 +55,16 @@ public class TraceEntity {
     @Field
     Map<String, TraceAnalysisEntity> analysis;
     @Field
+    Double precision;
+    @Field
+    Double recall;
+    @Field
     @Version
     Integer version;
     @Field
+    @CreatedDate
     Date createdAt;
     @Field
+    @LastModifiedDate
     Date updatedAt;
 }

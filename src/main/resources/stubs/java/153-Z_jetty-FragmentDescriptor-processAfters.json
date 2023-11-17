@@ -1,0 +1,46 @@
+{
+  "repositoryName" : "jetty",
+  "repositoryUrl" : null,
+  "commitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
+  "filePath" : "jetty-webapp/src/main/java/org/eclipse/jetty/webapp/FragmentDescriptor.java",
+  "elementType" : "method",
+  "elementName" : "processAfters",
+  "startLine" : 123,
+  "endLine" : 148,
+  "expectedCommits" : [ {
+    "commitHash" : "6d26b45afed18dd5fe1211ccfbac7eb2587aa9a9",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "3919023be5d403b0e081430bb8f41d20ac1f29d1",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
+    "changeType" : "Ymultichange(Ymovefromfile,Yexceptionschange,Ybodychange,Yrename,Yparameterchange)"
+  }, {
+    "commitHash" : "688fbac7aa52a61bd864d6e5890507a95e71e287",
+    "changeType" : "Ymultichange(Ymovefromfile,Yexceptionschange,Ybodychange,Yrename,Yparameterchange)"
+  }, {
+    "commitHash" : "da627b843fe81fa0fe52a046c1be8595630e9ae7",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "a4dbb5823ce0786d009832a713476a91e823350a",
+        "changeType" : null
+      }, {
+        "commitHash" : "863944873d762518be216c018261b7f3c2935e35",
+        "changeType" : null
+      }, {
+        "commitHash" : "6d26b45afed18dd5fe1211ccfbac7eb2587aa9a9",
+        "changeType" : null
+      }, {
+        "commitHash" : "3919023be5d403b0e081430bb8f41d20ac1f29d1",
+        "changeType" : null
+      }, {
+        "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
+        "changeType" : null
+      } ]
+    }
+  }
+}

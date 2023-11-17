@@ -1,0 +1,43 @@
+{
+  "repositoryName" : "mockito",
+  "repositoryUrl" : "https://github.com/mockito/mockito.git",
+  "commitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
+  "filePath" : "src/main/java/org/mockito/internal/stubbing/InvocationContainerImpl.java",
+  "elementType" : "method",
+  "elementName" : "getStubbingsDescending",
+  "startLine" : 143,
+  "endLine" : 145,
+  "expectedCommits" : [ {
+    "commitHash" : "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c",
+    "changeType" : "Yrename"
+  }, {
+    "commitHash" : "a5ec3322be0d02f5a44b4580064cb96797332ed8",
+    "changeType" : "Ymultichange(Yreturntypechange,Ybodychange)"
+  }, {
+    "commitHash" : "fe7bbabb82ce3d1000c13d39d6355c134e94ac27",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "501e8f84361af21ce23d506e3c5b284375908bdd",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "d78fdd1cde2a224f0a70e15e8e61de3176e74625",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c",
+        "changeType" : null
+      }, {
+        "commitHash" : "d78fdd1cde2a224f0a70e15e8e61de3176e74625",
+        "changeType" : null
+      }, {
+        "commitHash" : "bef4d861da694e39ed4040152bcd94d184476a41",
+        "changeType" : null
+      }, {
+        "commitHash" : "a5ec3322be0d02f5a44b4580064cb96797332ed8",
+        "changeType" : null
+      } ]
+    }
+  }
+}

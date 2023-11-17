@@ -1,0 +1,61 @@
+{
+  "repositoryName" : "intellij-community",
+  "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
+  "commitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
+  "filePath" : "java/compiler/impl/src/com/intellij/compiler/actions/CompileDirtyAction.java",
+  "elementType" : "method",
+  "elementName" : "doAction",
+  "startLine" : 27,
+  "endLine" : 29,
+  "expectedCommits" : [ {
+    "commitHash" : "53ddd10a442a5001ea580cfc4850648b506c868e",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1636d06ce2df2a14a80e35fc678d379b43b74019",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "0104f1489c253a2aceae7e8344df1928a66abbcd",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "4a97c1643b32e24602576de5cf435272d2c91494",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "62061626c6844513ba00233768eb72efd7bc23fc",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "76d89ef04ca208a34127993e182d95e38a8c8d3f",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "20639250de6910bfd8904ba3fb54ded5624f6656",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "637afa62e37f2ff15acf2f0129aa7eae57024506",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "76d89ef04ca208a34127993e182d95e38a8c8d3f",
+        "changeType" : null
+      }, {
+        "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
+        "changeType" : null
+      }, {
+        "commitHash" : "53ddd10a442a5001ea580cfc4850648b506c868e",
+        "changeType" : null
+      }, {
+        "commitHash" : "4a97c1643b32e24602576de5cf435272d2c91494",
+        "changeType" : null
+      }, {
+        "commitHash" : "1636d06ce2df2a14a80e35fc678d379b43b74019",
+        "changeType" : null
+      }, {
+        "commitHash" : "0104f1489c253a2aceae7e8344df1928a66abbcd",
+        "changeType" : null
+      } ]
+    }
+  }
+}

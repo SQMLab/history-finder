@@ -17,10 +17,10 @@ import java.util.Date;
 @Data
 public class CommitEntity {
     String tracerName;
-    String parentCommitHash;
     String commitHash;
-    Date commitTime;
-    Date parentCommitTime;
+    String parentCommitHash;
+    Date committedAt;
+    String author;
     String changeType;
     String elementFileBefore;
     String elementFileAfter;
@@ -28,9 +28,6 @@ public class CommitEntity {
     String elementNameAfter;
     String diff;
     String diffDetail;
-    String author;
-    String parentAuthor;
-    String commitMessage;
     Integer commitsBetweenForRepo;
     Integer commitsBetweenForFile;
 

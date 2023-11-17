@@ -1,0 +1,82 @@
+{
+  "repositoryName" : "spring-boot",
+  "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
+  "commitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
+  "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/context/ServletWebServerApplicationContext.java",
+  "elementType" : "method",
+  "elementName" : "prepareWebApplicationContext",
+  "startLine" : 260,
+  "endLine" : 295,
+  "expectedCommits" : [ {
+    "commitHash" : "0ba4830b4fb20deea040ca5e1c9a34651708b222",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "798fe5ed53d37edbd9ae9d23a96b4a00c86b07b4",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "67556ba8eaf22a352b03fe197a0c452f695835a6",
+    "changeType" : "Ymultichange(Yfilerename,Yrename)"
+  }, {
+    "commitHash" : "c678c1f7882ae6991994fbc6737a38e26ed11f38",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "883fd9162f375e5e4f4d03eb818d223108eeb560",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "5b1503d07de339e726134ee3d5ec73ac23064e9e",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "b665a2bb1d898f251da348beba8b71b3ac34497f",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "3f2bb03fb8ebc6a44a7ca3add21b53b906e74424",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "2098e23fca3858e218f055373665fb1cf2188fdc",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "0b863611d9563d6a41ebe219925e68be407e501a",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "cd51f357a3cfae04954ac6dce5134c3e2a6ad241",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "261955c50b8fb44311324d2188bf6e3f92237e0c",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "40bf33487177a26e578486942218449658c5e715",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "fb6b2244707dd5dfad12d62cb6a3c396555270d1",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "fb6b2244707dd5dfad12d62cb6a3c396555270d1",
+        "changeType" : null
+      }, {
+        "commitHash" : "c678c1f7882ae6991994fbc6737a38e26ed11f38",
+        "changeType" : null
+      }, {
+        "commitHash" : "883fd9162f375e5e4f4d03eb818d223108eeb560",
+        "changeType" : null
+      }, {
+        "commitHash" : "798fe5ed53d37edbd9ae9d23a96b4a00c86b07b4",
+        "changeType" : null
+      }, {
+        "commitHash" : "764a0a9af8a4d2bff8af84d163605de7880c080e",
+        "changeType" : null
+      }, {
+        "commitHash" : "6ab376e2e88ac9f3a4b1aa3c2962cba29d44965b",
+        "changeType" : null
+      }, {
+        "commitHash" : "67556ba8eaf22a352b03fe197a0c452f695835a6",
+        "changeType" : null
+      }, {
+        "commitHash" : "5b1503d07de339e726134ee3d5ec73ac23064e9e",
+        "changeType" : null
+      } ]
+    }
+  }
+}

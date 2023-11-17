@@ -6,4 +6,4 @@ services:
       - 'MONGO_INITDB_ROOT_USERNAME=academia'
       - 'MONGO_INITDB_ROOT_PASSWORD=academia123'
     ports:
-      - '27017'
+      - '27017:27017'

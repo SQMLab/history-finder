@@ -1,0 +1,40 @@
+{
+  "repositoryName" : "hibernate-search",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
+  "commitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
+  "filePath" : "engine/src/main/java/org/hibernate/search/backend/impl/StreamingOperationDispatcher.java",
+  "elementType" : "method",
+  "elementName" : "executeWork",
+  "startLine" : 49,
+  "endLine" : 56,
+  "expectedCommits" : [ {
+    "commitHash" : "1cf93d1325d9c1635bf919198916f2fdf6977dd6",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "3c42a071e8d9b163d207e7e2e77e038341bf26e1",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "bb0e67026acff2766b118ceb1fa1ed4c326a38bf",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "bb0e67026acff2766b118ceb1fa1ed4c326a38bf",
+        "changeType" : null
+      }, {
+        "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
+        "changeType" : null
+      }, {
+        "commitHash" : "3c42a071e8d9b163d207e7e2e77e038341bf26e1",
+        "changeType" : null
+      }, {
+        "commitHash" : "1cf93d1325d9c1635bf919198916f2fdf6977dd6",
+        "changeType" : null
+      } ]
+    }
+  }
+}

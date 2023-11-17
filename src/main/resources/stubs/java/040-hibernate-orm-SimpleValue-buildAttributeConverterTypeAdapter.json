@@ -1,0 +1,112 @@
+{
+  "repositoryName" : "hibernate-orm",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
+  "commitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
+  "filePath" : "hibernate-core/src/main/java/org/hibernate/mapping/SimpleValue.java",
+  "elementType" : "method",
+  "elementName" : "buildAttributeConverterTypeAdapter",
+  "startLine" : 565,
+  "endLine" : 660,
+  "expectedCommits" : [ {
+    "commitHash" : "c14180ea5b16b69cdd06eb5bb159f7da1ff4db54",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "0d82dc7c8387a954edfa971af99c16a66e33c65a",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "9229514ed407b1610a52ab7ba97806c435352ad2",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "8f889e95d76f47945c9ec072fd08cb045767578c",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "90cabb43ad8b186d73cb6b310fb2fd6774ffe44f",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "9aa164ed27b8338f592dee504a5793bc4e5bbfd9",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "0cf66b85e03a997dc94f8f82598ca8edac04e889",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "3ac508882c89ebd7c80af71d0e65ba26a017ebe3",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "38c004431d006ac5173d0c095f97415b5e6267a6",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "22730624fc267cd12bf1e6551158fa3057fd8d58",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "498735aa3791097e0fc25e918d47336f359fa5ae",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "1f6daa67854e1fd6c464fe3d2a98bda1047b252d",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "9f86babd880b785b965f7f1b55d58dc6a6943ada",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "bf168ca24ef0c328bd53d6d32e79f66b99ac56db",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "7bcf161d36d5b1e59fba1ae32e8e2d692c2fd33d",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "d8d6d82e30960e0c255950eaf875ad48831b12b0",
+        "changeType" : null
+      }, {
+        "commitHash" : "c14180ea5b16b69cdd06eb5bb159f7da1ff4db54",
+        "changeType" : null
+      }, {
+        "commitHash" : "bf168ca24ef0c328bd53d6d32e79f66b99ac56db",
+        "changeType" : null
+      }, {
+        "commitHash" : "ad2a9ef65159672f11091d8b6ea82752f4c2cc1c",
+        "changeType" : null
+      }, {
+        "commitHash" : "9f86babd880b785b965f7f1b55d58dc6a6943ada",
+        "changeType" : null
+      }, {
+        "commitHash" : "9aa164ed27b8338f592dee504a5793bc4e5bbfd9",
+        "changeType" : null
+      }, {
+        "commitHash" : "9229514ed407b1610a52ab7ba97806c435352ad2",
+        "changeType" : null
+      }, {
+        "commitHash" : "90cabb43ad8b186d73cb6b310fb2fd6774ffe44f",
+        "changeType" : null
+      }, {
+        "commitHash" : "8f889e95d76f47945c9ec072fd08cb045767578c",
+        "changeType" : null
+      }, {
+        "commitHash" : "7bcf161d36d5b1e59fba1ae32e8e2d692c2fd33d",
+        "changeType" : null
+      }, {
+        "commitHash" : "498735aa3791097e0fc25e918d47336f359fa5ae",
+        "changeType" : null
+      }, {
+        "commitHash" : "3ac508882c89ebd7c80af71d0e65ba26a017ebe3",
+        "changeType" : null
+      }, {
+        "commitHash" : "38c004431d006ac5173d0c095f97415b5e6267a6",
+        "changeType" : null
+      }, {
+        "commitHash" : "22730624fc267cd12bf1e6551158fa3057fd8d58",
+        "changeType" : null
+      }, {
+        "commitHash" : "1f6daa67854e1fd6c464fe3d2a98bda1047b252d",
+        "changeType" : null
+      }, {
+        "commitHash" : "0d82dc7c8387a954edfa971af99c16a66e33c65a",
+        "changeType" : null
+      }, {
+        "commitHash" : "0cf66b85e03a997dc94f8f82598ca8edac04e889",
+        "changeType" : null
+      } ]
+    }
+  }
+}

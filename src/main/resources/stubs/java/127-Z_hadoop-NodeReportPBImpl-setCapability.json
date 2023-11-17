@@ -1,0 +1,37 @@
+{
+  "repositoryName" : "hadoop",
+  "repositoryUrl" : "https://github.com/apache/hadoop.git",
+  "commitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
+  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/api/records/impl/pb/NodeReportPBImpl.java",
+  "elementType" : "method",
+  "elementName" : "setCapability",
+  "startLine" : 180,
+  "endLine" : 186,
+  "expectedCommits" : [ {
+    "commitHash" : "b46ca7e73b8bac3fdbff0b13afe009308078acf2",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "2fd7f2823074cbfbcc083a6f66edff62c7a131f0",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "e1fdf62123625e4ba399af02f8aad500637d29d1",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "cd7157784e5e5ddc4e77144d042e54dd0d04bac1",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "dbecbe5dfe50f834fc3b8401709079e9470cc517",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "dbecbe5dfe50f834fc3b8401709079e9470cc517",
+        "changeType" : null
+      }, {
+        "commitHash" : "b46ca7e73b8bac3fdbff0b13afe009308078acf2",
+        "changeType" : null
+      } ]
+    }
+  }
+}

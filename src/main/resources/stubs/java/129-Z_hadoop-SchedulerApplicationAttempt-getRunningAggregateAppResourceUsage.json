@@ -1,0 +1,46 @@
+{
+  "repositoryName" : "hadoop",
+  "repositoryUrl" : "https://github.com/apache/hadoop.git",
+  "commitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
+  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/SchedulerApplicationAttempt.java",
+  "elementType" : "method",
+  "elementName" : "getRunningAggregateAppResourceUsage",
+  "startLine" : 1080,
+  "endLine" : 1103,
+  "expectedCommits" : [ {
+    "commitHash" : "3aeaafecb823ef6c175ea5d0d9cb726faacaf32d",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "dae65f3bef8ffa34d02a37041f1dfdfeeee91845",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "b8a30f2f170ffbd590e7366c3c944ab4919e40df",
+    "changeType" : "Ymodifierchange"
+  }, {
+    "commitHash" : "42f90ab885d9693fcc1e52f9637f7de4111110ae",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "83be3ad44484bf8a24cb90de4b9c26ab59d226a8",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "dae65f3bef8ffa34d02a37041f1dfdfeeee91845",
+        "changeType" : null
+      }, {
+        "commitHash" : "b8a30f2f170ffbd590e7366c3c944ab4919e40df",
+        "changeType" : null
+      }, {
+        "commitHash" : "83be3ad44484bf8a24cb90de4b9c26ab59d226a8",
+        "changeType" : null
+      }, {
+        "commitHash" : "42f90ab885d9693fcc1e52f9637f7de4111110ae",
+        "changeType" : null
+      }, {
+        "commitHash" : "3aeaafecb823ef6c175ea5d0d9cb726faacaf32d",
+        "changeType" : null
+      } ]
+    }
+  }
+}

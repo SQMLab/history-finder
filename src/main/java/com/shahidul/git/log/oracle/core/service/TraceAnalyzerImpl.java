@@ -1,6 +1,7 @@
 package com.shahidul.git.log.oracle.core.service;
 
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -28,7 +30,8 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                 .map(traceEntity -> {
                     Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitEntity::getCommitHash)
                             .collect(Collectors.toUnmodifiableSet());
-                    traceEntity.getAnalysis()
+                    Map<String, TraceAnalysisEntity> analysis = traceEntity.getAnalysis();
+                    analysis
                             .values()
                             .stream()
                             //.filter()
@@ -58,6 +61,18 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                                 analysisEntity.setMissingCommits(missingCommits);
                                 return analysisEntity;
                             }).toList();
+                    traceEntity.setPrecision(analysis.values()
+                            .stream()
+                            .map(TraceAnalysisEntity::getPrecision)
+                            .mapToDouble(Double::doubleValue)
+                            .average().getAsDouble());
+
+                    traceEntity.setRecall(analysis.values()
+                            .stream()
+                            .map(TraceAnalysisEntity::getRecall)
+                            .mapToDouble(Double::doubleValue)
+                            .average().getAsDouble());
+
                     return traceEntity;
                 }).toList();
         traceRepository.saveAll(modifiedTraceEntityList);

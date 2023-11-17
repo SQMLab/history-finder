@@ -1,0 +1,34 @@
+{
+  "repositoryName" : "jetty",
+  "repositoryUrl" : null,
+  "commitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
+  "filePath" : "jetty-annotations/src/main/java/org/eclipse/jetty/annotations/AnnotationIntrospector.java",
+  "elementType" : "method",
+  "elementName" : "introspect",
+  "startLine" : 86,
+  "endLine" : 111,
+  "expectedCommits" : [ {
+    "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
+    "changeType" : "Yparameterchange"
+  }, {
+    "commitHash" : "b4f4c0ae36ef23321b5b9cd0698fdf8acb907d6a",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "b4f4c0ae36ef23321b5b9cd0698fdf8acb907d6a",
+        "changeType" : null
+      }, {
+        "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
+        "changeType" : null
+      }, {
+        "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
+        "changeType" : null
+      } ]
+    }
+  }
+}

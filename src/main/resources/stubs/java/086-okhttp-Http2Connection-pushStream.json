@@ -1,0 +1,73 @@
+{
+  "repositoryName" : "okhttp",
+  "repositoryUrl" : "https://github.com/square/okhttp.git",
+  "commitHash" : "5224f3045ba9b171fce521777edf389f9206173c",
+  "filePath" : "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
+  "elementType" : "method",
+  "elementName" : "pushStream",
+  "startLine" : 218,
+  "endLine" : 222,
+  "expectedCommits" : [ {
+    "commitHash" : "3d43a8dba89ccd7333c3ebcf74928e441790d943",
+    "changeType" : "Ymultichange(Yfilerename,Yreturntypechange)"
+  }, {
+    "commitHash" : "0c04821a25c83fddebb29e8cd590609142ba20a2",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "c9a89876de476983f273edbf108c365127c18c5e",
+    "changeType" : "Ymovefromfile"
+  }, {
+    "commitHash" : "c753d2e41ba667f9b5a31451a16ecbaecdc65d80",
+    "changeType" : "Ymultichange(Yfilerename,Yreturntypechange)"
+  }, {
+    "commitHash" : "a5ba3e9062f3bde4bb6896f1db433a2408119e94",
+    "changeType" : "Ybodychange"
+  }, {
+    "commitHash" : "110a4fac4257fe2df0e23149fbef76e750604cf4",
+    "changeType" : "Yfilerename"
+  }, {
+    "commitHash" : "fb46f100a4d66342a0b101624fd351a51b6f14a9",
+    "changeType" : "Yintroduced"
+  } ],
+  "analysis" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "fb46f100a4d66342a0b101624fd351a51b6f14a9",
+        "changeType" : null
+      }, {
+        "commitHash" : "ea63463c2ff8a67f63e541036f0d5998b5bb1f3e",
+        "changeType" : null
+      }, {
+        "commitHash" : "c753d2e41ba667f9b5a31451a16ecbaecdc65d80",
+        "changeType" : null
+      }, {
+        "commitHash" : "b95a0ccbcae50f92acc923d62fc6c9cecc6bbb63",
+        "changeType" : null
+      }, {
+        "commitHash" : "a5ba3e9062f3bde4bb6896f1db433a2408119e94",
+        "changeType" : null
+      }, {
+        "commitHash" : "98ae0fb92c9335ec17f8710376183e18f5edd355",
+        "changeType" : null
+      }, {
+        "commitHash" : "60b3a6dd6240f40c29fffd897c2dac314af49836",
+        "changeType" : null
+      }, {
+        "commitHash" : "5c787a0b9d5c83c764880da4b1503a65ee0ff267",
+        "changeType" : null
+      }, {
+        "commitHash" : "3d43a8dba89ccd7333c3ebcf74928e441790d943",
+        "changeType" : null
+      }, {
+        "commitHash" : "39c0d7d56397ab14892db8032464cb8a9f983ff1",
+        "changeType" : null
+      }, {
+        "commitHash" : "2d45a13249943cafa73460b35c3c366e5742eb6f",
+        "changeType" : null
+      }, {
+        "commitHash" : "0c04821a25c83fddebb29e8cd590609142ba20a2",
+        "changeType" : null
+      } ]
+    }
+  }
+}

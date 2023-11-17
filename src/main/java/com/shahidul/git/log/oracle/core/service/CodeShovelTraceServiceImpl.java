@@ -16,6 +16,7 @@ import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
@@ -45,14 +46,15 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         try {
-            String repositoryPath = appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName() + "/.git";
-            Repository repository = Utl.createRepository(repositoryPath);
+            String repositoryLocation = appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName();
+
+            Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
             Git git = new Git(repository);
-            RepositoryService repositoryService = new CachingRepositoryService(git, repository, traceEntity.getRepositoryName(), repositoryPath);
+            RepositoryService repositoryService = new CachingRepositoryService(git, repository, traceEntity.getRepositoryName(), repositoryLocation);
             Commit startCommit = repositoryService.findCommitByName(traceEntity.getCommitHash());
 
             StartEnvironment startEnv = new StartEnvironment(repositoryService);
-            startEnv.setRepositoryPath(repositoryPath);
+            startEnv.setRepositoryPath(repositoryLocation);
             startEnv.setFilePath(traceEntity.getFilePath());
             startEnv.setFunctionName(traceEntity.getElementName());
             startEnv.setFunctionStartLine(traceEntity.getStartLine());
@@ -79,7 +81,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         commitBuilder.commitHash(commitEntry.getKey());
         if (json.has("commitDate")){
             try {
-                commitBuilder.commitTime(new SimpleDateFormat().parse(json.get("commitDate").getAsString()));
+                commitBuilder.committedAt(new SimpleDateFormat().parse(json.get("commitDate").getAsString()));
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }

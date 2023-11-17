@@ -7,6 +7,7 @@ import com.shahidul.git.log.oracle.core.model.Analysis;
 import com.shahidul.git.log.oracle.core.model.Commit;
 import com.shahidul.git.log.oracle.core.model.Trace;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
 import jakarta.annotation.PostConstruct;
@@ -82,7 +83,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
             File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile());
             Map<String, TraceEntity> entityMap = traceRepository.findAll()
                     .stream()
-                    .collect(Collectors.toMap(TraceEntity::getUid, Function.identity()));
+                    .collect(Collectors.toMap(TraceEntity::getInputLabel, Function.identity()));
 
             //rootFileDir = classPathResource.getFile();
             List<TraceEntity> traceEntityList = Arrays.stream(rootFileDir.listFiles())
@@ -90,20 +91,31 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         try {
                             Trace trace = objectMapper.readValue(file, Trace.class);
                             String uid = generateUid(trace);
+                            String inputLabel = file.getName();
                             if (entityMap.containsKey(uid)) {
-                                return entityMap.get(uid);
+                                return entityMap.get(inputLabel);
                             } else {
+                                HashMap<String, TraceAnalysisEntity> analysisEntityMap = new HashMap<>();
+                                for(Map.Entry<String, Analysis> entry : trace.getAnalysis().entrySet()){
+
+                                    List<CommitEntity> commitList = entry.getValue().getCommits()
+                                            .stream()
+                                            .map(commit -> CommitEntity.builder().tracerName(entry.getKey()).commitHash(commit.getCommitHash()).changeType(commit.getChangeType()).build())
+                                            .toList();
+                                    analysisEntityMap.put(entry.getKey(), TraceAnalysisEntity.builder().commits(commitList).build());
+                                }
                                 return TraceEntity.builder()
                                         .uid(uid)
+                                        .inputLabel(inputLabel)
                                         .repositoryName(trace.getRepositoryName())
                                         .inputLabel(file.getName())
                                         .repositoryUrl(trace.getRepositoryUrl())
                                         .commitHash(trace.getCommitHash())
                                         .filePath(trace.getFilePath())
-                                        .filePathAndLine(trace.getFilePath() + ":" + trace.getStartLine())
                                         .elementType(trace.getElementType())
                                         .elementName(trace.getElementName())
                                         .startLine(trace.getStartLine())
+                                        .endLine(trace.getEndLine())
                                         .expectedCommits(
                                                 trace.getExpectedCommits().stream().map(commit -> CommitEntity.builder()
                                                                 .commitHash(commit.getCommitHash())
@@ -111,7 +123,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                                                 .build())
                                                         .toList()
                                         )
-                                        .analysis(new HashMap<>())
+                                        .analysis(analysisEntityMap)
                                         .build();
                             }
                         } catch (Exception e) {
@@ -165,7 +177,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .expectedCommits(commits)
                                     .analysis(analysis)
                                     .build();
-                            File outputFile = new File( "./src/main/resources/stubs/java", String.format("%04d", fileNo.incrementAndGet()) + "-" + file.getName());
+                            File outputFile = new File( "./src/main/resources/stubs/java", String.format("%03d", fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
 
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, trace);
