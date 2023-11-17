@@ -24,5 +24,5 @@ public class Trace {
     Integer startLine;
     Integer endLine;
     List<Commit> expectedCommits;
-    Map<String, Analysis> analysis = new HashMap<>();
+    Map<String, TraceAnalysis> analysis = new HashMap<>();
 }

@@ -44,7 +44,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                             }))
                             .values()
                             .stream()
-                            .sorted(Comparator.comparing(CommitEntity::getCommittedAt).reversed())
+                            //TODO :  .sorted(Comparator.comparing(CommitEntity::getCommittedAt).reversed())
                             .toList();
                     traceEntity.setAggregatedCommits(aggregatedList);
                     return traceEntity;

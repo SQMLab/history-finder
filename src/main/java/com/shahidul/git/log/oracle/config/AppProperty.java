@@ -13,4 +13,6 @@ import org.springframework.stereotype.Component;
 public class AppProperty {
     @Value("${tracer.repository.base-path}")
     String repositoryBasePath;
+    @Value("${shell.command}")
+    String gitShell;
 }

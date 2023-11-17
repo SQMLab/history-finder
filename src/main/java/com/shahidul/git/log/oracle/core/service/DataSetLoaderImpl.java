@@ -3,7 +3,7 @@ package com.shahidul.git.log.oracle.core.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.model.Analysis;
+import com.shahidul.git.log.oracle.core.model.TraceAnalysis;
 import com.shahidul.git.log.oracle.core.model.Commit;
 import com.shahidul.git.log.oracle.core.model.Trace;
 import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
@@ -76,7 +76,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     @Override
     //@PostConstruct
-    public void load() {
+    public void loadFile() {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
@@ -96,7 +96,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                 return entityMap.get(inputLabel);
                             } else {
                                 HashMap<String, TraceAnalysisEntity> analysisEntityMap = new HashMap<>();
-                                for(Map.Entry<String, Analysis> entry : trace.getAnalysis().entrySet()){
+                                for(Map.Entry<String, TraceAnalysis> entry : trace.getAnalysis().entrySet()){
 
                                     List<CommitEntity> commitList = entry.getValue().getCommits()
                                             .stream()
@@ -139,7 +139,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
     }
 
     @Override
-    public void codeShovelToUniformFormat() {
+    public void preProcessCodeShoveFile() {
         try {
             File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/input").getFile());
 
@@ -163,8 +163,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .sorted(Comparator.reverseOrder())
                                     .map(hash -> Commit.builder().commitHash(hash).build()).toList();
 
-                            HashMap<String, Analysis> analysis = new HashMap<>();
-                            analysis.put(TrackerName.INTELLI_J.getCode(), Analysis.builder().commits(ideaCommits).build());
+                            HashMap<String, TraceAnalysis> analysis = new HashMap<>();
+                            analysis.put(TrackerName.INTELLI_J.getCode(), TraceAnalysis.builder().commits(ideaCommits).build());
                             Trace trace = Trace.builder()
                                     .repositoryName(repositoryName)
                                     .repositoryUrl(repoMap.get(repositoryName))
@@ -204,6 +204,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                 .append(trace.getElementType())
                 .append(trace.getElementName())
                 .append(trace.getStartLine())
+                .append(trace.getEndLine())
                 .toString();
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
     }
