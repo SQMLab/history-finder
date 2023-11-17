@@ -3,7 +3,7 @@
   "functionName": "getStubbingsDescending",
   "filePath": "src/main/java/org/mockito/internal/stubbing/InvocationContainerImpl.java",
   "functionStartLine": 143,
-  "functionEndLine": null,
+  "functionEndLine": 145,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c": "Yrename",
@@ -12,5 +12,5 @@
     "501e8f84361af21ce23d506e3c5b284375908bdd": "Yfilerename",
     "d78fdd1cde2a224f0a70e15e8e61de3176e74625": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "d78fdd1cde2a224f0a70e15e8e61de3176e74625 a5ec3322be0d02f5a44b4580064cb96797332ed8 bef4d861da694e39ed4040152bcd94d184476a41 f30ec35385ea24fbe35517b79dc3ec47ebc89b7c"
 }

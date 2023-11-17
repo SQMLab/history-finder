@@ -3,7 +3,7 @@
   "functionName": "getRegistrars",
   "filePath": "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/server/ErrorPageRegistrarBeanPostProcessor.java",
   "functionStartLine": 76,
-  "functionEndLine": null,
+  "functionEndLine": 85,
   "startCommitName": "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
   "expectedResult": {
     "0ba4830b4fb20deea040ca5e1c9a34651708b222": "Yfilerename",
@@ -13,5 +13,5 @@
     "9fb9a67c4bc895ead0008db106145953d3b3b855": "Ybodychange",
     "08ef5f4b1feb1033a5053a8d5bf6c439f2cf2db0": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "dd69d0f660c2d1d5c551c9476e4e6f8702657e68 078e5425cdf9a81fb0858b2dbf1dfc3ff1c74ae7 6ab376e2e88ac9f3a4b1aa3c2962cba29d44965b 08ef5f4b1feb1033a5053a8d5bf6c439f2cf2db0 9fb9a67c4bc895ead0008db106145953d3b3b855 d8f827d2249696a346bc11adf4ccacf61eeb888d 4a189bdee7d1bd7fbdbd2593a8c9b8636a90bd39"
 }

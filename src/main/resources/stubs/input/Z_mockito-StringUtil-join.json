@@ -3,7 +3,7 @@
   "functionName": "join",
   "filePath": "src/main/java/org/mockito/internal/util/StringUtil.java",
   "functionStartLine": 52,
-  "functionEndLine": null,
+  "functionEndLine": 61,
   "startCommitName": "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "expectedResult": {
     "3d2fb7a146e943003cb3e3cfe18c82f1663b833a": "Ymultichange(Yparameterchange,Ybodychange)",
@@ -14,5 +14,5 @@
     "fe7bbabb82ce3d1000c13d39d6355c134e94ac27": "Yfilerename",
     "98f7799a2bf0e2016eb4c7e0cce46e17fb796966": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "ec61a3b6c645b273d238b5e6e6b0cd621f31fb64 3d2fb7a146e943003cb3e3cfe18c82f1663b833a"
 }

@@ -3,7 +3,7 @@
   "functionName": "visit",
   "filePath": "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/bestpractices/JUnitTestsShouldIncludeAssertRule.java",
   "functionStartLine": 31,
-  "functionEndLine": null,
+  "functionEndLine": 36,
   "startCommitName": "d528dcd5d45582229ab3410deb7c40b2143d015d",
   "expectedResult": {
     "238494b09253575f341ebaef34aebdca6f1020fc": "Yfilerename",
@@ -14,5 +14,5 @@
     "1d8de6b34ea0ddb64fc94b478c0950c0d35de605": "Ymultichange(Yparameterchange,Ybodychange)",
     "a2e6178abd02c67de6a9ccaf077233f1b1ba4dd0": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "a2e6178abd02c67de6a9ccaf077233f1b1ba4dd0 1d8de6b34ea0ddb64fc94b478c0950c0d35de605 673b9fc4ad57a8b6186748632b11156cbf9b48f3"
 }

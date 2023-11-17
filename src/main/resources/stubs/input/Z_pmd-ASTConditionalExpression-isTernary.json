@@ -3,7 +3,7 @@
   "functionName": "isTernary",
   "filePath": "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/ASTConditionalExpression.java",
   "functionStartLine": 53,
-  "functionEndLine": null,
+  "functionEndLine": 55,
   "startCommitName": "d528dcd5d45582229ab3410deb7c40b2143d015d",
   "expectedResult": {
     "07516ee8ac8e698a6078a3f6025c0e9046d92e0c": "Ybodychange",
@@ -12,5 +12,5 @@
     "ea75c3016bf406fb43ccf50541249205de0c2b20": "Ymovefromfile",
     "6857df0422e85f0bdb308fc3855ef7b6d8dad7a2": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "6857df0422e85f0bdb308fc3855ef7b6d8dad7a2 80e27d049abfaabb52596975e6189e9f1ff4cb0a b0bc21028daace1e4542a3a2e04fb83bc509ed61 07516ee8ac8e698a6078a3f6025c0e9046d92e0c"
 }
