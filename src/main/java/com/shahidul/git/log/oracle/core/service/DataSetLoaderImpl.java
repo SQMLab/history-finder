@@ -58,7 +58,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
             repoMap.put("hibernate-search", "https://github.com/hibernate/hibernate-search.git");
             repoMap.put("intellij-community", "https://github.com/JetBrains/intellij-community.git");
             repoMap.put("jetty.project", "https://github.com/eclipse/jetty.project.git");
-            repoMap.put("lucene-solr", "https://github.com/apache/lucene-solr.git");
+            repoMap.put("luccdene-solr", "https://github.com/apache/lucene-solr.git");
             repoMap.put("mockito", "https://github.com/mockito/mockito.git");
             repoMap.put("pmd", "https://github.com/pmd/pmd.git");
             repoMap.put("spring-boot", "https://github.com/spring-projects/spring-boot.git");

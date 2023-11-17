@@ -3,12 +3,12 @@
   "functionName": "instanceFromName",
   "filePath": "engine/src/main/java/org/hibernate/search/util/impl/ClassLoaderHelper.java",
   "functionStartLine": 59,
-  "functionEndLine": null,
+  "functionEndLine": 65,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "3db8c2dfa425219fd0d660c6c0e4194bfb818a38":"Ymultichange(Yparameterchange,Ybodychange)",
     "354f2cadec6dee7d4dde2250e13f468e2d93cd27":"Yfilerename",
     "915e3992753a5681b6d2e0eed49a7b171eab2902":"Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "dfc8c23684ab4e6769f9b566e1f97101166ba7d8 b0705f4d3b69a6ba01c03bf78a0c9bff2dab3436 ad2fdd07580d39ae66d467ca3d8b2be0be2ae296 a2154c0133c1f47b49120f16b164e064fac9167a 1677da5bf4d5eb81f404eb36188dfe0c6c963559 e814cb0f648758dbff2c4898539bd0825e9bf85f df56e11f79492d3eeba36ac56280edcb2a66afac 7144663b17d5ecdc73e92f62d0a00493f37f7b0c 915e3992753a5681b6d2e0eed49a7b171eab2902 7cb8daa7d8119bc42d900002e514d4626e30b421 adc407b441e44480d3863fbb84ce389b5f868788 fa9e756e26d0f36f48938de2647ad769fa467b9d 3db8c2dfa425219fd0d660c6c0e4194bfb818a38"
 }

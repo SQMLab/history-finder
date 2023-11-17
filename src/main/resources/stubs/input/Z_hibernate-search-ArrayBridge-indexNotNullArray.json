@@ -3,7 +3,7 @@
   "functionName": "indexNotNullArray",
   "filePath": "engine/src/main/java/org/hibernate/search/bridge/builtin/ArrayBridge.java",
   "functionStartLine": 46,
-  "functionEndLine": null,
+  "functionEndLine": 51,
   "startCommitName": "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "expectedResult": {
     "7c1e5321baf4322da71ca747d75c771b9103e412": "Ybodychange",
@@ -12,5 +12,5 @@
     "02b8eb4f6017e7fb44bee6013d7f8bf1ae23a7b1": "Yfilerename",
     "b663d28591ec25f73d6523655ae646c2eaadfdbf": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "dd12cc91851ebe085215a11a33316918259a2b14 4e20d13b9f36feb075d96d416bd3ed809cd16d94 f41cb33e1ecc97f21b93499cba54b61cedd2aaf6 597f12fac95e604797d0aba6d4f5371409fd93c8 b663d28591ec25f73d6523655ae646c2eaadfdbf 76077dbe4b6ba1036e402f76386545c008a76799 7c1e5321baf4322da71ca747d75c771b9103e412"
 }

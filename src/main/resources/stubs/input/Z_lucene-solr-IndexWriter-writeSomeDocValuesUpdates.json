@@ -3,7 +3,7 @@
   "functionName": "writeSomeDocValuesUpdates",
   "filePath": "lucene/core/src/java/org/apache/lucene/index/IndexWriter.java",
   "functionStartLine": 579,
-  "functionEndLine": null,
+  "functionEndLine": 637,
   "startCommitName": "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "expectedResult": {
     "772e171ac6e70c96295f65749d0d15339133b8a6":"Ybodychange",
@@ -12,5 +12,5 @@
     "acb3c379427193036f3d56503529400736ac5dff":"Ybodychange",
     "58105a203a19d18a56e09cf69dc0083c1b890315":"Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "1dd09fc40ded8bc5a38d260219ce02ec0809f34e acb3c379427193036f3d56503529400736ac5dff 8975692953713923bd1cc67766cf92565183c2b8 61e68ec1e8cd409cb51a209f827fc64710b31f6f 772e171ac6e70c96295f65749d0d15339133b8a6"
 }

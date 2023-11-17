@@ -3,7 +3,7 @@
   "functionName": "getExpressionInfoAtOffset",
   "filePath": "java/debugger/impl/src/com/intellij/debugger/engine/JavaDebuggerEvaluator.java",
   "functionStartLine": 164,
-  "functionEndLine": null,
+  "functionEndLine": 182,
   "startCommitName": "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
   "expectedResult": {
     "adc4d91f33d13281a462628dd27dbaf70c6fb9fa": "Ybodychange",
@@ -14,5 +14,5 @@
     "ff46945822eb06b5df7e9c2cee809ca39fcaaf26": "Ybodychange",
     "c83bb6029573c0b6cdbcb1deeaaf0420bfd15701": "Yintroduced"
   },
-  "intelliJ": "-----------------"
+  "intelliJ": "c83bb6029573c0b6cdbcb1deeaaf0420bfd15701 ff46945822eb06b5df7e9c2cee809ca39fcaaf26 f7eddb75a89759750e2ed6d4f520dc1e52adc581 053cdc4d345ef0e8fde3029933b82abb83eb6cda 36ee7203f65920264b1ad762c8ec542bf0790040 0f72008ee799986196217384078c8f2e55dba4f1 adc4d91f33d13281a462628dd27dbaf70c6fb9fa"
 }
