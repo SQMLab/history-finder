@@ -15,20 +15,22 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TraceAnalysisEntity {
+//AlgorithmExecutionEntity
+public class AlgorithmExecutionUdt {
     Double precision;
     Double recall;
-    List<CommitEntity> commits;
+    Long runtime;
+    List<CommitUdt> commits;
     /**
      * True Positive
      */
-    List<CommitEntity> correctCommits;
+    List<CommitUdt> correctCommits;
     /**
      * False Positive
      */
-    List<CommitEntity> incorrectCommits;
+    List<CommitUdt> incorrectCommits;
     /**
      * True Negative
      */
-    List<CommitEntity> missingCommits;
+    List<CommitUdt> missingCommits;
 }

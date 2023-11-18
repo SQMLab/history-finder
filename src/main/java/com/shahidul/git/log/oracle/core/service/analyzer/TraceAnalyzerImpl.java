@@ -1,7 +1,7 @@
 package com.shahidul.git.log.oracle.core.service.analyzer;
 
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
@@ -28,48 +28,45 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
         List<TraceEntity> modifiedTraceEntityList = traceRepository.findAll()
                 .stream()
                 .map(traceEntity -> {
-                    Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitEntity::getCommitHash)
+                    Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                             .collect(Collectors.toUnmodifiableSet());
-                    Map<String, TraceAnalysisEntity> analysis = traceEntity.getAnalysis();
+                    Map<String, AlgorithmExecutionUdt> analysis = traceEntity.getAnalysis();
                     analysis
                             .values()
                             .stream()
                             //.filter()
                             .map(analysisEntity -> {
-                                List<CommitEntity> correctCommits = analysisEntity.getCommits()
+                                List<CommitUdt> correctCommits = analysisEntity.getCommits()
                                         .stream()
                                         .filter(commitEntity -> expectedHashSet.contains(commitEntity.getCommitHash()))
                                         .toList();
-                                List<CommitEntity> incorrectCommits = analysisEntity.getCommits()
+                                List<CommitUdt> incorrectCommits = analysisEntity.getCommits()
                                         .stream()
                                         .filter(commitEntity -> !expectedHashSet.contains(commitEntity.getCommitHash()))
                                         .toList();
                                 Set<String> commitSet = analysisEntity.getCommits()
-                                        .stream().map(CommitEntity::getCommitHash)
+                                        .stream().map(CommitUdt::getCommitHash)
                                         .collect(Collectors.toSet());
-                                List<CommitEntity> missingCommits = traceEntity.getExpectedCommits()
+                                List<CommitUdt> missingCommits = traceEntity.getExpectedCommits()
                                         .stream()
                                         .filter(commitEntity -> !commitSet.contains(commitEntity.getCommitHash()))
                                         .toList();
                                 analysisEntity.setCorrectCommits(correctCommits);
                                 analysisEntity.setIncorrectCommits(incorrectCommits);
-                                int retrievedSize = correctCommits.size() + incorrectCommits.size();
-                                if (commitSet.size() > 0) {
-                                    analysisEntity.setPrecision( (double)correctCommits.size() / commitSet.size());
-                                }
-                                analysisEntity.setRecall( (double)correctCommits.size() / expectedHashSet.size());
                                 analysisEntity.setMissingCommits(missingCommits);
+                                analysisEntity.setPrecision((double) correctCommits.size() / commitSet.size());
+                                analysisEntity.setRecall((double) correctCommits.size() / expectedHashSet.size());
                                 return analysisEntity;
                             }).toList();
                     traceEntity.setPrecision(analysis.values()
                             .stream()
-                            .map(TraceAnalysisEntity::getPrecision)
+                            .map(AlgorithmExecutionUdt::getPrecision)
                             .mapToDouble(Double::doubleValue)
                             .average().getAsDouble());
 
                     traceEntity.setRecall(analysis.values()
                             .stream()
-                            .map(TraceAnalysisEntity::getRecall)
+                            .map(AlgorithmExecutionUdt::getRecall)
                             .mapToDouble(Double::doubleValue)
                             .average().getAsDouble());
 

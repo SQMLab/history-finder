@@ -49,11 +49,12 @@ public class TraceEntity {
     Integer startLine;
     @Field
     Integer endLine;
-    List<CommitEntity> expectedCommits;
+    List<CommitUdt> expectedCommits;
     @Field
-    List<CommitEntity> aggregatedCommits;
+    List<CommitUdt> aggregatedCommits;
+    //TODO : algorithm
     @Field
-    Map<String, TraceAnalysisEntity> analysis;
+    Map<String, AlgorithmExecutionUdt> analysis;
     @Field
     Double precision;
     @Field

@@ -3,11 +3,11 @@ package com.shahidul.git.log.oracle.core.service.loader;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.model.TraceAnalysis;
+import com.shahidul.git.log.oracle.core.model.AlgorithmExecution;
 import com.shahidul.git.log.oracle.core.model.Commit;
 import com.shahidul.git.log.oracle.core.model.Trace;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
 import jakarta.annotation.PostConstruct;
@@ -59,7 +59,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
             repoMap.put("hibernate-search", "https://github.com/hibernate/hibernate-search.git");
             repoMap.put("intellij-community", "https://github.com/JetBrains/intellij-community.git");
             repoMap.put("jetty.project", "https://github.com/eclipse/jetty.project.git");
-            repoMap.put("luccdene-solr", "https://github.com/apache/lucene-solr.git");
+            repoMap.put("lucene-solr", "https://github.com/apache/lucene-solr.git");
             repoMap.put("mockito", "https://github.com/mockito/mockito.git");
             repoMap.put("pmd", "https://github.com/pmd/pmd.git");
             repoMap.put("spring-boot", "https://github.com/spring-projects/spring-boot.git");
@@ -95,14 +95,14 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             if (entityMap.containsKey(uid)) {
                                 return entityMap.get(inputLabel);
                             } else {
-                                HashMap<String, TraceAnalysisEntity> analysisEntityMap = new HashMap<>();
-                                for(Map.Entry<String, TraceAnalysis> entry : trace.getAnalysis().entrySet()){
+                                HashMap<String, AlgorithmExecutionUdt> analysisEntityMap = new HashMap<>();
+                                for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalysis().entrySet()){
 
-                                    List<CommitEntity> commitList = entry.getValue().getCommits()
+                                    List<CommitUdt> commitList = entry.getValue().getCommits()
                                             .stream()
-                                            .map(commit -> CommitEntity.builder().tracerName(entry.getKey()).commitHash(commit.getCommitHash()).changeType(commit.getChangeType()).build())
+                                            .map(commit -> CommitUdt.builder().tracerName(entry.getKey()).commitHash(commit.getCommitHash()).changeType(commit.getChangeType()).build())
                                             .toList();
-                                    analysisEntityMap.put(entry.getKey(), TraceAnalysisEntity.builder().commits(commitList).build());
+                                    analysisEntityMap.put(entry.getKey(), AlgorithmExecutionUdt.builder().commits(commitList).build());
                                 }
                                 return TraceEntity.builder()
                                         .uid(uid)
@@ -117,7 +117,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         .startLine(trace.getStartLine())
                                         .endLine(trace.getEndLine())
                                         .expectedCommits(
-                                                trace.getExpectedCommits().stream().map(commit -> CommitEntity.builder()
+                                                trace.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
                                                                 .commitHash(commit.getCommitHash())
                                                                 .changeType(commit.getChangeType())
                                                                 .build())
@@ -163,8 +163,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .sorted(Comparator.reverseOrder())
                                     .map(hash -> Commit.builder().commitHash(hash).build()).toList();
 
-                            HashMap<String, TraceAnalysis> analysis = new HashMap<>();
-                            analysis.put(TrackerName.INTELLI_J.getCode(), TraceAnalysis.builder().commits(ideaCommits).build());
+                            HashMap<String, AlgorithmExecution> analysis = new HashMap<>();
+                            analysis.put(TrackerName.INTELLI_J.getCode(), AlgorithmExecution.builder().commits(ideaCommits).build());
                             Trace trace = Trace.builder()
                                     .repositoryName(repositoryName)
                                     .repositoryUrl(repoMap.get(repositoryName))

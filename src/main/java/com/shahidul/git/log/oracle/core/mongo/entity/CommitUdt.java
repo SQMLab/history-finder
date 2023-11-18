@@ -15,19 +15,18 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CommitEntity {
+public class CommitUdt {
     String tracerName;
     String commitHash;
     String parentCommitHash;
     Date committedAt;
     String author;
     String email;
-    String message;
+    String shortMessage;
+    String fullMessage;
     String changeType;
-    String elementFileBefore;
-    String elementFileAfter;
-    String elementNameBefore;
-    String elementNameAfter;
+    String renamedElement;
+    String renamedFile;
     String diff;
     String diffDetail;
 }

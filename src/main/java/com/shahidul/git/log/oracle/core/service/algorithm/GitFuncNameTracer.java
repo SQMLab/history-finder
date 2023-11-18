@@ -4,12 +4,13 @@ import com.shahidul.git.log.oracle.core.enums.TrackerName;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 /**
  * @author Shahidul Islam
  * @since 11/14/2023
  */
-//@Service
+@Service
 @AllArgsConstructor
 @Slf4j
 //@Service

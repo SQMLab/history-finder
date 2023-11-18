@@ -3,8 +3,8 @@ package com.shahidul.git.log.oracle.core.service.algorithm;
 import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.shahidul.git.log.oracle.config.AppProperty;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -95,15 +95,15 @@ public abstract class GitTracer implements TraceService {
 
             reader.close();
             log.info("Shell output {}", shellOutputBuilder.toString());
-            List<CommitEntity> commitEntityList = commitNames.stream()
+            List<CommitUdt> commitUdtList = commitNames.stream()
                     .map(commitHash -> {
-                        CommitEntity.CommitEntityBuilder commitEntityBuilder = CommitEntity.builder();
+                        CommitUdt.CommitUdtBuilder commitEntityBuilder = CommitUdt.builder();
                         if (fileHistory.containsKey(commitHash)) {
                             Commit commit = fileHistory.get(commitHash);
                             commitEntityBuilder.committedAt(commit.getCommitDate())
                                     .author(commit.getAuthorName())
                                     .email(commit.getAuthorEmail())
-                                    .message(commit.getCommitMessage());
+                                    .shortMessage(commit.getCommitMessage());
                         }
                         return commitEntityBuilder
                                 .tracerName(getTracerName())
@@ -111,7 +111,7 @@ public abstract class GitTracer implements TraceService {
                                 .build();
                     })
                     .toList();
-            traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(commitEntityList).build());
+            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(commitUdtList).build());
             return traceEntity;
         } catch (Exception e) {
             throw new RuntimeException(e);

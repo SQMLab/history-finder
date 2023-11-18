@@ -2,8 +2,8 @@ package com.shahidul.git.log.oracle.core.service.algorithm;
 
 import com.shahidul.git.log.oracle.config.AppProperty;
 import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
@@ -54,10 +54,10 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             History<Method> methodHistory = methodTracker.track();
 
 
-            List<CommitEntity> gitCommitList = methodHistory.getHistoryInfoList().stream()
+            List<CommitUdt> gitCommitList = methodHistory.getHistoryInfoList().stream()
                     .map(this::toCommitDiff)
                     .collect(Collectors.toList());
-            traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(gitCommitList).build());
+            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(gitCommitList).build());
             return traceEntity;
         } catch (Exception ex) {
             throw new RuntimeException(ex);
@@ -65,17 +65,18 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
 
     }
 
-    private CommitEntity toCommitDiff(History.HistoryInfo<Method> historyInfo) {
-        return CommitEntity.builder()
+    private CommitUdt toCommitDiff(History.HistoryInfo<Method> historyInfo) {
+        boolean isNewFile = historyInfo.getElementBefore().getFilePath().equals(historyInfo.getElementAfter().getFilePath());
+        boolean isNewElement = historyInfo.getElementBefore().getName().equals(historyInfo.getElementAfter().getName());
+
+        return CommitUdt.builder()
                 .tracerName(getTracerName())
                 .parentCommitHash(historyInfo.getParentCommitId())
                 .commitHash(historyInfo.getCommitId())
                 .committedAt(new Date(historyInfo.getCommitTime()))
                 .changeType(parseChangeType(historyInfo.getChangeType().toString()))
-                .elementFileBefore(historyInfo.getElementBefore().getFilePath())
-                .elementFileAfter(historyInfo.getElementAfter().getFilePath())
-                .elementNameBefore(historyInfo.getElementBefore().getName())
-                .elementNameAfter(historyInfo.getElementAfter().getName())
+                .renamedFile(isNewFile ? historyInfo.getElementAfter().getFilePath() : null)
+                .renamedElement(isNewElement ? historyInfo.getElementAfter().getName() : null)
                 .build();
     }
 }

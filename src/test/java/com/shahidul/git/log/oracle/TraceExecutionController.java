@@ -50,6 +50,12 @@ class TraceExecutionController {
 
     @Test
     @Order(2)
+    void populateCommitMetaData(){
+        aggregatorService.populateMetaData();
+    }
+
+    @Test
+    @Order(3)
     void aggregate(){
         aggregatorService.aggregate();
     }

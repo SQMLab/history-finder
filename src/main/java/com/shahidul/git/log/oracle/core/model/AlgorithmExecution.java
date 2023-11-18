@@ -16,7 +16,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TraceAnalysis {
+public class AlgorithmExecution {
     List<Commit> commits;
-
 }

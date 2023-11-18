@@ -10,8 +10,8 @@ import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.shahidul.git.log.oracle.config.AppProperty;
 import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitEntity;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceAnalysisEntity;
+import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
@@ -63,7 +63,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
-            traceEntity.getAnalysis().put(getTracerName(), TraceAnalysisEntity.builder().commits(output.entrySet()
+            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(output.entrySet()
                     .stream().map(this::toCommitEntity).toList()).build());
             return traceEntity;
         } catch (Exception e) {
@@ -72,9 +72,9 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private CommitEntity toCommitEntity(Map.Entry<String, Ychange> commitEntry) {
+    private CommitUdt toCommitEntity(Map.Entry<String, Ychange> commitEntry) {
         com.google.gson.JsonObject json = commitEntry.getValue().toJsonObject();
-        CommitEntity.CommitEntityBuilder commitBuilder = CommitEntity.builder().tracerName(getTracerName());
+        CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
         if (json.has("commitNameOld")){
             commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
         }

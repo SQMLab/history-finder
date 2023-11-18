@@ -5,5 +5,6 @@ package com.shahidul.git.log.oracle.core.service.aggregator;
  * @since 11/13/2023
  */
 public interface TraceAggregatorService {
+    void populateMetaData();
     void aggregate();
 }

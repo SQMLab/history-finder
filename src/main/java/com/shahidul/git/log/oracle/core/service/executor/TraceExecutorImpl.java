@@ -5,6 +5,7 @@ import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.git.log.oracle.core.service.algorithm.TraceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 
 import java.util.List;
 
@@ -20,13 +21,19 @@ public class TraceExecutorImpl implements TraceExecutor {
 
     @Override
     public void execute() {
-        List<TraceEntity> traceEntityList = traceRepository.findAll().stream().limit(100).toList();
+        List<TraceEntity> traceEntityList = traceRepository.findAll().stream().toList();
+        StopWatch clock = new StopWatch();
         traceServiceList.stream()
                 .map(traceService -> {
                     traceEntityList.stream()
                             .filter(traceEntity -> traceEntity.getAnalysis().containsKey(traceService.getTracerName()) == false)
                             .map(traceEntity -> {
+                                clock.start();
                                 traceService.trace(traceEntity);
+                                clock.stop();
+                                traceEntity.getAnalysis()
+                                        .get(traceService.getTracerName())
+                                        .setRuntime(clock.getLastTaskTimeMillis());
                                 traceEntity = traceRepository.save(traceEntity);
                                 return traceEntity;
                             }).toList();
