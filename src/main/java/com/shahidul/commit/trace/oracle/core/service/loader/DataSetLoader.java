@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.service.loader;
+package com.shahidul.commit.trace.oracle.core.service.loader;
 
 /**
  * @author Shahidul Islam

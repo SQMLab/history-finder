@@ -1,6 +1,6 @@
-package com.shahidul.git.log.oracle.core.mongo.repository;
+package com.shahidul.commit.trace.oracle.core.mongo.repository;
 
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

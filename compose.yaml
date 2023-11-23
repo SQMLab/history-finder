@@ -2,8 +2,8 @@ services:
   mongodb:
     image: 'mongo:5.0'
     environment:
-      - 'MONGO_INITDB_DATABASE=academia'
-      - 'MONGO_INITDB_ROOT_USERNAME=academia'
-      - 'MONGO_INITDB_ROOT_PASSWORD=academia123'
+      - 'MONGO_INITDB_DATABASE=cto'
+      - 'MONGO_INITDB_ROOT_USERNAME=cto'
+      - 'MONGO_INITDB_ROOT_PASSWORD=cto123'
     ports:
       - '27017:27017'

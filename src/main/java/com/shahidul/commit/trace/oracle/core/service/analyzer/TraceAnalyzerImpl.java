@@ -1,9 +1,9 @@
-package com.shahidul.git.log.oracle.core.service.analyzer;
+package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

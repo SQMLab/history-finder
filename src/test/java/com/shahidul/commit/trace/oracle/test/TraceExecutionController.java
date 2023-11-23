@@ -1,9 +1,9 @@
-package com.shahidul.git.log.oracle;
+package com.shahidul.commit.trace.oracle.test;
 
-import com.shahidul.git.log.oracle.core.service.loader.DataSetLoader;
-import com.shahidul.git.log.oracle.core.service.aggregator.TraceAggregatorService;
-import com.shahidul.git.log.oracle.core.service.analyzer.TraceAnalyzer;
-import com.shahidul.git.log.oracle.core.service.executor.TraceExecutor;
+import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
+import com.shahidul.commit.trace.oracle.core.service.aggregator.TraceAggregatorService;
+import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
+import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -29,12 +29,12 @@ class TraceExecutionController {
     @Autowired
     TraceAnalyzer traceAnalyzer;
 
-/*    @Test
+    @Test
     @Order(-1)
     public void preProcessCodeShovelTest() {
         dataSetLoader.preProcessCodeShoveFile();
 
-    }*/
+    }
 
     @Test
     @Order(0)

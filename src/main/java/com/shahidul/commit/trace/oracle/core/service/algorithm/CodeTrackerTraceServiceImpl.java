@@ -1,10 +1,10 @@
-package com.shahidul.git.log.oracle.core.service.algorithm;
+package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.git.log.oracle.config.AppProperty;
-import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
 import org.codetracker.api.History;

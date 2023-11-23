@@ -1,11 +1,11 @@
-package com.shahidul.git.log.oracle.core.service.aggregator;
+package com.shahidul.commit.trace.oracle.core.service.aggregator;
 
-import com.shahidul.git.log.oracle.config.AppProperty;
-import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.git.log.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.lib.ObjectId;

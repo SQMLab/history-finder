@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.config;
+package com.shahidul.commit.trace.oracle.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

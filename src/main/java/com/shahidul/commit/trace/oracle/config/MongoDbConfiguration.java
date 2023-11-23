@@ -1,6 +1,6 @@
-package com.shahidul.git.log.oracle.config;
+package com.shahidul.commit.trace.oracle.config;
 
-import com.shahidul.git.log.oracle.core.mongo.MongoDbRootPackage;
+import com.shahidul.commit.trace.oracle.core.mongo.MongoDbRootPackage;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;

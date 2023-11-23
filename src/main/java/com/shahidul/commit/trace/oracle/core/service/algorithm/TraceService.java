@@ -1,6 +1,6 @@
-package com.shahidul.git.log.oracle.core.service.algorithm;
+package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 /**
  * @author Shahidul Islam

@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.model;
+package com.shahidul.commit.trace.oracle.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

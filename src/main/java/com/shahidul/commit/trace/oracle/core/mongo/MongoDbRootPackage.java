@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.mongo;
+package com.shahidul.commit.trace.oracle.core.mongo;
 
 /**
  * @author Shahidul Islam

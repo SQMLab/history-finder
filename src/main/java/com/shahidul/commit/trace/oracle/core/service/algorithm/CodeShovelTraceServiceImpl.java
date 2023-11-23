@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.service.algorithm;
+package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
 import com.felixgrund.codeshovel.changes.Ychange;
 import com.felixgrund.codeshovel.entities.Yresult;
@@ -8,11 +8,11 @@ import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
-import com.shahidul.git.log.oracle.config.AppProperty;
-import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.AlgorithmExecutionUdt;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;

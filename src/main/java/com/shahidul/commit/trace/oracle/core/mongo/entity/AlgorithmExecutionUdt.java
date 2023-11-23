@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.mongo.entity;
+package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

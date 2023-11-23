@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle.core.enums;
+package com.shahidul.commit.trace.oracle.core.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

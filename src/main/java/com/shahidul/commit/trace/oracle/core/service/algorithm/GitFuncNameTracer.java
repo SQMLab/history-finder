@@ -1,7 +1,7 @@
-package com.shahidul.git.log.oracle.core.service.algorithm;
+package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.git.log.oracle.core.enums.TrackerName;
-import com.shahidul.git.log.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

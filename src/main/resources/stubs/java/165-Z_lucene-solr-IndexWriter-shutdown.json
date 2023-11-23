@@ -1,6 +1,6 @@
 {
   "repositoryName" : "lucene-solr",
-  "repositoryUrl" : null,
+  "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "commitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "filePath" : "lucene/core/src/java/org/apache/lucene/index/IndexWriter.java",
   "elementType" : "method",
