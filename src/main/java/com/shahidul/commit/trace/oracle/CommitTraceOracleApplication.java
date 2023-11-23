@@ -1,4 +1,4 @@
-package com.shahidul.git.log.oracle;
+package com.shahidul.commit.trace.oracle;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
