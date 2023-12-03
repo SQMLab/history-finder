@@ -4,44 +4,35 @@ import com.influxdb.client.InfluxDBClient;
 import com.influxdb.client.domain.DeletePredicateRequest;
 import com.influxdb.client.domain.WritePrecision;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.influx.series.CommitSeries;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.core.influx.series.AnalysisSeries;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * @author Shahidul Islam
- * @since 12/1/2023
+ * @since 12/3/2023
  */
 @Repository
 @AllArgsConstructor
-public class CommitSeriesRepositoryImpl implements CommitSeriesRepository {
+public class AnalysisSeriesRepositoryImpl implements AnalysisSeriesRepository {
     InfluxDBClient influxDBClient;
     AppProperty appProperty;
-
-
     @Override
     public void deleteAll() {
         DeletePredicateRequest predicateRequest =  new DeletePredicateRequest();
         predicateRequest.setStart(OffsetDateTime.now().minusYears(20));
         predicateRequest.setStart(OffsetDateTime.now());
         influxDBClient.getDeleteApi()
-                .delete( OffsetDateTime.now().minusYears(20), OffsetDateTime.now(),"_measurement=\"commit\"", appProperty.getBucketName(), appProperty.getOrganizationName());
+                .delete( OffsetDateTime.now().minusYears(20), OffsetDateTime.now(),"_measurement=\"analysis\"", appProperty.getBucketName(), appProperty.getOrganizationName());
     }
 
     @Override
-    public List<CommitSeries> saveAll(List<CommitSeries> commitSeriesList) {
+    public List<AnalysisSeries> saveAll(List<AnalysisSeries> analysisSeriesList) {
         influxDBClient.getWriteApiBlocking()
-                .writeMeasurements(WritePrecision.S, commitSeriesList);
-        return commitSeriesList;
+                .writeMeasurements(WritePrecision.S, analysisSeriesList);
+        return analysisSeriesList;
     }
-
-
 }

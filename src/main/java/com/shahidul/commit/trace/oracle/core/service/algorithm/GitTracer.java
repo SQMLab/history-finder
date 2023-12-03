@@ -4,7 +4,7 @@ import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -111,7 +111,7 @@ public abstract class GitTracer implements TraceService {
                                 .build();
                     })
                     .toList();
-            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(commitUdtList).build());
+            traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(commitUdtList).build());
             return traceEntity;
         } catch (Exception e) {
             throw new RuntimeException(e);

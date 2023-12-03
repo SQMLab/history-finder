@@ -56,7 +56,7 @@ public class TraceEntity {
     List<CommitUdt> aggregatedCommits;
     //TODO : algorithm
     @Field
-    Map<String, AlgorithmExecutionUdt> analysis;
+    Map<String, AnalysisUdt> analysis;
     @Field
     Double precision;
     @Field

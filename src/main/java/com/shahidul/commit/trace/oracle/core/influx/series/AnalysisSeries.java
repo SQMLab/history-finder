@@ -1,4 +1,4 @@
-package com.shahidul.commit.trace.oracle.core.influx;
+package com.shahidul.commit.trace.oracle.core.influx.series;
 
 import com.influxdb.annotations.Column;
 import com.influxdb.annotations.Measurement;
@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
-import java.util.Date;
 
 /**
  * @author Shahidul Islam
@@ -17,9 +16,9 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Measurement(name = "commit")
+@Measurement(name = "analysis")
 @Data
-public class CommitSeriesEntity {
+public class AnalysisSeries {
     @Column(tag = true)
     Integer oracleFileId;
     @Column(tag = true)
@@ -27,8 +26,20 @@ public class CommitSeriesEntity {
     @Column(tag = true)
     String tracerName;
     @Column
-    String commitHash;
+    Double precision;
+    @Column
+    Double recall;
+    @Column
+    Long runtime;
+    @Column
+    Integer commits;
+    @Column
+    Integer correctCommits;
+    @Column
+    Integer incorrectCommits;
+    @Column
+    Integer missingCommits;
     @Column(timestamp = true)
-    Instant committedAt;
+    Instant createdAt;
 }
 

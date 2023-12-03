@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 //AlgorithmExecutionEntity
-public class AlgorithmExecutionUdt {
+public class AnalysisUdt {
     Double precision;
     Double recall;
     Long runtime;

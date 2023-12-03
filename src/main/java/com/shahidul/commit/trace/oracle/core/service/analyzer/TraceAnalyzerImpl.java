@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
@@ -30,7 +30,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                 .map(traceEntity -> {
                     Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                             .collect(Collectors.toUnmodifiableSet());
-                    Map<String, AlgorithmExecutionUdt> analysis = traceEntity.getAnalysis();
+                    Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
                     analysis
                             .values()
                             .stream()
@@ -60,13 +60,13 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                             }).toList();
                     traceEntity.setPrecision(analysis.values()
                             .stream()
-                            .map(AlgorithmExecutionUdt::getPrecision)
+                            .map(AnalysisUdt::getPrecision)
                             .mapToDouble(Double::doubleValue)
                             .average().getAsDouble());
 
                     traceEntity.setRecall(analysis.values()
                             .stream()
-                            .map(AlgorithmExecutionUdt::getRecall)
+                            .map(AnalysisUdt::getRecall)
                             .mapToDouble(Double::doubleValue)
                             .average().getAsDouble());
 

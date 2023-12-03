@@ -11,7 +11,7 @@ import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
@@ -63,7 +63,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
-            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(output.entrySet()
+            traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(output.entrySet()
                     .stream().map(this::toCommitEntity).toList()).build());
             return traceEntity;
         } catch (Exception e) {

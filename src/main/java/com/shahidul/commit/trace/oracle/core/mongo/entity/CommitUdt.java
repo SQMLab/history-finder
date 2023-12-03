@@ -32,21 +32,6 @@ public class CommitUdt implements Cloneable{
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-/*        return CommitUdt.builder()
-                .tracerName(tracerName)
-                .commitHash(commitHash)
-                .parentCommitHash(parentCommitHash)
-                .committedAt(committedAt)
-                .author(author)
-                .email(email)
-                .shortMessage(shortMessage)
-                .fullMessage(fullMessage)
-                .changeType(changeType)
-                .renamedElement(renamedElement)
-                .renamedFile(renamedFile)
-                .diff(diff)
-                .diffDetail(diffDetail)
-                .build();*/
         return super.clone();
     }
 }

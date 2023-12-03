@@ -3,7 +3,7 @@ package com.shahidul.commit.trace.oracle.core.service.aggregator;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
@@ -71,7 +71,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                     List<CommitUdt> aggregatedList = traceEntity.getAnalysis()
                             .values()
                             .stream()
-                            .map(AlgorithmExecutionUdt::getCommits)
+                            .map(AnalysisUdt::getCommits)
                             .flatMap(List::stream)
                             .collect(Collectors.toMap(CommitUdt::getCommitHash, Function.identity(), (o1, o2) -> {
                                 TracerName trackerX = TracerName.fromCode(o1.getTracerName());

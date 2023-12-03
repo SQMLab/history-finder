@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.test;
 
+import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
 import com.shahidul.commit.trace.oracle.core.influx.repository.CommitSeriesRepository;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.TraceAggregatorService;
@@ -31,7 +32,7 @@ class TraceExecutionController {
     TraceAnalyzer traceAnalyzer;
 
     @Autowired
-    CommitSeriesRepository commitSeriesRepository;
+    InfluxDbManager influxDbManager;
 
 /*    @Test
     @Order(-1)
@@ -43,7 +44,7 @@ class TraceExecutionController {
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(2);
+        dataSetLoader.loadFile(10);
 
     }
     @Test
@@ -73,6 +74,6 @@ class TraceExecutionController {
     @Test
     @Order(4)
     void loadIntoInfluxDb(){
-        commitSeriesRepository.load();
+        influxDbManager.load();
     }
 }

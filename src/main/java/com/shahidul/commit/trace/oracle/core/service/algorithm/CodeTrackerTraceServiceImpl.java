@@ -3,7 +3,7 @@ package com.shahidul.commit.trace.oracle.core.service.algorithm;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
@@ -57,7 +57,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             List<CommitUdt> gitCommitList = methodHistory.getHistoryInfoList().stream()
                     .map(this::toCommitDiff)
                     .collect(Collectors.toList());
-            traceEntity.getAnalysis().put(getTracerName(), AlgorithmExecutionUdt.builder().commits(gitCommitList).build());
+            traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(gitCommitList).build());
             return traceEntity;
         } catch (Exception ex) {
             throw new RuntimeException(ex);

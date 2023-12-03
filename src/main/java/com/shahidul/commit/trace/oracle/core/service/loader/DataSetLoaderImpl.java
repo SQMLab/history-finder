@@ -7,7 +7,7 @@ import com.shahidul.commit.trace.oracle.core.model.AlgorithmExecution;
 import com.shahidul.commit.trace.oracle.core.model.Commit;
 import com.shahidul.commit.trace.oracle.core.model.Trace;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import jakarta.annotation.PostConstruct;
@@ -95,14 +95,14 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
-                                HashMap<String, AlgorithmExecutionUdt> analysisEntityMap = new HashMap<>();
+                                HashMap<String, AnalysisUdt> analysisEntityMap = new HashMap<>();
                                 for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalysis().entrySet()){
 
                                     List<CommitUdt> commitList = entry.getValue().getCommits()
                                             .stream()
                                             .map(commit -> CommitUdt.builder().tracerName(entry.getKey()).commitHash(commit.getCommitHash()).changeType(commit.getChangeType()).build())
                                             .toList();
-                                    analysisEntityMap.put(entry.getKey(), AlgorithmExecutionUdt.builder().commits(commitList).build());
+                                    analysisEntityMap.put(entry.getKey(), AnalysisUdt.builder().commits(commitList).build());
                                 }
                                 String uid = generateUid(trace);
                                 return TraceEntity.builder()

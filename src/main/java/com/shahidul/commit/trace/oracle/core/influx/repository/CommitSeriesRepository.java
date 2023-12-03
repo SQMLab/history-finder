@@ -1,6 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.influx.repository;
 
-import com.shahidul.commit.trace.oracle.core.influx.CommitSeriesEntity;
+import com.shahidul.commit.trace.oracle.core.influx.series.CommitSeries;
 
 import java.util.List;
 
@@ -9,7 +9,6 @@ import java.util.List;
  * @since 12/1/2023
  */
 public interface CommitSeriesRepository {
-    void load();
     void deleteAll();
-    List<CommitSeriesEntity> saveAll(List<CommitSeriesEntity> commitSeriesEntityList);
+    List<CommitSeries> saveAll(List<CommitSeries> commitSeriesList);
 }
