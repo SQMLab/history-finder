@@ -15,6 +15,7 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StopWatch;
 
 import java.io.IOException;
 import java.util.*;
@@ -66,11 +67,15 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
     @Override
     @Transactional
     public void aggregate() {
+        StopWatch clock = new StopWatch();
         List<TraceEntity> traceEntityList = traceRepository.findAll().stream()
                 .map(traceEntity -> {
+                    clock.start();
                     List<CommitUdt> aggregatedList = traceEntity.getAnalysis()
-                            .values()
+                            .entrySet()
                             .stream()
+                            .filter(analysisEntry -> !TracerName.AGGREGATED.getCode().equals(analysisEntry.getKey()))
+                            .map(analysisEntry -> analysisEntry.getValue())
                             .map(AnalysisUdt::getCommits)
                             .flatMap(List::stream)
                             .collect(Collectors.toMap(CommitUdt::getCommitHash, Function.identity(), (o1, o2) -> {
@@ -95,7 +100,12 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                                 }
                             })
                             .toList();
-                    traceEntity.setAggregatedCommits(aggregatedList);
+                    clock.stop();
+                    AnalysisUdt analysisUdt = AnalysisUdt.builder()
+                            .runtime(clock.getLastTaskTimeMillis())
+                            .commits(aggregatedList)
+                            .build();
+                    traceEntity.getAnalysis().put(TracerName.AGGREGATED.getCode(), analysisUdt);
                     return traceEntity;
                 }).toList();
         traceRepository.saveAll(traceEntityList);

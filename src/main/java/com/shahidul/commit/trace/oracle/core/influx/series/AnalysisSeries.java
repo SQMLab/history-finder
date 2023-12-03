@@ -32,13 +32,13 @@ public class AnalysisSeries {
     @Column
     Long runtime;
     @Column
-    Integer commits;
+    Integer commitCount;
     @Column
-    Integer correctCommits;
+    Integer correctCommitCount;
     @Column
-    Integer incorrectCommits;
+    Integer incorrectCommitCount;
     @Column
-    Integer missingCommits;
+    Integer missingCommitCount;
     @Column(timestamp = true)
     Instant createdAt;
 }

@@ -5,6 +5,7 @@ import com.shahidul.commit.trace.oracle.core.influx.repository.AnalysisSeriesRep
 import com.shahidul.commit.trace.oracle.core.influx.repository.CommitSeriesRepository;
 import com.shahidul.commit.trace.oracle.core.influx.series.AnalysisSeries;
 import com.shahidul.commit.trace.oracle.core.influx.series.CommitSeries;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
@@ -48,16 +49,24 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                             .toList();
                     List<CommitUdt> allCommitList = new ArrayList<>(commitUdtList);
                     allCommitList.addAll(traceEntity.getExpectedCommits());
-                    allCommitList.addAll(traceEntity.getAggregatedCommits());
                     commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt)).toList());
 
                     Stream<AnalysisSeries> analysisSeriesStream = traceEntity.getAnalysis()
                             .entrySet()
                             .stream()
-                            .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue().getPrecision(), analysisEntry.getValue().getRecall()));
+                            .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue() ));
 
+                    AnalysisUdt dummyExpectedAnalysisEntity = AnalysisUdt.builder()
+                            .commits(traceEntity.getExpectedCommits())
+                            .correctCommits(traceEntity.getExpectedCommits())
+                            .incorrectCommits(new ArrayList<>())
+                            .missingCommits(new ArrayList<>())
+                            .precision(1.0)
+                            .recall(1.0)
+                            .runtime(1L)
+                            .build();
                     List<AnalysisSeries> analysisSeriesList = Stream.concat(analysisSeriesStream,
-                            Stream.of(toAnalysisSeries(traceEntity, TracerName.AGGREGATED.getCode(), traceEntity.getPrecision(), traceEntity.getRecall())))
+                            Stream.of(toAnalysisSeries(traceEntity, TracerName.EXPECTED.getCode(), dummyExpectedAnalysisEntity)))
                             .toList();
                     analysisSeriesRepository.saveAll(analysisSeriesList);
                     return traceEntity;
@@ -75,13 +84,18 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .build();
     }
 
-    private AnalysisSeries toAnalysisSeries(TraceEntity traceEntity, String tracerName, Double precision, Double recall) {
+    private AnalysisSeries toAnalysisSeries(TraceEntity traceEntity, String tracerName, AnalysisUdt analysisUdt) {
         return AnalysisSeries.builder()
                 .tracerName(tracerName)
                 .oracleFileId(traceEntity.getOracleFileId())
                 .oracleFileName(traceEntity.getOracleFileName())
-                .precision(precision)
-                .recall(recall)
+                .precision(analysisUdt.getPrecision())
+                .recall(analysisUdt.getRecall())
+                .runtime(analysisUdt.getRuntime())
+                .commitCount(analysisUdt.getCommits().size())
+                .correctCommitCount(analysisUdt.getCorrectCommits().size())
+                .incorrectCommitCount(analysisUdt.getIncorrectCommits().size())
+                .missingCommitCount(analysisUdt.getMissingCommits().size())
                 .createdAt(LocalDateTime.now().minusYears(20).plusMonths(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
                 .build();
     }
