@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -30,7 +30,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return TrackerName.CODE_TRACKER.getCode();
+        return TracerName.CODE_TRACKER.getCode();
     }
 
     @Override
@@ -46,7 +46,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)
                     .filePath(traceEntity.getFilePath())
-                    .startCommitId(traceEntity.getCommitHash())
+                    .startCommitId(traceEntity.getStartCommitHash())
                     .methodName(traceEntity.getElementName())
                     .methodDeclarationLineNumber(traceEntity.getStartLine())
                     .build();

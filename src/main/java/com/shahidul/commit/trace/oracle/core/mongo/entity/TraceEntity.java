@@ -32,17 +32,19 @@ public class TraceEntity {
     @Field
     String uid;
     @Field
-    String inputLabel;
+    Integer oracleFileId;
+    @Field
+    String oracleFileName;
     @Field
     String repositoryName;
     @Field
     String repositoryUrl;
     @Field
-    String commitHash;
-    @Field
     String filePath;
     @Field
     String elementType;
+    @Field
+    String startCommitHash;
     @Field
     String elementName;
     @Field

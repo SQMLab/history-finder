@@ -63,7 +63,7 @@ public abstract class GitTracer implements TraceService {
             Process process = runtime.exec(cmd, null, new File(repositoryLocation));
             process.waitFor(30, TimeUnit.SECONDS );
 
-            Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getCommitHash());
+            Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getStartCommitHash());
 
             LogCommand logCommandFile = git.log().add(startCommit.getId()).addPath(traceEntity.getFilePath()).setRevFilter(RevFilter.NO_MERGES);
             Iterable<RevCommit> fileRevisions = logCommandFile.call();

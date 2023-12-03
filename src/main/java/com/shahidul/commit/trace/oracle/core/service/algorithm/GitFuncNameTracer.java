@@ -1,6 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ public class GitFuncNameTracer extends GitTracer {
 
     @Override
     public String getTracerName() {
-        return TrackerName.GIT_FUNC_NAME.getCode();
+        return TracerName.GIT_FUNC_NAME.getCode();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class GitFuncNameTracer extends GitTracer {
     public TraceEntity trace(TraceEntity traceEntity) {
 
         String gitCommand = String.format("git log %s --no-merges -L /%s/:%s --no-patch",
-                traceEntity.getCommitHash(), traceEntity.getElementName(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
+                traceEntity.getStartCommitHash(), traceEntity.getElementName(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
 
         return super.trace(traceEntity, gitCommand);
 

@@ -15,4 +15,13 @@ public class AppProperty {
     String repositoryBasePath;
     @Value("${shell.command}")
     String gitShell;
+
+    @Value("${influxdb.org-name}")
+    String organizationName;
+    @Value("${influxdb.token}")
+    String token;
+    @Value("${influxdb.url}")
+    String url;
+    @Value("${influxdb.bucket-name}")
+    String bucketName;
 }

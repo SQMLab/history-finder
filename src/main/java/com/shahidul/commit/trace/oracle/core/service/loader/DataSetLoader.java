@@ -5,6 +5,6 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
  * @since 11/11/2023
  */
 public interface DataSetLoader {
-    void loadFile();
+    void loadFile(int limit);
     void preProcessCodeShoveFile();
 }

@@ -9,7 +9,7 @@ import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -34,7 +34,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return TrackerName.CODE_SHOVEL.getCode();
+        return TracerName.CODE_SHOVEL.getCode();
     }
 
     @Override
@@ -51,14 +51,14 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
             Git git = new Git(repository);
             RepositoryService repositoryService = new CachingRepositoryService(git, repository, traceEntity.getRepositoryName(), repositoryLocation);
-            Commit startCommit = repositoryService.findCommitByName(traceEntity.getCommitHash());
+            Commit startCommit = repositoryService.findCommitByName(traceEntity.getStartCommitHash());
 
             StartEnvironment startEnv = new StartEnvironment(repositoryService);
             startEnv.setRepositoryPath(repositoryLocation);
             startEnv.setFilePath(traceEntity.getFilePath());
             startEnv.setFunctionName(traceEntity.getElementName());
             startEnv.setFunctionStartLine(traceEntity.getStartLine());
-            startEnv.setStartCommitName(traceEntity.getCommitHash());
+            startEnv.setStartCommitName(traceEntity.getStartCommitHash());
             startEnv.setStartCommit(startCommit);
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);

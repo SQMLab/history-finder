@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.aggregator;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AlgorithmExecutionUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -48,7 +48,6 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                     }
 
                     traceEntity.setExpectedCommits(injectMetaData(traceEntity.getExpectedCommits(), repository, commitMap));
-                    ;
                     //injectMetaData(traceEntity.getAggregatedCommits(), repository, commitMap);
 
                     Repository finalRepository = repository;
@@ -75,17 +74,26 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                             .map(AlgorithmExecutionUdt::getCommits)
                             .flatMap(List::stream)
                             .collect(Collectors.toMap(CommitUdt::getCommitHash, Function.identity(), (o1, o2) -> {
-                                TrackerName trackerX = TrackerName.fromCode(o1.getTracerName());
-                                TrackerName trackerY = TrackerName.fromCode(o2.getTracerName());
-                                if( TrackerName.AGGREGATION_PRIORITY.indexOf(trackerX) <  TrackerName.AGGREGATION_PRIORITY.indexOf(trackerY)){
+                                TracerName trackerX = TracerName.fromCode(o1.getTracerName());
+                                TracerName trackerY = TracerName.fromCode(o2.getTracerName());
+                                if (TracerName.AGGREGATION_PRIORITY.indexOf(trackerX) < TracerName.AGGREGATION_PRIORITY.indexOf(trackerY)) {
                                     return o1;
-                                }else {
+                                } else {
                                     return o2;
                                 }
                             }))
                             .values()
                             .stream()
                             .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsFirst(Comparator.reverseOrder())))
+                            .map(commitUdt -> {
+                                try {
+                                    CommitUdt clonedCommit = (CommitUdt) commitUdt.clone();
+                                    clonedCommit.setTracerName(TracerName.AGGREGATED.getCode());
+                                    return clonedCommit;
+                                } catch (CloneNotSupportedException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            })
                             .toList();
                     traceEntity.setAggregatedCommits(aggregatedList);
                     return traceEntity;
@@ -93,13 +101,13 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
         traceRepository.saveAll(traceEntityList);
     }
 
-    private List<CommitUdt> injectMetaData(List<CommitUdt> commitUdtList, Repository repository,  Map<String, RevCommit> cachedCommitMap){
+    private List<CommitUdt> injectMetaData(List<CommitUdt> commitUdtList, Repository repository, Map<String, RevCommit> cachedCommitMap) {
         return Optional.of(commitUdtList)
                 .orElseGet(Collections::emptyList)
                 .stream()
                 .map(commitUdt -> {
                     String commitHash = commitUdt.getCommitHash();
-                    if (!cachedCommitMap.containsKey(commitHash)){
+                    if (!cachedCommitMap.containsKey(commitHash)) {
                         RevCommit revCommit = null;
                         try {
                             revCommit = repository.parseCommit(ObjectId.fromString(commitHash));
@@ -108,7 +116,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                         }
                         cachedCommitMap.put(commitHash, revCommit);
                     }
-                    if (cachedCommitMap.containsKey(commitHash)){
+                    if (cachedCommitMap.containsKey(commitHash)) {
                         RevCommit revCommit = cachedCommitMap.get(commitHash);
                         PersonIdent authorIdent = revCommit.getAuthorIdent();
                         if (authorIdent != null) {

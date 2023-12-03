@@ -1,8 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.service.algorithm.GitTracer;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class GitLineRangeTracer extends GitTracer {
 
     @Override
     public String getTracerName() {
-        return TrackerName.GIT_LINE_RANGE.getCode();
+        return TracerName.GIT_LINE_RANGE.getCode();
     }
 
     @Override
@@ -31,7 +30,7 @@ public class GitLineRangeTracer extends GitTracer {
     public TraceEntity trace(TraceEntity traceEntity) {
 
         String gitLogCommand = String.format("git log %s --no-merges -L %s,%s:%s",
-                traceEntity.getCommitHash(), traceEntity.getStartLine(), traceEntity.getEndLine(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
+                traceEntity.getStartCommitHash(), traceEntity.getStartLine(), traceEntity.getEndLine(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
         return super.trace(traceEntity, gitLogCommand);
     }
 }

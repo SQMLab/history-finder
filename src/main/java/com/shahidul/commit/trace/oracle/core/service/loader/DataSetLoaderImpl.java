@@ -2,7 +2,7 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shahidul.commit.trace.oracle.core.enums.TrackerName;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.AlgorithmExecution;
 import com.shahidul.commit.trace.oracle.core.model.Commit;
 import com.shahidul.commit.trace.oracle.core.model.Trace;
@@ -76,24 +76,24 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     @Override
     //@PostConstruct
-    public void loadFile() {
+    public void loadFile(int limit) {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
             File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile());
             Map<String, TraceEntity> entityMap = traceRepository.findAll()
                     .stream()
-                    .collect(Collectors.toMap(TraceEntity::getInputLabel, Function.identity()));
+                    .collect(Collectors.toMap(TraceEntity::getOracleFileName, Function.identity()));
 
             //rootFileDir = classPathResource.getFile();
             List<TraceEntity> traceEntityList = Arrays.stream(rootFileDir.listFiles())
+                    .limit(limit)
                     .map(file -> {
                         try {
                             Trace trace = objectMapper.readValue(file, Trace.class);
-                            String uid = generateUid(trace);
-                            String inputLabel = file.getName();
-                            if (entityMap.containsKey(uid)) {
-                                return entityMap.get(inputLabel);
+                            String oracleFileName = file.getName();
+                            if (entityMap.containsKey(oracleFileName)) {
+                                return entityMap.get(oracleFileName);
                             } else {
                                 HashMap<String, AlgorithmExecutionUdt> analysisEntityMap = new HashMap<>();
                                 for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalysis().entrySet()){
@@ -104,13 +104,14 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                             .toList();
                                     analysisEntityMap.put(entry.getKey(), AlgorithmExecutionUdt.builder().commits(commitList).build());
                                 }
+                                String uid = generateUid(trace);
                                 return TraceEntity.builder()
                                         .uid(uid)
-                                        .inputLabel(inputLabel)
+                                        .oracleFileId(Integer.valueOf(oracleFileName.substring(0, 3)))
+                                        .oracleFileName(oracleFileName)
                                         .repositoryName(trace.getRepositoryName())
-                                        .inputLabel(file.getName())
                                         .repositoryUrl(trace.getRepositoryUrl())
-                                        .commitHash(trace.getCommitHash())
+                                        .startCommitHash(trace.getCommitHash())
                                         .filePath(trace.getFilePath())
                                         .elementType(trace.getElementType())
                                         .elementName(trace.getElementName())
@@ -118,6 +119,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         .endLine(trace.getEndLine())
                                         .expectedCommits(
                                                 trace.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
+                                                                .tracerName(TracerName.EXPECTED.getCode())
                                                                 .commitHash(commit.getCommitHash())
                                                                 .changeType(commit.getChangeType())
                                                                 .build())
@@ -164,7 +166,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .map(hash -> Commit.builder().commitHash(hash).build()).toList();
 
                             HashMap<String, AlgorithmExecution> analysis = new HashMap<>();
-                            analysis.put(TrackerName.INTELLI_J.getCode(), AlgorithmExecution.builder().commits(ideaCommits).build());
+                            analysis.put(TracerName.INTELLI_J.getCode(), AlgorithmExecution.builder().commits(ideaCommits).build());
                             Trace trace = Trace.builder()
                                     .repositoryName(repositoryName)
                                     .repositoryUrl(repoMap.get(repositoryName))
