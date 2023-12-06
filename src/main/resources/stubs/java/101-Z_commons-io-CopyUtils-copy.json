@@ -1,7 +1,7 @@
 {
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
-  "commitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
+  "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
   "filePath" : "src/main/java/org/apache/commons/io/CopyUtils.java",
   "elementType" : "method",
   "elementName" : "copy",

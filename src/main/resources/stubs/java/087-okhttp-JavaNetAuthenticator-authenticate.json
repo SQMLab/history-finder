@@ -1,7 +1,7 @@
 {
   "repositoryName" : "okhttp",
   "repositoryUrl" : "https://github.com/square/okhttp.git",
-  "commitHash" : "8e2116fddcc1f9ad2b15d03fbc8918e30831d6a2",
+  "startCommitHash" : "8e2116fddcc1f9ad2b15d03fbc8918e30831d6a2",
   "filePath" : "okhttp-urlconnection/src/main/java/okhttp3/JavaNetAuthenticator.java",
   "elementType" : "method",
   "elementName" : "authenticate",

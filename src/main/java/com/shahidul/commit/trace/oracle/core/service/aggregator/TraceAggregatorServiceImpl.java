@@ -67,10 +67,8 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
     @Override
     @Transactional
     public void aggregate() {
-        StopWatch clock = new StopWatch();
         List<TraceEntity> traceEntityList = traceRepository.findAll().stream()
                 .map(traceEntity -> {
-                    clock.start();
                     List<CommitUdt> aggregatedList = traceEntity.getAnalysis()
                             .entrySet()
                             .stream()
@@ -100,9 +98,22 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                                 }
                             })
                             .toList();
-                    clock.stop();
+                    long overallRunningTime = traceEntity.getAnalysis()
+                            .entrySet()
+                            .stream()
+                            .filter(analysisEntry -> !TracerName.AGGREGATED.getCode().equals(analysisEntry.getKey()))
+                            .map(analysisEntry -> analysisEntry.getValue())
+                            .map(AnalysisUdt::getRuntime)
+                            .mapToLong(runningTime -> {
+                                if (runningTime == null){
+                                    return 0L;
+                                }else {
+                                    return runningTime.longValue();
+                                }
+                            })
+                            .sum();
                     AnalysisUdt analysisUdt = AnalysisUdt.builder()
-                            .runtime(clock.getLastTaskTimeMillis())
+                            .runtime(overallRunningTime)
                             .commits(aggregatedList)
                             .build();
                     traceEntity.getAnalysis().put(TracerName.AGGREGATED.getCode(), analysisUdt);

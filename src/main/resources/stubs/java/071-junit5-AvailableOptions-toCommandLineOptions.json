@@ -1,7 +1,7 @@
 {
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
-  "commitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
+  "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
   "filePath" : "junit-platform-console/src/main/java/org/junit/platform/console/options/AvailableOptions.java",
   "elementType" : "method",
   "elementName" : "toCommandLineOptions",

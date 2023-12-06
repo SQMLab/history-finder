@@ -1,7 +1,7 @@
 {
   "repositoryName" : "spring-boot",
   "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
-  "commitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
+  "startCommitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
   "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/servlet/server/StaticResourceJars.java",
   "elementType" : "method",
   "elementName" : "addUrlConnection",

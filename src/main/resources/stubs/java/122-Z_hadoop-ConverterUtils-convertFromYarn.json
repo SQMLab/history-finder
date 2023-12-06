@@ -1,7 +1,7 @@
 {
   "repositoryName" : "hadoop",
   "repositoryUrl" : "https://github.com/apache/hadoop.git",
-  "commitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
+  "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
   "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java",
   "elementType" : "method",
   "elementName" : "convertFromYarn",

@@ -1,7 +1,7 @@
 {
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
-  "commitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
+  "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
   "filePath" : "server/src/main/java/org/elasticsearch/action/admin/indices/segments/IndicesSegmentResponse.java",
   "elementType" : "method",
   "elementName" : "toXContent",

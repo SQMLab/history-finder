@@ -1,7 +1,7 @@
 {
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
-  "commitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
+  "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
   "filePath" : "src/main/java/org/mockito/internal/invocation/InvocationsFinder.java",
   "elementType" : "method",
   "elementName" : "findPreviousVerifiedInOrder",

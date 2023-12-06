@@ -1,7 +1,7 @@
 {
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
-  "commitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
+  "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
   "filePath" : "engine/src/main/java/org/hibernate/search/util/impl/ClassLoaderHelper.java",
   "elementType" : "method",
   "elementName" : "getNoArgConstructor",

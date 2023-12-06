@@ -1,11 +1,16 @@
 package com.shahidul.commit.trace.oracle.core.influx;
 
+import ch.qos.logback.core.util.TimeUtil;
 import com.influxdb.client.InfluxDBClient;
 import com.influxdb.client.InfluxDBClientFactory;
+import com.influxdb.client.InfluxDBClientOptions;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import lombok.AllArgsConstructor;
+import okhttp3.OkHttpClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.time.Duration;
 
 /**
  * @author Shahidul Islam
@@ -18,6 +23,19 @@ public class InfluxDbConfiguration {
 
     @Bean
     InfluxDBClient provideInfluxDbClient(){
-        return InfluxDBClientFactory.create(appProperty.getUrl(), appProperty.getToken().toCharArray(), appProperty.getOrganizationName(), appProperty.getBucketName());
+        OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(Duration.ofSeconds(60))
+                .writeTimeout(Duration.ofSeconds(60))
+                .connectTimeout(Duration.ofSeconds(5));
+
+        InfluxDBClientOptions influxDbClientOptions = InfluxDBClientOptions
+                .builder()
+                .url(appProperty.getUrl())
+                .authenticateToken(appProperty.getToken().toCharArray())
+                .bucket(appProperty.getBucketName())
+                .org(appProperty.getOrganizationName())
+                .okHttpClient(okHttpClient)
+                .build();
+        return InfluxDBClientFactory.create(influxDbClientOptions);
     }
 }

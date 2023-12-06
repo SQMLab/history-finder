@@ -1,7 +1,7 @@
 {
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
-  "commitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
+  "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
   "filePath" : "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
   "elementType" : "method",
   "elementName" : "addClause",

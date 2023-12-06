@@ -5,15 +5,10 @@ import com.influxdb.client.domain.DeletePredicateRequest;
 import com.influxdb.client.domain.WritePrecision;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.influx.series.CommitSeries;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -29,11 +24,11 @@ public class CommitSeriesRepositoryImpl implements CommitSeriesRepository {
 
     @Override
     public void deleteAll() {
-        DeletePredicateRequest predicateRequest =  new DeletePredicateRequest();
+        DeletePredicateRequest predicateRequest = new DeletePredicateRequest();
         predicateRequest.setStart(OffsetDateTime.now().minusYears(20));
         predicateRequest.setStart(OffsetDateTime.now());
         influxDBClient.getDeleteApi()
-                .delete( OffsetDateTime.now().minusYears(20), OffsetDateTime.now(),"_measurement=\"commit\"", appProperty.getBucketName(), appProperty.getOrganizationName());
+                .delete(OffsetDateTime.now().minusYears(20), OffsetDateTime.now(), "_measurement=\"commit\"", appProperty.getBucketName(), appProperty.getOrganizationName());
     }
 
     @Override

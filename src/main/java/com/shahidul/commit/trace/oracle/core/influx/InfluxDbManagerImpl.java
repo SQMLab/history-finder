@@ -97,6 +97,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .incorrectCommitCount(analysisUdt.getIncorrectCommits().size())
                 .missingCommitCount(analysisUdt.getMissingCommits().size())
                 .createdAt(LocalDateTime.now().minusYears(20).plusMonths(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
+                //.createdAt(LocalDateTime.now().minusDays(300).plusDays(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
                 .build();
     }
 }

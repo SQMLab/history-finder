@@ -17,7 +17,7 @@ import java.util.Map;
 public class Trace {
     String repositoryName;
     String repositoryUrl;
-    String commitHash;
+    String startCommitHash;
     String filePath;
     String elementType;
     String elementName;
