@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -39,10 +40,15 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                                 List<CommitUdt> correctCommits = analysisEntity.getCommits()
                                         .stream()
                                         .filter(commitEntity -> expectedHashSet.contains(commitEntity.getCommitHash()))
+                                        .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
                                         .toList();
+                                Set<String> correctCommitSet = correctCommits.stream()
+                                        .map(CommitUdt::getCommitHash)
+                                        .collect(Collectors.toSet());
                                 List<CommitUdt> incorrectCommits = analysisEntity.getCommits()
                                         .stream()
                                         .filter(commitEntity -> !expectedHashSet.contains(commitEntity.getCommitHash()))
+                                        .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
                                         .toList();
                                 Set<String> commitSet = analysisEntity.getCommits()
                                         .stream().map(CommitUdt::getCommitHash)
@@ -50,12 +56,17 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                                 List<CommitUdt> missingCommits = traceEntity.getExpectedCommits()
                                         .stream()
                                         .filter(commitEntity -> !commitSet.contains(commitEntity.getCommitHash()))
+                                        .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
                                         .toList();
+                                analysisEntity.setCommits(analysisEntity.getCommits()
+                                        .stream()
+                                        .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
+                                        .toList());
                                 analysisEntity.setCorrectCommits(correctCommits);
                                 analysisEntity.setIncorrectCommits(incorrectCommits);
                                 analysisEntity.setMissingCommits(missingCommits);
-                                analysisEntity.setPrecision((double) correctCommits.size() / commitSet.size());
-                                analysisEntity.setRecall((double) correctCommits.size() / expectedHashSet.size());
+                                analysisEntity.setPrecision((double) correctCommitSet.size() / commitSet.size());
+                                analysisEntity.setRecall((double) correctCommitSet.size() / expectedHashSet.size());
                                 return analysisEntity;
                             }).toList();
                     traceEntity.setPrecision(analysis.values()

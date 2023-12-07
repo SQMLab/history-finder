@@ -44,7 +44,7 @@ class TraceExecutionController {
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(100);
+        dataSetLoader.loadFile(200);
 
     }
     @Test

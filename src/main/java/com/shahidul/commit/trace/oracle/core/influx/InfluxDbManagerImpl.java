@@ -12,6 +12,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -80,7 +81,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .oracleFileName(traceEntity.getOracleFileName())
                 .tracerName(commitUdt.getTracerName())
                 .commitHash(commitUdt.getCommitHash().substring(0, 4))
-                .committedAt(commitUdt.getCommittedAt().toInstant())
+                .committedAt(commitUdt.getCommittedAt() == null? Instant.now() : commitUdt.getCommittedAt().toInstant())
                 .build();
     }
 
