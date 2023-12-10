@@ -19,15 +19,17 @@ import java.time.Instant;
 @Measurement(name = "commit")
 @Data
 public class CommitSeries {
-    @Column(tag = true)
+    @Column(name = "oracle_field_id", tag = true)
     Integer oracleFileId;
-    @Column(tag = true)
+    @Column(name = "oracle_file_name", tag = true)
     String oracleFileName;
-    @Column(tag = true)
+    @Column(name = "tracer_name", tag = true)
     String tracerName;
-    @Column
+    @Column(name = "commit_hash")
     String commitHash;
-    @Column(timestamp = true)
+    //@Column(name = "committed_at")
     Instant committedAt;
+    @Column(name = "created_at", timestamp = true)
+    Instant createdAt;
 }
 

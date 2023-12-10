@@ -10,14 +10,15 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
@@ -26,6 +27,7 @@ import java.util.stream.Stream;
  */
 @Repository
 @AllArgsConstructor
+@Slf4j
 public class InfluxDbManagerImpl implements InfluxDbManager {
     TraceRepository traceRepository;
     AnalysisSeriesRepository analysisSeriesRepository;
@@ -36,7 +38,11 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
         analysisSeriesRepository.deleteAll();
         commitSeriesRepository.deleteAll();
 
-        traceRepository.findAll()
+        List<TraceEntity> traceEntityList = traceRepository.findAll();
+        LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2023, 1).atStartOfDay();
+
+
+        traceEntityList
                 .stream()
                 .map(traceEntity -> {
                     List<CommitUdt> commitUdtList = traceEntity.getAnalysis()
@@ -50,12 +56,14 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                             .toList();
                     List<CommitUdt> allCommitList = new ArrayList<>(commitUdtList);
                     allCommitList.addAll(traceEntity.getExpectedCommits());
-                    commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt)).toList());
+                    Map<String, Instant> timeMap = determineTimeAlignment(allCommitList);
+                    commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt, timeMap)).toList());
+
 
                     Stream<AnalysisSeries> analysisSeriesStream = traceEntity.getAnalysis()
                             .entrySet()
                             .stream()
-                            .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue() ));
+                            .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue(), analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC)));
 
                     AnalysisUdt dummyExpectedAnalysisEntity = AnalysisUdt.builder()
                             .commits(traceEntity.getExpectedCommits())
@@ -67,7 +75,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                             .runtime(1L)
                             .build();
                     List<AnalysisSeries> analysisSeriesList = Stream.concat(analysisSeriesStream,
-                            Stream.of(toAnalysisSeries(traceEntity, TracerName.EXPECTED.getCode(), dummyExpectedAnalysisEntity)))
+                                    Stream.of(toAnalysisSeries(traceEntity, TracerName.EXPECTED.getCode(), dummyExpectedAnalysisEntity, analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC))))
                             .toList();
                     analysisSeriesRepository.saveAll(analysisSeriesList);
                     return traceEntity;
@@ -75,17 +83,18 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
 
     }
 
-    private CommitSeries toCommitSeries(TraceEntity traceEntity, CommitUdt commitUdt) {
+    private CommitSeries toCommitSeries(TraceEntity traceEntity, CommitUdt commitUdt, Map<String, Instant> timeMap) {
         return CommitSeries.builder()
                 .oracleFileId(traceEntity.getOracleFileId())
                 .oracleFileName(traceEntity.getOracleFileName())
                 .tracerName(commitUdt.getTracerName())
                 .commitHash(commitUdt.getCommitHash().substring(0, 4))
-                .committedAt(commitUdt.getCommittedAt() == null? Instant.now() : commitUdt.getCommittedAt().toInstant())
+                .committedAt(commitUdt.getCommittedAt() == null ? Instant.now() : commitUdt.getCommittedAt().toInstant())
+                .createdAt(timeMap.get(commitUdt.getCommitHash()))
                 .build();
     }
 
-    private AnalysisSeries toAnalysisSeries(TraceEntity traceEntity, String tracerName, AnalysisUdt analysisUdt) {
+    private AnalysisSeries toAnalysisSeries(TraceEntity traceEntity, String tracerName, AnalysisUdt analysisUdt, Instant createdAt) {
         return AnalysisSeries.builder()
                 .tracerName(tracerName)
                 .oracleFileId(traceEntity.getOracleFileId())
@@ -97,8 +106,26 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .correctCommitCount(analysisUdt.getCorrectCommits().size())
                 .incorrectCommitCount(analysisUdt.getIncorrectCommits().size())
                 .missingCommitCount(analysisUdt.getMissingCommits().size())
-                .createdAt(LocalDateTime.now().minusYears(20).plusMonths(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
-                //.createdAt(LocalDateTime.now().minusDays(300).plusDays(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
+                //.createdAt(LocalDateTime.now().minusYears(20).plusMonths(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
+                .createdAt(createdAt)
                 .build();
     }
+
+    Map<String, Instant> determineTimeAlignment(List<CommitUdt> allCommitList) {
+        LocalDateTime movingDate = LocalDate.ofYearDay(2023, 1).atStartOfDay();
+
+        AtomicLong dayIndex = new AtomicLong(0);
+        Map<String, Instant> timeMap = new HashMap<>();
+        allCommitList.stream()
+                .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
+                .map(commitUdt -> {
+                    if (!timeMap.containsKey(commitUdt.getCommitHash())) {
+                        timeMap.put(commitUdt.getCommitHash(), movingDate.plusDays(dayIndex.getAndIncrement()).toInstant(ZoneOffset.UTC));
+                    }
+                    return commitUdt;
+                }).toList();
+
+        return timeMap;
+    }
+
 }

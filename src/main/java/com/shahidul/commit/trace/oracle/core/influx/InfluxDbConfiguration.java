@@ -24,8 +24,8 @@ public class InfluxDbConfiguration {
     @Bean
     InfluxDBClient provideInfluxDbClient(){
         OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder()
-                .readTimeout(Duration.ofSeconds(60))
-                .writeTimeout(Duration.ofSeconds(60))
+                .readTimeout(Duration.ofMinutes(3))
+                .writeTimeout(Duration.ofMinutes(3))
                 .connectTimeout(Duration.ofSeconds(5));
 
         InfluxDBClientOptions influxDbClientOptions = InfluxDBClientOptions

@@ -19,27 +19,27 @@ import java.time.Instant;
 @Measurement(name = "analysis")
 @Data
 public class AnalysisSeries {
-    @Column(tag = true)
+    @Column(name = "oracle_file_id", tag = true)
     Integer oracleFileId;
-    @Column(tag = true)
+    @Column(name = "oracle_file_name", tag = true)
     String oracleFileName;
-    @Column(tag = true)
+    @Column(name = "tracer_name", tag = true)
     String tracerName;
-    @Column
+    @Column(name = "precision")
     Double precision;
-    @Column
+    @Column(name = "recall")
     Double recall;
-    @Column
+    @Column(name = "runtime")
     Long runtime;
-    @Column
+    @Column(name = "commit_count")
     Integer commitCount;
-    @Column
+    @Column(name = "correct_commit_count")
     Integer correctCommitCount;
-    @Column
+    @Column(name = "incorrect_commit_count")
     Integer incorrectCommitCount;
-    @Column
+    @Column(name = "missing_commit_count")
     Integer missingCommitCount;
-    @Column(timestamp = true)
+    @Column(name = "created_at", timestamp = true)
     Instant createdAt;
 }
 
