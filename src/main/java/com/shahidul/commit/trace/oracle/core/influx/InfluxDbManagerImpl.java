@@ -90,6 +90,8 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .tracerName(commitUdt.getTracerName())
                 .commitHash(commitUdt.getCommitHash().substring(0, 4))
                 .committedAt(commitUdt.getCommittedAt() == null ? Instant.now() : commitUdt.getCommittedAt().toInstant())
+                .diff(commitUdt.getDiff())
+                .diffDetail(commitUdt.getDiffDetail())
                 .createdAt(timeMap.get(commitUdt.getCommitHash()))
                 .build();
     }
@@ -117,7 +119,19 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
         AtomicLong dayIndex = new AtomicLong(0);
         Map<String, Instant> timeMap = new HashMap<>();
         allCommitList.stream()
+                .filter(commitUdt -> commitUdt.getCommittedAt() != null)
                 .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
+                .map(commitUdt -> {
+                    if (!timeMap.containsKey(commitUdt.getCommitHash())) {
+                        timeMap.put(commitUdt.getCommitHash(), movingDate.plusDays(dayIndex.getAndIncrement()).toInstant(ZoneOffset.UTC));
+                    }
+                    return commitUdt;
+                }).toList();
+
+        for (int i = 0; i < 10; i++)
+            dayIndex.getAndIncrement();//Keep nulls in days apart
+        allCommitList.stream()
+                .filter(commitUdt -> commitUdt.getCommittedAt() == null)
                 .map(commitUdt -> {
                     if (!timeMap.containsKey(commitUdt.getCommitHash())) {
                         timeMap.put(commitUdt.getCommitHash(), movingDate.plusDays(dayIndex.getAndIncrement()).toInstant(ZoneOffset.UTC));

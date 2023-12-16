@@ -27,8 +27,12 @@ public class CommitSeries {
     String tracerName;
     @Column(name = "commit_hash")
     String commitHash;
-    //@Column(name = "committed_at")
+    @Column(name = "committed_at")
     Instant committedAt;
+    @Column(name = "diff")
+    String diff;
+    @Column(name = "diff_detail")
+    String diffDetail;
     @Column(name = "created_at", timestamp = true)
     Instant createdAt;
 }
