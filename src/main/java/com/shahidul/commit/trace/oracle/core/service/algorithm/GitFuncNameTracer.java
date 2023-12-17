@@ -29,8 +29,8 @@ public class GitFuncNameTracer extends GitTracer {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
 
-        String gitCommand = String.format("git log %s --no-merges -L /%s/:%s --no-patch",
-                traceEntity.getStartCommitHash(), traceEntity.getElementName(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
+        String gitCommand = String.format("git log %s --no-merges %s -L :%s:%s",
+                traceEntity.getStartCommitHash(), LOG_FORMAT, traceEntity.getElementName(), traceEntity.getFilePath());
 
         return super.trace(traceEntity, gitCommand);
 

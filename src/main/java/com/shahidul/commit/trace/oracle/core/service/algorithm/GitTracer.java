@@ -20,13 +20,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Shahidul Islam
@@ -39,6 +38,8 @@ public abstract class GitTracer implements TraceService {
 
     @Autowired
     AppProperty appProperty;
+    private static final String DIVIDER = "--------------------------";
+    protected static final String LOG_FORMAT = "--pretty=format:" + DIVIDER + "%n%H%n" + DIVIDER;
 
 
     public TraceEntity trace(TraceEntity traceEntity, String logCommand) {
@@ -72,11 +73,32 @@ public abstract class GitTracer implements TraceService {
                 fileHistory.put(commit.getName(), new Commit(commit));
             }
 
+            List<CommitUdt> commitUdtList = new ArrayList<>();
+
+            Scanner scanner = new Scanner(process.getInputStream());
+            scanner.useDelimiter(DIVIDER);
+            while (scanner.hasNext()){
+                String commitHash = scanner.next().strip();
+                CommitUdt.CommitUdtBuilder commitEntityBuilder = CommitUdt.builder();
+                if (fileHistory.containsKey(commitHash)) {
+                    Commit commit = fileHistory.get(commitHash);
+                    commitEntityBuilder.committedAt(commit.getCommitDate())
+                            .author(commit.getAuthorName())
+                            .email(commit.getAuthorEmail())
+                            .shortMessage(commit.getCommitMessage());
+                }
+                commitUdtList.add(commitEntityBuilder
+                        .tracerName(getTracerName())
+                        .commitHash(commitHash)
+                        .diff(scanner.next().strip())
+                        .build());
+            }
+            scanner.close();
+
+         /*
+         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             List<String> commitNames = new ArrayList<>();
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-            String line = reader.readLine();
+         String line = reader.readLine();
             Pattern COMMIT_NAME_PATTERN = Pattern.compile(".*([a-z0-9]{40}).*");
 
             StringBuilder shellOutputBuilder = new StringBuilder();
@@ -91,26 +113,10 @@ public abstract class GitTracer implements TraceService {
                 }
                 shellOutputBuilder.append(line);
                 line = reader.readLine();
-            }
+                 reader.close();
+            }*/
 
-            reader.close();
-            log.info("Shell output {}", shellOutputBuilder.toString());
-            List<CommitUdt> commitUdtList = commitNames.stream()
-                    .map(commitHash -> {
-                        CommitUdt.CommitUdtBuilder commitEntityBuilder = CommitUdt.builder();
-                        if (fileHistory.containsKey(commitHash)) {
-                            Commit commit = fileHistory.get(commitHash);
-                            commitEntityBuilder.committedAt(commit.getCommitDate())
-                                    .author(commit.getAuthorName())
-                                    .email(commit.getAuthorEmail())
-                                    .shortMessage(commit.getCommitMessage());
-                        }
-                        return commitEntityBuilder
-                                .tracerName(getTracerName())
-                                .commitHash(commitHash)
-                                .build();
-                    })
-                    .toList();
+
             traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(commitUdtList).build());
             return traceEntity;
         } catch (Exception e) {

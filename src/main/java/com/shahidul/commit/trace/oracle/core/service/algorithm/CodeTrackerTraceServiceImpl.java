@@ -5,10 +5,12 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import gr.uom.java.xmi.LocationInfo;
 import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
 import org.codetracker.api.History;
 import org.codetracker.api.MethodTracker;
+import org.codetracker.change.Change;
 import org.codetracker.element.Method;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -66,16 +69,20 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitDiff(History.HistoryInfo<Method> historyInfo) {
-        boolean isNewFile = historyInfo.getElementBefore().getFilePath().equals(historyInfo.getElementAfter().getFilePath());
         boolean isNewElement = historyInfo.getElementBefore().getName().equals(historyInfo.getElementAfter().getName());
 
+        LocationInfo newLocation = historyInfo.getElementAfter().getLocation();
         return CommitUdt.builder()
                 .tracerName(getTracerName())
                 .parentCommitHash(historyInfo.getParentCommitId())
                 .commitHash(historyInfo.getCommitId())
                 .committedAt(new Date(historyInfo.getCommitTime()))
+                .startLine(newLocation.getStartLine())
+                .endLine(newLocation.getEndLine())
+                .codeFragment(null)
                 .changeType(parseChangeType(historyInfo.getChangeType().toString()))
-                .renamedFile(isNewFile ? historyInfo.getElementAfter().getFilePath() : null)
+                .changeList(historyInfo.getChangeList().stream().map(Objects::toString).toList())
+                .filePath(historyInfo.getElementAfter().getFilePath())
                 .renamedElement(isNewElement ? historyInfo.getElementAfter().getName() : null)
                 .build();
     }

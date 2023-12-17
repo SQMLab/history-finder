@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class GitLineRangeTracer extends GitTracer {
 
-
     @Override
     public String getTracerName() {
         return TracerName.GIT_LINE_RANGE.getCode();
@@ -29,8 +28,8 @@ public class GitLineRangeTracer extends GitTracer {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
 
-        String gitLogCommand = String.format("git log %s --no-merges -L %s,%s:%s",
-                traceEntity.getStartCommitHash(), traceEntity.getStartLine(), traceEntity.getEndLine(), traceEntity.getFilePath()) + " | grep 'commit\\s' | sed 's/commit//'";
+        String gitLogCommand = String.format("git log %s --no-merges %s -L %s,%s:%s",
+                traceEntity.getStartCommitHash(), LOG_FORMAT, traceEntity.getStartLine(), traceEntity.getEndLine(), traceEntity.getFilePath());
         return super.trace(traceEntity, gitLogCommand);
     }
 }

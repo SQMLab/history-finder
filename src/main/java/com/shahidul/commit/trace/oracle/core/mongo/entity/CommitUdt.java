@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Shahidul Islam
@@ -20,13 +21,17 @@ public class CommitUdt implements Cloneable{
     String commitHash;
     String parentCommitHash;
     Date committedAt;
+    Integer startLine;
+    Integer endLine;
+    String codeFragment;
+    List<String> changeList;
+    String filePath;
     String author;
     String email;
     String shortMessage;
     String fullMessage;
     String changeType;
     String renamedElement;
-    String renamedFile;
     String diff;
     String diffDetail;
 
