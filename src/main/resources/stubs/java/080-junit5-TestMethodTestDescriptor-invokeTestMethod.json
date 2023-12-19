@@ -2,9 +2,9 @@
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
   "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
-  "filePath" : "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.java",
+  "file" : "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.java",
   "elementType" : "method",
-  "elementName" : "invokeTestMethod",
+  "element" : "invokeTestMethod",
   "startLine" : 163,
   "endLine" : 177,
   "expectedCommits" : [ {
@@ -116,7 +116,7 @@
     "commitHash" : "fc5ff8d87c124e43601f64da76668e516758a74a",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fdadf905479b4cd63f1987d08940eddfbf89d088",

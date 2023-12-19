@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-core/src/main/java/org/apache/flink/api/common/io/LocatableInputSplitAssigner.java",
+  "file" : "flink-core/src/main/java/org/apache/flink/api/common/io/LocatableInputSplitAssigner.java",
   "elementType" : "method",
-  "elementName" : "getNextInputSplit",
+  "element" : "getNextInputSplit",
   "startLine" : 76,
   "endLine" : 203,
   "expectedCommits" : [ {
@@ -41,7 +41,7 @@
     "commitHash" : "8f7484000ae40ae1b5c68e2d21b9e5a44d984234",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f76231c90568cbeb25d25ae1da0320226eab1c13",

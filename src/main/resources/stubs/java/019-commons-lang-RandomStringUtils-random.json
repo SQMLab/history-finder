@@ -2,9 +2,9 @@
   "repositoryName" : "commons-lang",
   "repositoryUrl" : "https://github.com/apache/commons-lang.git",
   "startCommitHash" : "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
-  "filePath" : "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
+  "file" : "src/main/java/org/apache/commons/lang3/RandomStringUtils.java",
   "elementType" : "method",
-  "elementName" : "random",
+  "element" : "random",
   "startLine" : 348,
   "endLine" : 425,
   "expectedCommits" : [ {
@@ -71,7 +71,7 @@
     "commitHash" : "6627f7ad8fb08d6c23b83d6c9f0a6830e9e7085a",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fac4f8d2d6c980440cbf582f3e0bfff3055aab3b",

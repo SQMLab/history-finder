@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/symboltable/SourceFileScope.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/symboltable/SourceFileScope.java",
   "elementType" : "method",
-  "elementName" : "getSubTypes",
+  "element" : "getSubTypes",
   "startLine" : 150,
   "endLine" : 166,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "a8d7b594ab8ee3afbcf3390be2aa5c8dee1f06c7",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fd2dcddc447c8ae88fe5b1df9fca0326017309f8",

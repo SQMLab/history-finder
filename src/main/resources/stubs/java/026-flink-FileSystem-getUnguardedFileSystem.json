@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-core/src/main/java/org/apache/flink/core/fs/FileSystem.java",
+  "file" : "flink-core/src/main/java/org/apache/flink/core/fs/FileSystem.java",
   "elementType" : "method",
-  "elementName" : "getUnguardedFileSystem",
+  "element" : "getUnguardedFileSystem",
   "startLine" : 322,
   "endLine" : 415,
   "expectedCommits" : [ {
@@ -50,7 +50,7 @@
     "commitHash" : "8563d511da8ab8ac0e1362775f11aef7b67375be",
     "changeType" : "Yfilerename"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f2909293cbb37cc4b4516e3bef4db66376159e52",

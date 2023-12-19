@@ -2,9 +2,9 @@
   "repositoryName" : "okhttp",
   "repositoryUrl" : "https://github.com/square/okhttp.git",
   "startCommitHash" : "5224f3045ba9b171fce521777edf389f9206173c",
-  "filePath" : "okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java",
+  "file" : "okhttp-urlconnection/src/main/java/okhttp3/internal/huc/OkHttpURLConnection.java",
   "elementType" : "method",
-  "elementName" : "getResponse",
+  "element" : "getResponse",
   "startLine" : 443,
   "endLine" : 484,
   "expectedCommits" : [ {
@@ -104,7 +104,7 @@
     "commitHash" : "ea63463c2ff8a67f63e541036f0d5998b5bb1f3e",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ee2ed56c9ad4563f5713ff0f572a5454af16901d",

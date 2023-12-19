@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java",
+  "file" : "spring-beans/src/main/java/org/springframework/beans/AbstractNestablePropertyAccessor.java",
   "elementType" : "method",
-  "elementName" : "setPropertyValue",
+  "element" : "setPropertyValue",
   "startLine" : 273,
   "endLine" : 280,
   "expectedCommits" : [ {
@@ -152,7 +152,7 @@
     "commitHash" : "f11d3436ed21d3908b9e0b569f2d783df161c0a3",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "64d6561cbbda4d5a74cd0f3ce5983e29c9d42b89",

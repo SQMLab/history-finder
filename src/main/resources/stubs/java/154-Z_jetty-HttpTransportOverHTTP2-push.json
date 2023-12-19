@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-http2/http2-server/src/main/java/org/eclipse/jetty/http2/server/HttpTransportOverHTTP2.java",
+  "file" : "jetty-http2/http2-server/src/main/java/org/eclipse/jetty/http2/server/HttpTransportOverHTTP2.java",
   "elementType" : "method",
-  "elementName" : "push",
+  "element" : "push",
   "startLine" : 195,
   "endLine" : 222,
   "expectedCommits" : [ {
@@ -38,7 +38,7 @@
     "commitHash" : "b5971484a57212a39af6f70267ea00a24fdbf100",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fa4c7b0ca9a98af85ed200440de9720cea29bb52",

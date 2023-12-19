@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-beans/src/main/java/org/springframework/beans/factory/support/ConstructorResolver.java",
+  "file" : "spring-beans/src/main/java/org/springframework/beans/factory/support/ConstructorResolver.java",
   "elementType" : "method",
-  "elementName" : "instantiateUsingFactoryMethod",
+  "element" : "instantiateUsingFactoryMethod",
   "startLine" : 360,
   "endLine" : 597,
   "expectedCommits" : [ {
@@ -143,7 +143,7 @@
     "commitHash" : "f11d3436ed21d3908b9e0b569f2d783df161c0a3",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f813712f5b413b354560cd7cc006352e9defa9a3",

@@ -2,9 +2,9 @@
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
   "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
-  "filePath" : "junit-platform-console/src/main/java/org/junit/platform/console/options/AvailableOptions.java",
+  "file" : "junit-platform-console/src/main/java/org/junit/platform/console/options/AvailableOptions.java",
   "elementType" : "method",
-  "elementName" : "toCommandLineOptions",
+  "element" : "toCommandLineOptions",
   "startLine" : 220,
   "endLine" : 264,
   "expectedCommits" : [ {
@@ -107,7 +107,7 @@
     "commitHash" : "550e5b1d774d538ecfa22d7efe8fe893dcd9fa06",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f9c6e768eb82df9b8a11da5c7a9f64b889dad44d",

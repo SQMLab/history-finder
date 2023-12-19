@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/util/StringUtil.java",
+  "file" : "src/main/java/org/mockito/internal/util/StringUtil.java",
   "elementType" : "method",
-  "elementName" : "join",
+  "element" : "join",
   "startLine" : 52,
   "endLine" : 61,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "98f7799a2bf0e2016eb4c7e0cce46e17fb796966",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ec61a3b6c645b273d238b5e6e6b0cd621f31fb64",

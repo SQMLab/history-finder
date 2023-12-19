@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
   "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
-  "filePath" : "engine/src/main/java/org/hibernate/search/backend/impl/StreamingOperationDispatcher.java",
+  "file" : "engine/src/main/java/org/hibernate/search/backend/impl/StreamingOperationDispatcher.java",
   "elementType" : "method",
-  "elementName" : "executeWork",
+  "element" : "executeWork",
   "startLine" : 49,
   "endLine" : 56,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "bb0e67026acff2766b118ceb1fa1ed4c326a38bf",

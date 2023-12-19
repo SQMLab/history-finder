@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java",
+  "file" : "spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/method/annotation/AbstractMessageConverterMethodProcessor.java",
   "elementType" : "method",
-  "elementName" : "writeWithMessageConverters",
+  "element" : "writeWithMessageConverters",
   "startLine" : 179,
   "endLine" : 307,
   "expectedCommits" : [ {
@@ -143,7 +143,7 @@
     "commitHash" : "acc75aa4b898a34dce42748df5b54624f8b3e9f2",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fda08852ba9f5d52c149209382c0d03380de413c",

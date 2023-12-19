@@ -18,11 +18,11 @@ public class Trace {
     String repositoryName;
     String repositoryUrl;
     String startCommitHash;
-    String filePath;
+    String file;
     String elementType;
-    String elementName;
+    String element;
     Integer startLine;
     Integer endLine;
     List<Commit> expectedCommits;
-    Map<String, AlgorithmExecution> analysis = new HashMap<>();
+    Map<String, AlgorithmExecution> analyzer = new HashMap<>();
 }

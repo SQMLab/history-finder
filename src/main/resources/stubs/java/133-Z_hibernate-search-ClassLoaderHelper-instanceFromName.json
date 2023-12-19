@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
   "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
-  "filePath" : "engine/src/main/java/org/hibernate/search/util/impl/ClassLoaderHelper.java",
+  "file" : "engine/src/main/java/org/hibernate/search/util/impl/ClassLoaderHelper.java",
   "elementType" : "method",
-  "elementName" : "instanceFromName",
+  "element" : "instanceFromName",
   "startLine" : 59,
   "endLine" : 65,
   "expectedCommits" : [ {
@@ -17,7 +17,7 @@
     "commitHash" : "915e3992753a5681b6d2e0eed49a7b171eab2902",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fa9e756e26d0f36f48938de2647ad769fa467b9d",

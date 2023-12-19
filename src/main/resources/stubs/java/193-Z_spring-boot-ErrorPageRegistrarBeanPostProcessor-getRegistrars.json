@@ -2,9 +2,9 @@
   "repositoryName" : "spring-boot",
   "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
   "startCommitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
-  "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/server/ErrorPageRegistrarBeanPostProcessor.java",
+  "file" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/server/ErrorPageRegistrarBeanPostProcessor.java",
   "elementType" : "method",
-  "elementName" : "getRegistrars",
+  "element" : "getRegistrars",
   "startLine" : 76,
   "endLine" : 85,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "08ef5f4b1feb1033a5053a8d5bf6c439f2cf2db0",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "dd69d0f660c2d1d5c551c9476e4e6f8702657e68",

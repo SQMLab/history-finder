@@ -2,9 +2,9 @@
   "repositoryName" : "checkstyle",
   "repositoryUrl" : "https://github.com/checkstyle/checkstyle.git",
   "startCommitHash" : "119fd4fb33bef9f5c66fc950396669af842c21a3",
-  "filePath" : "src/main/java/com/puppycrawl/tools/checkstyle/Checker.java",
+  "file" : "src/main/java/com/puppycrawl/tools/checkstyle/Checker.java",
   "elementType" : "method",
-  "elementName" : "fireErrors",
+  "element" : "fireErrors",
   "startLine" : 384,
   "endLine" : 399,
   "expectedCommits" : [ {
@@ -74,7 +74,7 @@
     "commitHash" : "0e3fe5643667a53079dbd114e5b1e9aa91fde083",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f1afaf83f39b83cc3bd07a2388448b262652a76b",

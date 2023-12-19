@@ -96,7 +96,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                 return entityMap.get(oracleFileName);
                             } else {
                                 HashMap<String, AnalysisUdt> analysisEntityMap = new HashMap<>();
-                                for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalysis().entrySet()){
+                                for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalyzer().entrySet()){
 
                                     List<CommitUdt> commitList = entry.getValue().getCommits()
                                             .stream()
@@ -112,9 +112,9 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         .repositoryName(trace.getRepositoryName())
                                         .repositoryUrl(trace.getRepositoryUrl())
                                         .startCommitHash(trace.getStartCommitHash())
-                                        .filePath(trace.getFilePath())
+                                        .file(trace.getFile())
                                         .elementType(trace.getElementType())
-                                        .elementName(trace.getElementName())
+                                        .elementName(trace.getElement())
                                         .startLine(trace.getStartLine())
                                         .endLine(trace.getEndLine())
                                         .expectedCommits(
@@ -171,13 +171,13 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .repositoryName(repositoryName)
                                     .repositoryUrl(repoMap.get(repositoryName))
                                     .startCommitHash(json.get("startCommitName").asText())
-                                    .filePath(json.get("filePath").asText())
+                                    .file(json.get("filePath").asText())
                                     .elementType("method")
-                                    .elementName(json.get("functionName").asText())
+                                    .element(json.get("functionName").asText())
                                     .startLine(json.get("functionStartLine").asInt())
                                     .endLine(json.get("functionEndLine").asInt())
                                     .expectedCommits(commits)
-                                    .analysis(analysis)
+                                    .analyzer(analysis)
                                     .build();
                             File outputFile = new File( "./src/main/resources/stubs/java", String.format("%03d", fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
@@ -202,9 +202,9 @@ public class DataSetLoaderImpl implements DataSetLoader {
                 .append(trace.getRepositoryName())
                 .append(trace.getRepositoryUrl())
                 .append(trace.getStartCommitHash())
-                .append(trace.getFilePath())
+                .append(trace.getFile())
                 .append(trace.getElementType())
-                .append(trace.getElementName())
+                .append(trace.getElement())
                 .append(trace.getStartLine())
                 .append(trace.getEndLine())
                 .toString();

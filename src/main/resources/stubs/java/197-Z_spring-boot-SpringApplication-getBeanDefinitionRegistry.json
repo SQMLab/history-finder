@@ -2,9 +2,9 @@
   "repositoryName" : "spring-boot",
   "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
   "startCommitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
-  "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
+  "file" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/SpringApplication.java",
   "elementType" : "method",
-  "elementName" : "getBeanDefinitionRegistry",
+  "element" : "getBeanDefinitionRegistry",
   "startLine" : 741,
   "endLine" : 750,
   "expectedCommits" : [ {
@@ -38,7 +38,7 @@
     "commitHash" : "20cce0c69c53d996bb6e9c919b0755a2860a7817",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e674d751dee33e295755ec6c58895aa3d448471e",

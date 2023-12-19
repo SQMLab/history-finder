@@ -2,9 +2,9 @@
   "repositoryName" : "commons-lang",
   "repositoryUrl" : "https://github.com/apache/commons-lang.git",
   "startCommitHash" : "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
-  "filePath" : "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java",
+  "file" : "src/main/java/org/apache/commons/lang3/time/DurationFormatUtils.java",
   "elementType" : "method",
-  "elementName" : "formatPeriod",
+  "element" : "formatPeriod",
   "startLine" : 279,
   "endLine" : 409,
   "expectedCommits" : [ {
@@ -68,7 +68,7 @@
     "commitHash" : "177d40989f45197fd9f9669f4eeb6033b73bc16e",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f80cb56da1316d5cb977c07937c2794efc87a522",

@@ -40,7 +40,7 @@ public class TraceEntity {
     @Field
     String repositoryUrl;
     @Field
-    String filePath;
+    String file;
     @Field
     String elementType;
     @Field
@@ -51,9 +51,6 @@ public class TraceEntity {
     Integer startLine;
     @Field
     Integer endLine;
-    List<CommitUdt> expectedCommits;
-    @Field
-    Map<String, AnalysisUdt> analysis;
     @Field
     Double precision;
     @Field
@@ -67,4 +64,8 @@ public class TraceEntity {
     @Field
     @LastModifiedDate
     Date updatedAt;
+    @Field
+    List<CommitUdt> expectedCommits;
+    @Field
+    Map<String, AnalysisUdt> analysis;
 }

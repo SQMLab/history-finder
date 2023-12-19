@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/listeners/VerificationStartedNotifier.java",
+  "file" : "src/main/java/org/mockito/internal/listeners/VerificationStartedNotifier.java",
   "elementType" : "method",
-  "elementName" : "notifyVerificationStarted",
+  "element" : "notifyVerificationStarted",
   "startLine" : 20,
   "endLine" : 29,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "1f9b4f3de3af9f29e2123e74c5f6c036bb94d2aa",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "bf9524388ba5fc8f3350399a65c0ccd31442f730",

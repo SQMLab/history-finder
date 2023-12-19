@@ -2,9 +2,9 @@
   "repositoryName" : "spring-boot",
   "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
   "startCommitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
-  "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java",
+  "file" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/web/embedded/undertow/UndertowWebServer.java",
   "elementType" : "method",
-  "elementName" : "getPortFromChannel",
+  "element" : "getPortFromChannel",
   "startLine" : 184,
   "endLine" : 193,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "656b509f0329a37701755c633268f0c68160d912",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "7fc455654a19c3a988c6ca2116ce04001163adb4",

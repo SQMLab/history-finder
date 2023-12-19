@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/transport/ReceivePack.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/transport/ReceivePack.java",
   "elementType" : "method",
-  "elementName" : "getLockMessageProcessName",
+  "element" : "getLockMessageProcessName",
   "startLine" : 344,
   "endLine" : 346,
   "expectedCommits" : [ {
@@ -14,7 +14,7 @@
     "commitHash" : "cc37cb777e57f6a5a8e0068945d322ac0f6834e2",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f3d8a8ecad614906a2c4ec0077cdb24129da6c6d",

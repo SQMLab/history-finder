@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java",
+  "file" : "lucene/memory/src/java/org/apache/lucene/index/memory/MemoryIndex.java",
   "elementType" : "method",
-  "elementName" : "storeDocValues",
+  "element" : "storeDocValues",
   "startLine" : 515,
   "endLine" : 566,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "cf3eea26406692306505d2606d7ff73ee3634c30",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f0bfc02d4d8fb5655f1eb78ae3020f6e8957e496",

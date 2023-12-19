@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/input/XmlStreamReader.java",
+  "file" : "src/main/java/org/apache/commons/io/input/XmlStreamReader.java",
   "elementType" : "method",
-  "elementName" : "doHttpStream",
+  "element" : "doHttpStream",
   "startLine" : 449,
   "endLine" : 463,
   "expectedCommits" : [ {
@@ -44,7 +44,7 @@
     "commitHash" : "5b75cf83b2db408f8228b26910a8d3d3633cd54f",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e4540bba7aebd88d3d4b22e68a6a916ddfc48890",

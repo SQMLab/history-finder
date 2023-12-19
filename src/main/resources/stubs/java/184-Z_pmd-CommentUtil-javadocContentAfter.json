@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/CommentUtil.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/CommentUtil.java",
   "elementType" : "method",
-  "elementName" : "javadocContentAfter",
+  "element" : "javadocContentAfter",
   "startLine" : 78,
   "endLine" : 104,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "4ffa5c453f41ca0b8ae9f317570453064ed48f3d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "b5cb2bbb854e22783baf7227b2c3bf739e072461",

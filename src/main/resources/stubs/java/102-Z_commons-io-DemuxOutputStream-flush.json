@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/output/DemuxOutputStream.java",
+  "file" : "src/main/java/org/apache/commons/io/output/DemuxOutputStream.java",
   "elementType" : "method",
-  "elementName" : "flush",
+  "element" : "flush",
   "startLine" : 63,
   "endLine" : 69,
   "expectedCommits" : [ {
@@ -32,7 +32,7 @@
     "commitHash" : "c360a10db25701f682849e5913d150f13a09f3bb",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "c77a476ee86b107745267bdfc9fc210201e6d414",

@@ -2,9 +2,9 @@
   "repositoryName" : "intellij-community",
   "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
   "startCommitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
-  "filePath" : "java/debugger/impl/src/com/intellij/debugger/engine/PositionManagerImpl.java",
+  "file" : "java/debugger/impl/src/com/intellij/debugger/engine/PositionManagerImpl.java",
   "elementType" : "method",
-  "elementName" : "createPrepareRequests",
+  "element" : "createPrepareRequests",
   "startLine" : 77,
   "endLine" : 109,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "78293368c3cc317ee4a019456c3a320272dfa5f0",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f84fc150c2881235d163385f1fcce8af09959ac2",

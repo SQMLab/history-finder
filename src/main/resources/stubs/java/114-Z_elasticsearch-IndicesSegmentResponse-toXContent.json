@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/action/admin/indices/segments/IndicesSegmentResponse.java",
+  "file" : "server/src/main/java/org/elasticsearch/action/admin/indices/segments/IndicesSegmentResponse.java",
   "elementType" : "method",
-  "elementName" : "toXContent",
+  "element" : "toXContent",
   "startLine" : 196,
   "endLine" : 209,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "f7f99b8dbfe4cc10612faceec8f82e03884f0d6d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f7f99b8dbfe4cc10612faceec8f82e03884f0d6d",

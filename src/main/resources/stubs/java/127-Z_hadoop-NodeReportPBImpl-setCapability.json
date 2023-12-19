@@ -2,9 +2,9 @@
   "repositoryName" : "hadoop",
   "repositoryUrl" : "https://github.com/apache/hadoop.git",
   "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
-  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/api/records/impl/pb/NodeReportPBImpl.java",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/api/records/impl/pb/NodeReportPBImpl.java",
   "elementType" : "method",
-  "elementName" : "setCapability",
+  "element" : "setCapability",
   "startLine" : 180,
   "endLine" : 186,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "dbecbe5dfe50f834fc3b8401709079e9470cc517",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "dbecbe5dfe50f834fc3b8401709079e9470cc517",

@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
   "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
-  "filePath" : "engine/src/main/java/org/hibernate/search/bridge/builtin/ArrayBridge.java",
+  "file" : "engine/src/main/java/org/hibernate/search/bridge/builtin/ArrayBridge.java",
   "elementType" : "method",
-  "elementName" : "indexNotNullArray",
+  "element" : "indexNotNullArray",
   "startLine" : 46,
   "endLine" : 51,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "b663d28591ec25f73d6523655ae646c2eaadfdbf",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f41cb33e1ecc97f21b93499cba54b61cedd2aaf6",

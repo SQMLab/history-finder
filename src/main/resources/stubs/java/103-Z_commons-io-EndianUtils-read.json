@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/EndianUtils.java",
+  "file" : "src/main/java/org/apache/commons/io/EndianUtils.java",
   "elementType" : "method",
-  "elementName" : "read",
+  "element" : "read",
   "startLine" : 470,
   "endLine" : 480,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "7748ed36401ea37104ae313be804f81f2526cd6d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e47d347ce4255b8964e384bf0df170281c78d070",

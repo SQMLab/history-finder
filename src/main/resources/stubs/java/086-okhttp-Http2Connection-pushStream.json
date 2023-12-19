@@ -2,9 +2,9 @@
   "repositoryName" : "okhttp",
   "repositoryUrl" : "https://github.com/square/okhttp.git",
   "startCommitHash" : "5224f3045ba9b171fce521777edf389f9206173c",
-  "filePath" : "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
+  "file" : "okhttp/src/main/java/okhttp3/internal/http2/Http2Connection.java",
   "elementType" : "method",
-  "elementName" : "pushStream",
+  "element" : "pushStream",
   "startLine" : 218,
   "endLine" : 222,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "fb46f100a4d66342a0b101624fd351a51b6f14a9",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fb46f100a4d66342a0b101624fd351a51b6f14a9",

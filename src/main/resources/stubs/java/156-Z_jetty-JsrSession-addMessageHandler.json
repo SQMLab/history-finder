@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-websocket/javax-websocket-client-impl/src/main/java/org/eclipse/jetty/websocket/jsr356/JsrSession.java",
+  "file" : "jetty-websocket/javax-websocket-client-impl/src/main/java/org/eclipse/jetty/websocket/jsr356/JsrSession.java",
   "elementType" : "method",
-  "elementName" : "addMessageHandler",
+  "element" : "addMessageHandler",
   "startLine" : 95,
   "endLine" : 142,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "43231d84510fde66c4a19a5aac4782eaef15de16",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "d1692733f56b7c67a885b8c9fdd14fa204c8cab6",

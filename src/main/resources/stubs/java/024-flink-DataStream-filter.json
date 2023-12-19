@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/DataStream.java",
+  "file" : "flink-streaming-java/src/main/java/org/apache/flink/streaming/api/datastream/DataStream.java",
   "elementType" : "method",
-  "elementName" : "filter",
+  "element" : "filter",
   "startLine" : 685,
   "endLine" : 688,
   "expectedCommits" : [ {
@@ -164,7 +164,7 @@
     "commitHash" : "f8425f1d1e9c6846a684bd2745623b14b11ddd51",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "c08bcf1e008397bfe22353e3ba3d9d9656e7d3c1",

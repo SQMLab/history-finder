@@ -2,9 +2,9 @@
   "repositoryName" : "junit4",
   "repositoryUrl" : "https://github.com/junit-team/junit4.git",
   "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
-  "filePath" : "src/main/java/junit/runner/Version.java",
+  "file" : "src/main/java/junit/runner/Version.java",
   "elementType" : "method",
-  "elementName" : "id",
+  "element" : "id",
   "startLine" : 11,
   "endLine" : 13,
   "expectedCommits" : [ {
@@ -221,7 +221,7 @@
     "commitHash" : "8076b782f8c9ac1df6569bbfa479db2da9e6cbcf",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f09cff79b941a525271f3f2838a9742b4c5c8d36",

@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-servlet/src/main/java/org/eclipse/jetty/servlet/ServletHolder.java",
+  "file" : "jetty-servlet/src/main/java/org/eclipse/jetty/servlet/ServletHolder.java",
   "elementType" : "method",
-  "elementName" : "doStart",
+  "element" : "doStart",
   "startLine" : 311,
   "endLine" : 412,
   "expectedCommits" : [ {
@@ -62,7 +62,7 @@
     "commitHash" : "da627b843fe81fa0fe52a046c1be8595630e9ae7",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fac580c374127acd8fc9b955f415cedd8b5ec6dc",

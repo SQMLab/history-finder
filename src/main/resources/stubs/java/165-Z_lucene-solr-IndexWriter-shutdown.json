@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/core/src/java/org/apache/lucene/index/IndexWriter.java",
+  "file" : "lucene/core/src/java/org/apache/lucene/index/IndexWriter.java",
   "elementType" : "method",
-  "elementName" : "shutdown",
+  "element" : "shutdown",
   "startLine" : 1013,
   "endLine" : 1039,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "872bd9145cd9504fc16b318f7ea0a666d9429103",
     "changeType" : "Ymultichange(Ymodifierchange,Ybodychange)"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e36febe7e20055bc3d6a664cedd4835fc29640c6",

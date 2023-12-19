@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-orm",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
   "startCommitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
-  "filePath" : "hibernate-core/src/main/java/org/hibernate/cfg/AnnotationBinder.java",
+  "file" : "hibernate-core/src/main/java/org/hibernate/cfg/AnnotationBinder.java",
   "elementType" : "method",
-  "elementName" : "bindClass",
+  "element" : "bindClass",
   "startLine" : 524,
   "endLine" : 834,
   "expectedCommits" : [ {
@@ -134,7 +134,7 @@
     "commitHash" : "7337743c93574823424ed6c399cfcf6bd75614f8",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ebca36a76851c9b0b7ea406e1b1428225891de2f",

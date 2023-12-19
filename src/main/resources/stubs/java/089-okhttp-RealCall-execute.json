@@ -2,9 +2,9 @@
   "repositoryName" : "okhttp",
   "repositoryUrl" : "https://github.com/square/okhttp.git",
   "startCommitHash" : "5224f3045ba9b171fce521777edf389f9206173c",
-  "filePath" : "okhttp/src/main/java/okhttp3/RealCall.java",
+  "file" : "okhttp/src/main/java/okhttp3/RealCall.java",
   "elementType" : "method",
-  "elementName" : "execute",
+  "element" : "execute",
   "startLine" : 144,
   "endLine" : 166,
   "expectedCommits" : [ {
@@ -125,7 +125,7 @@
     "commitHash" : "37c01895cca5ec2bec26a3d381611f0938acd6d0",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f6a46b8992e486fb881b77c2fd533dc4d71dfd5b",

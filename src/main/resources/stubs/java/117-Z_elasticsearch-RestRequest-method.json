@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/rest/RestRequest.java",
+  "file" : "server/src/main/java/org/elasticsearch/rest/RestRequest.java",
   "elementType" : "method",
-  "elementName" : "method",
+  "element" : "method",
   "startLine" : 150,
   "endLine" : 152,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "117bc68af3987004ade7e56f0aebace72cd1d0ef",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fcf1e41e429b10e03c5cf9b8551636df7519b4c5",

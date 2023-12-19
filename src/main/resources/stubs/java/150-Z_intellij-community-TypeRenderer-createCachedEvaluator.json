@@ -2,9 +2,9 @@
   "repositoryName" : "intellij-community",
   "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
   "startCommitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
-  "filePath" : "java/debugger/impl/src/com/intellij/debugger/ui/tree/render/TypeRenderer.java",
+  "file" : "java/debugger/impl/src/com/intellij/debugger/ui/tree/render/TypeRenderer.java",
   "elementType" : "method",
-  "elementName" : "createCachedEvaluator",
+  "element" : "createCachedEvaluator",
   "startLine" : 61,
   "endLine" : 68,
   "expectedCommits" : [ {
@@ -17,7 +17,7 @@
     "commitHash" : "8fdfb44a9dde5828221c8075ed208975ae84a978",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "8fdfb44a9dde5828221c8075ed208975ae84a978",

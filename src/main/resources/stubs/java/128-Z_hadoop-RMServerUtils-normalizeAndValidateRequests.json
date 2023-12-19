@@ -2,9 +2,9 @@
   "repositoryName" : "hadoop",
   "repositoryUrl" : "https://github.com/apache/hadoop.git",
   "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
-  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/RMServerUtils.java",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/RMServerUtils.java",
   "elementType" : "method",
-  "elementName" : "normalizeAndValidateRequests",
+  "element" : "normalizeAndValidateRequests",
   "startLine" : 237,
   "endLine" : 253,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "bc6777dd5bdcbaef09897b506bc6511ae456033d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f65eeb412d140a3808bcf99344a9f3a965918f70",

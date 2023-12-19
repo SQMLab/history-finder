@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/bestpractices/JUnitTestsShouldIncludeAssertRule.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/bestpractices/JUnitTestsShouldIncludeAssertRule.java",
   "elementType" : "method",
-  "elementName" : "visit",
+  "element" : "visit",
   "startLine" : 31,
   "endLine" : 36,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "a2e6178abd02c67de6a9ccaf077233f1b1ba4dd0",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "a2e6178abd02c67de6a9ccaf077233f1b1ba4dd0",

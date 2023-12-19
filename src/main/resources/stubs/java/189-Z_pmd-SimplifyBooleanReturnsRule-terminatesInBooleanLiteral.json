@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/design/SimplifyBooleanReturnsRule.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/design/SimplifyBooleanReturnsRule.java",
   "elementType" : "method",
-  "elementName" : "terminatesInBooleanLiteral",
+  "element" : "terminatesInBooleanLiteral",
   "startLine" : 209,
   "endLine" : 211,
   "expectedCommits" : [ {
@@ -32,7 +32,7 @@
     "commitHash" : "bd57e8010dbdcfe2fc434083512f77419c5fde2d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e57007e1bef8b6de966f607fe1d79d3ecabe6884",

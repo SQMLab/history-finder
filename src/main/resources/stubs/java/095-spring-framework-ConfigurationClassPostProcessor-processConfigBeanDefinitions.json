@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassPostProcessor.java",
+  "file" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassPostProcessor.java",
   "elementType" : "method",
-  "elementName" : "processConfigBeanDefinitions",
+  "element" : "processConfigBeanDefinitions",
   "startLine" : 261,
   "endLine" : 362,
   "expectedCommits" : [ {
@@ -164,7 +164,7 @@
     "commitHash" : "eaf3a7cec49e3a6e8ed828dbb69b9a9b007b0b39",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fc64b8040f7c76f2bc85387cf944436424ce408c",

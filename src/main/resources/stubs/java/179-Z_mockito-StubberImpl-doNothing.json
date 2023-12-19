@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/stubbing/StubberImpl.java",
+  "file" : "src/main/java/org/mockito/internal/stubbing/StubberImpl.java",
   "elementType" : "method",
-  "elementName" : "doNothing",
+  "element" : "doNothing",
   "startLine" : 117,
   "endLine" : 120,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "183167dbd20a85fa1106c300b304684ddec5f3d8",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "af098cc912eb51ba8c457c68c8dcf97fa4dbb9f2",

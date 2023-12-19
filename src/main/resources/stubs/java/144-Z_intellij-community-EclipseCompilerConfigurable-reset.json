@@ -2,9 +2,9 @@
   "repositoryName" : "intellij-community",
   "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
   "startCommitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
-  "filePath" : "java/compiler/impl/src/com/intellij/compiler/impl/javaCompiler/eclipse/EclipseCompilerConfigurable.java",
+  "file" : "java/compiler/impl/src/com/intellij/compiler/impl/javaCompiler/eclipse/EclipseCompilerConfigurable.java",
   "elementType" : "method",
-  "elementName" : "reset",
+  "element" : "reset",
   "startLine" : 96,
   "endLine" : 104,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "87332a4956c85bb4ddf12f38bec19d19bab345e5",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f3b81e1cf2859a11a737162934c0ab8c908c48b7",

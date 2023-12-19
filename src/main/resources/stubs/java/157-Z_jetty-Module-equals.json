@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-start/src/main/java/org/eclipse/jetty/start/Module.java",
+  "file" : "jetty-start/src/main/java/org/eclipse/jetty/start/Module.java",
   "elementType" : "method",
-  "elementName" : "equals",
+  "element" : "equals",
   "startLine" : 160,
   "endLine" : 179,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "03cd15ea82ea5483e7244582527e97c0228a4c0a",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e17cee533ae7209f323cc205ce1ae1ff14d267da",

@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-webflux/src/main/java/org/springframework/web/reactive/result/method/annotation/ResponseBodyResultHandler.java",
+  "file" : "spring-webflux/src/main/java/org/springframework/web/reactive/result/method/annotation/ResponseBodyResultHandler.java",
   "elementType" : "method",
-  "elementName" : "handleResult",
+  "element" : "handleResult",
   "startLine" : 83,
   "endLine" : 87,
   "expectedCommits" : [ {
@@ -140,7 +140,7 @@
     "commitHash" : "202825554c022e4262fe3bd20a34faf01ab9d620",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f816cc6a516c324875fa409a33d288447c6996f7",

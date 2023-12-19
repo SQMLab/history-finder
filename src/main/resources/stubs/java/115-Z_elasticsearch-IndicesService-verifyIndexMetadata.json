@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/indices/IndicesService.java",
+  "file" : "server/src/main/java/org/elasticsearch/indices/IndicesService.java",
   "elementType" : "method",
-  "elementName" : "verifyIndexMetadata",
+  "element" : "verifyIndexMetadata",
   "startLine" : 550,
   "endLine" : 568,
   "expectedCommits" : [ {
@@ -32,7 +32,7 @@
     "commitHash" : "8127a06b2ec40fd5f31a6915143386dd853abc2b",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fa16969360ea43667ad11f827bbf86718c18fcc6",

@@ -29,11 +29,23 @@ public class CommitSeries {
     String commitHash;
     @Column(name = "committed_at")
     Instant committedAt;
+    @Column(name = "old_file")
+    String oldFile;
+    @Column(name = "new_file")
+    String newFile;
+    @Column(name = "file_renamed")
+    Integer fileRenamed;
+    @Column(name = "file_moved")
+    Integer fileMoved;
+    @Column(name = "old_element")
+    String oldElement;
+    @Column(name = "new_element")
+    String newElement;
     @Column(name = "diff")
     String diff;
     @Column(name = "diff_detail")
     String diffDetail;
-    @Column(name = "created_at", timestamp = true)
-    Instant createdAt;
+    @Column(name = "translated_at", timestamp = true)
+    Instant translatedAt;
 }
 

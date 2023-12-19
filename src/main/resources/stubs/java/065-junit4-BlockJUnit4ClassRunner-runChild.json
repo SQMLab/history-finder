@@ -2,9 +2,9 @@
   "repositoryName" : "junit4",
   "repositoryUrl" : "https://github.com/junit-team/junit4.git",
   "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
-  "filePath" : "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
+  "file" : "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
   "elementType" : "method",
-  "elementName" : "runChild",
+  "element" : "runChild",
   "startLine" : 92,
   "endLine" : 105,
   "expectedCommits" : [ {
@@ -113,7 +113,7 @@
     "commitHash" : "478f7f9217cf5da219a7ba298e3a87f405378194",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "bed58a573c373d57d64fa369f58b2a8f0dbee3d7",

@@ -2,9 +2,9 @@
   "repositoryName" : "checkstyle",
   "repositoryUrl" : "https://github.com/checkstyle/checkstyle.git",
   "startCommitHash" : "119fd4fb33bef9f5c66fc950396669af842c21a3",
-  "filePath" : "src/main/java/com/puppycrawl/tools/checkstyle/Main.java",
+  "file" : "src/main/java/com/puppycrawl/tools/checkstyle/Main.java",
   "elementType" : "method",
-  "elementName" : "main",
+  "element" : "main",
   "startLine" : 181,
   "endLine" : 244,
   "expectedCommits" : [ {
@@ -194,7 +194,7 @@
     "commitHash" : "0fd69594a4c3e82f92f93f0371791da66938f8c3",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fe6db3ab8a864e11eebfb0496f6a41852bdee019",

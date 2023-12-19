@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/lib/IndexDiff.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/lib/IndexDiff.java",
   "elementType" : "method",
-  "elementName" : "diff",
+  "element" : "diff",
   "startLine" : 409,
   "endLine" : 593,
   "expectedCommits" : [ {
@@ -125,7 +125,7 @@
     "commitHash" : "1a6964c8274c50f0253db75f010d78ef0e739343",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f4e9c8890cc625ba57b5a3cd078ca14cbcc86f8b",

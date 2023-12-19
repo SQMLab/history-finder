@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/AdditionalMatchers.java",
+  "file" : "src/main/java/org/mockito/AdditionalMatchers.java",
   "elementType" : "method",
-  "elementName" : "geq",
+  "element" : "geq",
   "startLine" : 81,
   "endLine" : 84,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "ce623bdadaa7f12e4d29b19d0fee876e42279e00",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "feb23b07d32749c814e2cf2057c1908ec12b5ec7",

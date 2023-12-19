@@ -2,9 +2,9 @@
   "repositoryName" : "hadoop",
   "repositoryUrl" : "https://github.com/apache/hadoop.git",
   "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
-  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/fifo/FifoScheduler.java",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/fifo/FifoScheduler.java",
   "elementType" : "method",
-  "elementName" : "allocate",
+  "element" : "allocate",
   "startLine" : 323,
   "endLine" : 387,
   "expectedCommits" : [ {
@@ -104,7 +104,7 @@
     "commitHash" : "dbecbe5dfe50f834fc3b8401709079e9470cc517",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f6a778c3725bcdaba1e1de43786af17dd44deb78",

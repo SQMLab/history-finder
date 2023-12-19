@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/ASTConditionalExpression.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/ast/ASTConditionalExpression.java",
   "elementType" : "method",
-  "elementName" : "isTernary",
+  "element" : "isTernary",
   "startLine" : 53,
   "endLine" : 55,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "6857df0422e85f0bdb308fc3855ef7b6d8dad7a2",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "b0bc21028daace1e4542a3a2e04fb83bc509ed61",

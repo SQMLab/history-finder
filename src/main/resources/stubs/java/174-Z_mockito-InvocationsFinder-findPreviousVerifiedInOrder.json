@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/invocation/InvocationsFinder.java",
+  "file" : "src/main/java/org/mockito/internal/invocation/InvocationsFinder.java",
   "elementType" : "method",
-  "elementName" : "findPreviousVerifiedInOrder",
+  "element" : "findPreviousVerifiedInOrder",
   "startLine" : 119,
   "endLine" : 127,
   "expectedCommits" : [ {
@@ -38,7 +38,7 @@
     "commitHash" : "1f1d4d0e734713c3f09313465ed1800b8fb50069",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e9516f42b1182ae675022c101954e721e20b2c72",

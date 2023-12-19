@@ -25,13 +25,17 @@ public class CommitUdt implements Cloneable{
     Integer endLine;
     String codeFragment;
     List<String> changeList;
-    String filePath;
+    String oldFile;
+    String newFile;
+    Integer fileRenamed;
+    Integer fileMoved;
+    String oldElement;
+    String newElement;
     String author;
     String email;
     String shortMessage;
     String fullMessage;
     String changeType;
-    String renamedElement;
     String diff;
     String diffDetail;
 

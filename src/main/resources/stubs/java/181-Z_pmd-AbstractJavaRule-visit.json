@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/AbstractJavaRule.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/rule/AbstractJavaRule.java",
   "elementType" : "method",
-  "elementName" : "visit",
+  "element" : "visit",
   "startLine" : 504,
   "endLine" : 506,
   "expectedCommits" : [ {
@@ -35,7 +35,7 @@
     "commitHash" : "4267964e0d7e4ac826ad9cf905b6a0365fb9e6cb",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "9f86c8b174b84c9b394320c2f16690f0d70a27b6",

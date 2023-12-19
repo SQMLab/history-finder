@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/typeresolution/ClassTypeResolver.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/typeresolution/ClassTypeResolver.java",
   "elementType" : "method",
-  "elementName" : "visit",
+  "element" : "visit",
   "startLine" : 186,
   "endLine" : 214,
   "expectedCommits" : [ {
@@ -71,7 +71,7 @@
     "commitHash" : "6215d97b9e136a46f58f13dd30c65690fef4a28d",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fd2dcddc447c8ae88fe5b1df9fca0326017309f8",

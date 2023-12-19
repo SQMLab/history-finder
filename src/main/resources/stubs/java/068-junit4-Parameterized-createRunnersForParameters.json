@@ -2,9 +2,9 @@
   "repositoryName" : "junit4",
   "repositoryUrl" : "https://github.com/junit-team/junit4.git",
   "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
-  "filePath" : "src/main/java/org/junit/runners/Parameterized.java",
+  "file" : "src/main/java/org/junit/runners/Parameterized.java",
   "elementType" : "method",
-  "elementName" : "createRunnersForParameters",
+  "element" : "createRunnersForParameters",
   "startLine" : 439,
   "endLine" : 454,
   "expectedCommits" : [ {
@@ -35,7 +35,7 @@
     "commitHash" : "5475e12b57f5af0140deffa7f45c75dc47803167",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f6a3d7405b72966d3714355804e1b3c14b1425cb",

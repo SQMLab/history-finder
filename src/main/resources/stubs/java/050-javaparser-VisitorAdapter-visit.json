@@ -2,9 +2,9 @@
   "repositoryName" : "javaparser",
   "repositoryUrl" : "https://github.com/javaparser/javaparser.git",
   "startCommitHash" : "97555053af3025556efe1a168fd7943dac28a2a6",
-  "filePath" : "javaparser-core/src/main/java/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java",
+  "file" : "javaparser-core/src/main/java/com/github/javaparser/ast/visitor/VoidVisitorAdapter.java",
   "elementType" : "method",
-  "elementName" : "visit",
+  "element" : "visit",
   "startLine" : 409,
   "endLine" : 419,
   "expectedCommits" : [ {
@@ -83,7 +83,7 @@
     "commitHash" : "2d4decafdf373c4d1cabd9c6f8a97707c72069ff",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f70eef166e4afd92471079a75ba5828049fca500",

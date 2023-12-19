@@ -90,9 +90,15 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .tracerName(commitUdt.getTracerName())
                 .commitHash(commitUdt.getCommitHash().substring(0, 4))
                 .committedAt(commitUdt.getCommittedAt() == null ? Instant.now() : commitUdt.getCommittedAt().toInstant())
+                .oldFile(commitUdt.getOldFile())
+                .newFile(commitUdt.getNewFile())
+                .fileRenamed(commitUdt.getFileRenamed())
+                .fileMoved(commitUdt.getFileMoved())
+                .oldElement(commitUdt.getOldElement())
+                .newElement(commitUdt.getNewElement())
                 .diff(commitUdt.getDiff())
                 .diffDetail(commitUdt.getDiffDetail())
-                .createdAt(timeMap.get(commitUdt.getCommitHash()))
+                .translatedAt(timeMap.get(commitUdt.getCommitHash()))
                 .build();
     }
 
@@ -109,7 +115,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .incorrectCommitCount(analysisUdt.getIncorrectCommits().size())
                 .missingCommitCount(analysisUdt.getMissingCommits().size())
                 //.createdAt(LocalDateTime.now().minusYears(20).plusMonths(traceEntity.getOracleFileId()).toInstant(ZoneOffset.UTC))
-                .createdAt(createdAt)
+                .translatedAt(createdAt)
                 .build();
     }
 

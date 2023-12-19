@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-web/src/main/java/org/springframework/http/server/reactive/ServletHttpHandlerAdapter.java",
+  "file" : "spring-web/src/main/java/org/springframework/http/server/reactive/ServletHttpHandlerAdapter.java",
   "elementType" : "method",
-  "elementName" : "service",
+  "element" : "service",
   "startLine" : 158,
   "endLine" : 195,
   "expectedCommits" : [ {
@@ -140,7 +140,7 @@
     "commitHash" : "f518d76a771def7289ac4f85ddc66812f428a16f",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f82f17d7f762bb0fd10cd813c334ac9a0b62355e",

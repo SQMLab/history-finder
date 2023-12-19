@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-osgi/jetty-osgi-boot/src/main/java/org/eclipse/jetty/osgi/boot/ServiceWebAppProvider.java",
+  "file" : "jetty-osgi/jetty-osgi-boot/src/main/java/org/eclipse/jetty/osgi/boot/ServiceWebAppProvider.java",
   "elementType" : "method",
-  "elementName" : "doStart",
+  "element" : "doStart",
   "startLine" : 267,
   "endLine" : 283,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "9af433473961dab9f5d534031fe0a6daa615a2a6",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "d18f32f139c09600df429c3865f0cd0bb4e8d6ac",

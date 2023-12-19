@@ -2,9 +2,9 @@
   "repositoryName" : "checkstyle",
   "repositoryUrl" : "https://github.com/checkstyle/checkstyle.git",
   "startCommitHash" : "119fd4fb33bef9f5c66fc950396669af842c21a3",
-  "filePath" : "src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java",
+  "file" : "src/main/java/com/puppycrawl/tools/checkstyle/checks/coding/FinalLocalVariableCheck.java",
   "elementType" : "method",
-  "elementName" : "visitToken",
+  "element" : "visitToken",
   "startLine" : 188,
   "endLine" : 240,
   "expectedCommits" : [ {
@@ -107,7 +107,7 @@
     "commitHash" : "0c717ef2abd068366612d44280633a1c7ac9efac",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f0ed29b5cfef6adcec791cfdc236a5b850b685ee",

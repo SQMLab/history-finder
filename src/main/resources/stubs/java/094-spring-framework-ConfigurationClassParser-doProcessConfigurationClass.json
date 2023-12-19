@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassParser.java",
+  "file" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassParser.java",
   "elementType" : "method",
-  "elementName" : "doProcessConfigurationClass",
+  "element" : "doProcessConfigurationClass",
   "startLine" : 261,
   "endLine" : 339,
   "expectedCommits" : [ {
@@ -182,7 +182,7 @@
     "commitHash" : "b5d21108da24f8344be3bc708c7afdfca9a1d089",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f813712f5b413b354560cd7cc006352e9defa9a3",

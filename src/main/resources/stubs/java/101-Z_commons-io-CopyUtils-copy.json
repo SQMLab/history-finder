@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/CopyUtils.java",
+  "file" : "src/main/java/org/apache/commons/io/CopyUtils.java",
   "elementType" : "method",
-  "elementName" : "copy",
+  "element" : "copy",
   "startLine" : 134,
   "endLine" : 137,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "6a1bb4d53562a50bbaad48ee2c94971649e24cf5",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f0c9d8d08404ba2bad6c581bc76ecb1eef6c9bff",

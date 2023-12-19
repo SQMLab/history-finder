@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
+  "file" : "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
   "elementType" : "method",
-  "elementName" : "newRangeQuery",
+  "element" : "newRangeQuery",
   "startLine" : 608,
   "endLine" : 628,
   "expectedCommits" : [ {
@@ -50,7 +50,7 @@
     "commitHash" : "1bbfaa54451f5654abd9c5976c865dae47d83cb4",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fed4bba63d724da192988fc7717a25da6832ff8b",

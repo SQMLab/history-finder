@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/invocation/MatchersBinder.java",
+  "file" : "src/main/java/org/mockito/internal/invocation/MatchersBinder.java",
   "elementType" : "method",
-  "elementName" : "bindMatchers",
+  "element" : "bindMatchers",
   "startLine" : 23,
   "endLine" : 32,
   "expectedCommits" : [ {
@@ -53,7 +53,7 @@
     "commitHash" : "110e46a16b4fa91c1856958e78cc45fe70fff9d2",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e40088f906af0a00dce8720091a9391e885026f3",

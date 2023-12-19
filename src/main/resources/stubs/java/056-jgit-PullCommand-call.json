@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/api/PullCommand.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/api/PullCommand.java",
   "elementType" : "method",
-  "elementName" : "call",
+  "element" : "call",
   "startLine" : 206,
   "endLine" : 360,
   "expectedCommits" : [ {
@@ -101,7 +101,7 @@
     "commitHash" : "db55d13f5f4b641a9390076ced6b1775bcfcd6f6",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fa5231191d530afb24810080e89990913c8e8054",

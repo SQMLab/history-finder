@@ -2,9 +2,9 @@
   "repositoryName" : "commons-lang",
   "repositoryUrl" : "https://github.com/apache/commons-lang.git",
   "startCommitHash" : "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
-  "filePath" : "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java",
+  "file" : "src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java",
   "elementType" : "method",
-  "elementName" : "parsePattern",
+  "element" : "parsePattern",
   "startLine" : 181,
   "endLine" : 314,
   "expectedCommits" : [ {
@@ -65,7 +65,7 @@
     "commitHash" : "a99f7965b34b8dd0532c8d6f5e592d990ca220fc",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ee0e27d63844b0ae6bc4fc8a30e4ba404b2c0304",

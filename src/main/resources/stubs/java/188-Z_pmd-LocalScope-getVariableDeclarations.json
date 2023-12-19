@@ -2,9 +2,9 @@
   "repositoryName" : "pmd",
   "repositoryUrl" : "https://github.com/pmd/pmd.git",
   "startCommitHash" : "d528dcd5d45582229ab3410deb7c40b2143d015d",
-  "filePath" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/symboltable/LocalScope.java",
+  "file" : "pmd-java/src/main/java/net/sourceforge/pmd/lang/java/symboltable/LocalScope.java",
   "elementType" : "method",
-  "elementName" : "getVariableDeclarations",
+  "element" : "getVariableDeclarations",
   "startLine" : 23,
   "endLine" : 25,
   "expectedCommits" : [ {
@@ -41,7 +41,7 @@
     "commitHash" : "873a1b37be109f1839a5e0043a3e7d07c25819ce",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "eee76b024859186dba321912a08e43d9bd5ba8a7",

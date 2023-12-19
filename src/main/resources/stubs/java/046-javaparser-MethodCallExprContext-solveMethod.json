@@ -2,9 +2,9 @@
   "repositoryName" : "javaparser",
   "repositoryUrl" : "https://github.com/javaparser/javaparser.git",
   "startCommitHash" : "97555053af3025556efe1a168fd7943dac28a2a6",
-  "filePath" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/contexts/MethodCallExprContext.java",
+  "file" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/contexts/MethodCallExprContext.java",
   "elementType" : "method",
-  "elementName" : "solveMethod",
+  "element" : "solveMethod",
   "startLine" : 153,
   "endLine" : 162,
   "expectedCommits" : [ {
@@ -116,7 +116,7 @@
     "commitHash" : "2f49331fb22511346eea8800d27907de44409d5b",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e5fe2b597be66d230f8824277c1d4167fa2bb609",

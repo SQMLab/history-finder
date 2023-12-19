@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/gitrepo/RepoCommand.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/gitrepo/RepoCommand.java",
   "elementType" : "method",
-  "elementName" : "call",
+  "element" : "call",
   "startLine" : 487,
   "endLine" : 700,
   "expectedCommits" : [ {
@@ -92,7 +92,7 @@
     "commitHash" : "0ad8fa7b36dafbea07da15897cc2f2b601772e24",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fe5437e96b91222e30d9105e7bab490fd68c2d52",

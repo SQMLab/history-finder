@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/pack/PackWriter.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/pack/PackWriter.java",
   "elementType" : "method",
-  "elementName" : "writePack",
+  "element" : "writePack",
   "startLine" : 1106,
   "endLine" : 1190,
   "expectedCommits" : [ {
@@ -122,7 +122,7 @@
     "commitHash" : "1a6964c8274c50f0253db75f010d78ef0e739343",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fa4f00b7ed248d420ba12c576f944e873a3b8095",

@@ -2,9 +2,9 @@
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
   "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
-  "filePath" : "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/DefaultLauncher.java",
+  "file" : "junit-platform-launcher/src/main/java/org/junit/platform/launcher/core/DefaultLauncher.java",
   "elementType" : "method",
-  "elementName" : "execute",
+  "element" : "execute",
   "startLine" : 142,
   "endLine" : 157,
   "expectedCommits" : [ {
@@ -122,7 +122,7 @@
     "commitHash" : "75a91267a92e9fd4d171a3f18f2135e675687961",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f6372b05546e29c74e6809f4e54a096f537bcd5d",

@@ -2,9 +2,9 @@
   "repositoryName" : "commons-lang",
   "repositoryUrl" : "https://github.com/apache/commons-lang.git",
   "startCommitHash" : "a36c903d4f1065bc59f5e6d2bb0f9d92a5e71d83",
-  "filePath" : "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
+  "file" : "src/main/java/org/apache/commons/lang3/math/NumberUtils.java",
   "elementType" : "method",
-  "elementName" : "createNumber",
+  "element" : "createNumber",
   "startLine" : 450,
   "endLine" : 617,
   "expectedCommits" : [ {
@@ -113,7 +113,7 @@
     "commitHash" : "2d06a7ce861432fc702168fd4c94bc00ddfc39eb",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e767af7e7eb8ff7724d5f72709ee4bb7a72d2284",

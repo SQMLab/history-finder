@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/FilenameUtils.java",
+  "file" : "src/main/java/org/apache/commons/io/FilenameUtils.java",
   "elementType" : "method",
-  "elementName" : "wildcardMatch",
+  "element" : "wildcardMatch",
   "startLine" : 1374,
   "endLine" : 1454,
   "expectedCommits" : [ {
@@ -68,7 +68,7 @@
     "commitHash" : "4fbac940f62e0e5196498c3b7cb4ab909ce1a337",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f93f8bebb4fc714a6b60e1d2a4452d6ff6d3df5c",

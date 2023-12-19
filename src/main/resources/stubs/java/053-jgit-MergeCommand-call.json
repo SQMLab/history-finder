@@ -2,9 +2,9 @@
   "repositoryName" : "jgit",
   "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
   "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
-  "filePath" : "org.eclipse.jgit/src/org/eclipse/jgit/api/MergeCommand.java",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/api/MergeCommand.java",
   "elementType" : "method",
-  "elementName" : "call",
+  "element" : "call",
   "startLine" : 235,
   "endLine" : 444,
   "expectedCommits" : [ {
@@ -116,7 +116,7 @@
     "commitHash" : "5b0e73b849d19c9f072c4c6738a5d5adae413112",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fb1e500adc011dfaad1a6e68b23a9b254a77bf43",

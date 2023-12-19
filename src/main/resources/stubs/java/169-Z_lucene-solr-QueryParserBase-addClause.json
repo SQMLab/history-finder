@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
+  "file" : "lucene/queryparser/src/java/org/apache/lucene/queryparser/classic/QueryParserBase.java",
   "elementType" : "method",
-  "elementName" : "addClause",
+  "element" : "addClause",
   "startLine" : 374,
   "endLine" : 422,
   "expectedCommits" : [ {
@@ -44,7 +44,7 @@
     "commitHash" : "2af2d858774f7391f13341b8f588e75287868237",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f6c12e189a8bcb0291b70d6272ec81acc3f0fcc6",

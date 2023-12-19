@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-core/src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializer.java",
+  "file" : "flink-core/src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializer.java",
   "elementType" : "method",
-  "elementName" : "checkKryoInitialized",
+  "element" : "checkKryoInitialized",
   "startLine" : 426,
   "endLine" : 453,
   "expectedCommits" : [ {
@@ -50,7 +50,7 @@
     "commitHash" : "22203e75f8a0d193ce0187396d0b267e05e9b58e",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f5898a01e7877afa3df06223713db211708eaf9a",

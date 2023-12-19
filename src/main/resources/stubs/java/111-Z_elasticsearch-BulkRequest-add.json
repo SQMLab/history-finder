@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/action/bulk/BulkRequest.java",
+  "file" : "server/src/main/java/org/elasticsearch/action/bulk/BulkRequest.java",
   "elementType" : "method",
-  "elementName" : "add",
+  "element" : "add",
   "startLine" : 102,
   "endLine" : 107,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "b5079ce0092e2dfd742fbe3aed8a8f95931a378d",
     "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "bdea0e2eddb4373b850e00d8e363c5240d78d180",

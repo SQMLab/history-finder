@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassBeanDefinitionReader.java",
+  "file" : "spring-context/src/main/java/org/springframework/context/annotation/ConfigurationClassBeanDefinitionReader.java",
   "elementType" : "method",
-  "elementName" : "loadBeanDefinitionsForBeanMethod",
+  "element" : "loadBeanDefinitionsForBeanMethod",
   "startLine" : 174,
   "endLine" : 274,
   "expectedCommits" : [ {
@@ -155,7 +155,7 @@
     "commitHash" : "e48fe0d89271113bcac4e7c41e86cb1d8230594e",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fe8dec912d53db4819064b50d667c34300bb59b1",

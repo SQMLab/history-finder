@@ -2,9 +2,9 @@
   "repositoryName" : "spring-framework",
   "repositoryUrl" : "https://github.com/spring-projects/spring-framework.git",
   "startCommitHash" : "b325c74216fd9564a36602158fa1269e2e832874",
-  "filePath" : "spring-core/src/main/java/org/springframework/core/convert/support/GenericConversionService.java",
+  "file" : "spring-core/src/main/java/org/springframework/core/convert/support/GenericConversionService.java",
   "elementType" : "method",
-  "elementName" : "getConverter",
+  "element" : "getConverter",
   "startLine" : 253,
   "endLine" : 272,
   "expectedCommits" : [ {
@@ -83,7 +83,7 @@
     "commitHash" : "0ef0ff60f0b08b521ddc8fc093b38d7c9eb98326",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f0de1c3069aea81a529555e5045ab44f553f586c",

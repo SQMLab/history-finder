@@ -2,9 +2,9 @@
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
   "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
-  "filePath" : "junit-platform-engine/src/main/java/org/junit/platform/engine/support/hierarchical/NodeTestTask.java",
+  "file" : "junit-platform-engine/src/main/java/org/junit/platform/engine/support/hierarchical/NodeTestTask.java",
   "elementType" : "method",
-  "elementName" : "execute",
+  "element" : "execute",
   "startLine" : 100,
   "endLine" : 113,
   "expectedCommits" : [ {
@@ -104,7 +104,7 @@
     "commitHash" : "28ffd5ee9d1e996133445cac2256407f28380e91",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "c1d682aee5da5738fc3be071df45330c005f4cf1",

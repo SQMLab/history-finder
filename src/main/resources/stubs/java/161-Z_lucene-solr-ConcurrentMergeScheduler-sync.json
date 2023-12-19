@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/core/src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java",
+  "file" : "lucene/core/src/java/org/apache/lucene/index/ConcurrentMergeScheduler.java",
   "elementType" : "method",
-  "elementName" : "sync",
+  "element" : "sync",
   "startLine" : 447,
   "endLine" : 477,
   "expectedCommits" : [ {
@@ -50,7 +50,7 @@
     "commitHash" : "299d6357dd296f87a099fadd0764292b28dbde47",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ceebb95d636a5c26a7c43c250415666283a615e4",

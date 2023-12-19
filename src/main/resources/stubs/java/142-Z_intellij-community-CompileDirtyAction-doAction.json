@@ -2,9 +2,9 @@
   "repositoryName" : "intellij-community",
   "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
   "startCommitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
-  "filePath" : "java/compiler/impl/src/com/intellij/compiler/actions/CompileDirtyAction.java",
+  "file" : "java/compiler/impl/src/com/intellij/compiler/actions/CompileDirtyAction.java",
   "elementType" : "method",
-  "elementName" : "doAction",
+  "element" : "doAction",
   "startLine" : 27,
   "endLine" : 29,
   "expectedCommits" : [ {
@@ -35,7 +35,7 @@
     "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "76d89ef04ca208a34127993e182d95e38a8c8d3f",

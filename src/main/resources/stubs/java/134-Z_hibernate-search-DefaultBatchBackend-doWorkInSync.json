@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
   "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
-  "filePath" : "engine/src/main/java/org/hibernate/search/backend/impl/batch/DefaultBatchBackend.java",
+  "file" : "engine/src/main/java/org/hibernate/search/backend/impl/batch/DefaultBatchBackend.java",
   "elementType" : "method",
-  "elementName" : "doWorkInSync",
+  "element" : "doWorkInSync",
   "startLine" : 66,
   "endLine" : 69,
   "expectedCommits" : [ {
@@ -32,7 +32,7 @@
     "commitHash" : "f7b4e276eb754193a72fa98a8972b66da837664e",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f7b4e276eb754193a72fa98a8972b66da837664e",

@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/discovery/zen/NodesFaultDetection.java",
+  "file" : "server/src/main/java/org/elasticsearch/discovery/zen/NodesFaultDetection.java",
   "elementType" : "method",
-  "elementName" : "handleTransportDisconnect",
+  "element" : "handleTransportDisconnect",
   "startLine" : 149,
   "endLine" : 171,
   "expectedCommits" : [ {
@@ -56,7 +56,7 @@
     "commitHash" : "cb0d7d4735665fa8ca1b59555a06354859c0045a",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "de7dd3c0706c21b2ae5d12e266d662a8fb989784",

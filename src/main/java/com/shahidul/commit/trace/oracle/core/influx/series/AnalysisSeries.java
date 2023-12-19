@@ -31,15 +31,15 @@ public class AnalysisSeries {
     Double recall;
     @Column(name = "runtime")
     Long runtime;
-    @Column(name = "commit_count")
+    @Column(name = "cc")
     Integer commitCount;
-    @Column(name = "correct_commit_count")
+    @Column(name = "ccc")
     Integer correctCommitCount;
-    @Column(name = "incorrect_commit_count")
+    @Column(name = "icc")
     Integer incorrectCommitCount;
-    @Column(name = "missing_commit_count")
+    @Column(name = "mcc")
     Integer missingCommitCount;
-    @Column(name = "created_at", timestamp = true)
-    Instant createdAt;
+    @Column(name = "translated_at", timestamp = true)
+    Instant translatedAt;
 }
 

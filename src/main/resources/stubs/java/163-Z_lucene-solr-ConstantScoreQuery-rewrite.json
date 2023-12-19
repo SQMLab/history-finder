@@ -2,9 +2,9 @@
   "repositoryName" : "lucene-solr",
   "repositoryUrl" : "https://github.com/apache/lucene-solr.git",
   "startCommitHash" : "38bf976cd4b9e324c21664bd7ae3d554df803705",
-  "filePath" : "lucene/core/src/java/org/apache/lucene/search/ConstantScoreQuery.java",
+  "file" : "lucene/core/src/java/org/apache/lucene/search/ConstantScoreQuery.java",
   "elementType" : "method",
-  "elementName" : "rewrite",
+  "element" : "rewrite",
   "startLine" : 49,
   "endLine" : 65,
   "expectedCommits" : [ {
@@ -32,7 +32,7 @@
     "commitHash" : "fd41195ef316b9ff2f1721d259c2bbeedf1a1ff0",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fd41195ef316b9ff2f1721d259c2bbeedf1a1ff0",

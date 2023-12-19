@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/bootstrap/Security.java",
+  "file" : "server/src/main/java/org/elasticsearch/bootstrap/Security.java",
   "elementType" : "method",
-  "elementName" : "createPermissions",
+  "element" : "createPermissions",
   "startLine" : 249,
   "endLine" : 255,
   "expectedCommits" : [ {
@@ -56,7 +56,7 @@
     "commitHash" : "86fc8ceac71fbcfe95d6675eeb6b2ffc2cb71d41",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f599c237bdee7624bd5a67cf26828ccac32dbcc7",

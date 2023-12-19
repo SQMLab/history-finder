@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import org.codetracker.api.CodeTracker;
 import org.codetracker.api.History;
 import org.codetracker.api.MethodTracker;
-import org.codetracker.change.Change;
 import org.codetracker.element.Method;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
@@ -48,7 +47,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 traceEntity.getRepositoryUrl())) {
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)
-                    .filePath(traceEntity.getFilePath())
+                    .filePath(traceEntity.getFile())
                     .startCommitId(traceEntity.getStartCommitHash())
                     .methodName(traceEntity.getElementName())
                     .methodDeclarationLineNumber(traceEntity.getStartLine())
@@ -72,6 +71,10 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
         boolean isNewElement = historyInfo.getElementBefore().getName().equals(historyInfo.getElementAfter().getName());
 
         LocationInfo newLocation = historyInfo.getElementAfter().getLocation();
+        String oldFilePath = historyInfo.getElementBefore().getFilePath();
+        String newFilePath = historyInfo.getElementAfter().getFilePath();
+        int oldFileNameStartIndex = Math.max(oldFilePath.lastIndexOf("/"), 0);
+        int newFileNameStartIndex = Math.max(newFilePath.lastIndexOf("/"), 0);
         return CommitUdt.builder()
                 .tracerName(getTracerName())
                 .parentCommitHash(historyInfo.getParentCommitId())
@@ -82,8 +85,12 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .codeFragment(null)
                 .changeType(parseChangeType(historyInfo.getChangeType().toString()))
                 .changeList(historyInfo.getChangeList().stream().map(Objects::toString).toList())
-                .filePath(historyInfo.getElementAfter().getFilePath())
-                .renamedElement(isNewElement ? historyInfo.getElementAfter().getName() : null)
+                .oldFile(oldFilePath)
+                .newFile(newFilePath)
+                .fileRenamed(oldFilePath.substring(oldFileNameStartIndex).equals(newFilePath.substring(newFileNameStartIndex)) ? 0 : 1)
+                .fileMoved(oldFilePath.substring(0, oldFileNameStartIndex + 1).equals(newFilePath.substring(0, newFileNameStartIndex + 1)) ? 0 : 1)
+                .oldElement(historyInfo.getElementBefore().getName())
+                .newElement(historyInfo.getElementAfter().getName())
                 .build();
     }
 }

@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-streaming-java/src/main/java/org/apache/flink/streaming/api/environment/RemoteStreamEnvironment.java",
+  "file" : "flink-streaming-java/src/main/java/org/apache/flink/streaming/api/environment/RemoteStreamEnvironment.java",
   "elementType" : "method",
-  "elementName" : "executeRemotely",
+  "element" : "executeRemotely",
   "startLine" : 190,
   "endLine" : 237,
   "expectedCommits" : [ {
@@ -113,7 +113,7 @@
     "commitHash" : "5b05ca635d1a661bf2be3baf60159d84834a9942",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fc3ee68bb1c0676ae8825c675d0c01e25d36db7b",

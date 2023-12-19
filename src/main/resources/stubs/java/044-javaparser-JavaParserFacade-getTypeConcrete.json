@@ -2,9 +2,9 @@
   "repositoryName" : "javaparser",
   "repositoryUrl" : "https://github.com/javaparser/javaparser.git",
   "startCommitHash" : "97555053af3025556efe1a168fd7943dac28a2a6",
-  "filePath" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/JavaParserFacade.java",
+  "file" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/javaparsermodel/JavaParserFacade.java",
   "elementType" : "method",
-  "elementName" : "getTypeConcrete",
+  "element" : "getTypeConcrete",
   "startLine" : 465,
   "endLine" : 468,
   "expectedCommits" : [ {
@@ -263,7 +263,7 @@
     "commitHash" : "8b8cc6cddbf5af0c93c4ceffd015f6328c932149",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ead147279ca0b84d2f479a714943b20cd689e7c7",

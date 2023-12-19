@@ -2,9 +2,9 @@
   "repositoryName" : "jetty.project",
   "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
   "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
-  "filePath" : "jetty-webapp/src/main/java/org/eclipse/jetty/webapp/FragmentDescriptor.java",
+  "file" : "jetty-webapp/src/main/java/org/eclipse/jetty/webapp/FragmentDescriptor.java",
   "elementType" : "method",
-  "elementName" : "processAfters",
+  "element" : "processAfters",
   "startLine" : 123,
   "endLine" : 148,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "da627b843fe81fa0fe52a046c1be8595630e9ae7",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "a4dbb5823ce0786d009832a713476a91e823350a",

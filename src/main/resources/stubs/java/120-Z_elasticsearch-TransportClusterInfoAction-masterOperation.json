@@ -2,9 +2,9 @@
   "repositoryName" : "elasticsearch",
   "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
   "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
-  "filePath" : "server/src/main/java/org/elasticsearch/action/support/master/info/TransportClusterInfoAction.java",
+  "file" : "server/src/main/java/org/elasticsearch/action/support/master/info/TransportClusterInfoAction.java",
   "elementType" : "method",
-  "elementName" : "masterOperation",
+  "element" : "masterOperation",
   "startLine" : 50,
   "endLine" : 53,
   "expectedCommits" : [ {
@@ -41,7 +41,7 @@
     "commitHash" : "dc0d81b8aac03af962e895381406f312565fd358",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ffdebe9bc3889c3ef661188bfd21e671fa559d04",

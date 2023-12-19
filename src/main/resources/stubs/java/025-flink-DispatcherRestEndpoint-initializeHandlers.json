@@ -2,9 +2,9 @@
   "repositoryName" : "flink",
   "repositoryUrl" : "https://github.com/apache/flink.git",
   "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
-  "filePath" : "flink-runtime/src/main/java/org/apache/flink/runtime/dispatcher/DispatcherRestEndpoint.java",
+  "file" : "flink-runtime/src/main/java/org/apache/flink/runtime/dispatcher/DispatcherRestEndpoint.java",
   "elementType" : "method",
-  "elementName" : "initializeHandlers",
+  "element" : "initializeHandlers",
   "startLine" : 83,
   "endLine" : 126,
   "expectedCommits" : [ {
@@ -158,7 +158,7 @@
     "commitHash" : "6a62f1455313ee8fae0ff79945da61fb67ec8edb",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fdf684427165e8068d4229a340b8e03548e022ef",

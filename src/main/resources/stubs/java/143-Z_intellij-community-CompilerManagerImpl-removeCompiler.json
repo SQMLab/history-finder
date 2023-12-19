@@ -2,9 +2,9 @@
   "repositoryName" : "intellij-community",
   "repositoryUrl" : "https://github.com/JetBrains/intellij-community.git",
   "startCommitHash" : "ecb1bb9d4d484ae63ee77f8ad45bdce154db9356",
-  "filePath" : "java/compiler/impl/src/com/intellij/compiler/CompilerManagerImpl.java",
+  "file" : "java/compiler/impl/src/com/intellij/compiler/CompilerManagerImpl.java",
   "elementType" : "method",
-  "elementName" : "removeCompiler",
+  "element" : "removeCompiler",
   "startLine" : 148,
   "endLine" : 153,
   "expectedCommits" : [ {
@@ -38,7 +38,7 @@
     "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "a015b79873b418ecb241b9cee16508e38e55ee65",

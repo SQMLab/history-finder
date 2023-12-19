@@ -2,9 +2,9 @@
   "repositoryName" : "mockito",
   "repositoryUrl" : "https://github.com/mockito/mockito.git",
   "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
-  "filePath" : "src/main/java/org/mockito/internal/configuration/plugins/PluginLoader.java",
+  "file" : "src/main/java/org/mockito/internal/configuration/plugins/PluginLoader.java",
   "elementType" : "method",
-  "elementName" : "loadPlugin",
+  "element" : "loadPlugin",
   "startLine" : 55,
   "endLine" : 78,
   "expectedCommits" : [ {
@@ -20,7 +20,7 @@
     "commitHash" : "08c0931684159e5f00f388e3de55cec97020e107",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fc6afc103ebddba5794856f90244b14c4a042a14",

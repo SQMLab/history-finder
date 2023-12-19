@@ -2,16 +2,16 @@
   "repositoryName" : "junit4",
   "repositoryUrl" : "https://github.com/junit-team/junit4.git",
   "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
-  "filePath" : "src/main/java/org/junit/runners/ParentRunner.java",
+  "file" : "src/main/java/org/junit/runners/ParentRunner.java",
   "elementType" : "method",
-  "elementName" : "applyValidators",
+  "element" : "applyValidators",
   "startLine" : 154,
   "endLine" : 160,
   "expectedCommits" : [ {
     "commitHash" : "1d97da73fdafce8f5cf9d722f23c5cba41b26b70",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "d3ee5d06c0b797ce812cbfe35addc6146d5f07cb",

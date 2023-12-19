@@ -2,9 +2,9 @@
   "repositoryName" : "commons-io",
   "repositoryUrl" : "https://github.com/apache/commons-io.git",
   "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
-  "filePath" : "src/main/java/org/apache/commons/io/output/ProxyWriter.java",
+  "file" : "src/main/java/org/apache/commons/io/output/ProxyWriter.java",
   "elementType" : "method",
-  "elementName" : "write",
+  "element" : "write",
   "startLine" : 169,
   "endLine" : 182,
   "expectedCommits" : [ {
@@ -29,7 +29,7 @@
     "commitHash" : "a77ea19924b8590d847d75720f28afcaac84ebfb",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fe6ec030da1ab53b5e5dc481572c9f072be3b965",

@@ -2,9 +2,9 @@
   "repositoryName" : "junit5",
   "repositoryUrl" : "https://github.com/junit-team/junit5.git",
   "startCommitHash" : "77cfe71e7f787c59626198e25350545f41e968bd",
-  "filePath" : "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.java",
+  "file" : "junit-jupiter-engine/src/main/java/org/junit/jupiter/engine/descriptor/ClassTestDescriptor.java",
   "elementType" : "method",
-  "elementName" : "invokeBeforeAllMethods",
+  "element" : "invokeBeforeAllMethods",
   "startLine" : 365,
   "endLine" : 378,
   "expectedCommits" : [ {
@@ -44,7 +44,7 @@
     "commitHash" : "b2ba6b95138382f25ca757a5ca2a7295bee4c3b8",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "e0e131335d2117a2a1630db22260a258e47d8c4d",

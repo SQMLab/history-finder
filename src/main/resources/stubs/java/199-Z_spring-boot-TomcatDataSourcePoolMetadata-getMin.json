@@ -2,9 +2,9 @@
   "repositoryName" : "spring-boot",
   "repositoryUrl" : "https://github.com/spring-projects/spring-boot.git",
   "startCommitHash" : "5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a",
-  "filePath" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/jdbc/metadata/TomcatDataSourcePoolMetadata.java",
+  "file" : "spring-boot-project/spring-boot/src/main/java/org/springframework/boot/jdbc/metadata/TomcatDataSourcePoolMetadata.java",
   "elementType" : "method",
-  "elementName" : "getMin",
+  "element" : "getMin",
   "startLine" : 47,
   "endLine" : 49,
   "expectedCommits" : [ {
@@ -26,7 +26,7 @@
     "commitHash" : "3dc932db888d4b8da0a0c47a593e328dfbc28811",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "fb6b2244707dd5dfad12d62cb6a3c396555270d1",

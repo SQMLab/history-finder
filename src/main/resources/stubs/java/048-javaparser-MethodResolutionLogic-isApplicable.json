@@ -2,9 +2,9 @@
   "repositoryName" : "javaparser",
   "repositoryUrl" : "https://github.com/javaparser/javaparser.git",
   "startCommitHash" : "97555053af3025556efe1a168fd7943dac28a2a6",
-  "filePath" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/resolution/MethodResolutionLogic.java",
+  "file" : "javaparser-symbol-solver-core/src/main/java/com/github/javaparser/symbolsolver/resolution/MethodResolutionLogic.java",
   "elementType" : "method",
-  "elementName" : "isApplicable",
+  "element" : "isApplicable",
   "startLine" : 71,
   "endLine" : 143,
   "expectedCommits" : [ {
@@ -104,7 +104,7 @@
     "commitHash" : "d420a496cd03b7e9b5c4cce5074d8a74da69f3cd",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "ecc78c8b480ceb41019f764c983aaa69c2dabfe3",

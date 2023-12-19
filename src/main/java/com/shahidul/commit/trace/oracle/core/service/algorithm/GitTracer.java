@@ -17,15 +17,9 @@ import org.eclipse.jgit.revwalk.filter.RevFilter;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author Shahidul Islam
@@ -66,7 +60,7 @@ public abstract class GitTracer implements TraceService {
 
             Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getStartCommitHash());
 
-            LogCommand logCommandFile = git.log().add(startCommit.getId()).addPath(traceEntity.getFilePath()).setRevFilter(RevFilter.NO_MERGES);
+            LogCommand logCommandFile = git.log().add(startCommit.getId()).addPath(traceEntity.getFile()).setRevFilter(RevFilter.NO_MERGES);
             Iterable<RevCommit> fileRevisions = logCommandFile.call();
             Map<String, Commit> fileHistory = new LinkedHashMap<>();
             for (RevCommit commit : fileRevisions) {

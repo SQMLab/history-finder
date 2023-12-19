@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-orm",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
   "startCommitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
-  "filePath" : "hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/RevisionInfoConfiguration.java",
+  "file" : "hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/RevisionInfoConfiguration.java",
   "elementType" : "method",
-  "elementName" : "configure",
+  "element" : "configure",
   "startLine" : 296,
   "endLine" : 438,
   "expectedCommits" : [ {
@@ -98,7 +98,7 @@
     "commitHash" : "78e5d9fd89aa571f8ad5cf5b8a5046b9b74cb09b",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f39550fff19a72faec27632409b50970d4d9d2da",

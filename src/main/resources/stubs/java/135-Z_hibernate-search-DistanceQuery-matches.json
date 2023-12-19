@@ -2,9 +2,9 @@
   "repositoryName" : "hibernate-search",
   "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
   "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
-  "filePath" : "engine/src/main/java/org/hibernate/search/spatial/impl/DistanceQuery.java",
+  "file" : "engine/src/main/java/org/hibernate/search/spatial/impl/DistanceQuery.java",
   "elementType" : "method",
-  "elementName" : "matches",
+  "element" : "matches",
   "startLine" : 156,
   "endLine" : 167,
   "expectedCommits" : [ {
@@ -38,7 +38,7 @@
     "commitHash" : "b569d66ddca5855b5ee9811171ed34a48544cad6",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "991b9e7244fd848ab1806d42fd511e5e27d4ea29",

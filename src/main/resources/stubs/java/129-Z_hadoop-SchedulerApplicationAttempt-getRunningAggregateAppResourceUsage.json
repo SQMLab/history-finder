@@ -2,9 +2,9 @@
   "repositoryName" : "hadoop",
   "repositoryUrl" : "https://github.com/apache/hadoop.git",
   "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
-  "filePath" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/SchedulerApplicationAttempt.java",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/SchedulerApplicationAttempt.java",
   "elementType" : "method",
-  "elementName" : "getRunningAggregateAppResourceUsage",
+  "element" : "getRunningAggregateAppResourceUsage",
   "startLine" : 1080,
   "endLine" : 1103,
   "expectedCommits" : [ {
@@ -23,7 +23,7 @@
     "commitHash" : "83be3ad44484bf8a24cb90de4b9c26ab59d226a8",
     "changeType" : "Yintroduced"
   } ],
-  "analysis" : {
+  "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "dae65f3bef8ffa34d02a37041f1dfdfeeee91845",
