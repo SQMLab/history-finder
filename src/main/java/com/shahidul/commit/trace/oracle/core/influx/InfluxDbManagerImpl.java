@@ -96,6 +96,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .fileMoved(commitUdt.getFileMoved())
                 .oldElement(commitUdt.getOldElement())
                 .newElement(commitUdt.getNewElement())
+                .diffUrl(commitUdt.getDiffUrl())
                 .diff(commitUdt.getDiff())
                 .diffDetail(commitUdt.getDiffDetail())
                 .translatedAt(timeMap.get(commitUdt.getCommitHash()))

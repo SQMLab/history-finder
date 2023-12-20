@@ -28,7 +28,7 @@ public class GitLineRangeTracer extends GitTracer {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
 
-        String gitLogCommand = String.format("git log %s --no-merges %s -L %s,%s:%s",
+        String gitLogCommand = String.format("git log %s --no-merges --histogram %s -L %s,%s:%s",
                 traceEntity.getStartCommitHash(), LOG_FORMAT, traceEntity.getStartLine(), traceEntity.getEndLine(), traceEntity.getFile());
         return super.trace(traceEntity, gitLogCommand);
     }

@@ -6,6 +6,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.lib.ObjectId;
@@ -15,7 +16,6 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StopWatch;
 
 import java.io.IOException;
 import java.util.*;
@@ -48,7 +48,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                         throw new RuntimeException(traceEntity.getRepositoryUrl(), e);
                     }
 
-                    traceEntity.setExpectedCommits(injectMetaData(traceEntity.getExpectedCommits(), repository, commitMap));
+                    traceEntity.setExpectedCommits(injectMetaData(traceEntity, traceEntity.getExpectedCommits(), repository, commitMap));
                     //injectMetaData(traceEntity.getAggregatedCommits(), repository, commitMap);
 
                     Repository finalRepository = repository;
@@ -56,7 +56,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                             .values()
                             .stream()
                             .map(analysis -> {
-                                analysis.setCommits(injectMetaData(analysis.getCommits(), finalRepository, commitMap));
+                                analysis.setCommits(injectMetaData(traceEntity, analysis.getCommits(), finalRepository, commitMap));
                                 return analysis;
                             }).toList();
                     return traceEntity;
@@ -122,7 +122,7 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
         traceRepository.saveAll(traceEntityList);
     }
 
-    private List<CommitUdt> injectMetaData(List<CommitUdt> commitUdtList, Repository repository, Map<String, RevCommit> cachedCommitMap) {
+    private List<CommitUdt> injectMetaData(TraceEntity traceEntity, List<CommitUdt> commitUdtList, Repository repository, Map<String, RevCommit> cachedCommitMap) {
         return Optional.of(commitUdtList)
                 .orElseGet(Collections::emptyList)
                 .stream()
@@ -149,6 +149,11 @@ public class TraceAggregatorServiceImpl implements TraceAggregatorService {
                         commitUdt.setCommittedAt(new Date(1000L * revCommit.getCommitTime()));
                     }
                     return commitUdt;
-                }).toList();
+                })
+                .map(commitUdt -> {
+                    commitUdt.setDiffUrl(Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash()));
+                    return commitUdt;
+                })
+                .toList();
     }
 }

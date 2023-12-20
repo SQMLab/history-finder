@@ -34,18 +34,26 @@ class TraceExecutionController {
     InfluxDbManager influxDbManager;
 
     @Test
+    @Order(-2)
+    public void cleanDb() {
+        dataSetLoader.cleanDb();
+
+    }
+
+ /*   @Test
     @Order(-1)
     public void preProcessCodeShovelTest() {
         dataSetLoader.preProcessCodeShoveFile();
 
-    }
+    }*/
 
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(10);
+        dataSetLoader.loadFile(1);
 
     }
+
     @Test
     @Order(1)
     void executeTrace() {
@@ -54,25 +62,25 @@ class TraceExecutionController {
 
     @Test
     @Order(2)
-    void populateCommitMetaData(){
+    void populateCommitMetaData() {
         aggregatorService.populateMetaData();
     }
 
     @Test
     @Order(3)
-    void aggregate(){
+    void aggregate() {
         aggregatorService.aggregate();
     }
 
     @Test
     @Order(3)
-    void runAnalysis(){
+    void runAnalysis() {
         traceAnalyzer.analyze();
     }
 
     @Test
     @Order(4)
-    void loadIntoInfluxDb(){
+    void loadIntoInfluxDb() {
         influxDbManager.load();
     }
 }

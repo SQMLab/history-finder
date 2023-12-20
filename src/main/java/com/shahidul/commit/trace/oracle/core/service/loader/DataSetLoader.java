@@ -7,4 +7,5 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 public interface DataSetLoader {
     void loadFile(int limit);
     void preProcessCodeShoveFile();
+    void cleanDb();
 }

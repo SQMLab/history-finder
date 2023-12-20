@@ -197,6 +197,11 @@ public class DataSetLoaderImpl implements DataSetLoader {
         }
     }
 
+    @Override
+    public void cleanDb() {
+        traceRepository.deleteAll();
+    }
+
     private String generateUid(Trace trace) {
         String text = new StringBuilder()
                 .append(trace.getRepositoryName())

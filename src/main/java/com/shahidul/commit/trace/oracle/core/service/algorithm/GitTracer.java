@@ -6,6 +6,7 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +57,7 @@ public abstract class GitTracer implements TraceService {
 
 
             Process process = runtime.exec(cmd, null, new File(repositoryLocation));
-            process.waitFor(30, TimeUnit.SECONDS );
+            process.waitFor(30, TimeUnit.SECONDS);
 
             Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getStartCommitHash());
 
@@ -71,7 +72,8 @@ public abstract class GitTracer implements TraceService {
 
             Scanner scanner = new Scanner(process.getInputStream());
             scanner.useDelimiter(DIVIDER);
-            while (scanner.hasNext()){
+            String parentCommitHash = traceEntity.getStartCommitHash();
+            while (scanner.hasNext()) {
                 String commitHash = scanner.next().strip();
                 CommitUdt.CommitUdtBuilder commitEntityBuilder = CommitUdt.builder();
                 if (fileHistory.containsKey(commitHash)) {
@@ -81,11 +83,21 @@ public abstract class GitTracer implements TraceService {
                             .email(commit.getAuthorEmail())
                             .shortMessage(commit.getCommitMessage());
                 }
+                String diff = scanner.next().strip();
+                String[] diffHeaderParts = diff.substring(0, diff.indexOf("\n")).split(" ");
+                String oldFile = diffHeaderParts[diffHeaderParts.length - 2].substring(2);
+                String newFile = diffHeaderParts[diffHeaderParts.length - 1].substring(2);
                 commitUdtList.add(commitEntityBuilder
                         .tracerName(getTracerName())
+                        .parentCommitHash(parentCommitHash)
                         .commitHash(commitHash)
-                        .diff(scanner.next().strip())
+                        .oldFile(oldFile)
+                        .newFile(newFile)
+                        .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
+                        .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
+                        .diff(diff)
                         .build());
+                parentCommitHash = commitHash;
             }
             scanner.close();
 

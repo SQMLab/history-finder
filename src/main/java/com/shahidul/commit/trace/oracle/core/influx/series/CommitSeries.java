@@ -41,6 +41,8 @@ public class CommitSeries {
     String oldElement;
     @Column(name = "new_element")
     String newElement;
+    @Column(name = "diff_url")
+    String diffUrl;
     @Column(name = "diff")
     String diff;
     @Column(name = "diff_detail")
