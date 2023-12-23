@@ -9,49 +9,49 @@
   "endLine" : 283,
   "expectedCommits" : [ {
     "commitHash" : "96218e8bc42390c9ff6bb3c72f7deb6c5a0a7880",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "05e2527b5c781db8c7179a134ac1bf800e830580",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "37fa778ea03aba953712348426393136e2314658",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9af433473961dab9f5d534031fe0a6daa615a2a6",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "d18f32f139c09600df429c3865f0cd0bb4e8d6ac",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "ce3e6dafec21fc341c270445e8d3fbffe324f09f",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "a639ee9275e672ca21320f56f62f1648d24aa140",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "9af433473961dab9f5d534031fe0a6daa615a2a6",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "96218e8bc42390c9ff6bb3c72f7deb6c5a0a7880",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "41ed9f29f41263c9facede20bddfaafa669b43c5",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "37fa778ea03aba953712348426393136e2314658",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "1ff2c691bae7cc47c0d8f386d311e03764cbf26c",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "067fc5d2d839515716574cfe5294ea2e8059f027",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "05e2527b5c781db8c7179a134ac1bf800e830580",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

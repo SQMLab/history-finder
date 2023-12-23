@@ -9,49 +9,49 @@
   "endLine" : 104,
   "expectedCommits" : [ {
     "commitHash" : "b5cb2bbb854e22783baf7227b2c3bf739e072461",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "94ed1e8a863df684eca95ebb4a5df56c0c9824da",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "10ae0fb999e53a911c1847ebfdb2e563fcd80861",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "75daf38ed303bcdbfe1034fd3a070a4306402c2d",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "0484b2430584968b5e7735df6530e620770123d4",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "4ffa5c453f41ca0b8ae9f317570453064ed48f3d",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "b5cb2bbb854e22783baf7227b2c3bf739e072461",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "94ed1e8a863df684eca95ebb4a5df56c0c9824da",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "7221903f73dff36842abe6a024d2090021117fe1",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "4ffa5c453f41ca0b8ae9f317570453064ed48f3d",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "23769a3357f06d0c3f38e88bd9be6b654461de6e",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "10ae0fb999e53a911c1847ebfdb2e563fcd80861",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "0484b2430584968b5e7735df6530e620770123d4",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

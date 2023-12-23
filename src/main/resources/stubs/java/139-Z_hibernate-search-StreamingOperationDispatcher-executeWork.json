@@ -9,31 +9,31 @@
   "endLine" : 56,
   "expectedCommits" : [ {
     "commitHash" : "1cf93d1325d9c1635bf919198916f2fdf6977dd6",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3c42a071e8d9b163d207e7e2e77e038341bf26e1",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "bb0e67026acff2766b118ceb1fa1ed4c326a38bf",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "bb0e67026acff2766b118ceb1fa1ed4c326a38bf",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "3c42a071e8d9b163d207e7e2e77e038341bf26e1",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "1cf93d1325d9c1635bf919198916f2fdf6977dd6",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

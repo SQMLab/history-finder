@@ -9,46 +9,46 @@
   "endLine" : 362,
   "expectedCommits" : [ {
     "commitHash" : "d4e1ad171208fc1a63de63b4a7e4c08e43edc41a",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
-    "changeType" : "Ymultichange(Ybodychange,Yparametermetachange)"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "2abfa999f08533349b7067edb4c5d368f5b3612c",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f2c7194deeaf66ef3c83e24cb3a13236efe68261",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "2ee073f3eb5da25c88e184ea78581b297f168a06",
-    "changeType" : "Ymultichange(Yfilerename,Yreturntypechange,Ybodychange,Yparameterchange)"
+    "changeTags" : [ "BODY", "SIGNATURE", "FILE_RENAME", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "f11021dca612e6bc4e9963248c0927225299a857",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "83f7246c3e9fe1d3f1ad6cf7ea0715a573fe2f2a",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "81eef5ded4684a1f4edea06e038894520fe72bc2",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f11021dca612e6bc4e9963248c0927225299a857",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "d4e1ad171208fc1a63de63b4a7e4c08e43edc41a",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "81eef5ded4684a1f4edea06e038894520fe72bc2",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "2ee073f3eb5da25c88e184ea78581b297f168a06",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

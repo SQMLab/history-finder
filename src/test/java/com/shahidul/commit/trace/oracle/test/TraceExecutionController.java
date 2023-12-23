@@ -33,12 +33,12 @@ class TraceExecutionController {
     @Autowired
     InfluxDbManager influxDbManager;
 
-    @Test
+   /* @Test
     @Order(-2)
-    public void cleanDb() {
+    public void cleanMongoDb() {
         dataSetLoader.cleanDb();
 
-    }
+    }*/
 
  /*   @Test
     @Order(-1)
@@ -50,7 +50,7 @@ class TraceExecutionController {
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(1);
+        dataSetLoader.loadFile(3);
 
     }
 

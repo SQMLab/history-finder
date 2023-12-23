@@ -9,31 +9,31 @@
   "endLine" : 1598,
   "expectedCommits" : [ {
     "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
-    "changeType" : "Yparametermetachange"
+    "changeTags" : [ ]
   }, {
     "commitHash" : "34f049caaa1f9048cc7385e0224136110bfc75f9",
-    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "83f7246c3e9fe1d3f1ad6cf7ea0715a573fe2f2a",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "61b41ee528d4d5cd358f8f5b0a4b2c5a743da561",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "efca1657258b7555b80bbee207a3221489b9ffed",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "61b41ee528d4d5cd358f8f5b0a4b2c5a743da561",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "34f049caaa1f9048cc7385e0224136110bfc75f9",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

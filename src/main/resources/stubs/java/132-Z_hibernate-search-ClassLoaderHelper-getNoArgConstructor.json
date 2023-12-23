@@ -9,52 +9,52 @@
   "endLine" : 266,
   "expectedCommits" : [ {
     "commitHash" : "f4e45cb5068346eeca734c7fcbcff9867cc2f901",
-    "changeType" : "Ymultichange(Yrename,Yparameterchange,Yreturntypechange,Ybodychange)"
+    "changeTags" : [ "BODY", "SIGNATURE", "RENAME", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "5a1b370ede07aefa9eda8dcf5acc58e4f01c5384",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "354f2cadec6dee7d4dde2250e13f468e2d93cd27",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "02b8eb4f6017e7fb44bee6013d7f8bf1ae23a7b1",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "f773e0a267fc94b9d46928241ca210e0998f0030",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "783e20fb66ee4cd410ab86d29cfcc4121563341c",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "ad2fdd07580d39ae66d467ca3d8b2be0be2ae296",
-    "changeType" : "Ymultichange(Yrename,Ymodifierchange)"
+    "changeTags" : [ "SIGNATURE", "RENAME", "MODIFIER" ]
   }, {
     "commitHash" : "39529f69239ecf1f14dbf548a1b36eb40ee7b97e",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "dfc8c23684ab4e6769f9b566e1f97101166ba7d8",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f4e45cb5068346eeca734c7fcbcff9867cc2f901",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "dfc8c23684ab4e6769f9b566e1f97101166ba7d8",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "b0705f4d3b69a6ba01c03bf78a0c9bff2dab3436",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "adc407b441e44480d3863fbb84ce389b5f868788",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "ad2fdd07580d39ae66d467ca3d8b2be0be2ae296",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "5a1b370ede07aefa9eda8dcf5acc58e4f01c5384",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

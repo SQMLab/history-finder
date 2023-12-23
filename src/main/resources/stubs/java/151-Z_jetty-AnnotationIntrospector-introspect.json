@@ -9,25 +9,25 @@
   "endLine" : 111,
   "expectedCommits" : [ {
     "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
-    "changeType" : "Yparameterchange"
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "b4f4c0ae36ef23321b5b9cd0698fdf8acb907d6a",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "b4f4c0ae36ef23321b5b9cd0698fdf8acb907d6a",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

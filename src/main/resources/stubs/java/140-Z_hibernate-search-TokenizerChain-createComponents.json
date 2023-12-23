@@ -9,22 +9,22 @@
   "endLine" : 55,
   "expectedCommits" : [ {
     "commitHash" : "b3dc2cfffa7e016c288eaeb9e82443572a6c081d",
-    "changeType" : "Ymultichange(Yparameterchange,Ybodychange,Yparametermetachange)"
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "bdf7b30992aba220399e67c032f5b3ef61c9e080",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "6e432d32793618c49eec5234e14048f0dbd59943",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "b3dc2cfffa7e016c288eaeb9e82443572a6c081d",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "6e432d32793618c49eec5234e14048f0dbd59943",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

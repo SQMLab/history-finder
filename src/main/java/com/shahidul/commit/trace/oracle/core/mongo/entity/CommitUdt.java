@@ -1,12 +1,13 @@
 package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -24,7 +25,7 @@ public class CommitUdt implements Cloneable{
     Integer startLine;
     Integer endLine;
     String codeFragment;
-    List<String> changeList;
+    Set<ChangeTag> changeTags;
     String oldFile;
     String newFile;
     Integer fileRenamed;
@@ -35,7 +36,6 @@ public class CommitUdt implements Cloneable{
     String email;
     String shortMessage;
     String fullMessage;
-    String changeType;
     String diffUrl;
     String diff;
     String diffDetail;

@@ -2,12 +2,13 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.AlgorithmExecution;
 import com.shahidul.commit.trace.oracle.core.model.Commit;
 import com.shahidul.commit.trace.oracle.core.model.Trace;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import jakarta.annotation.PostConstruct;
@@ -96,11 +97,15 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                 return entityMap.get(oracleFileName);
                             } else {
                                 HashMap<String, AnalysisUdt> analysisEntityMap = new HashMap<>();
-                                for(Map.Entry<String, AlgorithmExecution> entry : trace.getAnalyzer().entrySet()){
+                                for (Map.Entry<String, AlgorithmExecution> entry : trace.getAnalyzer().entrySet()) {
 
                                     List<CommitUdt> commitList = entry.getValue().getCommits()
                                             .stream()
-                                            .map(commit -> CommitUdt.builder().tracerName(entry.getKey()).commitHash(commit.getCommitHash()).changeType(commit.getChangeType()).build())
+                                            .map(commit -> CommitUdt.builder()
+                                                    .tracerName(entry.getKey())
+                                                    .commitHash(commit.getCommitHash())
+                                                    .changeTags(commit.getChangeTags())
+                                                    .build())
                                             .toList();
                                     analysisEntityMap.put(entry.getKey(), AnalysisUdt.builder().commits(commitList).build());
                                 }
@@ -121,7 +126,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                                 trace.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
                                                                 .tracerName(TracerName.EXPECTED.getCode())
                                                                 .commitHash(commit.getCommitHash())
-                                                                .changeType(commit.getChangeType())
+                                                                .changeTags(commit.getChangeTags())
                                                                 .build())
                                                         .toList()
                                         )
@@ -159,7 +164,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             json.get("expectedResult")
                                     .fields()
                                     .forEachRemaining(commit -> {
-                                        commits.add(Commit.builder().commitHash(commit.getKey()).changeType(commit.getValue().asText()).build());
+                                        commits.add(Commit.builder().commitHash(commit.getKey()).changeTags(toChangeTags(commit.getValue().asText())).build());
                                     });
                             List<Commit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
                                     .sorted(Comparator.reverseOrder())
@@ -179,7 +184,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .expectedCommits(commits)
                                     .analyzer(analysis)
                                     .build();
-                            File outputFile = new File( "./src/main/resources/stubs/java", String.format("%03d", fileNo.incrementAndGet()) + "-" + file.getName());
+                            File outputFile = new File("./src/main/resources/stubs/java", String.format("%03d", fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
 
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, trace);
@@ -192,7 +197,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         }
                     }).collect(Collectors.toList());
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
@@ -214,6 +219,49 @@ public class DataSetLoaderImpl implements DataSetLoader {
                 .append(trace.getEndLine())
                 .toString();
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    private Set<ChangeTag> toChangeTags(String change) {
+        Set<ChangeTag> changeTags = new TreeSet<>();
+        if (change != null) {
+            if (change.contains("Yintroduced")) {
+                changeTags.add(ChangeTag.INTRODUCE);
+            }
+            if (change.contains("Ysignaturechange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+            }
+            if (change.contains("Yrename")) {
+                changeTags.add(ChangeTag.RENAME);
+            }
+            if (change.contains("Yreturntypechange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.RETURN_TYPE);
+            }
+            if (change.contains("Yparameterchange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.PARAMETER);
+            }
+            if (change.contains("Ymodifierchange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.MODIFIER);
+            }
+            if (change.contains("Yexceptionschange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.EXCEPTION);
+            }
+
+            if (change.contains("Ybodychange")) {
+                changeTags.add(ChangeTag.BODY);
+            }
+
+            if (change.contains("Ymovefromfile")) {
+                changeTags.add(ChangeTag.MOVE);
+            }
+            if (change.contains("Yfilerename")) {
+                changeTags.add(ChangeTag.FILE_RENAME);
+            }
+        }
+        return changeTags;
     }
 
 }

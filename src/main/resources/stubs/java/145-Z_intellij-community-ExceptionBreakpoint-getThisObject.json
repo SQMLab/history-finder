@@ -9,28 +9,28 @@
   "endLine" : 145,
   "expectedCommits" : [ {
     "commitHash" : "920d5b4fbadcb5c95d03e879885d158b483bd0a8",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "786fa6b666889eb866b86ada8dc674d53a553aa4",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "1b12b4f6ab85d0409467c49dbc54918796edf0b8",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "ed963063110c01a599ee9840c4ad9eb8a7949988",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
-    "changeType" : "Yintroduced"
+    "changeTags" : [ "INTRODUCE" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "920d5b4fbadcb5c95d03e879885d158b483bd0a8",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "7460e5adae69c7b17c951f1198a6b6900721a1ee",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

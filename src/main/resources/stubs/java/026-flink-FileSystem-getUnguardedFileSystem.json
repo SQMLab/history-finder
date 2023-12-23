@@ -9,127 +9,127 @@
   "endLine" : 415,
   "expectedCommits" : [ {
     "commitHash" : "d7c2c417213502130b1aeab1868313df178555cc",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "536675b03a5050fda9c3e1fd403818cb50dcc6ff",
-    "changeType" : "Ymultichange(Yparameterchange,Ybodychange)"
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "3b786844dd9c0ce176eac98c8a05ebe50cb1ebe7",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ba8ed263695d16eacb4bdfdf195dd22c83bb53ed",
-    "changeType" : "Yrename"
+    "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "a3d1a17406749e41185a77a64c23fc1cb3eabc76",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "76d3a6353a0a3f8960dc2b49d9eac6a4a279ea9e",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1c8d866a83065e3d1bc9707dab81117f24c9f678",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "2af658673f877a7e0fd73fdd2907f88824d793a5",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "39fb7c945359465ce5241539559daac416e210b8",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f2909293cbb37cc4b4516e3bef4db66376159e52",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "bbe54ac09154dd3e60870b0d26085e2e2ee564af",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "4203bf99ddd009b72681ba0dc554cabd47e1c85c",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8b39ba9e45145a30c2b95c47d7b03bc3ed2a8a3a",
-    "changeType" : "Ybodychange"
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8563d511da8ab8ac0e1362775f11aef7b67375be",
-    "changeType" : "Yfilerename"
+    "changeTags" : [ "FILE_RENAME" ]
   } ],
   "analyzer" : {
     "intelliJ" : {
       "commits" : [ {
         "commitHash" : "f2909293cbb37cc4b4516e3bef4db66376159e52",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "f04b32b02900181db82c6c518ffbd6430a0a369a",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "d7c2c417213502130b1aeab1868313df178555cc",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "d784bf9467bbaf8ffb37621c13fa30dfbb98e4d8",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "d0c21f4c470812d699ec141210ad5119b3450de3",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "bbe54ac09154dd3e60870b0d26085e2e2ee564af",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "ba8ed263695d16eacb4bdfdf195dd22c83bb53ed",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "b27a112add2f4c221f9bfd8e4e953a750e8d64b3",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "a3d1a17406749e41185a77a64c23fc1cb3eabc76",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "8b39ba9e45145a30c2b95c47d7b03bc3ed2a8a3a",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "88d7305a5267aac598949519275123208195daf7",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "76d3a6353a0a3f8960dc2b49d9eac6a4a279ea9e",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "75e67a701cbabe5577967037c0e865d1c2e9a25b",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "6651d55a106c85be53373dd3877900f1ffc80793",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "610082d9788b5544b29bab9176f48eea1a45d940",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "536675b03a5050fda9c3e1fd403818cb50dcc6ff",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "3b786844dd9c0ce176eac98c8a05ebe50cb1ebe7",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "39fb7c945359465ce5241539559daac416e210b8",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "2b96b466ea37d4e91e769ec022b4ef3ae88dbfac",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "2af658673f877a7e0fd73fdd2907f88824d793a5",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "27fa26b163b00fc842eb74b15d603a26504ac949",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "1e6f8f342d2fa1cdcc92efbfb552c66e60c78a06",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "1c8d866a83065e3d1bc9707dab81117f24c9f678",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "19ef82cf358da54bf204e678bf203f25147b11f9",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "12d4802c2e165ed951b77efbe82bee9c72d4c873",
-        "changeType" : null
+        "changeTags" : null
       }, {
         "commitHash" : "0038c9d0773e90676b1ee2a8a94dcf764f023e22",
-        "changeType" : null
+        "changeTags" : null
       } ]
     }
   }

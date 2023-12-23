@@ -2,12 +2,14 @@ package com.shahidul.commit.trace.oracle.core.influx.series;
 
 import com.influxdb.annotations.Column;
 import com.influxdb.annotations.Measurement;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -29,6 +31,10 @@ public class CommitSeries {
     String commitHash;
     @Column(name = "committed_at")
     Instant committedAt;
+    @Column(name = "start_line")
+    Integer startLine;
+    @Column(name = "end_line")
+    Integer endLine;
     @Column(name = "old_file")
     String oldFile;
     @Column(name = "new_file")
@@ -41,6 +47,8 @@ public class CommitSeries {
     String oldElement;
     @Column(name = "new_element")
     String newElement;
+    @Column(name = "set_change_tag")
+    Set<ChangeTag> changeTagSet;
     @Column(name = "diff_url")
     String diffUrl;
     @Column(name = "diff")

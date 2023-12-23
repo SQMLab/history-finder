@@ -1,6 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.felixgrund.codeshovel.changes.Ychange;
+import com.felixgrund.codeshovel.changes.*;
 import com.felixgrund.codeshovel.entities.Yresult;
 import com.felixgrund.codeshovel.execution.ShovelExecution;
 import com.felixgrund.codeshovel.services.RepositoryService;
@@ -9,6 +9,7 @@ import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Shahidul Islam
@@ -87,7 +88,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             }
         }
         if (json.has("type")){
-            commitBuilder.changeType(parseChangeType(json.get("type").getAsString()));
+            commitBuilder.changeTags(toChangeTags(commitEntry.getValue()));
         }
         //TODO : source & destination file if (json.has())
 
@@ -118,5 +119,42 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         return commitBuilder
                 .build();
 
+    }
+
+    private Set<ChangeTag> toChangeTags(Ychange change){
+        Set<ChangeTag> changeTags = new TreeSet<>();
+        if (change instanceof Yintroduced){
+            changeTags.add(ChangeTag.INTRODUCE);
+        }
+        if (change instanceof Ysignaturechange){
+            changeTags.add(ChangeTag.SIGNATURE);
+        }
+        if (change instanceof Yrename){
+            changeTags.add(ChangeTag.RENAME);
+        }
+        if (change instanceof Yreturntypechange){
+            changeTags.add(ChangeTag.RETURN_TYPE);
+        }
+        if (change instanceof Yparameterchange){
+            changeTags.add(ChangeTag.PARAMETER);
+        }
+        if (change instanceof Ymodifierchange){
+            changeTags.add(ChangeTag.MODIFIER);
+        }
+        if (change instanceof Yexceptionschange){
+            changeTags.add(ChangeTag.EXCEPTION);
+        }
+
+        if (change instanceof Ybodychange){
+            changeTags.add(ChangeTag.BODY);
+        }
+
+        if (change instanceof Ymovefromfile){
+            changeTags.add(ChangeTag.MOVE);
+        }
+        if (change instanceof Yfilerename){
+            changeTags.add(ChangeTag.FILE_RENAME);
+        }
+        return changeTags;
     }
 }

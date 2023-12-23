@@ -1,9 +1,12 @@
 package com.shahidul.commit.trace.oracle.core.model;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -16,5 +19,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class Commit {
     String commitHash;
-    String changeType;
+    Set<ChangeTag> changeTags;
 }
