@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.core.service.algorithm;
 import com.felixgrund.codeshovel.changes.*;
 import com.felixgrund.codeshovel.entities.Yresult;
 import com.felixgrund.codeshovel.execution.ShovelExecution;
+import com.felixgrund.codeshovel.parser.Yfunction;
 import com.felixgrund.codeshovel.services.RepositoryService;
 import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.util.Utl;
@@ -74,7 +75,8 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitEntity(Map.Entry<String, Ychange> commitEntry) {
-        com.google.gson.JsonObject json = commitEntry.getValue().toJsonObject();
+        Ychange change = commitEntry.getValue();
+        com.google.gson.JsonObject json = change.toJsonObject();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
         if (json.has("commitNameOld")){
             commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
@@ -88,33 +90,23 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             }
         }
         if (json.has("type")){
-            commitBuilder.changeTags(toChangeTags(commitEntry.getValue()));
+            commitBuilder.changeTags(toChangeTags(change));
         }
         //TODO : source & destination file if (json.has())
 
         if (json.has("diff")){
             commitBuilder.diff(json.get("diff").getAsString());
         }
-      /*  if (json.has("extendedDetails")){
-            commitBuilder.diffDetail(json.get("extendedDetails").getAsString());
-        }*/
-     /*   if (json.has("commitsBetweenForRepo")){
-            commitBuilder.commitsBetweenForRepo(json.get("commitsBetweenForRepo").getAsInt());
-        }
-        if (json.has("commitsBetweenForFile")){
-            commitBuilder.commitsBetweenForFile(json.get("commitsBetweenForFile").getAsInt());
-        }*/
 
-
- /*       if (json.has("commitDateOld")){
-            commitBuilder.parentCommitTime(json.get("commitDateOld").getAsString());
+        if (change instanceof Ycomparefunctionchange){
+            Yfunction oldFunction = ((Ycomparefunctionchange) change).getOldFunction();
+            Yfunction newFunction = ((Ycomparefunctionchange) change).getNewFunction();
+            commitBuilder.startLine(newFunction.getNameLineNumber());
+            commitBuilder.endLine(newFunction.getEndLineNumber());
+            commitBuilder.oldFile(oldFunction.getSourceFilePath());
+            commitBuilder.newFile(newFunction.getSourceFilePath());
+            commitBuilder.newElement(newFunction.getBody());
         }
-        if (json.has("commitAuthorOld")){
-            commitBuilder.diffDetail(json.get("**************").getAsString());
-        }
-        if (json.has("subchanges")){
-            commitBuilder.diffDetail(json.get("**************").getAsString());
-        }*/
 
         return commitBuilder
                 .build();

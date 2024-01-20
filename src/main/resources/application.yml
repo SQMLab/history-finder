@@ -1,0 +1,21 @@
+spring:
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      authentication-database: admin
+      username: cto
+      password: cto123
+      database: cto
+
+tracer:
+  repository:
+    base-path: ../academic
+shell:
+  command: sh.exe
+  #command: /bin/sh
+influxdb:
+  url: http://localhost:8086
+  org-name: RnD
+  bucket-name: cto
+  token: XEyvdZ8Ktq96km0_zzRLz-K-Wl04dWWSkFYsX5vuHg7fk9Bpmym64PG5wv4ts0vTVEf0ummUzOfJEsVxbNU71w==
