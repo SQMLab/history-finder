@@ -33,7 +33,7 @@ public abstract class GitTracer implements TraceService {
 
     @Autowired
     AppProperty appProperty;
-    private static final String DIVIDER = "--------------------------";
+    private static final String DIVIDER = "#######--------------------------#######";
     protected static final String LOG_FORMAT = "--pretty=format:" + DIVIDER + "%n%H%n" + DIVIDER;
 
 
