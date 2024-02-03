@@ -11,9 +11,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class AppProperty {
-    @Value("${tracer.repository.base-path}")
+    @Value("${repository.clone-directory}")
     String repositoryBasePath;
-    @Value("${shell.command}")
+    @Value("${cmd.shell}")
     String gitShell;
 
     @Value("${influxdb.org-name}")
@@ -24,4 +24,6 @@ public class AppProperty {
     String url;
     @Value("${influxdb.bucket-name}")
     String bucketName;
+    @Value("${oracle.execution-limit}")
+    Integer executionLimit;
 }
