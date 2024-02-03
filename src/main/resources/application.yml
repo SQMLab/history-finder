@@ -1,21 +1,22 @@
+cmd:
+  shell: ${CMD_SHELL}
+influxdb:
+  url: ${INFLUX_DB_URL}
+  org-name: ${INFLUX_DB_ORG_NAME}
+  bucket-name: ${INFLUX_DB_BUCKET_NAME}
+  token: ${INFLUX_DB_TOKEN}
+repository:
+  clone-directory: ${REPOSITORY_CLONE_DIRECTORY}
 spring:
+  config:
+    import: classpath:local.yml
   data:
     mongodb:
-      host: 127.0.0.1
-      port: 27017
-      authentication-database: admin
-      username: cto
-      password: cto123
-      database: cto
-
-tracer:
-  repository:
-    base-path: ../academic
-shell:
-  command: sh.exe
-  #command: /bin/sh
-influxdb:
-  url: http://localhost:8086
-  org-name: RnD
-  bucket-name: cto
-  token: XEyvdZ8Ktq96km0_zzRLz-K-Wl04dWWSkFYsX5vuHg7fk9Bpmym64PG5wv4ts0vTVEf0ummUzOfJEsVxbNU71w==
+      host: ${MONGO_DB_HOST}
+      port: ${MONGO_DB_PORT}
+      authentication-database: ${MONGO_DB_AUTH_DB}
+      username: ${MONGO_DB_USERNAME}
+      password: ${MONGO_DB_PASSWORD}
+      database: ${MONGO_DB_DB_NAME}
+oracle:
+  execution-limit: ${ORACLE_EXECUTION_LIMIT}

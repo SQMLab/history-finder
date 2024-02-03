@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.test;
 
+import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.TraceAggregatorService;
@@ -33,6 +34,9 @@ class TraceExecutionController {
     @Autowired
     InfluxDbManager influxDbManager;
 
+    @Autowired
+    AppProperty appProperty;
+
 /*    @Test
     @Order(-2)
     public void cleanMongoDb() {
@@ -50,7 +54,7 @@ class TraceExecutionController {
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(50);
+        dataSetLoader.loadFile(appProperty.getExecutionLimit());
 
     }
 
