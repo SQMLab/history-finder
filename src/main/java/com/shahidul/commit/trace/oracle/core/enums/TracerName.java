@@ -17,6 +17,7 @@ public enum TracerName {
     CODE_SHOVEL("codeShovel"),
     GIT_LINE_RANGE("gitLineRange"),
     GIT_FUNC_NAME("gitFuncName"),
+    HISTORY_FINDER("historyFinder"),
     INTELLI_J("intelliJ"),
     EXPECTED("expected"),
     AGGREGATED("aggregated");
