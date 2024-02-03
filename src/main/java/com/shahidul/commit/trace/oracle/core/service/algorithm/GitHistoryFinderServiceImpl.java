@@ -63,7 +63,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     private CommitUdt toCommitEntity(Commit commitEntry) {
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
         commitBuilder.parentCommitHash(null);
-        commitBuilder.commitHash(commitEntry.getCommitName());
+        commitBuilder.commitHash(commitEntry.getCommitHash());
 
         return commitBuilder
                 .build();
