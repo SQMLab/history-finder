@@ -15,7 +15,7 @@ Following tools and frameworks are required for running the project:
 ### Configuration
 
 #### Git
-To ignore local.yml file change execute command 'git update-index --assume-unchanged .\src\main\resources\local.yml'
+* To ignore local.yml file change execute command 'git update-index --assume-unchanged .\src\main\resources\local.yml'
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)

@@ -29,7 +29,7 @@ import java.util.*;
  * @author Shahidul Islam
  * @since 11/12/2023
  */
-@Service
+@Service("CODE_SHOVEL")
 @AllArgsConstructor
 public class CodeShovelTraceServiceImpl implements TraceService {
     AppProperty appProperty;

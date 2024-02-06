@@ -22,22 +22,25 @@ public class TraceExecutorImpl implements TraceExecutor {
     @Override
     public void execute() {
         List<TraceEntity> traceEntityList = traceRepository.findAll().stream().toList();
-        StopWatch clock = new StopWatch();
         traceServiceList.stream()
                 .map(traceService -> {
                     traceEntityList.stream()
                             .filter(traceEntity -> traceEntity.getAnalysis().containsKey(traceService.getTracerName()) == false)
-                            .map(traceEntity -> {
-                                clock.start();
-                                traceService.trace(traceEntity);
-                                clock.stop();
-                                traceEntity.getAnalysis()
-                                        .get(traceService.getTracerName())
-                                        .setRuntime(clock.getLastTaskTimeMillis());
-                                traceEntity = traceRepository.save(traceEntity);
-                                return traceEntity;
-                            }).toList();
+                            .map(traceEntity -> execute(traceEntity, traceService))
+                            .toList();
                     return traceService;
                 }).toList();
+    }
+
+    @Override
+    public TraceEntity execute(TraceEntity traceEntity, TraceService traceService) {
+        StopWatch clock = new StopWatch();
+        clock.start();
+        traceService.trace(traceEntity);
+        clock.stop();
+        traceEntity.getAnalysis()
+                .get(traceService.getTracerName())
+                .setRuntime(clock.getLastTaskTimeMillis());
+        return traceRepository.save(traceEntity);
     }
 }

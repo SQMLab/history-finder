@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author Shahidul Islam
  * @since 11/14/2023
  */
-@Service
+@Service("GIT_LINE_RANGE")
 @AllArgsConstructor
 @Slf4j
 public class GitLineRangeTracer extends GitTracer {

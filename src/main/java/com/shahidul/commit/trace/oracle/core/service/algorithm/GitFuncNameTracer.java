@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author Shahidul Islam
  * @since 11/14/2023
  */
-@Service
+@Service("GIT_FUNC_NAME")
 @AllArgsConstructor
 @Slf4j
 //@Service
