@@ -76,18 +76,27 @@ public class DataSetLoaderImpl implements DataSetLoader {
     }
 
     @Override
+    public TraceEntity loadOracleFile(Integer oracleFileId) {
+        TraceEntity traceEntity = traceRepository.findByOracleFileId(oracleFileId);
+       /* if (traceEntity == null)
+        formatOracleFileId(oracleFileId);
+        findOracleFiles()
+        return null;*/
+        return traceEntity;
+    }
+
+    @Override
     //@PostConstruct
     public void loadFile(int limit) {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
-            File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile());
             Map<String, TraceEntity> entityMap = traceRepository.findAll()
                     .stream()
                     .collect(Collectors.toMap(TraceEntity::getOracleFileName, Function.identity()));
 
             //rootFileDir = classPathResource.getFile();
-            List<TraceEntity> traceEntityList = Arrays.stream(rootFileDir.listFiles())
+            List<TraceEntity> traceEntityList = Arrays.stream(findOracleFiles())
                     .limit(limit)
                     .map(file -> {
                         try {
@@ -184,7 +193,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .expectedCommits(commits)
                                     .analyzer(analysis)
                                     .build();
-                            File outputFile = new File("./src/main/resources/stubs/java", String.format("%03d", fileNo.incrementAndGet()) + "-" + file.getName());
+                            File outputFile = new File("./src/main/resources/stubs/java", formatOracleFileId( fileNo.incrementAndGet())+ "-" + file.getName());
                             outputFile.createNewFile();
 
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, trace);
@@ -200,6 +209,10 @@ public class DataSetLoaderImpl implements DataSetLoader {
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
+    }
+
+    private String formatOracleFileId(int oracleFileId) {
+        return String.format("%03d",oracleFileId);
     }
 
     @Override
@@ -221,6 +234,19 @@ public class DataSetLoaderImpl implements DataSetLoader {
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
     }
 
+    private File[] findOracleFiles(){
+        return new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile())
+                .listFiles();
+
+    }
+
+    private File findOracleFiles(Integer oracleFileId){
+        String formattedOracleFileId = formatOracleFileId(oracleFileId);
+        return Arrays.stream(findOracleFiles()).filter(file -> file.getName().startsWith(formattedOracleFileId))
+                .findFirst()
+                .orElseThrow(()-> new RuntimeException("Oracle file not found " + formattedOracleFileId));
+
+    }
     private Set<ChangeTag> toChangeTags(String change) {
         Set<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {

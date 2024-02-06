@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface TraceRepository extends MongoRepository<TraceEntity, String> {
+    TraceEntity findByOracleFileId(Integer oracleFileId);
 }
