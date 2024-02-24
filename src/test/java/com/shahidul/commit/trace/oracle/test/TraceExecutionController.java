@@ -1,18 +1,23 @@
 package com.shahidul.commit.trace.oracle.test;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.factory.TracerFactory;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
-import com.shahidul.commit.trace.oracle.core.service.aggregator.TraceAggregatorService;
+import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @SpringBootTest
 @Slf4j
@@ -26,7 +31,7 @@ class TraceExecutionController {
     DataSetLoader dataSetLoader;
 
     @Autowired
-    TraceAggregatorService aggregatorService;
+    MetadataResolverService metadataResolverService;
 
     @Autowired
     TraceAnalyzer traceAnalyzer;
@@ -36,6 +41,11 @@ class TraceExecutionController {
 
     @Autowired
     AppProperty appProperty;
+
+    @Autowired
+    TracerFactory tracerFactory;
+
+    private List<TraceEntity> traceEntityList;
 
 /*    @Test
     @Order(-2)
@@ -54,37 +64,53 @@ class TraceExecutionController {
     @Test
     @Order(0)
     public void loadDataSet() {
-        dataSetLoader.loadFile(appProperty.getExecutionLimit());
-
+        this.traceEntityList = dataSetLoader.loadFile(appProperty.getExecutionLimit());
     }
 
     @Test
     @Order(1)
-    void executeTrace() {
-        traceExecutor.execute();
+    Stream<DynamicNode> executeTrace() {
+        return traceEntityList.stream()
+                .map(traceEntity -> DynamicContainer.dynamicContainer(traceEntity.getOracleFileName(),
+                        TracerName.DEFAULT_EXECUTION_SEQUENCE.stream()
+                                .map(tracerFactory::findTraceService)
+                                .map(tracerService -> createOracleTest(traceEntity, tracerService)))
+
+                );
+
     }
 
     @Test
     @Order(2)
     void populateCommitMetaData() {
-        aggregatorService.populateMetaData();
+        //metadataResolverService.populateMetaData();
     }
 
     @Test
     @Order(3)
     void aggregate() {
-        aggregatorService.aggregate();
+        //metadataResolverService.aggregate();
     }
 
     @Test
     @Order(3)
     void runAnalysis() {
-        traceAnalyzer.analyze();
+        traceEntityList.stream()
+                .map(traceEntity -> traceAnalyzer.analyze(traceEntity))
+                .toList();
     }
 
     @Test
     @Order(4)
     void loadIntoInfluxDb() {
-        influxDbManager.load();
+        traceEntityList.stream()
+                .map(traceEntity -> influxDbManager.load(traceEntity))
+                .toList();
+    }
+
+    private DynamicTest createOracleTest(TraceEntity traceEntity, TraceService traceService) {
+        return DynamicTest.dynamicTest(traceService.getTracerName(), () -> {
+            traceExecutor.execute(traceEntity, traceService);
+        });
     }
 }

@@ -5,6 +5,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StopWatch;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class TraceExecutorImpl implements TraceExecutor {
     }
 
     @Override
+    @Transactional
     public TraceEntity execute(TraceEntity traceEntity, TraceService traceService) {
         StopWatch clock = new StopWatch();
         clock.start();

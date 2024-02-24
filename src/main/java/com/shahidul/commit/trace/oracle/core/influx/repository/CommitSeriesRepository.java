@@ -11,4 +11,6 @@ import java.util.List;
 public interface CommitSeriesRepository {
     void deleteAll();
     List<CommitSeries> saveAll(List<CommitSeries> commitSeriesList);
+
+    void deleteByOracleId(Integer oracleId);
 }

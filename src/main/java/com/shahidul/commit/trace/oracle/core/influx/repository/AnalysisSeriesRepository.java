@@ -12,4 +12,6 @@ public interface AnalysisSeriesRepository {
     void deleteAll();
 
     List<AnalysisSeries> saveAll(List<AnalysisSeries> analysisSeriesList);
+
+    void deleteByOracleId(Integer oracleId);
 }
