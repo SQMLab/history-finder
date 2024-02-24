@@ -34,52 +34,57 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
     CommitSeriesRepository commitSeriesRepository;
 
     @Override
-    public void load() {
+    public TraceEntity load(TraceEntity traceEntity) {
         analysisSeriesRepository.deleteAll();
         commitSeriesRepository.deleteAll();
 
-        List<TraceEntity> traceEntityList = traceRepository.findAll();
-        LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2023, 1).atStartOfDay();
+        LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2023, traceEntity.getOracleFileId()).atStartOfDay();
 
 
-        traceEntityList
+        List<CommitUdt> commitUdtList = traceEntity.getAnalysis()
+                .entrySet()
                 .stream()
-                .map(traceEntity -> {
-                    List<CommitUdt> commitUdtList = traceEntity.getAnalysis()
-                            .entrySet()
-                            .stream()
-                            .map(entry -> entry.getValue()
-                                    .getCommits()
-                                    .stream()
-                                    .toList())
-                            .flatMap(Collection::stream)
-                            .toList();
-                    List<CommitUdt> allCommitList = new ArrayList<>(commitUdtList);
-                    allCommitList.addAll(traceEntity.getExpectedCommits());
-                    Map<String, Instant> timeMap = determineTimeAlignment(allCommitList);
-                    commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt, timeMap)).toList());
+                .map(entry -> entry.getValue()
+                        .getCommits()
+                        .stream()
+                        .toList())
+                .flatMap(Collection::stream)
+                .toList();
+        List<CommitUdt> allCommitList = new ArrayList<>(commitUdtList);
+        allCommitList.addAll(traceEntity.getExpectedCommits());
+        Map<String, Instant> timeMap = determineTimeAlignment(allCommitList);
+        commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt, timeMap)).toList());
 
 
-                    Stream<AnalysisSeries> analysisSeriesStream = traceEntity.getAnalysis()
-                            .entrySet()
-                            .stream()
-                            .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue(), analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC)));
+        Stream<AnalysisSeries> analysisSeriesStream = traceEntity.getAnalysis()
+                .entrySet()
+                .stream()
+                .map(analysisEntry -> toAnalysisSeries(traceEntity, analysisEntry.getKey(), analysisEntry.getValue(), analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC)));
 
-                    AnalysisUdt dummyExpectedAnalysisEntity = AnalysisUdt.builder()
-                            .commits(traceEntity.getExpectedCommits())
-                            .correctCommits(traceEntity.getExpectedCommits())
-                            .incorrectCommits(new ArrayList<>())
-                            .missingCommits(new ArrayList<>())
-                            .precision(1.0)
-                            .recall(1.0)
-                            .runtime(1L)
-                            .build();
-                    List<AnalysisSeries> analysisSeriesList = Stream.concat(analysisSeriesStream,
-                                    Stream.of(toAnalysisSeries(traceEntity, TracerName.EXPECTED.getCode(), dummyExpectedAnalysisEntity, analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC))))
-                            .toList();
-                    analysisSeriesRepository.saveAll(analysisSeriesList);
-                    return traceEntity;
-                }).toList();
+        AnalysisUdt dummyExpectedAnalysisEntity = AnalysisUdt.builder()
+                .commits(traceEntity.getExpectedCommits())
+                .correctCommits(traceEntity.getExpectedCommits())
+                .incorrectCommits(new ArrayList<>())
+                .missingCommits(new ArrayList<>())
+                .precision(1.0)
+                .recall(1.0)
+                .runtime(1L)
+                .build();
+        List<AnalysisSeries> analysisSeriesList = Stream.concat(analysisSeriesStream,
+                        Stream.of(toAnalysisSeries(traceEntity, TracerName.EXPECTED.getCode(), dummyExpectedAnalysisEntity, analysisSeriesDateTime.plusDays(traceEntity.getOracleFileId() - 1).toInstant(ZoneOffset.UTC))))
+                .toList();
+        analysisSeriesRepository.saveAll(analysisSeriesList);
+        return traceEntity;
+    }
+
+    @Override
+    public void deleteCommitSeriesByFileId(Integer fileId) {
+        analysisSeriesRepository.deleteByOracleId(fileId);
+    }
+
+    @Override
+    public void deleteAnalysisSeriesByFileId(Integer fileId) {
+        commitSeriesRepository.deleteByOracleId(fileId);
 
     }
 

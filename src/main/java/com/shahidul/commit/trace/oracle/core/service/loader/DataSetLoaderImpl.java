@@ -87,7 +87,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     @Override
     //@PostConstruct
-    public void loadFile(int limit) {
+    public List<TraceEntity> loadFile(int limit) {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
@@ -147,8 +147,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         }
                     }).collect(Collectors.toList());
 
-            traceRepository.saveAll(traceEntityList);
             log.info("save completed");
+            return traceRepository.saveAll(traceEntityList);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
