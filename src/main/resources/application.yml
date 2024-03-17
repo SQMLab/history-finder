@@ -20,3 +20,6 @@ spring:
       database: ${MONGO_DB_DB_NAME}
 oracle:
   execution-limit: ${ORACLE_EXECUTION_LIMIT}
+  from-file-id: ${ORACLE_FROM_FILE_ID}
+  to-file-id: ${ORACLE_TO_FILE_ID}
+  force-compute: ${ORACLE_FORCE_COMPUTE}

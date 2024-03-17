@@ -4,6 +4,7 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.factory.TracerFactory;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
@@ -60,28 +61,40 @@ public class OracleTest {
     @Autowired
     TestGeneratorService testGeneratorService;
 
+    @Autowired
+    TraceDao traceDao;
+
+
+    @TestFactory
+    public DynamicTest loadData() {
+        return DynamicTest.dynamicTest("Load Data", ()-> {
+            dataSetLoader.loadFile(Integer.MAX_VALUE);
+        });
+    }
+
     @TestFactory
     Stream<DynamicNode> executeTest() {
 
-        String oracleFileId = environment.getProperty("oracle.file-id", "001");
+        String fromFileId = environment.getProperty("oracle.from-file-id", "001");
+        String toFileId = environment.getProperty("oracle.to-file-id", fromFileId);
+        String forceCompute = environment.getProperty("oracle.force-compute", "False");
+
+        List<TraceEntity> traceEntityList = traceDao.findByOracleFileRange(Integer.parseInt(fromFileId), Integer.parseInt(toFileId) + 1);
         List<TracerName> tracerList = Arrays.stream(environment.getProperty("tracer-name", "historyFinder").split(","))
-                .filter(code-> !code.isBlank())
+                .filter(code -> !code.isBlank())
                 .map(TracerName::fromCode)
                 .sorted(Comparator.comparingInt(DEFAULT_EXECUTION_SEQUENCE::indexOf))
                 .collect(Collectors.toCollection(ArrayList::new));
-        if (tracerList.isEmpty()){
+        if (tracerList.isEmpty()) {
             tracerList.addAll(DEFAULT_EXECUTION_SEQUENCE);
         }
-        if (!tracerList.contains(TracerName.AGGREGATED)){
+        if (!tracerList.contains(TracerName.AGGREGATED)) {
             tracerList.add(TracerName.AGGREGATED);
         }
-
-        TraceEntity traceEntityList = dataSetLoader.loadOracleFile(Integer.parseInt(oracleFileId));
-
-        return testGeneratorService.prepareTest(Arrays.asList(traceEntityList), pickAlgorithms(tracerList));
+        return testGeneratorService.prepareTest(traceEntityList, pickAlgorithms(tracerList), Boolean.valueOf(forceCompute));
     }
 
-    private List<TraceService> pickAlgorithms(List<TracerName> tracerNameList){
+    private List<TraceService> pickAlgorithms(List<TracerName> tracerNameList) {
         Map<String, TraceService> traceServiceMap = traceServiceList.stream()
                 .collect(Collectors.toMap(tracerService -> tracerService.getTracerName(), tracerService -> tracerService));
         return tracerNameList.stream()
