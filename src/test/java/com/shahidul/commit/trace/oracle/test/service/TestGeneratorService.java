@@ -12,9 +12,9 @@ import java.util.stream.Stream;
  * @since 2/7/2024
  */
 public interface TestGeneratorService {
-    Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList);
+    Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList, Boolean forceCompute);
 
-    DynamicNode executeAlgorithms(TraceEntity traceEntity, List<TraceService> traceServiceList);
+    DynamicNode executeAlgorithms(TraceEntity traceEntity, List<TraceService> traceServiceList, Boolean forceCompute);
 
     DynamicNode metaDataOps(TraceEntity traceEntity);
     DynamicNode analysisOps(TraceEntity traceEntity);

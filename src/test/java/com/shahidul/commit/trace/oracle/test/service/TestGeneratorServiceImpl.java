@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.test.service;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.factory.TracerFactory;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -49,10 +50,10 @@ public class TestGeneratorServiceImpl implements TestGeneratorService {
     TracerFactory tracerFactory;
 
     @Override
-    public Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList) {
+    public Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList, Boolean forceCompute) {
         return traceEntityList.stream()
                 .map(traceEntity -> DynamicContainer.dynamicContainer(traceEntity.getOracleFileName(),
-                        Stream.of(executeAlgorithms(traceEntity, traceServiceList),
+                        Stream.of(executeAlgorithms(traceEntity, traceServiceList, forceCompute),
                                 metaDataOps(traceEntity),
                                 analysisOps(traceEntity),
                                 timeSeriesOps(traceEntity))
@@ -60,9 +61,12 @@ public class TestGeneratorServiceImpl implements TestGeneratorService {
     }
 
     @Override
-    public DynamicNode executeAlgorithms(TraceEntity traceEntity, List<TraceService> traceServiceList) {
+    public DynamicNode executeAlgorithms(TraceEntity traceEntity, List<TraceService> traceServiceList, Boolean forceCompute) {
         return DynamicContainer.dynamicContainer("Algorithms",
                 traceServiceList.stream()
+                        .filter(traceService -> forceCompute
+                                || TracerName.AGGREGATED.getCode().equalsIgnoreCase(traceService.getTracerName())
+                                || !traceEntity.getAnalysis().containsKey(traceService.getTracerName()))
                         .map(tracerService -> executeAlgorithm(traceEntity, tracerService)));
     }
 

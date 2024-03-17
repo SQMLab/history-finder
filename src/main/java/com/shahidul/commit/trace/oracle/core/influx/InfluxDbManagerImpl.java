@@ -35,8 +35,6 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
 
     @Override
     public TraceEntity load(TraceEntity traceEntity) {
-        analysisSeriesRepository.deleteAll();
-        commitSeriesRepository.deleteAll();
 
         LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2023, traceEntity.getOracleFileId()).atStartOfDay();
 

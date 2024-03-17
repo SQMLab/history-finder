@@ -1,8 +1,11 @@
 package com.shahidul.commit.trace.oracle.core.mongo.repository;
 
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import org.springframework.data.domain.Range;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Shahidul Islam
@@ -11,4 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TraceRepository extends MongoRepository<TraceEntity, String> {
     TraceEntity findByOracleFileId(Integer oracleFileId);
+
+    List<TraceEntity> findByOracleFileIdBetween(Integer fromOracleId, Integer toOracleId);
+    List<TraceEntity> findByOracleFileIdBetween(Range<Integer> oracleFileIdRange);
 }
