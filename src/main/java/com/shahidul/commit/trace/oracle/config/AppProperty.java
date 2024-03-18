@@ -24,6 +24,6 @@ public class AppProperty {
     String url;
     @Value("${influxdb.bucket-name}")
     String bucketName;
-    @Value("${oracle.execution-limit}")
+    @Value("${run-config.execution-limit}")
     Integer executionLimit;
 }

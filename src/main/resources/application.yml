@@ -18,8 +18,9 @@ spring:
       username: ${MONGO_DB_USERNAME}
       password: ${MONGO_DB_PASSWORD}
       database: ${MONGO_DB_DB_NAME}
-oracle:
-  execution-limit: ${ORACLE_EXECUTION_LIMIT}
-  from-file-id: ${ORACLE_FROM_FILE_ID}
-  to-file-id: ${ORACLE_TO_FILE_ID}
-  force-compute: ${ORACLE_FORCE_COMPUTE}
+run-config:
+  tracer-name: ${RUN_CONFIG_TRACER_NAME}
+  execution-limit: ${RUN-CONFIG_EXECUTION_LIMIT}
+  from-file-id: ${RUN-CONFIG_FROM_FILE_ID}
+  to-file-id: ${RUN-CONFIG_TO_FILE_ID}
+  force-compute: ${RUN-CONFIG_FORCE_COMPUTE}

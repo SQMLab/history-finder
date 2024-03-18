@@ -38,7 +38,7 @@ public class CommitUdt implements Cloneable{
     String shortMessage;
     String fullMessage;
     String diffUrl;
-    @Transient
+    //@Transient
     String diff;
     @Transient
     String diffDetail;

@@ -75,12 +75,12 @@ public class OracleTest {
     @TestFactory
     Stream<DynamicNode> executeTest() {
 
-        String fromFileId = environment.getProperty("oracle.from-file-id", "001");
-        String toFileId = environment.getProperty("oracle.to-file-id", fromFileId);
-        String forceCompute = environment.getProperty("oracle.force-compute", "False");
+        String fromFileId = environment.getProperty("run-config.from-file-id", "001");
+        String toFileId = environment.getProperty("run-config.to-file-id", fromFileId);
+        String forceCompute = environment.getProperty("run-config.force-compute", "False");
 
         List<TraceEntity> traceEntityList = traceDao.findByOracleFileRange(Integer.parseInt(fromFileId), Integer.parseInt(toFileId) + 1);
-        List<TracerName> tracerList = Arrays.stream(environment.getProperty("tracer-name", "historyFinder").split(","))
+        List<TracerName> tracerList = Arrays.stream(environment.getProperty("run-config.tracer-name", "historyFinder").split(","))
                 .filter(code -> !code.isBlank())
                 .map(TracerName::fromCode)
                 .sorted(Comparator.comparingInt(DEFAULT_EXECUTION_SEQUENCE::indexOf))
