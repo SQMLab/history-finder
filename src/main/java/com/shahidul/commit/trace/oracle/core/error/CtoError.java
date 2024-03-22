@@ -1,0 +1,16 @@
+package com.shahidul.commit.trace.oracle.core.error;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+/**
+ * @author Shahidul Islam
+ * @since 3/22/2024
+ */
+@AllArgsConstructor
+@Getter
+public enum CtoError {
+    Commit_Not_Found("1001", "Commit not found");
+    private String code;
+    private String msg;
+}
