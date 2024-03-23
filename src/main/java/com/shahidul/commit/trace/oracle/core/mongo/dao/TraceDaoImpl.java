@@ -28,6 +28,11 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
+    public TraceEntity findByOracleName(String oracleFileName) {
+        return traceRepository.findByOracleFileName(oracleFileName);
+    }
+
+    @Override
     public List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer toFileId) {
         //TODO : Optimize
         return traceRepository.findAll()
