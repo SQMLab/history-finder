@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
-import com.shahidul.commit.trace.oracle.core.model.AlgorithmExecution;
-import com.shahidul.commit.trace.oracle.core.model.Commit;
-import com.shahidul.commit.trace.oracle.core.model.Trace;
+import com.shahidul.commit.trace.oracle.core.model.InputOracle;
+import com.shahidul.commit.trace.oracle.core.model.InputTrace;
+import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -100,13 +100,13 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     .limit(limit)
                     .map(file -> {
                         try {
-                            Trace trace = objectMapper.readValue(file, Trace.class);
+                            InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
                             String oracleFileName = file.getName();
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
                                 HashMap<String, AnalysisUdt> analysisEntityMap = new HashMap<>();
-                                for (Map.Entry<String, AlgorithmExecution> entry : trace.getAnalyzer().entrySet()) {
+                                for (Map.Entry<String, InputTrace> entry : inputOracle.getAnalyzer().entrySet()) {
 
                                     List<CommitUdt> commitList = entry.getValue().getCommits()
                                             .stream()
@@ -118,21 +118,21 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                             .toList();
                                     analysisEntityMap.put(entry.getKey(), AnalysisUdt.builder().commits(commitList).build());
                                 }
-                                String uid = generateUid(trace);
+                                String uid = generateUid(inputOracle);
                                 return TraceEntity.builder()
                                         .uid(uid)
                                         .oracleFileId(Integer.valueOf(oracleFileName.substring(0, 3)))
                                         .oracleFileName(oracleFileName)
-                                        .repositoryName(trace.getRepositoryName())
-                                        .repositoryUrl(trace.getRepositoryUrl())
-                                        .startCommitHash(trace.getStartCommitHash())
-                                        .file(trace.getFile())
-                                        .elementType(trace.getElementType())
-                                        .elementName(trace.getElement())
-                                        .startLine(trace.getStartLine())
-                                        .endLine(trace.getEndLine())
+                                        .repositoryName(inputOracle.getRepositoryName())
+                                        .repositoryUrl(inputOracle.getRepositoryUrl())
+                                        .startCommitHash(inputOracle.getStartCommitHash())
+                                        .file(inputOracle.getFile())
+                                        .elementType(inputOracle.getElementType())
+                                        .elementName(inputOracle.getElement())
+                                        .startLine(inputOracle.getStartLine())
+                                        .endLine(inputOracle.getEndLine())
                                         .expectedCommits(
-                                                trace.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
+                                                inputOracle.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
                                                                 .tracerName(TracerName.EXPECTED.getCode())
                                                                 .commitHash(commit.getCommitHash())
                                                                 .changeTags(commit.getChangeTags())
@@ -162,26 +162,26 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
             AtomicInteger fileNo = new AtomicInteger(0);
             //rootFileDir = classPathResource.getFile();
-            List<Trace> traceEntityList = Arrays.stream(rootFileDir.listFiles())
+            List<InputOracle> inputOracleEntityList = Arrays.stream(rootFileDir.listFiles())
                     .map(file -> {
                         try {
                             JsonNode json = objectMapper.readValue(file, JsonNode.class);
 
                             String repositoryName = json.get("repositoryName").asText();
 
-                            List<Commit> commits = new ArrayList<>();
+                            List<InputCommit> commits = new ArrayList<>();
                             json.get("expectedResult")
                                     .fields()
                                     .forEachRemaining(commit -> {
-                                        commits.add(Commit.builder().commitHash(commit.getKey()).changeTags(toChangeTags(commit.getValue().asText())).build());
+                                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(toChangeTags(commit.getValue().asText())).build());
                                     });
-                            List<Commit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
+                            List<InputCommit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
                                     .sorted(Comparator.reverseOrder())
-                                    .map(hash -> Commit.builder().commitHash(hash).build()).toList();
+                                    .map(hash -> InputCommit.builder().commitHash(hash).build()).toList();
 
-                            HashMap<String, AlgorithmExecution> analysis = new HashMap<>();
-                            analysis.put(TracerName.INTELLI_J.getCode(), AlgorithmExecution.builder().commits(ideaCommits).build());
-                            Trace trace = Trace.builder()
+                            HashMap<String, InputTrace> analysis = new HashMap<>();
+                            analysis.put(TracerName.INTELLI_J.getCode(), InputTrace.builder().commits(ideaCommits).build());
+                            InputOracle inputOracle = InputOracle.builder()
                                     .repositoryName(repositoryName)
                                     .repositoryUrl(repoMap.get(repositoryName))
                                     .startCommitHash(json.get("startCommitName").asText())
@@ -196,9 +196,9 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             File outputFile = new File("./src/main/resources/stubs/java", formatOracleFileId( fileNo.incrementAndGet())+ "-" + file.getName());
                             outputFile.createNewFile();
 
-                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, trace);
-                            objectMapper.readValue(file, Trace.class);
-                            return trace;
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputOracle);
+                            objectMapper.readValue(file, InputOracle.class);
+                            return inputOracle;
 
                         } catch (Exception e) {
                             log.error("File name {}", file.getName());
@@ -220,16 +220,16 @@ public class DataSetLoaderImpl implements DataSetLoader {
         traceRepository.deleteAll();
     }
 
-    private String generateUid(Trace trace) {
+    private String generateUid(InputOracle inputOracle) {
         String text = new StringBuilder()
-                .append(trace.getRepositoryName())
-                .append(trace.getRepositoryUrl())
-                .append(trace.getStartCommitHash())
-                .append(trace.getFile())
-                .append(trace.getElementType())
-                .append(trace.getElement())
-                .append(trace.getStartLine())
-                .append(trace.getEndLine())
+                .append(inputOracle.getRepositoryName())
+                .append(inputOracle.getRepositoryUrl())
+                .append(inputOracle.getStartCommitHash())
+                .append(inputOracle.getFile())
+                .append(inputOracle.getElementType())
+                .append(inputOracle.getElement())
+                .append(inputOracle.getStartLine())
+                .append(inputOracle.getEndLine())
                 .toString();
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
     }
