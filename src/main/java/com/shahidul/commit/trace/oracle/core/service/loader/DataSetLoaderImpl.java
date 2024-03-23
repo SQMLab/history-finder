@@ -7,6 +7,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
+import com.shahidul.commit.trace.oracle.core.model.TraceRecord;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -102,6 +103,19 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         try {
                             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
                             String oracleFileName = file.getName();
+
+            /*                File outputFile = new File("./src/main/resources/trace", oracleFileName);
+                            outputFile.createNewFile();
+
+                            TraceRecord traceRecord = TraceRecord.builder().traceMap(inputOracle.getAnalyzer()).build();
+                            traceRecord.getTraceMap()
+                                            .values()
+                                                    .stream()
+                                                            .forEach(inputTrace-> inputTrace.getCommits().forEach(inputCommit -> inputCommit.setChangeTags(new TreeSet<>())));
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, traceRecord);*/
+
+
+
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {

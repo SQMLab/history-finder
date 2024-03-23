@@ -1,0 +1,28 @@
+{
+  "traceMap" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "ff46945822eb06b5df7e9c2cee809ca39fcaaf26",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "f7eddb75a89759750e2ed6d4f520dc1e52adc581",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "c83bb6029573c0b6cdbcb1deeaaf0420bfd15701",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "adc4d91f33d13281a462628dd27dbaf70c6fb9fa",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "36ee7203f65920264b1ad762c8ec542bf0790040",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "0f72008ee799986196217384078c8f2e55dba4f1",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "053cdc4d345ef0e8fde3029933b82abb83eb6cda",
+        "changeTags" : [ ]
+      } ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "traceMap" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "ff39c0de206a4fce1f0e8a416357a7a8261f8634",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "d6622daaa3c95a5040d06f91dc0c793bafa70f95",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "74ba6ffa0b601badc68366685dcf993a0844520a",
+        "changeTags" : [ ]
+      } ]
+    }
+  }
+}
