@@ -1,8 +1,8 @@
 package com.shahidul.commit.trace.oracle.api.controller;
 
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.service.oracle.OracleDumpService;
+import com.shahidul.commit.trace.oracle.core.service.oracle.OracleFileGeneratorService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/oracle")
-public class OracleDumpController {
-    OracleDumpService oracleDumpService;
-    @GetMapping("/dump")
-    public TraceEntity dumpOracle(@RequestParam Integer oracleFileName) {
-        return oracleDumpService.dumpOracle(oracleFileName);
+public class OracleFileGeneratorController {
+    OracleFileGeneratorService oracleFileGeneratorService;
+    @GetMapping("/generate-file")
+    public InputOracle generateFile(@RequestParam String oracleFileName) {
+        return oracleFileGeneratorService.generateFile(oracleFileName);
     }
 }

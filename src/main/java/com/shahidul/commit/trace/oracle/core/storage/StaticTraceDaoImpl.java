@@ -5,6 +5,7 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
+import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.StaticInputTrace;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,19 @@ import java.util.Arrays;
 public class StaticTraceDaoImpl implements StaticTraceDao {
     AppProperty appProperty;
     ObjectMapper objectMapper;
+
+    @Override
+    public InputOracle save(InputOracle inputOracle, String oracleFileName) {
+        File outputFile = new File("./src/main/resources/" + appProperty.getOracleFileDirectory(), oracleFileName);
+        try {
+            if (!outputFile.exists())
+                outputFile.createNewFile();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputOracle);
+            return inputOracle;
+        } catch (IOException e) {
+            throw new CtoException(CtoError.Oracle_File_Write_Error,e);
+        }
+    }
 
     @Override
     public StaticInputTrace findStaticTraceByOracleFileId(String oracleFileName) {

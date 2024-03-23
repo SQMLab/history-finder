@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
+import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -43,6 +44,8 @@ public class TraceEntity {
     String repositoryUrl;
     @Field
     String file;
+    @Field
+    LanguageType languageType;
     @Field
     String elementType;
     @Field

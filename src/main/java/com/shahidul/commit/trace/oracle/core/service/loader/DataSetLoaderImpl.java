@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
+import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
@@ -117,6 +118,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         .repositoryUrl(inputOracle.getRepositoryUrl())
                                         .startCommitHash(inputOracle.getStartCommitHash())
                                         .file(inputOracle.getFile())
+                                        .languageType(LanguageType.fromCode(inputOracle.getLanguage()))
                                         .elementType(inputOracle.getElementType())
                                         .elementName(inputOracle.getElement())
                                         .startLine(inputOracle.getStartLine())
