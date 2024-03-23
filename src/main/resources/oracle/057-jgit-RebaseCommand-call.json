@@ -1,0 +1,120 @@
+{
+  "repositoryName" : "jgit",
+  "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
+  "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/api/RebaseCommand.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "call",
+  "startLine" : 263,
+  "endLine" : 379,
+  "expectedCommits" : [ {
+    "commitHash" : "26c5d0e56a8c5adb2c93cda45e25175363798516",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3b4448637fbb9d74e0c9d44048ba76bb7c1214ce",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6f0b92ff22ff58a4c8eb9de8d9b3281d77852070",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e0fbae5dc3fc2345383ec373b384fcca10e64f24",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3db6e05e52b24e16fbe93376d3fd8935e5f4fc9b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f86a488e32906593903acb31a93a82bed8d87915",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "591998c2d628ec4f6309caea826fab16a6de2adc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ec0d78d0939ee8ce30bd349bd885186c13d3b645",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "979e3467112618cc787e161097986212eaaa4533",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "18069ffe8cbede40cf2524922c262b67656e7021",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cce2561e9fe2ce1cf60182f9d95c8537ce13de92",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "765896febb4b63cfe2c37dc0a73c90c79dd1591b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "da9db6b20c6203dae3f828adbd14218ea063ad91",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c3873b584f81bc5be3fdea53e9e0e76271a9a854",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "60e01cff2f763a85ed24a706d26eb9f159ffa832",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e9f1cf57dac274f92a6db38197e14b55b3277af",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "baf7ca9cc0d2bdf237a9bb19486d6fde5250a7f5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c310fa0c802f40a774edb58641de3ac5bfad0e2c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "257f3fe4a1b9e450b2f665b5f0ed09a3ab3839b9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8eb4d926371edea2d58dc598e3ebcddacbdc326e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "84fb2b59d11418d2fa753d27de11775ddc18adde",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5854ca091a22346e1c710ca9f875165afb3f2cc8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b61d35e848e637ef85fde4ebe95d60ced171e963",
+    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+  }, {
+    "commitHash" : "4e1454ded6e2fcf6cb789c004756883c3ea5f77e",
+    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+  }, {
+    "commitHash" : "edc1fee033a23189742cea1807d8029d1b77da00",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "557ea857e3b5229379476f1ee4160fcf5b695bbd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0b5ad24915824a8c999bb6951b131a958e418306",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a21e508a318664dac23701ca29d5f0b64d36a76a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e8a1328d05aa55b7ace0d101e34b87422219c959",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9b039b42e0ecf69640c5f1a34ee72a86dba3f1c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2a7cd0086bf1bd614478c5722eac5142326e6f2b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6bca46e1683a07f18f00f6ad552eab79ab50bb88",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45731756a56361a51e839e26d3b0bed1c06ee37a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ad96546ca023c260ed7250c447f4c8abe168afd3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "59e62ba7e10188c6170bd97ffbd9c8768d9745ea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e5b96a7848d680cf50123a44cbc147db91d798d3",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

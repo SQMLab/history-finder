@@ -1,0 +1,15 @@
+{
+  "repositoryName" : "hibernate-orm",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
+  "startCommitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
+  "file" : "hibernate-core/src/main/java/org/hibernate/boot/internal/SessionFactoryBuilderImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "unwrap",
+  "startLine" : 460,
+  "endLine" : 462,
+  "expectedCommits" : [ {
+    "commitHash" : "2c968538a542fd5f6c705745f235be118c07370a",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

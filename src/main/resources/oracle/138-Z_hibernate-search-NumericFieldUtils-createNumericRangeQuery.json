@@ -1,0 +1,60 @@
+{
+  "repositoryName" : "hibernate-search",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
+  "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
+  "file" : "engine/src/main/java/org/hibernate/search/bridge/util/impl/NumericFieldUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createNumericRangeQuery",
+  "startLine" : 36,
+  "endLine" : 36,
+  "expectedCommits" : [ {
+    "commitHash" : "0e8203f804d5a84f1d85267893bc827f75529584",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4c0415c1f11b7e26fdc4dc95f4b822bf9e983139",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a6ae926eea1ff68d4f0a7058863cb3cb0c9c36af",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "23b523bdc8847b9f40a69e50b8acb09e4e464eec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1f2600dedf2f75379ceb45e9f99103814f902c28",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d93af0a91221be6d3e3b145061eec7c7a833bde",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b52a248717a2f3aaa873fcb577c558172574baa7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bb3f94df96e6e487ba231e4e201064cbb850aa02",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "428fae5def27fc3724bfbd7558db241e2aa8efdb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a51e16bca141c7be80f8e6ead072d1313e21b34b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ab8faa8701ffd68414db07a18cc9dcfd30b46874",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "354f2cadec6dee7d4dde2250e13f468e2d93cd27",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "02b8eb4f6017e7fb44bee6013d7f8bf1ae23a7b1",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "36fc8ecc219c7c843ca2359ee54acef23d10ec3b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f957df8e5d4706c6efe9296eb81fe1eeb92a1fd8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "dd12cc91851ebe085215a11a33316918259a2b14",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

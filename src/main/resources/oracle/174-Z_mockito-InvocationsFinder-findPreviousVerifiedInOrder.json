@@ -1,0 +1,42 @@
+{
+  "repositoryName" : "mockito",
+  "repositoryUrl" : "https://github.com/mockito/mockito.git",
+  "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
+  "file" : "src/main/java/org/mockito/internal/invocation/InvocationsFinder.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "findPreviousVerifiedInOrder",
+  "startLine" : 119,
+  "endLine" : 127,
+  "expectedCommits" : [ {
+    "commitHash" : "ae1af27799f53dfeeb23cda187a9247afc0cd951",
+    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "fe7bbabb82ce3d1000c13d39d6355c134e94ac27",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "bb29c7721dc74a5b3de40a2cda1129529463f9fc",
+    "changeTags" : [ "RETURN_TYPE", "SIGNATURE" ]
+  }, {
+    "commitHash" : "60f0c0c767879989d40d7846054cfc1df64e76af",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "a99d63b477bac80720fa25214ef7c3eb73576627",
+    "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE", "SIGNATURE" ]
+  }, {
+    "commitHash" : "913b4982da55113eba0f67d334cefa7e29a4c4d2",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "9fdf230cee1ae80e64e0b8dbb27185695cb57107",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3b7df7d0bdfacfc1c62eb4fcdc082b1d57b8b57a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "004ce06f0ba5601ae6eedcd5c09563d638069e93",
+    "changeTags" : [ "PARAMETER", "SIGNATURE", "RENAME" ]
+  }, {
+    "commitHash" : "1f1d4d0e734713c3f09313465ed1800b8fb50069",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

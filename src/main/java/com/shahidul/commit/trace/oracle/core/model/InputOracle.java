@@ -1,10 +1,11 @@
 package com.shahidul.commit.trace.oracle.core.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Shahidul Islam
@@ -19,10 +20,10 @@ public class InputOracle {
     String repositoryUrl;
     String startCommitHash;
     String file;
+    String language;
     String elementType;
     String element;
     Integer startLine;
     Integer endLine;
     List<InputCommit> expectedCommits;
-    Map<String, InputTrace> analyzer = new HashMap<>();
 }

@@ -1,0 +1,24 @@
+{
+  "repositoryName" : "jetty.project",
+  "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
+  "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
+  "file" : "jetty-osgi/jetty-osgi-boot/src/main/java/org/eclipse/jetty/osgi/boot/ServiceWebAppProvider.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "doStart",
+  "startLine" : 267,
+  "endLine" : 283,
+  "expectedCommits" : [ {
+    "commitHash" : "96218e8bc42390c9ff6bb3c72f7deb6c5a0a7880",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "05e2527b5c781db8c7179a134ac1bf800e830580",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "37fa778ea03aba953712348426393136e2314658",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9af433473961dab9f5d534031fe0a6daa615a2a6",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

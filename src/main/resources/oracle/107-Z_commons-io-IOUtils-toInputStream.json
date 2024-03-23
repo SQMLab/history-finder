@@ -1,0 +1,24 @@
+{
+  "repositoryName" : "commons-io",
+  "repositoryUrl" : "https://github.com/apache/commons-io.git",
+  "startCommitHash" : "559de2c461e94ab636c959149c775bb27111fb48",
+  "file" : "src/main/java/org/apache/commons/io/IOUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "toInputStream",
+  "startLine" : 1596,
+  "endLine" : 1598,
+  "expectedCommits" : [ {
+    "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
+    "changeTags" : [ ]
+  }, {
+    "commitHash" : "34f049caaa1f9048cc7385e0224136110bfc75f9",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "83f7246c3e9fe1d3f1ad6cf7ea0715a573fe2f2a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "61b41ee528d4d5cd358f8f5b0a4b2c5a743da561",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

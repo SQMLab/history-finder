@@ -1,0 +1,21 @@
+{
+  "repositoryName" : "junit4",
+  "repositoryUrl" : "https://github.com/junit-team/junit4.git",
+  "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
+  "file" : "src/main/java/org/junit/runners/Parameterized.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createRunners",
+  "startLine" : 371,
+  "endLine" : 379,
+  "expectedCommits" : [ {
+    "commitHash" : "7111b9621997f6c660687b8ac04003398343ee3a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1bf8438b65858565dbb64736bfe13aae9cfc1b5a",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "495a9a93e4a1157e707a01467e7cc3f600c88d19",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

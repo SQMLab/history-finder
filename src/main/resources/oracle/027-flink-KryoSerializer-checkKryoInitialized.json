@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "flink",
+  "repositoryUrl" : "https://github.com/apache/flink.git",
+  "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
+  "file" : "flink-core/src/main/java/org/apache/flink/api/java/typeutils/runtime/kryo/KryoSerializer.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "checkKryoInitialized",
+  "startLine" : 426,
+  "endLine" : 453,
+  "expectedCommits" : [ {
+    "commitHash" : "8aa5e05733655e7b3d1f11ed15f61672d61e5cb5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f2143172feca2925832c8b26c3c9fbbb92ecd48f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dc78a7470a5da086a08140b200a20d840460ef79",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "21a715867d655bb61df9a9f7eef37e42b99e206a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "ed3810b1282dfba80d63b1f43a0c202925a3b11c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cd899f3be39c5f052a2a3e90771111d1a7df1d47",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2cc5d98c690c1b1b1ff1f48628ca58b1b4f0c932",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "354efec0f9da0fa03ea9b337b02a1a2a03a9ac16",
+    "changeTags" : [ "FILE_RENAME", "BODY" ]
+  }, {
+    "commitHash" : "a0b6af20beed6d12d0f33f6f58f323b20cc12961",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2d4ed15e8d2aa1a1fcd7001fccea2ee70cc8a8b0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8af6ef49fd84c309aeba0a3c8963ac83e0243c59",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a70aa67a0881afc5d66329d46fe536d7a0b89fa8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f5898a01e7877afa3df06223713db211708eaf9a",
+    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "22203e75f8a0d193ce0187396d0b267e05e9b58e",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "jetty.project",
+  "repositoryUrl" : "https://github.com/eclipse/jetty.project.git",
+  "startCommitHash" : "fc5dd874f3deda71e6cd42af994a5af5cb6be4af",
+  "file" : "jetty-util/src/main/java/org/eclipse/jetty/util/log/StdErrLog.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "escape",
+  "startLine" : 573,
+  "endLine" : 603,
+  "expectedCommits" : [ {
+    "commitHash" : "c48cb240a172c3964c2bdfc9b8c535bbab47c31c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f81c1b68e26e45ffc61b3acd10f1be628fedb2c6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9ac4e35b96296490ed58fd5aac973e54a759b33f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "12dbcadedec19092f39a820ccb37fa7c347ddbc6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "19368f398576bcd1959ab20c8a09b98a4ed30c42",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

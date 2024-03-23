@@ -1,0 +1,24 @@
+{
+  "repositoryName" : "hadoop",
+  "repositoryUrl" : "https://github.com/apache/hadoop.git",
+  "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-common/src/main/java/org/apache/hadoop/yarn/util/ConverterUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "convertFromYarn",
+  "startLine" : 176,
+  "endLine" : 187,
+  "expectedCommits" : [ {
+    "commitHash" : "acc0d3eb521e3c1d1b2f4be9b46c685ee921504b",
+    "changeTags" : [ "MOVE", "RENAME" ]
+  }, {
+    "commitHash" : "6a2f2551fd13f6d3c932cc9b592e2a23b616a7f5",
+    "changeTags" : [ "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "e1fdf62123625e4ba399af02f8aad500637d29d1",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "aa60da6c2ec049cc70897afee6c368cb70493773",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

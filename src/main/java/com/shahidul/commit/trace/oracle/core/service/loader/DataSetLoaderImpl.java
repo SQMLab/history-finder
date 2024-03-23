@@ -104,15 +104,11 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
                             String oracleFileName = file.getName();
 
-            /*                File outputFile = new File("./src/main/resources/trace", oracleFileName);
-                            outputFile.createNewFile();
 
-                            TraceRecord traceRecord = TraceRecord.builder().traceMap(inputOracle.getAnalyzer()).build();
-                            traceRecord.getTraceMap()
-                                            .values()
-                                                    .stream()
-                                                            .forEach(inputTrace-> inputTrace.getCommits().forEach(inputCommit -> inputCommit.setChangeTags(new TreeSet<>())));
-                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, traceRecord);*/
+                            inputOracle.setLanguage("Java");
+                            File outputFile = new File("./src/main/resources/oracle", oracleFileName);
+                            outputFile.createNewFile();
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputOracle);
 
 
                             if (entityMap.containsKey(oracleFileName)) {
@@ -191,7 +187,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .startLine(json.get("functionStartLine").asInt())
                                     .endLine(json.get("functionEndLine").asInt())
                                     .expectedCommits(commits)
-                                    .analyzer(analysis)
+                                    //.analyzer(analysis)
                                     .build();
                             File outputFile = new File("./src/main/resources/stubs/java", Util.formatOracleFileId(fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
