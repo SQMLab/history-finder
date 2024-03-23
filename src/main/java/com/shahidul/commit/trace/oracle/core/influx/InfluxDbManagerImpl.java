@@ -86,6 +86,12 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
 
     }
 
+    @Override
+    public void deleteAll() {
+        commitSeriesRepository.deleteAll();
+        analysisSeriesRepository.deleteAll();
+    }
+
     private CommitSeries toCommitSeries(TraceEntity traceEntity, CommitUdt commitUdt, Map<String, Instant> timeMap) {
         return CommitSeries.builder()
                 .oracleFileId(traceEntity.getOracleFileId())

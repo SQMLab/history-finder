@@ -72,6 +72,13 @@ public class OracleTest {
         });
     }
 
+ /*   @TestFactory
+    public DynamicTest cleanInfluxDb() {
+        return DynamicTest.dynamicTest("Clean InfluxDB", ()-> {
+            influxDbManager.deleteAll();
+        });
+    }*/
+
     @TestFactory
     Stream<DynamicNode> executeTest() {
 
