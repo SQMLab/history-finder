@@ -30,7 +30,7 @@ public enum TracerName {
         }
         throw new RuntimeException("Illegal argument exception : " + code);
     }
-    public static final List<TracerName> DEFAULT_EXECUTION_SEQUENCE = Arrays.asList(HISTORY_FINDER,CODE_SHOVEL, CODE_TRACKER, GIT_LINE_RANGE, GIT_FUNC_NAME, AGGREGATED);
+    public static final List<TracerName> DEFAULT_EXECUTION_SEQUENCE = Arrays.asList(HISTORY_FINDER,CODE_SHOVEL, CODE_TRACKER,INTELLI_J, GIT_LINE_RANGE, GIT_FUNC_NAME, AGGREGATED);
 
     public static final List<TracerName> AGGREGATION_PRIORITY = Arrays.asList(CODE_SHOVEL, CODE_TRACKER, INTELLI_J, GIT_LINE_RANGE, GIT_FUNC_NAME);
 }
