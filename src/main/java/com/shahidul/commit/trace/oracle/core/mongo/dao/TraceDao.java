@@ -13,6 +13,6 @@ public interface TraceDao {
     TraceEntity  findByOracleId(Integer oracleFileId);
     TraceEntity  findByOracleName(String oracleFileName);
     List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer toFileId);
-    CommitUdt findExpectedCommit(Integer oracleFileId, String commitHash);
+    CommitUdt findExpectedCommit(String oracleFileName, String commitHash);
     CommitUdt cloneStaticFields(CommitUdt commitUdt);
 }

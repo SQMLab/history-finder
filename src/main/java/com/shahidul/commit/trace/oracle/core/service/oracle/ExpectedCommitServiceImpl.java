@@ -21,13 +21,13 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     TraceDao traceDao;
 
     @Override
-    public CommitUdt findCommit(Integer oracleFileId, String commitHash) {
-        return traceDao.findExpectedCommit(oracleFileId, commitHash);
+    public CommitUdt findCommit(String oracleFileName, String commitHash) {
+        return traceDao.findExpectedCommit(oracleFileName, commitHash);
     }
 
     @Override
-    public CommitUdt deleteCommit(Integer oracleFileId, String commitHash) {
-        TraceEntity traceEntity = traceDao.findByOracleId(oracleFileId);
+    public CommitUdt deleteCommit(String oracleFileName, String commitHash) {
+        TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
         int targetIndex = 0;
 
@@ -52,8 +52,8 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     }
 
     @Override
-    public CommitUdt addCommit(Integer oracleFileId, String commitHash, TracerName fromTracer) {
-        TraceEntity traceEntity = traceDao.findByOracleId(oracleFileId);
+    public CommitUdt addCommit(String oracleFileName, String commitHash, TracerName fromTracer) {
+        TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
         commit.setTracerName(TracerName.EXPECTED.getCode());
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
