@@ -8,7 +8,7 @@
   "element" : "execute",
   "startLine" : 103,
   "endLine" : 126,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b2cc5f49d5f892dbf022c62ec48f4e4bd95cf7cd",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

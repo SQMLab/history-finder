@@ -8,7 +8,7 @@
   "element" : "bindMatchers",
   "startLine" : 23,
   "endLine" : 32,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "fe7bbabb82ce3d1000c13d39d6355c134e94ac27",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

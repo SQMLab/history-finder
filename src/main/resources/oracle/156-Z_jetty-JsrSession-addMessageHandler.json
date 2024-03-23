@@ -8,7 +8,7 @@
   "element" : "addMessageHandler",
   "startLine" : 95,
   "endLine" : 142,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "05c534275253ba65a23863b5ef976636fcd8da4c",
     "changeTags" : [ "BODY" ]
   }, {

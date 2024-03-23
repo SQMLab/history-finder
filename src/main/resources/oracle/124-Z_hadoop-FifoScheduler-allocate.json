@@ -8,7 +8,7 @@
   "element" : "allocate",
   "startLine" : 323,
   "endLine" : 387,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "38af23796971193fa529c3d08ffde8fcd6e607b6",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

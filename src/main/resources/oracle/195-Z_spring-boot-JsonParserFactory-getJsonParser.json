@@ -8,7 +8,7 @@
   "element" : "getJsonParser",
   "startLine" : 37,
   "endLine" : 48,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "0c4176f596f97217fe85d2d18a1b7c468c297477",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "storeDocValues",
   "startLine" : 515,
   "endLine" : 566,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "e7a0a12926c399758a4021715a7419e22e59dab6",
     "changeTags" : [ "BODY" ]
   }, {

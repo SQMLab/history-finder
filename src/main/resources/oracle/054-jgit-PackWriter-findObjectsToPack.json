@@ -8,7 +8,7 @@
   "element" : "findObjectsToPack",
   "startLine" : 1775,
   "endLine" : 1993,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "32798dcfdb00662a640f0ff2915766591d21e287",
     "changeTags" : [ "BODY" ]
   }, {

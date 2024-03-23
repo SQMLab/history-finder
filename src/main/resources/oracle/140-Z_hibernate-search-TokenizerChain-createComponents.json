@@ -8,7 +8,7 @@
   "element" : "createComponents",
   "startLine" : 48,
   "endLine" : 55,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b3dc2cfffa7e016c288eaeb9e82443572a6c081d",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

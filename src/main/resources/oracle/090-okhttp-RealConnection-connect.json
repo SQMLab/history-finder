@@ -8,7 +8,7 @@
   "element" : "connect",
   "startLine" : 130,
   "endLine" : 206,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "db18f0e404ab35c7b23e8ecc27913d717e96eb84",
     "changeTags" : [ "BODY" ]
   }, {

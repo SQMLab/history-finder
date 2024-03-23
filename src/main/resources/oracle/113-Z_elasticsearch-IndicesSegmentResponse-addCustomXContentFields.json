@@ -8,7 +8,7 @@
   "element" : "addCustomXContentFields",
   "startLine" : 105,
   "endLine" : 175,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b4c78019b02313bd1eaa61e0752ef3c2cf34f5a4",
     "changeTags" : [ "BODY" ]
   }, {

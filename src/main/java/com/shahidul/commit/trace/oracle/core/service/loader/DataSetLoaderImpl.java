@@ -2,12 +2,12 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
@@ -36,6 +36,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @AllArgsConstructor
 public class DataSetLoaderImpl implements DataSetLoader {
+    AppProperty appProperty;
     ObjectMapper objectMapper;
     TraceRepository traceRepository;
     private static final MessageDigest DIGESTER;
@@ -104,13 +105,6 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
                             String oracleFileName = file.getName();
 
-
-                            inputOracle.setLanguage("Java");
-                            File outputFile = new File("./src/main/resources/oracle", oracleFileName);
-                            outputFile.createNewFile();
-                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputOracle);
-
-
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
@@ -128,7 +122,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         .startLine(inputOracle.getStartLine())
                                         .endLine(inputOracle.getEndLine())
                                         .expectedCommits(
-                                                inputOracle.getExpectedCommits().stream().map(commit -> CommitUdt.builder()
+                                                inputOracle.getCommits().stream().map(commit -> CommitUdt.builder()
                                                                 .tracerName(TracerName.EXPECTED.getCode())
                                                                 .commitHash(commit.getCommitHash())
                                                                 .changeTags(commit.getChangeTags())
@@ -186,7 +180,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .element(json.get("functionName").asText())
                                     .startLine(json.get("functionStartLine").asInt())
                                     .endLine(json.get("functionEndLine").asInt())
-                                    .expectedCommits(commits)
+                                    .commits(commits)
                                     //.analyzer(analysis)
                                     .build();
                             File outputFile = new File("./src/main/resources/stubs/java", Util.formatOracleFileId(fileNo.incrementAndGet()) + "-" + file.getName());
@@ -228,7 +222,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
     }
 
     private File[] findOracleFiles() {
-        return new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile())
+        return new File(MethodTracker.class.getClassLoader().getResource(appProperty.getOracleFileDirectory()).getFile())
                 .listFiles();
 
     }

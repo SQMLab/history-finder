@@ -8,7 +8,7 @@
   "element" : "terminatesInBooleanLiteral",
   "startLine" : 209,
   "endLine" : 211,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "e57007e1bef8b6de966f607fe1d79d3ecabe6884",
     "changeTags" : [ "BODY" ]
   }, {

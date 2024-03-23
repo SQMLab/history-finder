@@ -8,7 +8,7 @@
   "element" : "shutdown",
   "startLine" : 1013,
   "endLine" : 1039,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "5dfba25e3496063b82d53aa759796a639b1d8e3b",
     "changeTags" : [ "BODY" ]
   }, {

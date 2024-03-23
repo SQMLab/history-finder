@@ -8,7 +8,7 @@
   "element" : "getUnguardedFileSystem",
   "startLine" : 322,
   "endLine" : 415,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d7c2c417213502130b1aeab1868313df178555cc",
     "changeTags" : [ "BODY" ]
   }, {

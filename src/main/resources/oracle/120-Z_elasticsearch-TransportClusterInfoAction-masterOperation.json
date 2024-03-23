@@ -8,7 +8,7 @@
   "element" : "masterOperation",
   "startLine" : 50,
   "endLine" : 53,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "99f88f15c5febbca2d13b5b5fda27b844153bf1a",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

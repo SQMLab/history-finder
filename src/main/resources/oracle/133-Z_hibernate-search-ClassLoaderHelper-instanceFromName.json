@@ -8,7 +8,7 @@
   "element" : "instanceFromName",
   "startLine" : 59,
   "endLine" : 65,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3db8c2dfa425219fd0d660c6c0e4194bfb818a38",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

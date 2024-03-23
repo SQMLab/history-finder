@@ -8,7 +8,7 @@
   "element" : "findJavadocs",
   "startLine" : 30,
   "endLine" : 45,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "913fe67db10cc4d93587ad55b40d0edfeb662ebe",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

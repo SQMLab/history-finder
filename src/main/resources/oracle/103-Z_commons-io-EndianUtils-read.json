@@ -8,7 +8,7 @@
   "element" : "read",
   "startLine" : 470,
   "endLine" : 480,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "0986e7970561a77ade9bdaaf701e14017d105464",
     "changeTags" : [ "BODY" ]
   }, {

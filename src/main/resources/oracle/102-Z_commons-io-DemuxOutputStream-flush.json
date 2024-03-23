@@ -8,7 +8,7 @@
   "element" : "flush",
   "startLine" : 63,
   "endLine" : 69,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "426cd8c52ef1732ad3a57171429bf7704d80bcc0",
     "changeTags" : [ "BODY" ]
   }, {

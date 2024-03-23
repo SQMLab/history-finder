@@ -8,7 +8,7 @@
   "element" : "wildcardMatch",
   "startLine" : 1374,
   "endLine" : 1454,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "e4e03ef4c091f5a35da0d97a6a35224197b8be02",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

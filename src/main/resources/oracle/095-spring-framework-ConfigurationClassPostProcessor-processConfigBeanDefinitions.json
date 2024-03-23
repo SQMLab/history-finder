@@ -8,7 +8,7 @@
   "element" : "processConfigBeanDefinitions",
   "startLine" : 261,
   "endLine" : 362,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "4fef1fe820627e6462413f4c4b658d24146367a2",
     "changeTags" : [ "BODY" ]
   }, {

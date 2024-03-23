@@ -8,7 +8,7 @@
   "element" : "createPattern",
   "startLine" : 104,
   "endLine" : 112,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "ce21086e087661553f3a774c38362327ee88996a",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "visit",
   "startLine" : 409,
   "endLine" : 419,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "13dacb72ff79db384dd5a93b769d36957911ebc7",
     "changeTags" : [ "BODY" ]
   }, {

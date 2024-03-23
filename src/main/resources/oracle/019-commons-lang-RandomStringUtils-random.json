@@ -8,7 +8,7 @@
   "element" : "random",
   "startLine" : 348,
   "endLine" : 425,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "88654b79c92386b7c411f064cc373e7698a49449",
     "changeTags" : [ "BODY" ]
   }, {

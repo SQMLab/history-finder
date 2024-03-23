@@ -8,7 +8,7 @@
   "element" : "addUrlConnection",
   "startLine" : 113,
   "endLine" : 118,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "64c324612e9690ee477bebb5d2532bb5843fbdd2",
     "changeTags" : [ "BODY" ]
   }, {

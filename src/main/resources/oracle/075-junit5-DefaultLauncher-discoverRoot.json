@@ -8,7 +8,7 @@
   "element" : "discoverRoot",
   "startLine" : 99,
   "endLine" : 125,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d5c0b1cca585ea7cef809db5377f5ee6b31cf630",
     "changeTags" : [ "BODY" ]
   }, {

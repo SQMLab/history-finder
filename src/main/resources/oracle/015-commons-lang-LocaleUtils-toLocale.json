@@ -8,7 +8,7 @@
   "element" : "toLocale",
   "startLine" : 90,
   "endLine" : 127,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d3146a545612422d3f8078f10afa00342b327199",
     "changeTags" : [ "BODY" ]
   }, {

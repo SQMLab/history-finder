@@ -25,5 +25,5 @@ public class InputOracle {
     String element;
     Integer startLine;
     Integer endLine;
-    List<InputCommit> expectedCommits;
+    List<InputCommit> commits;
 }

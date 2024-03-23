@@ -8,7 +8,7 @@
   "element" : "headers",
   "startLine" : 644,
   "endLine" : 689,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "abb0a790802996d1039c35424b70b0f3f06b94b7",
     "changeTags" : [ "BODY" ]
   }, {

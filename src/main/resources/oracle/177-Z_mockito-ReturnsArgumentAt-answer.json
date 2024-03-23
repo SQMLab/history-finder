@@ -8,7 +8,7 @@
   "element" : "answer",
   "startLine" : 53,
   "endLine" : 65,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "761de40d05b4eddae8328ab1d7e5bdacd882a3be",
     "changeTags" : [ "BODY" ]
   }, {

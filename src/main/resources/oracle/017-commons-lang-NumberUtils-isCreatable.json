@@ -8,7 +8,7 @@
   "element" : "isCreatable",
   "startLine" : 1398,
   "endLine" : 1509,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c8e61afdb89c58ea8ffaf04593da41ff0888d30e",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "getNextInputSplit",
   "startLine" : 76,
   "endLine" : 203,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "7452802bc25c0915b7347d4faf2d60adcfc27644",
     "changeTags" : [ "PARAMETER", "SIGNATURE" ]
   }, {

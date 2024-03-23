@@ -8,7 +8,7 @@
   "element" : "writeWithMessageConverters",
   "startLine" : 179,
   "endLine" : 307,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "29ce6685cad0f6caf829c49024b1885ab31d62e0",
     "changeTags" : [ "BODY" ]
   }, {

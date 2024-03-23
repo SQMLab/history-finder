@@ -8,7 +8,7 @@
   "element" : "call",
   "startLine" : 206,
   "endLine" : 360,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "df638e0cfc628469eee9a91df5b2b65634e274d7",
     "changeTags" : [ "BODY" ]
   }, {

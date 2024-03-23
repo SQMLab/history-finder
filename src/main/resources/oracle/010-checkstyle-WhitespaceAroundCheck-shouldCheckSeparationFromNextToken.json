@@ -8,7 +8,7 @@
   "element" : "shouldCheckSeparationFromNextToken",
   "startLine" : 462,
   "endLine" : 468,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f77a01ba3683c16a5d23670b04f5929e2b042b5b",
     "changeTags" : [ "BODY" ]
   }, {

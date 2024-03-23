@@ -8,7 +8,7 @@
   "element" : "tokenStream",
   "startLine" : 472,
   "endLine" : 510,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "105c7eae87896762cbcb295c73c8e8b1fd8f71f8",
     "changeTags" : [ "BODY" ]
   }, {

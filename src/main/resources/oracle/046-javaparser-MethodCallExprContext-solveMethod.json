@@ -8,7 +8,7 @@
   "element" : "solveMethod",
   "startLine" : 153,
   "endLine" : 162,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "09232ff6b0ea19e850482f3a87ac6ef1c063c759",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

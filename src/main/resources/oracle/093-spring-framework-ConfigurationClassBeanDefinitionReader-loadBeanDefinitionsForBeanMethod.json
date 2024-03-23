@@ -8,7 +8,7 @@
   "element" : "loadBeanDefinitionsForBeanMethod",
   "startLine" : 174,
   "endLine" : 274,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c037e75f26ac5ef69e4d5fc3045e101ca674dcaf",
     "changeTags" : [ "BODY" ]
   }, {

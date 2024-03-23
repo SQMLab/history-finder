@@ -8,7 +8,7 @@
   "element" : "newRangeQuery",
   "startLine" : 608,
   "endLine" : 628,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "e92a38af90d12e51390b4307ccbe0c24ac7b6b4e",
     "changeTags" : [ "BODY" ]
   }, {

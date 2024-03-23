@@ -8,7 +8,7 @@
   "element" : "method",
   "startLine" : 150,
   "endLine" : 152,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "fcf1e41e429b10e03c5cf9b8551636df7519b4c5",
     "changeTags" : [ "MOVE", "BODY" ]
   }, {

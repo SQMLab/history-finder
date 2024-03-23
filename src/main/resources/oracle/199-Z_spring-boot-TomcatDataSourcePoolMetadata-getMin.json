@@ -8,7 +8,7 @@
   "element" : "getMin",
   "startLine" : 47,
   "endLine" : 49,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "0ba4830b4fb20deea040ca5e1c9a34651708b222",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

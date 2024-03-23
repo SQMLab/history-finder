@@ -8,7 +8,7 @@
   "element" : "setPropertyValue",
   "startLine" : 273,
   "endLine" : 280,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "64d6561cbbda4d5a74cd0f3ce5983e29c9d42b89",
     "changeTags" : [ "BODY" ]
   }, {

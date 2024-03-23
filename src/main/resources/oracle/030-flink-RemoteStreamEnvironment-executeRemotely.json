@@ -8,7 +8,7 @@
   "element" : "executeRemotely",
   "startLine" : 190,
   "endLine" : 237,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "fc3ee68bb1c0676ae8825c675d0c01e25d36db7b",
     "changeTags" : [ "BODY" ]
   }, {

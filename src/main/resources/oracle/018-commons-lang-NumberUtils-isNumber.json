@@ -8,7 +8,7 @@
   "element" : "isNumber",
   "startLine" : 1372,
   "endLine" : 1374,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c503d742f094dc2048b72c3f78f5e2e6070a44e1",
     "changeTags" : [ "BODY" ]
   }, {

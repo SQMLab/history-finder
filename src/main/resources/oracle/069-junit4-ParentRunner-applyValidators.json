@@ -8,7 +8,7 @@
   "element" : "applyValidators",
   "startLine" : 154,
   "endLine" : 160,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "1d97da73fdafce8f5cf9d722f23c5cba41b26b70",
     "changeTags" : [ "INTRODUCE" ]
   } ]

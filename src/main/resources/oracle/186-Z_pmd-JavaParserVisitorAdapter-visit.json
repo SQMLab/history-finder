@@ -8,7 +8,7 @@
   "element" : "visit",
   "startLine" : 290,
   "endLine" : 292,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "getFileToArtifactsMap",
   "startLine" : 53,
   "endLine" : 67,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "67e051b43a00fbcfec4a648fc68446907839d7f2",
     "changeTags" : [ "BODY" ]
   }, {

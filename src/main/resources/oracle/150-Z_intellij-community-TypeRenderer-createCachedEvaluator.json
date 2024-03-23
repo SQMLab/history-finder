@@ -8,7 +8,7 @@
   "element" : "createCachedEvaluator",
   "startLine" : 61,
   "endLine" : 68,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3a1ed388b11d11e0c6185b353358368a8bd34daf",
     "changeTags" : [ "BODY" ]
   }, {

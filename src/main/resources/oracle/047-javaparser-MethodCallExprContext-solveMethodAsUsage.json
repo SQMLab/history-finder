@@ -8,7 +8,7 @@
   "element" : "solveMethodAsUsage",
   "startLine" : 76,
   "endLine" : 121,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "791449a6ab0696f4c0109908a4a0925e514b10d9",
     "changeTags" : [ "BODY" ]
   }, {

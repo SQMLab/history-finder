@@ -8,7 +8,7 @@
   "element" : "contentEqualsIgnoreEOL",
   "startLine" : 2794,
   "endLine" : 2809,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "0cee0fe1d42f73933d8fdfedfe91bff8013f0bb3",
     "changeTags" : [ "BODY" ]
   }, {

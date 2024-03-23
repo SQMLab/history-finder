@@ -8,7 +8,7 @@
   "element" : "writePack",
   "startLine" : 1106,
   "endLine" : 1190,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d9bbb04c3ef28db1d2e492506a819b7ac5c5f9df",
     "changeTags" : [ "BODY" ]
   }, {

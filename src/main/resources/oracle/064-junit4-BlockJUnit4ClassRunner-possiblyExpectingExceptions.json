@@ -8,7 +8,7 @@
   "element" : "possiblyExpectingExceptions",
   "startLine" : 342,
   "endLine" : 347,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "6838ac0ec19918990d28ea81176cdd065aaf7c34",
     "changeTags" : [ "BODY" ]
   }, {

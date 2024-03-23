@@ -8,7 +8,7 @@
   "element" : "sendPack",
   "startLine" : 1983,
   "endLine" : 2128,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "cd0d69ffec9eedff24a2692d18024e752cadc7c8",
     "changeTags" : [ "PARAMETER", "SIGNATURE" ]
   }, {

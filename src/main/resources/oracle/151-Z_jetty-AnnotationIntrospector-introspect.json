@@ -8,7 +8,7 @@
   "element" : "introspect",
   "startLine" : 86,
   "endLine" : 111,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
     "changeTags" : [ "PARAMETER", "SIGNATURE" ]
   }, {

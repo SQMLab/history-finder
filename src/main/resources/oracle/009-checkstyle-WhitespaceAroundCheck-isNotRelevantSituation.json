@@ -8,7 +8,7 @@
   "element" : "isNotRelevantSituation",
   "startLine" : 412,
   "endLine" : 431,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "a66d414ae6254d11f5c6021cc804a56d250a3595",
     "changeTags" : [ "BODY" ]
   }, {

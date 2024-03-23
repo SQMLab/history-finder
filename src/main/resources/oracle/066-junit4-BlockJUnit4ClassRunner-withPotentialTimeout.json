@@ -8,7 +8,7 @@
   "element" : "withPotentialTimeout",
   "startLine" : 356,
   "endLine" : 365,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "1e55e32ba3dab864b20e9c162c5b421f99a11c6d",
     "changeTags" : [ "BODY" ]
   }, {

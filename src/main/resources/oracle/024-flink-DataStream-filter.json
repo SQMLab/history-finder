@@ -8,7 +8,7 @@
   "element" : "filter",
   "startLine" : 685,
   "endLine" : 688,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "a922473c0835a757e7108c79ad52f103ace86030",
     "changeTags" : [ "RETURN_TYPE", "SIGNATURE" ]
   }, {

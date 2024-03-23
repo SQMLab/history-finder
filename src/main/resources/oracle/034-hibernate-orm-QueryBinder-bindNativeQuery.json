@@ -8,7 +8,7 @@
   "element" : "bindNativeQuery",
   "startLine" : 86,
   "endLine" : 140,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "9caca0ce37d5a2763d476c6fa2471addcca710ca",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

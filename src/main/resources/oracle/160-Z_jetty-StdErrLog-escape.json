@@ -8,7 +8,7 @@
   "element" : "escape",
   "startLine" : 573,
   "endLine" : 603,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c48cb240a172c3964c2bdfc9b8c535bbab47c31c",
     "changeTags" : [ "BODY" ]
   }, {

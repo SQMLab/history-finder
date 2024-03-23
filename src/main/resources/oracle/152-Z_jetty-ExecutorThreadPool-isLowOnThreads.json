@@ -8,7 +8,7 @@
   "element" : "isLowOnThreads",
   "startLine" : 264,
   "endLine" : 267,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "a272fb6e391e126bbdd851bccfc6bde25870570e",
     "changeTags" : [ "BODY" ]
   }, {

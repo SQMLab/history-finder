@@ -8,7 +8,7 @@
   "element" : "normalizeAndValidateRequests",
   "startLine" : 237,
   "endLine" : 253,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "821b0de4c59156d4a65112de03ba3e7e1c88e309",
     "changeTags" : [ "BODY" ]
   }, {

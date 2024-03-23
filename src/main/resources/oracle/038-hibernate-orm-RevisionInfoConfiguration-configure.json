@@ -8,7 +8,7 @@
   "element" : "configure",
   "startLine" : 296,
   "endLine" : 438,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "9e063ffa2577f06d98a9e912bb16d20424df8d6d",
     "changeTags" : [ "BODY" ]
   }, {

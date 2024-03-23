@@ -8,7 +8,7 @@
   "element" : "createNumericRangeQuery",
   "startLine" : 36,
   "endLine" : 36,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "0e8203f804d5a84f1d85267893bc827f75529584",
     "changeTags" : [ "BODY" ]
   }, {

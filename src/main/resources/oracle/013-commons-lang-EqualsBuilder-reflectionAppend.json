@@ -8,7 +8,7 @@
   "element" : "reflectionAppend",
   "startLine" : 491,
   "endLine" : 554,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "2e9f3a80146262511ca7bcdd3411f095dff4951d",
     "changeTags" : [ "BODY" ]
   }, {

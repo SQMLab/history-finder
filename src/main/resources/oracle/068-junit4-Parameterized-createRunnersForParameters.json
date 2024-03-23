@@ -8,7 +8,7 @@
   "element" : "createRunnersForParameters",
   "startLine" : 439,
   "endLine" : 454,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "1bf8438b65858565dbb64736bfe13aae9cfc1b5a",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "geq",
   "startLine" : 81,
   "endLine" : 84,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f7c1b82139cf23a37f9775ee07c6d8ce0952650e",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "addClause",
   "startLine" : 374,
   "endLine" : 422,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "4aafacfbef423a25a349dd8c6e5e6178ac1ba334",
     "changeTags" : [ "BODY" ]
   }, {

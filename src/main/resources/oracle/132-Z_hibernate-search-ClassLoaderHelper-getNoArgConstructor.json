@@ -8,7 +8,7 @@
   "element" : "getNoArgConstructor",
   "startLine" : 253,
   "endLine" : 266,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f4e45cb5068346eeca734c7fcbcff9867cc2f901",
     "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE", "SIGNATURE", "RENAME" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "keywordTokenStream",
   "startLine" : 334,
   "endLine" : 361,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "e8e4245d9b36123446546ff15967ac95429ea2b0",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

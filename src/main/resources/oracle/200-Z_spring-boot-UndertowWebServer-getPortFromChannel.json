@@ -8,7 +8,7 @@
   "element" : "getPortFromChannel",
   "startLine" : 184,
   "endLine" : 193,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "7fc455654a19c3a988c6ca2116ce04001163adb4",
     "changeTags" : [ "BODY" ]
   }, {

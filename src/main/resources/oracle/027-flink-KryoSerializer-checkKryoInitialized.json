@@ -8,7 +8,7 @@
   "element" : "checkKryoInitialized",
   "startLine" : 426,
   "endLine" : 453,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "8aa5e05733655e7b3d1f11ed15f61672d61e5cb5",
     "changeTags" : [ "BODY" ]
   }, {

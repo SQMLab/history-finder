@@ -8,7 +8,7 @@
   "element" : "getLockMessageProcessName",
   "startLine" : 344,
   "endLine" : 346,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c310fa0c802f40a774edb58641de3ac5bfad0e2c",
     "changeTags" : [ "BODY" ]
   }, {

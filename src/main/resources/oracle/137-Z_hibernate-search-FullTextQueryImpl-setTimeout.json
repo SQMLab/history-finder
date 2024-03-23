@@ -8,7 +8,7 @@
   "element" : "setTimeout",
   "startLine" : 559,
   "endLine" : 564,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "38fc9b864e6a279eccb84a15c14002dce61df4fa",
     "changeTags" : [ "RETURN_TYPE", "SIGNATURE" ]
   }, {
