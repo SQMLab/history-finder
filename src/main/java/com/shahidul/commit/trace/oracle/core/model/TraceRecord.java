@@ -1,23 +1,21 @@
 package com.shahidul.commit.trace.oracle.core.model;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Shahidul Islam
- * @since 11/10/2023
+ * @since 3/23/2024
  */
-
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Commit {
-    String commitHash;
-    Set<ChangeTag> changeTags;
+public class TraceRecord {
+    Map<String, InputTrace> traceMap = new HashMap<>();
 }

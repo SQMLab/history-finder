@@ -14,7 +14,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Trace {
+public class InputOracle {
     String repositoryName;
     String repositoryUrl;
     String startCommitHash;
@@ -23,6 +23,6 @@ public class Trace {
     String element;
     Integer startLine;
     Integer endLine;
-    List<Commit> expectedCommits;
-    Map<String, AlgorithmExecution> analyzer = new HashMap<>();
+    List<InputCommit> expectedCommits;
+    Map<String, InputTrace> analyzer = new HashMap<>();
 }
