@@ -8,7 +8,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
  * @since 3/19/2024
  */
 public interface ExpectedCommitService {
-    CommitUdt findCommit(Integer oracleFileId, String commitHash);
-    CommitUdt deleteCommit(Integer oracleFileId, String commitHash);
-    CommitUdt addCommit(Integer oracleFileId, String commitHash, TracerName fromTracer);
+    CommitUdt findCommit(String oracleFileName, String commitHash);
+    CommitUdt deleteCommit(String oracleFileName, String commitHash);
+    CommitUdt addCommit(String oracleFileName, String commitHash, TracerName fromTracer);
 }

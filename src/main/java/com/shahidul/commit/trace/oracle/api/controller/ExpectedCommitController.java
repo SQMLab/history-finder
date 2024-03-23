@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/oracle/expected-commit")
+@RequestMapping("/api/oracle/commit")
 public class ExpectedCommitController {
     ExpectedCommitService expectedCommitService;
 
     @GetMapping("/detail")
-    public CommitUdt commitDetail(@RequestParam Integer oracleFileId, @RequestParam String commitHash) {
-        return expectedCommitService.findCommit(oracleFileId, commitHash);
+    public CommitUdt commitDetail(@RequestParam String oracleFileName, @RequestParam String commitHash) {
+        return expectedCommitService.findCommit(oracleFileName, commitHash);
     }
 
     @GetMapping("/add")
-    public CommitUdt addCommit(@RequestParam Integer oracleFileId, @RequestParam String commitHash,  @RequestParam TracerName fromTracer) {
-        return expectedCommitService.addCommit(oracleFileId, commitHash, fromTracer);
+    public CommitUdt addCommit(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam TracerName fromTracer) {
+        return expectedCommitService.addCommit(oracleFileName, commitHash, fromTracer);
     }
 
     @GetMapping("/delete")
-    public CommitUdt deleteCommit(@RequestParam Integer oracleFileId, @RequestParam String commitHash) {
-        return expectedCommitService.deleteCommit(oracleFileId, commitHash);
+    public CommitUdt deleteCommit(@RequestParam String oracleFileName, @RequestParam String commitHash) {
+        return expectedCommitService.deleteCommit(oracleFileName, commitHash);
     }
 
 
