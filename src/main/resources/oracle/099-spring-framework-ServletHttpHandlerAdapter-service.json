@@ -8,7 +8,7 @@
   "element" : "service",
   "startLine" : 158,
   "endLine" : 195,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "5dc49b16ea21ebac20d124d929f872d5aa060254",
     "changeTags" : [ "BODY" ]
   }, {

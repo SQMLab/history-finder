@@ -8,7 +8,7 @@
   "element" : "getRunningAggregateAppResourceUsage",
   "startLine" : 1080,
   "endLine" : 1103,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3aeaafecb823ef6c175ea5d0d9cb726faacaf32d",
     "changeTags" : [ "BODY" ]
   }, {

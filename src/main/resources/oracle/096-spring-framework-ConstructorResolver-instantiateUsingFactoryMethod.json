@@ -8,7 +8,7 @@
   "element" : "instantiateUsingFactoryMethod",
   "startLine" : 360,
   "endLine" : 597,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "1603c4ab2fc49d1bd65f55e35ca899044835ca94",
     "changeTags" : [ "BODY" ]
   }, {

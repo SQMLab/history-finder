@@ -8,7 +8,7 @@
   "element" : "runChild",
   "startLine" : 92,
   "endLine" : 105,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3f736cf514b0421a82383db74188f6c0e3dfef1a",
     "changeTags" : [ "BODY" ]
   }, {

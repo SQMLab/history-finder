@@ -8,7 +8,7 @@
   "element" : "process",
   "startLine" : 206,
   "endLine" : 229,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "327c0bc843612486ab4ded32a2f01038e1271fd0",
     "changeTags" : [ "BODY" ]
   }, {

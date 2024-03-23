@@ -8,7 +8,7 @@
   "element" : "createRunners",
   "startLine" : 371,
   "endLine" : 379,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "7111b9621997f6c660687b8ac04003398343ee3a",
     "changeTags" : [ "BODY" ]
   }, {

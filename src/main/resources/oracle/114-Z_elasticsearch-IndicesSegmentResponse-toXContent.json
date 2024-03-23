@@ -8,7 +8,7 @@
   "element" : "toXContent",
   "startLine" : 196,
   "endLine" : 209,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "4a8099c6962da1e68309e0e382d0e6198a3937c2",
     "changeTags" : [ "MODIFIER", "SIGNATURE" ]
   }, {

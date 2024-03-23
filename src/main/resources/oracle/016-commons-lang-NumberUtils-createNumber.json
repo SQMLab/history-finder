@@ -8,7 +8,7 @@
   "element" : "createNumber",
   "startLine" : 450,
   "endLine" : 617,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b610707cd072f07efb816074a4844bb1b31e482c",
     "changeTags" : [ "BODY" ]
   }, {

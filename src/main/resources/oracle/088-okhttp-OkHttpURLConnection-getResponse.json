@@ -8,7 +8,7 @@
   "element" : "getResponse",
   "startLine" : 443,
   "endLine" : 484,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "aac684aeae32ff18e443799a3ccff6de9d68a684",
     "changeTags" : [ "BODY" ]
   }, {

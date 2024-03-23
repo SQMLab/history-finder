@@ -8,7 +8,7 @@
   "element" : "updateMergeThreads",
   "startLine" : 300,
   "endLine" : 408,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "9540bc37583dfd4e995b893154039fcf031dc3c3",
     "changeTags" : [ "BODY" ]
   }, {

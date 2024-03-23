@@ -8,7 +8,7 @@
   "element" : "write",
   "startLine" : 169,
   "endLine" : 182,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
     "changeTags" : [ "BODY" ]
   }, {

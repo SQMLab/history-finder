@@ -8,7 +8,7 @@
   "element" : "indexNotNullArray",
   "startLine" : 46,
   "endLine" : 51,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "7c1e5321baf4322da71ca747d75c771b9103e412",
     "changeTags" : [ "BODY" ]
   }, {

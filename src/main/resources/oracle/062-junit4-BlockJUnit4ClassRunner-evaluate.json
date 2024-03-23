@@ -8,7 +8,7 @@
   "element" : "evaluate",
   "startLine" : 99,
   "endLine" : 101,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3f736cf514b0421a82383db74188f6c0e3dfef1a",
     "changeTags" : [ "INTRODUCE" ]
   } ]

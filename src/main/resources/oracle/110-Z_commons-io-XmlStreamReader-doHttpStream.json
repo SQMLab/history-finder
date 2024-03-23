@@ -8,7 +8,7 @@
   "element" : "doHttpStream",
   "startLine" : 449,
   "endLine" : 463,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "8993c0060e4eb2d5bca20e3529a829a9dd90efdf",
     "changeTags" : [ "BODY" ]
   }, {

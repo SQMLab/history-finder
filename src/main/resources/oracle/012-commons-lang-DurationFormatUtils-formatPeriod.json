@@ -8,7 +8,7 @@
   "element" : "formatPeriod",
   "startLine" : 279,
   "endLine" : 409,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "9a16b763d9c51b788415c5f83b6e9221a3cf5d0d",
     "changeTags" : [ "BODY" ]
   }, {

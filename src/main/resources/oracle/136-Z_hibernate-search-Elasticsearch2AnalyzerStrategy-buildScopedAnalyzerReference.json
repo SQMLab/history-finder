@@ -8,7 +8,7 @@
   "element" : "buildScopedAnalyzerReference",
   "startLine" : 273,
   "endLine" : 278,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d2dd845f749594b15127ac5d9943b0b3a11b4370",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

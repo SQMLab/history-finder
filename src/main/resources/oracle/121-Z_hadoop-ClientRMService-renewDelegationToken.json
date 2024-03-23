@@ -8,7 +8,7 @@
   "element" : "renewDelegationToken",
   "startLine" : 1102,
   "endLine" : 1124,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "a83fb61ac07c0468cbc7a38526e92683883dd932",
     "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
   }, {

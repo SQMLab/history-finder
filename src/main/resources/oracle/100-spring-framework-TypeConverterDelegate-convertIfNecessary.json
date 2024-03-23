@@ -8,7 +8,7 @@
   "element" : "convertIfNecessary",
   "startLine" : 152,
   "endLine" : 313,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f813712f5b413b354560cd7cc006352e9defa9a3",
     "changeTags" : [ "BODY" ]
   }, {

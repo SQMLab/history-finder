@@ -8,7 +8,7 @@
   "element" : "methodBlock",
   "startLine" : 303,
   "endLine" : 323,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "bd5b90f75908b7a3ed074a7be29823170f008fb4",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "solveSymbolAsValue",
   "startLine" : 56,
   "endLine" : 138,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b54617e765d73b3ce0d187cf12ad8da382bce439",
     "changeTags" : [ "BODY" ]
   }, {

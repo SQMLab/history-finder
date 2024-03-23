@@ -8,7 +8,7 @@
   "element" : "convertFromYarn",
   "startLine" : 176,
   "endLine" : 187,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "acc0d3eb521e3c1d1b2f4be9b46c685ee921504b",
     "changeTags" : [ "MOVE", "RENAME" ]
   }, {

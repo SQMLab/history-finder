@@ -8,7 +8,7 @@
   "element" : "checkThrowsTags",
   "startLine" : 875,
   "endLine" : 923,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "fbf3f95c2273be23b966cba6e6ef89390a6fb020",
     "changeTags" : [ "BODY" ]
   }, {

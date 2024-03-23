@@ -8,7 +8,7 @@
   "element" : "getExpressionInfoAtOffset",
   "startLine" : 164,
   "endLine" : 182,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "adc4d91f33d13281a462628dd27dbaf70c6fb9fa",
     "changeTags" : [ "BODY" ]
   }, {

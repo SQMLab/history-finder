@@ -8,7 +8,7 @@
   "element" : "getStubbingsDescending",
   "startLine" : 143,
   "endLine" : 145,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c",
     "changeTags" : [ "RENAME" ]
   }, {

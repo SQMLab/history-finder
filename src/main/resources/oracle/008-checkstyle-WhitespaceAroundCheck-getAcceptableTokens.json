@@ -8,7 +8,7 @@
   "element" : "getAcceptableTokens",
   "startLine" : 255,
   "endLine" : 314,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "1a3a5e0f34e208db993b0871a9204cf594029454",
     "changeTags" : [ "BODY" ]
   }, {

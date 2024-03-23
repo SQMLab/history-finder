@@ -8,7 +8,7 @@
   "element" : "deserialize",
   "startLine" : 369,
   "endLine" : 428,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "ae285f9bd5398fe4d8d86eb3207bbc5beb8a24c8",
     "changeTags" : [ "BODY" ]
   }, {

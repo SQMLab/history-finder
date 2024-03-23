@@ -8,7 +8,7 @@
   "element" : "unwrap",
   "startLine" : 460,
   "endLine" : 462,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "2c968538a542fd5f6c705745f235be118c07370a",
     "changeTags" : [ "INTRODUCE" ]
   } ]

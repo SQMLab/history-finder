@@ -8,7 +8,7 @@
   "element" : "getAppsInQueue",
   "startLine" : 941,
   "endLine" : 953,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "de3b4aac561258ad242a3c5ed1c919428893fd4c",
     "changeTags" : [ "BODY" ]
   }, {

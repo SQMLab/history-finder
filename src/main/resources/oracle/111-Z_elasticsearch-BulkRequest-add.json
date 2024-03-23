@@ -8,7 +8,7 @@
   "element" : "add",
   "startLine" : 102,
   "endLine" : 107,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "86ab3a2d1a3bc5f4478d25cd28906915c2ec03fd",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

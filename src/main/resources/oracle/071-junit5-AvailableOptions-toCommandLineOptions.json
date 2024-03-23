@@ -8,7 +8,7 @@
   "element" : "toCommandLineOptions",
   "startLine" : 220,
   "endLine" : 264,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "c52afe0668c462a5935a708cb396d234eeb018d4",
     "changeTags" : [ "BODY" ]
   }, {

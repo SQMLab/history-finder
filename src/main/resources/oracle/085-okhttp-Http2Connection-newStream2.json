@@ -8,7 +8,7 @@
   "element" : "newStream",
   "startLine" : 229,
   "endLine" : 231,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3d43a8dba89ccd7333c3ebcf74928e441790d943",
     "changeTags" : [ "FILE_RENAME", "RETURN_TYPE", "SIGNATURE" ]
   }, {

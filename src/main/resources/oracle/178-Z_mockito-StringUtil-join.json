@@ -8,7 +8,7 @@
   "element" : "join",
   "startLine" : 52,
   "endLine" : 61,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "3d2fb7a146e943003cb3e3cfe18c82f1663b833a",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

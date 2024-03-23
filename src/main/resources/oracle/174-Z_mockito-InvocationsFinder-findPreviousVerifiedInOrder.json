@@ -8,7 +8,7 @@
   "element" : "findPreviousVerifiedInOrder",
   "startLine" : 119,
   "endLine" : 127,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "ae1af27799f53dfeeb23cda187a9247afc0cd951",
     "changeTags" : [ "MODIFIER", "SIGNATURE" ]
   }, {

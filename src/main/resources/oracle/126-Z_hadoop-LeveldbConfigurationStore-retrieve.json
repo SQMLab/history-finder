@@ -8,7 +8,7 @@
   "element" : "retrieve",
   "startLine" : 238,
   "endLine" : 252,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "d6622daaa3c95a5040d06f91dc0c793bafa70f95",
     "changeTags" : [ "BODY" ]
   }, {

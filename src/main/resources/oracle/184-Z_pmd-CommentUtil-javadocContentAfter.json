@@ -8,7 +8,7 @@
   "element" : "javadocContentAfter",
   "startLine" : 78,
   "endLine" : 104,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b5cb2bbb854e22783baf7227b2c3bf739e072461",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "invokeTestMethod",
   "startLine" : 163,
   "endLine" : 177,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b2cc5f49d5f892dbf022c62ec48f4e4bd95cf7cd",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

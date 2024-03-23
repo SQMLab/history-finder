@@ -8,7 +8,7 @@
   "element" : "diff",
   "startLine" : 409,
   "endLine" : 593,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "5639639b06c004d18415f59a271319da2fb7b930",
     "changeTags" : [ "BODY" ]
   }, {

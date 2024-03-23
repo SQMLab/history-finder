@@ -8,7 +8,7 @@
   "element" : "bind",
   "startLine" : 386,
   "endLine" : 552,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "f49efc7864ad2809e2cc42ec0185c2b07b8c4b83",
     "changeTags" : [ "BODY" ]
   }, {

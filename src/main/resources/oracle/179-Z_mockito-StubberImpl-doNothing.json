@@ -8,7 +8,7 @@
   "element" : "doNothing",
   "startLine" : 117,
   "endLine" : 120,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "275586ecf3a00da078b6fb7e9cc4508231cc4301",
     "changeTags" : [ "BODY" ]
   }, {

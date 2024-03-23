@@ -8,7 +8,7 @@
   "element" : "removeCompiler",
   "startLine" : 148,
   "endLine" : 153,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "06156396fa4af916d45b846ee045bdbaea79b6c1",
     "changeTags" : [ "BODY" ]
   }, {

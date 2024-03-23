@@ -8,7 +8,7 @@
   "element" : "setCapability",
   "startLine" : 180,
   "endLine" : 186,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b46ca7e73b8bac3fdbff0b13afe009308078acf2",
     "changeTags" : [ "BODY" ]
   }, {

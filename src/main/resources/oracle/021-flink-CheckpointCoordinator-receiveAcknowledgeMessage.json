@@ -8,7 +8,7 @@
   "element" : "receiveAcknowledgeMessage",
   "startLine" : 726,
   "endLine" : 808,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "aa21f853ab0380ec1f68ae1d0b7c8d9268da4533",
     "changeTags" : [ "BODY" ]
   }, {

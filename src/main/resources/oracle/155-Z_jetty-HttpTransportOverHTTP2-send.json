@@ -8,7 +8,7 @@
   "element" : "send",
   "startLine" : 88,
   "endLine" : 186,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "50c44f229786ada3706065772d3d8e876e10b9eb",
     "changeTags" : [ "BODY" ]
   }, {

@@ -8,7 +8,7 @@
   "element" : "newStream",
   "startLine" : 233,
   "endLine" : 271,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "8f56e81f938c6f68d9e15f9b43f3f17ab467faa2",
     "changeTags" : [ "BODY" ]
   }, {

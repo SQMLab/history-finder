@@ -8,7 +8,7 @@
   "element" : "map",
   "startLine" : 226,
   "endLine" : 242,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "ddba1b69f43cbb885e178dfaafa120f1fe196a13",
     "changeTags" : [ "BODY" ]
   }, {

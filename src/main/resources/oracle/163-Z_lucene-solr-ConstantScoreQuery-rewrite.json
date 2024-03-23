@@ -8,7 +8,7 @@
   "element" : "rewrite",
   "startLine" : 49,
   "endLine" : 65,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "962313b83ba9c69379e1f84dffc881a361713ce9",
     "changeTags" : [ "BODY" ]
   }, {

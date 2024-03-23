@@ -8,7 +8,7 @@
   "element" : "copy",
   "startLine" : 134,
   "endLine" : 137,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "6aa00766b9103d75c763160280429af8e1f0549e",
     "changeTags" : [ ]
   }, {

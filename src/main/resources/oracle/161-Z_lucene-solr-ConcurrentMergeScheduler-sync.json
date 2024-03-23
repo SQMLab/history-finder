@@ -8,7 +8,7 @@
   "element" : "sync",
   "startLine" : 447,
   "endLine" : 477,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "926397824e9fd4b7f480cff547a73aad3c056974",
     "changeTags" : [ "BODY" ]
   }, {

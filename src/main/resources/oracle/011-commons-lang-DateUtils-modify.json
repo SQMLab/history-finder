@@ -8,7 +8,7 @@
   "element" : "modify",
   "startLine" : 958,
   "endLine" : 1096,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "b610707cd072f07efb816074a4844bb1b31e482c",
     "changeTags" : [ "BODY" ]
   }, {

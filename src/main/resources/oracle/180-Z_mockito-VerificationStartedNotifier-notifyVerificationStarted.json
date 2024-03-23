@@ -8,7 +8,7 @@
   "element" : "notifyVerificationStarted",
   "startLine" : 20,
   "endLine" : 29,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "4bc732153e83b9490d6d94c2e27ea2f6ac9dc10c",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {

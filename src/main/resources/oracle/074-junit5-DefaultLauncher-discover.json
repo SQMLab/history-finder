@@ -8,7 +8,7 @@
   "element" : "discover",
   "startLine" : 82,
   "endLine" : 85,
-  "expectedCommits" : [ {
+  "commits" : [ {
     "commitHash" : "402c756a056e13f5f49634616d87b1333e3c211e",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
