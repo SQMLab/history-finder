@@ -7,11 +7,11 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
-import com.shahidul.commit.trace.oracle.core.model.TraceRecord;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.util.Util;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -115,23 +115,9 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, traceRecord);*/
 
 
-
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
-                                HashMap<String, AnalysisUdt> analysisEntityMap = new HashMap<>();
-                                for (Map.Entry<String, InputTrace> entry : inputOracle.getAnalyzer().entrySet()) {
-
-                                    List<CommitUdt> commitList = entry.getValue().getCommits()
-                                            .stream()
-                                            .map(commit -> CommitUdt.builder()
-                                                    .tracerName(entry.getKey())
-                                                    .commitHash(commit.getCommitHash())
-                                                    .changeTags(commit.getChangeTags())
-                                                    .build())
-                                            .toList();
-                                    analysisEntityMap.put(entry.getKey(), AnalysisUdt.builder().commits(commitList).build());
-                                }
                                 String uid = generateUid(inputOracle);
                                 return TraceEntity.builder()
                                         .uid(uid)
@@ -153,7 +139,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                                                 .build())
                                                         .toList()
                                         )
-                                        .analysis(analysisEntityMap)
+                                        .analysis(new HashMap<>())
                                         .build();
                             }
                         } catch (Exception e) {
@@ -207,7 +193,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                     .expectedCommits(commits)
                                     .analyzer(analysis)
                                     .build();
-                            File outputFile = new File("./src/main/resources/stubs/java", formatOracleFileId( fileNo.incrementAndGet())+ "-" + file.getName());
+                            File outputFile = new File("./src/main/resources/stubs/java", Util.formatOracleFileId(fileNo.incrementAndGet()) + "-" + file.getName());
                             outputFile.createNewFile();
 
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputOracle);
@@ -225,9 +211,6 @@ public class DataSetLoaderImpl implements DataSetLoader {
         }
     }
 
-    private String formatOracleFileId(int oracleFileId) {
-        return String.format("%03d",oracleFileId);
-    }
 
     @Override
     public void cleanDb() {
@@ -248,19 +231,20 @@ public class DataSetLoaderImpl implements DataSetLoader {
         return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
     }
 
-    private File[] findOracleFiles(){
+    private File[] findOracleFiles() {
         return new File(MethodTracker.class.getClassLoader().getResource("stubs/java").getFile())
                 .listFiles();
 
     }
 
-    private File findOracleFiles(Integer oracleFileId){
-        String formattedOracleFileId = formatOracleFileId(oracleFileId);
+    private File findOracleFiles(Integer oracleFileId) {
+        String formattedOracleFileId = Util.formatOracleFileId(oracleFileId);
         return Arrays.stream(findOracleFiles()).filter(file -> file.getName().startsWith(formattedOracleFileId))
                 .findFirst()
-                .orElseThrow(()-> new RuntimeException("Oracle file not found " + formattedOracleFileId));
+                .orElseThrow(() -> new RuntimeException("Oracle file not found " + formattedOracleFileId));
 
     }
+
     private Set<ChangeTag> toChangeTags(String change) {
         Set<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {

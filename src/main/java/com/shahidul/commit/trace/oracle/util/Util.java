@@ -12,6 +12,10 @@ import java.nio.charset.StandardCharsets;
  * @since 12/20/2023
  */
 public class Util {
+    public static String formatOracleFileId(int oracleFileId) {
+        return String.format("%03d",oracleFileId);
+    }
+
     public static boolean isFileRenamed(String oldFile, String newFile) {
         int oldFileNameStartIndex = Math.max(oldFile.lastIndexOf("/"), 0);
         int newFileNameStartIndex = Math.max(newFile.lastIndexOf("/"), 0);

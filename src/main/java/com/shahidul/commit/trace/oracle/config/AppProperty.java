@@ -26,4 +26,8 @@ public class AppProperty {
     String bucketName;
     @Value("${run-config.execution-limit}")
     Integer executionLimit;
+    @Value("${oracle.file-directory}")
+    String oracleFileDirectory;
+    @Value("${trace.file-directory}")
+    String traceFileDirectory;
 }

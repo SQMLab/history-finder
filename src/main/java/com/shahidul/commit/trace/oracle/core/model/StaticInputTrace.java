@@ -16,6 +16,6 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TraceRecord {
+public class StaticInputTrace {
     Map<String, InputTrace> traceMap = new HashMap<>();
 }

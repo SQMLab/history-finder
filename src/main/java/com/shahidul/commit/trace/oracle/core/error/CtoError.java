@@ -10,7 +10,10 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum CtoError {
-    Commit_Not_Found("1001", "Commit not found");
+    Commit_Not_Found("1001", "Commit not found"),
+    Trace_Not_Found("1002", "Trace not found"),
+    File_Read_Error("1003", "File read error"),
+    ;
     private String code;
     private String msg;
 }
