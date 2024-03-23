@@ -1,0 +1,15 @@
+{
+  "repositoryName" : "junit4",
+  "repositoryUrl" : "https://github.com/junit-team/junit4.git",
+  "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
+  "file" : "src/main/java/org/junit/runners/ParentRunner.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "applyValidators",
+  "startLine" : 154,
+  "endLine" : 160,
+  "expectedCommits" : [ {
+    "commitHash" : "1d97da73fdafce8f5cf9d722f23c5cba41b26b70",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

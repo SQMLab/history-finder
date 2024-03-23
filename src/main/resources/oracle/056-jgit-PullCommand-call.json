@@ -1,0 +1,105 @@
+{
+  "repositoryName" : "jgit",
+  "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
+  "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/api/PullCommand.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "call",
+  "startLine" : 206,
+  "endLine" : 360,
+  "expectedCommits" : [ {
+    "commitHash" : "df638e0cfc628469eee9a91df5b2b65634e274d7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0d447b16604d934675d2dc8e958fa043e945dfc6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5b84e25fa3afe66bbfa7eb953ea0bd332c745ecd",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "5f902f07ccae32b82a36c05e1eca23b21a27da99",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1cda4faed425286fe5230a6b2b8454c376ba79f1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aadbb158e10ccc3194c4e7f2c1b3885b3c40571c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1e1fb9fc596603a44b0fff6d19eeba2b005d659d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "efacad0fc8e98505be6f007230ab2b1cdc1684f3",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "2390531888af6dc9e4fda6cb026271dc068c40ab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "48544e27ae3808807dc1960083d8e42c05e62af3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7424d58255340fa44d9191a7436fbe70d72a457c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1eae309723be301a4f2fc12a3e07e7e7c9f30782",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c310fa0c802f40a774edb58641de3ac5bfad0e2c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fa5231191d530afb24810080e89990913c8e8054",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5854ca091a22346e1c710ca9f875165afb3f2cc8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b61d35e848e637ef85fde4ebe95d60ced171e963",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "4e1454ded6e2fcf6cb789c004756883c3ea5f77e",
+    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+  }, {
+    "commitHash" : "c3fe50bb18ed4e4e5e563172be4076fa5901a18a",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "da901c49688ef72858cd2b6904e0f8e478fa0ec3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "791a9fd691e5ae101650f27f39366ec7b23f3955",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6d293c7b06e219086959e80d495b5febe8ae530d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "770c733687d9f2f71f30822f9691427bf83b7577",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "68459b646e6c8243dc5650cbe08ce1bcdb8a621d",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "724af77c65c27eb24d41989bed3229910dbe063c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b15b9d5df25b375108ca125b31338df637454865",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9fbda2239202ca9d3a20c84d7326f47c667aa920",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "14ca80bc90ed85e3484fa28aa665fa0538096d30",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "013cb8de3824c304645a9c5db87c2e80286872d1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d36c80fd048fc55d7ac31ae62eb67fbac9b12e31",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7668a462829b12e4f6a192c43157152ef63ff305",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "db55d13f5f4b641a9390076ced6b1775bcfcd6f6",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "mockito",
+  "repositoryUrl" : "https://github.com/mockito/mockito.git",
+  "startCommitHash" : "077562ea54f1fa87ff8dd233c3060ddbf0f1ce26",
+  "file" : "src/main/java/org/mockito/AdditionalMatchers.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "geq",
+  "startLine" : 81,
+  "endLine" : 84,
+  "expectedCommits" : [ {
+    "commitHash" : "f7c1b82139cf23a37f9775ee07c6d8ce0952650e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fe7bbabb82ce3d1000c13d39d6355c134e94ac27",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8ddb75ecbf0e1596339a91111324e53821a99101",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45b98cb06698ea2ce1b25d6e5bf9ca5e0b1dc1a5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5f41dde62faa4c3c381d29cb550243fa2378e8d0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "da791d66c21b0cb8037d888e63cc99f74025b905",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "ce623bdadaa7f12e4d29b19d0fee876e42279e00",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

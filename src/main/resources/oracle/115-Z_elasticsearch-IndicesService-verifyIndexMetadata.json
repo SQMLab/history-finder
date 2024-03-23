@@ -1,0 +1,36 @@
+{
+  "repositoryName" : "elasticsearch",
+  "repositoryUrl" : "https://github.com/elastic/elasticsearch.git",
+  "startCommitHash" : "767c69593c67befb843686de8ea51b7bc87728c9",
+  "file" : "server/src/main/java/org/elasticsearch/indices/IndicesService.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "verifyIndexMetadata",
+  "startLine" : 550,
+  "endLine" : 568,
+  "expectedCommits" : [ {
+    "commitHash" : "700d9ecc953fa30df0d12d086f0e9d9322446459",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "99f88f15c5febbca2d13b5b5fda27b844153bf1a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8f873620ee5a22008a97d29ca4fa448790cf8f0d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "63af03a1042a6ae1ed333aaabcd9cfc3a9fc3fec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6418f89feb55970c04474e3cced6ff1031725e39",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "ef0e3db0de6928ddca70d18e929223980f283fe1",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "4fb1c4fe5ad7017d60b2b6aae08f55f407805386",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8127a06b2ec40fd5f31a6915143386dd853abc2b",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

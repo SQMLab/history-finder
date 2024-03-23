@@ -1,0 +1,120 @@
+{
+  "repositoryName" : "jgit",
+  "repositoryUrl" : "https://gerrit.googlesource.com/jgit",
+  "startCommitHash" : "bd1a82502680b5de5bf86f6c4470185fd1602386",
+  "file" : "org.eclipse.jgit/src/org/eclipse/jgit/api/MergeCommand.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "call",
+  "startLine" : 235,
+  "endLine" : 444,
+  "expectedCommits" : [ {
+    "commitHash" : "f6c4a492d06e0dd345679bfba3399dabbf778f41",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "42e69409d796421bb1353279cfae463b19a43fe9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2c29af786763c0c8d74741c86edbeff4e5140e35",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1c43af8b9794abcad7a4ac77c352626063aa1f05",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b13a285098305149b34924bce2679a0cd98d9b2c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "64a404803eaccc88d7d57567c5cd86b88c342bec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4c236ff4bbf664fd177a33f42517b0eef52510c8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1e1fb9fc596603a44b0fff6d19eeba2b005d659d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e73d395061d1bfee365acaa2f79c392175d13bf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "46f3007b52a5d12c5a973957128ac38680b20ab8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "48e36d8cb335382b99ec829d0dfe34be71ed49bb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7dc8a4f089c1ca4762cf6fbf2e77898607a5820a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "545358577376bec8fc140a76ce0f72bf81cc0a94",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3a4ebc0c24b7732a57064299153794084fbfae59",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb6093293022e468c2aea93a11f63b366e0d3891",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "642ff2cd7dd6ae361e4993255ade89a32e20601f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c310fa0c802f40a774edb58641de3ac5bfad0e2c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "318f3d464307e3efd8342852310c17e71a7282fe",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2656ac1b5acb9b73c6b47e2cf8830a0a0b2cc214",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4e1454ded6e2fcf6cb789c004756883c3ea5f77e",
+    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+  }, {
+    "commitHash" : "26b573862912b2faf3824bb18dfeb44a3b700014",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "39ad503fcb0c293e9c6d47d653a0d52456d4760b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4f4e468f6f344ed7c106b86b850d2c9171dd1a0f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c580c56c4def9639b603553b3d4cbc7117a30938",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5dbef3fa51053b37f68b44ed390cab6dc8336dcc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dcf7bd9a8f7acafbd1461dc0414aded2db030983",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "85f69c286b6c3225dcff05aba42910daefb28da0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e43887b69e27672b80e55391e0ee255efe715ab9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6290ca3a638d1ac999da6c11628f904b31972067",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fb1e500adc011dfaad1a6e68b23a9b254a77bf43",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "67263e2056108e471d684c3cef9e719724b51220",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45e79a526c7ffebaf8e4758a6cb6b7af05716707",
+    "changeTags" : [ "EXCEPTION", "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "5fc990130bbd3cf3a0d505c0e12132ec0ecd6b75",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "75c9b2438594dc6ac125ff1bdf97022c7f429b78",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "515deaf7e503738b4c53c3c2dfd6d7acab3bef18",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5b0e73b849d19c9f072c4c6738a5d5adae413112",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "flink",
+  "repositoryUrl" : "https://github.com/apache/flink.git",
+  "startCommitHash" : "9e936a5f8198b0059e9b5fba33163c2bbe3efbdd",
+  "file" : "flink-core/src/main/java/org/apache/flink/api/java/typeutils/runtime/PojoSerializer.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "deserialize",
+  "startLine" : 369,
+  "endLine" : 428,
+  "expectedCommits" : [ {
+    "commitHash" : "ae285f9bd5398fe4d8d86eb3207bbc5beb8a24c8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8aa5e05733655e7b3d1f11ed15f61672d61e5cb5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "21a715867d655bb61df9a9f7eef37e42b99e206a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7407076d3990752eb5fa4072cd036efd2f656cbc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "926f835adb9cb77bcda19e4ed009cc07c89cea74",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "76d4a75e823c31a899f2143fb6be185b90e55532",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

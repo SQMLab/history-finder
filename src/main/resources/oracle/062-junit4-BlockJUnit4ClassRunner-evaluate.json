@@ -1,0 +1,15 @@
+{
+  "repositoryName" : "junit4",
+  "repositoryUrl" : "https://github.com/junit-team/junit4.git",
+  "startCommitHash" : "02c328028b4d32c15bbf0becc9838e54ecbafcbf",
+  "file" : "src/main/java/org/junit/runners/BlockJUnit4ClassRunner.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "evaluate",
+  "startLine" : 99,
+  "endLine" : 101,
+  "expectedCommits" : [ {
+    "commitHash" : "3f736cf514b0421a82383db74188f6c0e3dfef1a",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

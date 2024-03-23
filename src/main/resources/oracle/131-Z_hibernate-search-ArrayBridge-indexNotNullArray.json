@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "hibernate-search",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-search.git",
+  "startCommitHash" : "5b778035965d7588ad1d1ae522c4bafebd3a0e16",
+  "file" : "engine/src/main/java/org/hibernate/search/bridge/builtin/ArrayBridge.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "indexNotNullArray",
+  "startLine" : 46,
+  "endLine" : 51,
+  "expectedCommits" : [ {
+    "commitHash" : "7c1e5321baf4322da71ca747d75c771b9103e412",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "76077dbe4b6ba1036e402f76386545c008a76799",
+    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "354f2cadec6dee7d4dde2250e13f468e2d93cd27",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "02b8eb4f6017e7fb44bee6013d7f8bf1ae23a7b1",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b663d28591ec25f73d6523655ae646c2eaadfdbf",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

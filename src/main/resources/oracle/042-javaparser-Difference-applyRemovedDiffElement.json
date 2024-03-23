@@ -1,0 +1,21 @@
+{
+  "repositoryName" : "javaparser",
+  "repositoryUrl" : "https://github.com/javaparser/javaparser.git",
+  "startCommitHash" : "97555053af3025556efe1a168fd7943dac28a2a6",
+  "file" : "javaparser-core/src/main/java/com/github/javaparser/printer/lexicalpreservation/Difference.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "applyRemovedDiffElement",
+  "startLine" : 339,
+  "endLine" : 393,
+  "expectedCommits" : [ {
+    "commitHash" : "4f9e0c67e6f11738be45155bd5606f18445fcec7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2d3f5e219af9d1ba916f1dc21a6169a41a254632",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "b7bd15d12e107c85e29912960f7b4e48aac4dc38",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

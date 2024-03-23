@@ -1,0 +1,51 @@
+{
+  "repositoryName" : "hibernate-orm",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
+  "startCommitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
+  "file" : "hibernate-core/src/main/java/org/hibernate/cfg/annotations/QueryBinder.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "bindNativeQuery",
+  "startLine" : 142,
+  "endLine" : 210,
+  "expectedCommits" : [ {
+    "commitHash" : "9caca0ce37d5a2763d476c6fa2471addcca710ca",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "3edb72db4844c10aa8490472c4b1af05d75076ab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "129c0f13482b99e2705f0e234b6bc0572a95c271",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "814b51493375bb781713a992353b6babba12dd31",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ad17f89c4c29f0327c843cf5265e156d65743ab1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8c806d361d63764e8523006944dde52aff70532c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a9b1425f3f07021dae556e710b2bdfdc3812661b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "34c2839dccef33a8f3abb4eaf3192c1e1d9e1814",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7419fc298dab9afe82fbdbb8b64854fa37f60817",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f0f82e4f1ba7416ef010d5d71914a2bbde7fc22f",
+    "changeTags" : [ "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "1ca2bc19a5f667e10f9a2c2b10320b9c40921563",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9d7a03a5f7f03bc803d897baa590861154b39f5e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7337743c93574823424ed6c399cfcf6bd75614f8",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

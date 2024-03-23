@@ -1,0 +1,102 @@
+{
+  "repositoryName" : "hibernate-orm",
+  "repositoryUrl" : "https://github.com/hibernate/hibernate-orm.git",
+  "startCommitHash" : "8bd79b29cfa7b2d539a746dc356d60b66e1e596b",
+  "file" : "hibernate-envers/src/main/java/org/hibernate/envers/configuration/internal/RevisionInfoConfiguration.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "configure",
+  "startLine" : 296,
+  "endLine" : 438,
+  "expectedCommits" : [ {
+    "commitHash" : "9e063ffa2577f06d98a9e912bb16d20424df8d6d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "410a785dfe40ae030bec31c4c06a5a7998f1feeb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b70bc0080e8e206f83debf8f456fe323caccc01b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "63a0f03c5ae773f96c92c02fba9d13133d02485b",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "364a47f2c746a5eeb1642102580a9daa8bc27fc9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5cc051e1dfeb5664d8d1eb9a289097d7f9bfb0e2",
+    "changeTags" : [ "FILE_RENAME", "BODY" ]
+  }, {
+    "commitHash" : "6c6df695350f917fe707b4f830e29c8c52c3f5d0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "95ec3457af961c4116015509180dcca04967604f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c4822556c19a6ea2d7be93b505548e834c83d955",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45f3ced6daf96f1a697f350e134512562b48d3fd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "13c9fd4f9d177fb7d022c72d674f1a23b909c443",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "403b15cae8d19f83c35c9490826d24b0bf5c2fa0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1878b238503f3b52a6e7b31f849d7253206c7465",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dd55a99b00c447e53fe97bdbc423f3e6d7d59557",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b36b095c3ce32d2981f5780463bbea8d48105f5a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "53699cecac7477d64ac3dff6c3a24d5658bfc789",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "98342a7e2dd54df9b7fcb8e7b63ebd5441bd2217",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "86c15fd21234381e2cc713d07e9652f01078613d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ac49a906e8566f29767927a0dd8dc6b9328115ab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e21fed8304935dc8a1efeee115a4e720b9d2667b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6c6e6ab193f48ed93d5b76f394e6bef78205921a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "558d9469e018962a2b3159561bcc0996ecfc62fc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8f8e0fbfe25cdfd78ff5a9853c2f0e1701aafa09",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f39550fff19a72faec27632409b50970d4d9d2da",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4603c8a4dd267aab345ec915b932f736d404daa7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc03033e59af53aeb49dbba8dd58bdf1fe3a8578",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a94515206db0eee8867d399bee6a87aa9e8cb074",
+    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "90f70231c682e22693f85977497d2dc429ef29da",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dd35cf7b1461fc883148b148e5c81731d9c08a35",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "78e5d9fd89aa571f8ad5cf5b8a5046b9b74cb09b",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}

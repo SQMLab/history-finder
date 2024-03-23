@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "hadoop",
+  "repositoryUrl" : "https://github.com/apache/hadoop.git",
+  "startCommitHash" : "9c3fc3ef2865164aa5f121793ac914cfeb21a181",
+  "file" : "hadoop-yarn-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/fifo/FifoScheduler.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getAppsInQueue",
+  "startLine" : 941,
+  "endLine" : 953,
+  "expectedCommits" : [ {
+    "commitHash" : "de3b4aac561258ad242a3c5ed1c919428893fd4c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "82f3454f5ac1f1c457e668e2cee12b4dcc800ee1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1393581bceda234c88cafec00dbfc0ef2a402e83",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a45017a5f17ec11814db7e206d1e80aaa4dd8d8f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e1d3670f4c233696dc673c37b578ce46b44a6876",
+    "changeTags" : [ "INTRODUCE" ]
+  } ]
+}
