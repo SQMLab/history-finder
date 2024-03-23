@@ -29,6 +29,7 @@ import static com.shahidul.commit.trace.oracle.core.enums.TracerName.DEFAULT_EXE
  * @since 2/6/2024
  */
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @Slf4j
 public class OracleTest {
     @Autowired
@@ -65,6 +66,7 @@ public class OracleTest {
     TraceDao traceDao;
 
 
+    @Order(0)
     @TestFactory
     public DynamicTest loadData() {
         return DynamicTest.dynamicTest("Load Data", ()-> {
@@ -79,6 +81,7 @@ public class OracleTest {
         });
     }*/
 
+    @Order(1)
     @TestFactory
     Stream<DynamicNode> executeTest() {
 
