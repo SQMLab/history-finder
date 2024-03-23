@@ -24,3 +24,7 @@ run-config:
   from-file-id: ${RUN-CONFIG_FROM_FILE_ID}
   to-file-id: ${RUN-CONFIG_TO_FILE_ID}
   force-compute: ${RUN-CONFIG_FORCE_COMPUTE}
+oracle:
+  file-directory: ${ORACLE_FILE_DIRECTORY}
+trace:
+  file-directory: ${TRACE_FILE_DIRECTORY}
