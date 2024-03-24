@@ -46,7 +46,7 @@ public class TraceDaoImpl implements TraceDao {
         TraceEntity traceEntity = findByOracleName(oracleFileName);
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
         int targetIndex = 0;
-        while (targetIndex < expectedCommits.size() && !commitHash.equalsIgnoreCase(expectedCommits.get(targetIndex).getCommitHash())) {
+        while (targetIndex < expectedCommits.size() && !expectedCommits.get(targetIndex).getCommitHash().startsWith(commitHash)) {
             targetIndex += 1;
         }
         if (targetIndex < expectedCommits.size()) {
