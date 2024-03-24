@@ -75,7 +75,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
 
     private CommitUdt findCommit(List<CommitUdt> commitList, String commitHash) {
         int targetIndex = 0;
-        while (targetIndex < commitList.size() && !commitHash.equalsIgnoreCase(commitList.get(targetIndex).getCommitHash())) {
+        while (targetIndex < commitList.size() && !commitList.get(targetIndex).getCommitHash().startsWith(commitHash)) {
             targetIndex += 1;
         }
         if (targetIndex < commitList.size()) {
