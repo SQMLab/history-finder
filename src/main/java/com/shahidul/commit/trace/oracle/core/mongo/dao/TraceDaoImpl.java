@@ -71,4 +71,10 @@ public class TraceDaoImpl implements TraceDao {
                 .fullMessage(commitUdt.getFullMessage())
                 .build();
     }
+
+    @Override
+    public void delete(TraceEntity traceEntity) {
+        traceRepository.delete(traceEntity);
+
+    }
 }
