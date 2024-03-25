@@ -4,6 +4,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
@@ -21,8 +22,15 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     TraceDao traceDao;
 
     @Override
-    public CommitUdt findCommit(String oracleFileName, String commitHash) {
-        return traceDao.findExpectedCommit(oracleFileName, commitHash);
+    public CommitUdt findCommit(String oracleFileName, String commitHash, TracerName fromTracer) {
+        TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
+        List<CommitUdt> commits = null;
+        if (fromTracer == TracerName.EXPECTED) {
+            commits = traceEntity.getExpectedCommits();
+        }else {
+            commits = traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits();
+        }
+        return findCommit(commits, commitHash);
     }
 
     @Override
