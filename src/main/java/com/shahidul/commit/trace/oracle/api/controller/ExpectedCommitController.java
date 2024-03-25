@@ -20,8 +20,8 @@ public class ExpectedCommitController {
     ExpectedCommitService expectedCommitService;
 
     @GetMapping("/detail")
-    public CommitUdt commitDetail(@RequestParam String oracleFileName, @RequestParam String commitHash) {
-        return expectedCommitService.findCommit(oracleFileName, commitHash);
+    public CommitUdt commitDetail(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam(required = false) TracerName fromTracer) {
+        return expectedCommitService.findCommit(oracleFileName, commitHash, fromTracer == null ? TracerName.EXPECTED : fromTracer);
     }
 
     @GetMapping("/add")
