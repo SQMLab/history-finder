@@ -10,6 +10,7 @@ public interface InfluxDbManager {
     TraceEntity load(TraceEntity traceEntity);
     void deleteCommitSeriesByFileId(Integer fileId);
     void deleteAnalysisSeriesByFileId(Integer fileId);
+    void deleteByFileId(Integer oracleFileId);
     void deleteAll();
 
 }

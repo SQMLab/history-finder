@@ -20,6 +20,9 @@ import java.util.List;
 public class OracleFileGeneratorServiceImpl implements OracleFileGeneratorService {
     TraceDao traceDao;
     StaticTraceDao staticTraceDao;
+
+
+
     @Override
     public InputOracle generateFile(String oracleFileName) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
