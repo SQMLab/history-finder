@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
@@ -22,8 +23,8 @@ public class GitFuncNameTracer extends GitTracer {
     }
 
     @Override
-    public String parseChangeType(String rawChangeType) {
-        return rawChangeType;
+    public ChangeTag parseChangeType(String rawChangeType) {
+        return null;
     }
 
     @Override

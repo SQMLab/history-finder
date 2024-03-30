@@ -115,6 +115,6 @@
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
     "commitHash" : "fc5ff8d87c124e43601f64da76668e516758a74a",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

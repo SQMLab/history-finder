@@ -70,6 +70,6 @@
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
     "commitHash" : "6627f7ad8fb08d6c23b83d6c9f0a6830e9e7085a",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

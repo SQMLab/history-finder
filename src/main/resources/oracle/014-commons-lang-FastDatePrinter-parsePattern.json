@@ -64,6 +64,6 @@
     "changeTags" : [ "BODY", "MODIFIER", "PARAMETER", "SIGNATURE", "RENAME" ]
   }, {
     "commitHash" : "a99f7965b34b8dd0532c8d6f5e592d990ca220fc",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

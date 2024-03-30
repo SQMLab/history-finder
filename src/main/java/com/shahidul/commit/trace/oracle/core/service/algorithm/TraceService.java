@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 /**
@@ -8,6 +9,6 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
  */
 public interface TraceService {
     String getTracerName();
-    String parseChangeType(String rawChangeType);
+    ChangeTag parseChangeType(String rawChangeType);
     TraceEntity trace(TraceEntity traceEntity);
 }

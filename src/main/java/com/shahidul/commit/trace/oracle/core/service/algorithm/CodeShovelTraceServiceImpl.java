@@ -40,9 +40,9 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     }
 
     @Override
-    public String parseChangeType(String rawChangeType) {
+    public ChangeTag parseChangeType(String rawChangeType) {
         //TODO : convert
-        return rawChangeType;
+        return null;
     }
 
     @Override
@@ -116,7 +116,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     private Set<ChangeTag> toChangeTags(Ychange change){
         Set<ChangeTag> changeTags = new TreeSet<>();
         if (change instanceof Yintroduced){
-            changeTags.add(ChangeTag.INTRODUCE);
+            changeTags.add(ChangeTag.INTRODUCTION);
         }
         if (change instanceof Ysignaturechange){
             changeTags.add(ChangeTag.SIGNATURE);

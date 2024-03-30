@@ -19,6 +19,6 @@
     "changeTags" : [ "MOVE", "PARAMETER", "RETURN_TYPE", "SIGNATURE", "RENAME" ]
   }, {
     "commitHash" : "117bc68af3987004ade7e56f0aebace72cd1d0ef",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
@@ -26,7 +27,7 @@ public class IntelliJTraceService implements TraceService {
     }
 
     @Override
-    public String parseChangeType(String rawChangeType) {
+    public ChangeTag parseChangeType(String rawChangeType) {
         return null;
     }
 

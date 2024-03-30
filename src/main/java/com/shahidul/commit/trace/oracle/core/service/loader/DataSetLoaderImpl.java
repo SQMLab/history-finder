@@ -241,7 +241,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
         Set<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
-                changeTags.add(ChangeTag.INTRODUCE);
+                changeTags.add(ChangeTag.INTRODUCTION);
             }
             if (change.contains("Ysignaturechange")) {
                 changeTags.add(ChangeTag.SIGNATURE);
