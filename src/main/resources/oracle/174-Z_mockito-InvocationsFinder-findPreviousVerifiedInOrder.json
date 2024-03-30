@@ -37,6 +37,6 @@
     "changeTags" : [ "PARAMETER", "SIGNATURE", "RENAME" ]
   }, {
     "commitHash" : "1f1d4d0e734713c3f09313465ed1800b8fb50069",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

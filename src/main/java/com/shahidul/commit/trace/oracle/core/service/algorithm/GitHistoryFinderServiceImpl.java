@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
@@ -15,7 +16,10 @@ import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author Shahidul Islam
@@ -32,9 +36,9 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
     @Override
-    public String parseChangeType(String rawChangeType) {
-        //TODO : convert
-        return rawChangeType;
+    public ChangeTag parseChangeType(String rawChangeType) {
+
+        return ChangeTag.fromTag(rawChangeType);
     }
 
     @Override
@@ -72,10 +76,14 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
+        Set<ChangeTag> changeTags = commitEntry.getChangeTags()
+                .stream()
+                .map(tag-> parseChangeType(tag))
+                .collect(Collectors.toSet());
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(commitEntry.getCommitHash())
-                .changeTags(null);
+                .changeTags(changeTags);
         if (parentEntry != null) {
             commitBuilder.parentCommitHash(parentEntry.getCommitHash())
                     .diff(Util.getDiff(parentEntry.getMethodCode(), commitEntry.getMethodCode()));

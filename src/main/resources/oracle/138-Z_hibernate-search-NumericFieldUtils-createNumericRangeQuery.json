@@ -55,6 +55,6 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "dd12cc91851ebe085215a11a33316918259a2b14",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

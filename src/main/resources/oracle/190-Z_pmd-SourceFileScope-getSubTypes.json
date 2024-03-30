@@ -19,6 +19,6 @@
     "changeTags" : [ "BODY", "RETURN_TYPE", "SIGNATURE" ]
   }, {
     "commitHash" : "a8d7b594ab8ee3afbcf3390be2aa5c8dee1f06c7",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

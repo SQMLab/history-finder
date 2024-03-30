@@ -40,6 +40,6 @@
     "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE", "SIGNATURE" ]
   }, {
     "commitHash" : "dc0d81b8aac03af962e895381406f312565fd358",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

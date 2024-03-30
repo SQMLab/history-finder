@@ -42,8 +42,8 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     }
 
     @Override
-    public String parseChangeType(String rawChangeType) {
-        return rawChangeType;
+    public ChangeTag parseChangeType(String rawChangeType) {
+        return null;
     }
 
     @Override
@@ -119,7 +119,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     private Set<ChangeTag> toChangeTagSet(Change.Type changeType) {
         Set<ChangeTag> changeTagSet = new TreeSet<>();
         if (changeType == Change.Type.INTRODUCED) {
-            changeTagSet.add(ChangeTag.INTRODUCE);
+            changeTagSet.add(ChangeTag.INTRODUCTION);
         }
         if (changeType == Change.Type.REMOVED) {
             changeTagSet.add(ChangeTag.REMOVE);

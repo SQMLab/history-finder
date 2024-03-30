@@ -94,6 +94,6 @@
     "changeTags" : [ "EXCEPTION", "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
     "commitHash" : "ea63463c2ff8a67f63e541036f0d5998b5bb1f3e",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

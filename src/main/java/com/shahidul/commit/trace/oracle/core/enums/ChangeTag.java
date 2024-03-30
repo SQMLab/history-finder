@@ -10,7 +10,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum ChangeTag {
-    INTRODUCE("introduce"),
+    INTRODUCTION("introduction"),
     PACKAGE("package"),
     MOVE("move"),
     BODY("body"),
@@ -18,13 +18,15 @@ public enum ChangeTag {
     REMOVE("remove"),
     DOCUMENTATION("documentation"),
     FILE_RENAME("file_rename"),
+    FILE_COPY("file_copy"),
     RENAME("rename"),
     MODIFIER("modifier"),
     ACCESS_MODIFIER("access_modifier"),
     RETURN_TYPE("return_type"),
     EXCEPTION("exception"),
     PARAMETER("parameter"),
-    ANNOTATION("annotation");
+    ANNOTATION("annotation"),
+    FORMAT("format");
     String code;
 
     public static ChangeTag fromTag(String tag) {

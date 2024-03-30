@@ -52,6 +52,6 @@
     "changeTags" : [ "RETURN_TYPE", "SIGNATURE" ]
   }, {
     "commitHash" : "4081076e513e84bb2376f889d4108e64e9a18653",
-    "changeTags" : [ "INTRODUCE" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
