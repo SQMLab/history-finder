@@ -77,12 +77,12 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
 
     @Override
     public void deleteCommitSeriesByFileId(Integer fileId) {
-        analysisSeriesRepository.deleteByOracleId(fileId);
+        commitSeriesRepository.deleteByOracleId(fileId);
     }
 
     @Override
     public void deleteAnalysisSeriesByFileId(Integer fileId) {
-        commitSeriesRepository.deleteByOracleId(fileId);
+        analysisSeriesRepository.deleteByOracleId(fileId);
 
     }
 
