@@ -21,7 +21,7 @@ import java.util.Set;
 @Measurement(name = "commit")
 @Data
 public class CommitSeries {
-    @Column(name = "oracle_field_id", tag = true)
+    @Column(name = "oracle_file_id", tag = true)
     Integer oracleFileId;
     @Column(name = "oracle_file_name", tag = true)
     String oracleFileName;
