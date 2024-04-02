@@ -75,14 +75,20 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
         LinkedHashSet<ChangeTag> changeTags = commitEntry.getChangeTags()
                 .stream()
-                .map(tag-> parseChangeType(tag))
+                .map(tag -> parseChangeType(tag))
                 .collect(Collectors.toCollection(LinkedHashSet::new));
+        String newFile = commitEntry.getMethodContainerFile();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(commitEntry.getCommitHash())
-                .changeTags(changeTags);
+                .changeTags(changeTags)
+                .newFile(newFile);
         if (parentEntry != null) {
-            commitBuilder.parentCommitHash(parentEntry.getCommitHash())
+            String oldFile = parentEntry.getMethodContainerFile();
+            commitBuilder.oldFile(oldFile)
+                    .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
+                    .parentCommitHash(parentEntry.getCommitHash())
                     .diff(Util.getDiff(parentEntry.getMethodCode(), commitEntry.getMethodCode()));
         }
 
