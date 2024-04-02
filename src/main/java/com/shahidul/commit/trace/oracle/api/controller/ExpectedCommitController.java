@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.api.controller;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.service.oracle.ExpectedCommitService;
@@ -8,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -20,13 +24,18 @@ public class ExpectedCommitController {
     ExpectedCommitService expectedCommitService;
 
     @GetMapping("/detail")
-    public CommitUdt commitDetail(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam(required = false) TracerName fromTracer) {
-        return expectedCommitService.findCommit(oracleFileName, commitHash, fromTracer == null ? TracerName.EXPECTED : fromTracer);
+    public CommitUdt commitDetail(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam(required = false) String fromTracer) {
+        return expectedCommitService.findCommit(oracleFileName, commitHash, fromTracer == null ? TracerName.EXPECTED : TracerName.fromCode(fromTracer));
     }
 
     @GetMapping("/add")
-    public CommitUdt addCommit(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam TracerName fromTracer) {
-        return expectedCommitService.addCommit(oracleFileName, commitHash, fromTracer);
+    public CommitUdt addCommit(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam String fromTracer) {
+        return expectedCommitService.addCommit(oracleFileName, commitHash, TracerName.fromCode(fromTracer));
+    }
+
+    @GetMapping("/tag/update")
+    public CommitUdt updateTags(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam String fromTracer, @RequestParam LinkedHashSet<ChangeTag> changeTags) {
+        return expectedCommitService.updateTags(oracleFileName, commitHash, TracerName.fromCode(fromTracer), changeTags);
     }
 
     @GetMapping("/delete")

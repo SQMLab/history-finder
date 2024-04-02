@@ -1,5 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.enums;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -22,15 +24,17 @@ public enum TracerName {
     EXPECTED("expected"),
     AGGREGATED("aggregated");
     String code;
-    public static TracerName fromCode(String code){
-        for (TracerName tracerName : values()){
-            if (tracerName.getCode().equals(code)){
+
+    public static TracerName fromCode(String code) {
+        for (TracerName tracerName : values()) {
+            if (tracerName.getCode().equals(code)) {
                 return tracerName;
             }
         }
         throw new RuntimeException("Illegal argument exception : " + code);
     }
-    public static final List<TracerName> DEFAULT_EXECUTION_SEQUENCE = Arrays.asList(HISTORY_FINDER,CODE_SHOVEL, CODE_TRACKER,INTELLI_J, GIT_LINE_RANGE, GIT_FUNC_NAME, AGGREGATED);
+
+    public static final List<TracerName> DEFAULT_EXECUTION_SEQUENCE = Arrays.asList(HISTORY_FINDER, CODE_SHOVEL, CODE_TRACKER, INTELLI_J, GIT_LINE_RANGE, GIT_FUNC_NAME, AGGREGATED);
 
     public static final List<TracerName> AGGREGATION_PRIORITY = Arrays.asList(CODE_SHOVEL, CODE_TRACKER, INTELLI_J, GIT_LINE_RANGE, GIT_FUNC_NAME);
 }

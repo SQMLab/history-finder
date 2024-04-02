@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -62,7 +63,7 @@ public class TraceDaoImpl implements TraceDao {
                 .startLine(commitUdt.getStartLine())
                 .endLine(commitUdt.getEndLine())
                 .codeFragment(commitUdt.getCodeFragment())
-                .changeTags(new TreeSet<>())
+                .changeTags(new LinkedHashSet<>())
                 .newFile(commitUdt.getNewFile())
                 .newElement(commitUdt.getNewElement())
                 .author(commitUdt.getAuthor())
@@ -76,5 +77,10 @@ public class TraceDaoImpl implements TraceDao {
     public void delete(TraceEntity traceEntity) {
         traceRepository.delete(traceEntity);
 
+    }
+
+    @Override
+    public TraceEntity save(TraceEntity traceEntity) {
+        return traceRepository.save(traceEntity);
     }
 }

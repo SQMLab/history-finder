@@ -105,7 +105,6 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .endLine(newLocation.getEndLine())
                 .codeFragment(newCodeFragment)
                 .changeTags(toChangeTagSet(historyInfo.getChangeType()))
-                .changeTags(historyInfo.getChangeList().stream().map(Change::getType).map(this::toChangeTagSet).flatMap(Collection::stream).collect(Collectors.toSet()))
                 .oldFile(oldFile)
                 .newFile(newFile)
                 .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
@@ -116,8 +115,8 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .build();
     }
 
-    private Set<ChangeTag> toChangeTagSet(Change.Type changeType) {
-        Set<ChangeTag> changeTagSet = new TreeSet<>();
+    private LinkedHashSet<ChangeTag> toChangeTagSet(Change.Type changeType) {
+        LinkedHashSet<ChangeTag> changeTagSet = new LinkedHashSet<>();
         if (changeType == Change.Type.INTRODUCED) {
             changeTagSet.add(ChangeTag.INTRODUCTION);
         }

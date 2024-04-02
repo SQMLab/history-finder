@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Transient;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -26,7 +27,7 @@ public class CommitUdt implements Cloneable{
     Integer startLine;
     Integer endLine;
     String codeFragment;
-    Set<ChangeTag> changeTags;
+    LinkedHashSet<ChangeTag> changeTags;
     String oldFile;
     String newFile;
     Integer fileRenamed;

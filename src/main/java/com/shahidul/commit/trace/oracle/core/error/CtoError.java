@@ -14,6 +14,7 @@ public enum CtoError {
     Trace_Not_Found("1002", "Trace not found"),
     File_Read_Error("1003", "File read error"),
     Oracle_File_Write_Error("1004", "Oracle file write error"),
+    Commit_Already_exist("1005", "Commit already exist"),
     ;
     private String code;
     private String msg;

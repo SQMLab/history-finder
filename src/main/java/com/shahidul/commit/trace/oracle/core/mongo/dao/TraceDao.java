@@ -17,4 +17,5 @@ public interface TraceDao {
     CommitUdt cloneStaticFields(CommitUdt commitUdt);
 
     void delete(TraceEntity traceEntity);
+    TraceEntity save(TraceEntity traceEntity);
 }

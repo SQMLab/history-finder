@@ -237,8 +237,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     }
 
-    private Set<ChangeTag> toChangeTags(String change) {
-        Set<ChangeTag> changeTags = new TreeSet<>();
+    private LinkedHashSet<ChangeTag> toChangeTags(String change) {
+        LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
                 changeTags.add(ChangeTag.INTRODUCTION);
