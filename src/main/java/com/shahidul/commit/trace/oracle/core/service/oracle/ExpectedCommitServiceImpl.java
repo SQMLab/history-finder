@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -30,31 +29,15 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     }
 
 
-
     @Override
     public CommitUdt deleteCommit(String oracleFileName, String commitHash) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
-        int targetIndex = 0;
 
         CommitUdt commitUdt = findCommit(expectedCommits, commitHash);
-        CommitUdt previousCommit = targetIndex - 1 >= 0 ? expectedCommits.get(targetIndex - 1) : null;
-        CommitUdt nextCommit = targetIndex + 1 < expectedCommits.size() ? expectedCommits.get(targetIndex + 1) : null;
-        if (nextCommit != null) {
-            if (previousCommit != null) {
-                nextCommit.setParentCommitHash(previousCommit.getCommitHash());
-                nextCommit.setOldFile(previousCommit.getNewFile());
-                nextCommit.setOldElement(previousCommit.getNewElement());
-                //TODO : nextCommit.setFileRenamed();
-                //TODO : nextCommit.setDiff();
-                //TODO : nextCommit.setFileMoved();
-            } else {
-                //TODO : handle as introduced commit
-            }
-        }
-
-        return expectedCommits.get(targetIndex);
-
+        expectedCommits.remove(commitUdt);
+        traceDao.save(traceEntity);
+        return commitUdt;
     }
 
     @Override
@@ -63,7 +46,8 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
         try {
             findCommit(traceEntity.getExpectedCommits(), commitHash);
             throw new CtoException(CtoError.Commit_Already_exist);
-        }catch (CtoException notFound){}
+        } catch (CtoException notFound) {
+        }
         CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
         commit.setTracerName(TracerName.EXPECTED.getCode());
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
@@ -104,7 +88,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
 
     private int findInsertionIndex(List<CommitUdt> commitList, CommitUdt targetCommit) {
         int targetIndex = 0;
-        while (targetIndex < commitList.size() && targetCommit.getCommittedAt().after(commitList.get(targetIndex).getCommittedAt())) {
+        while (targetIndex < commitList.size() && targetCommit.getCommittedAt().before(commitList.get(targetIndex).getCommittedAt())) {
             targetIndex += 1;
         }
         return targetIndex;
@@ -114,7 +98,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
         List<CommitUdt> commits = null;
         if (fromTracer == TracerName.EXPECTED) {
             commits = traceEntity.getExpectedCommits();
-        }else {
+        } else {
             commits = traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits();
         }
         return findCommit(commits, commitHash);
