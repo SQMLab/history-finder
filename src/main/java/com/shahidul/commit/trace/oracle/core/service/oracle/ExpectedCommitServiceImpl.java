@@ -1,16 +1,18 @@
 package com.shahidul.commit.trace.oracle.core.service.oracle;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -24,14 +26,10 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     @Override
     public CommitUdt findCommit(String oracleFileName, String commitHash, TracerName fromTracer) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
-        List<CommitUdt> commits = null;
-        if (fromTracer == TracerName.EXPECTED) {
-            commits = traceEntity.getExpectedCommits();
-        }else {
-            commits = traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits();
-        }
-        return findCommit(commits, commitHash);
+        return findTargetCommit(commitHash, fromTracer, traceEntity);
     }
+
+
 
     @Override
     public CommitUdt deleteCommit(String oracleFileName, String commitHash) {
@@ -62,23 +60,36 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     @Override
     public CommitUdt addCommit(String oracleFileName, String commitHash, TracerName fromTracer) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
+        try {
+            findCommit(traceEntity.getExpectedCommits(), commitHash);
+            throw new CtoException(CtoError.Commit_Already_exist);
+        }catch (CtoException notFound){}
         CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
         commit.setTracerName(TracerName.EXPECTED.getCode());
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
         int targetIndex = findInsertionIndex(expectedCommits, commit);
-        CommitUdt previousCommit = targetIndex - 1 >= 0 ? expectedCommits.get(targetIndex - 1) : null;
+    /*    CommitUdt previousCommit = targetIndex - 1 >= 0 ? expectedCommits.get(targetIndex - 1) : null;
         CommitUdt nextCommit = targetIndex < expectedCommits.size() ? expectedCommits.get(targetIndex) : null;
 
-        if (previousCommit != null) {
+      if (previousCommit != null) {
             commit.setParentCommitHash(previousCommit.getCommitHash());
         }
         if (nextCommit != null) {
             nextCommit.setParentCommitHash(commit.getCommitHash());
-        }
-        //TODO : Update previous, commit, next commit properties
+        }*/
 
-
+        expectedCommits.add(targetIndex, commit);
+        traceDao.save(traceEntity);
         return commit;
+    }
+
+    @Override
+    public CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, LinkedHashSet<ChangeTag> changeTagSet) {
+        TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
+        CommitUdt targetCommit = findTargetCommit(commitHash, fromTracer, traceEntity);
+        targetCommit.setChangeTags(changeTagSet);
+        traceDao.save(traceEntity);
+        return targetCommit;
     }
 
     private CommitUdt findCommit(List<CommitUdt> commitList, String commitHash) {
@@ -97,5 +108,15 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
             targetIndex += 1;
         }
         return targetIndex;
+    }
+
+    private CommitUdt findTargetCommit(String commitHash, TracerName fromTracer, TraceEntity traceEntity) {
+        List<CommitUdt> commits = null;
+        if (fromTracer == TracerName.EXPECTED) {
+            commits = traceEntity.getExpectedCommits();
+        }else {
+            commits = traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits();
+        }
+        return findCommit(commits, commitHash);
     }
 }

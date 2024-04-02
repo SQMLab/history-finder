@@ -15,10 +15,7 @@ import rnd.git.history.finder.dto.HistoryFinderOutput;
 import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -76,10 +73,10 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
-        Set<ChangeTag> changeTags = commitEntry.getChangeTags()
+        LinkedHashSet<ChangeTag> changeTags = commitEntry.getChangeTags()
                 .stream()
                 .map(tag-> parseChangeType(tag))
-                .collect(Collectors.toSet());
+                .collect(Collectors.toCollection(LinkedHashSet::new));
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(commitEntry.getCommitHash())

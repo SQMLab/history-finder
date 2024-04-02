@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -19,5 +20,5 @@ import java.util.Set;
 @Data
 public class InputCommit {
     String commitHash;
-    Set<ChangeTag> changeTags;
+    LinkedHashSet<ChangeTag> changeTags;
 }
