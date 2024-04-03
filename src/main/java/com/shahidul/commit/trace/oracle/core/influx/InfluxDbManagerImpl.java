@@ -116,6 +116,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .changeTagSet(commitUdt.getChangeTags())
                 .diffUrl(commitUdt.getDiffUrl())
                 .diff(commitUdt.getDiff())
+                .docDiff(commitUdt.getDocDiff())
                 .diffDetail(commitUdt.getDiffDetail())
                 .translatedAt(timeMap.get(commitUdt.getCommitHash()))
                 .build();

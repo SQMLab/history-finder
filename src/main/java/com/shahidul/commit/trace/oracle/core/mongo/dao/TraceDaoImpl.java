@@ -63,7 +63,7 @@ public class TraceDaoImpl implements TraceDao {
                 .startLine(commitUdt.getStartLine())
                 .endLine(commitUdt.getEndLine())
                 .codeFragment(commitUdt.getCodeFragment())
-                .changeTags(new LinkedHashSet<>())
+                .changeTags(commitUdt.getChangeTags())
                 .newFile(commitUdt.getNewFile())
                 .newElement(commitUdt.getNewElement())
                 .author(commitUdt.getAuthor())
