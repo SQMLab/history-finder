@@ -44,10 +44,11 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     public CommitUdt addCommit(String oracleFileName, String commitHash, TracerName fromTracer) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         try {
-            findCommit(traceEntity.getExpectedCommits(), commitHash);
+            CommitUdt commitInExpectedList = findCommit(traceEntity.getExpectedCommits(), commitHash);
         } catch (CtoException notFound) {
             if (CtoError.Commit_Not_Found.getCode().equals(notFound.getCode())){
-                CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
+                CommitUdt fromCommit = findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash);
+                CommitUdt commit = traceDao.cloneStaticFields(fromCommit);
                 commit.setTracerName(TracerName.EXPECTED.getCode());
                 List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
                 int targetIndex = findInsertionIndex(expectedCommits, commit);
