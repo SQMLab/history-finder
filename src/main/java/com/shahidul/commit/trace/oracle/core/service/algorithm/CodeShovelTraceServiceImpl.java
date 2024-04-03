@@ -12,9 +12,10 @@ import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;
@@ -23,7 +24,8 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.Map;
 
 /**
  * @author Shahidul Islam
@@ -78,34 +80,38 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         Ychange change = commitEntry.getValue();
         com.google.gson.JsonObject json = change.toJsonObject();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
-        if (json.has("commitNameOld")){
+        if (json.has("commitNameOld")) {
             commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
         }
         commitBuilder.commitHash(commitEntry.getKey());
-        if (json.has("commitDate")){
+        if (json.has("commitDate")) {
             try {
                 commitBuilder.committedAt(new SimpleDateFormat().parse(json.get("commitDate").getAsString()));
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
         }
-        if (json.has("type")){
+        if (json.has("type")) {
             commitBuilder.changeTags(toChangeTags(change));
         }
         //TODO : source & destination file if (json.has())
 
-        if (json.has("diff")){
+        if (json.has("diff")) {
             commitBuilder.diff(json.get("diff").getAsString());
         }
 
-        if (change instanceof Ycomparefunctionchange){
+        if (change instanceof Ycomparefunctionchange) {
             Yfunction oldFunction = ((Ycomparefunctionchange) change).getOldFunction();
             Yfunction newFunction = ((Ycomparefunctionchange) change).getNewFunction();
-            commitBuilder.startLine(newFunction.getNameLineNumber());
-            commitBuilder.endLine(newFunction.getEndLineNumber());
-            commitBuilder.oldFile(oldFunction.getSourceFilePath());
-            commitBuilder.newFile(newFunction.getSourceFilePath());
-            commitBuilder.newElement(newFunction.getBody());
+            String oldFile = oldFunction.getSourceFilePath();
+            String newFile = newFunction.getSourceFilePath();
+            commitBuilder.startLine(newFunction.getNameLineNumber())
+                    .endLine(newFunction.getEndLineNumber())
+                    .oldFile(oldFile)
+                    .newFile(newFile)
+                    .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
+                    .newElement(newFunction.getBody());
         }
 
         return commitBuilder
@@ -113,38 +119,38 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private LinkedHashSet<ChangeTag> toChangeTags(Ychange change){
+    private LinkedHashSet<ChangeTag> toChangeTags(Ychange change) {
         LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
-        if (change instanceof Yintroduced){
+        if (change instanceof Yintroduced) {
             changeTags.add(ChangeTag.INTRODUCTION);
         }
-        if (change instanceof Ysignaturechange){
+        if (change instanceof Ysignaturechange) {
             changeTags.add(ChangeTag.SIGNATURE);
         }
-        if (change instanceof Yrename){
+        if (change instanceof Yrename) {
             changeTags.add(ChangeTag.RENAME);
         }
-        if (change instanceof Yreturntypechange){
+        if (change instanceof Yreturntypechange) {
             changeTags.add(ChangeTag.RETURN_TYPE);
         }
-        if (change instanceof Yparameterchange){
+        if (change instanceof Yparameterchange) {
             changeTags.add(ChangeTag.PARAMETER);
         }
-        if (change instanceof Ymodifierchange){
+        if (change instanceof Ymodifierchange) {
             changeTags.add(ChangeTag.MODIFIER);
         }
-        if (change instanceof Yexceptionschange){
+        if (change instanceof Yexceptionschange) {
             changeTags.add(ChangeTag.EXCEPTION);
         }
 
-        if (change instanceof Ybodychange){
+        if (change instanceof Ybodychange) {
             changeTags.add(ChangeTag.BODY);
         }
 
-        if (change instanceof Ymovefromfile){
+        if (change instanceof Ymovefromfile) {
             changeTags.add(ChangeTag.MOVE);
         }
-        if (change instanceof Yfilerename){
+        if (change instanceof Yfilerename) {
             changeTags.add(ChangeTag.FILE_RENAME);
         }
         return changeTags;

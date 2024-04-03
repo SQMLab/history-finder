@@ -12,6 +12,9 @@
     "commitHash" : "ce21086e087661553f3a774c38362327ee88996a",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "2864c10cd45d23b91717299954aaaf41d36a6cb0",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "f65b17cbc30795247fef3077cce16a8bb53e9ffc",
     "changeTags" : [ "BODY" ]
   }, {
@@ -26,6 +29,9 @@
   }, {
     "commitHash" : "081c654df8d801f576506265681654a730cfc375",
     "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+  }, {
+    "commitHash" : "0f58857d73933c7b6b7e62f0c7c16ad7af51556f",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "97f0829897b9000236489295f89d57a77d8006b4",
     "changeTags" : [ "BODY" ]
@@ -57,8 +63,17 @@
     "commitHash" : "59222296258fecc02db44eeae1cb65b44b68c267",
     "changeTags" : [ "MOVE", "BODY", "MODIFIER", "SIGNATURE" ]
   }, {
+    "commitHash" : "672b27dd5551de63a1fb08d8ea80376d70f2aa60",
+    "changeTags" : [ "PACKAGE", "SIGNATURE" ]
+  }, {
+    "commitHash" : "ffb17cde0f6351bdf2f2e8cf655fa7f7a3cae827",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
     "commitHash" : "7b849d58d5a6da2a1384091e3fc7ebb07ba1d957",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f6c9d83def3c381d7485186b36e8c1d5e17a13ca",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
   }, {
     "commitHash" : "8d6fa332a9c8b0c350dfcb1d923d70bc5f3d921b",
     "changeTags" : [ "MOVE" ]

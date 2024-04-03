@@ -45,6 +45,11 @@ public class Util {
     }
 
     public static String getDiff(String oldText, String newText) {
+        if (oldText == null){
+            return newText;
+        }else if (newText ==  null){
+            return oldText;
+        }
         try {
             RawText sourceOld = new RawText(oldText.getBytes());
             RawText sourceNew = new RawText(newText.getBytes());
