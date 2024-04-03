@@ -45,26 +45,18 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         try {
             findCommit(traceEntity.getExpectedCommits(), commitHash);
-            throw new CtoException(CtoError.Commit_Already_exist);
         } catch (CtoException notFound) {
+            if (CtoError.Commit_Not_Found.getCode().equals(notFound.getCode())){
+                CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
+                commit.setTracerName(TracerName.EXPECTED.getCode());
+                List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
+                int targetIndex = findInsertionIndex(expectedCommits, commit);
+                expectedCommits.add(targetIndex, commit);
+                traceDao.save(traceEntity);
+                return commit;
+            }
         }
-        CommitUdt commit = traceDao.cloneStaticFields(findCommit(traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits(), commitHash));
-        commit.setTracerName(TracerName.EXPECTED.getCode());
-        List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
-        int targetIndex = findInsertionIndex(expectedCommits, commit);
-    /*    CommitUdt previousCommit = targetIndex - 1 >= 0 ? expectedCommits.get(targetIndex - 1) : null;
-        CommitUdt nextCommit = targetIndex < expectedCommits.size() ? expectedCommits.get(targetIndex) : null;
-
-      if (previousCommit != null) {
-            commit.setParentCommitHash(previousCommit.getCommitHash());
-        }
-        if (nextCommit != null) {
-            nextCommit.setParentCommitHash(commit.getCommitHash());
-        }*/
-
-        expectedCommits.add(targetIndex, commit);
-        traceDao.save(traceEntity);
-        return commit;
+        throw new CtoException(CtoError.Commit_Already_exist);
     }
 
     @Override
