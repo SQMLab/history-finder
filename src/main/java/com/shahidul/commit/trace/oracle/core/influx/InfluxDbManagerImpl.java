@@ -9,6 +9,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -51,7 +52,8 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
         List<CommitUdt> allCommitList = new ArrayList<>(commitUdtList);
         allCommitList.addAll(traceEntity.getExpectedCommits());
         Map<String, Instant> timeMap = determineTimeAlignment(allCommitList);
-        commitSeriesRepository.saveAll(allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt, timeMap)).toList());
+        List<CommitSeries> updatedCommitSeries = allCommitList.stream().map(commitUdt -> toCommitSeries(traceEntity, commitUdt, timeMap)).toList();
+        commitSeriesRepository.saveAll(updatedCommitSeries);
 
 
         Stream<AnalysisSeries> analysisSeriesStream = traceEntity.getAnalysis()
@@ -117,6 +119,8 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .diffUrl(commitUdt.getDiffUrl())
                 .diff(commitUdt.getDiff())
                 .docDiff(commitUdt.getDocDiff())
+      /*          .diff(Util.truncate(commitUdt.getDiff(), 100))
+                .docDiff(Util.truncate(commitUdt.getDocDiff(), 100))*/
                 .diffDetail(commitUdt.getDiffDetail())
                 .translatedAt(timeMap.get(commitUdt.getCommitHash()))
                 .build();

@@ -53,7 +53,7 @@ public class CommitSeries {
     String diffUrl;
     @Column(name = "diff")
     String diff;
-    @Column(name = "diff")
+    @Column(name = "doc_diff")
     String docDiff;
     @Column(name = "diff_detail")
     String diffDetail;

@@ -66,4 +66,12 @@ public class Util {
         }
 
     }
+
+    public static String truncate(String text, int limit){
+        if (text == null || text.length() <= limit){
+            return text;
+        }else {
+            return text.substring(limit);
+        }
+    }
 }
