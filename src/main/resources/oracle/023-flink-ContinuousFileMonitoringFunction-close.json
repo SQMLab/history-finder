@@ -31,6 +31,6 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "58865ff378720149134a93c650f2765e25bd1fb3",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
