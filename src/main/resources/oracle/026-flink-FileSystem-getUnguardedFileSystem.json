@@ -18,8 +18,11 @@
     "commitHash" : "3b786844dd9c0ce176eac98c8a05ebe50cb1ebe7",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "19ef82cf358da54bf204e678bf203f25147b11f9",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
     "commitHash" : "ba8ed263695d16eacb4bdfdf195dd22c83bb53ed",
-    "changeTags" : [ "RENAME" ]
+    "changeTags" : [ "SIGNATURE", "RENAME", "FORMAT" ]
   }, {
     "commitHash" : "a3d1a17406749e41185a77a64c23fc1cb3eabc76",
     "changeTags" : [ "BODY" ]
@@ -29,6 +32,9 @@
   }, {
     "commitHash" : "1c8d866a83065e3d1bc9707dab81117f24c9f678",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "12d4802c2e165ed951b77efbe82bee9c72d4c873",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "2af658673f877a7e0fd73fdd2907f88824d793a5",
     "changeTags" : [ "BODY" ]
@@ -49,6 +55,36 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8563d511da8ab8ac0e1362775f11aef7b67375be",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "PACKAGE" ]
+  }, {
+    "commitHash" : "24eb47ac86299920aa137d5b6394a248ff58d19e",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "d784bf9467bbaf8ffb37621c13fa30dfbb98e4d8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0038c9d0773e90676b1ee2a8a94dcf764f023e22",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "3a6344356a185be43f9be4b33702f97827f9ff96",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fc6b5168684ca298d8b025c839d9a4e48e470790",
+    "changeTags" : [ "PACKAGE" ]
+  }, {
+    "commitHash" : "33cb2ca9898809d2fc90765996ea56bbea458e59",
+    "changeTags" : [ "PACKAGE" ]
+  }, {
+    "commitHash" : "88d7305a5267aac598949519275123208195daf7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d0c21f4c470812d699ec141210ad5119b3450de3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b27a112add2f4c221f9bfd8e4e953a750e8d64b3",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "75e67a701cbabe5577967037c0e865d1c2e9a25b",
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
