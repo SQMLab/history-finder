@@ -84,6 +84,9 @@
     "commitHash" : "7ccbf48838b7cfe42759c67790636d442ea5daa3",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
+    "commitHash" : "2d45a13249943cafa73460b35c3c366e5742eb6f",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "6f6d959fdae64065521990413f86bc7ab038d7c1",
     "changeTags" : [ "BODY" ]
   }, {
