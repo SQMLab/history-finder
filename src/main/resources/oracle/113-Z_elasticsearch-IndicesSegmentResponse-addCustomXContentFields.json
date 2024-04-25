@@ -51,6 +51,9 @@
     "commitHash" : "cc83c2f848be69a77f1275fe1ff5363dcdd4c955",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "6a71eab51f6d7e7a436d8986df3685c7e0774bd3",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "a8fd2d48b8f3f17d68ed27c3104e2c9e2eb6cc9c",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
