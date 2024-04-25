@@ -9,6 +9,9 @@
   "startLine" : 176,
   "endLine" : 187,
   "commits" : [ {
+    "commitHash" : "88245b6a41171f939b22186c533ea2bc7994f9b3",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "acc0d3eb521e3c1d1b2f4be9b46c685ee921504b",
     "changeTags" : [ "MOVE", "RENAME" ]
   }, {
