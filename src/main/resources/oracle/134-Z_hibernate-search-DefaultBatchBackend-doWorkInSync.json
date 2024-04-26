@@ -12,6 +12,9 @@
     "commitHash" : "a3097e1b94884633b6fd72b9aa9e0a575ccb2a2a",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "2f45e686199bf9f20f354e1c953018eb0ebb934a",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
     "commitHash" : "354f2cadec6dee7d4dde2250e13f468e2d93cd27",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
