@@ -36,6 +36,9 @@
     "commitHash" : "bb6b7117186b656b4777850fdc463e0eaa541130",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "f0bfc02d4d8fb5655f1eb78ae3020f6e8957e496",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "e28541354d496a43078c1bc281076f97ed7d008c",
     "changeTags" : [ "INTRODUCTION" ]
   } ]

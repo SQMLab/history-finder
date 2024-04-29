@@ -28,6 +28,15 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "98f7799a2bf0e2016eb4c7e0cce46e17fb796966",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "ce323f8cc060cf58418aa3b54108cd98115ea14a",
+    "changeTags" : [ "SIGNATURE", "BODY", "PACKAGE" ]
+  }, {
+    "commitHash" : "102b334c97d8dc924883aa97ed80b0dab67d9487",
+    "changeTags" : [ "PACKAGE" ]
+  }, {
+    "commitHash" : "9f1737cdbdc9c1cf47ee57e620b6fed76e7d14c2",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
