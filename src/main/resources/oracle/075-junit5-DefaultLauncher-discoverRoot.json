@@ -171,10 +171,22 @@
     "commitHash" : "cdaf66815c7308c9d5a430f08c7bc0d790a80534",
     "changeTags" : [ "RENAME" ]
   }, {
+    "commitHash" : "62a0ab3e60e4a1c62c806934158444f901d8e22c",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "2e1ad2e7fc7fbc71b12027f9777bbbd2a7a8667a",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
     "commitHash" : "cbf97077bae0db71dc3a7cade28c3b00587a8699",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "f6372b05546e29c74e6809f4e54a096f537bcd5d",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "226ecd8efc45e4540bba43f6c604e891b5a94689",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "75a91267a92e9fd4d171a3f18f2135e675687961",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
