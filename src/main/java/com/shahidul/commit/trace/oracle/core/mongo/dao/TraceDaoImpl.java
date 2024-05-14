@@ -43,6 +43,11 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
+    public TraceEntity findByOracleHash(String oracleHash) {
+        return traceRepository.findByUid(oracleHash);
+    }
+
+    @Override
     public CommitUdt findExpectedCommit(String oracleFileName, String commitHash) {
         TraceEntity traceEntity = findByOracleName(oracleFileName);
         List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();

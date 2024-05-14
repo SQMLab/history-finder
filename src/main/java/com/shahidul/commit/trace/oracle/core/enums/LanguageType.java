@@ -14,7 +14,7 @@ public enum LanguageType {
     String code;
     public static LanguageType fromCode(String code){
         for (LanguageType languageType : values()){
-            if (languageType.getCode().equals(code)){
+            if (languageType.getCode().equalsIgnoreCase(code)){
                 return languageType;
             }
         }
