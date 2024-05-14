@@ -15,7 +15,7 @@ import java.util.List;
 public interface TraceRepository extends MongoRepository<TraceEntity, String> {
     TraceEntity findByOracleFileId(Integer oracleFileId);
     TraceEntity findByOracleFileName(String oracleFileName);
-
+    TraceEntity findByUid(String oracleHash);
     List<TraceEntity> findByOracleFileIdBetween(Integer fromOracleId, Integer toOracleId);
     List<TraceEntity> findByOracleFileIdBetween(Range<Integer> oracleFileIdRange);
 }

@@ -1,0 +1,85 @@
+package com.shahidul.commit.trace.oracle.cmd;
+
+import com.shahidul.commit.trace.oracle.core.model.InputOracle;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
+import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * @author Shahidul Islam
+ * @since 5/1/2024
+ */
+@Service
+@AllArgsConstructor
+@Slf4j
+public class CommitTracerExportServiceCsv implements CommitTracerExportService {
+
+    List<TraceService> traceServiceList;
+    TraceDao traceDao;
+    OracleHelperService oracleHelperService;
+
+    @Override
+    public void export(CtoCmdInput ctoCmdInput) {
+        String cacheDirectory = ctoCmdInput.getCacheDirectory();
+        InputOracle inputOracle = InputOracle.builder()
+                .repositoryUrl(ctoCmdInput.getRepositoryUrl())
+                .repositoryName(ctoCmdInput.getRepositoryName())
+                .startCommitHash(ctoCmdInput.getStartCommitHash())
+                .file(ctoCmdInput.getFile())
+                .language(ctoCmdInput.getLanguageType().name())
+                .elementType("method")
+                .element(ctoCmdInput.getMethodName())
+                .startLine(ctoCmdInput.getStartLine())
+                .endLine(null)
+                .commits(new ArrayList<>())
+                .build();
+        String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
+        TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
+        if (traceEntity == null){
+            traceEntity = oracleHelperService.build(inputOracle);
+        }
+        TraceEntity finalTraceEntity = traceEntity;
+        List<TraceEntity> traceEntityList = traceServiceList.stream()
+                .map(traceService -> traceService.trace(finalTraceEntity))
+                .toList();
+
+        String csvText = buildCsv(traceEntity);
+
+        try {
+            FileWriter fileWriter = new FileWriter(ctoCmdInput.getOutputFile());
+            fileWriter.write(csvText);
+
+        }catch (Exception ex){
+            log.error("Failed to write into output file", ex);
+        }
+    }
+
+    private String buildCsv(TraceEntity traceEntity) {
+        StringBuilder headerBuilder = new StringBuilder();
+        StringBuilder commitShawBuilder = new StringBuilder();
+        traceEntity.getAnalysis()
+                .forEach((algoName, analysis) -> {
+                    if (headerBuilder.length() > 0 || commitShawBuilder.length() > 0){
+                        headerBuilder.append(",");
+                        commitShawBuilder.append(",");
+                    }
+                    headerBuilder.append(algoName);
+                    String commitShaw = analysis.getCommits()
+                            .stream()
+                            .map(CommitUdt::getCommitHash)
+                            .collect(Collectors.joining("|"));
+                    commitShawBuilder.append(commitShaw);
+                });
+        return headerBuilder + "\n" + commitShawBuilder;
+    }
+}

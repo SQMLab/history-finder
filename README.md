@@ -30,3 +30,4 @@ In this file, the following services have been defined:
 
 Please review the tags of the used images and set them to the same as you're running in production.
 
+-cachedirectory ../academic -repourl https://github.com/checkstyle/checkstyle.git -startcommit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -methodname fireErrors -startline 384 -outputfile ../academic/output.txt

@@ -12,6 +12,8 @@ import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
+import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperServiceImpl;
 import com.shahidul.commit.trace.oracle.util.Util;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
@@ -40,39 +42,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
     AppProperty appProperty;
     ObjectMapper objectMapper;
     TraceRepository traceRepository;
-    private static final MessageDigest DIGESTER;
-    static final Map<String, String> repoMap = new HashMap<>();
+    OracleHelperService oracleHelperService;
 
-
-    static {
-        try {
-            DIGESTER = MessageDigest.getInstance("SHA-256");
-            repoMap.put("checkstyle", "https://github.com/checkstyle/checkstyle.git");
-            repoMap.put("commons-lang", "https://github.com/apache/commons-lang.git");
-            repoMap.put("flink", "https://github.com/apache/flink.git");
-            repoMap.put("hibernate-orm", "https://github.com/hibernate/hibernate-orm.git");
-            repoMap.put("javaparser", "https://github.com/javaparser/javaparser.git");
-            repoMap.put("jgit", "https://gerrit.googlesource.com/jgit");
-            repoMap.put("junit4", "https://github.com/junit-team/junit4.git");
-            repoMap.put("junit5", "https://github.com/junit-team/junit5.git");
-            repoMap.put("okhttp", "https://github.com/square/okhttp.git");
-            repoMap.put("spring-framework", "https://github.com/spring-projects/spring-framework.git");
-            repoMap.put("commons-io", "https://github.com/apache/commons-io.git");
-            repoMap.put("elasticsearch", "https://github.com/elastic/elasticsearch.git");
-            repoMap.put("hadoop", "https://github.com/apache/hadoop.git");
-            repoMap.put("hibernate-search", "https://github.com/hibernate/hibernate-search.git");
-            repoMap.put("intellij-community", "https://github.com/JetBrains/intellij-community.git");
-            repoMap.put("jetty.project", "https://github.com/eclipse/jetty.project.git");
-            repoMap.put("lucene-solr", "https://github.com/apache/lucene-solr.git");
-            repoMap.put("mockito", "https://github.com/mockito/mockito.git");
-            repoMap.put("pmd", "https://github.com/pmd/pmd.git");
-            repoMap.put("spring-boot", "https://github.com/spring-projects/spring-boot.git");
-
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
 
     @PostConstruct
     public void init() {
@@ -109,30 +80,10 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
-                                String uid = generateUid(inputOracle);
-                                return TraceEntity.builder()
-                                        .uid(uid)
-                                        .oracleFileId(Integer.valueOf(oracleFileName.substring(0, 3)))
-                                        .oracleFileName(oracleFileName)
-                                        .repositoryName(inputOracle.getRepositoryName())
-                                        .repositoryUrl(inputOracle.getRepositoryUrl())
-                                        .startCommitHash(inputOracle.getStartCommitHash())
-                                        .file(inputOracle.getFile())
-                                        .languageType(LanguageType.fromCode(inputOracle.getLanguage()))
-                                        .elementType(inputOracle.getElementType())
-                                        .elementName(inputOracle.getElement())
-                                        .startLine(inputOracle.getStartLine())
-                                        .endLine(inputOracle.getEndLine())
-                                        .expectedCommits(
-                                                inputOracle.getCommits().stream().map(commit -> CommitUdt.builder()
-                                                                .tracerName(TracerName.EXPECTED.getCode())
-                                                                .commitHash(commit.getCommitHash())
-                                                                .changeTags(commit.getChangeTags())
-                                                                .build())
-                                                        .toList()
-                                        )
-                                        .analysis(new HashMap<>())
-                                        .build();
+                                TraceEntity traceEntity = oracleHelperService.build(inputOracle);
+                                traceEntity.setOracleFileId(Integer.valueOf(oracleFileName.substring(0, 3)));
+                                traceEntity.setOracleFileName(oracleFileName);
+                                return traceEntity;
                             }
                         } catch (Exception e) {
                             throw new RuntimeException(e);
@@ -175,7 +126,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             analysis.put(TracerName.INTELLI_J.getCode(), InputTrace.builder().commits(ideaCommits).build());
                             InputOracle inputOracle = InputOracle.builder()
                                     .repositoryName(repositoryName)
-                                    .repositoryUrl(repoMap.get(repositoryName))
+                                    .repositoryUrl(OracleHelperServiceImpl.repoMap.get(repositoryName))
                                     .startCommitHash(json.get("startCommitName").asText())
                                     .file(json.get("filePath").asText())
                                     .elementType("method")
@@ -209,19 +160,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
         traceRepository.deleteAll();
     }
 
-    private String generateUid(InputOracle inputOracle) {
-        String text = new StringBuilder()
-                .append(inputOracle.getRepositoryName())
-                .append(inputOracle.getRepositoryUrl())
-                .append(inputOracle.getStartCommitHash())
-                .append(inputOracle.getFile())
-                .append(inputOracle.getElementType())
-                .append(inputOracle.getElement())
-                .append(inputOracle.getStartLine())
-                .append(inputOracle.getEndLine())
-                .toString();
-        return DatatypeConverter.printHexBinary(DIGESTER.digest(text.getBytes(StandardCharsets.UTF_8)));
-    }
+
 
     private File[] findOracleFiles() {
         return new File(MethodTracker.class.getClassLoader().getResource(appProperty.getOracleFileDirectory()).getFile())
