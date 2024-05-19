@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.cmd;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
@@ -11,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,43 +22,31 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class CommitTracerExportServiceCsv implements CommitTracerExportService {
+public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportService {
 
     List<TraceService> traceServiceList;
     TraceDao traceDao;
     OracleHelperService oracleHelperService;
+    CommandLineHelperService commandLineHelperService;
 
     @Override
-    public void export(CtoCmdInput ctoCmdInput) {
-        String cacheDirectory = ctoCmdInput.getCacheDirectory();
-        InputOracle inputOracle = InputOracle.builder()
-                .repositoryUrl(ctoCmdInput.getRepositoryUrl())
-                .repositoryName(ctoCmdInput.getRepositoryName())
-                .startCommitHash(ctoCmdInput.getStartCommitHash())
-                .file(ctoCmdInput.getFile())
-                .language(ctoCmdInput.getLanguageType().name())
-                .elementType("method")
-                .element(ctoCmdInput.getMethodName())
-                .startLine(ctoCmdInput.getStartLine())
-                .endLine(null)
-                .commits(new ArrayList<>())
-                .build();
-        String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
-        TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
-        if (traceEntity == null){
-            traceEntity = oracleHelperService.build(inputOracle);
-        }
+    public void export(CommandLineInput commandLineInput) {
+        String cacheDirectory = commandLineInput.getCacheDirectory();
+        InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
+        TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle);
         TraceEntity finalTraceEntity = traceEntity;
         List<TraceEntity> traceEntityList = traceServiceList.stream()
+                //.filter(traceService -> traceService.getTracerName().equals(TracerName.INTELLI_J.getCode()))
+                .filter(traceService -> !traceService.getTracerName().equals(TracerName.INTELLI_J.getCode()) || finalTraceEntity.getOracleFileId() != null)
                 .map(traceService -> traceService.trace(finalTraceEntity))
                 .toList();
 
         String csvText = buildCsv(traceEntity);
 
         try {
-            FileWriter fileWriter = new FileWriter(ctoCmdInput.getOutputFile());
+            FileWriter fileWriter = new FileWriter(commandLineInput.getOutputFile());
             fileWriter.write(csvText);
-
+            fileWriter.flush();
         }catch (Exception ex){
             log.error("Failed to write into output file", ex);
         }

@@ -10,7 +10,7 @@ import rnd.git.history.finder.enums.LanguageType;
  */
 @Builder
 @Getter
-public class CtoCmdInput {
+public class CommandLineInput {
     String cacheDirectory;
     String repositoryUrl;
     String repositoryName;

@@ -14,14 +14,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class CtoCommandLineRunner implements CommandLineRunner {
     CtoCommandLineInputParser inputParser;
-    CommitTracerExportService commitTracerExportService;
+    CommitTraceShawExportService commitTraceShawExportService;
 
     @Override
     public void run(String... args) {
         if (args.length > 0) {
-            CtoCmdInput ctoCmdInput = inputParser.parse(args);
-            log.info("CMD input {}", ctoCmdInput.getFile());
-            commitTracerExportService.export(ctoCmdInput);
+            CommandLineInput commandLineInput = inputParser.parse(args);
+            log.info("CMD input {}", commandLineInput.getFile());
+            commitTraceShawExportService.export(commandLineInput);
         }
     }
 }
