@@ -1,5 +1,6 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.parser;
 
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import org.apache.commons.cli.*;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import rnd.git.history.finder.enums.LanguageType;
  * @since 2/2/2024
  */
 @Service
-public class CtoCommandLineInputParserImpl implements CtoCommandLineInputParser {
+public class CommandLineInputParserImpl implements CommandLineInputParser {
     @Override
     public CommandLineInput parse(String[] args) {
         CommandLineParser commandLineParser = new DefaultParser();

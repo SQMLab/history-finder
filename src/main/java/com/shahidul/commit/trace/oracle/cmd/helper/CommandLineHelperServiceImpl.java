@@ -1,5 +1,6 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.helper;
 
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;

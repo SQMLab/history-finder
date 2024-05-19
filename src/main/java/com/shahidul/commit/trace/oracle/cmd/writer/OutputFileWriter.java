@@ -1,4 +1,4 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.writer;
 
 /**
  * @author Shahidul Islam
