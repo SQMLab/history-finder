@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.cmd;
 
-import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
+import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
@@ -22,16 +22,20 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
     TraceDao traceDao;
     OracleHelperService oracleHelperService;
     CommandLineHelperService commandLineHelperService;
+    OutputFileWriter outputFileWriter;
+
     @Override
     public void export(CommandLineInput commandLineInput) {
         String cacheDirectory = commandLineInput.getCacheDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
         TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle);
-        TraceEntity finalTraceEntity = traceEntity;
-        List<TraceEntity> traceEntityList = traceServiceList.stream()
-                //.filter(traceService -> traceService.getTracerName().equals(TracerName.INTELLI_J.getCode()))
-                .filter(traceService -> !traceService.getTracerName().equals(TracerName.INTELLI_J.getCode()) || finalTraceEntity.getOracleFileId() != null)
-                .map(traceService -> traceService.trace(finalTraceEntity))
-                .toList();
+        traceServiceList.stream()
+                .filter(traceService -> traceService.getTracerName().equals(commandLineInput.getTracerName().getCode()))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Tracer not found"))
+                .trace(traceEntity);
+        CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
+        outputFileWriter.write(commandLineInput.getOutputFile(), commitTraceOutput);
+
     }
 }

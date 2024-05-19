@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.cmd;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import org.apache.commons.cli.*;
 import org.springframework.stereotype.Service;
 import rnd.git.history.finder.enums.LanguageType;
@@ -23,7 +24,10 @@ public class CtoCommandLineInputParserImpl implements CtoCommandLineInputParser 
         String repositoryUrl = commandLine.getOptionValue("repourl");
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
+        String tracerNameText = commandLine.getOptionValue("tracername", null);
         return CommandLineInput.builder()
+                .command(commandLine.getOptionValue("command"))
+                .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
                 .cacheDirectory(repositoryCacheDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
@@ -40,17 +44,29 @@ public class CtoCommandLineInputParserImpl implements CtoCommandLineInputParser 
         Options options = new Options();
 
         options.addOption(Option.builder()
-                .longOpt("cachedirectory")
-                .hasArg(true)
-                .desc("Full path on the local system where repositories will be stored")
-                .required(true)
-                .build());
-        options.addOption(Option.builder()
-                .longOpt("repourl")
-                .hasArg(true)
-                .desc("Repository URL e.g. github URL")
-                .required(true)
-                .build());
+                        .longOpt("command")
+                        .hasArg(true)
+                        .desc("Command name")
+                        .required(true)
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("tracername")
+                        .hasArg(true)
+                        .desc("Tracer Name")
+                        .required(false)
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("cachedirectory")
+                        .hasArg(true)
+                        .desc("Full path on the local system where repositories will be stored")
+                        .required(true)
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("repourl")
+                        .hasArg(true)
+                        .desc("Repository URL e.g. github URL")
+                        .required(true)
+                        .build());
 
 
         options.addOption(Option.builder()
