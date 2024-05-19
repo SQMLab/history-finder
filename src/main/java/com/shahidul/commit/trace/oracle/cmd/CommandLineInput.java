@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.cmd;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import lombok.Builder;
 import lombok.Getter;
 import rnd.git.history.finder.enums.LanguageType;
@@ -11,6 +12,7 @@ import rnd.git.history.finder.enums.LanguageType;
 @Builder
 @Getter
 public class CommandLineInput {
+    String command;
     String cacheDirectory;
     String repositoryUrl;
     String repositoryName;
@@ -19,5 +21,6 @@ public class CommandLineInput {
     String file;
     String methodName;
     Integer startLine;
+    TracerName tracerName;
     String outputFile;
 }

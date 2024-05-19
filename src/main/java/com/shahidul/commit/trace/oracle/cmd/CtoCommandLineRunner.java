@@ -15,13 +15,19 @@ import org.springframework.stereotype.Component;
 public class CtoCommandLineRunner implements CommandLineRunner {
     CtoCommandLineInputParser inputParser;
     CommitTraceShawExportService commitTraceShawExportService;
+    CommitTraceDetailExportService commitTraceDetailExportService;
 
     @Override
     public void run(String... args) {
         if (args.length > 0) {
             CommandLineInput commandLineInput = inputParser.parse(args);
             log.info("CMD input {}", commandLineInput.getFile());
-            commitTraceShawExportService.export(commandLineInput);
+            String command = commandLineInput.getCommand();
+            if ("ctd".equalsIgnoreCase(command)) {
+                commitTraceDetailExportService.export(commandLineInput);
+            } else if ("cts".equalsIgnoreCase(command)) {
+                commitTraceShawExportService.export(commandLineInput);
+            } else throw new RuntimeException("Invalid command");
         }
     }
 }

@@ -11,7 +11,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.io.FileWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,6 +28,8 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
     OracleHelperService oracleHelperService;
     CommandLineHelperService commandLineHelperService;
 
+    OutputFileWriter outputFileWriter;
+
     @Override
     public void export(CommandLineInput commandLineInput) {
         String cacheDirectory = commandLineInput.getCacheDirectory();
@@ -44,9 +45,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
         String csvText = buildCsv(traceEntity);
 
         try {
-            FileWriter fileWriter = new FileWriter(commandLineInput.getOutputFile());
-            fileWriter.write(csvText);
-            fileWriter.flush();
+            outputFileWriter.write(commandLineInput.getOutputFile(), csvText);
         }catch (Exception ex){
             log.error("Failed to write into output file", ex);
         }
