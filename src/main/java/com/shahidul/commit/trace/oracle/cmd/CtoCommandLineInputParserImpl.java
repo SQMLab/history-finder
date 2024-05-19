@@ -11,7 +11,7 @@ import rnd.git.history.finder.enums.LanguageType;
 @Service
 public class CtoCommandLineInputParserImpl implements CtoCommandLineInputParser {
     @Override
-    public CtoCmdInput parse(String[] args) {
+    public CommandLineInput parse(String[] args) {
         CommandLineParser commandLineParser = new DefaultParser();
         CommandLine commandLine = null;
         try {
@@ -23,7 +23,7 @@ public class CtoCommandLineInputParserImpl implements CtoCommandLineInputParser 
         String repositoryUrl = commandLine.getOptionValue("repourl");
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
-        return CtoCmdInput.builder()
+        return CommandLineInput.builder()
                 .cacheDirectory(repositoryCacheDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
