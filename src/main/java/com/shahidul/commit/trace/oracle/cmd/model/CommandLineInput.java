@@ -1,4 +1,4 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.model;
 
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import lombok.Builder;

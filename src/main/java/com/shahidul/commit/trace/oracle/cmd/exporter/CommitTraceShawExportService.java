@@ -1,4 +1,6 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.exporter;
+
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 
 /**
  * @author Shahidul Islam

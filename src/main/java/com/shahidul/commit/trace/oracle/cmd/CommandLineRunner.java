@@ -1,8 +1,12 @@
 package com.shahidul.commit.trace.oracle.cmd;
 
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
+import com.shahidul.commit.trace.oracle.cmd.parser.CommandLineInputParser;
+import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
+import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceShawExportService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,10 +16,11 @@ import org.springframework.stereotype.Component;
 @Component
 @AllArgsConstructor
 @Slf4j
-public class CtoCommandLineRunner implements CommandLineRunner {
-    CtoCommandLineInputParser inputParser;
+public class CommandLineRunner implements org.springframework.boot.CommandLineRunner {
+    CommandLineInputParser inputParser;
     CommitTraceShawExportService commitTraceShawExportService;
     CommitTraceDetailExportService commitTraceDetailExportService;
+    ConfigurableApplicationContext applicationContext;
 
     @Override
     public void run(String... args) {
@@ -28,6 +33,7 @@ public class CtoCommandLineRunner implements CommandLineRunner {
             } else if ("cts".equalsIgnoreCase(command)) {
                 commitTraceShawExportService.export(commandLineInput);
             } else throw new RuntimeException("Invalid command");
+            applicationContext.close();
         }
     }
 }
