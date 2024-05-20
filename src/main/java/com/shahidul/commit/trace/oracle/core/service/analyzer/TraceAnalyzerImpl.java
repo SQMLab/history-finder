@@ -1,17 +1,17 @@
 package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -20,8 +20,12 @@ import java.util.stream.Collectors;
  */
 @Service
 @AllArgsConstructor
+@Slf4j
 public class TraceAnalyzerImpl implements TraceAnalyzer {
     TraceRepository traceRepository;
+
+    static final List<String> WEAK_RECALL_TRACER_LIST = Arrays.asList(TracerName.CODE_SHOVEL.getCode(), TracerName.GIT_LINE_RANGE.getCode(), TracerName.GIT_FUNC_NAME.getCode());
+    static final List<ChangeTag> UNDETECTED_CHANGE_TAGS = Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION);
 
     @Override
     @Transactional
@@ -29,12 +33,21 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
         Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                 .collect(Collectors.toUnmodifiableSet());
+        Set<String> preferredExpectedHashSet = traceEntity.getExpectedCommits()
+                .stream()
+                .filter(commitUdt -> commitUdt.getChangeTags()
+                        .stream()
+                        .filter(changeTag -> !UNDETECTED_CHANGE_TAGS.contains(changeTag)).count() > 0)
+                .map(CommitUdt::getCommitHash)
+                .collect(Collectors.toUnmodifiableSet());
+
+
         Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
-        analysis
-                .values()
+        analysis.entrySet()
                 .stream()
                 //.filter()
-                .map(analysisEntity -> {
+                .map(entry -> {
+                    AnalysisUdt analysisEntity = entry.getValue();
                     List<CommitUdt> correctCommits = analysisEntity.getCommits()
                             .stream()
                             .filter(commitEntity -> expectedHashSet.contains(commitEntity.getCommitHash()))
@@ -60,11 +73,20 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                             .stream()
                             .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
                             .toList());
+
+
                     analysisEntity.setCorrectCommits(correctCommits);
                     analysisEntity.setIncorrectCommits(incorrectCommits);
                     analysisEntity.setMissingCommits(missingCommits);
                     analysisEntity.setPrecision((double) correctCommitSet.size() / commitSet.size());
-                    analysisEntity.setRecall((double) correctCommitSet.size() / expectedHashSet.size());
+                    int expectedCommitSize;
+                    if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
+                        expectedCommitSize = preferredExpectedHashSet.size();
+                    } else {
+                        expectedCommitSize = preferredExpectedHashSet.size();
+                    }
+                    log.info("Tracer {}, expected {}, preferred expected {}, applicable expected {}", entry.getKey(), expectedHashSet.size(), preferredExpectedHashSet.size(), expectedCommitSize);
+                    analysisEntity.setRecall((double) correctCommitSet.size() / expectedCommitSize);
                     return analysisEntity;
                 }).toList();
         traceEntity.setPrecision(analysis.values()
