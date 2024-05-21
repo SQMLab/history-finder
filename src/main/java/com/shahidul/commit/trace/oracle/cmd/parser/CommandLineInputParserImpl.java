@@ -21,7 +21,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String repositoryCacheDirectory = commandLine.getOptionValue("cachedirectory");
+        String repositoryCacheDirectory = commandLine.getOptionValue("cache-directory");
         String repositoryUrl = commandLine.getOptionValue("repourl");
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
@@ -57,7 +57,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                         .required(false)
                         .build())
                 .addOption(Option.builder()
-                        .longOpt("cachedirectory")
+                        .longOpt("cache-directory")
                         .hasArg(true)
                         .desc("Full path on the local system where repositories will be stored")
                         .required(true)
