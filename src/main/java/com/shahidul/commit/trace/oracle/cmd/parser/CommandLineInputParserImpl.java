@@ -22,22 +22,22 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
             throw new RuntimeException(e);
         }
         String repositoryCacheDirectory = commandLine.getOptionValue("cache-directory");
-        String repositoryUrl = commandLine.getOptionValue("repourl");
+        String repositoryUrl = commandLine.getOptionValue("repository-url");
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
-        String tracerNameText = commandLine.getOptionValue("tracername", null);
+        String tracerNameText = commandLine.getOptionValue("tracer-name", null);
         return CommandLineInput.builder()
                 .command(commandLine.getOptionValue("command"))
                 .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
                 .cacheDirectory(repositoryCacheDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
-                .startCommitHash(commandLine.getOptionValue("startcommit", "HEAD"))
+                .startCommitHash(commandLine.getOptionValue("start-commit", "HEAD"))
                 .languageType(LanguageType.valueOf(commandLine.getOptionValue("language", "Java").toUpperCase()))
                 .file(commandLine.getOptionValue("file"))
-                .methodName(commandLine.getOptionValue("methodname"))
-                .startLine(Integer.parseInt(commandLine.getOptionValue("startline")))
-                .outputFile(commandLine.getOptionValue("outputfile"))
+                .methodName(commandLine.getOptionValue("element-name"))
+                .startLine(Integer.parseInt(commandLine.getOptionValue("start-line")))
+                .outputFile(commandLine.getOptionValue("output-file"))
                 .build();
     }
 
@@ -51,7 +51,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                         .required(true)
                         .build())
                 .addOption(Option.builder()
-                        .longOpt("tracername")
+                        .longOpt("tracer-name")
                         .hasArg(true)
                         .desc("Tracer Name")
                         .required(false)
@@ -63,7 +63,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                         .required(true)
                         .build())
                 .addOption(Option.builder()
-                        .longOpt("repourl")
+                        .longOpt("repository-url")
                         .hasArg(true)
                         .desc("Repository URL e.g. github URL")
                         .required(true)
@@ -71,7 +71,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
 
 
         options.addOption(Option.builder()
-                .longOpt("startcommit")
+                .longOpt("start-commit")
                 .hasArg(true)
                 .desc(" Relative path file path from the root of repository")
                 .required(true)
@@ -85,14 +85,14 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .build());
 
         options.addOption(Option.builder()
-                .longOpt("methodname")
+                .longOpt("element-name")
                 .hasArg(true)
                 .desc(" Method name to trace change history")
                 .required(true)
                 .build());
 
         options.addOption(Option.builder()
-                .longOpt("startline")
+                .longOpt("start-line")
                 .hasArg(true)
                 .desc(" Start line number of the method")
                 .required(true)
@@ -104,7 +104,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .required(false)
                 .build());
         options.addOption(Option.builder()
-                .longOpt("outputfile")
+                .longOpt("output-file")
                 .hasArg(true)
                 .desc(" Path to write output")
                 .required(false)
