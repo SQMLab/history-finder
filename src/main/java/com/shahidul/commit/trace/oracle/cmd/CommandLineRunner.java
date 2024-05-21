@@ -28,9 +28,9 @@ public class CommandLineRunner implements org.springframework.boot.CommandLineRu
             CommandLineInput commandLineInput = inputParser.parse(args);
             log.info("CMD input {}", commandLineInput.getFile());
             String command = commandLineInput.getCommand();
-            if ("ctd".equalsIgnoreCase(command)) {
+            if ("commit-trace-detail".equalsIgnoreCase(command)) {
                 commitTraceDetailExportService.export(commandLineInput);
-            } else if ("cts".equalsIgnoreCase(command)) {
+            } else if ("commit-trace-shaw".equalsIgnoreCase(command)) {
                 commitTraceShawExportService.export(commandLineInput);
             } else throw new RuntimeException("Invalid command");
             applicationContext.close();
