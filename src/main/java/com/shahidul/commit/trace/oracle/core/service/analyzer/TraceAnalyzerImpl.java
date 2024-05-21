@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 /**
@@ -33,12 +34,13 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
         Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                 .collect(Collectors.toUnmodifiableSet());
-        Set<String> preferredExpectedHashSet = traceEntity.getExpectedCommits()
+        Set<CommitUdt> unexpectedHashSet = traceEntity.getExpectedCommits()
                 .stream()
-                .filter(commitUdt -> commitUdt.getChangeTags()
+                .filter(commitUdt -> !commitUdt.getChangeTags().isEmpty() &&
+                 commitUdt.getChangeTags()
                         .stream()
-                        .filter(changeTag -> !UNDETECTED_CHANGE_TAGS.contains(changeTag)).count() > 0)
-                .map(CommitUdt::getCommitHash)
+                        .filter(changeTag -> !UNDETECTED_CHANGE_TAGS.contains(changeTag)).count() == 0)
+                //.map(CommitUdt::getCommitHash)
                 .collect(Collectors.toUnmodifiableSet());
 
 
@@ -79,14 +81,22 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                     analysisEntity.setIncorrectCommits(incorrectCommits);
                     analysisEntity.setMissingCommits(missingCommits);
                     analysisEntity.setPrecision((double) correctCommitSet.size() / commitSet.size());
-                    int expectedCommitSize;
+                    AtomicInteger preferredExpectedCommitSize = new AtomicInteger(expectedHashSet.size());
                     if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
-                        expectedCommitSize = preferredExpectedHashSet.size();
-                    } else {
-                        expectedCommitSize = preferredExpectedHashSet.size();
+                        unexpectedHashSet.forEach(commitUdt -> {
+                            if (!expectedHashSet.contains(commitUdt.getCommitHash())){
+                                preferredExpectedCommitSize.addAndGet(-1);
+                            }
+                        });
                     }
-                    log.info("Tracer {}, expected {}, preferred expected {}, applicable expected {}", entry.getKey(), expectedHashSet.size(), preferredExpectedHashSet.size(), expectedCommitSize);
-                    analysisEntity.setRecall((double) correctCommitSet.size() / expectedCommitSize);
+                    Double recall = null;
+                    if (preferredExpectedCommitSize.get() > 0){
+                        recall = (double) correctCommitSet.size() / preferredExpectedCommitSize.get();
+                    }else {
+                        recall = 1.0;
+                    }
+                    analysisEntity.setRecall(recall);
+                    log.info("Tracer {}, expected {}, unexpected {}, preferred expected {}, correct {}, recall {}", entry.getKey(), expectedHashSet.size(), unexpectedHashSet.size(), preferredExpectedCommitSize, correctCommits.size(), recall);
                     return analysisEntity;
                 }).toList();
         traceEntity.setPrecision(analysis.values()
