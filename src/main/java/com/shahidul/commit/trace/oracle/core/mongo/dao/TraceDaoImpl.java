@@ -5,13 +5,13 @@ import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
+import org.bson.BsonMaximumSizeExceededException;
 import org.springframework.stereotype.Repository;
 
 import java.util.Comparator;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -86,6 +86,33 @@ public class TraceDaoImpl implements TraceDao {
 
     @Override
     public TraceEntity save(TraceEntity traceEntity) {
-        return traceRepository.save(traceEntity);
+        try {
+            return traceRepository.save(traceEntity);
+        }catch (BsonMaximumSizeExceededException bsonMaximumSizeExceededException){
+            quietlyTruncateDiff(traceEntity);
+            traceEntity.setVersion(traceEntity.getVersion() - 1);
+            return traceRepository.save(traceEntity);
+        }
+    }
+
+    private void quietlyTruncateDiff(TraceEntity traceEntity){
+        traceEntity.getAnalysis().values().stream().forEach(analysisUdt -> {
+
+            truncateDiff(analysisUdt.getCommits());
+            truncateDiff(analysisUdt.getCorrectCommits());
+            truncateDiff(analysisUdt.getIncorrectCommits());
+            truncateDiff(analysisUdt.getMissingCommits());
+        });
+    }
+
+    private void truncateDiff(List<CommitUdt> commitUdtList){
+        commitUdtList.forEach(commitUdt -> {
+            truncateDiff(commitUdt);
+        });
+    }
+    private void truncateDiff(CommitUdt commitUdt){
+        commitUdt.setDiff(Util.truncate(commitUdt.getDiff(), 100000));
+        commitUdt.setDiffDetail(Util.truncate(commitUdt.getDiffDetail(), 100000));
+        commitUdt.setDocDiff(Util.truncate(commitUdt.getDocDiff(), 100000));
     }
 }

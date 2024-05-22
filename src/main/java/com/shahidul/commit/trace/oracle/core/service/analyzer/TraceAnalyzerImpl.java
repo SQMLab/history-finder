@@ -2,10 +2,10 @@ package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Slf4j
 public class TraceAnalyzerImpl implements TraceAnalyzer {
-    TraceRepository traceRepository;
+    TraceDao traceDao;
 
     static final List<String> WEAK_RECALL_TRACER_LIST = Arrays.asList(TracerName.CODE_SHOVEL.getCode(), TracerName.GIT_LINE_RANGE.getCode(), TracerName.GIT_FUNC_NAME.getCode());
     static final List<ChangeTag> UNDETECTED_CHANGE_TAGS = Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION);
@@ -111,7 +111,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                 .mapToDouble(Double::doubleValue)
                 .average().getAsDouble());
 
-        return traceRepository.save(traceEntity);
+        return traceDao.save(traceEntity);
 
     }
 }

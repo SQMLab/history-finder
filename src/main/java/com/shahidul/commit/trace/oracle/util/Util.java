@@ -71,7 +71,7 @@ public class Util {
         if (text == null || text.length() <= limit){
             return text;
         }else {
-            return text.substring(limit);
+            return text.substring(0, limit);
         }
     }
 }
