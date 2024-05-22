@@ -111,8 +111,8 @@ public class TraceDaoImpl implements TraceDao {
         });
     }
     private void truncateDiff(CommitUdt commitUdt){
-        commitUdt.setDiff(Util.truncate(commitUdt.getDiff(), 100000));
-        commitUdt.setDiffDetail(Util.truncate(commitUdt.getDiffDetail(), 100000));
-        commitUdt.setDocDiff(Util.truncate(commitUdt.getDocDiff(), 100000));
+        commitUdt.setDiff(Util.truncate(commitUdt.getDiff(), 5000));
+        commitUdt.setDiffDetail(Util.truncate(commitUdt.getDiffDetail(), 5000));
+        commitUdt.setDocDiff(Util.truncate(commitUdt.getDocDiff(), 5000));
     }
 }
