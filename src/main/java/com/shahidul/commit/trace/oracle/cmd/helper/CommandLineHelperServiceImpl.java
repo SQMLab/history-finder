@@ -43,13 +43,17 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
     }
 
     @Override
-    public TraceEntity loadOracle(InputOracle inputOracle) {
-        String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
-        TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
-        if (traceEntity == null) {
-            return oracleHelperService.build(inputOracle);
-        } else {
-            return traceEntity;
+    public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId) {
+        if (optionalOracleFileId != null){
+            return traceDao.findByOracleId(optionalOracleFileId);
+        }else {
+            String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
+            TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
+            if (traceEntity == null) {
+                return oracleHelperService.build(inputOracle);
+            } else {
+                return traceEntity;
+            }
         }
     }
 
