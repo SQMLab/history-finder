@@ -26,9 +26,11 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
         String tracerNameText = commandLine.getOptionValue("tracer-name", null);
+        String oracleFileIdText = commandLine.getOptionValue("oracle-file-id");
         return CommandLineInput.builder()
                 .command(commandLine.getOptionValue("command"))
                 .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
+                .oracleFileId(oracleFileIdText != null ? Integer.parseInt(oracleFileIdText.trim()) : null)
                 .cacheDirectory(repositoryCacheDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
@@ -54,6 +56,12 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                         .longOpt("tracer-name")
                         .hasArg(true)
                         .desc("Tracer Name")
+                        .required(false)
+                        .build())
+                .addOption(Option.builder()
+                        .longOpt("oracle-file-id")
+                        .hasArg(true)
+                        .desc("Oracle File ID")
                         .required(false)
                         .build())
                 .addOption(Option.builder()
