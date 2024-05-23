@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "002139912c6e49506a7466f4eff2b4098842df60",
+  "file": "hystrix-contrib/hystrix-javanica/src/main/java/com/netflix/hystrix/contrib/javanica/command/AbstractHystrixCommand.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "process",
+  "startLine": 142,
+  "endLine": 162,
+  "commits": []
+}
