@@ -14,6 +14,8 @@ import rnd.git.history.finder.enums.LanguageType;
 public class CommandLineInput {
     String command;
     String cacheDirectory;
+    TracerName tracerName;
+    Integer oracleFileId;
     String repositoryUrl;
     String repositoryName;
     String startCommitHash;
@@ -21,6 +23,5 @@ public class CommandLineInput {
     String file;
     String methodName;
     Integer startLine;
-    TracerName tracerName;
     String outputFile;
 }

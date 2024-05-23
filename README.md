@@ -29,5 +29,9 @@ In this file, the following services have been defined:
 * mongodb: [`mongo:latest`](https://hub.docker.com/_/mongo)
 
 Please review the tags of the used images and set them to the same as you're running in production.
+### Running from command line prompt
+Commit Trace Detail:
+-command commit-trace-detail -tracer-name historyFinder -cache-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/trace-detail.json
 
--cachedirectory ../academic -repourl https://github.com/checkstyle/checkstyle.git -startcommit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -methodname fireErrors -startline 384 -outputfile ../academic/output.txt
+Commit Trace Shaw:
+-command commit-trace-shaw -cache-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/commit-trace-shaw.csv
