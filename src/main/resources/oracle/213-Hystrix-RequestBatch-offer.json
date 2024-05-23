@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
+  "file": "hystrix-core/src/main/java/com/netflix/hystrix/collapser/RequestBatch.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "shutdown",
+  "startLine": 64,
+  "endLine": 116,
+  "commits": []
+}

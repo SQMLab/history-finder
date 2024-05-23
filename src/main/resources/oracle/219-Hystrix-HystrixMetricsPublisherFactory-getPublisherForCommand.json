@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "e40dcab0ee0f101140fe9b2de5d218930aeaad84",
+  "file": "hystrix-core/src/main/java/com/netflix/hystrix/strategy/metrics/HystrixMetricsPublisherFactory.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getPublisherForCommand",
+  "startLine": 103,
+  "endLine": 121,
+  "commits": []
+}

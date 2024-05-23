@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "943c10d661e9793c2f980c74962ab55348b212c9",
+  "file": "hystrix-contrib/hystrix-javanica/src/main/java/com/netflix/hystrix/contrib/javanica/utils/AopUtils.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getDeclaredMethod",
+  "startLine": 89,
+  "endLine": 107,
+  "commits": []
+}

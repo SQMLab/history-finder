@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "0fc69b8dac4917411a82407f9a953bf769c81e27",
+  "file": "hystrix-core/src/main/java/com/netflix/hystrix/metric/consumer/HealthCountsStream.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getInstance",
+  "startLine": 65,
+  "endLine": 86,
+  "commits": []
+}
