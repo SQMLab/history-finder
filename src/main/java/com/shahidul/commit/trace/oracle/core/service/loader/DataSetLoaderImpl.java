@@ -9,6 +9,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
@@ -23,6 +24,7 @@ import org.springframework.stereotype.Service;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.File;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -30,6 +32,7 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Shahidul Islam
@@ -160,10 +163,29 @@ public class DataSetLoaderImpl implements DataSetLoader {
         traceRepository.deleteAll();
     }
 
+    @Override
+    public void updateExpectedCommit(List<TraceEntity> traceEntityList, TracerName fromTracer) {
+        Map<String, File> fileMapping = Arrays.stream(findOracleFiles()).collect(Collectors.toMap(File::getName, file -> file));
+
+        traceEntityList.forEach(traceEntity -> {
+                    List<InputCommit> newExpectedCommits = traceEntity.getAnalysis().get(fromTracer.getCode()).getCommits().stream().map(commitUdt -> InputCommit.builder()
+                            .commitHash(commitUdt.getCommitHash())
+                            .changeTags(commitUdt.getChangeTags())
+                            .build()).toList();
+                    File oracleFile = fileMapping.get(traceEntity.getOracleFileName());
+                    try {
+                        InputOracle inputOracle = objectMapper.readValue(oracleFile, InputOracle.class);
+                        inputOracle.setCommits(newExpectedCommits);
+                        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("./src/main/resources/oracle/" + oracleFile.getName()), inputOracle );
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+    }
 
 
     private File[] findOracleFiles() {
-        return new File(MethodTracker.class.getClassLoader().getResource(appProperty.getOracleFileDirectory()).getFile())
+        return new File(DataSetLoader.class.getClassLoader().getResource(appProperty.getOracleFileDirectory()).getFile())
                 .listFiles();
 
     }

@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "netty",
+  "repositoryUrl" : "https://github.com/netty/netty.git",
+  "startCommitHash" : "e9a61fbdd818728c58a29ad0a12eb8f70ad3b02f",
+  "file" : "common/src/main/java/io/netty5/util/DefaultAttributeMap.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "remove",
+  "startLine" : 203,
+  "endLine" : 211,
+  "commits" : [ {
+    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "4624b6309dd5463772cb1c4947230520afac255e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2d9e0f53a5059765f5f5976472440c0a2fec848d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "32affc8c8b3816a4a3e40e96c464d1be68600409",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6568cbfec42c07e2121a5adeb342b069fa0a065a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0f42719e9b05f2286964e1b5340fc2ac17c278dc",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}
