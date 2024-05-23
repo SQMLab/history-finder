@@ -1,0 +1,12 @@
+{
+  "repositoryName": "Hystrix",
+  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash": "999240503d82d0a9c66d437e92216828e013466c",
+  "file": "hystrix-contrib/hystrix-javanica/src/main/java/com/netflix/hystrix/contrib/javanica/utils/FallbackMethod.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "validateReturnType",
+  "startLine": 95,
+  "endLine": 142,
+  "commits": []
+}
