@@ -1,36 +1,12 @@
 {
-  "repositoryName" : "netty",
-  "repositoryUrl" : "https://github.com/netty/netty.git",
-  "startCommitHash" : "b6162c9d74e835b2578fa47b268d49ea97c93d2e",
-  "file" : "codec-http2/src/main/java/io/netty5/handler/codec/http2/DelegatingDecompressorFrameListener.java",
-  "language" : "Java",
-  "elementType" : "method",
-  "element" : "initDecompressor",
-  "startLine" : 207,
-  "endLine" : 249,
-  "commits" : [ {
-    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
-    "changeTags" : [ "MOVE" ]
-  }, {
-    "commitHash" : "28464b4a431a3f9e062c3d1f06d293cbe8c7c6af",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "3f9522cd66477469cb05cd3e1c3d30ebc7e25f14",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "844976a0a2a940eb28293e3f74bc133cbbde0bac",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "19658e9cd80b57340df58ae573fa9dcbd141416a",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "70a2608325d148092a2b6c6d6a5fb09522c6e841",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "9a7a85dbe54f8ec7cddef8721f720feaeb7a16c9",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "2d24e1f27d00d13401d543a04beb5b76102dfd7d",
-    "changeTags" : [ "INTRODUCTION" ]
-  } ]
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "b6162c9d74e835b2578fa47b268d49ea97c93d2e",
+  "file": "codec-http2/src/main/java/io/netty5/handler/codec/http2/DelegatingDecompressorFrameListener.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "initDecompressor",
+  "startLine": 207,
+  "endLine": 249,
+  "commits": []
 }
