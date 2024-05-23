@@ -4,6 +4,7 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.factory.TracerFactory;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
@@ -14,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -46,6 +48,12 @@ class TraceExecutionController {
 
     private List<TraceEntity> traceEntityList;
 
+    @Autowired
+    Environment environment;
+
+    @Autowired
+    TraceDao traceDao;
+
 /*    @Test
     @Order(-2)
     public void cleanMongoDb() {
@@ -66,7 +74,7 @@ class TraceExecutionController {
         this.traceEntityList = dataSetLoader.loadFile(appProperty.getExecutionLimit());
     }
 
-    @Test
+    @TestFactory
     @Order(1)
     Stream<DynamicNode> executeTrace() {
         return traceEntityList.stream()
@@ -105,6 +113,16 @@ class TraceExecutionController {
         traceEntityList.stream()
                 .map(traceEntity -> influxDbManager.load(traceEntity))
                 .toList();
+    }
+
+
+    @Test
+    void updateExpectCommits() {
+        String fromFileId = environment.getProperty("run-config.from-file-id", "001");
+        String toFileId = environment.getProperty("run-config.to-file-id", fromFileId);
+        List<TraceEntity> traceEntityList = traceDao.findByOracleFileRange(Integer.parseInt(fromFileId), Integer.parseInt(toFileId) + 1);
+        dataSetLoader.updateExpectedCommit(traceEntityList, TracerName.HISTORY_FINDER);
+
     }
 
     private DynamicTest createOracleTest(TraceEntity traceEntity, TraceService traceService) {

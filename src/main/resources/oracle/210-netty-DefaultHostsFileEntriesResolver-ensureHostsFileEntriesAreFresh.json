@@ -8,5 +8,14 @@
   "element": "ensureHostsFileEntriesAreFresh",
   "startLine": 106,
   "endLine": 120,
-  "commits": []
+  "commits" : [ {
+    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "877ebc4f583edd6ec5c3ddf38dff266bc3a435fd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "edef22aa544eb3898afcd6a2345b2afdab7b6bb0",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

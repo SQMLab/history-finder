@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.loader;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface DataSetLoader {
     List<TraceEntity> loadFile(int limit);
     void preProcessCodeShoveFile();
     void cleanDb();
+
+    void updateExpectedCommit(List<TraceEntity> traceEntityList, TracerName fromTracer);
 }
