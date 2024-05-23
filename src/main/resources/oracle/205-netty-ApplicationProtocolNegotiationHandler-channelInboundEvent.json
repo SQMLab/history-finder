@@ -1,12 +1,54 @@
 {
-  "repositoryName": "netty",
-  "repositoryUrl": "https://github.com/netty/netty.git",
-  "startCommitHash": "795db4a866401aa172757b95194f0632e5a2a2d1",
-  "file": "handler/src/main/java/io/netty5/handler/ssl/ApplicationProtocolNegotiationHandler.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "channelInboundEvent",
-  "startLine": 126,
-  "endLine": 154,
-  "commits": []
+  "repositoryName" : "netty",
+  "repositoryUrl" : "https://github.com/netty/netty.git",
+  "startCommitHash" : "795db4a866401aa172757b95194f0632e5a2a2d1",
+  "file" : "handler/src/main/java/io/netty5/handler/ssl/ApplicationProtocolNegotiationHandler.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "channelInboundEvent",
+  "startLine" : 126,
+  "endLine" : 154,
+  "commits" : [ {
+    "commitHash" : "d5010be9c19c3902ed00befc80bb1e95fbd2befe",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e22bae7e966186b0981ee225946fb05875e13f0f",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "ba47232b40ffd45709db6f459e6bad71dd3d82d5",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "d3cf5bea6d7b0c1d78e207bd09c615a8c2da579c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "37d4b5a2f79be5e200fa04a6744292877afd05c1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c62eb26b09658e810e2da9b323c70c811ac813ab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f051b0c297db194abf31f9b2dc294ecc81fa1e45",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ae0fbb45e49063f7be71fe6b1b6c37eb152b1552",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1c69448e2ee7d15443f005ea69f2234a8e39ef73",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a1786c32cb5d4ad3832c6072ff396873ee9dbc6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fcbeebf6dff759a1e0cfe2e20fe5103e4c40075c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "21e27da4107357d2c0a2b8d56ae58749bb6cf8aa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "077508949638bd90c11d81ec1ce3b0ab257e5eb6",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
