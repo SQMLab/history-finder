@@ -1,0 +1,12 @@
+{
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "9ac818e1ac1824e214514b0149e37e3883b1c8c9",
+  "file": "codec-http2/src/main/java/io/netty5/handler/codec/http2/DefaultHttp2Connection.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "goAwayReceived",
+  "startLine": 221,
+  "endLine": 237,
+  "commits": []
+}

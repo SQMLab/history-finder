@@ -1,0 +1,12 @@
+{
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "795db4a866401aa172757b95194f0632e5a2a2d1",
+  "file": "handler/src/main/java/io/netty5/handler/flow/FlowControlHandler.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "dequeue",
+  "startLine": 185,
+  "endLine": 213,
+  "commits": []
+}

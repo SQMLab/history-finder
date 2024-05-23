@@ -1,0 +1,12 @@
+{
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "b6162c9d74e835b2578fa47b268d49ea97c93d2e",
+  "file": "codec-http2/src/main/java/io/netty5/handler/codec/http2/DelegatingDecompressorFrameListener.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "initDecompressor",
+  "startLine": 207,
+  "endLine": 249,
+  "commits": []
+}
