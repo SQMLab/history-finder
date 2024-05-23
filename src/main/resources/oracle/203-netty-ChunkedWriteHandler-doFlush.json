@@ -1,0 +1,12 @@
+{
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "abaf9d3da22b6d23fbf9b5003a76962f5b490e37",
+  "file": "handler/src/main/java/io/netty5/handler/stream/ChunkedWriteHandler.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "doFlush",
+  "startLine": 197,
+  "endLine": 312,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "netty",
+  "repositoryUrl": "https://github.com/netty/netty.git",
+  "startCommitHash": "508d6e240aeb58218e15d949b69666d5fb6b6cbc",
+  "file": "codec/src/main/java/io/netty5/handler/codec/LengthFieldBasedFrameDecoder.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "handleFrameLengthExceeded",
+  "startLine": 333,
+  "endLine": 346,
+  "commits": []
+}
