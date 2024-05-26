@@ -2,6 +2,7 @@ package com.shahidul.commit.trace.oracle.cmd.writer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -14,6 +15,7 @@ import java.io.IOException;
  **/
 @Service
 @AllArgsConstructor
+@Slf4j
 public class OutputFileWriterImpl implements OutputFileWriter {
     ObjectMapper objectMapper;
 
@@ -32,7 +34,18 @@ public class OutputFileWriterImpl implements OutputFileWriter {
     @Override
     public void write(String file, Object value) {
         try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(file), value);
+
+            File targetFile = new File(file);
+            if (targetFile.getParentFile() != null){
+                targetFile.getParentFile().mkdirs();
+            }
+            log.info("Target file ..{}", targetFile.exists());
+            if (!targetFile.exists()){
+                if(targetFile.createNewFile()){
+                    log.info("Target file {} created", file);
+                }
+            }
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(targetFile, value);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

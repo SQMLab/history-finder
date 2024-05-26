@@ -51,7 +51,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
 
         try {
             outputFileWriter.write(commandLineInput.getOutputFile(), csvText);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             log.error("Failed to write into output file", ex);
         }
     }
@@ -59,19 +59,25 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
     private String buildCsv(TraceEntity traceEntity) {
         StringBuilder headerBuilder = new StringBuilder();
         StringBuilder commitShawBuilder = new StringBuilder();
+
+        if (traceEntity.getExpectedCommits() != null && !traceEntity.getExpectedCommits().isEmpty()){
+            addColumn(TracerName.EXPECTED.getCode(), traceEntity.getExpectedCommits(), headerBuilder, commitShawBuilder);
+        }
         traceEntity.getAnalysis()
-                .forEach((algoName, analysis) -> {
-                    if (headerBuilder.length() > 0 || commitShawBuilder.length() > 0){
-                        headerBuilder.append(",");
-                        commitShawBuilder.append(",");
-                    }
-                    headerBuilder.append(algoName);
-                    String commitShaw = analysis.getCommits()
-                            .stream()
-                            .map(CommitUdt::getCommitHash)
-                            .collect(Collectors.joining("|"));
-                    commitShawBuilder.append(commitShaw);
-                });
+                .forEach((algoName, analysis) -> addColumn(algoName, analysis.getCommits(), headerBuilder, commitShawBuilder));
         return headerBuilder + "\n" + commitShawBuilder;
+    }
+
+    private static void addColumn(String algoName, List<CommitUdt> commits, StringBuilder headerBuilder, StringBuilder commitShawBuilder) {
+        if (!headerBuilder.isEmpty() || !commitShawBuilder.isEmpty()) {
+            headerBuilder.append(",");
+            commitShawBuilder.append(",");
+        }
+        headerBuilder.append(algoName);
+        String commitShaw = commits
+                .stream()
+                .map(CommitUdt::getCommitHash)
+                .collect(Collectors.joining("|"));
+        commitShawBuilder.append(commitShaw);
     }
 }
