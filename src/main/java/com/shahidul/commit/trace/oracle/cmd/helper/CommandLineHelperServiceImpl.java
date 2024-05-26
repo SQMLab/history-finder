@@ -2,6 +2,7 @@ package com.shahidul.commit.trace.oracle.cmd.helper;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.model.OutputCommitDetail;
@@ -44,9 +45,9 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
 
     @Override
     public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId) {
-        if (optionalOracleFileId != null){
+        if (optionalOracleFileId != null) {
             return traceDao.findByOracleId(optionalOracleFileId);
-        }else {
+        } else {
             String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
             TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
             if (traceEntity == null) {
@@ -73,7 +74,11 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .runtime(analysisUdt.getRuntime())
                 .precision(analysisUdt.getPrecision())
                 .recall(analysisUdt.getRecall())
-                .commits(analysisUdt.getCommits().stream().map(CommitUdt::getCommitHash).toList())
+                .commits(analysisUdt.getCommits().stream().map(commitUdt -> InputCommit.builder()
+                        .commitHash(commitUdt.getCommitHash())
+                        .changeTags(commitUdt.getChangeTags())
+                        .build()).toList())
+                .commitHashes(analysisUdt.getCommits().stream().map(CommitUdt::getCommitHash).toList())
                 .commitDetails(toCommitDetailList(analysisUdt.getCommits()))
                 .build();
     }

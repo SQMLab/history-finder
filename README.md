@@ -10,7 +10,7 @@ Following tools and frameworks are required for running the project:
 * [Spring Framework](https://spring.io/)
 * [MongoDB 5.0](https://www.mongodb.com)
 * [InfluxDB 2.7.4](https://www.influxdata.com/)
-* [Grafana](https://grafana.com/)
+* [Grafana](https://grafana.com/)[commit-trace-shaw.csv](..%2Frepertory%2Fcommit-trace-shaw.csv)
 
 ### Configuration
 
@@ -32,7 +32,8 @@ In this file, the following services have been defined:
 Please review the tags of the used images and set them to the same as you're running in production.
 ### Running from command line prompt
 Commit Trace Detail:
--command commit-trace-detail -tracer-name historyFinder -cache-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/trace-detail.json
+java -jar commit-trace-oracle-0.0.1-SNAPSHOT.jar -command commit-trace-detail -tracer-name historyFinder -clone-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/trace-detail.json 
+java -jar commit-trace-oracle-0.0.1-SNAPSHOT.jar -command commit-trace-detail tracer-name historyFinder clone-directory ../academic repository-url https://github.com/checkstyle/checkstyle.git start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java element-name fireErrors start-line 384 output-file ../repertory/trace-detail.json
 
 Commit Trace Shaw:
--command commit-trace-shaw -cache-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/commit-trace-shaw.csv
+* -command commit-trace-shaw -clone-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../repertory/commit-trace-shaw.csv
