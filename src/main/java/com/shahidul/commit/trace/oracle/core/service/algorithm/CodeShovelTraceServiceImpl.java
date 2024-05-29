@@ -153,6 +153,11 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         if (change instanceof Yfilerename) {
             changeTags.add(ChangeTag.FILE_RENAME);
         }
+        if (change instanceof  Ymultichange){
+            for (Ychange subChange :  ((Ymultichange) change).getChanges()){
+                changeTags.addAll(toChangeTags(subChange));
+            }
+        }
         return changeTags;
     }
 }

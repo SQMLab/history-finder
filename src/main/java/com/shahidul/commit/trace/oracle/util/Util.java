@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class Util {
     public static String formatOracleFileId(int oracleFileId) {
-        return String.format("%03d",oracleFileId);
+        return String.format("%03d", oracleFileId);
     }
 
     public static boolean isFileRenamed(String oldFile, String newFile) {
@@ -31,7 +31,8 @@ public class Util {
     public static String getDiffUrl(String repositoryUrl, String parentCommitHash, String commitHash) {
         return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash;
     }
-    public static String readLineRange(String fileContent, Integer startLine, Integer endLine){
+
+    public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
        /* StringBuilder textBuilder = new StringBuilder();
         String[] lines = fileContent.split("\n");
         for (int i = startLine - 1; i < endLine; i++){
@@ -51,8 +52,8 @@ public class Util {
             return oldText;
         }*/
         try {
-            RawText sourceOld = new RawText(oldText.getBytes());
-            RawText sourceNew = new RawText(newText.getBytes());
+            RawText sourceOld = new RawText((oldText == null ? "" : oldText).getBytes());
+            RawText sourceNew = new RawText((newText == null ? "" : newText).getBytes());
             DiffAlgorithm diffAlgorithm = new HistogramDiff();
             RawTextComparator textComparator = RawTextComparator.DEFAULT;
             EditList editList = diffAlgorithm.diff(textComparator, sourceOld, sourceNew);
@@ -61,16 +62,16 @@ public class Util {
             formatter.setContext(1000);
             formatter.format(editList, sourceOld, sourceNew);
             return out.toString(StandardCharsets.UTF_8.name());
-        }catch (Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
 
     }
 
-    public static String truncate(String text, int limit){
-        if (text == null || text.length() <= limit){
+    public static String truncate(String text, int limit) {
+        if (text == null || text.length() <= limit) {
             return text;
-        }else {
+        } else {
             return text.substring(0, limit);
         }
     }
