@@ -165,6 +165,9 @@
     "commitHash" : "6ffc8dd26075456b055ffcd35d3915c23049bfbb",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "6568a9b88220366da3fc9e58fc9de93af9a6520d",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "abff1a2489ea8af10e1bc0a335551262d22f44e7",
     "changeTags" : [ "MOVE", "BODY" ]
   }, {
