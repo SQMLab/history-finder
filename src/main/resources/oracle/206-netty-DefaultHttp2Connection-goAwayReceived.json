@@ -8,41 +8,5 @@
   "element": "goAwayReceived",
   "startLine": 221,
   "endLine": 237,
-  "commits" : [ {
-    "commitHash" : "0b5ff0ebda6707fc4e5926991fb0ea4c4bb4ba36",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
-    "changeTags" : [ "MOVE" ]
-  }, {
-    "commitHash" : "804d8434dc7026d8ae9df1a3a2431fd3034c2594",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "d580245afc77f11e4b82a7f3320f5619b555c2ec",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "4ae8bdc6ec8d37106f386a7d667a9cd279a8f5d8",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "ab925abc7db806ead57f8d9ea50ff322ce2ff891",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "4a79c5899cceb3e3f6e9bd041aa33e119c9d5274",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "e3374e5b1d6091b030bc956318fde1da62915c27",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "83ce8a9187a11b7bf38fd91841fc0b03d3e24d80",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "d5d932a7399d03b811781b08c23b16c07851ad78",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "35b9aa930209ac070436085efe351f7b522df5ff",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "9737cc6cc9436fcc032daef53e194da46b039ba5",
-    "changeTags" : [ "INTRODUCTION" ]
-  } ]
+  "commits": []
 }

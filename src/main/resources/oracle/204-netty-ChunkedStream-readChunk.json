@@ -8,11 +8,5 @@
   "element": "readChunk",
   "startLine": 105,
   "endLine": 151,
-  "commits" : [ {
-    "commitHash" : "620fdc05b519af42e953108507ce3870e6a5033c",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "0b5ff0ebda6707fc4e5926991fb0ea4c4bb4ba36",
-    "changeTags" : [ "INTRODUCTION" ]
-  } ]
+  "commits": []
 }

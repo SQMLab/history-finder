@@ -26,8 +26,6 @@ public class CommitUdt implements Cloneable{
     Date committedAt;
     Integer startLine;
     Integer endLine;
-    String codeFragment;
-    String documentation;
     LinkedHashSet<ChangeTag> changeTags;
     String oldFile;
     String newFile;
@@ -40,6 +38,8 @@ public class CommitUdt implements Cloneable{
     String shortMessage;
     String fullMessage;
     String diffUrl;
+    String codeFragment;
+    String documentation;
     //@Transient
     String diff;
     String docDiff;

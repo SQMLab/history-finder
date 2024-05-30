@@ -30,7 +30,7 @@ public class CommitTraceOutput {
     Double precision;
     Double recall;
     Long runtime;
-
-    List<String> commits;
+    List<String> commitHashes;
+    List<InputCommit> commits;
     List<OutputCommitDetail> commitDetails;
 }

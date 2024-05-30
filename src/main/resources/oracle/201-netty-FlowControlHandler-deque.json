@@ -8,23 +8,5 @@
   "element": "dequeue",
   "startLine": 185,
   "endLine": 213,
-  "commits" : [ {
-    "commitHash" : "565fecbc19cfe6d184f430e405837d0f42c4a2b5",
-    "changeTags" : [ "DOCUMENTATION" ]
-  }, {
-    "commitHash" : "efd563b44bfed7bd019440531a8e195b76b08bd0",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
-    "changeTags" : [ "MOVE" ]
-  }, {
-    "commitHash" : "f7e8603d604870e3b575e653f9ee7d6ed981998f",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "9b37be95501c060bb9191339c771f1b28da7f153",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "5eb0127c2a0baa4bf178d244db919c9fb3a7d36a",
-    "changeTags" : [ "INTRODUCTION" ]
-  } ]
+  "commits": []
 }
