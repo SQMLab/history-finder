@@ -1,0 +1,12 @@
+{
+  "repositoryName": "cassandra",
+  "repositoryUrl": "https://github.com/apache/cassandra.git",
+  "startCommitHash": "8619010cdca8bce471754e4fbeb861f036535007",
+  "file": "src/java/org/apache/cassandra/db/ColumnFamilyStore.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "switchMemtable",
+  "startLine": 1038,
+  "endLine": 1048,
+  "commits": []
+}

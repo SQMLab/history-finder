@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "da3f8681620f31b5708618cb92edab5c8bba4300",
+  "file": "java/dagger/internal/codegen/componentgenerator/ComponentGenerator.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "topLevelTypes",
+  "startLine": 50,
+  "endLine": 62,
+  "commits": []
+}

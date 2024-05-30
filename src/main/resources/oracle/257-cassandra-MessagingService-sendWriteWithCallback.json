@@ -1,0 +1,12 @@
+{
+  "repositoryName": "cassandra",
+  "repositoryUrl": "https://github.com/apache/cassandra.git",
+  "startCommitHash": "67139d5c334e58fdc8d9f09f9288155448666cd3",
+  "file": "src/java/org/apache/cassandra/net/MessagingService.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "sendWriteWithCallback",
+  "startLine": 443,
+  "endLine": 448,
+  "commits": []
+}

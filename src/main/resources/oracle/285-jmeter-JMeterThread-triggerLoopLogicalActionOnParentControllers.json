@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jmeter",
+  "repositoryUrl": "https://github.com/apache/jmeter.git",
+  "startCommitHash": "31e42426238ec74e4f355baa927e55df780c3057",
+  "file": "src/core/src/main/java/org/apache/jmeter/threads/JMeterThread.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "triggerLoopLogicalActionOnParentControllers",
+  "startLine": 355,
+  "endLine": 382,
+  "commits": []
+}

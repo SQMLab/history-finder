@@ -1,0 +1,12 @@
+{
+  "repositoryName": "kafka",
+  "repositoryUrl": "https://github.com/apache/kafka.git",
+  "startCommitHash": "e01eed32ab2a223f8231a7d7e6c4eef05a7fed6f",
+  "file": "streams/src/main/java/org/apache/kafka/streams/processor/internals/StreamThread.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "setState",
+  "startLine": 227,
+  "endLine": 265,
+  "commits": []
+}

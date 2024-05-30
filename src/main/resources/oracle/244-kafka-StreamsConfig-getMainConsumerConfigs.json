@@ -1,0 +1,12 @@
+{
+  "repositoryName": "kafka",
+  "repositoryUrl": "https://github.com/apache/kafka.git",
+  "startCommitHash": "3f70c46874e1dd9591443392f51ff1efc9fdc40e",
+  "file": "streams/src/main/java/org/apache/kafka/streams/StreamsConfig.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getMainConsumerConfigs",
+  "startLine": 1631,
+  "endLine": 1687,
+  "commits": []
+}

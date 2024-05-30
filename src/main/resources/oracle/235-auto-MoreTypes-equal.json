@@ -1,0 +1,12 @@
+{
+  "repositoryName": "auto",
+  "repositoryUrl": "https://github.com/google/auto.git",
+  "startCommitHash": "a9efc78fc2b8402b039b2d33a7d86f2aa066f9c9",
+  "file": "common/src/main/java/com/google/auto/common/MoreTypes.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "equal",
+  "startLine": 322,
+  "endLine": 346,
+  "commits": []
+}

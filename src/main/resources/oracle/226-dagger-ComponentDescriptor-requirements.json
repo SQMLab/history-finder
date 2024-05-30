@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "be77d24b57008987399853893a8eb4bfb198a40f",
+  "file": "java/dagger/internal/codegen/binding/ComponentDescriptor.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "requirements",
+  "startLine": 187,
+  "endLine": 201,
+  "commits": []
+}

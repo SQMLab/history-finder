@@ -1,0 +1,12 @@
+{
+  "repositoryName": "tomcat",
+  "repositoryUrl": "https://github.com/apache/tomcat.git",
+  "startCommitHash": "59c53815d0cead640663d6a1fcdef826335e283e",
+  "file": "java/org/apache/tomcat/util/net/NioEndpoint.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "setSocketOptions",
+  "startLine": 446,
+  "endLine": 491,
+  "commits": []
+}

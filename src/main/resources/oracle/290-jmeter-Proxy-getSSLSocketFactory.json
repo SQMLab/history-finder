@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jmeter",
+  "repositoryUrl": "https://github.com/apache/jmeter.git",
+  "startCommitHash": "12aefb0c70526a61f955ba1dad7fe3e99200b0b2",
+  "file": "src/protocol/http/src/main/java/org/apache/jmeter/protocol/http/proxy/Proxy.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getSSLSocketFactory",
+  "startLine": 335,
+  "endLine": 392,
+  "commits": []
+}

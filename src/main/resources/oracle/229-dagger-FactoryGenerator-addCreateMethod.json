@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "13d64c6ba2fb8c887cd924fe1a0cdeb90ea83779",
+  "file": "java/dagger/internal/codegen/writing/FactoryGenerator.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "addCreateMethod",
+  "startLine": 187,
+  "endLine": 231,
+  "commits": []
+}

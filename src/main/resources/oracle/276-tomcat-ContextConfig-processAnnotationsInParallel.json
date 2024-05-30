@@ -1,0 +1,12 @@
+{
+  "repositoryName": "tomcat",
+  "repositoryUrl": "https://github.com/apache/tomcat.git",
+  "startCommitHash": "eeb4e761abb1cbc2c0797dac558cd91fb3ef44ab",
+  "file": "java/org/apache/catalina/startup/ContextConfig.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "processAnnotationsInParallel",
+  "startLine": 2103,
+  "endLine": 2126,
+  "commits": []
+}

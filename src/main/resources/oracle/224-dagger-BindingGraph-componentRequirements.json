@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "f4b45197f95133f286860674467b74506aefc79c",
+  "file": "java/dagger/internal/codegen/binding/BindingGraph.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "componentRequirements",
+  "startLine": 392,
+  "endLine": 409,
+  "commits": []
+}

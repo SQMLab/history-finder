@@ -1,0 +1,12 @@
+{
+  "repositoryName": "auto",
+  "repositoryUrl": "https://github.com/google/auto.git",
+  "startCommitHash": "74acb34b59b7a72dee1a692136e383f6afdbf0b0",
+  "file": "common/src/main/java/com/google/auto/common/BasicAnnotationProcessor.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "process",
+  "startLine": 234,
+  "endLine": 254,
+  "commits": []
+}

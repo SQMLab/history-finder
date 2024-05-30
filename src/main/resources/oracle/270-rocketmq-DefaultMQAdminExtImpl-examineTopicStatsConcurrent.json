@@ -1,0 +1,12 @@
+{
+  "repositoryName": "rocketmq",
+  "repositoryUrl": "https://github.com/apache/rocketmq.git",
+  "startCommitHash": "c185c60b0fdfb3be2136a704c9014c1ec35ca0da",
+  "file": "tools/src/main/java/org/apache/rocketmq/tools/admin/DefaultMQAdminExtImpl.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "examineTopicStatsConcurrent",
+  "startLine": 739,
+  "endLine": 775,
+  "commits": []
+}

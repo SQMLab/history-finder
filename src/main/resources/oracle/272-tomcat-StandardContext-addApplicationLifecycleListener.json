@@ -1,0 +1,12 @@
+{
+  "repositoryName": "tomcat",
+  "repositoryUrl": "https://github.com/apache/tomcat.git",
+  "startCommitHash": "942e0148ddbcb6735e17ec5037fdac2781d55ce9",
+  "file": "java/org/apache/catalina/core/StandardContext.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "addApplicationLifecycleListener",
+  "startLine": 1345,
+  "endLine": 1350,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "cassandra",
+  "repositoryUrl": "https://github.com/apache/cassandra.git",
+  "startCommitHash": "2e05cd4c8dd22e458eb1d2dad9cd34936b470266",
+  "file": "src/java/org/apache/cassandra/service/StorageService.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "exitWriteSurveyMode",
+  "startLine": 1055,
+  "endLine": 1094,
+  "commits": []
+}

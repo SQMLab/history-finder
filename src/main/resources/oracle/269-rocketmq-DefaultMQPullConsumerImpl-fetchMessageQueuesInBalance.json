@@ -1,0 +1,12 @@
+{
+  "repositoryName": "rocketmq",
+  "repositoryUrl": "https://github.com/apache/rocketmq.git",
+  "startCommitHash": "3fadc8f30c898f9ddd6730ba4ac428894a1c1077",
+  "file": "client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPullConsumerImpl.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "fetchMessageQueuesInBalance",
+  "startLine": 739,
+  "endLine": 775,
+  "commits": []
+}
