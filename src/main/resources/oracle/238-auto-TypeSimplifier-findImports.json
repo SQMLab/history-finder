@@ -1,0 +1,12 @@
+{
+  "repositoryName": "auto",
+  "repositoryUrl": "https://github.com/google/auto.git",
+  "startCommitHash": "57fdeb9996af4b19466701cac5a69e917abf249e",
+  "file": "value/src/main/java/com/google/auto/value/processor/TypeSimplifier.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "findImports",
+  "startLine": 202,
+  "endLine": 236,
+  "commits": []
+}

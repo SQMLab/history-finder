@@ -1,0 +1,12 @@
+{
+  "repositoryName": "rocketmq",
+  "repositoryUrl": "https://github.com/apache/rocketmq.git",
+  "startCommitHash": "8357cff10156860ffbedc276d79f90609aa3bb85",
+  "file": "client/src/main/java/org/apache/rocketmq/client/impl/factory/MQClientInstance.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "uploadFilterClassToAllFilterServer",
+  "startLine": 739,
+  "endLine": 775,
+  "commits": []
+}

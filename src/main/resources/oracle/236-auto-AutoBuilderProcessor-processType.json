@@ -1,0 +1,12 @@
+{
+  "repositoryName": "auto",
+  "repositoryUrl": "https://github.com/google/auto.git",
+  "startCommitHash": "e55e60a969e270274c0a4a0f2062d484585eee8c",
+  "file": "value/src/main/java/com/google/auto/value/processor/AutoBuilderProcessor.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "processType",
+  "startLine": 164,
+  "endLine": 179,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "kafka",
+  "repositoryUrl": "https://github.com/apache/kafka.git",
+  "startCommitHash": "6e4a098055d5ef852022a76a6ea48ccb880f6342",
+  "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "canRetry",
+  "startLine": 848,
+  "endLine": 855,
+  "commits": []
+}

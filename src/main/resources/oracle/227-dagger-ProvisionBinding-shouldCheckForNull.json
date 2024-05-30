@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "fd737af1b6467e1666221f9493fc4d5a84676e52",
+  "file": "java/dagger/internal/codegen/binding/ProvisionBinding.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "shouldCheckForNull",
+  "startLine": 96,
+  "endLine": 101,
+  "commits": []
+}

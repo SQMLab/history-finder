@@ -1,0 +1,12 @@
+{
+  "repositoryName": "kafka",
+  "repositoryUrl": "https://github.com/apache/kafka.git",
+  "startCommitHash": "fccd7fec666d6570758e0b7891771099240ceee8",
+  "file": "clients/src/main/java/org/apache/kafka/clients/consumer/internals/ConsumerCoordinator.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "poll",
+  "startLine": 469,
+  "endLine": 535,
+  "commits": []
+}

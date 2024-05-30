@@ -1,0 +1,12 @@
+{
+  "repositoryName": "cassandra",
+  "repositoryUrl": "https://github.com/apache/cassandra.git",
+  "startCommitHash": "41a4a266515f9462c28dd1c28f5791506f7653b6",
+  "file": "src/java/org/apache/cassandra/service/StorageProxy.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "cas",
+  "startLine": 303,
+  "endLine": 324,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "85af407fa5f721e960eb0ef09e3fd55eaf514e84",
+  "file": "java/dagger/internal/codegen/binding/ErrorMessages.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "creatorMessagesFor",
+  "startLine": 63,
+  "endLine": 76,
+  "commits": []
+}

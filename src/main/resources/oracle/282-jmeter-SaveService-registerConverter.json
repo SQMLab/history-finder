@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jmeter",
+  "repositoryUrl": "https://github.com/apache/jmeter.git",
+  "startCommitHash": "6d05eab0fe5e5ac486857a1a7ed0efed78d92a88",
+  "file": "src/core/src/main/java/org/apache/jmeter/save/SaveService.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "registerConverter",
+  "startLine": 276,
+  "endLine": 286,
+  "commits": []
+}

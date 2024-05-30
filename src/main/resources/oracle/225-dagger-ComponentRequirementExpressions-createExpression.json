@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dagger",
+  "repositoryUrl": "https://github.com/google/dagger.git",
+  "startCommitHash": "e54306241fc8e70c86648faa6a542ee1ad5acf21",
+  "file": "java/dagger/internal/codegen/writing/ComponentRequirementExpressions.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "createExpression",
+  "startLine": 103,
+  "endLine": 114,
+  "commits": []
+}

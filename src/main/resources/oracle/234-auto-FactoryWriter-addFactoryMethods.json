@@ -1,0 +1,12 @@
+{
+  "repositoryName": "auto",
+  "repositoryUrl": "https://github.com/google/auto.git",
+  "startCommitHash": "67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5",
+  "file": "factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "addFactoryMethods",
+  "startLine": 150,
+  "endLine": 203,
+  "commits": []
+}

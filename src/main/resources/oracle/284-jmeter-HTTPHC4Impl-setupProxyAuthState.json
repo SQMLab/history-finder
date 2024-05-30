@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jmeter",
+  "repositoryUrl": "https://github.com/apache/jmeter.git",
+  "startCommitHash": "7450e4b0497c9a37c44852912e8d3dc2d0ee644e",
+  "file": "src/protocol/http/src/main/java/org/apache/jmeter/protocol/http/sampler/HTTPHC4Impl.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "setupProxyAuthState",
+  "startLine": 786,
+  "endLine": 792,
+  "commits": []
+}

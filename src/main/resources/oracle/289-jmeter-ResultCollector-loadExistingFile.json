@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jmeter",
+  "repositoryUrl": "https://github.com/apache/jmeter.git",
+  "startCommitHash": "80c39149ef977f87ee03cddb0b99a21629126ce5",
+  "file": "src/core/src/main/java/org/apache/jmeter/reporters/ResultCollector.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "loadExistingFile",
+  "startLine": 362,
+  "endLine": 408,
+  "commits": []
+}

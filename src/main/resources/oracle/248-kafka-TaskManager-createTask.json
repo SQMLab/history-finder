@@ -1,0 +1,12 @@
+{
+  "repositoryName": "kafka",
+  "repositoryUrl": "https://github.com/apache/kafka.git",
+  "startCommitHash": "55a00be4e973f3f4c8869b6f70de1e285719e890",
+  "file": "trogdor/src/main/java/org/apache/kafka/trogdor/coordinator/TaskManager.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "createTask",
+  "startLine": 307,
+  "endLine": 315,
+  "commits": []
+}
