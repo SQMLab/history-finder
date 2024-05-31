@@ -1,0 +1,12 @@
+{
+  "repositoryName": "MPAndroidChart",
+  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash": "58545bbbfa04b053d10784df9e041c4fc3d08b9d",
+  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/BarLineChartBase.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "zoomAndCenterAnimated",
+  "startLine": 717,
+  "endLine": 728,
+  "commits": []
+}

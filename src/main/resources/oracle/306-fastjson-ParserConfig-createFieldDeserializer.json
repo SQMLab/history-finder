@@ -1,0 +1,12 @@
+{
+  "repositoryName": "fastjson",
+  "repositoryUrl": "https://github.com/alibaba/fastjson.git",
+  "startCommitHash": "097bff1a792e39f4e0b2807faa53af0e89fbe5e0",
+  "file": "src/main/java/com/alibaba/fastjson/parser/ParserConfig.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "createFieldDeserializer",
+  "startLine": 1086,
+  "endLine": 1106,
+  "commits": []
+}

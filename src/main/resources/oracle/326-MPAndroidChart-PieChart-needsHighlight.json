@@ -1,0 +1,12 @@
+{
+  "repositoryName": "MPAndroidChart",
+  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash": "aea2ff3417e30d6d4b1ce7e777cbd8bc83e1c95d",
+  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/PieChart.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "needsHighlight",
+  "startLine": 297,
+  "endLine": 310,
+  "commits": []
+}

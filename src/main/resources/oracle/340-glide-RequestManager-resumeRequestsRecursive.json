@@ -1,0 +1,12 @@
+{
+  "repositoryName": "glide",
+  "repositoryUrl": "https://github.com/bumptech/glide.git",
+  "startCommitHash": "3d6d038f7341dc71872d076b42d74492fec197b9",
+  "file": "library/src/main/java/com/bumptech/glide/RequestManager.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "resumeRequestsRecursive",
+  "startLine": 349,
+  "endLine": 355,
+  "commits": []
+}

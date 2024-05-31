@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jenkins",
+  "repositoryUrl": "https://github.com/jenkinsci/jenkins.git",
+  "startCommitHash": "b52201b020400594c2999188f19f0b1ff0f9063c",
+  "file": "core/src/main/java/hudson/model/AbstractProject.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getBuildForDeprecatedMethods",
+  "startLine": 517,
+  "endLine": 528,
+  "commits": []
+}

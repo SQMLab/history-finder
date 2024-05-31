@@ -1,0 +1,12 @@
+{
+  "repositoryName": "MPAndroidChart",
+  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash": "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
+  "file": "MPChartExample/src/main/java/com/xxmassdeveloper/mpchartexample/BarChartActivity.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "onProgressChanged",
+  "startLine": 283,
+  "endLine": 290,
+  "commits": []
+}

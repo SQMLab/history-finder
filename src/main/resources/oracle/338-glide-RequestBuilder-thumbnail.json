@@ -1,0 +1,12 @@
+{
+  "repositoryName": "glide",
+  "repositoryUrl": "https://github.com/bumptech/glide.git",
+  "startCommitHash": "60b567e5feec70ba810a663e56a10d837f26c56c",
+  "file": "library/src/main/java/com/bumptech/glide/RequestBuilder.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "thumbnail",
+  "startLine": 437,
+  "endLine": 465,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "RxJava",
+  "repositoryUrl": "https://github.com/ReactiveX/RxJava.git",
+  "startCommitHash": "6300b1558c265cf80571acd882edace6a0be361f",
+  "file": "src/main/java/io/reactivex/rxjava3/core/Observable.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "combineLatestDelayError",
+  "startLine": 1040,
+  "endLine": 1049,
+  "commits": []
+}
