@@ -1,0 +1,12 @@
+{
+  "repositoryName": "zxing",
+  "repositoryUrl": "https://github.com/zxing/zxing.git",
+  "startCommitHash": "a24f93093e01a63e0cd4814c954e4196cc5c3a4e",
+  "file": "zxingorg/src/main/java/com/google/zxing/web/DecodeServlet.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "doPost",
+  "startLine": 306,
+  "endLine": 333,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "j2objc",
+  "repositoryUrl": "https://github.com/google/j2objc.git",
+  "startCommitHash": "c960e45598ba98d7d754f3e51a5d1b8a4ab82b77",
+  "file": "translator/src/main/java/com/google/devtools/j2objc/gen/StatementGenerator.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "needsParenthesesForMacro",
+  "startLine": 944,
+  "endLine": 952,
+  "commits": []
+}

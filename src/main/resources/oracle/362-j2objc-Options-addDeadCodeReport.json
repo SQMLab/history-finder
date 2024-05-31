@@ -1,0 +1,12 @@
+{
+  "repositoryName": "j2objc",
+  "repositoryUrl": "https://github.com/google/j2objc.git",
+  "startCommitHash": "da57421f01d6c59b1feb570371836eae1b944883",
+  "file": "translator/src/main/java/com/google/devtools/j2objc/Options.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "addDeadCodeReport",
+  "startLine": 982,
+  "endLine": 989,
+  "commits": []
+}

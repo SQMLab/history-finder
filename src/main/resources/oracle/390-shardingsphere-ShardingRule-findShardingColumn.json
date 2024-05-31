@@ -1,0 +1,12 @@
+{
+  "repositoryName": "shardingsphere",
+  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
+  "startCommitHash": "f332f10f2b7aafb997123d4f77be6995edfdaa32",
+  "file": "features/sharding/core/src/main/java/org/apache/shardingsphere/sharding/rule/ShardingRule.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "findShardingColumn",
+  "startLine": 451,
+  "endLine": 467,
+  "commits": []
+}

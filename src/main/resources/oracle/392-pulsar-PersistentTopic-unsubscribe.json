@@ -1,0 +1,12 @@
+{
+  "repositoryName": "pulsar",
+  "repositoryUrl": "https://github.com/apache/pulsar.git",
+  "startCommitHash": "9fd1b61fc45d06348af0241f002966087f1822a0",
+  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/persistent/PersistentTopic.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "unsubscribe",
+  "startLine": 1259,
+  "endLine": 1291,
+  "commits": []
+}

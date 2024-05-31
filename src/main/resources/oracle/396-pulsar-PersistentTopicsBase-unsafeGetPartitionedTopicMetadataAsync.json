@@ -1,0 +1,12 @@
+{
+  "repositoryName": "pulsar",
+  "repositoryUrl": "https://github.com/apache/pulsar.git",
+  "startCommitHash": "20e83b96c3fcf10010977ab785093e105e4e40d8",
+  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/admin/impl/PersistentTopicsBase.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "unsafeGetPartitionedTopicMetadataAsync",
+  "startLine": 4329,
+  "endLine": 4355,
+  "commits": []
+}

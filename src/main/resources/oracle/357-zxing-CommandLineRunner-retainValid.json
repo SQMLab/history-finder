@@ -1,0 +1,12 @@
+{
+  "repositoryName": "zxing",
+  "repositoryUrl": "https://github.com/zxing/zxing.git",
+  "startCommitHash": "36f38c5beb3a782baa34f7c98386d6b910c0450a",
+  "file": "javase/src/main/java/com/google/zxing/client/j2se/CommandLineRunner.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "retainValid",
+  "startLine": 135,
+  "endLine": 152,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "j2objc",
+  "repositoryUrl": "https://github.com/google/j2objc.git",
+  "startCommitHash": "d3ff92fb4d154f63a3a142aa55cd02ad9b24cfcf",
+  "file": "translator/src/main/java/com/google/devtools/j2objc/util/NameTable.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getVariableQualifiedName",
+  "startLine": 263,
+  "endLine": 275,
+  "commits": []
+}

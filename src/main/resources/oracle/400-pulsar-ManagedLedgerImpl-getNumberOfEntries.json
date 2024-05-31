@@ -1,0 +1,12 @@
+{
+  "repositoryName": "pulsar",
+  "repositoryUrl": "https://github.com/apache/pulsar.git",
+  "startCommitHash": "ae9616b7ee41e77dde590045b8e1d5bd04192ffc",
+  "file": "managed-ledger/src/main/java/org/apache/bookkeeper/mledger/impl/ManagedLedgerImpl.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getNumberOfEntries",
+  "startLine": 3490,
+  "endLine": 3524,
+  "commits": []
+}

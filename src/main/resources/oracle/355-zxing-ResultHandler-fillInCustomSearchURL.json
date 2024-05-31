@@ -1,0 +1,12 @@
+{
+  "repositoryName": "zxing",
+  "repositoryUrl": "https://github.com/zxing/zxing.git",
+  "startCommitHash": "b51346c072723d6c3f14da17a0c842243af8a2ab",
+  "file": "android/src/com/google/zxing/client/android/result/ResultHandler.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "fillInCustomSearchURL",
+  "startLine": 501,
+  "endLine": 522,
+  "commits": []
+}

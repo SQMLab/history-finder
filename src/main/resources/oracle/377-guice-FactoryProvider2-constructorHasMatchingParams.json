@@ -1,0 +1,12 @@
+{
+  "repositoryName": "guice",
+  "repositoryUrl": "https://github.com/google/guice.git",
+  "startCommitHash": "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
+  "file": "extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "constructorHasMatchingParams",
+  "startLine": 650,
+  "endLine": 676,
+  "commits": []
+}

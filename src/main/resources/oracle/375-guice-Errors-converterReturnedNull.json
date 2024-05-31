@@ -1,0 +1,12 @@
+{
+  "repositoryName": "guice",
+  "repositoryUrl": "https://github.com/google/guice.git",
+  "startCommitHash": "becce74bd99370a18bcbe10aaba6b48d227588da",
+  "file": "core/src/com/google/inject/internal/Errors.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "ambiguousTypeConversion",
+  "startLine": 193,
+  "endLine": 205,
+  "commits": []
+}
