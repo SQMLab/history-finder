@@ -1,0 +1,12 @@
+{
+  "repositoryName": "MPAndroidChart",
+  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash": "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
+  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/Chart.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "setData",
+  "startLine": 283,
+  "endLine": 305,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "glide",
+  "repositoryUrl": "https://github.com/bumptech/glide.git",
+  "startCommitHash": "526a0ab295078f92436b781af3b5837567adeefb",
+  "file": "library/src/main/java/com/bumptech/glide/load/resource/bitmap/Downsampler.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "adjustTargetDensityForError",
+  "startLine": 659,
+  "endLine": 665,
+  "commits": []
+}

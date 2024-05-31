@@ -1,0 +1,12 @@
+{
+  "repositoryName": "glide",
+  "repositoryUrl": "https://github.com/bumptech/glide.git",
+  "startCommitHash": "26ecf64550a07d1b8f958a8e3ef192028b4892ca",
+  "file": "library/src/main/java/com/bumptech/glide/Glide.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "preFillBitmapPool",
+  "startLine": 423,
+  "endLine": 432,
+  "commits": []
+}

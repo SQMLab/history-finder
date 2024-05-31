@@ -1,0 +1,12 @@
+{
+  "repositoryName": "jenkins",
+  "repositoryUrl": "https://github.com/jenkinsci/jenkins.git",
+  "startCommitHash": "c3e3a4a6e120738fedc4a06532b0238d0aecc930",
+  "file": "core/src/main/java/hudson/model/Queue.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "load",
+  "startLine": 392,
+  "endLine": 455,
+  "commits": []
+}

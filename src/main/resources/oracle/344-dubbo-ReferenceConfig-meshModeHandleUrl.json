@@ -1,0 +1,12 @@
+{
+  "repositoryName": "dubbo",
+  "repositoryUrl": "https://github.com/apache/dubbo.git",
+  "startCommitHash": "ec443043e2da83d946943baabf7f122f9efc0dcc",
+  "file": "dubbo-config/dubbo-config-api/src/main/java/org/apache/dubbo/config/ReferenceConfig.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "meshModeHandleUrl",
+  "startLine": 514,
+  "endLine": 558,
+  "commits": []
+}
