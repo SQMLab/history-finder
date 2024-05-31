@@ -1,0 +1,12 @@
+{
+  "repositoryName": "zxing",
+  "repositoryUrl": "https://github.com/zxing/zxing.git",
+  "startCommitHash": "e7ed6aee2ffeaae1fb3b608352a62e7d5588cb13",
+  "file": "android/src/com/google/zxing/client/android/camera/CameraConfigurationManager.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "setDesiredCameraParameters",
+  "startLine": 127,
+  "endLine": 188,
+  "commits": []
+}

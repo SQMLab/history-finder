@@ -1,0 +1,12 @@
+{
+  "repositoryName": "pulsar",
+  "repositoryUrl": "https://github.com/apache/pulsar.git",
+  "startCommitHash": "4e5c0bcc2b44c33a966287b86c2c235be249dc51",
+  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/ServerCnx.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "authenticateOriginalData",
+  "startLine": 915,
+  "endLine": 942,
+  "commits": []
+}

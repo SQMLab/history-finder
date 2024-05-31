@@ -1,0 +1,12 @@
+{
+  "repositoryName": "zxing",
+  "repositoryUrl": "https://github.com/zxing/zxing.git",
+  "startCommitHash": "04595508b63c3bde614b59dac361b50bfadb8757",
+  "file": "android/src/com/google/zxing/client/android/CaptureActivity.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getCurrentOrientation",
+  "startLine": 267,
+  "endLine": 286,
+  "commits": []
+}

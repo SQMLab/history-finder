@@ -1,0 +1,12 @@
+{
+  "repositoryName": "shardingsphere",
+  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
+  "startCommitHash": "d4035fc21fe37ec8ba60ec14c002ccfd7e2c0396",
+  "file": "jdbc/src/main/java/org/apache/shardingsphere/driver/jdbc/core/statement/ShardingSphereStatement.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "createQueryContext",
+  "startLine": 352,
+  "endLine": 359,
+  "commits": []
+}

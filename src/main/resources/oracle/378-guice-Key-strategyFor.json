@@ -1,0 +1,12 @@
+{
+  "repositoryName": "guice",
+  "repositoryUrl": "https://github.com/google/guice.git",
+  "startCommitHash": "cd1921901325c9ffd9388856bab484281da9a695",
+  "file": "core/src/com/google/inject/Key.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "strategyFor",
+  "startLine": 348,
+  "endLine": 359,
+  "commits": []
+}

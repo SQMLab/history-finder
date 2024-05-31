@@ -1,0 +1,12 @@
+{
+  "repositoryName": "shardingsphere",
+  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
+  "startCommitHash": "a8174aed86929ef9a8204a8d8672c92426fa4938",
+  "file": "kernel/data-pipeline/scenario/migration/src/main/java/org/apache/shardingsphere/data/pipeline/scenario/migration/api/MigrationJobAPI.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "buildYamlJobConfiguration",
+  "startLine": 120,
+  "endLine": 166,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "shardingsphere",
+  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
+  "startCommitHash": "e383088483cbb9b98e3a720a9be0b4fae479bbe0",
+  "file": "mode/core/src/main/java/org/apache/shardingsphere/mode/manager/ContextManager.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "refreshDatabaseMetaData",
+  "startLine": 135,
+  "endLine": 152,
+  "commits": []
+}

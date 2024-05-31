@@ -1,0 +1,12 @@
+{
+  "repositoryName": "j2objc",
+  "repositoryUrl": "https://github.com/google/j2objc.git",
+  "startCommitHash": "70aea106c1b02a0d9aec6df3808ddca987f460c9",
+  "file": "translator/src/main/java/com/google/devtools/j2objc/gen/ObjectiveCImplementationGenerator.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "printMemoryManagement",
+  "startLine": 164,
+  "endLine": 185,
+  "commits": []
+}

@@ -1,0 +1,12 @@
+{
+  "repositoryName": "guice",
+  "repositoryUrl": "https://github.com/google/guice.git",
+  "startCommitHash": "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
+  "file": "core/src/com/google/inject/internal/InjectorImpl.java",
+  "language": "Java",
+  "elementType": "method",
+  "element": "getInternalDependencies",
+  "startLine": 684,
+  "endLine": 652,
+  "commits": []
+}
