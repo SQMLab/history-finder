@@ -22,6 +22,8 @@ public enum TracerName {
     HISTORY_FINDER("historyFinder"),
     INTELLI_J("intelliJ"),
     EXPECTED("expected"),
+    EXPERIMENT_X("experimentX"),
+    EXPERIMENT_Y("experimentY"),
     AGGREGATED("aggregated");
     String code;
 

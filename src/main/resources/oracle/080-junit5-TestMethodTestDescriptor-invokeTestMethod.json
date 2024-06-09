@@ -84,6 +84,9 @@
     "commitHash" : "ac7bb522519cd8a600324aa909a5c17a110cb97f",
     "changeTags" : [ "BODY", "MODIFIER", "PARAMETER", "SIGNATURE" ]
   }, {
+    "commitHash" : "b6814577e06fc09024ba4739db24a72725cc4d41",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "23c20e541adffed56fcb34ad297d843081eaa796",
     "changeTags" : [ "BODY" ]
   }, {
