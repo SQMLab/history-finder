@@ -61,6 +61,13 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
+    public List<TraceEntity> findAll() {
+        return traceRepository.findAll()
+                .stream()
+                .toList();
+    }
+
+    @Override
     public CommitUdt cloneStaticFields(CommitUdt commitUdt) {
         return CommitUdt.builder()
                 .commitHash(commitUdt.getCommitHash())
@@ -90,13 +97,14 @@ public class TraceDaoImpl implements TraceDao {
             return traceRepository.save(traceEntity);
         }catch (BsonMaximumSizeExceededException bsonMaximumSizeExceededException){
             quietlyTruncateDiff(traceEntity);
-            traceEntity.setVersion(traceEntity.getVersion() - 1);
+            /*TraceEntity newlyLoadedEntity = findByOracleId(traceEntity.getOracleFileId());
+            traceEntity.setVersion(newlyLoadedEntity.getVersion())*/;
             return traceRepository.save(traceEntity);
         }
     }
 
     private void quietlyTruncateDiff(TraceEntity traceEntity){
-        traceEntity.getAnalysis().values().stream().forEach(analysisUdt -> {
+        traceEntity.getAnalysis().values().forEach(analysisUdt -> {
 
             truncateDiff(analysisUdt.getCommits());
             truncateDiff(analysisUdt.getCorrectCommits());

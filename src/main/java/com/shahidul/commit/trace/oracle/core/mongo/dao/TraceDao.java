@@ -15,6 +15,7 @@ public interface TraceDao {
     List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer toFileId);
     TraceEntity findByOracleHash(String oracleHash);
     CommitUdt findExpectedCommit(String oracleFileName, String commitHash);
+    List<TraceEntity> findAll();
     CommitUdt cloneStaticFields(CommitUdt commitUdt);
     void delete(TraceEntity traceEntity);
     TraceEntity save(TraceEntity traceEntity);

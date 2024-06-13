@@ -1,9 +1,9 @@
 package com.shahidul.commit.trace.oracle.core.service.aggregator;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ import java.util.*;
 @AllArgsConstructor
 @Slf4j
 public class MetadataResolverServiceImpl implements MetadataResolverService {
-    TraceRepository traceRepository;
+    TraceDao traceDao;
     AppProperty appProperty;
 
     @Override
@@ -51,7 +51,7 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                     analysis.setCommits(injectMetaData(traceEntity, analysis.getCommits(), finalRepository, commitMap));
                     return analysis;
                 }).toList();
-        return traceRepository.save(traceEntity);
+        return traceDao.save(traceEntity);
     }
 
 
