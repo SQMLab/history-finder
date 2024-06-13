@@ -3,10 +3,10 @@ package com.shahidul.commit.trace.oracle.core.service.algorithm;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @Slf4j
 public class AggregatorTracer implements TraceService {
-    TraceRepository traceRepository;
+    TraceDao traceDao;
     AppProperty appProperty;
 
 
@@ -89,6 +89,6 @@ public class AggregatorTracer implements TraceService {
                 .commits(aggregatedList)
                 .build();
         traceEntity.getAnalysis().put(TracerName.AGGREGATED.getCode(), analysisUdt);
-        return traceRepository.save(traceEntity);
+        return traceDao.save(traceEntity);
     }
 }

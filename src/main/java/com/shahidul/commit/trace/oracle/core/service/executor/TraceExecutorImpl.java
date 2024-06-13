@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.executor;
 
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,11 +18,11 @@ import java.util.List;
 @AllArgsConstructor
 public class TraceExecutorImpl implements TraceExecutor {
     List<TraceService> traceServiceList;
-    TraceRepository traceRepository;
+    TraceDao traceDao;
 
     @Override
     public void execute() {
-        List<TraceEntity> traceEntityList = traceRepository.findAll().stream().toList();
+        List<TraceEntity> traceEntityList = traceDao.findAll();
         traceServiceList.stream()
                 .map(traceService -> {
                     traceEntityList.stream()
@@ -43,6 +43,6 @@ public class TraceExecutorImpl implements TraceExecutor {
         traceEntity.getAnalysis()
                 .get(traceService.getTracerName())
                 .setRuntime(clock.getLastTaskTimeMillis());
-        return traceRepository.save(traceEntity);
+        return traceDao.save(traceEntity);
     }
 }
