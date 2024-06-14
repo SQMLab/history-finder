@@ -30,4 +30,6 @@ public class AppProperty {
     String oracleFileDirectory;
     @Value("${trace.file-directory}")
     String traceFileDirectory;
+    @Value("${trace.cache-directory}")
+    String traceCacheDirectory;
 }
