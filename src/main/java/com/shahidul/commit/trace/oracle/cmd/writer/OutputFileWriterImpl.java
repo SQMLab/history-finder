@@ -22,7 +22,7 @@ public class OutputFileWriterImpl implements OutputFileWriter {
     @Override
     public void write(String file, String content) {
         try {
-            FileWriter fileWriter = new FileWriter(file);
+            FileWriter fileWriter = new FileWriter(createFileIfNotExists(new File(file)));
             fileWriter.write(content);
             fileWriter.flush();
             fileWriter.close();
@@ -49,5 +49,15 @@ public class OutputFileWriterImpl implements OutputFileWriter {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private File createFileIfNotExists(File file) throws IOException {
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        return file;
     }
 }

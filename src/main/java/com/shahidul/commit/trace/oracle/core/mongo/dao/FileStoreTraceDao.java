@@ -7,13 +7,12 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -58,7 +57,10 @@ public class FileStoreTraceDao implements TraceDao {
 
     @Override
     public TraceEntity findByOracleHash(String oracleHash) {
-        return null;
+        return findAll()
+                .stream().filter(traceEntity -> oracleHash.equalsIgnoreCase(traceEntity.getUid()))
+                .findFirst()
+                .orElseGet(null);
     }
 
     @Override
@@ -80,12 +82,12 @@ public class FileStoreTraceDao implements TraceDao {
         if (outputFile.exists()) {
             outputFile.delete();
         }
-
     }
 
     @Override
     public TraceEntity save(TraceEntity traceEntity) {
         try {
+            addDateTimeAndVersion(traceEntity);
             File outputFile = createFileIfNotExists(traceEntity.getOracleFileName());
             objectMapper.writerWithDefaultPrettyPrinter()
                     .writeValue(outputFile, traceEntity);
@@ -108,6 +110,17 @@ public class FileStoreTraceDao implements TraceDao {
         listTraceFiles()
                 .map(file -> file.delete())
                 .toList();
+    }
+
+    private void addDateTimeAndVersion(TraceEntity traceEntity) {
+        if (traceEntity.getCreatedAt() == null) {
+            traceEntity.setCreatedAt(new Date());
+        }
+        traceEntity.setUpdatedAt(new Date());
+        if (traceEntity.getVersion() == null) {
+            traceEntity.setVersion(0);
+        }
+        traceEntity.setVersion(traceEntity.getVersion() + 1);
     }
 
     private TraceEntity readByFileName(File oracleFile) {
