@@ -4,8 +4,11 @@ import com.felixgrund.codeshovel.util.Utl;
 import org.eclipse.jgit.diff.*;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.IntStream;
 
 /**
  * @author Shahidul Islam
@@ -74,5 +77,26 @@ public class Util {
         } else {
             return text.substring(0, limit);
         }
+    }
+
+    public static List<Integer> parseOraceFileIds(String fileIdsText) {
+        Set<Integer> idSet = new HashSet<>();
+        String[] idOrRanges = fileIdsText.replace(" ", "").split(",");
+        for (int i = 0, idOrRangesLength = idOrRanges.length; i < idOrRangesLength; i++) {
+            String idOrRange = idOrRanges[i];
+            if (idOrRange.contains("-")) {
+                String[] range = idOrRange.split("-");
+                int[] ids = IntStream.rangeClosed(Integer.parseInt(range[0]), Integer.parseInt(range[1]))
+                        .toArray();
+                for (int id : ids) {
+                    idSet.add(id);
+                }
+            } else {
+                idSet.add(Integer.parseInt(idOrRange));
+            }
+        }
+        return idSet.stream()
+                .sorted()
+                .toList();
     }
 }

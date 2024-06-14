@@ -15,6 +15,7 @@ public interface TraceDao {
     TraceEntity findByOracleName(String oracleFileName);
 
     List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer exclusiveToFileId);
+    List<TraceEntity> findByOracleFileIdList(List<Integer> oracleFileIdList);
 
     TraceEntity findByOracleHash(String oracleHash);
 
