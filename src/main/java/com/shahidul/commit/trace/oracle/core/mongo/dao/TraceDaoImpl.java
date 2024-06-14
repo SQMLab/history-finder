@@ -97,8 +97,7 @@ public class TraceDaoImpl implements TraceDao {
             return traceRepository.save(traceEntity);
         }catch (BsonMaximumSizeExceededException bsonMaximumSizeExceededException){
             quietlyTruncateDiff(traceEntity);
-            /*TraceEntity newlyLoadedEntity = findByOracleId(traceEntity.getOracleFileId());
-            traceEntity.setVersion(newlyLoadedEntity.getVersion())*/;
+            traceEntity.setVersion(traceEntity.getVersion() - 1);
             return traceRepository.save(traceEntity);
         }
     }
