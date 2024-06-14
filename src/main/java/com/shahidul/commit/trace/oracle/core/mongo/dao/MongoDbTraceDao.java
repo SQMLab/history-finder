@@ -43,6 +43,11 @@ public class MongoDbTraceDao implements TraceDao {
     }
 
     @Override
+    public List<TraceEntity> findByOracleFileIdList(List<Integer> oracleFileIdList) {
+        return traceRepository.findByOracleFileIdIn(oracleFileIdList);
+    }
+
+    @Override
     public TraceEntity findByOracleHash(String oracleHash) {
         return traceRepository.findByUid(oracleHash);
     }

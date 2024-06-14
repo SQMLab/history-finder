@@ -12,6 +12,7 @@ import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
 import com.shahidul.commit.trace.oracle.test.service.TestGeneratorService;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,11 +86,11 @@ public class OracleTest {
     @TestFactory
     Stream<DynamicNode> executeTest() {
 
-        String fromFileId = environment.getProperty("run-config.from-file-id", "001");
-        String toFileId = environment.getProperty("run-config.to-file-id", fromFileId);
         String forceCompute = environment.getProperty("run-config.force-compute", "False");
 
-        List<TraceEntity> traceEntityList = traceDao.findByOracleFileRange(Integer.parseInt(fromFileId), Integer.parseInt(toFileId) + 1);
+        String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
+        List<Integer> oracleFileIdList = Util.parseOraceFileIds(oracleFileIdsText);
+        List<TraceEntity> traceEntityList = traceDao.findByOracleFileIdList(oracleFileIdList);
         List<TracerName> tracerList = Arrays.stream(environment.getProperty("run-config.tracer-name", "historyFinder").split(","))
                 .filter(code -> !code.isBlank())
                 .map(TracerName::fromCode)

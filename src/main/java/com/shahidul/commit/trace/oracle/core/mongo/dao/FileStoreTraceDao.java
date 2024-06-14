@@ -11,10 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -53,6 +50,13 @@ public class FileStoreTraceDao implements TraceDao {
                 })
                 .map(this::readByFileName)
                 .toList();
+    }
+
+    @Override
+    public List<TraceEntity> findByOracleFileIdList(List<Integer> oracleFileIdList) {
+        List<TraceEntity> traceEntityList = new ArrayList<>();
+        oracleFileIdList.forEach(oracleFileId -> traceEntityList.add(findByOracleId(oracleFileId)));
+        return traceEntityList;
     }
 
     @Override

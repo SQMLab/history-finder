@@ -21,8 +21,7 @@ spring:
 run-config:
   tracer-name: ${RUN_CONFIG_TRACER_NAME}
   execution-limit: ${RUN-CONFIG_EXECUTION_LIMIT}
-  from-file-id: ${RUN-CONFIG_FROM_FILE_ID}
-  to-file-id: ${RUN-CONFIG_TO_FILE_ID}
+  oracle-file-ids: ${RUN-CONFIG_FILE_IDS}
   force-compute: ${RUN-CONFIG_FORCE_COMPUTE}
 oracle:
   file-directory: ${ORACLE_FILE_DIRECTORY}
