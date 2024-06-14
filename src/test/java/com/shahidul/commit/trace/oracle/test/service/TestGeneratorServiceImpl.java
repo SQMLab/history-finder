@@ -4,6 +4,7 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.factory.TracerFactory;
 import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
@@ -48,6 +49,9 @@ public class TestGeneratorServiceImpl implements TestGeneratorService {
 
     @Autowired
     TracerFactory tracerFactory;
+
+    @Autowired
+    TraceDao  traceDao;
 
     @Override
     public Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList, Boolean forceCompute) {

@@ -18,6 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 @SpringBootTest
@@ -54,12 +55,19 @@ class TraceExecutionController {
     @Autowired
     TraceDao traceDao;
 
-/*    @Test
+    @Test
     @Order(-2)
     public void cleanMongoDb() {
-        dataSetLoader.cleanDb();
 
-    }*/
+        //dataSetLoader.cleanDb();
+        IntStream.range(1, 500)
+                .forEach(id -> {
+                    log.info("Deleting ... {}", id);
+                    influxDbManager.deleteByFileId(id);
+
+                });
+
+    }
 
  /*   @Test
     @Order(-1)
