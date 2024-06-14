@@ -10,13 +10,35 @@ import java.util.List;
  * @since 3/5/2024
  */
 public interface TraceDao {
-    TraceEntity  findByOracleId(Integer oracleFileId);
-    TraceEntity  findByOracleName(String oracleFileName);
-    List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer toFileId);
+    TraceEntity findByOracleId(Integer oracleFileId);
+
+    TraceEntity findByOracleName(String oracleFileName);
+
+    List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer exclusiveToFileId);
+
     TraceEntity findByOracleHash(String oracleHash);
-    CommitUdt findExpectedCommit(String oracleFileName, String commitHash);
+
     List<TraceEntity> findAll();
-    CommitUdt cloneStaticFields(CommitUdt commitUdt);
+
     void delete(TraceEntity traceEntity);
+
     TraceEntity save(TraceEntity traceEntity);
+    List<TraceEntity> saveAll(List<TraceEntity>  traceEntityList);
+    void deleteAll();
+    default CommitUdt cloneStaticFields(CommitUdt commitUdt) {
+        return CommitUdt.builder()
+                .commitHash(commitUdt.getCommitHash())
+                .committedAt(commitUdt.getCommittedAt())
+                .startLine(commitUdt.getStartLine())
+                .endLine(commitUdt.getEndLine())
+                .codeFragment(commitUdt.getCodeFragment())
+                .changeTags(commitUdt.getChangeTags())
+                .newFile(commitUdt.getNewFile())
+                .newElement(commitUdt.getNewElement())
+                .author(commitUdt.getAuthor())
+                .email(commitUdt.getEmail())
+                .shortMessage(commitUdt.getShortMessage())
+                .fullMessage(commitUdt.getFullMessage())
+                .build();
+    }
 }

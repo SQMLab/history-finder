@@ -1,13 +1,12 @@
 package com.shahidul.commit.trace.oracle.core.mongo.dao;
 
-import com.shahidul.commit.trace.oracle.core.error.CtoError;
-import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.bson.BsonMaximumSizeExceededException;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Repository;
 
 import java.util.Comparator;
@@ -19,7 +18,8 @@ import java.util.List;
  */
 @Repository
 @AllArgsConstructor
-public class TraceDaoImpl implements TraceDao {
+@ConditionalOnProperty(name = "trace.enable-mongodb", havingValue = "TRUE")
+public class MongoDbTraceDao implements TraceDao {
     TraceRepository traceRepository;
 
     @Override
@@ -34,10 +34,10 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
-    public List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer toFileId) {
+    public List<TraceEntity> findByOracleFileRange(Integer fromFileId, Integer exclusiveToFileId) {
         //TODO : Optimize
         return traceRepository.findAll()
-                .stream().filter(traceEntity -> traceEntity.getOracleFileId() >= fromFileId && traceEntity.getOracleFileId() < toFileId)
+                .stream().filter(traceEntity -> traceEntity.getOracleFileId() >= fromFileId && traceEntity.getOracleFileId() < exclusiveToFileId)
                 .sorted(Comparator.comparing(TraceEntity::getOracleFileId))
                 .toList();
     }
@@ -48,19 +48,6 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
-    public CommitUdt findExpectedCommit(String oracleFileName, String commitHash) {
-        TraceEntity traceEntity = findByOracleName(oracleFileName);
-        List<CommitUdt> expectedCommits = traceEntity.getExpectedCommits();
-        int targetIndex = 0;
-        while (targetIndex < expectedCommits.size() && !expectedCommits.get(targetIndex).getCommitHash().startsWith(commitHash)) {
-            targetIndex += 1;
-        }
-        if (targetIndex < expectedCommits.size()) {
-            return expectedCommits.get(targetIndex);
-        } else throw new CtoException(CtoError.Commit_Not_Found);
-    }
-
-    @Override
     public List<TraceEntity> findAll() {
         return traceRepository.findAll()
                 .stream()
@@ -68,27 +55,8 @@ public class TraceDaoImpl implements TraceDao {
     }
 
     @Override
-    public CommitUdt cloneStaticFields(CommitUdt commitUdt) {
-        return CommitUdt.builder()
-                .commitHash(commitUdt.getCommitHash())
-                .committedAt(commitUdt.getCommittedAt())
-                .startLine(commitUdt.getStartLine())
-                .endLine(commitUdt.getEndLine())
-                .codeFragment(commitUdt.getCodeFragment())
-                .changeTags(commitUdt.getChangeTags())
-                .newFile(commitUdt.getNewFile())
-                .newElement(commitUdt.getNewElement())
-                .author(commitUdt.getAuthor())
-                .email(commitUdt.getEmail())
-                .shortMessage(commitUdt.getShortMessage())
-                .fullMessage(commitUdt.getFullMessage())
-                .build();
-    }
-
-    @Override
     public void delete(TraceEntity traceEntity) {
         traceRepository.delete(traceEntity);
-
     }
 
     @Override
@@ -100,6 +68,16 @@ public class TraceDaoImpl implements TraceDao {
             traceEntity.setVersion(traceEntity.getVersion() - 1);
             return traceRepository.save(traceEntity);
         }
+    }
+
+    @Override
+    public List<TraceEntity> saveAll(List<TraceEntity> traceEntityList) {
+        return traceRepository.saveAll(traceEntityList);
+    }
+
+    @Override
+    public void deleteAll() {
+        traceRepository.deleteAll();
     }
 
     private void quietlyTruncateDiff(TraceEntity traceEntity){

@@ -4,15 +4,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
-import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperServiceImpl;
 import com.shahidul.commit.trace.oracle.util.Util;
@@ -22,17 +19,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.codetracker.api.MethodTracker;
 import org.springframework.stereotype.Service;
 
-import javax.xml.bind.DatatypeConverter;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author Shahidul Islam
@@ -44,7 +36,7 @@ import java.util.stream.Stream;
 public class DataSetLoaderImpl implements DataSetLoader {
     AppProperty appProperty;
     ObjectMapper objectMapper;
-    TraceRepository traceRepository;
+    TraceDao traceDao;
     OracleHelperService oracleHelperService;
 
 
@@ -54,7 +46,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     @Override
     public TraceEntity loadOracleFile(Integer oracleFileId) {
-        TraceEntity traceEntity = traceRepository.findByOracleFileId(oracleFileId);
+        TraceEntity traceEntity = traceDao.findByOracleId(oracleFileId);
        /* if (traceEntity == null)
         formatOracleFileId(oracleFileId);
         findOracleFiles()
@@ -68,7 +60,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
-            Map<String, TraceEntity> entityMap = traceRepository.findAll()
+            Map<String, TraceEntity> entityMap = traceDao.findAll()
                     .stream()
                     .collect(Collectors.toMap(TraceEntity::getOracleFileName, Function.identity()));
 
@@ -94,7 +86,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     }).collect(Collectors.toList());
 
             log.info("save completed");
-            return traceRepository.saveAll(traceEntityList);
+            return traceDao.saveAll(traceEntityList);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -160,7 +152,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     @Override
     public void cleanDb() {
-        traceRepository.deleteAll();
+        traceDao.deleteAll();
     }
 
     @Override

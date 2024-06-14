@@ -28,3 +28,5 @@ oracle:
   file-directory: ${ORACLE_FILE_DIRECTORY}
 trace:
   file-directory: ${TRACE_FILE_DIRECTORY}
+  cache-directory: ${TRACE_CACHE_DIRECTORY}
+  enable-mongodb: ${TRACE_ENABLE_MONGODB}
