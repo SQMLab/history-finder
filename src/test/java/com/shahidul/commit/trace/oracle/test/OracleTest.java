@@ -89,7 +89,7 @@ public class OracleTest {
         String forceCompute = environment.getProperty("run-config.force-compute", "False");
 
         String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
-        List<Integer> oracleFileIdList = Util.parseOraceFileIds(oracleFileIdsText);
+        List<Integer> oracleFileIdList = Util.parseOracleFileIds(oracleFileIdsText);
         List<TraceEntity> traceEntityList = traceDao.findByOracleFileIdList(oracleFileIdList);
         List<TracerName> tracerList = Arrays.stream(environment.getProperty("run-config.tracer-name", "historyFinder").split(","))
                 .filter(code -> !code.isBlank())

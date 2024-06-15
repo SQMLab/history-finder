@@ -19,4 +19,5 @@ public interface TraceRepository extends MongoRepository<TraceEntity, String> {
     List<TraceEntity> findByOracleFileIdBetween(Integer fromOracleId, Integer toOracleId);
     List<TraceEntity> findByOracleFileIdBetween(Range<Integer> oracleFileIdRange);
     List<TraceEntity> findByOracleFileIdIn(List<Integer> oracleFileIdList);
+    List<TraceEntity> findByOracleFileIdInOrderByOracleFileId(List<Integer> oracleFileIdList);
 }

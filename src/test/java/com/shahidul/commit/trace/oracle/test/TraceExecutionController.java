@@ -128,7 +128,7 @@ class TraceExecutionController {
     @Test
     void updateExpectCommits() {
         String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
-        List<Integer> oracleFileIdList = Util.parseOraceFileIds(oracleFileIdsText);
+        List<Integer> oracleFileIdList = Util.parseOracleFileIds(oracleFileIdsText);
         List<TraceEntity> traceEntityList = traceDao.findByOracleFileIdList(oracleFileIdList);
         dataSetLoader.updateExpectedCommit(traceEntityList, TracerName.HISTORY_FINDER);
 
