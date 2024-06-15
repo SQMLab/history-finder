@@ -79,7 +79,7 @@ public class Util {
         }
     }
 
-    public static List<Integer> parseOraceFileIds(String fileIdsText) {
+    public static List<Integer> parseOracleFileIds(String fileIdsText) {
         Set<Integer> idSet = new HashSet<>();
         String[] idOrRanges = fileIdsText.replace(" ", "").split(",");
         for (int i = 0, idOrRangesLength = idOrRanges.length; i < idOrRangesLength; i++) {
