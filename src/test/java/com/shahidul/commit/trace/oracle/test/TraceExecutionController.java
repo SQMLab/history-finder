@@ -61,7 +61,9 @@ class TraceExecutionController {
     public void cleanMongoDb() {
 
         //dataSetLoader.cleanDb();
-        IntStream.range(1, 500)
+        String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
+        List<Integer> oracleFileIdList = Util.parseOracleFileIds(oracleFileIdsText);
+        oracleFileIdList
                 .forEach(id -> {
                     log.info("Deleting ... {}", id);
                     influxDbManager.deleteByFileId(id);
