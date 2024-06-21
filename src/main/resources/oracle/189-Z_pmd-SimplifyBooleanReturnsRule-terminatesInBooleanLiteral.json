@@ -12,6 +12,9 @@
     "commitHash" : "e57007e1bef8b6de966f607fe1d79d3ecabe6884",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "a153b974cc836a29cd25a3c292d42d0f878f9603",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
@@ -26,6 +29,9 @@
   }, {
     "commitHash" : "113e719ad482e8c2ff7b4702de1cf6855e8ef79b",
     "changeTags" : [ "PARAMETER", "SIGNATURE" ]
+  }, {
+    "commitHash" : "1857abbcabd8ed214207ad8355be927c91d7cc74",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "ccaf1594a4a23743e2049009001d8d6d82de3b7c",
     "changeTags" : [ "FILE_RENAME" ]
