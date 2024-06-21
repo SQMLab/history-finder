@@ -9,7 +9,7 @@ repository:
   clone-directory: ${REPOSITORY_CLONE_DIRECTORY}
 spring:
   config:
-    import: classpath:local.yml
+    import: classpath:local.yml,optional:file:config/application.yml
   data:
     mongodb:
       host: ${MONGO_DB_HOST}
