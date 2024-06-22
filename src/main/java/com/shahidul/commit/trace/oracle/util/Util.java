@@ -1,10 +1,13 @@
 package com.shahidul.commit.trace.oracle.util;
 
 import com.felixgrund.codeshovel.util.Utl;
+import jakarta.xml.bind.DatatypeConverter;
+import lombok.SneakyThrows;
 import org.eclipse.jgit.diff.*;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -31,8 +34,12 @@ public class Util {
         return !oldFile.substring(0, oldFileNameStartIndex + 1).equals(newFile.substring(0, newFileNameStartIndex + 1));
     }
 
-    public static String getDiffUrl(String repositoryUrl, String parentCommitHash, String commitHash) {
-        return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash;
+    public static String getDiffUrl(String repositoryUrl, String parentCommitHash, String commitHash, String file) {
+        String fileSection = "";
+        if (file != null){
+            fileSection =  "#diff-" + sha256(file.getBytes(StandardCharsets.UTF_8)).toLowerCase();
+        }
+        return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash  + fileSection;
     }
 
     public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
@@ -98,5 +105,12 @@ public class Util {
         return idSet.stream()
                 .sorted()
                 .toList();
+    }
+    @SneakyThrows
+    public static String sha256(byte[] content) {
+        MessageDigest crypt = MessageDigest.getInstance("SHA-256");
+        crypt.reset();
+        crypt.update(content);
+        return DatatypeConverter.printHexBinary(crypt.digest());
     }
 }
