@@ -87,6 +87,9 @@
     "commitHash" : "c9771012e98afe1679cd1c3ebf5ab6c1a018fd65",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "481aeeec984433f11781a1999328f9c85848d1b3",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "1a8f0d6a9e37d12b31a2fe7bc1fbc2c91700a08e",
     "changeTags" : [ "BODY" ]
   }, {

@@ -57,11 +57,17 @@
     "commitHash" : "c1c74ad02bfd383c4c29b608e524c9d8c2056ca2",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "de9c2b0e3ae70f755a4746debac2c01636204af1",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
     "commitHash" : "ca6eda7e61fe4daf90682014e11fe1507fd331ed",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "c595c61edd4259c73748baab5bf0c952eda9a374",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "00249eb78d5bbc708fadbf2369161720a9087760",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "40501042ce13fce37eb69fbcf2ec34642133aeaf",
     "changeTags" : [ "BODY" ]
