@@ -12,6 +12,9 @@
     "commitHash" : "88654b79c92386b7c411f064cc373e7698a49449",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "1da8ccdbfe2faa3e6801fe44eaf3c336aab48bec",
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+  }, {
     "commitHash" : "c82b1f062af2a1a376e514020707597f6ed1f82d",
     "changeTags" : [ "BODY" ]
   }, {
