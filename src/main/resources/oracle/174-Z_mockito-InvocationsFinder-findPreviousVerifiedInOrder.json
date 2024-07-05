@@ -9,6 +9,9 @@
   "startLine" : 119,
   "endLine" : 127,
   "commits" : [ {
+    "commitHash" : "e9516f42b1182ae675022c101954e721e20b2c72",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "ae1af27799f53dfeeb23cda187a9247afc0cd951",
     "changeTags" : [ "MODIFIER", "SIGNATURE" ]
   }, {
