@@ -9,11 +9,11 @@
   "startLine" : 143,
   "endLine" : 145,
   "commits" : [ {
-    "commitHash" : "bef4d861da694e39ed4040152bcd94d184476a41",
-    "changeTags" : [ "DOCUMENTATION" ]
-  }, {
     "commitHash" : "f30ec35385ea24fbe35517b79dc3ec47ebc89b7c",
     "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "bef4d861da694e39ed4040152bcd94d184476a41",
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "a5ec3322be0d02f5a44b4580064cb96797332ed8",
     "changeTags" : [ "BODY", "RETURN_TYPE", "SIGNATURE" ]
