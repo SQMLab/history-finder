@@ -66,6 +66,7 @@ class TraceExecutionController {
         oracleFileIdList
                 .forEach(id -> {
                     log.info("Deleting ... {}", id);
+                    traceDao.delete(traceDao.findByOracleId(id));
                     influxDbManager.deleteByFileId(id);
 
                 });
