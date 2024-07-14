@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.util;
 
 import com.felixgrund.codeshovel.util.Utl;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import jakarta.xml.bind.DatatypeConverter;
 import lombok.SneakyThrows;
 import org.eclipse.jgit.diff.*;
@@ -9,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
@@ -112,5 +114,59 @@ public class Util {
         crypt.reset();
         crypt.update(content);
         return DatatypeConverter.printHexBinary(crypt.digest());
+    }
+
+    public static String extractClassNameFromFile(String file){
+        String[] fileParts = file.split("/");
+        String lastPart = fileParts[fileParts.length - 1];
+        if (lastPart.contains(".")){
+            return lastPart.substring(0, lastPart.indexOf("."));
+        }else {
+            return lastPart;
+        }
+
+    }
+
+    public static LinkedHashSet<ChangeTag> toChangeTags(String change) {
+        LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
+        if (change != null) {
+            if (change.contains("Yintroduced")) {
+                changeTags.add(ChangeTag.INTRODUCTION);
+            }
+            if (change.contains("Ysignaturechange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+            }
+            if (change.contains("Yrename")) {
+                changeTags.add(ChangeTag.RENAME);
+            }
+            if (change.contains("Yreturntypechange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.RETURN_TYPE);
+            }
+            if (change.contains("Yparameterchange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.PARAMETER);
+            }
+            if (change.contains("Ymodifierchange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.MODIFIER);
+            }
+            if (change.contains("Yexceptionschange")) {
+                changeTags.add(ChangeTag.SIGNATURE);
+                changeTags.add(ChangeTag.EXCEPTION);
+            }
+
+            if (change.contains("Ybodychange")) {
+                changeTags.add(ChangeTag.BODY);
+            }
+
+            if (change.contains("Ymovefromfile")) {
+                changeTags.add(ChangeTag.MOVE);
+            }
+            if (change.contains("Yfilerename")) {
+                changeTags.add(ChangeTag.FILE_RENAME);
+            }
+        }
+        return changeTags;
     }
 }

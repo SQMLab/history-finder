@@ -3,7 +3,6 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
@@ -111,7 +110,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             json.get("expectedResult")
                                     .fields()
                                     .forEachRemaining(commit -> {
-                                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(toChangeTags(commit.getValue().asText())).build());
+                                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(Util.toChangeTags(commit.getValue().asText())).build());
                                     });
                             List<InputCommit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
                                     .sorted(Comparator.reverseOrder())
@@ -188,49 +187,6 @@ public class DataSetLoaderImpl implements DataSetLoader {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Oracle file not found " + formattedOracleFileId));
 
-    }
-
-    private LinkedHashSet<ChangeTag> toChangeTags(String change) {
-        LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
-        if (change != null) {
-            if (change.contains("Yintroduced")) {
-                changeTags.add(ChangeTag.INTRODUCTION);
-            }
-            if (change.contains("Ysignaturechange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
-            }
-            if (change.contains("Yrename")) {
-                changeTags.add(ChangeTag.RENAME);
-            }
-            if (change.contains("Yreturntypechange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
-                changeTags.add(ChangeTag.RETURN_TYPE);
-            }
-            if (change.contains("Yparameterchange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
-                changeTags.add(ChangeTag.PARAMETER);
-            }
-            if (change.contains("Ymodifierchange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
-                changeTags.add(ChangeTag.MODIFIER);
-            }
-            if (change.contains("Yexceptionschange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
-                changeTags.add(ChangeTag.EXCEPTION);
-            }
-
-            if (change.contains("Ybodychange")) {
-                changeTags.add(ChangeTag.BODY);
-            }
-
-            if (change.contains("Ymovefromfile")) {
-                changeTags.add(ChangeTag.MOVE);
-            }
-            if (change.contains("Yfilerename")) {
-                changeTags.add(ChangeTag.FILE_RENAME);
-            }
-        }
-        return changeTags;
     }
 
 }

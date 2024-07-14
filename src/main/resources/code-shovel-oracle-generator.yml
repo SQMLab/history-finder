@@ -1,0 +1,31 @@
+repository-list:
+  - ant
+  - argouml
+  - atmosphere
+  - cucumber-jvm
+  - docx4j
+  - eclipseJdt
+  - Essentials
+  - facebook-android-sdk
+  - guava
+  - hazelcast
+  - hbase
+  - hector
+  - jclouds
+  - jna
+  - lombok
+  - mongo-java-driver
+  - openmrs-core
+  - presto
+  - sonarqube
+#  - titan
+#  - voldemort
+#  - vraptor4
+#  - weka
+#  - wicket
+#  - wildfly
+#  - xerces2-j
+start-oracle-file-id: 401
+maximum-oracle-per-repository: 10
+stored-trace-directory: /Users/shahidul.islam/dev/project/academic/oracle/source-methods
+head-pointer-mapping-file: /Users/shahidul.islam/dev/project/academic/oracle/saved-settings-project-with-first-date.txt

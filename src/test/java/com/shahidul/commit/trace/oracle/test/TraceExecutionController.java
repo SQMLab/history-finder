@@ -7,6 +7,7 @@ import com.shahidul.commit.trace.oracle.core.influx.InfluxDbManager;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
+import com.shahidul.commit.trace.oracle.core.service.loader.CodeShovelOracleGenerator;
 import com.shahidul.commit.trace.oracle.core.service.loader.DataSetLoader;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
@@ -55,6 +56,9 @@ class TraceExecutionController {
 
     @Autowired
     TraceDao traceDao;
+
+    @Autowired
+    CodeShovelOracleGenerator codeShovelOracleGenerator;
 
     @Test
     @Order(-2)
@@ -127,6 +131,10 @@ class TraceExecutionController {
                 .toList();
     }
 
+    @Test
+    void generateOracleFromCodeShovelTrace(){
+        codeShovelOracleGenerator.generate();
+    }
 
     @Test
     void updateExpectCommits() {
