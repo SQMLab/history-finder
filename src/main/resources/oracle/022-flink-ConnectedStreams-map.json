@@ -69,6 +69,9 @@
     "commitHash" : "696bce02f42973777304b0ad3fe4cc62a4f5e976",
     "changeTags" : [ "MOVE" ]
   }, {
+    "commitHash" : "9be9814972458aa1c67ccf6db5dd508244a89b21",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "d56d48f1a1933f138f5d97f42b71aa64fad6bc6f",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
