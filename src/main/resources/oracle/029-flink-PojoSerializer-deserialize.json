@@ -28,15 +28,6 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "76d4a75e823c31a899f2143fb6be185b90e55532",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "8563d511da8ab8ac0e1362775f11aef7b67375be",
-    "changeTags" : [ "PACKAGE" ]
-  }, {
-    "commitHash" : "24eb47ac86299920aa137d5b6394a248ff58d19e",
-    "changeTags" : [ "PACKAGE" ]
-  }, {
-    "commitHash" : "3f87fc9f1cc2f0e18552e6ec5e9449228a942726",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
