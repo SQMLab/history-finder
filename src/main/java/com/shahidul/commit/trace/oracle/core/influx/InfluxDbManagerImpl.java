@@ -114,6 +114,8 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .newElement(commitUdt.getNewElement())
                 .changeTagSet(commitUdt.getChangeTags())
                 .diffUrl(commitUdt.getDiffUrl())
+                .oldFileUrl(commitUdt.getOldFilUrl())
+                .newFileUrl(commitUdt.getNewFileUrl())
                 .diff(commitUdt.getDiff())
                 .docDiff(commitUdt.getDocDiff())
                 /*          .diff(Util.truncate(commitUdt.getDiff(), 100))

@@ -84,15 +84,17 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .changeTags(changeTags)
                 .codeFragment(commitEntry.getMethodCode())
                 .documentation(commitEntry.getDocumentation())
-                .newFile(newFile);
+                .newFile(newFile)
+                .diff(Util.getDiff(parentEntry != null ? parentEntry.getMethodCode() : null, commitEntry.getMethodCode()))
+                .docDiff(Util.getDiff(parentEntry != null ? parentEntry.getDocumentation() : null, commitEntry.getDocumentation()))
+                .startLine(commitEntry.getStartLine())
+                .endLine(commitEntry.getEndLine());
         if (parentEntry != null) {
             String oldFile = parentEntry.getMethodContainerFile();
             commitBuilder.oldFile(oldFile)
                     .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                     .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                    .parentCommitHash(parentEntry.getCommitHash())
-                    .diff(Util.getDiff(parentEntry.getMethodCode(), commitEntry.getMethodCode()))
-                    .docDiff(Util.getDiff(parentEntry.getDocumentation(), commitEntry.getDocumentation()));
+                    .parentCommitHash(parentEntry.getCommitHash());
         }
 
         return commitBuilder

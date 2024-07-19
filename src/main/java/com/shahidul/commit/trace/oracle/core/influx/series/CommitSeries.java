@@ -51,6 +51,10 @@ public class CommitSeries {
     Set<ChangeTag> changeTagSet;
     @Column(name = "diff_url")
     String diffUrl;
+    @Column(name = "old_file_url")
+    String oldFileUrl;
+    @Column(name = "new_file_url")
+    String newFileUrl;
     @Column(name = "diff")
     String diff;
     @Column(name = "doc_diff")
