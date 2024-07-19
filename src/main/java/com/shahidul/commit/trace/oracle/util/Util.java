@@ -44,6 +44,10 @@ public class Util {
         return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash  + fileSection;
     }
 
+    public static String gitRawFileUrl(String repositoryUrl, String commitHash, String file, Integer lineNumber){
+        return repositoryUrl.replaceAll("\\.git", "") + "/blob/" + commitHash + "/" + file + (lineNumber != null ? "#L" + lineNumber : "");
+    }
+
     public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
        /* StringBuilder textBuilder = new StringBuilder();
         String[] lines = fileContent.split("\n");
@@ -126,6 +130,8 @@ public class Util {
         }
 
     }
+
+
 
     public static LinkedHashSet<ChangeTag> toChangeTags(String change) {
         LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
