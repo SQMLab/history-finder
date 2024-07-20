@@ -86,7 +86,9 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                 .map(commitUdt -> {
                     commitUdt.setDiffUrl(Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash(), commitUdt.getNewFile()));
                     //TODO : update start line number for old file
-                    commitUdt.setOldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
+                    if (commitUdt.getOldFilUrl() != null) {
+                        commitUdt.setOldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
+                    }
                     commitUdt.setNewFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash(), commitUdt.getNewFile(), commitUdt.getStartLine()));
 
                     return commitUdt;
