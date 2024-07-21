@@ -33,6 +33,9 @@
     "commitHash" : "f4722d5ae86944d5d92b8af4dbfcd38526e52116",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "2445e4338f7a8e78804f3d8b085624574c8c2f9a",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "2ed52dfb44138bb65705fd1a2333a26a42fda7a4",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
   }, {

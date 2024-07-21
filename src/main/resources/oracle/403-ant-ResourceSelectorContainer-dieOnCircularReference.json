@@ -27,8 +27,14 @@
     "commitHash" : "fbb9886634198d8377104bef9ec697fadeb134df",
     "changeTags" : [ "SIGNATURE", "MODIFIER", "EXCEPTION", "BODY", "MOVE" ]
   }, {
+    "commitHash" : "f67320a6500d0c74ce7cb664c174eca0a1205f15",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "d050f6a18c63fdb1747377e251e66a14b24c3b08",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "66b5bf27b7d561fbd5c71e408ed5fca66a8aa788",
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "de93400d04ba220ab724125f4e869e3daa37f1d4",
     "changeTags" : [ "BODY" ]
