@@ -12,6 +12,12 @@
     "commitHash" : "003ab296182faefec35de9b5df3004b7ceab3ee1",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "2186c5c040ebe04dff9daa1572b40947746cf3b4",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
+    "commitHash" : "3901993f8cd3ec1fd5b311042f560242b010675c",
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+  }, {
     "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

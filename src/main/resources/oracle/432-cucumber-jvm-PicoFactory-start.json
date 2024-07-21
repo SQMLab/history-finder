@@ -9,6 +9,9 @@
   "startLine" : 25,
   "endLine" : 34,
   "commits" : [ {
+    "commitHash" : "1319788c1f6e2996830399d5e91a0b7a6f9dfd29",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "520f91c550fda5f2f41f5a5416e505f0e48ee151",
     "changeTags" : [ "FILE_RENAME" ]
   }, {

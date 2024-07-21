@@ -9,6 +9,9 @@
   "startLine" : 1218,
   "endLine" : 1221,
   "commits" : [ {
+    "commitHash" : "3901993f8cd3ec1fd5b311042f560242b010675c",
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+  }, {
     "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
@@ -21,8 +24,14 @@
     "commitHash" : "d4a9d0c92085e732231e5bbb09f8e1f1fe292f6a",
     "changeTags" : [ "RENAME", "BODY" ]
   }, {
+    "commitHash" : "590bbc1067227e179769c263c7d88cd3241e7d1d",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "0933d64ac151574e0f708ec496e3164351fd2004",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "dbbb9d91d08c81787936886a356da9adaf47e4a3",
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "a6a04b30dead3fc5cde0b24ad35d23704e3c6b13",
     "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]

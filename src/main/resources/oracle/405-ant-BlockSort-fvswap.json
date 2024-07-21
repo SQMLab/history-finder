@@ -9,6 +9,9 @@
   "startLine" : 313,
   "endLine" : 320,
   "commits" : [ {
+    "commitHash" : "7f1e7628b357082fb1f786d1f58156a336db45e3",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "08284bc7aa7d066544b30974231240c9b73597eb",
     "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
   }, {

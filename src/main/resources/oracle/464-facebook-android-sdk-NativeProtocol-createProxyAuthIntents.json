@@ -12,8 +12,14 @@
     "commitHash" : "39ba40601508198998704be982ea9233a53e87cd",
     "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY" ]
   }, {
+    "commitHash" : "3901993f8cd3ec1fd5b311042f560242b010675c",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "46d316321c38f653f2964da93c983e17fe3811ed",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "cea13fab2aaad47e8ffb01587f903ad7e638b8aa",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "07d9c02e53ad7369a4ad98352da1dc857f83c78c",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]

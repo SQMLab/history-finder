@@ -9,11 +9,20 @@
   "startLine" : 170,
   "endLine" : 223,
   "commits" : [ {
+    "commitHash" : "15df143df6d35dd64459d717a451a039eb26d761",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "b867f81b8a251a8a32e42f53c2be34d520938bd7",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "cf82dcfb8057637255ce223671a8d727fe0a073a",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f956ba1e337699206052a016da65f4f02ac6825b",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "e24ebbbf598adff2c8919dccce6e10b20021494e",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
   }, {
     "commitHash" : "09ea02e4f5752e615be2ff5177be1fb328702a5b",
     "changeTags" : [ "SIGNATURE", "MODIFIER" ]
