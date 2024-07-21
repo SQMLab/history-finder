@@ -1,0 +1,42 @@
+{
+  "repositoryName" : "facebook-android-sdk",
+  "repositoryUrl" : "https://github.com/facebook/facebook-android-sdk.git",
+  "startCommitHash" : "fb1b91a32c8ac21ec91800748a24e3c20b21ac0e",
+  "file" : "facebook-core/src/main/java/com/facebook/internal/ImageRequest.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getProfilePictureUri",
+  "startLine" : 61,
+  "endLine" : 63,
+  "commits" : [ {
+    "commitHash" : "7443cff7a8a07d94314ccfbcadee57cd5fdc4fd3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a5b2fa83271f1d966739621d1b788e73032f17b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "028d430a3b48d05d0da133f44a0f07b9d72e6789",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "845ba874cc5552f4deccf7d6262d351e4bbd72e4",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "MODIFIER", "EXCEPTION", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "26a82b7bc512a0f66f3c4c17eb4809cd03d178e5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a61abe606a89180cb5536fed7d31b34d7740247d",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "00f51274cba7c1af61d5e8c3273ec98ba5295702",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b7b25929620be28115d643f82753daf2a69d71bf",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

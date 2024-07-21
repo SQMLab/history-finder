@@ -1,0 +1,84 @@
+{
+  "repositoryName" : "jclouds",
+  "repositoryUrl" : "https://github.com/apache/jclouds.git",
+  "startCommitHash" : "7af4d8e8f19c479b0a8f35e06dd68418a8367b3e",
+  "file" : "blobstore/src/main/java/org/jclouds/blobstore/config/LocalBlobStore.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "returnResponseException",
+  "startLine" : 525,
+  "endLine" : 529,
+  "commits" : [ {
+    "commitHash" : "dfb583b67aba421f9aa48e97ebfbc5303420d3b7",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "cddd35bc51d836c8b4183634552108cf7f697c64",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "562f8277d31e17582c5beba3b014a8e8048d46e9",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "05fd64af446a4a2ef4a21c6f9e6e7a5d4d9f1a06",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3a0c15b345b0f2eb9a019f10adfb731a7a644b64",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "60b6b68556889d7f14f876410c6c52ab65859f0f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e8d0a11cda55328ea25fb1abb3183694f8c771db",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "85b5bd48f133d9675250a676b1e6a626dc07971f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e04784373e880515bb79d764fdb3ceb3274cded2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a72efaea6d136131e0bbc9be260a7dba0a7670e2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "70aa7e4ef3f50eee685384fc0ab2178910636a18",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "27de8ac1051764e26bb014df03a6b59346e38d11",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1284fd67fa04a2de4c064a796465327106f01b52",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "a900e05a1f36c2addc61557090c790237e861454",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0b94f0ef12b11e3b71c35f97644874554c57cbc2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bc238bc5079e1293add1ae28cdf53fb589824d06",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "10fe315b7d36d13b7dce16a2d90aca26bba2540a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "050f6e9a822a0bf7f63c2d12db19b23f7e33a8cb",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "2de58bb5b91b99dc6180b58cb034f9ecd85db00d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e3672b6a5951920a07269c1ebc199b50d0a58834",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "f9cd7e19d95901711afaf959dcd011b8c2ca0535",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e9aee711d35b75eb2088b67839ae7c26e2647eb3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "256ec34af600b79f028761594be6ec8c0e14ec6c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0ad7ca21382d9e03a6dbe5e2224cefbc856b092f",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

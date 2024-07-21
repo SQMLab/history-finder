@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/customdatatype/datatype/FreeTextDatatype.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "deserialize",
+  "startLine" : 34,
+  "endLine" : 36,
+  "commits" : [ {
+    "commitHash" : "d54a7a3c2b9590b859aaad542eb975b90c9a5ecd",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "064bc36eab18162eec1712b11001352eba86013e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9f707dae8d0a098cd71a2547f72363d642e38c4b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "79efcea17f319db056107d06c1eab77e3aeca9f4",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "EXCEPTION", "MOVE" ]
+  }, {
+    "commitHash" : "eadd56c5f9fb4479d5724ce0b021eb683da6970a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "877fa8e584dac3cb17c9e3587229c4a99e5c4a99",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

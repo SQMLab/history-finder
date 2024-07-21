@@ -1,0 +1,90 @@
+{
+  "repositoryName" : "presto",
+  "repositoryUrl" : "https://github.com/prestodb/presto.git",
+  "startCommitHash" : "bb20eba263685c6ae7b8ee71e405746eed579431",
+  "file" : "presto-main/src/main/java/com/facebook/presto/operator/LookupJoinOperators.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "lookupOuterJoin",
+  "startLine" : 55,
+  "endLine" : 58,
+  "commits" : [ {
+    "commitHash" : "9ba5ed74453f13ae748e8d545cd5c02323eb38ef",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "78e679889945cd34a76fca3a4be4562576adac7a",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "c1693e6d5e1db2901eb72ee7abe5fad3729803aa",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "54697dbaca5b9a000f1d5967d93e5cb732db0a05",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b6c6b807b6097d5235c4fbd8b38d4a5ffd8e1e1d",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "3ed413c9760c7e0e9a18ae0ab8c7cb21827a5415",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "8c238ff0d9c090ae986a12a1ac5fccc8fffadab9",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "acd9c45db580d2a3e7359c558c3b02e8cfd51c36",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "80adc788f9d3518f59fb41011c5c4a7480ffa061",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a2f213a742f1efa5ae490e0698c98673e5d4ae5b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b3d6c950912b41ba413e1809fe749e1620566b59",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "4082d8f77c104eba1dc18df4ea9ee0a49a5c9e89",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "106c64aeaa3ce06e1916408c789b467479999aa9",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "afb65e4e80e3c83404292c30706bd3c0e2d97dca",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "4e74609c9c8698bd101c7ec4a51ffc9afffd82f5",
+    "changeTags" : [ "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "3474cee04d52d4910658d8abee0a693d2d7f60b8",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e27fcace6d9409db4cda24183d4b0d0c699fffd5",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b0b59a065e2fca2ba89c2b4a122f8891f0681020",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a31569dabf5280132935692de5e9a9e6cd2cae1c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "f0841f38511b664d7990ef2cbf3b6e5c58390acb",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "dbba36acd01bbfbd38e74f74b6060044f4fffb88",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "05377627dfd2a8277c921c395a948c940f6ab0c4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "e0999f89c33214615dddf392ce5571467f84eb70",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "31606969b3041e9e858df73add7edb71ae3808e3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "258637c4e33b8bb06999f668b82065b5a6e36660",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2806fb4c02aadd7d22a5b3401678d2c58cd88c48",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

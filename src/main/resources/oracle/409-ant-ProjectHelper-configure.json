@@ -1,0 +1,60 @@
+{
+  "repositoryName" : "ant",
+  "repositoryUrl" : "https://github.com/apache/ant.git",
+  "startCommitHash" : "1ce1cc2317cb2b2773ab6b765f1a79ccd4806926",
+  "file" : "src/main/org/apache/tools/ant/ProjectHelper.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "configure",
+  "startLine" : 324,
+  "endLine" : 343,
+  "commits" : [ {
+    "commitHash" : "58f0bb04db9c5c8a858d7a3be7719608f25f2f49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d8fdac9edf8a0374408bcb346887fc4f777f6a51",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6ecb04cbad127c05855b26cb12ef35d86a5ebe39",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8701272b2418d74536d09b289f118d1833d42217",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "32b8cce516421a912ced3f568167107df3332710",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d17f3c4f2af31dd15b59bc9a2a42fdf2a6854c92",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "07736d7ee1669883169c7a10b0060e7b0afa315f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d741f56d0b67fa0feb5af74c8e8f5419f980f5d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6ecbe242189a8d7feba3d56c8ec89582e77b1b29",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "b6ec4af9dd33b9a37fe18f1c2a043e67bdf0d67b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fe4a5cb02940376fddc661302141394be20d1f02",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "4461e98f844764730b62743e3ab9be0eed6a2cc3",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e9f55d77d1044dd0c21dd976b57b6787528202bd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8de96cafd7f3f5a23fe1e03f5325d0a7f2b7f006",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b0bde5550598d2f86534bc0e599c0326caba90bd",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "bce31805e9b4b1360d50be8e001886d58e087e38",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,108 @@
+{
+  "repositoryName" : "sonarqube",
+  "repositoryUrl" : "https://github.com/SonarSource/sonarqube.git",
+  "startCommitHash" : "6b806ebf8e189b2abf7d29c964abf09a3a3beb8c",
+  "file" : "server/sonar-webserver-webapi/src/main/java/org/sonar/server/qualityprofile/QProfileBackuperImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "restore",
+  "startLine" : 125,
+  "endLine" : 128,
+  "commits" : [ {
+    "commitHash" : "0b3dcbf2c655af0b01005c03bcfb0debcf284f7f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2be53fd8bc0bff878bd4c7daebbca61720aee9c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5334895ce0eacaa2a2787cd6c47ac507dbe0d723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0c7a1360859c33233ba66962e735691feb9beb92",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c449191069573ef348bdd5a0c43f2593bd84f198",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7f656ec61c7557f1856edb3d5c5d967293b6f754",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3e26c9b9b44ebabbc2c81e134c26799ce3f4bc3b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "71987dfa5a6c563b3d8acf86592517a61ade3bc7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "9f71376b100d7aae6e83b9f36f898016f1677f41",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "87c105ee6c52ec891fc44581f636548921c5bbe4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "7c3c39a9fd1f5ae2f14d4fcfe6a8641617f4eec0",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "f65a697f052051c27cb7b295bdf038a329c1a795",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "86aa29e4eaf8ae208e6221ce86903ab45408bb8b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "501289ca85e1c8dd21d5e0ba5f457b40ee62f5ef",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fc06f3f4fc7f700fef817873a318b3d8378ec310",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "4659898b6d290ce2f5b3edf7396e32e4caa2bb24",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9bfb3bb8b4775294831f38f7ae7aea35416d680b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "5603bc48ca5209c93542bc51229b774c066fb346",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "5aba56ac9e17d9fc9f34715db31dcab404261da5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "738c12ac2aeadb0e7abc2e4f92fc169186e6aa58",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "e819f581d68c38bb72cae13c41196024d87d9397",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2bc8b951c6cd51ea1d6a9bc132527b640983c177",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "1b42db46981f2437941a9fe228140b1775d16cdc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d59163c9ea99cfa76f7fb880ec69076b67fa60c7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3a742bb8b929c6e1d7f12405fd82935b75c287de",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f94f5c0b411968716121a0b7762b3f0e5e088eaf",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "373d5ace92e788aa379d136af61eb5a06b1b428a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f2cbd58e6a46c1c835c39f1dfc1c6316741a00eb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b3c46f707702b37331838274f2814ae25f9b8ada",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e47d9a1bb7fac5b39de42021b1a66843e48efb13",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e4b58bb419fee422eb1bb873031af4b1ce9ba70",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "3d5df31e4f4089e90ce073961981729ccb15c528",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

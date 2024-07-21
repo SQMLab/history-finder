@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/Order.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getOrderType",
+  "startLine" : 695,
+  "endLine" : 697,
+  "commits" : [ {
+    "commitHash" : "7b8309de81cfc27e018fef0d7e92caf55905ddb8",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "33030683a45006fe9623d08c7b697827f1e1cfca",
+    "changeTags" : [ "INTRODUCTION" ]
+  }, {
+    "commitHash" : "e617b404d5f2b70187331158dcd7db08311a2b1f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

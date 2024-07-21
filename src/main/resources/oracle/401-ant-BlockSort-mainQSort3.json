@@ -1,0 +1,39 @@
+{
+  "repositoryName" : "ant",
+  "repositoryUrl" : "https://github.com/apache/ant.git",
+  "startCommitHash" : "1ce1cc2317cb2b2773ab6b765f1a79ccd4806926",
+  "file" : "src/main/org/apache/tools/bzip2/BlockSort.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "mainQSort3",
+  "startLine" : 798,
+  "endLine" : 901,
+  "commits" : [ {
+    "commitHash" : "08284bc7aa7d066544b30974231240c9b73597eb",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "9922008d657c72235c402343fd88847b044014ad",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "817fd319985275076c36a7029f5cbe4983f98d49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b6f9a19193b1de7cfef8ab3328cde6028a2d19d7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "c51d1ce61f4d7469e370fb50b73176e7748d4da1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ad9edf5f5ea4a8f2a974726eeb8e656c177357df",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e98db2e5116b7e208157f8c8064deb39ae5b583f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "134d95afef9b42cf08f2eccb077b97525ac38034",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "69f90db91bf5893b497392f2d0fec8a965052c4b",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

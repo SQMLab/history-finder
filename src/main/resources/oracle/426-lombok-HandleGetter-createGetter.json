@@ -1,0 +1,129 @@
+{
+  "repositoryName" : "lombok",
+  "repositoryUrl" : "https://github.com/projectlombok/lombok.git",
+  "startCommitHash" : "4fdcdd126a4b5ce365b97eb498536d04caee3b53",
+  "file" : "src/core/lombok/javac/handlers/HandleGetter.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createGetter",
+  "startLine" : 225,
+  "endLine" : 278,
+  "commits" : [ {
+    "commitHash" : "84556ebb00af1817d521bc011333a0ed02162cc4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3edac649118dff4a48d7218dc31a727f13537fea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8943b49dfed95228e324422435a77597a95943c0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "15df143df6d35dd64459d717a451a039eb26d761",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "819d1956761f6077fdf897e77c4f6ac47e92104e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d7873f2d21564e8e7f22409fe03681d7dd4c8c1e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc8370ab2d7b3ca15023364c99e53735e62e13d7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "79bfcc4f7ae4bcd61f7f942bfefb940c77927b71",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8a1e0d03ae96b529daa26df188cb8779ea22c997",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "09ea02e4f5752e615be2ff5177be1fb328702a5b",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "71a22340ae70f9512fab48244b8ecaf5c73bf32a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a19b99cba2fdee4495bafce558a28af49e8e36f0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "083817732242cce815b9d78659e68520abdb5021",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e2af5ed0c7786e01bec861f21f2e5ec3bc5ea33f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "0d5fea94da2bfb72ea886a7379ad35e124489692",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aafd83079a3000d3deb6e40a182849da2509fbfb",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "78bf0f6fbbba39e1c56d5dda3df7b0c3eaec74ad",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cbaa53a9b54589f05a580d63dfc065be03bb4b88",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8bc82cad05b8760aa5a01ffabaa6238b6cc535e1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2242de2bf9886fc80858486bbb3aa171a5496885",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c402dd86379e532895f73ee209c432f84bb5f421",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a284600987065aa78bc41b2099421f864cfcec20",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "aa8a627349bb68f376b98847b6f73c2c89e989fd",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1c323332493148f0aaa936e668e1b0da5d09c8be",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "fe7f0db2fce7b4c80853b9aed100908ff1f55f40",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "357fd954e535943a79224c851784e22b6e3b4c90",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8869e9759478403d362f919fde6b79075e7950d6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1a0e611a9c5e1ee518670647ce1a44beae559b44",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b5c8b725655d2ad8a715cfb1fbbdf25dbdcd4ceb",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "e1ee1b7d2db1ea998aa4d6aa3f6b4141315a9496",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fe0da3f53f1e88b704e21463cc5fea3d998e394a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f2c837bb47771a7eba5ad5a885af162d8d133559",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ff306fa5d97a09d69332c76a33596bb053222855",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "1929a28c9def0dd276dcf3fdb70ada8b84b1c64a",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "e737d64242329391ef681e51b36886aaf4d6fe35",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "024d8ffa9801f463fecadd16f42d51bbed46dea7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "f36be2eb01bcbff01a513d64bff2d1aba54460b1",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "9314db916d13c3642b60f3aad25d765e182a198c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1677c4a52a0aea1b955f7c2c7d096903d4a8c5ce",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

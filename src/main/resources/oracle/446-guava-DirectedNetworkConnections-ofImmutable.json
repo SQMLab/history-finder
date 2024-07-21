@@ -1,0 +1,39 @@
+{
+  "repositoryName" : "guava",
+  "repositoryUrl" : "https://github.com/google/guava.git",
+  "startCommitHash" : "e352076da65aa3afb5dc59cfd3c1f41574b5ebeb",
+  "file" : "guava/src/com/google/common/graph/DirectedNetworkConnections.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "ofImmutable",
+  "startLine" : 47,
+  "endLine" : 51,
+  "commits" : [ {
+    "commitHash" : "8cdd8c718cceb67bd94c83fe60544ff46f9f4460",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d6ef78ff26c28401c4bd8a61b75cfdf052b65696",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9d2a5e9beaf310d81134e3629e5ffec1854f420c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "660634db9f0aca515d34931e6afa0f032b197918",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "248ce9fde9013bb1562b1f1647abc6017c37811d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "6336404e539bb948caac14b4a00152409c3e7120",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8b0ec570c69b969b47262eff5935ddc7a80ced50",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "3ddefd829e9fc0ed033613cd7d74427e6397c745",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "621ce7fe1057d8b826093037c58b35bfa4fa6368",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

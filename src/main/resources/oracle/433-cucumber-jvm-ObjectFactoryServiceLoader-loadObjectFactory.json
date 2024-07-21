@@ -1,0 +1,75 @@
+{
+  "repositoryName" : "cucumber-jvm",
+  "repositoryUrl" : "https://github.com/cucumber/cucumber-jvm.git",
+  "startCommitHash" : "b57b924bd19e70f1dac2d018dc9b2e58ea12de9f",
+  "file" : "core/src/main/java/io/cucumber/core/runtime/ObjectFactoryServiceLoader.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "loadObjectFactory",
+  "startLine" : 40,
+  "endLine" : 50,
+  "commits" : [ {
+    "commitHash" : "735eab44ac9e172da2bba887c7a0f9c2c93085bf",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "85209932560acd4bab1619ca827c9303586d9382",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "80f2605338403412838d1f9aec5e975e309c9a17",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "692b9f469ac8f5ffd50df90c8110e5bbc7ac9970",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8010cfe73ae8b3125d7cfcee7aa998a1070d0022",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a03dd01507f8c9ded71df2bbb46d85cd9320b330",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "f9f7c484deb7b478d93a82bb1f67551b6ff837ea",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "a0d2f67d104e0461b5e57f18a82bf437cdfb19f6",
+    "changeTags" : [ "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a4a3ad59d6a3769357d0a42b141c2fce444edd63",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e815f3e1339f91960c7c64ab395de6dd8ff9eec",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8db073be8909302a4ff3b71197601ecf5fbd445c",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "5a6400c8757d18e3b0f2fef2d9d49dfbc2186c58",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "e1b50ca061a548c3cfdd37465a2c31e479581fa2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fb62e663600d4a88352a1813dbfebef10dcaab5a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08df2a11e85b1f13dc08799272fcebe368b0c54c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cb3a4cd74d0ea5c2a3baa2946a0964aab69cd920",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ec70898b6eec288a178e641cb6fe9c0faf489342",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER" ]
+  }, {
+    "commitHash" : "51da5a80bf5f22210a70132e9fe13e14c2735897",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bc9c79171397f92cfe3da071500928d32dc054e9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9d1774749256e41a85669dbac1d148b3f5ee21cf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a7aea9dc780493ece9e43ac24660e16dfe16d263",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

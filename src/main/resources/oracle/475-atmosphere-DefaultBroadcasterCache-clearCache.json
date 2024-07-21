@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "atmosphere",
+  "repositoryUrl" : "https://github.com/Atmosphere/atmosphere.git",
+  "startCommitHash" : "fadfb06af0a42cdc3ec5a364b7cf940f344629d6",
+  "file" : "modules/cpr/src/main/java/org/atmosphere/cache/DefaultBroadcasterCache.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "clearCache",
+  "startLine" : 55,
+  "endLine" : 57,
+  "commits" : [ {
+    "commitHash" : "2454cdf32e901dfcd85c7f2a0556ef06eb0562ab",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "16d1062390a6c8178e3897d44378db327ff09a60",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "14f421fd7fd2bddc09d9276299342f11d63c8da6",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "882a6e43cd193c5164fe64edaa1cea49f72fd8ce",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "8ec28f1cc2e2602de6ec6872c93a6fe6773fd61f",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "aafb5ef391157acfcbf3a65802140c7020989426",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "9d9bafb28a116235175f37980750afea212401b7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

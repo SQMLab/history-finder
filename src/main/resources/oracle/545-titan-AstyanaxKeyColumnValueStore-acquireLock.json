@@ -1,0 +1,45 @@
+{
+  "repositoryName" : "titan",
+  "repositoryUrl" : "https://github.com/thinkaurelius/titan.git",
+  "startCommitHash" : "ee226e52415b8bf43b700afac75fa5b9767993a5",
+  "file" : "titan-cassandra/src/main/java/com/thinkaurelius/titan/diskstorage/cassandra/astyanax/AstyanaxKeyColumnValueStore.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "acquireLock",
+  "startLine" : 176,
+  "endLine" : 178,
+  "commits" : [ {
+    "commitHash" : "de317397cfe0dbd0e9cfb1ca9988e4a7818b59aa",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "c9c0d0e5ff03a4bd04a136deb030cea85b070688",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b194905b658d55a1565b79f2ec8f3722de6526a9",
+    "changeTags" : [ "INTRODUCTION" ]
+  }, {
+    "commitHash" : "96b4d8e94da1b91b98ed01741f452adaa801a20a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "ae15683f30b52b053cb7c62c6bd9162e374f62a4",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "42372ba9c8de770ffb3f786d27f3a45923b7f6f0",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "c8f7d2d5b27ae8a77304868480b41e43685af9eb",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "ac42df773fdcd4ecbfd4de68455dc989b3d7adb2",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "702e13ca8df4070e3e4aa6495a46b16ae312e83b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4b2fe4f7306f8c7fb569300f76359b5d647b7c27",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "767742e2505241fb26da7b960e00751825e48128",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

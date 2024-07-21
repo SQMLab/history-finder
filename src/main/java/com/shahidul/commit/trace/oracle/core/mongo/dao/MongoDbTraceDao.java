@@ -29,6 +29,11 @@ public class MongoDbTraceDao implements TraceDao {
     }
 
     @Override
+    public List<TraceEntity> findAllByOracleId(Integer oracleFileId) {
+        return traceRepository.findAllByOracleFileId(oracleFileId);
+    }
+
+    @Override
     public TraceEntity findByOracleName(String oracleFileName) {
         return traceRepository.findByOracleFileName(oracleFileName);
     }
@@ -64,6 +69,11 @@ public class MongoDbTraceDao implements TraceDao {
     @Override
     public void delete(TraceEntity traceEntity) {
         traceRepository.delete(traceEntity);
+    }
+
+    @Override
+    public void delete(List<TraceEntity> traceEntityList) {
+        traceEntityList.forEach(this::delete);
     }
 
     @Override

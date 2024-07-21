@@ -1,0 +1,39 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/api/db/hibernate/HibernatePersonDAO.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getAllRelationshipTypes",
+  "startLine" : 755,
+  "endLine" : 764,
+  "commits" : [ {
+    "commitHash" : "eb4edec91e0b9286d625629dd9ce1c54973d2328",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4e783231a55c12ec756216beaed6a4c9535c2b32",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "7c3ce463c7fc6fb18e671950ad395b968eba3566",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f472341296771a12855f7042da76fce4e3410fd9",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "8fac5717de1afef273a5a3bcdcff82e35b275d02",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3706e0dea9e92dfed7e4e6fb9b8d02caea153d87",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,66 @@
+{
+  "repositoryName" : "lombok",
+  "repositoryUrl" : "https://github.com/projectlombok/lombok.git",
+  "startCommitHash" : "4fdcdd126a4b5ce365b97eb498536d04caee3b53",
+  "file" : "src/core/lombok/eclipse/handlers/HandleConstructor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "generateConstructor",
+  "startLine" : 237,
+  "endLine" : 242,
+  "commits" : [ {
+    "commitHash" : "7472672f164460cb8fb45ce941b685f358435374",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "795e3c84875de0a01f4d5e1321312f592139c7aa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6045c1b8f524064a492b0dae9fbfbe89a1dca232",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9ee2491427f1522a7689d1c28a816294bcff315b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cd2e2f25690c46f01b876074682e87af369d15d3",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a2c10c70fa8e2c8736464a5c3d445e2ca6e8a296",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "fd1d18a29957fc1999b7dd5725641662ad3bd887",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "4b878f9ba996f852ce555c3024512ae34e34774e",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "d41ef4bf8370a16121d00146f905e866ac7e5a0b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "648c3eeee69bede925f794b16b1f3d184359761f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "aafd83079a3000d3deb6e40a182849da2509fbfb",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a382c21d464c22658e8c2eea7d7d75c2a6747527",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c402dd86379e532895f73ee209c432f84bb5f421",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a284600987065aa78bc41b2099421f864cfcec20",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3a6615234d40cf7e300dfc52c9a212e7b65eed8b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ceda2e5efe229650d4e95de6b8a2632d9f616592",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "5c6fe62a854ef6c98920bc90e71664238a7b2f84",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "067ecf7118abbd36199f6819713c371419ccf0eb",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

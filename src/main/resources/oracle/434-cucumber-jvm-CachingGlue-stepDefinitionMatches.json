@@ -1,0 +1,108 @@
+{
+  "repositoryName" : "cucumber-jvm",
+  "repositoryUrl" : "https://github.com/cucumber/cucumber-jvm.git",
+  "startCommitHash" : "b57b924bd19e70f1dac2d018dc9b2e58ea12de9f",
+  "file" : "core/src/main/java/io/cucumber/core/runner/CachingGlue.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "stepDefinitionMatches",
+  "startLine" : 343,
+  "endLine" : 352,
+  "commits" : [ {
+    "commitHash" : "431dadfa089bcfc604927f4fd4f03ac29c2df705",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cee8eb2435c57f2c926ed2425dfcfe0853f4772a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "b35f6a16e7aeb8ad8ff34cfb867815f5348a651d",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "1748e0982cd39775ddb9004a67b3e7ed99fd54ff",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "bfef3a61b19f5155a07541a72f6f4870128df8da",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "553b3533d12a873c7009b0746804a45120c3d09c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f2eeac155f0893001bda9bf3a0161d151e2eff38",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "852548b07d7be83fef83e3cdd576792335b16415",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "352a62e01ee66088baf548864cf067bdc7c7af11",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a4a3ad59d6a3769357d0a42b141c2fce444edd63",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fc6dabc6a07eee76dcce7b3124a69d69306f1102",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "7cb03ad7587c8bb039c4d986dc78867df2abc2f5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b66655a58c8414435fddd80bd373005bb5ad4811",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aca512d468d96b6c120be36f3b47691dbdcf7614",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "371efeea34b04e08367f07cae615fae20ae8a081",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "abf1686759b0fa8fbf380a9a86c261fabc10c013",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fb26b7aa75e68fc731f338c0a33cbcdf711f98a9",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8b75df66ad143df5d3170bfec0f10192fef1e245",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "ec4df84886faaa9e3d37e9d9c4b49687a7d0c9b8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7164dd3dd398ee2e34ad465637d760a9062c4ead",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "4b8844a8f8e221b7e85e585e203beda5d400b2ba",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "68d4c668d8a3553c056a15859ab9489ddc6fe629",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "557d392d5c01e4de0468d3316ecd017c93505e73",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "633b5aeed12d8506491ae2a4c60ed8735fb7dab3",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "42e9c173cc6ce32fdfda245843896c14643b935a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0847bed383aa06a5c3bd5fbee8936b911b4ae061",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9d38b4ea8c7cc27706c31bba1d5dcc7edc7b7e86",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2dc8329d5a33d5a38fde9a287fe0b28656f5cf4b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "dc6ab696a94f15287112668a3283763ed6693735",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "acd1a2e39c2abf91e11303b636eb4a20e20847ca",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "03057202c6d195d912e9aed1a9f3b6e38d2990b3",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "87d383b8d1325dd0685ae3db49588992b4d84d40",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "hazelcast",
+  "repositoryUrl" : "https://github.com/hazelcast/hazelcast.git",
+  "startCommitHash" : "a59ad427a0afe6e0beb1a6adf69b7c6d84c10",
+  "file" : "hazelcast/src/main/java/com/hazelcast/internal/networking/nio/NioInboundPipeline.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "normalFramesRead",
+  "startLine" : 81,
+  "endLine" : 83,
+  "commits" : [ {
+    "commitHash" : "04783ec7754e5582d77e269663d08a3747aaefad",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "106ff93bbabdfbf99db422b39df3131c0fc8ac1b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "345c2f37ced2e13b544072e27c83da49d5afb688",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "cf23c5ea7a5cfcca06a330b6120c8893f7468434",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "35eb5374fbc7174f55e20e773b983d796b457c83",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e90aa5b181e41623d42e41560c98d1da423bda7a",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "28f7ce57a982ce346ac6a517ab4a83395f87f5f8",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "adc30a16536113e2fe7ec51ee3912e1b892be3db",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "175b6d5395f42435794b9104ff04feaa93906fd9",
+    "changeTags" : [ "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "a182088b51af1e235be98254d484c0b2ad647df9",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8ba551312132f6524ae07ab4eb903c7d195cc29a",
+    "changeTags" : [ "RENAME", "MOVE" ]
+  }, {
+    "commitHash" : "30c4ae09745d6062077925a54f27205b7401d8df",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "9968588644f03611a0e57f0a9f958b64f9743fa8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "468be36021410174bc5c97d91caf579bb176140c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -36,6 +36,14 @@ public class FileStoreTraceDao implements TraceDao {
     }
 
     @Override
+    public List<TraceEntity> findAllByOracleId(Integer oracleFileId) {
+        return listTraceFiles()
+                .filter(file -> Integer.parseInt(file.getName().split("-")[0]) == oracleFileId)
+                .map(this::readByFileName)
+                .toList();
+    }
+
+    @Override
     public TraceEntity findByOracleName(String oracleFileName) {
         return readByFileName(new File(appProperty.getTraceCacheDirectory(), oracleFileName));
 
@@ -86,6 +94,11 @@ public class FileStoreTraceDao implements TraceDao {
         if (outputFile.exists()) {
             outputFile.delete();
         }
+    }
+
+    @Override
+    public void delete(List<TraceEntity> traceEntityList) {
+        traceEntityList.forEach(this::delete);
     }
 
     @Override

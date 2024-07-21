@@ -1,0 +1,111 @@
+{
+  "repositoryName" : "hazelcast",
+  "repositoryUrl" : "https://github.com/hazelcast/hazelcast.git",
+  "startCommitHash" : "a59ad427a0afe6e0beb1a6adf69b7c6d84c10",
+  "file" : "hazelcast/src/main/java/com/hazelcast/spi/impl/operationservice/impl/InvocationRegistry.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "register",
+  "startLine" : 116,
+  "endLine" : 137,
+  "commits" : [ {
+    "commitHash" : "352dc1d4515501fc0d23828836ffffa276bd9fc9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "16bd03c7794322b5989d1bd5641c80352c1117cb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5bd1519832785430a9f734d6c3a6418b6438e00c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "321a67a2c541a0bb77b706c3957103848f2535a0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d20597407a413cb09e8f5b587992c7580c1cac1f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d7a6ab0902b7efb8706e0a3654bb3b3fb454cc7a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0538ee62fe4d2ec320cc7384db6b85a93089af9e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d1b02847913b8678c0a2b7ba31fef5040b035f44",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4b2e851e19d38707af9cefe8a161a938981de697",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "df920f2c161d742f8586431b9e229e5258fdfee7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ec32b6de51ae1dd0cde143577b980b5274f475d0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a9a700edde7c51f66f77f41299099027c9315fc",
+    "changeTags" : [ "RENAME", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "1545873828058a174dd7026030e654c2a6a3fd0f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "309e807f5ca0f3804def9cee9b3ea75fdc67f39b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "867bd38dd2a4b32253e896aa8856ce6102c44ffb",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "42fd686bf5deb9e0ff4ad5ad374be5cd9929dc85",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "14b06a032b5a96322ff505a538bc32fa20bb3a18",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "6ec7c41cafec079960dd4c6c4b4bc059a2153cb8",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e6d2344484c4bcc539988e905571a2afd18db4a7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "db43d300007c71a719379f134f2af157ea7fe0dd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9fd0a7e8564c651aec260090b7da95967ed437c0",
+    "changeTags" : [ "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "f339613622a526574d9344abbae45c0917fd6ad1",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a7464c01d2abc11079af8704ac4c2a946cf2160c",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "9d2ccd3958e3ea6af0d767c8af1b2462fa833d3a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9f145e94367795a3a818dc714005caf48639b4b6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45ec6763608616a24b6a7be68d858f9836a245dc",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a14d98db070a99d2974c5f9dc1c1b337bc306da4",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "581bb5cba36f4a794e8919310795261d7741aaef",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a65a85124aece5f0c6c7d2b358810bc37d01a8e1",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "35249aec613cd69e460af891917f0b615008ba46",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "daa653f19234e50d8c4acf5fae06f883ebda5fc5",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "890eb378235254199b992f09267340d7de2441d2",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "ab35dc22dd375ee685e18ae6651d30d7b18abd86",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,87 @@
+{
+  "repositoryName" : "cucumber-jvm",
+  "repositoryUrl" : "https://github.com/cucumber/cucumber-jvm.git",
+  "startCommitHash" : "b57b924bd19e70f1dac2d018dc9b2e58ea12de9f",
+  "file" : "picocontainer/src/main/java/io/cucumber/picocontainer/PicoFactory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "start",
+  "startLine" : 25,
+  "endLine" : 34,
+  "commits" : [ {
+    "commitHash" : "520f91c550fda5f2f41f5a5416e505f0e48ee151",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e2717c38836401f0fb7f22a1981f91e07d8a6437",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "ec76465ce8dfce3a194d2eb2b987841894710a73",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6b932449b4d4bc0bdceb49fee7a52179716f4413",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "03057202c6d195d912e9aed1a9f3b6e38d2990b3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "098b34c4c9a58817a253fdbfe25644864d90c1f7",
+    "changeTags" : [ "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "2c708b140b815c75c7e21b2fc5712b8f92aec628",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "29eb5162931069f7b2a4e1a2e26c0d602e174a3e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "31596649c65be39be910b5ade597e7b2d962706e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f4fc9114766f59ff3bd7a619d32874ac8826bf02",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6a8850173cddba1e8268ec6707a1847fa70715b3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "928d47035f6bf8a70f900af3a96a748de87b37e6",
+    "changeTags" : [ "RENAME", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "62ed91808387ea4ce9e342e1ff7f17ccb4592daf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7209422e7115d17d9095df65fb8d3b727a03c27f",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "fed864db00dac4a678d8c432c3da65475f3ed19e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d84d72b3648c77974e13a3dff8c29b54da3793e2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8c6c8cccd7176374052323e1894ede4723fba2ff",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f723b7f551ebb8d2fda85e1a1e10302d439394ec",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "c135651cc2b3a032c1345207447a8289449a61ad",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "d6a872ac4bc3f6559092d89135443ed3c7711ec0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f06c83ceb3a584e49591290ede2989126ea71c49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5f8f31b3d2b34050a93e27990ed25ce9274f49ac",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "25f313ac89d164bc977e27e8e72830097b54a40c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6d59b9f1691444c1cbf2623adbb9927f36d10a30",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a9ca30aa8265d61aa8feda90def9093d39374c67",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

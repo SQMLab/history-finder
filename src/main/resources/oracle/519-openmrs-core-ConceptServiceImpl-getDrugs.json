@@ -1,0 +1,39 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/api/impl/ConceptServiceImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getDrugs",
+  "startLine" : 522,
+  "endLine" : 551,
+  "commits" : [ {
+    "commitHash" : "cacb6950705e12c9fa6417ebc4c29be654378e22",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7a3af31022114dbd665c87582861eba81985be9a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9824b21d28a8d2fd85e0b12bf6782b8c127d30a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3716e57a03e57a6d5d45c91fb3418f14be9fa150",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "04219d59a2f6773efa6f5197148719491788debc",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "43b8495a40e5a1b502a52f382f3b3792f27a08ed",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "b36f04ece8bb2952d1e0e7f5c95c3f1c908e85d3",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "b57cd757597e9146f606abe8745ed08548e1e979",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

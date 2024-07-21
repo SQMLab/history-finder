@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/logic/result/Result.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "contains",
+  "startLine" : 734,
+  "endLine" : 744,
+  "commits" : [ {
+    "commitHash" : "b54304f90aaa12e7ffc6b51b808d95e500b3fce4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "21f3cc32e2980a372bbeceaff42401e9b8947ec6",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "16d61282a1e65bcf05eea7246ecde70fd5678b21",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

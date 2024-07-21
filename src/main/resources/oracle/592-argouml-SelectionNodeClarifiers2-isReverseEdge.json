@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "argouml",
+  "repositoryUrl" : "https://github.com/argouml-tigris-org/argouml.git",
+  "startCommitHash" : "fcbe6c6eb764525a7509d8bc8bdfa19aea551c9f",
+  "file" : "src/argouml-app/src/org/argouml/uml/diagram/ui/SelectionNodeClarifiers2.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "isReverseEdge",
+  "startLine" : 427,
+  "endLine" : 429,
+  "commits" : [ {
+    "commitHash" : "4d0b0eba87adbbd2972649e03af67052c3b09f23",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4f54dcde8c0a03ac8d3291c02ac2565f2083e61b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "39ce1c3c72de2e4d0899a2be47c33f28c5364d8e",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "92d7cdd4b0cc05b70a28402c15af0dcd6a558566",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "252047237afdf3226355fece44de54a08e246543",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "69d72c95ab869619dc476fbf4e7d4047e553fbf8",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "12b8c5d4d5302fad4463b5737e033ec8301c5cec",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

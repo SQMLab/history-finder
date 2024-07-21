@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "lombok",
+  "repositoryUrl" : "https://github.com/projectlombok/lombok.git",
+  "startCommitHash" : "4fdcdd126a4b5ce365b97eb498536d04caee3b53",
+  "file" : "src/core/lombok/eclipse/EclipseASTAdapter.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "visitAnnotationOnLocal",
+  "startLine" : 95,
+  "endLine" : 95,
+  "commits" : [ {
+    "commitHash" : "1a0e611a9c5e1ee518670647ce1a44beae559b44",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b5c8b725655d2ad8a715cfb1fbbdf25dbdcd4ceb",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "92ab0e7971df9d1efc9345f17ad48355df95161a",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "c2fd0a1ef514ec109f7f1b544f46bfb8338b7e8f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "e84bdd32e71b029d8d1f2fa7849e998953984f47",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "41fb7cba62b543243c784757d1af4e05824ddc4e",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

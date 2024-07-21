@@ -1,0 +1,81 @@
+{
+  "repositoryName" : "sonarqube",
+  "repositoryUrl" : "https://github.com/SonarSource/sonarqube.git",
+  "startCommitHash" : "6b806ebf8e189b2abf7d29c964abf09a3a3beb8c",
+  "file" : "server/sonar-webserver-webapi/src/main/java/org/sonar/server/permission/ws/GroupsAction.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "findGroupPermissions",
+  "startLine" : 163,
+  "endLine" : 169,
+  "commits" : [ {
+    "commitHash" : "85b940dd935f57860f26dff7f1bfaa9de1ba8af2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d8081f847f92247a64166572605876e67e9a34ed",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b6d962dd467796c7691b03791f14dc50678ad269",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "68af82a779fc632759c607d31ed6258a015a35c4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "33acda7596369ed1bffbcd25b8d0d590fa87be49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1e663e71492dc7a9a1d9bd1a33e22b34545748e0",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "658eca81386844ec1d2b3c8f879ff302a6e48de4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "b05d7639131f159f4d0cc31b5877448440c2821b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "dca860b61a0d08f102a35e72353f339deef19de3",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "a30dc8ee3dd9e0eeb1f76829aa7a80f4e9e5387c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0fbbe800ee3ae1f68df6e5d4c868a2910b981a55",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "4517fd6b3732457a17baed69319538691d6a2baf",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "fc558542c4d6bbeb0b5f98314f9697c48d35a9a4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "f16b5672621fa152414a1f8afb24340c67668029",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "e7af578fb13af943b5beb6f10299cdd5ec4d876e",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "966ceab8329ba91c481c25deae55d7cf8266ee3d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4659898b6d290ce2f5b3edf7396e32e4caa2bb24",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5a6099ef57bfd973a7eb2fe6c9e60a889bbf068b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "bab1d0bd90e426b4f65cd085343c4e2758b1761b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "03bf70f633496f916f211fbf7f3cb17bc691c63d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "724d2279d01c836b4e401fdfee22d1c849630fab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f805b0be08a7e6912e7ea27a48cb97168dded2d8",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "58df33eae682503211d2ca79420185d826f3f8ad",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

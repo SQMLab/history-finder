@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/Drug.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getId",
+  "startLine" : 212,
+  "endLine" : 215,
+  "commits" : [ {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "26e6f431f45373ad7fa52d01dfc544d1da516824",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8fac5717de1afef273a5a3bcdcff82e35b275d02",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

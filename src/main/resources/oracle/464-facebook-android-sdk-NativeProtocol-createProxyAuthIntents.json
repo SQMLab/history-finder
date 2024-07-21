@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "facebook-android-sdk",
+  "repositoryUrl" : "https://github.com/facebook/facebook-android-sdk.git",
+  "startCommitHash" : "fb1b91a32c8ac21ec91800748a24e3c20b21ac0e",
+  "file" : "facebook-core/src/main/java/com/facebook/internal/NativeProtocol.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createProxyAuthIntents",
+  "startLine" : 515,
+  "endLine" : 546,
+  "commits" : [ {
+    "commitHash" : "39ba40601508198998704be982ea9233a53e87cd",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "46d316321c38f653f2964da93c983e17fe3811ed",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "07d9c02e53ad7369a4ad98352da1dc857f83c78c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f0750f4dfb1719183052a1ff163a3b61768ab021",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c3aa48818be5db4b236ab4216d9501a3a786ff8b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "028d430a3b48d05d0da133f44a0f07b9d72e6789",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0086a52b843d60753942a20573fcdde4c9a3e948",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "58c3a116fb583e748f9c50b3fe747005f087ed74",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b9d6c3994a7a0b5995809322ae08c9be3887cb38",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "50e278c98b4a02f13106cf059c6fbb0c648c0edd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "845ba874cc5552f4deccf7d6262d351e4bbd72e4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "5ca08f4d3becbfa59045e9f2257d7ca6f8013679",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

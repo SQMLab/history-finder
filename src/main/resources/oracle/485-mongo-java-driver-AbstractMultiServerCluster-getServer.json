@@ -1,0 +1,111 @@
+{
+  "repositoryName" : "mongo-java-driver",
+  "repositoryUrl" : "https://github.com/mongodb/mongo-java-driver.git",
+  "startCommitHash" : "8ab109b31eba9ea99ea459a3ce0aad988442985e",
+  "file" : "driver-core/src/main/com/mongodb/internal/connection/AbstractMultiServerCluster.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getServer",
+  "startLine" : 127,
+  "endLine" : 135,
+  "commits" : [ {
+    "commitHash" : "fc9ab1ac1e43bdbb813dd25fdd32dff345aac2d2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3e777058b556d67c68b084372f940f80eb0e9398",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8b216b0b982765ecb26e26b1c8a014c2cba1d799",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9796daee2af82a44bd6af74e1fb504e5d327b78f",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "ba5770ac97c61083e87c4abb350002332a3e002e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f19447753657d7be3a597e31731f5aedf0cc9ccd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "21eda177aedfecb4056721040d4a1f9fa5001e01",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "63b4be23a60486f2a7b2f3a532b55f31c1ba1690",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9ac65f7680e59a2737fa449d00a8d6e66f8f1c26",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0abfb7246c43bb74da4ba5552d3ecd18b46c3cec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "11f7d9491f7b4e2f2a353b882512effbce5434eb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8aee13d1e268834841aacf5c14f7e0859f4b90c2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "2b998f82c0800be47d82a59ff74772b9786bbcc5",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "194ac26fbed0ebd23d51d6cf986732529cc7ac52",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "eb8be13b3ac78a336dd35f3b80fc83d131d624f8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "03f642a542c0dcfd63ebd8df223dc42d730273a3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "acf7900359b174a924066db45e82da4b75393322",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d3578b63c07eb0590b7f31ad808817ba2bd0e51",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb4cc3914978fe2546765d85a3a6303ca4176a21",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "a6ebaf9db1f965471d14a33fe1ad2b65beb81bcc",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "435f8d31ecaeac7bfad18dcaf03e2a6152c72a2c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b8297514ce74d875a0846d24e473b442f73bafb5",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "5d94d64a99e41af392621c47a8dec2077d4c5b00",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "5dfea1fb0b9cb53f3b057a599802f40a97e6645c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "471c983147eaa19459ff7c480d81eab371a276e1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b6cc25e9c69f1ab45b99599b62450b95af6ed694",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "728e3d55237ecc9e791f548a995e10220a8f1090",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "192e945015d1a6672217bb99a7e1a766a3aa95dc",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "82674f150d593f694d6b0a6c69b07c994c935d68",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "f474f4f0cb88a82a2eda4501dc2fd2698bd4c18c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "80d2c3164668f2f58b195ff8b8e4e62c35467723",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1b1a992ba16d4d963e6f673b86d562b88197b5e3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5b59b37c4c45e87537182d1be8906b881bd010fc",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

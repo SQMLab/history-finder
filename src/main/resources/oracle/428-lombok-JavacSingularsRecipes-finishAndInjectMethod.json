@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "lombok",
+  "repositoryUrl" : "https://github.com/projectlombok/lombok.git",
+  "startCommitHash" : "4fdcdd126a4b5ce365b97eb498536d04caee3b53",
+  "file" : "src/core/lombok/javac/handlers/JavacSingularsRecipes.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "finishAndInjectMethod",
+  "startLine" : 275,
+  "endLine" : 294,
+  "commits" : [ {
+    "commitHash" : "dede79bc224eb16566a027f83214c04e065b575b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3f0fec18726fb9c9f4dce614dbcfa650c1c04bf7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c42bfbae39990b365a5f05eb23895da6203023bc",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e95680a76733c22ee5937a586ee50c703d5ba621",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "15df143df6d35dd64459d717a451a039eb26d761",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a3180298305ff64e9f671b51d663b750ba7c8efa",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3285d83e1636c0a21c7aada3bb278419ec2bd83a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "dc28a8a2d251fe48d414b90abd591b1d36f8bdd6",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "87bb89177c1ea0e1fb3e757d5d3c6d90f475ad7f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "691c855b8962ef78d38ebb6851f5a74b500beab4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "0ef178137759f0a780e3e3f6ea141ee073d96826",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "fe143bfd69f70749f4e745c5be6644c37840083f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "360c1d5a21273793ef5c96c21b979501bdebb5c3",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3c9324e801b6192717c1e9b78e4d762c9e4ef57f",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}
