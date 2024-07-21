@@ -1,0 +1,48 @@
+{
+  "repositoryName" : "atmosphere",
+  "repositoryUrl" : "https://github.com/Atmosphere/atmosphere.git",
+  "startCommitHash" : "fadfb06af0a42cdc3ec5a364b7cf940f344629d6",
+  "file" : "modules/cpr/src/main/java/org/atmosphere/websocket/protocol/EchoProtocol.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "onMessage",
+  "startLine" : 41,
+  "endLine" : 45,
+  "commits" : [ {
+    "commitHash" : "3d9d5fe61f4818aec7ed65585aeb586719e1009f",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "8abb485c0dfb0cc19bfbb15b7e05ede06b8c9257",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "d3bea8961eb335b349e8f43e0255b764334e87ce",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "0c8805f3a9ccb61786a5bf8de4e60be11a01d904",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "90fb249032931024798be17fcadd70ecf5d9a18a",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "3c5ea18bdb3ffc55eec0178615efd10232c5e327",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "074c2005746920d8714cdb6292869bc9cd274642",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "88773e9983e3011fcbffb79d19149349bb160eb0",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "b361b7f073664c4e17736e1cf5fdae136c354faa",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "18ed7a6f4373de8d9e2259cbf0fae4461595296b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d9b40ac4a89d9deefc0c0b214bbd215c32eccd10",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4e479988f4f0a8b5cfd3e11d3a92f66fc43d2655",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

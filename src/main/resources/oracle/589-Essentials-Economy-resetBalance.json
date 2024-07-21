@@ -1,0 +1,42 @@
+{
+  "repositoryName" : "Essentials",
+  "repositoryUrl" : "https://github.com/EssentialsX/Essentials.git",
+  "startCommitHash" : "d36d80933f8f672cd8bb0f210adc23aac10850ea",
+  "file" : "Essentials/src/com/earth2me/essentials/api/Economy.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "resetBalance",
+  "startLine" : 278,
+  "endLine" : 286,
+  "commits" : [ {
+    "commitHash" : "46ca2652a7f4fefbe51e1ed6b0c03bdd5b3d1fce",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d0fb315d635335cf7e1a86e571b4b83052f4d773",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "a3cc1e4213768e0f3383e8ad87f988d3ff17a4c7",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "MOVE" ]
+  }, {
+    "commitHash" : "95293b46e06131a6927439af5d00c6349f2b1b59",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "d075b14e4f1f63fda7df54fe7076312506e81587",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "616b880e13fd07d880e934f394427df6fa2be5df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b88b8c2045ee816417113d198bdfe482a17f552c",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "86478459bac01ddf1388cd0a2eb2487a4295a89f",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "966ef1ce32a51566e695c2568cc08d0bc9c67a4c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "63e0c125515bc5cf15d2f074910bc796e015022f",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

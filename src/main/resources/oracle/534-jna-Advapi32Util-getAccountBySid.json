@@ -1,0 +1,36 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "contrib/platform/src/com/sun/jna/platform/win32/Advapi32Util.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getAccountBySid",
+  "startLine" : 414,
+  "endLine" : 416,
+  "commits" : [ {
+    "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "28f94cbd0be38a5162bffafe001ef9963c4bb68e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b378af7cb1785492c54140650a1d307fb4f1dedb",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8b549a487f0806610942d3c8a88f4a8bd1f2941c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "52a6926da3e3e7fb0954909db1fd8737ba3d873a",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "3d2360bc56e407be66bfa8fd16ead15a269866de",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e7328001a43d6663ddaf32e8f8da2c009f10ef36",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "64331c9cf0df26fa73cc63935d67528ed379ff67",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

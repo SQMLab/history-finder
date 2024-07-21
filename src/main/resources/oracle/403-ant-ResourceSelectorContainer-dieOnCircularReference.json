@@ -1,0 +1,42 @@
+{
+  "repositoryName" : "ant",
+  "repositoryUrl" : "https://github.com/apache/ant.git",
+  "startCommitHash" : "1ce1cc2317cb2b2773ab6b765f1a79ccd4806926",
+  "file" : "src/main/org/apache/tools/ant/types/resources/selectors/ResourceSelectorContainer.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "dieOnCircularReference",
+  "startLine" : 122,
+  "endLine" : 137,
+  "commits" : [ {
+    "commitHash" : "9caeed5081071d6a2de28844d0a724918f8c6d86",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "aa373b9f5e7548bf96a51588c9e67b8de6c05404",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e88414ba32cbb978c462dab3ba5fee7efc3f670e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e661544ab07aa797e2d3e99c9834f7c6fa15eba8",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "a4c55d35b99bdf699a35eefb78a1833c348c0a46",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "fbb9886634198d8377104bef9ec697fadeb134df",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "EXCEPTION", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "d050f6a18c63fdb1747377e251e66a14b24c3b08",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de93400d04ba220ab724125f4e869e3daa37f1d4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "505d4a8c1d350ffac8a917378a6fac71b2517b3d",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e8d2007cff10bf96dfe533c7ed89685702c9add7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "titan",
+  "repositoryUrl" : "https://github.com/thinkaurelius/titan.git",
+  "startCommitHash" : "ee226e52415b8bf43b700afac75fa5b9767993a5",
+  "file" : "titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/keycolumnvalue/keyvalue/KVUtil.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getSlice",
+  "startLine" : 44,
+  "endLine" : 46,
+  "commits" : [ {
+    "commitHash" : "f853d948f7ad3b148ce809b450abba4c7d4790f7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de317397cfe0dbd0e9cfb1ca9988e4a7818b59aa",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "8305d1decca27b2e6607f55240bdb08145ea7e93",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "b2d5ca9d88093a13c75c0b92baaa80cf7664fc8c",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "5404bf2b6eea68002321f6d3a0a8a4e2ea32adde",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eab917b78fa300d8e6d81a543d4f1738f945b5b2",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "abc6f869fe83b17935119c88fc85a1b2a871f495",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "ae15683f30b52b053cb7c62c6bd9162e374f62a4",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "42372ba9c8de770ffb3f786d27f3a45923b7f6f0",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "c8f7d2d5b27ae8a77304868480b41e43685af9eb",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "ac42df773fdcd4ecbfd4de68455dc989b3d7adb2",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "a4ed8c582e2dde96f0d84179c168a9de8ea11e49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1ac3be429688bdd5938901943c4c5761bdabf0a8",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "767742e2505241fb26da7b960e00751825e48128",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

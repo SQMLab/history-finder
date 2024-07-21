@@ -1,0 +1,51 @@
+{
+  "repositoryName" : "guava",
+  "repositoryUrl" : "https://github.com/google/guava.git",
+  "startCommitHash" : "e352076da65aa3afb5dc59cfd3c1f41574b5ebeb",
+  "file" : "guava/src/com/google/common/graph/StandardValueGraph.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "edgeValueOrDefault",
+  "startLine" : 143,
+  "endLine" : 145,
+  "commits" : [ {
+    "commitHash" : "18cdc775081924cfeec87bfe5ff3547ed81784f6",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "af3ee1c5986005e4fdeec6e3430d8d63316bee6b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a2258e6691a22aa7ff2604871b520d44bbac01f",
+    "changeTags" : [ ]
+  }, {
+    "commitHash" : "6f22af40e1526b8c194e9e36d457bcd37680c6a3",
+    "changeTags" : [ ]
+  }, {
+    "commitHash" : "a8f4ebc429d01150d3e35980373cb8c9c123aeaa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "66b3e26aadf5ec82808a0965b2a894addb0970e9",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "0f6096df9105ecbbb2d32017eae8fd63562ab298",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "de8d63f55ce4db93b33025aa4ac6a5823c8c3e57",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "d70b2b3d9ee90922ee382d2144c51310320af4a6",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "58f40144cd50246dfebd00d36e372527ba912d0b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cfe05dfda3ba79aa1bd3acce6b4e766eb7b9bc00",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "41becc60f5e1d8b121846c890478d39e6ec42979",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6e62ae569837d8d2fc9d51c3ac6eddf0468f9143",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

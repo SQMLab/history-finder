@@ -34,7 +34,9 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
     @Override
     public TraceEntity load(TraceEntity traceEntity) {
 
-        LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2023, traceEntity.getOracleFileId()).atStartOfDay();
+        LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2022, 1)
+                .atStartOfDay()
+                .plusDays(traceEntity.getOracleFileId() - 1);
 
 
         List<CommitUdt> commitUdtList = traceEntity.getAnalysis()

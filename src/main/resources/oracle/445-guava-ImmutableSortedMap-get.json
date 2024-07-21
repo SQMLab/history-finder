@@ -1,0 +1,36 @@
+{
+  "repositoryName" : "guava",
+  "repositoryUrl" : "https://github.com/google/guava.git",
+  "startCommitHash" : "e352076da65aa3afb5dc59cfd3c1f41574b5ebeb",
+  "file" : "guava/src/com/google/common/collect/ImmutableSortedMap.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "get",
+  "startLine" : 628,
+  "endLine" : 631,
+  "commits" : [ {
+    "commitHash" : "0c81386a239370c073572212079efc727c911d0b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "01d67d3f7b372279eb7af4469ec82f30c1ef08df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5797777fc85b0ae703f8e1fa15a0512952dca938",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "6b0f80d75843cd7b8623861198a9b7eee4d3eb6b",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "3e2950b1da46e4c976d2f79907bf61373770587e",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "21d3cddf5a11f2f708f1d6a94f3536d907da95d5",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "fea5c4ad7429590a49cce01ce6ff226b6f15dc18",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "54577caba118a72b35be0bf73f2d4453ee026523",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

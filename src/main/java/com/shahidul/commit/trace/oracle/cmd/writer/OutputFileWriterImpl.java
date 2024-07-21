@@ -39,7 +39,6 @@ public class OutputFileWriterImpl implements OutputFileWriter {
             if (targetFile.getParentFile() != null){
                 targetFile.getParentFile().mkdirs();
             }
-            log.info("Target file ..{}", targetFile.exists());
             if (!targetFile.exists()){
                 if(targetFile.createNewFile()){
                     log.info("Target file {} created", file);

@@ -1,0 +1,78 @@
+{
+  "repositoryName" : "atmosphere",
+  "repositoryUrl" : "https://github.com/Atmosphere/atmosphere.git",
+  "startCommitHash" : "fadfb06af0a42cdc3ec5a364b7cf940f344629d6",
+  "file" : "modules/cpr/src/main/java/org/atmosphere/websocket/protocol/SimpleHttpProtocol.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "onMessage",
+  "startLine" : 125,
+  "endLine" : 143,
+  "commits" : [ {
+    "commitHash" : "c9dec2db96cb006816c7c6f5e420aeb27d7a0d3b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "156d15fe63f99c4163af86907074d64f442dd299",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "328aedde48348260eb0235f9900ddc25bd7038c6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7c86d2427cff60881f8571938e778d1c64b51810",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "616663ff5a43fc64475965ac9874343a117cfbac",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "38e07ebc05551517f4092b7fc040780dd83ff36e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e78c56d3f926f56337e03ba5889de72272ca1945",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d9d5fe61f4818aec7ed65585aeb586719e1009f",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "8abb485c0dfb0cc19bfbb15b7e05ede06b8c9257",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "d3bea8961eb335b349e8f43e0255b764334e87ce",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "90fb249032931024798be17fcadd70ecf5d9a18a",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "b13e1fc72d85472471998d5572586348442cd128",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "3c5ea18bdb3ffc55eec0178615efd10232c5e327",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a08b57df7fe25819174ab2e64b5c290874d8445c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "f959024f9db022ae2aa517d13eb63b9c37ed150d",
+    "changeTags" : [ "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "074c2005746920d8714cdb6292869bc9cd274642",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "5f9d0db70d0c3189e22ae997aa27658f40257517",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e1b7969c9d3344f367c692b8524c474fc6aa2d28",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "54852c78e53018696367a69bc711e1be04176ace",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0b2808723c46e36d12617a74e46b35d62aa5b7e0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "88773e9983e3011fcbffb79d19149349bb160eb0",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "b361b7f073664c4e17736e1cf5fdae136c354faa",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

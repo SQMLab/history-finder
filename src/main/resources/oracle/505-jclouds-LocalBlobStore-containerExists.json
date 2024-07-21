@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "jclouds",
+  "repositoryUrl" : "https://github.com/apache/jclouds.git",
+  "startCommitHash" : "7af4d8e8f19c479b0a8f35e06dd68418a8367b3e",
+  "file" : "blobstore/src/main/java/org/jclouds/blobstore/config/LocalBlobStore.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "containerExists",
+  "startLine" : 430,
+  "endLine" : 432,
+  "commits" : [ {
+    "commitHash" : "dfb583b67aba421f9aa48e97ebfbc5303420d3b7",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "562f8277d31e17582c5beba3b014a8e8048d46e9",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4ac7629f44e70bf4fd4a17da541745a9769fcdb1",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "442c51eb3ca8a146e77208284bab65b4dc429a0d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "3a0c15b345b0f2eb9a019f10adfb731a7a644b64",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e04784373e880515bb79d764fdb3ceb3274cded2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "83a2d54e3e53868bdcd932c4a8eb5ed01b6cfc2a",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "1284fd67fa04a2de4c064a796465327106f01b52",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a900e05a1f36c2addc61557090c790237e861454",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9e340f286e642ad052c0c479df1a00e32e9bb2d2",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "bc238bc5079e1293add1ae28cdf53fb589824d06",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "10fe315b7d36d13b7dce16a2d90aca26bba2540a",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "050f6e9a822a0bf7f63c2d12db19b23f7e33a8cb",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "e3672b6a5951920a07269c1ebc199b50d0a58834",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

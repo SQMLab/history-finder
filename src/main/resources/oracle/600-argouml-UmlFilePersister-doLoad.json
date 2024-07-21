@@ -1,0 +1,93 @@
+{
+  "repositoryName" : "argouml",
+  "repositoryUrl" : "https://github.com/argouml-tigris-org/argouml.git",
+  "startCommitHash" : "fcbe6c6eb764525a7509d8bc8bdfa19aea551c9f",
+  "file" : "src/argouml-app/src/org/argouml/persistence/UmlFilePersister.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "doLoad",
+  "startLine" : 315,
+  "endLine" : 322,
+  "commits" : [ {
+    "commitHash" : "4d0b0eba87adbbd2972649e03af67052c3b09f23",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4f54dcde8c0a03ac8d3291c02ac2565f2083e61b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "59b7061fdc86d257864820da6714d165f4de4a78",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "8804ca786b0bd189789e1b48fd4d81b8bfb2dd0b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bbfc52c28516be220ad6da05a25f22fd5e4c8c60",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "18483b4507bf4dbf7ea2cc9fa226f8a712450e3b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "01e094f912779bf7b9c34d7b649b9726a6610551",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ee13f2483289c105e41e2eea6c44d7a33b70b5a3",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "9876bf207af0751054c35d55a33463cf4d6c0e76",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "2cde5a92daa27cd13d269f4fba331b9cde52ae51",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "22a4b806a8deb6f078658fdb6fc292bb918008d4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2fd454b2c9816f0f3b1c1060dd938f10421bb4f7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bb09023abf8ccbf5c739f443b54dfe53eea05a43",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "131eafbc4780b5ec40f75904781ae866cd8d7ea2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "88ef13bbf80c4199ff0fda7b21ad363fdf2ea3a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb1f72bb370f628aa33070e1d0b8c78073085403",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8cfa13f508ecbc6d4e3e9274f6edb272ceffe0bc",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "a0e3dcc51de0d3e0d39bdf9eab37d494d5a91314",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b008c8793c01b7f6dc8433da56739ac8fb8c64d7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a3ec978f9776a4f6adb1d933df9b45b73d577c94",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ee960f7b214ad94f9b1f4045e5b236ed97e1a154",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7a782cbc3702928136c08ea60779d9295d17ec17",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e169a2835c0525801c4ebcb80ae4282a7e4332ff",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d2b6b723ba3b90661c6f44c9f5599148b3fe0b45",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "db70460b962fb5db18e6eab4c311301f6679c253",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4bcecb18b079ed438ed322481a672898d8e92b9d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4948413bfa4f45786f1a569426b313aa6fe23350",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

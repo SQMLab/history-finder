@@ -1,0 +1,45 @@
+{
+  "repositoryName" : "ant",
+  "repositoryUrl" : "https://github.com/apache/ant.git",
+  "startCommitHash" : "1ce1cc2317cb2b2773ab6b765f1a79ccd4806926",
+  "file" : "src/main/org/apache/tools/ant/types/Path.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "addExtdirs",
+  "startLine" : 663,
+  "endLine" : 682,
+  "commits" : [ {
+    "commitHash" : "1c80d507f496dde98869890e671edf635bef8dec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "33f3479056780007a3b474d8633e36d38552e875",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6ef4875d061c42465f53150b1397b4d7d3b65905",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "72245569272f19cdf0052b3468de340a9759d346",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "4ca5683c2a54ff4a141ed562a0f3b431b153b2c2",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "37ed344b385cde54ee62f2e66d347cb243dd6708",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "53b4dec9ae22cb3d37459abdfaf490235a4548c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6667e4cdd6d4914852b49e767b9f836a4d6941f2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a8d4fe6d9b8c7a4adb1704b12de610dc6e18fe94",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8162d141e44b778d135f9251277e85c922f0544c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "f7ac20202d510e7569f332e722b4a56fddf28a6c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

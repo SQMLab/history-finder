@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "facebook-android-sdk",
+  "repositoryUrl" : "https://github.com/facebook/facebook-android-sdk.git",
+  "startCommitHash" : "fb1b91a32c8ac21ec91800748a24e3c20b21ac0e",
+  "file" : "facebook-core/src/main/java/com/facebook/AccessTokenCache.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "create",
+  "startLine" : 131,
+  "endLine" : 133,
+  "commits" : [ {
+    "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "028d430a3b48d05d0da133f44a0f07b9d72e6789",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "d49eae96c9f00fbdf092be813df8417775388b8f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "26a82b7bc512a0f66f3c4c17eb4809cd03d178e5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "99e7228af17f7f461cd595bc8107189f9597da0a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

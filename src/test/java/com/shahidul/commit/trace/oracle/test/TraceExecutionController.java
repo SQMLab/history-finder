@@ -67,13 +67,12 @@ class TraceExecutionController {
         //dataSetLoader.cleanDb();
         String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
         List<Integer> oracleFileIdList = Util.parseOracleFileIds(oracleFileIdsText);
-        oracleFileIdList
-                .forEach(id -> {
-                    log.info("Deleting ... {}", id);
-                    traceDao.delete(traceDao.findByOracleId(id));
-                    influxDbManager.deleteByFileId(id);
+        for (Integer id : oracleFileIdList) {
+            log.info("Deleting ... {}", id);
+                traceDao.delete(traceDao.findAllByOracleId(id));
+                influxDbManager.deleteByFileId(id);
 
-                });
+        }
 
     }
 

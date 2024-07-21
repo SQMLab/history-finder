@@ -26,6 +26,6 @@ repository-list:
 #  - wildfly
 #  - xerces2-j
 start-oracle-file-id: 401
-maximum-oracle-per-repository: 1
+maximum-oracle-per-repository: 10
 stored-trace-directory: /Users/shahidul.islam/dev/project/academic/oracle/source-methods
 head-pointer-mapping-file: /Users/shahidul.islam/dev/project/academic/oracle/saved-settings-project-with-first-date.txt

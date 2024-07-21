@@ -1,0 +1,132 @@
+{
+  "repositoryName" : "sonarqube",
+  "repositoryUrl" : "https://github.com/SonarSource/sonarqube.git",
+  "startCommitHash" : "6b806ebf8e189b2abf7d29c964abf09a3a3beb8c",
+  "file" : "server/sonar-ce-task-projectanalysis/src/main/java/org/sonar/ce/task/projectanalysis/purge/PurgeDatastoresStep.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "execute",
+  "startLine" : 50,
+  "endLine" : 57,
+  "commits" : [ {
+    "commitHash" : "50d6bfbc6596c3987e0e2cf26f7a466f3cfdda90",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4c03a7686dfc417db0376be571e2a3bf3fb04637",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "444d5b4d5dcd12123e5b993c92bf61bdd8097872",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "119cacc37ed66c5fcf08c7a3bf4197db79c58c39",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "25b60cdab5a9c3137e5a24df9c74a8ad269ecfc0",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fd7a43bbe280cf832976f3696776ff5df08de72e",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "359536590dc71926a206818a83b1fe4fb8926f8a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f0c595d3df4178754dfbb3121508d7713694c5fc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08f807ca759212e6f6b2c05063bc2d32e5383615",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "23c338e5ff7ee749784882bf0584e442d7df5ba9",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "bcefe6219accd27803bcc59a630c0a2576d6fffb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "89cdae30ba1bb03e11bfabb723f1e0a0e2045b93",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "db30e4ece39c2dfd0c41b4d9eb612d5b494afd18",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f041aebb79ac063a86d5a48526addeb8988b8a80",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "72e7da30642659dbbf98c6de4b1dc6a691606a49",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "843740679e567c1a693b0cc8e5240a85a4759258",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fa1b19aedad788097baa8d56752723b7c25c4d81",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "72014388c69d60f8f167c53d892a9d60212c515d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e6bf968753bf2ec666aff3d802fa23c40ead8832",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0315dec02e79f8fc3f59d4e7d83710b02dc6735b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "92b10db93759bac7f5c78d341e62ef36f4f420e2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4a4626326982bdaa20cb145b995b9f9ebb0fd745",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "15c39e0e9051a647b0998064e0f62060fd272920",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7af27c56b4dc3077c483a044df47af65b713fde1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cae9b3a92fe86d9a1e9a243570229d9e40ebd341",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "afb07c2d2acbf713ad1e3dec6f82edaf55aa0835",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "357eb9859039ff00f6cee81f39ab676c58914673",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "995281fc1ef2a052da65f423e7f5f0cc4f44b21a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ffb4b70fb922f3a2f6f3f3fb8a56205923048e82",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e9234234737081869c10678aa4468e172156b25",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d6393fa3347b6a7572ba69b16e5b23192271a646",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "0b81985900032b040683832a2ab3176b91b0c6f1",
+    "changeTags" : [ "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4c64f4f00be61229d4c4c8be8f8bec9b25df2bac",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "bd90fa7d3ec17f825cac80eebd46cf1ee0412ee9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1065f1eb91fb05b26c32432625236ea39ea4fcee",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f5ff50a3a00fac3e9d7237b653771b812b01aa3e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a77863d625d55d3ae67f21aa6dce53903cd83d2",
+    "changeTags" : [ "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1be37880a5ecfb86bd9fb326d42bbb5c5bfeaac6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8c6df4977b90cfce0cc6797e3b1ba23b1253a62c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4eab0b33d1e3df3669b8ee55cebe43e3244aa2d1",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

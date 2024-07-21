@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "facebook-android-sdk",
+  "repositoryUrl" : "https://github.com/facebook/facebook-android-sdk.git",
+  "startCommitHash" : "fb1b91a32c8ac21ec91800748a24e3c20b21ac0e",
+  "file" : "facebook-share/src/main/java/com/facebook/share/widget/CreateAppGroupDialog.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "canShow",
+  "startLine" : 190,
+  "endLine" : 192,
+  "commits" : [ {
+    "commitHash" : "1ebea4d8e02aff0bc96cad34c959ab680421f8eb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1eb28b95d925c4bddadec9f10a4060544a00a3c6",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "028d430a3b48d05d0da133f44a0f07b9d72e6789",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "26a82b7bc512a0f66f3c4c17eb4809cd03d178e5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "bd693a5f85893e9fb42e90c0de90dfeba41ccaec",
+    "changeTags" : [ "RENAME", "MOVE" ]
+  }, {
+    "commitHash" : "b5b703245d3e51bb03d3f547dea4d7915599c739",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

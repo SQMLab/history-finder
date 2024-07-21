@@ -1,0 +1,51 @@
+{
+  "repositoryName" : "cucumber-jvm",
+  "repositoryUrl" : "https://github.com/cucumber/cucumber-jvm.git",
+  "startCommitHash" : "b57b924bd19e70f1dac2d018dc9b2e58ea12de9f",
+  "file" : "guice/src/main/java/io/cucumber/guice/GuiceFactory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getInstance",
+  "startLine" : 44,
+  "endLine" : 46,
+  "commits" : [ {
+    "commitHash" : "62bf1f0b52dc603ad3c09236cb000a641cce4485",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "54ba4b2be5731794e68f11a9d86ffee0d212cff5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3549c10c0fcaf78228f47ee4a1ba8682b61a5251",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "d9a81b1b9f6dd77df9df40ebdff7166c5c724abb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "03057202c6d195d912e9aed1a9f3b6e38d2990b3",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "098b34c4c9a58817a253fdbfe25644864d90c1f7",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "2c708b140b815c75c7e21b2fc5712b8f92aec628",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "29eb5162931069f7b2a4e1a2e26c0d602e174a3e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f4fc9114766f59ff3bd7a619d32874ac8826bf02",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "da18612d4f9d5ea289c86f489dc8a303b93c8b6c",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "099674be3e35036388c54b9cd6ef73b3ea705241",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "59d46ef54d8f405bf7a3de61db5afeac6c1d28ac",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "359fe954348440e2c7338939a9647e0e141845fb",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

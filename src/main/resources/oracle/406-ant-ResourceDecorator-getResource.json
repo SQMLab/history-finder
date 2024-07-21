@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "ant",
+  "repositoryUrl" : "https://github.com/apache/ant.git",
+  "startCommitHash" : "1ce1cc2317cb2b2773ab6b765f1a79ccd4806926",
+  "file" : "src/main/org/apache/tools/ant/types/resources/ResourceDecorator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getResource",
+  "startLine" : 206,
+  "endLine" : 215,
+  "commits" : [ {
+    "commitHash" : "57895fd06465933703cdb955b5afe954095710bd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "95495d57aa5cca8fc350ebfb10f6d390f40290cb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e88414ba32cbb978c462dab3ba5fee7efc3f670e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "99deca2a7689ef13a6dfa6ad2c30db68e6f3d3e9",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "538af2f04d343f3e90893c666d47e1b7446a134d",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "a96627738decba56e1c94e54fa23ecbd7bfdb9a2",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "fbb9886634198d8377104bef9ec697fadeb134df",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

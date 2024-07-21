@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface TraceDao {
     TraceEntity findByOracleId(Integer oracleFileId);
+    List<TraceEntity> findAllByOracleId(Integer oracleFileId);
 
     TraceEntity findByOracleName(String oracleFileName);
 
@@ -22,6 +23,8 @@ public interface TraceDao {
     List<TraceEntity> findAll();
 
     void delete(TraceEntity traceEntity);
+
+    void delete(List<TraceEntity> traceEntityList);
 
     TraceEntity save(TraceEntity traceEntity);
     List<TraceEntity> saveAll(List<TraceEntity>  traceEntityList);

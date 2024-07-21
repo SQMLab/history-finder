@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "hector",
+  "repositoryUrl" : "https://github.com/hector-client/hector.git",
+  "startCommitHash" : "a302e68ca8d91b45d332e8c9afd7d98030b54de1",
+  "file" : "core/src/main/java/me/prettyprint/cassandra/service/KeyspaceServiceImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "execute",
+  "startLine" : 764,
+  "endLine" : 771,
+  "commits" : [ {
+    "commitHash" : "1e917aa46a0fa7e49af2ea57782f4e98d17f0058",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "3675c5e58f0f1e84984a114c7f595f2e37c558ea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "98e687aef1a0c2503069eb5c8c87be2cd0c939e1",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "d76da58380c0f34ba9ced621ef6680e4da1b63bd",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b99a753e599d72e6982aae2622f28d79afcbf0e2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "acd2842ed4ef654e1e8eee4af5cb677c5ada9ce0",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7882fce52b233a4601b7c1e6ec472ad18fc544c9",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "31421d742b76deee10c72b541ef2140e098661d2",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "d5ab01e6e5eb3e93ed4130ea608a7a0a97990e1a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bd0bb78ce628e52204fa746974bd7b5601862fb8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "919c41e2cc891bfcea2dc1c2ec8e44c72da56720",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "f65fb7b4fcc83264f398a22807245e237ede56fc",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "a20a8a4a5d2118ba1fa6c4deaf6d11bc86564f51",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "bf605d58126b604a33f419125f4ff0ddff4dacef",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

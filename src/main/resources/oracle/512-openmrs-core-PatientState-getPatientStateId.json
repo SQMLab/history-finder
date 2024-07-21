@@ -1,0 +1,24 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/PatientState.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getPatientStateId",
+  "startLine" : 138,
+  "endLine" : 140,
+  "commits" : [ {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "16d61282a1e65bcf05eea7246ecde70fd5678b21",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

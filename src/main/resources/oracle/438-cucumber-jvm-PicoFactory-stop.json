@@ -1,0 +1,45 @@
+{
+  "repositoryName" : "cucumber-jvm",
+  "repositoryUrl" : "https://github.com/cucumber/cucumber-jvm.git",
+  "startCommitHash" : "b57b924bd19e70f1dac2d018dc9b2e58ea12de9f",
+  "file" : "picocontainer/src/main/java/io/cucumber/picocontainer/PicoFactory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "stop",
+  "startLine" : 36,
+  "endLine" : 39,
+  "commits" : [ {
+    "commitHash" : "520f91c550fda5f2f41f5a5416e505f0e48ee151",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e2717c38836401f0fb7f22a1981f91e07d8a6437",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6b932449b4d4bc0bdceb49fee7a52179716f4413",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "03057202c6d195d912e9aed1a9f3b6e38d2990b3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "098b34c4c9a58817a253fdbfe25644864d90c1f7",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "2c708b140b815c75c7e21b2fc5712b8f92aec628",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "29eb5162931069f7b2a4e1a2e26c0d602e174a3e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "31596649c65be39be910b5ade597e7b2d962706e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f4fc9114766f59ff3bd7a619d32874ac8826bf02",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "928d47035f6bf8a70f900af3a96a748de87b37e6",
+    "changeTags" : [ "RENAME", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7209422e7115d17d9095df65fb8d3b727a03c27f",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

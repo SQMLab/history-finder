@@ -1,0 +1,69 @@
+{
+  "repositoryName" : "titan",
+  "repositoryUrl" : "https://github.com/thinkaurelius/titan.git",
+  "startCommitHash" : "ee226e52415b8bf43b700afac75fa5b9767993a5",
+  "file" : "titan-hadoop-parent/titan-hadoop-core/src/main/java/com/thinkaurelius/titan/hadoop/formats/util/GiraphRecordReader.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getCurrentValue",
+  "startLine" : 62,
+  "endLine" : 64,
+  "commits" : [ {
+    "commitHash" : "37b3a45a2fe440c1aa2c845ae1f0fb49c5ce0ef8",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "c6a9fdd15c8a949a37de424fb3d875217efa5914",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5a9ed8ef8590190deb8085c33984906bc4e7190b",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "6913ac22fac3cf982416dd5bf6f877a3f62bd9b1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b79d3e33eb2595d783d28bb6f9426fa89a164e57",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d41378b2a926c81de9cdac62e2784a6df176263b",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "8d90dbb2f57d6b07c25c3a731ccbe4d2235be11f",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "a15ff9676b724dfeafb2aed746cdd5ec6ee2e7bd",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3a16ea2f48fbcd8bbe74884d982ef8a39e9535fd",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b6a9d651067497cf1eb114ee7910cd02e2caaccb",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "9a47a0c36d02635d43689a36d04828be5e2e5d0b",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "MOVE" ]
+  }, {
+    "commitHash" : "13284b0a4a28e4b17d14b5af6edc1a3a0b037794",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d0296f6022b76c353496b3d8a18b49cceaa30be1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a6f91b7c6352228b8966cf2b3dc36f0230b3a0f2",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "042f83bcbb0e001f1d03bbaa3b94b165f1d41607",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3cc017f3ceb1cfbb40545b3548373093afab35fa",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4b4641d2174a9d215fe8ad6a8f8f42574d105bf3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "87f120d297a676c1995b0419a6785afcb575ac23",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "c349a2ff9922db3de7ef7eba0b5a9c8dc7b9e645",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

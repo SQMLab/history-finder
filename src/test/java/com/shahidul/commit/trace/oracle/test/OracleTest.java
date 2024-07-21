@@ -96,9 +96,9 @@ public class OracleTest {
                 .map(TracerName::fromCode)
                 .sorted(Comparator.comparingInt(DEFAULT_EXECUTION_SEQUENCE::indexOf))
                 .collect(Collectors.toCollection(ArrayList::new));
-        if (tracerList.isEmpty()) {
+      /*  if (tracerList.isEmpty()) {
             tracerList.addAll(DEFAULT_EXECUTION_SEQUENCE);
-        }
+        }*/
         if (!tracerList.contains(TracerName.AGGREGATED)) {
             tracerList.add(TracerName.AGGREGATED);
         }
