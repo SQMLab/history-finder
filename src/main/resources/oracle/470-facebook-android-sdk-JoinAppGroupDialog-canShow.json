@@ -22,15 +22,6 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "MOVE" ]
-  }, {
-    "commitHash" : "26a82b7bc512a0f66f3c4c17eb4809cd03d178e5",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "bd693a5f85893e9fb42e90c0de90dfeba41ccaec",
-    "changeTags" : [ "RENAME", "MOVE" ]
-  }, {
-    "commitHash" : "b5b703245d3e51bb03d3f547dea4d7915599c739",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
