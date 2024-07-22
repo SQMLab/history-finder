@@ -12,19 +12,10 @@
     "commitHash" : "a04f6f742d7aca4e198aca78b48f75eb4ea4bc3a",
     "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
   }, {
+    "commitHash" : "a22b0ac4e56c222746881beabfcfe96e1c95a8ce",
+    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
+  }, {
     "commitHash" : "6ee44a754c1fb1ac0df184f02c3d3644eac0cac3",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "EXCEPTION", "MOVE" ]
-  }, {
-    "commitHash" : "663e5daa0b13a37ded47e1e917a182e23fe13f5a",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "a2f4249945a3c5521dd82e6e0a52629426a707dc",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "92630532406581ec575c8038fc0c04ba3d98d021",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "29950f7fca82c7efcde284761f3c81f4860ff41b",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
