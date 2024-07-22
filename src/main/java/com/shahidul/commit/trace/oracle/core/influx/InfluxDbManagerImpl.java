@@ -35,8 +35,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
     public TraceEntity load(TraceEntity traceEntity) {
 
         LocalDateTime analysisSeriesDateTime = LocalDate.ofYearDay(2022, 1)
-                .atStartOfDay()
-                .plusDays(traceEntity.getOracleFileId() - 1);
+                .atStartOfDay();
 
 
         List<CommitUdt> commitUdtList = traceEntity.getAnalysis()
@@ -145,7 +144,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
     }
 
     Map<String, Instant> determineTimeAlignment(List<CommitUdt> allCommitList) {
-        LocalDateTime movingDate = LocalDate.ofYearDay(2023, 1).atStartOfDay();
+        LocalDateTime movingDate = LocalDate.ofYearDay(2022, 1).atStartOfDay();
 
         AtomicLong dayIndex = new AtomicLong(0);
         Map<String, Instant> timeMap = new HashMap<>();

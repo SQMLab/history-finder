@@ -28,9 +28,6 @@
     "changeTags" : [ "BODY", "MOVE" ]
   }, {
     "commitHash" : "a96627738decba56e1c94e54fa23ecbd7bfdb9a2",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "fbb9886634198d8377104bef9ec697fadeb134df",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
