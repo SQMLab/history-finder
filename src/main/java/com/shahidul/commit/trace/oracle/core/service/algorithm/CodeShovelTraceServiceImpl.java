@@ -9,6 +9,7 @@ import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
+import com.google.gson.JsonArray;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
@@ -80,8 +81,14 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         Ychange change = commitEntry.getValue();
         com.google.gson.JsonObject json = change.toJsonObject();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
+        JsonArray subChangeArray = null;
+        if (json.has("subchanges")){
+            subChangeArray = json.get("subchanges").getAsJsonArray();
+        }
         if (json.has("commitNameOld")) {
             commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
+        } else {
+            commitBuilder.parentCommitHash(findFirst(subChangeArray, "commitNameOld"));
         }
         commitBuilder.commitHash(commitEntry.getKey());
         if (json.has("commitDate")) {
@@ -98,11 +105,21 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
         if (json.has("diff")) {
             commitBuilder.diff(json.get("diff").getAsString());
+        }else {
+            commitBuilder.diff(findFirst(subChangeArray, "diff"));
         }
-
-        if (change instanceof Ycomparefunctionchange) {
-            Yfunction oldFunction = ((Ycomparefunctionchange) change).getOldFunction();
-            Yfunction newFunction = ((Ycomparefunctionchange) change).getNewFunction();
+        Ycomparefunctionchange compareFunctionChange = change instanceof Ycomparefunctionchange? (Ycomparefunctionchange) change : null;
+        if (compareFunctionChange == null && change instanceof Ymultichange){
+            for (Ychange subChange : ((Ymultichange) change).getChanges()){
+                if (subChange instanceof Ycomparefunctionchange){
+                    compareFunctionChange = (Ycomparefunctionchange) subChange;
+                    break;
+                }
+            }
+        }
+        if (compareFunctionChange != null) {
+            Yfunction oldFunction = compareFunctionChange.getOldFunction();
+            Yfunction newFunction = compareFunctionChange.getNewFunction();
             String oldFile = oldFunction.getSourceFilePath();
             String newFile = newFunction.getSourceFilePath();
             commitBuilder.startLine(newFunction.getNameLineNumber())
@@ -159,5 +176,16 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             }
         }
         return changeTags;
+    }
+
+    private String findFirst(JsonArray subChangeArray, String key){
+        if (subChangeArray != null) {
+            for (int i = 0; i < subChangeArray.size(); i++) {
+                if (subChangeArray.get(i).getAsJsonObject().has(key)) {
+                    return subChangeArray.get(i).getAsJsonObject().get(key).getAsString();
+                }
+            }
+        }
+        return null;
     }
 }
