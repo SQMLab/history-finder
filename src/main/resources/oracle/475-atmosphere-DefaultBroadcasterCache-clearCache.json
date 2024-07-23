@@ -22,12 +22,6 @@
     "changeTags" : [ "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "8ec28f1cc2e2602de6ec6872c93a6fe6773fd61f",
-    "changeTags" : [ "MOVE" ]
-  }, {
-    "commitHash" : "aafb5ef391157acfcbf3a65802140c7020989426",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
-  }, {
-    "commitHash" : "9d9bafb28a116235175f37980750afea212401b7",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
