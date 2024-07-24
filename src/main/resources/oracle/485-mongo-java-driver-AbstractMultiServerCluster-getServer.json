@@ -106,6 +106,15 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "5b59b37c4c45e87537182d1be8906b881bd010fc",
+    "changeTags" : ["SIGNATURE", "BODY", "FILE_RENAME"]
+  }, {
+    "commitHash" : "ddd07f8609e1f830c65306c315e91977909336b7",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "ead4bc619678916a687cf323381432c7e217d8a3",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "96f532c8a97b09a9ceae06af568dd6036e815b15",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

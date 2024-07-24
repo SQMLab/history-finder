@@ -9,6 +9,9 @@
   "startLine" : 41,
   "endLine" : 45,
   "commits" : [ {
+    "commitHash" : "a22b0ac4e56c222746881beabfcfe96e1c95a8ce",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "3d9d5fe61f4818aec7ed65585aeb586719e1009f",
     "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
   }, {
