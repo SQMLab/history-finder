@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "contrib/platform/src/com/sun/jna/platform/win32/COM/tlb/TlbImp.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createCOMCoClass",
+  "startLine" : 226,
+  "endLine" : 231,
+  "commits" : [ {
+    "commitHash" : "87200e80063b7ed0e09db409ade8ac230f61ffcc",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "79c3521c94a136dcb5426f9399bd100f9d0e127b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "55cca7220ad5908bfa53adb435404357b47a9204",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "4f84e1b32569193dd292915088d221167a656283",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "68010b675237bf32f5adfb62e4ec8bbd7a724a9f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "d74598979a567e60f3568da9c6ff151f101f4789",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "6166a169e37ff6a107c80f17b1564fc0b758311c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

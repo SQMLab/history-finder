@@ -1,0 +1,57 @@
+{
+  "repositoryName" : "titan",
+  "repositoryUrl" : "https://github.com/thinkaurelius/titan.git",
+  "startCommitHash" : "ee226e52415b8bf43b700afac75fa5b9767993a5",
+  "file" : "titan-core/src/main/java/com/thinkaurelius/titan/diskstorage/util/time/TimestampProviders.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "sleepPast",
+  "startLine" : 105,
+  "endLine" : 142,
+  "commits" : [ {
+    "commitHash" : "f13611c5687999ab4162df30c9a3d5a8251d3f89",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "65dfc935838f6f779023faac9b660ebbd3e65393",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1217952bcf1401c319a1030763eb61342321e031",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7161caba4c572ce128a24329336966f133f31b37",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3df9d3543608927c452979633dfe623858d4a9d2",
+    "changeTags" : [ "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "b8dba5ec117e611e1aa524a73847b2755464ef14",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e6fe42235a53989c119512fbceecd8be8c6d27b5",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "af5de8a747d174642d582af19e8a8f8b50757dc3",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0c9e1e80068e5724af428f773600806d733be398",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "8919c7edd0b762e7749becf0672695e21d5b10fe",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "f838913bc54d5f07d6ffd522354f0b7be20d82d1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2a718b846a771f20711041bc87aceaf502c20ae3",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "EXCEPTION", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "3172836097beffd9c3a44247bec24a042008629c",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "ae15683f30b52b053cb7c62c6bd9162e374f62a4",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "c8f7d2d5b27ae8a77304868480b41e43685af9eb",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

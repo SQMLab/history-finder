@@ -1,0 +1,87 @@
+{
+  "repositoryName" : "eclipseJdt",
+  "repositoryUrl" : "https://github.com/eclipse-jdt/eclipse.jdt.core.git",
+  "startCommitHash" : "475591df71dc3e97c1ebea9d583779b10c2f1505",
+  "file" : "org.eclipse.jdt.core/search/org/eclipse/jdt/internal/core/search/matching/LocalVariableLocator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "match",
+  "startLine" : 31,
+  "endLine" : 46,
+  "commits" : [ {
+    "commitHash" : "c9e042ca313baf5eded9aef49e3870dc5764fbfc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0774ccc9fbfb251d06c1b6758403976034210f78",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "684148daf1ae1fa5c2a3b4e261bbfa56ad328f58",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7fab23d98d7da007d4ab0962fe5ae1e3b7c7bbea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1c323836aef7c6d21afe597642c9f7a415d72ddd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cb63167d7ae8e51f68c8f4ae8680682adf1ffd54",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "0aef5635cdda5f8b487e6520930c462feef51cd5",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "59d8c0d8b554a42bbafdc0ad10f524f90fa03b31",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "b39119968c7f32d55ae4a97790cb0a2d7d32153a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e4e1e1935f0e7607d1265df332c7ce922de89c18",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "75f702ac7a9f5b98d8daf289140c0d700af63244",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "903406128c19b4f927e6592cfb93facd59066f36",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b736ca9b5c529e8455312865c769b9a1151265f5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2d6103bc3386f638261f5a6ab76687fb785c8e66",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e6f7bb520f03ff7b62eb7f4afa4e1000be9cfb18",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "092d49846655da2c4e511a256ba551dc4e15c674",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "c57706d05dc3654769cca2053ff9cb20fb0a6664",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "7e5cc03e445550d3cbc10c611218c79332074276",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "7ff0ccf2d889c8ccb2eec99187eac9efe4dc4e22",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "a56fdb9e1b8e5c1a02fedba085001b6a52d742b7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "c85433e27f0fa74bfe8e06c38c1c02c51b5599d7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "44855522f87e615f1ca0bfcda268b074e4443dfe",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "ba238895da0e9d116073a555bfb1c09f876bedf2",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "3c340a30d5ee47c28968789969de0fd1189f5b30",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "be6c0d208933ac936a6ccb6c66b03d3da13e3796",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

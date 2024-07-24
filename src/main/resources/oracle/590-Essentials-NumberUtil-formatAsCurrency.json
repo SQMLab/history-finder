@@ -1,0 +1,54 @@
+{
+  "repositoryName" : "Essentials",
+  "repositoryUrl" : "https://github.com/EssentialsX/Essentials.git",
+  "startCommitHash" : "d36d80933f8f672cd8bb0f210adc23aac10850ea",
+  "file" : "Essentials/src/com/earth2me/essentials/utils/NumberUtil.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "formatAsCurrency",
+  "startLine" : 28,
+  "endLine" : 37,
+  "commits" : [ {
+    "commitHash" : "7470ee685467e9dd7b1d6c0abf6e8ff174ed6e77",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "77b3a82d2a25f724fd085aa2c80cd282ae6576e1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4d82264761af76de55a6aac43010e87d0943a5a6",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b13fed5d7b536124799c99bb4d2f4bd09b6ed27c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08b9ebed6fc3271a6accd2ef84251ece121ba0d9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aaf34a291bfd33914642309d187008679451e2d1",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "616b880e13fd07d880e934f394427df6fa2be5df",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ec4253174afe655960111563bdfff525275f658d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b88b8c2045ee816417113d198bdfe482a17f552c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cffb493415d1b728c74c54739cd3b40dd27004f0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0671150c4255565eb1168780d84a2ef68a3df023",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d474962558eeea35856728a766c776735bcc4ebc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "337e3e8277a5e6d4daae74eedceb429d72336256",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "86478459bac01ddf1388cd0a2eb2487a4295a89f",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

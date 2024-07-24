@@ -1,0 +1,51 @@
+{
+  "repositoryName" : "hbase",
+  "repositoryUrl" : "https://github.com/apache/hbase.git",
+  "startCommitHash" : "3bd54217a04e30db09e3261626687fc8779061b3",
+  "file" : "hbase-server/src/main/java/org/apache/hadoop/hbase/coprocessor/RegionObserver.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "preScannerOpen",
+  "startLine" : 886,
+  "endLine" : 888,
+  "commits" : [ {
+    "commitHash" : "afcaa8747f11032a06f2e2dd095b8f6fa003baa1",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e6e52cd80f4ba26b196e2d20cd84ba167b303475",
+    "changeTags" : [ ]
+  }, {
+    "commitHash" : "f444b3b54210dd3101c9a3fd22ccea384d1100d5",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "6ebd8e3f2a61591f5d017eb43389efef95ec26a4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a8658d520e28b346eeddbf480326888b5d5e377a",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "093c6fa19c1bd9b5925a52aa42fca63e5be397da",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1fe9aa0e7a845de386a951b6a9d267c81058a9b1",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "390f32d79fd0c0464fcab008150ad182f4c0abef",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5661aada9b604670a3de8c9804584e9187aeb18b",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "fd470dbf23867dcbd978353453007a89e29173f5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "74b9c22b23fc898e57f64ec5f8597735b73bb1b0",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "EXCEPTION" ]
+  }, {
+    "commitHash" : "1229397a95c89ae9bb774cf487e5924dcdf5ebe5",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "EXCEPTION" ]
+  }, {
+    "commitHash" : "7299a72715f0ef1b05e478bee2e60d8f26fc2c24",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

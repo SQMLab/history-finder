@@ -1,0 +1,48 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "src/com/sun/jna/Memory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "dispose",
+  "startLine" : 90,
+  "endLine" : 92,
+  "commits" : [ {
+    "commitHash" : "b31240fc1a22df6d29ae98ebff27b38bdabe8f1d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "81908ed5b40ce3cdab32aabd29db56e2d0611e1f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8b7338fce964d52d622a03756a50b91c33a8b7cb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0f94f762d9de57bca122a5be2f2a0008cd41789a",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "ab2d5a72e7f86ed2f91ac32259d04ad5b2135b5d",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "96d017869a1c8c610aab6b54aeb8144ec4eea69a",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "3370fecdf2175a8ba5b263afe01131dbcf4dbde1",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "209c4d724f46d519a9ee27b75c3b35f38b5927e2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5be48aaae8c2f9f54b1d73dc7adbfaf3f5d985df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9dd2d6c18cc3e0aaa9936401be8cc72864729078",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "8aae40558452837302bb819f4587eb7cc66a48c2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

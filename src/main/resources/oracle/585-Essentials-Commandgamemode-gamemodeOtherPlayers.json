@@ -1,0 +1,66 @@
+{
+  "repositoryName" : "Essentials",
+  "repositoryUrl" : "https://github.com/EssentialsX/Essentials.git",
+  "startCommitHash" : "d36d80933f8f672cd8bb0f210adc23aac10850ea",
+  "file" : "Essentials/src/com/earth2me/essentials/commands/Commandgamemode.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "gamemodeOtherPlayers",
+  "startLine" : 80,
+  "endLine" : 105,
+  "commits" : [ {
+    "commitHash" : "20329e99a96ac03928b3a241145fac28839cba63",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "517853fb73b2fb21d08c03a3b8d99cc98ff5abc7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "51bd0d88f393dbd675d2227e84d24fe9d6313712",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "53de887a51d1201aad637cee5254ed5d5d4e48e4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ff46b39f2b42abbe4ce8dc39e564f3dc71a2a104",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3c58a2ce8229820862d95eda304b1927a3467d46",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "4a506d97df9aaecae35e6018abc0e89fa23c5e6f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "27bc766b43fb2c347b229b4e7f7e6a1684c0b9e9",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "56a88123851041b1e936ca4dcba33c829318dd29",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "814ec196fc048e862f492c9757cff7428f3be210",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fc32fe7bd16052f2e43099febab8a4a27335d204",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "6cc3b9f3d8d0c3949bf198981c3233c449614b7f",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "18ec08ad54fca1cc6d6b1ef1a4eacaa6b85f6763",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "95d453194aeca135fe35526f91fc6767bbd05793",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cd9f0bf18db67b68817060d6aee316aa870e9f17",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f0f6747082b9fa372180546a8187c1eac4345e88",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "e3fa24375342bdf58494c26cc125acb7d621cc87",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fa131dd832039dbe24acf2af325d18f8ba99b5e3",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

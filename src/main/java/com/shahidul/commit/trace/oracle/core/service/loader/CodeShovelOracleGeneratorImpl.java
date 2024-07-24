@@ -112,8 +112,17 @@ public class CodeShovelOracleGeneratorImpl implements CodeShovelOracleGenerator 
             return Double.compare(priorityX, priorityY) * -1;
 
         });
-        return traceList.stream()
-                .limit(maxLimit).toList();
+        Set<String> filsSet = new HashSet<>();
+        List<JsonNode> topList = new ArrayList<>();
+        for (int i = 0; i < traceList.size() && topList.size() < maxLimit; i++){
+            JsonNode jsonNode = traceList.get(i);
+            String file = jsonNode.get("sourceFilePath").asText();
+            if (!filsSet.contains(file)){
+                filsSet.add(file);
+                topList.add(jsonNode);
+            }
+        }
+        return topList;
     }
 
     private InputOracle convertToOracleFile(JsonNode json) {

@@ -1,0 +1,75 @@
+{
+  "repositoryName" : "hazelcast",
+  "repositoryUrl" : "https://github.com/hazelcast/hazelcast.git",
+  "startCommitHash" : "a59ad427a0afe6e0beb1a6adf69b7c6d84c10",
+  "file" : "hazelcast/src/main/java/com/hazelcast/internal/partition/impl/PartitionStateManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getPartitions",
+  "startLine" : 291,
+  "endLine" : 293,
+  "commits" : [ {
+    "commitHash" : "bdb0ba782992d3bf92e4bb7a799647e338d805fd",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "4bd93d4f6752ab0bfe5a303d3b9267fc4cb629d9",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "ece389d8118305685a2b01071a68414cd2a77e62",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "05e8038efb9155fbf306e47b8f87652559220456",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "e00e028a6b191b4ce92b2c128ecf50b817f7d188",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "c493f86fd46bad397b434b10b0ecbe6773cad27d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "da0a49fdd68641bce33a7968cea3360cbfa783a7",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "5f6a3ad379656a4f5d0f47198d2a5800569a8670",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "19ad46fe68bdbde1b20a816b499d4a70fe67ad93",
+    "changeTags" : [ "INTRODUCTION" ]
+  }, {
+    "commitHash" : "b4b09d5e49ab6b416c7e326d7e95acb85fa1be3a",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "35249aec613cd69e460af891917f0b615008ba46",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "daa653f19234e50d8c4acf5fae06f883ebda5fc5",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "69b0510cbc966f2a05f7ff011fc2e0011804f40d",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8c765a3025f4599f219731290ba462c4f594ae40",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2fa22683aaa111e2d214d77d5a4e409cfccddb63",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c7c57bc92ceef1c309dafc282c9da3121f5147b9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4660f8714849fad71267133c7bbb1923d3587c7b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f3fb9eedd11338ef7efcec521db9285fb3e962d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b31264cb834bc3081096735f5f647219aa7c1065",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5d50f3c6d26ea190a82a3ead334b87b6d22ca660",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "4edad56fd7aa2d71487b79b3dcc4a5b4d69e58ac",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

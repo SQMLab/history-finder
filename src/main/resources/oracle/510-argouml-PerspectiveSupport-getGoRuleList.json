@@ -1,0 +1,30 @@
+{
+  "repositoryName" : "argouml",
+  "repositoryUrl" : "https://github.com/argouml-tigris-org/argouml.git",
+  "startCommitHash" : "fcbe6c6eb764525a7509d8bc8bdfa19aea551c9f",
+  "file" : "src/argouml-app/src/org/argouml/ui/PerspectiveSupport.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getGoRuleList",
+  "startLine" : 169,
+  "endLine" : 171,
+  "commits" : [ {
+    "commitHash" : "4d0b0eba87adbbd2972649e03af67052c3b09f23",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4f54dcde8c0a03ac8d3291c02ac2565f2083e61b",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "631198edfcad699e1205c6e08ecd901b8d6d796c",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "bc1ec7f194faf511913bf07d5c72202fd235a815",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "8be7070b44af32af8443e2dc1872a05060428e3a",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "df5ee4f7408c487bba53c340a9156ee6bd23dce6",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}
