@@ -1,0 +1,39 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "contrib/platform/src/com/sun/jna/platform/WindowUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getDrawable",
+  "startLine" : 1694,
+  "endLine" : 1699,
+  "commits" : [ {
+    "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "28f94cbd0be38a5162bffafe001ef9963c4bb68e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3d2360bc56e407be66bfa8fd16ead15a269866de",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fc7b53e80948ae285f50546bffb275dd1b38ea93",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6d969eb92f4089a32e32fa5b486726250716883a",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "d17df6a9db971446ed1b69ce7d60ce7ddeb0d9b5",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "a48a7c321d171c7639ace86793d234e6111a78ea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5d764abdc6360c78c1bd7ae8192f07292ad46498",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "9dd2d6c18cc3e0aaa9936401be8cc72864729078",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "openmrs-core",
+  "repositoryUrl" : "https://github.com/openmrs/openmrs-core.git",
+  "startCommitHash" : "c5928a553593ba2f798fad220b7627519ccbdf71",
+  "file" : "api/src/main/java/org/openmrs/scheduler/timer/TimerSchedulerMemento.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getErrorTasks",
+  "startLine" : 46,
+  "endLine" : 48,
+  "commits" : [ {
+    "commitHash" : "2274569e1fa138f18ea2c1a827d794d16cb930e7",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8e4c6bd1b0c92d8cc9c966bf952672c34c660d2e",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+  }, {
+    "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,66 @@
+{
+  "repositoryName" : "titan",
+  "repositoryUrl" : "https://github.com/thinkaurelius/titan.git",
+  "startCommitHash" : "ee226e52415b8bf43b700afac75fa5b9767993a5",
+  "file" : "titan-core/src/main/java/com/thinkaurelius/titan/graphdb/query/graph/GraphCentricQueryBuilder.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "edges",
+  "startLine" : 156,
+  "endLine" : 159,
+  "commits" : [ {
+    "commitHash" : "1c91e6cd1ad51c838f3214ba899f6855d38b64ad",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "aead96abd7152d9843e25578fd640dbbdaa8b765",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "c63468bd049fd3f69c58e3edabbbf54ce9087a97",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b428f3b0b34bc81d67ec83b7203320ba2578bf89",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "361c3df4ff51579a399542bbc97396229e8156fb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "619f7deeb8c9ef04ff1042fa6c911229aa22dd42",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f54f1be596c68cc58edfb1f15cc193b2483e534a",
+    "changeTags" : [ "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "309ec86b86c9d8bdcd61b715964dd073b4082ab7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5348dcc7411bb72f59cafa7f58b5e9d85e465b7a",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "e7a9dcca39d55b2c7afdc423a487762de79abc18",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "68f04d6d74d97778ee9aafd17978fb6672e272b7",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "d5662482340f61d370cde27fece75d7ecb6b16e4",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "ae15683f30b52b053cb7c62c6bd9162e374f62a4",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "da45d7222977b0f4754be207b69c45db3681f416",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "729416b30b7200afa5c5f4da9b3014e1a8fc83b2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c1f3023ae09ff5a8c71369c79e3f5509df6e3399",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "533d6718b5c41da485a0ec26b3e39cb2c4389f15",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "767742e2505241fb26da7b960e00751825e48128",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

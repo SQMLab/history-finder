@@ -1,0 +1,90 @@
+{
+  "repositoryName" : "hazelcast",
+  "repositoryUrl" : "https://github.com/hazelcast/hazelcast.git",
+  "startCommitHash" : "a59ad427a0afe6e0beb1a6adf69b7c6d84c10",
+  "file" : "hazelcast/src/main/java/com/hazelcast/client/impl/connection/tcp/TcpClientConnectionManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "connectToAllClusterMembers",
+  "startLine" : 306,
+  "endLine" : 318,
+  "commits" : [ {
+    "commitHash" : "71b2c95472c5955b41c9ee91af13f239e1fc488c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "bcf5f91d49a1739d2a29fe5131d5f6ae87b678a9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "84073fbbdffa69f238fefc7b72a28db8f69b21e0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d897c2787a174a212d7b9aa59ed94a750564a75",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "66387b8dbdf0febc129ef30556ac93c8781f298c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b13486af2925054da4af50a3e82c17cada021b2d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "634dd99dbe860f1982f9c1f5d08eb00e76783645",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "45fe7f1b67838beacf8e479f313315397d02dbdb",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "97ed63b9d6d7ae7d7fadd314e330ceeabf290e49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "2b9a24fe581ea1e1ca7f5edbeed15149a06e5b41",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ecde69a87ea5428c65de4638dcf4b52129808f35",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6d677609afba35b0a7c830d728ee0d2fb963e9b9",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6d3c6c33342d2435a55850c031b833897fa8dc6f",
+    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "11dc53725340aff92fcff18c971fa6ef486f3bf0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "28f9e84f6f48ed3d4a7d43ff1fc7ed1f06c31274",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5f8c8ab3e51c1e068c866eefc2ac0746114932cd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bab7f1c1ba3f3d6d5cbd04e858e99a3955bfe7b9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "592185490d2c3401d8a58d96310cb914db6362e5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9ebde3fe597d37c3188ce367fb7d29feaa8dd727",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4de7f846e0dd85354de7af94bd7ff81ac2487c24",
+    "changeTags" : [ "RENAME", "SIGNATURE", "MODIFIER", "EXCEPTION", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "515f80fdba5a7b03b1782062524469d3221efb6b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c5c28f8ee8976e4d592beeded2780f2dfa082903",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "6db8f7118f53c1f2a587b97a794b2d035f8b08f4",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d2ac2ea6b60ce6b68e9e55d0b52248900e5f33f3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ca95737ff2054ca9546f38999f55d7d321531637",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "f02185606ee84cc57eee7eac802fb88470d53e13",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

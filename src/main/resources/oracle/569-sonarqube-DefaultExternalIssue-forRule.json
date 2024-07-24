@@ -1,0 +1,48 @@
+{
+  "repositoryName" : "sonarqube",
+  "repositoryUrl" : "https://github.com/SonarSource/sonarqube.git",
+  "startCommitHash" : "6b806ebf8e189b2abf7d29c964abf09a3a3beb8c",
+  "file" : "sonar-plugin-api-impl/src/main/java/org/sonar/api/batch/sensor/issue/internal/DefaultExternalIssue.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "forRule",
+  "startLine" : 114,
+  "endLine" : 118,
+  "commits" : [ {
+    "commitHash" : "6ce2c8689b7a574ac6cc6906210de4f45247e7aa",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "93dc9770902dc7e168869d88b5ad731bfc0bedd9",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "65c61f5006221de77fff2c314d07df8fb73ddc45",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "cfba7fcb6500d8217bd81ecfcb8f47ec48ad55f2",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "7bd31bc52d296c558803ee633c49851afe13e9ff",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+  }, {
+    "commitHash" : "272fb51fc5f7dcbef163938c3230ef1e4f87640a",
+    "changeTags" : [ "RENAME" ]
+  }, {
+    "commitHash" : "14f36bfb794a37ac67b643924e8608421a8f549c",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "MOVE" ]
+  }, {
+    "commitHash" : "1b642da7883702abcc6f93b590cfe4cd3c271d4d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7b8ec8c4770a2c856cc52f98feddb0231d172051",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "MOVE" ]
+  }, {
+    "commitHash" : "1e39cf737eed643f1aaed340fce5696eb760a7d8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f3ce69889f1a33e07d81ba20e052eebe599a03bc",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d35dc73824f38e3585b44d8b7ee9df867bccec5b",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

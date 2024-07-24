@@ -1,0 +1,36 @@
+{
+  "repositoryName" : "Essentials",
+  "repositoryUrl" : "https://github.com/EssentialsX/Essentials.git",
+  "startCommitHash" : "d36d80933f8f672cd8bb0f210adc23aac10850ea",
+  "file" : "Essentials/src/com/earth2me/essentials/utils/LocationUtil.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "isBlockAboveAir",
+  "startLine" : 208,
+  "endLine" : 215,
+  "commits" : [ {
+    "commitHash" : "55956c549065fb2070526379809136c1e911892c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7470ee685467e9dd7b1d6c0abf6e8ff174ed6e77",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "1c309995d1e8992d66c4a064fc8c023c4579da2e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a0a3d856b1c54bae09c704db6736a80a61a6c9bf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ae12db8d4b5487d518351800ba114dbb92c1579a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9b0b37ee818c64487bafc02dcc104ae8cff7d5e2",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3a83d59afba5e6ec2ae21c95bc75d48d127efab2",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+  }, {
+    "commitHash" : "59d0415c7d7c1aa1a1720734d73f9aada9c38c89",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

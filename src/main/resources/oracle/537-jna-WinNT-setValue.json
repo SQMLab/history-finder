@@ -1,0 +1,36 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "contrib/platform/src/com/sun/jna/platform/win32/WinNT.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setValue",
+  "startLine" : 1383,
+  "endLine" : 1385,
+  "commits" : [ {
+    "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "28f94cbd0be38a5162bffafe001ef9963c4bb68e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "92929308bdbf320000a558a0b8bc25d74d477bb6",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "3d2360bc56e407be66bfa8fd16ead15a269866de",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fc7b53e80948ae285f50546bffb275dd1b38ea93",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1bcde2cbf2537930b8653306214f39e065c46cec",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "a26a696e34e8314cd42f04912343eabdb068bd23",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb1d4736b093cf61e20c4b32be9685a6dc7ca5c7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "repositoryName" : "Essentials",
+  "repositoryUrl" : "https://github.com/EssentialsX/Essentials.git",
+  "startCommitHash" : "d36d80933f8f672cd8bb0f210adc23aac10850ea",
+  "file" : "Essentials/src/com/earth2me/essentials/Jails.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "onJailPlayerInteract",
+  "startLine" : 249,
+  "endLine" : 256,
+  "commits" : [ {
+    "commitHash" : "98a6258bfef24c5ce571c9042ff4e18a062faa03",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "efa031058ab083c304f22e8bab2437c4fb4397c1",
+    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MOVE" ]
+  }, {
+    "commitHash" : "05a0059b22681d2fbd4278218e1150ba21d0f84f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3a83d59afba5e6ec2ae21c95bc75d48d127efab2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "57c93a218707e1919e303c695043944d22ce9b86",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}

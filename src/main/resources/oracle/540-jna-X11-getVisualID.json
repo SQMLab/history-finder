@@ -1,0 +1,33 @@
+{
+  "repositoryName" : "jna",
+  "repositoryUrl" : "https://github.com/java-native-access/jna.git",
+  "startCommitHash" : "b8443b80351ca3f0cdefe2752c7209abf0f5d819",
+  "file" : "contrib/platform/src/com/sun/jna/platform/unix/X11.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getVisualID",
+  "startLine" : 271,
+  "endLine" : 275,
+  "commits" : [ {
+    "commitHash" : "2e8d50a03846602d5ffb47f773ab1b1e1464156d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "2716eea509a7be38ae53a8cc7fba7001e17c20eb",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "28f94cbd0be38a5162bffafe001ef9963c4bb68e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3d2360bc56e407be66bfa8fd16ead15a269866de",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fc7b53e80948ae285f50546bffb275dd1b38ea93",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "c196aab89d0f6616edf50908078f7bbfc0ddc26a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
+}
