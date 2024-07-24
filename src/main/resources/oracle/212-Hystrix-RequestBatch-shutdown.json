@@ -1,12 +1,21 @@
 {
-  "repositoryName": "Hystrix",
-  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
-  "startCommitHash": "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
-  "file": "hystrix-core/src/main/java/com/netflix/hystrix/collapser/RequestBatch.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "shutdown",
-  "startLine": 251,
-  "endLine": 284,
-  "commits": []
+  "repositoryName" : "Hystrix",
+  "repositoryUrl" : "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash" : "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
+  "file" : "hystrix-core/src/main/java/com/netflix/hystrix/collapser/RequestBatch.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "shutdown",
+  "startLine" : 251,
+  "endLine" : 284,
+  "commits" : [ {
+    "commitHash" : "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "36bfd70bba4cb8bffd7d371a89df9adba581b499",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a1732c2f2a09af05c4368bcc76dc59514b708444",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

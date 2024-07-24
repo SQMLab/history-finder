@@ -1,12 +1,18 @@
 {
-  "repositoryName": "Hystrix",
-  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
-  "startCommitHash": "943c10d661e9793c2f980c74962ab55348b212c9",
-  "file": "hystrix-contrib/hystrix-javanica/src/main/java/com/netflix/hystrix/contrib/javanica/utils/AopUtils.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getMethodInfo",
-  "startLine": 128,
-  "endLine": 189,
-  "commits": []
+  "repositoryName" : "Hystrix",
+  "repositoryUrl" : "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash" : "943c10d661e9793c2f980c74962ab55348b212c9",
+  "file" : "hystrix-contrib/hystrix-javanica/src/main/java/com/netflix/hystrix/contrib/javanica/utils/AopUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getMethodInfo",
+  "startLine" : 128,
+  "endLine" : 189,
+  "commits" : [ {
+    "commitHash" : "943c10d661e9793c2f980c74962ab55348b212c9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cb2767fe02a1cedf5296d6e45a72b596c5e21b39",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

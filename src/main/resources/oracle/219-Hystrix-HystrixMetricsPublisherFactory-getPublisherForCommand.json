@@ -1,12 +1,24 @@
 {
-  "repositoryName": "Hystrix",
-  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
-  "startCommitHash": "e40dcab0ee0f101140fe9b2de5d218930aeaad84",
-  "file": "hystrix-core/src/main/java/com/netflix/hystrix/strategy/metrics/HystrixMetricsPublisherFactory.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getPublisherForCommand",
-  "startLine": 103,
-  "endLine": 121,
-  "commits": []
+  "repositoryName" : "Hystrix",
+  "repositoryUrl" : "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash" : "e40dcab0ee0f101140fe9b2de5d218930aeaad84",
+  "file" : "hystrix-core/src/main/java/com/netflix/hystrix/strategy/metrics/HystrixMetricsPublisherFactory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getPublisherForCommand",
+  "startLine" : 103,
+  "endLine" : 121,
+  "commits" : [ {
+    "commitHash" : "e40dcab0ee0f101140fe9b2de5d218930aeaad84",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "87eb00892c2da0dee3c43e05e76235bba943526d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7f031e5052b7c2a9d2c6743ea67574953f70bdf1",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "f221f6ef66ecff6b858949e3fc04ecc610cfe9e0",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
