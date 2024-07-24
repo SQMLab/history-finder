@@ -84,9 +84,6 @@
     "commitHash" : "73ee6c3d270a91bd447f732b24c4d65169b0c8d6",
     "changeTags" : [ "MOVE", "BODY" ]
   }, {
-    "commitHash" : "2023467c0595f2561be7e5874e2bcaae972c37bc",
-    "changeTags" : [ "BODY" ]
-  }, {
     "commitHash" : "9c4166dbb25e1a0b53e0d776cddc9feececccc78",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
