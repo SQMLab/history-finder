@@ -13,7 +13,7 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "b5c8b725655d2ad8a715cfb1fbbdf25dbdcd4ceb",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "527b992a074c1c65727bc52c820d40340f074a6b",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -22,15 +22,9 @@
     "changeTags" : [ "ANNOTATION", "FORMAT" ]
   }, {
     "commitHash" : "92ab0e7971df9d1efc9345f17ad48355df95161a",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
-  }, {
-    "commitHash" : "c2fd0a1ef514ec109f7f1b544f46bfb8338b7e8f",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "e84bdd32e71b029d8d1f2fa7849e998953984f47",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "MODIFIER", "MOVE" ]
-  }, {
-    "commitHash" : "41fb7cba62b543243c784757d1af4e05824ddc4e",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
