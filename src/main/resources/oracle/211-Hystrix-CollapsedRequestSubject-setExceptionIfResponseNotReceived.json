@@ -1,12 +1,24 @@
 {
-  "repositoryName": "Hystrix",
-  "repositoryUrl": "https://github.com/Netflix/Hystrix.git",
-  "startCommitHash": "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
-  "file": "hystrix-core/src/main/java/com/netflix/hystrix/collapser/CollapsedRequestSubject.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setExceptionIfResponseNotReceived",
-  "startLine": 149,
-  "endLine": 160,
-  "commits": []
+  "repositoryName" : "Hystrix",
+  "repositoryUrl" : "https://github.com/Netflix/Hystrix.git",
+  "startCommitHash" : "657f698ab7a06bb69a65dd886b69c5d0e476c65c",
+  "file" : "hystrix-core/src/main/java/com/netflix/hystrix/collapser/CollapsedRequestSubject.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setExceptionIfResponseNotReceived",
+  "startLine" : 149,
+  "endLine" : 160,
+  "commits" : [ {
+    "commitHash" : "36bfd70bba4cb8bffd7d371a89df9adba581b499",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "26fd11dd77690df0cee6b8ba4274e8db887db616",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "702105030744472f62528caac413aa76d68eca6e",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "ed147529b8b96104d7ea8050d3212483b92b9835",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
