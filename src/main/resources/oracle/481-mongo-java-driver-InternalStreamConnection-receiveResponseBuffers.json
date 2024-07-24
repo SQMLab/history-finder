@@ -120,6 +120,9 @@
     "commitHash" : "1cd0e0fb9e6680d841caee2ed8a950f40a18e09d",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "8d739d97ed110f8ddae76194c8640a2eecc0a6f9",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "65f9fd79aa19a1285eab4c92242aef107f240fc9",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
   }, {
@@ -140,6 +143,9 @@
   }, {
     "commitHash" : "163cf04fbe9fd7ea1f357975dbc525308c5b3dbd",
     "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "2e5b70a01f3ba2d27263ae13fb96875bfb295e44",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "423600bd96a4bc3b534d3f7ef6bf30af0f7aabf1",
     "changeTags" : [ "BODY" ]
