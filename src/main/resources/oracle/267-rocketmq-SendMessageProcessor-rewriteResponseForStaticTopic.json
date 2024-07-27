@@ -1,12 +1,12 @@
 {
-  "repositoryName": "rocketmq",
-  "repositoryUrl": "https://github.com/apache/rocketmq.git",
-  "startCommitHash": "5a881bad39174caa2978b4e532e3c527977172ee",
-  "file": "broker/src/main/java/org/apache/rocketmq/broker/processor/SendMessageProcessor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "rewriteResponseForStaticTopic",
-  "startLine": 132,
-  "endLine": 157,
-  "commits": []
+  "repositoryName" : "rocketmq",
+  "repositoryUrl" : "https://github.com/apache/rocketmq.git",
+  "startCommitHash" : "5a881bad39174caa2978b4e532e3c527977172ee",
+  "file" : "broker/src/main/java/org/apache/rocketmq/broker/processor/SendMessageProcessor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "rewriteResponseForStaticTopic",
+  "startLine" : 132,
+  "endLine" : 157,
+  "commits" : [ ]
 }

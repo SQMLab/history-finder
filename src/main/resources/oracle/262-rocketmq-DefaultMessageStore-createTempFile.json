@@ -1,12 +1,27 @@
 {
-  "repositoryName": "rocketmq",
-  "repositoryUrl": "https://github.com/apache/rocketmq.git",
-  "startCommitHash": "b292012ad7ead9a1e9a15522a0cb8e6e40fa165d",
-  "file": "store/src/main/java/org/apache/rocketmq/store/DefaultMessageStore.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "createTempFile",
-  "startLine": 1554,
-  "endLine": 1561,
-  "commits": []
+  "repositoryName" : "rocketmq",
+  "repositoryUrl" : "https://github.com/apache/rocketmq.git",
+  "startCommitHash" : "b292012ad7ead9a1e9a15522a0cb8e6e40fa165d",
+  "file" : "store/src/main/java/org/apache/rocketmq/store/DefaultMessageStore.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createTempFile",
+  "startLine" : 1554,
+  "endLine" : 1561,
+  "commits" : [ {
+    "commitHash" : "5c350af174c864992d3611e8432075762c2d3bd4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "821b91f0a25839550fe2fbdd8183ddb389147e78",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de6f9416aad7fad1c04966888239225bb7394a54",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

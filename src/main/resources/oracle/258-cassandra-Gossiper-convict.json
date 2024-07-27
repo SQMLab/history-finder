@@ -1,12 +1,12 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "51d048a93a7e7cfb93a544dabba4b6f7aa1bbdd1",
-  "file": "src/java/org/apache/cassandra/gms/Gossiper.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "convict",
-  "startLine": 501,
-  "endLine": 523,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "51d048a93a7e7cfb93a544dabba4b6f7aa1bbdd1",
+  "file" : "src/java/org/apache/cassandra/gms/Gossiper.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "convict",
+  "startLine" : 501,
+  "endLine" : 523,
+  "commits" : [ ]
 }

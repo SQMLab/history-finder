@@ -1,12 +1,54 @@
 {
-  "repositoryName": "kafka",
-  "repositoryUrl": "https://github.com/apache/kafka.git",
-  "startCommitHash": "3f70c46874e1dd9591443392f51ff1efc9fdc40e",
-  "file": "streams/src/main/java/org/apache/kafka/streams/StreamsConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getMainConsumerConfigs",
-  "startLine": 1631,
-  "endLine": 1687,
-  "commits": []
+  "repositoryName" : "kafka",
+  "repositoryUrl" : "https://github.com/apache/kafka.git",
+  "startCommitHash" : "3f70c46874e1dd9591443392f51ff1efc9fdc40e",
+  "file" : "streams/src/main/java/org/apache/kafka/streams/StreamsConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getMainConsumerConfigs",
+  "startLine" : 1631,
+  "endLine" : 1687,
+  "commits" : [ {
+    "commitHash" : "d4c661c01745e5b98027cbcc51b5a06e8b41f405",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "87308167b19f6ffee76a144376cea540be028f0a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c958d8719dc2588bd27958b54a65dea514808796",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d9b139220ee253da673af44d58dc87bd184188f1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b68463c250ec99d86ffacdbd45e58059d0ca51e1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "990301323cc5a774e17b0a5d373aff8439cda489",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2cff1fab3f1c20f464f75f32b6138707050199b5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "57b2f6807d332f4e6de4dc4ad18aa24686d304de",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b0e82a68b34512d23a5a60a9b5da0db86eb880b2",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "213466b3d4fd21b332c0b6882fea36cf1affef1c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9dc76f8872b862ca008562cdcf8cf50524e2eaa3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dffce6e7ae047a21fb40ec2c27d3d1f562a511a3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d166485be15d95192ec1b2818f815fa58726ec54",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1b170df31c7304f6d4c938b5e0c2a09ae1e9189d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

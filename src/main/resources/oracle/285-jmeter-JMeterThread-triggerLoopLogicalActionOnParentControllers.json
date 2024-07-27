@@ -1,12 +1,45 @@
 {
-  "repositoryName": "jmeter",
-  "repositoryUrl": "https://github.com/apache/jmeter.git",
-  "startCommitHash": "31e42426238ec74e4f355baa927e55df780c3057",
-  "file": "src/core/src/main/java/org/apache/jmeter/threads/JMeterThread.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "triggerLoopLogicalActionOnParentControllers",
-  "startLine": 355,
-  "endLine": 382,
-  "commits": []
+  "repositoryName" : "jmeter",
+  "repositoryUrl" : "https://github.com/apache/jmeter.git",
+  "startCommitHash" : "31e42426238ec74e4f355baa927e55df780c3057",
+  "file" : "src/core/src/main/java/org/apache/jmeter/threads/JMeterThread.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "triggerLoopLogicalActionOnParentControllers",
+  "startLine" : 355,
+  "endLine" : 382,
+  "commits" : [ {
+    "commitHash" : "e94f69cceeed785f1e0dd23e968f28c483851b01",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "29b3fd0add89b589c550e4e1a3063e47e798ae91",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "c3bb466df52d628c01a6ff2ee1f7299436b191e5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8ac045870db98ebbedb0edda32252f1bb4d76782",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d2a3b2f7c673328c1122069f1be293bd1d3b20d0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "076f3ef8585cce48af61a46e0e6c1f68394b0d4c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "29f06870b8424506e895642f0ee612bd729608d9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "589fe3fe7e1b95388f03a09244dc2dfee4baa2b3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4daaedfb7eb28ed7c060026b499555c43e31c867",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "bb44c0caa4aaa754c01bd04849d56251f4716a52",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,39 @@
 {
-  "repositoryName": "kafka",
-  "repositoryUrl": "https://github.com/apache/kafka.git",
-  "startCommitHash": "6e4a098055d5ef852022a76a6ea48ccb880f6342",
-  "file": "clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "canRetry",
-  "startLine": 848,
-  "endLine": 855,
-  "commits": []
+  "repositoryName" : "kafka",
+  "repositoryUrl" : "https://github.com/apache/kafka.git",
+  "startCommitHash" : "6e4a098055d5ef852022a76a6ea48ccb880f6342",
+  "file" : "clients/src/main/java/org/apache/kafka/clients/producer/internals/Sender.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "canRetry",
+  "startLine" : 848,
+  "endLine" : 855,
+  "commits" : [ {
+    "commitHash" : "937f1f741c026767b6b71ce0b0e63ae7ebe6e936",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fed27fdd75e3f7994b87a035f4984d77b8f4411b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7fc7136ffd28245629f00870fc7f7cbe1fe1c6ce",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "8f90fd6530ce2c4f7e2fdfe3541c61d0178289d5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "94692288bedc353383e014914937a4798a1d4caa",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "5d2422258cb975a137a42a4e08f03573c49a387e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "81f9e1376cefed57022de62cd3abf5641c46e4aa",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "5cf491c2765b4912ff5f7f69f0b992a67005b983",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3f0b67b6ac864befccfdd4bb5dee08c0b33c3b43",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,42 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "1bd08df1a81000af3ae826343c464a8ef3bddce5",
-  "file": "java/org/apache/coyote/http2/Stream.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "recycle",
-  "startLine": 768,
-  "endLine": 781,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "1bd08df1a81000af3ae826343c464a8ef3bddce5",
+  "file" : "java/org/apache/coyote/http2/Stream.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "recycle",
+  "startLine" : 768,
+  "endLine" : 781,
+  "commits" : [ {
+    "commitHash" : "a25e27cf5784afeeaf8a650033edbef1b7aac1c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "53011ceadc706049cc92c03c3af401e8e1f5f206",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "76115a2a8681e5951aef9037120fa3babeffd9d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a78ae92e75e8eb4f80d672af31d59c9706d0382",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fa6df26815cea9a429291f4452711b96b00f02b0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c1aaa4ed16b6410a602074132c75da6c85d6a8ed",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ad6c5db660f644751c6cded22d0f94b7ad193541",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "31e4d5e0e5c3e96236933b0a58a339bea8a32df8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fea812963e0142f3770a0b778b1b08acba8ec1cb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3df857f441be3e8062c84eef49d72205b3ff91a7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

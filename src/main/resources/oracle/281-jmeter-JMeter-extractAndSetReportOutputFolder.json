@@ -1,12 +1,33 @@
 {
-  "repositoryName": "jmeter",
-  "repositoryUrl": "https://github.com/apache/jmeter.git",
-  "startCommitHash": "cc7d677da9395ff0ca6d407e739e99826cf274f4",
-  "file": "src/core/src/main/java/org/apache/jmeter/JMeter.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "extractAndSetReportOutputFolder",
-  "startLine": 535,
-  "endLine": 547,
-  "commits": []
+  "repositoryName" : "jmeter",
+  "repositoryUrl" : "https://github.com/apache/jmeter.git",
+  "startCommitHash" : "cc7d677da9395ff0ca6d407e739e99826cf274f4",
+  "file" : "src/core/src/main/java/org/apache/jmeter/JMeter.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "extractAndSetReportOutputFolder",
+  "startLine" : 535,
+  "endLine" : 547,
+  "commits" : [ {
+    "commitHash" : "12aefb0c70526a61f955ba1dad7fe3e99200b0b2",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6a21c4345238322de5a121d53ddbdc76ec087a23",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "604defa67d3f166cdf12529ff8669c8a6c83e271",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1ea368c3ad6963afcd03c34377da180553fd65f0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f345679881f43f4adfc9b2c37e1212a081c73495",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+  }, {
+    "commitHash" : "cbcbc8f7e4e6cfc0e9926f77d7c9551d9386226d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

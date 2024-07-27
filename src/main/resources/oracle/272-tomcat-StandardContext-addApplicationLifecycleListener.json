@@ -1,12 +1,21 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "942e0148ddbcb6735e17ec5037fdac2781d55ce9",
-  "file": "java/org/apache/catalina/core/StandardContext.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "addApplicationLifecycleListener",
-  "startLine": 1345,
-  "endLine": 1350,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "942e0148ddbcb6735e17ec5037fdac2781d55ce9",
+  "file" : "java/org/apache/catalina/core/StandardContext.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "addApplicationLifecycleListener",
+  "startLine" : 1345,
+  "endLine" : 1350,
+  "commits" : [ {
+    "commitHash" : "031e5ebc4faa4941be3850b56c32c9c307108224",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bc18735e25424bce2c736b4e59fe77e5cc9cf50b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d694549a2313944fc38568a600c5d62cd9faafa8",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,15 @@
 {
-  "repositoryName": "auto",
-  "repositoryUrl": "https://github.com/google/auto.git",
-  "startCommitHash": "7373b9893a976c1edc5f0cf184b83c3a5957c4e3",
-  "file": "value/src/main/java/com/google/auto/value/processor/AutoValueProcessor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "builderMethodsConsumedByExtensions",
-  "startLine": 420,
-  "endLine": 452,
-  "commits": []
+  "repositoryName" : "auto",
+  "repositoryUrl" : "https://github.com/google/auto.git",
+  "startCommitHash" : "7373b9893a976c1edc5f0cf184b83c3a5957c4e3",
+  "file" : "value/src/main/java/com/google/auto/value/processor/AutoValueProcessor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "builderMethodsConsumedByExtensions",
+  "startLine" : 420,
+  "endLine" : 452,
+  "commits" : [ {
+    "commitHash" : "7d4b020dd8d8b74d0eba417e7b528b2b0ed3aae7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

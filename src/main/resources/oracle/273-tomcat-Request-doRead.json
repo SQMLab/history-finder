@@ -1,12 +1,18 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "f087decbc938eff084b7be92298457736fe783c2",
-  "file": "java/org/apache/coyote/Request.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "doRead",
-  "startLine": 658,
-  "endLine": 668,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "f087decbc938eff084b7be92298457736fe783c2",
+  "file" : "java/org/apache/coyote/Request.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "doRead",
+  "startLine" : 658,
+  "endLine" : 668,
+  "commits" : [ {
+    "commitHash" : "17d9e688fab3b138d35c80c840763c4422e7dbfa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7943611a8da048b514f595fde15f71343b6c24af",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

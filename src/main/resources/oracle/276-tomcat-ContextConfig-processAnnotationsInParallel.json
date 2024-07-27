@@ -1,12 +1,21 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "eeb4e761abb1cbc2c0797dac558cd91fb3ef44ab",
-  "file": "java/org/apache/catalina/startup/ContextConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "processAnnotationsInParallel",
-  "startLine": 2103,
-  "endLine": 2126,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "eeb4e761abb1cbc2c0797dac558cd91fb3ef44ab",
+  "file" : "java/org/apache/catalina/startup/ContextConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "processAnnotationsInParallel",
+  "startLine" : 2103,
+  "endLine" : 2126,
+  "commits" : [ {
+    "commitHash" : "57fe88cd580a7dede5b16ab32262e081246bfc09",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bbe29a8c2d36b869996f2504032d666c49185362",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "27bb36bdaa56d62fdcc28d3b8e3d4c25f4a44a50",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

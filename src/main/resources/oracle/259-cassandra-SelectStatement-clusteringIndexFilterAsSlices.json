@@ -1,12 +1,18 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "534da538d229a5b4fc1d9ef7cc8b37ead455191c",
-  "file": "src/java/org/apache/cassandra/cql3/statements/SelectStatement.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "clusteringIndexFilterAsSlices",
-  "startLine": 747,
-  "endLine": 760,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "534da538d229a5b4fc1d9ef7cc8b37ead455191c",
+  "file" : "src/java/org/apache/cassandra/cql3/statements/SelectStatement.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "clusteringIndexFilterAsSlices",
+  "startLine" : 747,
+  "endLine" : 760,
+  "commits" : [ {
+    "commitHash" : "3233c823116343cd95381790d736e239d800035a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ccab496d2d37c86341d364dea6c27513fda27331",
+    "changeTags" : [ "BODY" ]
+  } ]
 }

@@ -1,12 +1,45 @@
 {
-  "repositoryName": "auto",
-  "repositoryUrl": "https://github.com/google/auto.git",
-  "startCommitHash": "a9efc78fc2b8402b039b2d33a7d86f2aa066f9c9",
-  "file": "common/src/main/java/com/google/auto/common/MoreTypes.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "equal",
-  "startLine": 322,
-  "endLine": 346,
-  "commits": []
+  "repositoryName" : "auto",
+  "repositoryUrl" : "https://github.com/google/auto.git",
+  "startCommitHash" : "a9efc78fc2b8402b039b2d33a7d86f2aa066f9c9",
+  "file" : "common/src/main/java/com/google/auto/common/MoreTypes.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "equal",
+  "startLine" : 322,
+  "endLine" : 346,
+  "commits" : [ {
+    "commitHash" : "a9efc78fc2b8402b039b2d33a7d86f2aa066f9c9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9d79ce1e183556146e4be44c9f2be28a84405c0f",
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "c16ef662bf69fd997a8f25ad5040d65f10123059",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "da49ab599269c26cd3bd3e2f3c364142ae08893c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "79363fc0de16bad98ef4f90243eead34edff5307",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a6c8b0c10d53d6fde31ff2a98cfb22ab4ad8b317",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3a728350f0b116c38310bbc96f2007d4f30d92b1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3e1210cacf7f1f67fbb0ab195c82865160a8cb04",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3c21fa6013b36889e83fbfba9413f049251d8c24",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2fbc730ce4aacd22b45650505705c22ce4d9e491",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "9b389fa6cb49fd121fb0433241f55863778b1962",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,33 @@
 {
-  "repositoryName": "dagger",
-  "repositoryUrl": "https://github.com/google/dagger.git",
-  "startCommitHash": "fd737af1b6467e1666221f9493fc4d5a84676e52",
-  "file": "java/dagger/internal/codegen/binding/ProvisionBinding.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "shouldCheckForNull",
-  "startLine": 96,
-  "endLine": 101,
-  "commits": []
+  "repositoryName" : "dagger",
+  "repositoryUrl" : "https://github.com/google/dagger.git",
+  "startCommitHash" : "fd737af1b6467e1666221f9493fc4d5a84676e52",
+  "file" : "java/dagger/internal/codegen/binding/ProvisionBinding.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "shouldCheckForNull",
+  "startLine" : 96,
+  "endLine" : 101,
+  "commits" : [ {
+    "commitHash" : "86fa7ca25c3551ed524a5395d176d127f9b08a93",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ac4ade24ce8ef5ff8d71ce3440998628cfdec39c",
+    "changeTags" : [ "FILE_RENAME", "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "0c4cddf3d0dfd17b85732a4bb00d3edc63dee2de",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5f05959a5767b1c56774e51c85f909d2dbbc72d9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2c6d3da11da3666121a80243dea1fda19bfed2c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ab08135176e023bd9f0cf52b51bf200cc2563288",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1c891fbd37d44aa433ba396980c74ac9b3666449",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
