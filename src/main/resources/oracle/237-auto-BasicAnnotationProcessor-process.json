@@ -1,12 +1,36 @@
 {
-  "repositoryName": "auto",
-  "repositoryUrl": "https://github.com/google/auto.git",
-  "startCommitHash": "74acb34b59b7a72dee1a692136e383f6afdbf0b0",
-  "file": "common/src/main/java/com/google/auto/common/BasicAnnotationProcessor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "process",
-  "startLine": 234,
-  "endLine": 254,
-  "commits": []
+  "repositoryName" : "auto",
+  "repositoryUrl" : "https://github.com/google/auto.git",
+  "startCommitHash" : "74acb34b59b7a72dee1a692136e383f6afdbf0b0",
+  "file" : "common/src/main/java/com/google/auto/common/BasicAnnotationProcessor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "process",
+  "startLine" : 234,
+  "endLine" : 254,
+  "commits" : [ {
+    "commitHash" : "e20db259ac2d6b176e396639a7540cadec38a9aa",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "df5641b2340c8a437ab2c1c9579b97db27bc9fac",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ab80dcb025ef17171873dfd5b86f78813b2781e0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "46718eb7a68abfe824b5c19f7905e1d78e50c560",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c4e22284c0f50fab307252f696011d9d4372bd9c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9c6987cf21cabdb1af63f183eeb36cd648e986d9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8f078e0e3e7821ffda93ce0b28f1f9bd7d8cef31",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "29aa5a3f7cf832762144afe3058f696c8eb5b9c3",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

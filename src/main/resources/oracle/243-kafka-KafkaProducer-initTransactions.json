@@ -1,12 +1,33 @@
 {
-  "repositoryName": "kafka",
-  "repositoryUrl": "https://github.com/apache/kafka.git",
-  "startCommitHash": "affe8da54c96d4038481c3807d059134961445a3",
-  "file": "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "initTransactions",
-  "startLine": 655,
-  "endLine": 663,
-  "commits": []
+  "repositoryName" : "kafka",
+  "repositoryUrl" : "https://github.com/apache/kafka.git",
+  "startCommitHash" : "affe8da54c96d4038481c3807d059134961445a3",
+  "file" : "clients/src/main/java/org/apache/kafka/clients/producer/KafkaProducer.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "initTransactions",
+  "startLine" : 655,
+  "endLine" : 663,
+  "commits" : [ {
+    "commitHash" : "01ab888dbd08ccd4b0de9333d21581ce24fe2c3b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7bd81628d9f6c21649e615e73ed507520fd74fd9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "201da0542726472d954080d54bc585b111aaf86f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9eb32eaad5fa3863d60b84ef095fa041e83b7b47",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "71417552c7651a5b41e73460d0577615864aafe8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "67f1f4d270c279480cea5e6120ca157637910cba",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a82f194b21a6af2f52e36e55e2c6adcdba942c08",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

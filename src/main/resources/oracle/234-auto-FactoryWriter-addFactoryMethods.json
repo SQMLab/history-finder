@@ -1,12 +1,51 @@
 {
-  "repositoryName": "auto",
-  "repositoryUrl": "https://github.com/google/auto.git",
-  "startCommitHash": "67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5",
-  "file": "factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "addFactoryMethods",
-  "startLine": 150,
-  "endLine": 203,
-  "commits": []
+  "repositoryName" : "auto",
+  "repositoryUrl" : "https://github.com/google/auto.git",
+  "startCommitHash" : "67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5",
+  "file" : "factory/src/main/java/com/google/auto/factory/processor/FactoryWriter.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "addFactoryMethods",
+  "startLine" : 150,
+  "endLine" : 203,
+  "commits" : [ {
+    "commitHash" : "67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "50d5f7378347cfbf8186f18b8849b3654d243641",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08682ed2614caa7a2f123c283a3660d0aae40877",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ab6c7bfb6bc99a700115395d49f26f789dbc54a4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f09743cc4496c356671f8fff255ac7afdfaf7ad4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f26d2df1d57fcb85d6cf63b2060fd9244ff44fa4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3141e796b907acaec6d88c0affeffea2d9a37cdb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e62e0abd2fbdfd2512c292ef95d4d152a5ca0691",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "e63019a49c2081c61595c36e499ab244aa82c40b",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "1ee934285cabe3f19cb77cc6a7664682f29c0fde",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7c7b50a47e7ae4a248bea7a36d7bf049e3453bcd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1fececc3116d66f67af520a46681e5eed66eea02",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1f36b37c50c233877234ea5e77605d81512f1fa2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

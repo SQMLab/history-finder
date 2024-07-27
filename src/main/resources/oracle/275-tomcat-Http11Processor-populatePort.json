@@ -1,12 +1,18 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "cc7006946414f4dc08c704ff5bca391f7641532c",
-  "file": "java/org/apache/coyote/http11/Http11Processor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "populatePort",
-  "startLine": 1111,
-  "endLine": 1115,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "cc7006946414f4dc08c704ff5bca391f7641532c",
+  "file" : "java/org/apache/coyote/http11/Http11Processor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "populatePort",
+  "startLine" : 1111,
+  "endLine" : 1115,
+  "commits" : [ {
+    "commitHash" : "4607ad58150985410abb55ec34f95e94a2548e06",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "3daee59d37376de2f1b62d906d69547a27bb1d81",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

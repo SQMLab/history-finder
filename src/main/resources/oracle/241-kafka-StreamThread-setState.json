@@ -1,12 +1,87 @@
 {
-  "repositoryName": "kafka",
-  "repositoryUrl": "https://github.com/apache/kafka.git",
-  "startCommitHash": "e01eed32ab2a223f8231a7d7e6c4eef05a7fed6f",
-  "file": "streams/src/main/java/org/apache/kafka/streams/processor/internals/StreamThread.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setState",
-  "startLine": 227,
-  "endLine": 265,
-  "commits": []
+  "repositoryName" : "kafka",
+  "repositoryUrl" : "https://github.com/apache/kafka.git",
+  "startCommitHash" : "e01eed32ab2a223f8231a7d7e6c4eef05a7fed6f",
+  "file" : "streams/src/main/java/org/apache/kafka/streams/processor/internals/StreamThread.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setState",
+  "startLine" : 227,
+  "endLine" : 265,
+  "commits" : [ {
+    "commitHash" : "207bb0826be1be91c12ceb30f525f73aa9519463",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aedb53a4e6313398ed9626fbd2fbd7106e2ce94e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4090f9a2b0a95e4da127e4786007542276d97520",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "74f8ae13034d90800da5573666dea3bea5d702ce",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3e48bdbc333602a042b6b0fb7fb9e14625ab4ece",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9d544212e69269f155bb3a51f94a9b13cf1fa565",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d6698308194625e7921b9c3ace27a918f42f26f1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "74bdafe386ae6080d6f5ead852f9026061a65be4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4d544d4f08b027ce318b088b112f03dccc566098",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "2119e9f26ed988746ee22d139d1eb1aca2bbb950",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "47db063c310cf47e4c544196acab2abfe62977b0",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "5df1eee7d689e18ac2f7b74410e7a30159d3afdc",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f305dd68f6524abc25c4ed88983f0e78b4e6c243",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "facd2c5a8c7a4379755955ba3e318bfecde6af39",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1f659913a631d9e77e7cd9b9c9775e3249ef803a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b78d7ba5d58fa77b831244444eef005a62883f9b",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "343a8ef99cbc23e27ada8eb5f8c1b752067a7e41",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "228a4fdb6dc15d1b8615615e00825e7ce53a41fa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9078554232f9de56849b5c35bf45b81a67a748c4",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "6753af270c8a966411f5574afa57f6e5ffe43dbe",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f7b7b4745541a576eb0219468263487b07bac959",
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "b9f812491f5eb06ffe5b68f5e53df4302d2f68a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "54e2bd210029b124be4835d5c50c56aa5edc5b38",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ea724497a85e922af6acccd02d7e7466871fb339",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ea42d65354b5905668d45dedae1cd1f7f39c888c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

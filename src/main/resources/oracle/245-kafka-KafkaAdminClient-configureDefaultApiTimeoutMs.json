@@ -1,12 +1,15 @@
 {
-  "repositoryName": "kafka",
-  "repositoryUrl": "https://github.com/apache/kafka.git",
-  "startCommitHash": "53ff1a5a589eb0e30a302724fcf5d0c72c823682",
-  "file": "clients/src/main/java/org/apache/kafka/clients/admin/KafkaAdminClient.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "configureDefaultApiTimeoutMs",
-  "startLine": 623,
-  "endLine": 639,
-  "commits": []
+  "repositoryName" : "kafka",
+  "repositoryUrl" : "https://github.com/apache/kafka.git",
+  "startCommitHash" : "53ff1a5a589eb0e30a302724fcf5d0c72c823682",
+  "file" : "clients/src/main/java/org/apache/kafka/clients/admin/KafkaAdminClient.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "configureDefaultApiTimeoutMs",
+  "startLine" : 623,
+  "endLine" : 639,
+  "commits" : [ {
+    "commitHash" : "4317325fbcb29d1f5ab828821b8e0714e10ed981",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

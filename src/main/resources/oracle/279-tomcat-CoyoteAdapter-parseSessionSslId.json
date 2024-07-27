@@ -1,12 +1,27 @@
 {
-  "repositoryName": "tomcat",
-  "repositoryUrl": "https://github.com/apache/tomcat.git",
-  "startCommitHash": "8773b429355d6ff5d05064774492d8a05aac118f",
-  "file": "java/org/apache/catalina/connector/CoyoteAdapter.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "parseSessionSslId",
-  "startLine": 971,
-  "endLine": 981,
-  "commits": []
+  "repositoryName" : "tomcat",
+  "repositoryUrl" : "https://github.com/apache/tomcat.git",
+  "startCommitHash" : "8773b429355d6ff5d05064774492d8a05aac118f",
+  "file" : "java/org/apache/catalina/connector/CoyoteAdapter.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "parseSessionSslId",
+  "startLine" : 971,
+  "endLine" : 981,
+  "commits" : [ {
+    "commitHash" : "07f08e3b14e5d9f3c3d7a73fa38143a4cf00eda7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3792c68ced15ce707f112a5044a78dc7880fb7ba",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4212880fdae4843c2609dc4c66141d60ecb15400",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "973553d37012ef441741724341349b27db7dd08b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0a62c6916b44254005096f974f785c2c171bb0c8",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

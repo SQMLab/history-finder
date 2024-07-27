@@ -1,12 +1,15 @@
 {
-  "repositoryName": "dagger",
-  "repositoryUrl": "https://github.com/google/dagger.git",
-  "startCommitHash": "fd737af1b6467e1666221f9493fc4d5a84676e52",
-  "file": "java/dagger/internal/codegen/model/Key.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "withMultibindingContributionIdentifier",
-  "startLine": 64,
-  "endLine": 69,
-  "commits": []
+  "repositoryName" : "dagger",
+  "repositoryUrl" : "https://github.com/google/dagger.git",
+  "startCommitHash" : "fd737af1b6467e1666221f9493fc4d5a84676e52",
+  "file" : "java/dagger/internal/codegen/model/Key.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "withMultibindingContributionIdentifier",
+  "startLine" : 64,
+  "endLine" : 69,
+  "commits" : [ {
+    "commitHash" : "fd737af1b6467e1666221f9493fc4d5a84676e52",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

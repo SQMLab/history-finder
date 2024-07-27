@@ -1,12 +1,27 @@
 {
-  "repositoryName": "jmeter",
-  "repositoryUrl": "https://github.com/apache/jmeter.git",
-  "startCommitHash": "6d05eab0fe5e5ac486857a1a7ed0efed78d92a88",
-  "file": "src/core/src/main/java/org/apache/jmeter/save/SaveService.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "registerConverter",
-  "startLine": 276,
-  "endLine": 286,
-  "commits": []
+  "repositoryName" : "jmeter",
+  "repositoryUrl" : "https://github.com/apache/jmeter.git",
+  "startCommitHash" : "6d05eab0fe5e5ac486857a1a7ed0efed78d92a88",
+  "file" : "src/core/src/main/java/org/apache/jmeter/save/SaveService.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "registerConverter",
+  "startLine" : 276,
+  "endLine" : 286,
+  "commits" : [ {
+    "commitHash" : "73b925c5b779a84ea2fab2670c9116d31432cd7f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "885eb5704fae6635c7ead143019e0e255fca4f32",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8fa23dfca95556f84dd149e0acefa6f8d2dd3ed1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "39a66c59a693d7a190b1a7d0b854fd048e23e812",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

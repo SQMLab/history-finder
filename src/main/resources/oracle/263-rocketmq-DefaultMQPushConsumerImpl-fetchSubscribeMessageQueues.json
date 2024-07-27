@@ -1,12 +1,24 @@
 {
-  "repositoryName": "rocketmq",
-  "repositoryUrl": "https://github.com/apache/rocketmq.git",
-  "startCommitHash": "c185c60b0fdfb3be2136a704c9014c1ec35ca0da",
-  "file": "client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPushConsumerImpl.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "fetchSubscribeMessageQueues",
-  "startLine": 192,
-  "endLine": 204,
-  "commits": []
+  "repositoryName" : "rocketmq",
+  "repositoryUrl" : "https://github.com/apache/rocketmq.git",
+  "startCommitHash" : "c185c60b0fdfb3be2136a704c9014c1ec35ca0da",
+  "file" : "client/src/main/java/org/apache/rocketmq/client/impl/consumer/DefaultMQPushConsumerImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "fetchSubscribeMessageQueues",
+  "startLine" : 192,
+  "endLine" : 204,
+  "commits" : [ {
+    "commitHash" : "f3d8d38f9ac6f32229cc9d0b32e0b763928981af",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de6f9416aad7fad1c04966888239225bb7394a54",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,21 @@
 {
-  "repositoryName": "jenkins",
-  "repositoryUrl": "https://github.com/jenkinsci/jenkins.git",
-  "startCommitHash": "f6e928392105f56e2b447da3bc7b63c7376f73a6",
-  "file": "core/src/main/java/hudson/model/Run.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getBuildsOverThreshold",
-  "startLine": 1011,
-  "endLine": 1024,
-  "commits": []
+  "repositoryName" : "jenkins",
+  "repositoryUrl" : "https://github.com/jenkinsci/jenkins.git",
+  "startCommitHash" : "f6e928392105f56e2b447da3bc7b63c7376f73a6",
+  "file" : "core/src/main/java/hudson/model/Run.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getBuildsOverThreshold",
+  "startLine" : 1011,
+  "endLine" : 1024,
+  "commits" : [ {
+    "commitHash" : "bd7c823c2781d9282eab71a5e2967d386c629344",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "819f80b12fb52d300fcbf05f64a8dab121901400",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "cc83bf0ee0aeb4a2828992d3fdcf24e916a2704e",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

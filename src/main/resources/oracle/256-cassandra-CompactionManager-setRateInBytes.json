@@ -1,12 +1,12 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "f6707e6191a994371704f639323a31f9ecc6bcb5",
-  "file": "src/java/org/apache/cassandra/db/compaction/CompactionManager.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setRateInBytes",
-  "startLine": 217,
-  "endLine": 225,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "f6707e6191a994371704f639323a31f9ecc6bcb5",
+  "file" : "src/java/org/apache/cassandra/db/compaction/CompactionManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setRateInBytes",
+  "startLine" : 217,
+  "endLine" : 225,
+  "commits" : [ ]
 }

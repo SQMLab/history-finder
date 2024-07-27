@@ -1,12 +1,21 @@
 {
-  "repositoryName": "auto",
-  "repositoryUrl": "https://github.com/google/auto.git",
-  "startCommitHash": "fa809b2bfe45cd2fe7dc6c264a5e05c3c6d84bed",
-  "file": "value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "compatibleTypes",
-  "startLine": 401,
-  "endLine": 424,
-  "commits": []
+  "repositoryName" : "auto",
+  "repositoryUrl" : "https://github.com/google/auto.git",
+  "startCommitHash" : "fa809b2bfe45cd2fe7dc6c264a5e05c3c6d84bed",
+  "file" : "value/src/main/java/com/google/auto/value/processor/AutoAnnotationProcessor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "compatibleTypes",
+  "startLine" : 401,
+  "endLine" : 424,
+  "commits" : [ {
+    "commitHash" : "c27b527a2c4277f68f0f57ec0a35aa7202a76674",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9ebbeb49cc6f255e9008992e7e182b3a479cf058",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "449e92e4a7f035483fb938a689e286da8af749d2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

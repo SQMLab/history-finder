@@ -1,12 +1,12 @@
 {
-  "repositoryName": "jenkins",
-  "repositoryUrl": "https://github.com/jenkinsci/jenkins.git",
-  "startCommitHash": "0117bf3e34ac08a91bea14f09e4b2fd3679ce8ca",
-  "file": "core/src/main/java/jenkins/model/Jenkins.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getRootUrl",
-  "startLine": 2497,
-  "endLine": 2507,
-  "commits": []
+  "repositoryName" : "jenkins",
+  "repositoryUrl" : "https://github.com/jenkinsci/jenkins.git",
+  "startCommitHash" : "0117bf3e34ac08a91bea14f09e4b2fd3679ce8ca",
+  "file" : "core/src/main/java/jenkins/model/Jenkins.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getRootUrl",
+  "startLine" : 2497,
+  "endLine" : 2507,
+  "commits" : [ ]
 }

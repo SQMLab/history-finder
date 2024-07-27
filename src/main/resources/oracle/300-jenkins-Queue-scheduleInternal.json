@@ -1,12 +1,66 @@
 {
-  "repositoryName": "jenkins",
-  "repositoryUrl": "https://github.com/jenkinsci/jenkins.git",
-  "startCommitHash": "c3e3a4a6e120738fedc4a06532b0238d0aecc930",
-  "file": "core/src/main/java/hudson/model/Queue.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "scheduleInternal",
-  "startLine": 609,
-  "endLine": 674,
-  "commits": []
+  "repositoryName" : "jenkins",
+  "repositoryUrl" : "https://github.com/jenkinsci/jenkins.git",
+  "startCommitHash" : "c3e3a4a6e120738fedc4a06532b0238d0aecc930",
+  "file" : "core/src/main/java/hudson/model/Queue.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "scheduleInternal",
+  "startLine" : 609,
+  "endLine" : 674,
+  "commits" : [ {
+    "commitHash" : "b8c20c6428ea99d2d32a09791b393451ad9beb7d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "264980c707c6cafc01369378b1e90d247561df78",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a57b52ec7e16d9b9985d6303e918aa6fdfa0a141",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1072f5c1372d2884beb07c9114b9b90ce0bf037e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5a1999ea3035c16160e1961ffc6a61166bc6cae4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "92147c3597308bc05e6448ccc41409fcc7c05fd7",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "f1a751f79dfbb975e4c436fd0967323e1ae7b8c6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f719bd06a46b0c8f8249f5d4848db61947b920be",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "513a45b3091b88d1ad9020099bbd1aec04a8c686",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7f3096c558046edea7bcfefa480193ede429af85",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4ca37cfd46b60d229b023cb7d88cd5571cab9547",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7d159d19e2c4626266c8d7a8527d18e0085e2d50",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "773fdeeb9a7dce92057a376678bb4785b35c0b53",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3fc44fdfddce644166d33b6cb4d63bc6c8689c63",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fd4039aff488ae84236ee974fa7a327246a2c9ce",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "30a45d4364cb9c82c8ebfd5fc36ad1e33b4df8e4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de68fa256887d9d5bdf2604f1d2defa31bce00cc",
+    "changeTags" : [ "SIGNATURE", "RENAME", "MODIFIER" ]
+  }, {
+    "commitHash" : "f2cb5d7360390503996c7a64e68da215a5e0f2fa",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

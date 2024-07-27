@@ -1,12 +1,12 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "4120b8ce4f1bc7bd7ce101e4e298fc2211a21fe0",
-  "file": "src/java/org/apache/cassandra/tools/NodeProbe.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "takeMultipleTableSnapshot",
-  "startLine": 919,
-  "endLine": 930,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "4120b8ce4f1bc7bd7ce101e4e298fc2211a21fe0",
+  "file" : "src/java/org/apache/cassandra/tools/NodeProbe.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "takeMultipleTableSnapshot",
+  "startLine" : 919,
+  "endLine" : 930,
+  "commits" : [ ]
 }

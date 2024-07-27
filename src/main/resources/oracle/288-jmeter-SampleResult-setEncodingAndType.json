@@ -1,12 +1,42 @@
 {
-  "repositoryName": "jmeter",
-  "repositoryUrl": "https://github.com/apache/jmeter.git",
-  "startCommitHash": "4340b2a048b04169b98d54f6a1a1fb4ca7059cc7",
-  "file": "src/core/src/main/java/org/apache/jmeter/samplers/SampleResult.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setEncodingAndType",
-  "startLine": 864,
-  "endLine": 892,
-  "commits": []
+  "repositoryName" : "jmeter",
+  "repositoryUrl" : "https://github.com/apache/jmeter.git",
+  "startCommitHash" : "4340b2a048b04169b98d54f6a1a1fb4ca7059cc7",
+  "file" : "src/core/src/main/java/org/apache/jmeter/samplers/SampleResult.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setEncodingAndType",
+  "startLine" : 864,
+  "endLine" : 892,
+  "commits" : [ {
+    "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1651d36a399c55a221a93078bee46320c28b1462",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e76d38e061c8c1e9083fd637c3c364622e4ccfed",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a0feae1564f4039c85000eb76f433cdb507b75ee",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "19e543c40b5f6fce7904f8d96492c294547fc274",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2b7bad3ee31ad4be21281d463b73341c1b0b02f3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8e12501f51745023ac2039f453c052bdf3387447",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "285b1d9d75c3f22077b07b1cbf2083a9785862d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d164b06ae5ee385642ecd5d54b7f7471338ff477",
+    "changeTags" : [ "MOVE", "BODY" ]
+  }, {
+    "commitHash" : "87bb2af76cb4e1a21f30d7298906d89a6c36c9da",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,24 @@
 {
-  "repositoryName": "dagger",
-  "repositoryUrl": "https://github.com/google/dagger.git",
-  "startCommitHash": "fd737af1b6467e1666221f9493fc4d5a84676e52",
-  "file": "java/dagger/internal/codegen/validation/BindingGraphValidator.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "visitExternalPlugins",
-  "startLine": 76,
-  "endLine": 87,
-  "commits": []
+  "repositoryName" : "dagger",
+  "repositoryUrl" : "https://github.com/google/dagger.git",
+  "startCommitHash" : "fd737af1b6467e1666221f9493fc4d5a84676e52",
+  "file" : "java/dagger/internal/codegen/validation/BindingGraphValidator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "visitExternalPlugins",
+  "startLine" : 76,
+  "endLine" : 87,
+  "commits" : [ {
+    "commitHash" : "703ccc8a2fdacc6ab9830d3903fad03eb14a3af7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "50c52f8924536c83c499339db9d26c55ed56763d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "143854118dfdbb3bdb4f2fa251da6a48907f703a",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "19cf82bf8114da08abbb55933b8af5762deeca90",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

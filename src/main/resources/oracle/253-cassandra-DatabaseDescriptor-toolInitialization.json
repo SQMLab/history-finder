@@ -1,12 +1,18 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "a15b137b7c8c84773453dbe264fcd2d4b76222c0",
-  "file": "src/java/org/apache/cassandra/config/DatabaseDescriptor.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "toolInitialization",
-  "startLine": 286,
-  "endLine": 317,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "a15b137b7c8c84773453dbe264fcd2d4b76222c0",
+  "file" : "src/java/org/apache/cassandra/config/DatabaseDescriptor.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "toolInitialization",
+  "startLine" : 286,
+  "endLine" : 317,
+  "commits" : [ {
+    "commitHash" : "d422eb1f353d27264665bfe3357dac1160814ea1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b7e1e44a909c3a1d11e9c387db680c74d31b879f",
+    "changeTags" : [ "BODY" ]
+  } ]
 }

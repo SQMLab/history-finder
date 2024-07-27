@@ -1,12 +1,12 @@
 {
-  "repositoryName": "cassandra",
-  "repositoryUrl": "https://github.com/apache/cassandra.git",
-  "startCommitHash": "a15b137b7c8c84773453dbe264fcd2d4b76222c0",
-  "file": "src/java/org/apache/cassandra/config/Config.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setClientMode",
-  "startLine": 835,
-  "endLine": 838,
-  "commits": []
+  "repositoryName" : "cassandra",
+  "repositoryUrl" : "https://github.com/apache/cassandra.git",
+  "startCommitHash" : "a15b137b7c8c84773453dbe264fcd2d4b76222c0",
+  "file" : "src/java/org/apache/cassandra/config/Config.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setClientMode",
+  "startLine" : 835,
+  "endLine" : 838,
+  "commits" : [ ]
 }

@@ -1,12 +1,33 @@
 {
-  "repositoryName": "dagger",
-  "repositoryUrl": "https://github.com/google/dagger.git",
-  "startCommitHash": "13d64c6ba2fb8c887cd924fe1a0cdeb90ea83779",
-  "file": "java/dagger/internal/codegen/writing/FactoryGenerator.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "addCreateMethod",
-  "startLine": 187,
-  "endLine": 231,
-  "commits": []
+  "repositoryName" : "dagger",
+  "repositoryUrl" : "https://github.com/google/dagger.git",
+  "startCommitHash" : "13d64c6ba2fb8c887cd924fe1a0cdeb90ea83779",
+  "file" : "java/dagger/internal/codegen/writing/FactoryGenerator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "addCreateMethod",
+  "startLine" : 187,
+  "endLine" : 231,
+  "commits" : [ {
+    "commitHash" : "adfc9a49ab2662b27a56d0d2cf276229bf4147b2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e2360de95bc2692cdf884e9a43ae5904b8da348",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a258d371c0b21cfe810075fad3c480bf9bf52f2a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "96b62844423556e2de880117cd35a99bd0e7db97",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "716dbcf20f700a6ffebf41692349c695bc192bb4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a441b1e70485a1a88fde59d04d9195ac60bb9007",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7d6edf27e93cdd2113502758be7ec45551b23c7d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

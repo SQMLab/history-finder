@@ -1,12 +1,27 @@
 {
-  "repositoryName": "jmeter",
-  "repositoryUrl": "https://github.com/apache/jmeter.git",
-  "startCommitHash": "7450e4b0497c9a37c44852912e8d3dc2d0ee644e",
-  "file": "src/protocol/http/src/main/java/org/apache/jmeter/protocol/http/sampler/HTTPHC4Impl.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setupProxyAuthState",
-  "startLine": 786,
-  "endLine": 792,
-  "commits": []
+  "repositoryName" : "jmeter",
+  "repositoryUrl" : "https://github.com/apache/jmeter.git",
+  "startCommitHash" : "7450e4b0497c9a37c44852912e8d3dc2d0ee644e",
+  "file" : "src/protocol/http/src/main/java/org/apache/jmeter/protocol/http/sampler/HTTPHC4Impl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setupProxyAuthState",
+  "startLine" : 786,
+  "endLine" : 792,
+  "commits" : [ {
+    "commitHash" : "e94f69cceeed785f1e0dd23e968f28c483851b01",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "12aefb0c70526a61f955ba1dad7fe3e99200b0b2",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "f9eff90317ab5876f6bbde9fde853584bc6875bc",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "540583a0254874a832ea6e04d36745b44b2ea235",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
