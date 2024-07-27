@@ -66,6 +66,9 @@
     "commitHash" : "b50b8aeef85ecd095e91c379b4dac111873dc70f",
     "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
   }, {
+    "commitHash" : "76fe9b9538aebac75cefeab0739d3ae2e864cb7a",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
     "commitHash" : "66241105c3991b5278a7c495f6104030b51379e1",
     "changeTags" : [ "BODY" ]
   }, {
