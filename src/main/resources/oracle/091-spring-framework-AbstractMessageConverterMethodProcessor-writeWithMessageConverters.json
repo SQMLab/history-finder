@@ -123,6 +123,9 @@
     "commitHash" : "982cb2f258a5be1173115044d379f54702dc8c5b",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "ca8b98e94724cd9a2008deb4fe1280aaace6ca8b",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "02a4473c62d8240837bec297f0a1f3cb67ef8a7b",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
