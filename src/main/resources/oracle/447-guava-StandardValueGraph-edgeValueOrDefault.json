@@ -49,6 +49,9 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "6e62ae569837d8d2fc9d51c3ac6eddf0468f9143",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "57ec8ce480d75c69f90f72e4faaf13dda25a7f67",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
