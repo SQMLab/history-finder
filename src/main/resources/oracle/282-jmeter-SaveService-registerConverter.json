@@ -21,6 +21,9 @@
     "commitHash" : "8fa23dfca95556f84dd149e0acefa6f8d2dd3ed1",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "5822a3429fefd01e03f984aa8a653ad18347787d",
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+  }, {
     "commitHash" : "39a66c59a693d7a190b1a7d0b854fd048e23e812",
     "changeTags" : [ "INTRODUCTION" ]
   } ]

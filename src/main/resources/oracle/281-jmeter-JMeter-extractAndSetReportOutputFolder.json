@@ -15,6 +15,9 @@
     "commitHash" : "f6dafdf60d669a815ae677f9a87fcafd28c6197c",
     "changeTags" : [ "FILE_RENAME" ]
   }, {
+    "commitHash" : "318c4e198735da945ad241de29c4699755b07b6e",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "6a21c4345238322de5a121d53ddbdc76ec087a23",
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
   }, {
