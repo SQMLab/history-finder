@@ -66,7 +66,7 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                         try {
                             revCommit = repository.parseCommit(ObjectId.fromString(commitHash));
                         } catch (IOException e) {
-                            log.warn("Commit parse exception {}", e);
+                            log.warn("Commit parse exception", e);
                         }
                         cachedCommitMap.put(commitHash, revCommit);
                     }
