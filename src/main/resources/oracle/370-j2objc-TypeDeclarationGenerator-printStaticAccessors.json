@@ -1,12 +1,66 @@
 {
-  "repositoryName": "j2objc",
-  "repositoryUrl": "https://github.com/google/j2objc.git",
-  "startCommitHash": "ecb1cdfd0cbb2db81099a43a3e42359f4c3be7d5",
-  "file": "translator/src/main/java/com/google/devtools/j2objc/gen/TypeDeclarationGenerator.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "printStaticAccessors",
-  "startLine": 311,
-  "endLine": 347,
-  "commits": []
+  "repositoryName" : "j2objc",
+  "repositoryUrl" : "https://github.com/google/j2objc.git",
+  "startCommitHash" : "ecb1cdfd0cbb2db81099a43a3e42359f4c3be7d5",
+  "file" : "translator/src/main/java/com/google/devtools/j2objc/gen/TypeDeclarationGenerator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "printStaticAccessors",
+  "startLine" : 311,
+  "endLine" : 347,
+  "commits" : [ {
+    "commitHash" : "7cfac12786ffacf3c2587e50516c6c992f5875ff",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8c838be3e58388a189c67e7cb703c2e1930f8827",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "57576ae7382527b2d9701e582c5776bc40132af8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9fa90434206327afe97b974a595ef645a1b655d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5b04b8eef2b4348a43e36197eff2d2e78ce48e8c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d206fd3f18a81a24dfa432317e28b831da7d2194",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "75e89bba30cbcfb48246df36cb098580142d2d0a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5f16e55515d70e584f8a046155cb61db442981e1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8264b4626550830f44406b6f64e459c482b0747e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "230a25b9c11109af5c781f5d17fba6c565e6428f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4108b814b6fb570e89128ab09ae8e67baaa7f937",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5c3364c5bd7e96b276a9486df5ac9c6910bbb133",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a09f3692cebfbf5a72555282905e915af6448ddb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6340f7f866eb5dd6b7397f52a6252eabbfd5df3a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "672096f806dd54f02ba56dc22c2419c971e59bea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "abe2bb21579bdd1889b2a16211ef03810cd11fdf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "20d178a2f87a76c28a31dc48186d9ada98b13d75",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3151945edeedaa47d946929a09e0fd811da2b2ba",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

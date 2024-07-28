@@ -1,12 +1,60 @@
 {
-  "repositoryName": "fastjson",
-  "repositoryUrl": "https://github.com/alibaba/fastjson.git",
-  "startCommitHash": "097bff1a792e39f4e0b2807faa53af0e89fbe5e0",
-  "file": "src/main/java/com/alibaba/fastjson/parser/ParserConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "createFieldDeserializer",
-  "startLine": 1086,
-  "endLine": 1106,
-  "commits": []
+  "repositoryName" : "fastjson",
+  "repositoryUrl" : "https://github.com/alibaba/fastjson.git",
+  "startCommitHash" : "097bff1a792e39f4e0b2807faa53af0e89fbe5e0",
+  "file" : "src/main/java/com/alibaba/fastjson/parser/ParserConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "createFieldDeserializer",
+  "startLine" : 1086,
+  "endLine" : 1106,
+  "commits" : [ {
+    "commitHash" : "a9c8b2bb11e6c16daddcac88c04849179fd11213",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb8f552c746079a1dcbee339fb652ef5b03d0fe1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b0276a0c690d0310fe62400dd1af679fd134e680",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c648f81611c84cc1cb9cead6c2d815ffe72d8648",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "d72675f743be1c4274f46a50b94a32df519baee3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8a01882bda7e19ceddeae589fafd71c35181e99e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a4f9f629d8ec8cd151137902aa99160fb6701c09",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "91a760e61263e9f5759855b6d8b9148dc7bce374",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "626a67d8cfb96dcb2e22b3e6313bcb9ca9e8e69c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ce8d80dd2543eaa821e861969cfb53b9b3a666de",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0644e45a490f71bca4688b858a6923bf9fc6ce83",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8b5d5872aa56cf688cd9a7d6d0b5e5f8653f4882",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de0ea3db897635c2a6356b01343f27e196f4d3de",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2f388eeb2d56c602b7e22ba02b0054d3e6adf1f6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c62c425028e730cd83b7dc6e79f99bfa5e5962d0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "01b2479ee9fb9842a0544afd36088c43bc89b688",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,15 @@
 {
-  "repositoryName": "RxJava",
-  "repositoryUrl": "https://github.com/ReactiveX/RxJava.git",
-  "startCommitHash": "65d073962c787511ae39d2186bee8726cef4d08f",
-  "file": "src/main/java/io/reactivex/rxjava3/core/Completable.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "switchOnNextDelayError",
-  "startLine": 1202,
-  "endLine": 1205,
-  "commits": []
+  "repositoryName" : "RxJava",
+  "repositoryUrl" : "https://github.com/ReactiveX/RxJava.git",
+  "startCommitHash" : "65d073962c787511ae39d2186bee8726cef4d08f",
+  "file" : "src/main/java/io/reactivex/rxjava3/core/Completable.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "switchOnNextDelayError",
+  "startLine" : 1202,
+  "endLine" : 1205,
+  "commits" : [ {
+    "commitHash" : "2fafcb03dd3e420b184608b13a40a5a3482f3cd7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

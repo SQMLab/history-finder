@@ -1,12 +1,48 @@
 {
-  "repositoryName": "shardingsphere",
-  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
-  "startCommitHash": "f332f10f2b7aafb997123d4f77be6995edfdaa32",
-  "file": "features/sharding/core/src/main/java/org/apache/shardingsphere/sharding/rule/ShardingRule.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "isAllBindingTables",
-  "startLine": 323,
-  "endLine": 334,
-  "commits": []
+  "repositoryName" : "shardingsphere",
+  "repositoryUrl" : "https://github.com/apache/shardingsphere.git",
+  "startCommitHash" : "f332f10f2b7aafb997123d4f77be6995edfdaa32",
+  "file" : "features/sharding/core/src/main/java/org/apache/shardingsphere/sharding/rule/ShardingRule.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "isAllBindingTables",
+  "startLine" : 323,
+  "endLine" : 334,
+  "commits" : [ {
+    "commitHash" : "163a4bd2b863435bb69cc1181035e79d4335b5ad",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "6b157b44d0336e4d9c61f940b0ec19c26758af84",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "268f6b9dd05afb99d3f06fc09b62885760ea4c08",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fd5c26cac21bf2f563ab74ef3e998569145441a4",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "ffd3d4d34756a2e93320b92b14e11f519408b85e",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "4194a15f1a6c37c962843d4360ff02d5b7ed02b7",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "68d31a69a387296f3f0e0035c81f2bc0fdce55db",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0b82949a40e6bff19230ecc8af79ad0139efdcf8",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "8ca89258c9b9e3e3c469292c04a5042736c3ec90",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "b06c7b52eddef0647a198b8b7b4dc1c4c3f26027",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "470d05d6c6bc1257e8433ec0a098d9f65ae02aa5",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "38bff2d40bdf7d95a0dbaa761eb772640d3abe1b",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

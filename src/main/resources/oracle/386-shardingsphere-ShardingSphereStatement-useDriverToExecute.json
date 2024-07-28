@@ -1,12 +1,30 @@
 {
-  "repositoryName": "shardingsphere",
-  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
-  "startCommitHash": "d4035fc21fe37ec8ba60ec14c002ccfd7e2c0396",
-  "file": "jdbc/src/main/java/org/apache/shardingsphere/driver/jdbc/core/statement/ShardingSphereStatement.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "useDriverToExecute",
-  "startLine": 390,
-  "endLine": 396,
-  "commits": []
+  "repositoryName" : "shardingsphere",
+  "repositoryUrl" : "https://github.com/apache/shardingsphere.git",
+  "startCommitHash" : "d4035fc21fe37ec8ba60ec14c002ccfd7e2c0396",
+  "file" : "jdbc/src/main/java/org/apache/shardingsphere/driver/jdbc/core/statement/ShardingSphereStatement.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "useDriverToExecute",
+  "startLine" : 390,
+  "endLine" : 396,
+  "commits" : [ {
+    "commitHash" : "0596927315caf38cf66326d7061abd1bf38e5dbe",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f3568c28b7e40b1222f550d1f5130d305f9d07a5",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3da2f14c062089da44462ce4c2a122b35dcd3009",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2d549acce13d4148d69e3782f61f8a7eb7b4dfb1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6867d040715d1850bad7ee5a2c2e375b46f5c79d",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "a437e238a529375a93b56ffbd1e3d7d0f4d32cb0",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

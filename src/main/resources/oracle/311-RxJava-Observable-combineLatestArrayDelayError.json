@@ -1,12 +1,72 @@
 {
-  "repositoryName": "RxJava",
-  "repositoryUrl": "https://github.com/ReactiveX/RxJava.git",
-  "startCommitHash": "6300b1558c265cf80571acd882edace6a0be361f",
-  "file": "src/main/java/io/reactivex/rxjava3/core/Observable.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "combineLatestArrayDelayError",
-  "startLine": 941,
-  "endLine": 952,
-  "commits": []
+  "repositoryName" : "RxJava",
+  "repositoryUrl" : "https://github.com/ReactiveX/RxJava.git",
+  "startCommitHash" : "6300b1558c265cf80571acd882edace6a0be361f",
+  "file" : "src/main/java/io/reactivex/rxjava3/core/Observable.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "combineLatestArrayDelayError",
+  "startLine" : 941,
+  "endLine" : 952,
+  "commits" : [ {
+    "commitHash" : "4dd4a65fa0144c148f19f5632ae6915b3c7be315",
+    "changeTags" : [ "SIGNATURE", "RENAME" ]
+  }, {
+    "commitHash" : "1e4dbcf78a814993e80fa489a50d3369d7c4ecbd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "79f8e6dde6446b1aa33c146eaedbb958086daf56",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "480889c58d3b762b073ef80229bf27f9d9429dd7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "6ba932c9a3752c6d85d65bd2292c3a47cab64fd6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a1693ecc9215027a7a3eae75272979ebb4d79a27",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "9966209d74fdd33d54f633a444c95c601aa21955",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "b15df9899183ecce0f40b132a47be5700a7c7a32",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "35c8da6ca2f0c446d9e50d1c5507cc80e5ccb996",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7a1a4afad2984fb95265ec0af061fd1e87f0b75b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "23461ee40ec28b206c435530d53ffc59563087f9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "991ae3486ba9509f114a7645429126ef1322634a",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2de974aa65a226fe10190fa0881f576814459d42",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "4577f1abc585611f83be86efd279c4d135acd0ab",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "6e508e5f619e6931d333a1386568834c31362f42",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9b2869fc46f8ff4b7a89492807b460bdb49c2f1a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "596f77f905069911f2d9046046afbd61966b54fd",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "835e4f2a007ae11f9fbb4b04342d6a56df9c2709",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "000a174d87a901135f9665d3b11f3627fd2dc4ed",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ff061152477310ff568e104c1ffc42d8fc5fe731",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

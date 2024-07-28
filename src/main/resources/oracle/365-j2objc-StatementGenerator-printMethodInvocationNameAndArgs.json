@@ -1,12 +1,30 @@
 {
-  "repositoryName": "j2objc",
-  "repositoryUrl": "https://github.com/google/j2objc.git",
-  "startCommitHash": "c960e45598ba98d7d754f3e51a5d1b8a4ab82b77",
-  "file": "translator/src/main/java/com/google/devtools/j2objc/gen/StatementGenerator.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "printMethodInvocationNameAndArgs",
-  "startLine": 139,
-  "endLine": 154,
-  "commits": []
+  "repositoryName" : "j2objc",
+  "repositoryUrl" : "https://github.com/google/j2objc.git",
+  "startCommitHash" : "c960e45598ba98d7d754f3e51a5d1b8a4ab82b77",
+  "file" : "translator/src/main/java/com/google/devtools/j2objc/gen/StatementGenerator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "printMethodInvocationNameAndArgs",
+  "startLine" : 139,
+  "endLine" : 154,
+  "commits" : [ {
+    "commitHash" : "576e4eed12683f5d9b5b8bcf3747c72029cfcd6b",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "dda246057ee1d81fd018663766535087a447fd3c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "389f5ba1aea66ac82ef0a2c3061dfcc9617c3420",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aa6bd0067b82b70132733120b7b3c931219bf765",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3c154028fee012a7c03bdfac73f2980952563a0a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "32ade8cfd6796ae1f7796d06f86f4dbf32d831bb",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

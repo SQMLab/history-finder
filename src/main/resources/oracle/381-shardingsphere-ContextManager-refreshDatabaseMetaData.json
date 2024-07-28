@@ -1,12 +1,150 @@
 {
-  "repositoryName": "shardingsphere",
-  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
-  "startCommitHash": "e383088483cbb9b98e3a720a9be0b4fae479bbe0",
-  "file": "mode/core/src/main/java/org/apache/shardingsphere/mode/manager/ContextManager.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "refreshDatabaseMetaData",
-  "startLine": 135,
-  "endLine": 152,
-  "commits": []
+  "repositoryName" : "shardingsphere",
+  "repositoryUrl" : "https://github.com/apache/shardingsphere.git",
+  "startCommitHash" : "e383088483cbb9b98e3a720a9be0b4fae479bbe0",
+  "file" : "mode/core/src/main/java/org/apache/shardingsphere/mode/manager/ContextManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "refreshDatabaseMetaData",
+  "startLine" : 135,
+  "endLine" : 152,
+  "commits" : [ {
+    "commitHash" : "1daa1fa36e99be575d1ff1a496edad605d274710",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d30fa89de6eab327ee949f832659d7176ee6815d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "418a347c77a7acbbc9b7241a74301bfe0d50cf3f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1c3a831b550eb56d03a5464e5b27ad0798552d8f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "68101689462f87482c31ef0fff628d0cd6cd7b0b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6679a6565dc7dd7c2c0187bbb5038d8201c7123a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2074e6bb2076ad11fa18ce6722dbe60526787294",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b11486509419e3c5fdfb8ac2fe65bb2c15e9bc48",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "d55fe465dfe7d27d78aad06e1cbfdc96544f8816",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0d62a4b20f78a028882b6e31b8d990473cfd1269",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3bea215f31f0d76de81619a2eb5eca37d60db000",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e1bf5898026b72bd2012c01cb9f2afe84ebacdb4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "eb62e545f2f3098a166fbf41852032f1450ce709",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8375f4841425ae22d4ff638b09ec2eff2e5c1928",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "931b41c097d253e9666c1266212ac45c570fc638",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "92cbe9f2fedf8f53a76d98792bed10a38cff50fb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "42acd02f05147703e3dd7d4da3b6b9ea322864ea",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "73ff7b6ef40744593e916dc6542f65c9cded430b",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "1a191f8605545cf06d10d5f5cd45067c9de12039",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "23e7c54f856b75c3aa0395122b6514db07d1756c",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "5b9946a195b32b26141a18a9176874b5a31c9d6b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "163a4bd2b863435bb69cc1181035e79d4335b5ad",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7744e9b870c4948e34157198a9bd826cdb9ad09e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a8b6562af3bddc0c6ea8388552e22576027258a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2d7c2f69f3f6b55956f219b466c78706a902e7e2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bfd11802b1ef66ad65addcbfef403219f72bffb8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9e30e8bef110ad9f1051f5848801828bb553fda1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dd35e083cf972fba37be328ff9dc608e7f68ebff",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bb65f777d821df92ab651c592e1eafb06c34a6bd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6c21b8d3af91a0476db5f1a1e6e6d8ec3af48430",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "6378a468810ecbe224109db0b353516f9251ba6c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2c095d190c46963a743b306781b0e34c8a49c6d4",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "4968590ce959532ab092453ef802826dc9ae3b93",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "4c25dd2f8cc54df1ce2e9beea454a65eb355765a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "844b71e414bba0b90ffff397bfa119179fed130d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9b4c0137d52b6d17b7f046e30749fddb808d48b8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5b0f030e1128aa1d7c06cc35fce302b3a5f233b2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ee5350df07e9548727aa5cef5ab805f2d03cbfd6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7f0b51a05c61928673c4fe9581c4dfbe8a66c585",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "306984e32713dfe6b6a4efb8ace6e01a43ea22f8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6776ae03886ad594fcf7fe0738c129c50a967e28",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b91c4f3b5633c80060b2abd33bc3638a05fda6a5",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "0ad269abd0823336d26d8429483c08b7b5a2f37b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "adad9b0a1f848643d8f5195fabca974776c2f24b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "afc39910bdeeea31df8cb3965ae5de2547b7ca97",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "37d40a4ef48d5846b470631ef830b65eb1b72a1a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,45 @@
 {
-  "repositoryName": "MPAndroidChart",
-  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
-  "startCommitHash": "aea2ff3417e30d6d4b1ce7e777cbd8bc83e1c95d",
-  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/PieChart.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "needsHighlight",
-  "startLine": 297,
-  "endLine": 310,
-  "commits": []
+  "repositoryName" : "MPAndroidChart",
+  "repositoryUrl" : "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash" : "aea2ff3417e30d6d4b1ce7e777cbd8bc83e1c95d",
+  "file" : "MPChartLib/src/main/java/com/github/mikephil/charting/charts/PieChart.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "needsHighlight",
+  "startLine" : 297,
+  "endLine" : 310,
+  "commits" : [ {
+    "commitHash" : "2b886a463e85a0e35e9641b75250b0460b6307c8",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "cc81a21c6415ef931a6ded7d0a76626d7c2f6b18",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "690dd87a062d1d7484d6788fa7c045f884d2b614",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e379d31c1e277f46135f9bdaf907cee0455138a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8d59446596a7aa50c9f8f36f0bcf075a02518ff2",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "2cde3f51cfc9a2086ec1b370ca921379a7f58231",
+    "changeTags" : [ "MOVE", "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "dc7d90e2fb437fcd699c99dc5a07f5435d1ade28",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "80afe1483c447e57554dd09186f8ce57051d8e50",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1ab90fe1bcb6b0337935cec221341c6552405160",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1fbfd0db37e403d6cd24be1c0a463cfb3b3e957d",
+    "changeTags" : [ "MOVE", "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "f7acca8541375386535681d5c4f94954a22f4df8",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

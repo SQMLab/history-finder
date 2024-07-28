@@ -1,12 +1,45 @@
 {
-  "repositoryName": "RxJava",
-  "repositoryUrl": "https://github.com/ReactiveX/RxJava.git",
-  "startCommitHash": "65d073962c787511ae39d2186bee8726cef4d08f",
-  "file": "src/main/java/io/reactivex/rxjava3/core/Single.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "merge",
-  "startLine": 1398,
-  "endLine": 1404,
-  "commits": []
+  "repositoryName" : "RxJava",
+  "repositoryUrl" : "https://github.com/ReactiveX/RxJava.git",
+  "startCommitHash" : "65d073962c787511ae39d2186bee8726cef4d08f",
+  "file" : "src/main/java/io/reactivex/rxjava3/core/Single.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "merge",
+  "startLine" : 1398,
+  "endLine" : 1404,
+  "commits" : [ {
+    "commitHash" : "1ede60786a1a8f00f1fb3968d0701a323ed86f2f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b57169babb184d0adc2fa28cf0425c4f0c1f8555",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "6ba932c9a3752c6d85d65bd2292c3a47cab64fd6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a1693ecc9215027a7a3eae75272979ebb4d79a27",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "7aa0b347cea8aa0e395a7f9ec488d7006647a329",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "7a1a4afad2984fb95265ec0af061fd1e87f0b75b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ed9a2c4b9de311929f2d8d5e37c3e078cb85db07",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "7a4d6330da7db2b954062b5b5fc042433db9c06a",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "835e4f2a007ae11f9fbb4b04342d6a56df9c2709",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "000a174d87a901135f9665d3b11f3627fd2dc4ed",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9e852f1317c6bcb89f73471dec6aa134bb4d7abc",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

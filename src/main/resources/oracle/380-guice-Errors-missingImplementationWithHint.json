@@ -1,12 +1,36 @@
 {
-  "repositoryName": "guice",
-  "repositoryUrl": "https://github.com/google/guice.git",
-  "startCommitHash": "becce74bd99370a18bcbe10aaba6b48d227588da",
-  "file": "core/src/com/google/inject/internal/Errors.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "missingImplementationWithHint",
-  "startLine": 163,
-  "endLine": 168,
-  "commits": []
+  "repositoryName" : "guice",
+  "repositoryUrl" : "https://github.com/google/guice.git",
+  "startCommitHash" : "becce74bd99370a18bcbe10aaba6b48d227588da",
+  "file" : "core/src/com/google/inject/internal/Errors.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "missingImplementationWithHint",
+  "startLine" : 163,
+  "endLine" : 168,
+  "commits" : [ {
+    "commitHash" : "50e7c7e02cd28b3dc5ac99a0e32bc397915f46df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9af6a50bea0ebb5f06bfdc51d037e1e783ca947e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "76a721005f8faf4998c90a59acecebd174ec76aa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6006bb78560d118b5ce493acaf7f1f56019a3d24",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0b1b6bb54a03643674548e370ecf366f722f5224",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5298761dd96a84f05eb6d7a3fe535e396806a74a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "dcf7bdacc232880b425c07171c49a75be5ddce93",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "036e9a8276198faa34a884c0ac3c58491c1c210c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

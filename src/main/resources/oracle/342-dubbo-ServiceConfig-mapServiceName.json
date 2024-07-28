@@ -1,12 +1,18 @@
 {
-  "repositoryName": "dubbo",
-  "repositoryUrl": "https://github.com/apache/dubbo.git",
-  "startCommitHash": "00812ce41c44be6e5cd5e2b8e5bf602f806bbbca",
-  "file": "dubbo-config/dubbo-config-api/src/main/java/org/apache/dubbo/config/ServiceConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "mapServiceName",
-  "startLine": 407,
-  "endLine": 436,
-  "commits": []
+  "repositoryName" : "dubbo",
+  "repositoryUrl" : "https://github.com/apache/dubbo.git",
+  "startCommitHash" : "00812ce41c44be6e5cd5e2b8e5bf602f806bbbca",
+  "file" : "dubbo-config/dubbo-config-api/src/main/java/org/apache/dubbo/config/ServiceConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "mapServiceName",
+  "startLine" : 407,
+  "endLine" : 436,
+  "commits" : [ {
+    "commitHash" : "d874a87303dc38a26903a1bc61380a2379b53551",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "213363422e0981b1f227af61a01876b8adcadfda",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,42 @@
 {
-  "repositoryName": "zxing",
-  "repositoryUrl": "https://github.com/zxing/zxing.git",
-  "startCommitHash": "b51346c072723d6c3f14da17a0c842243af8a2ab",
-  "file": "android/src/com/google/zxing/client/android/result/ResultHandler.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "launchIntent",
-  "startLine": 473,
-  "endLine": 483,
-  "commits": []
+  "repositoryName" : "zxing",
+  "repositoryUrl" : "https://github.com/zxing/zxing.git",
+  "startCommitHash" : "b51346c072723d6c3f14da17a0c842243af8a2ab",
+  "file" : "android/src/com/google/zxing/client/android/result/ResultHandler.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "launchIntent",
+  "startLine" : 473,
+  "endLine" : 483,
+  "commits" : [ {
+    "commitHash" : "b01cff36fa389c02253daa3d2314110d42c59b44",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3bad6fc4c5076d2a38fe14cb4f45bb6fbe38d864",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "238e8d6350f13c4ad57367ee0cf68e28f9c64bc2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c7d055bb92c4b0b125d891294dd87faf70f18f58",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f30410ff78591e7f6fe5b53b87a768f28c435024",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8090bb441ac8c55a5df39bca64965b2349f8b54a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e844ff06f4544a2329b71fdd8841ee815dd80813",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "833ca52c276892e86878961320bbd8f425f6c8be",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "24580d6bac93a70f6cb253d7e3293df4b755b3f3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "35115ce1f3dec1df4b4b2184f233ec1a9ae7f685",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

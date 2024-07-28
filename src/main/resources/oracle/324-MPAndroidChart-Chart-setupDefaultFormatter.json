@@ -1,12 +1,24 @@
 {
-  "repositoryName": "MPAndroidChart",
-  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
-  "startCommitHash": "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
-  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/Chart.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setupDefaultFormatter",
-  "startLine": 371,
-  "endLine": 386,
-  "commits": []
+  "repositoryName" : "MPAndroidChart",
+  "repositoryUrl" : "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash" : "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
+  "file" : "MPChartLib/src/main/java/com/github/mikephil/charting/charts/Chart.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setupDefaultFormatter",
+  "startLine" : 371,
+  "endLine" : 386,
+  "commits" : [ {
+    "commitHash" : "2176873271fd6a54511acb80e84d38f681096006",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8a6139b1fbe77f875a900158087128f691d8a2e9",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "6919a97f177df4a15db69b818be9a509f35d0282",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc81a21c6415ef931a6ded7d0a76626d7c2f6b18",
+    "changeTags" : [ "FILE_RENAME" ]
+  } ]
 }

@@ -1,12 +1,36 @@
 {
-  "repositoryName": "shardingsphere",
-  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
-  "startCommitHash": "f332f10f2b7aafb997123d4f77be6995edfdaa32",
-  "file": "features/sharding/core/src/main/java/org/apache/shardingsphere/sharding/rule/ShardingRule.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "findShardingColumn",
-  "startLine": 451,
-  "endLine": 467,
-  "commits": []
+  "repositoryName" : "shardingsphere",
+  "repositoryUrl" : "https://github.com/apache/shardingsphere.git",
+  "startCommitHash" : "f332f10f2b7aafb997123d4f77be6995edfdaa32",
+  "file" : "features/sharding/core/src/main/java/org/apache/shardingsphere/sharding/rule/ShardingRule.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "findShardingColumn",
+  "startLine" : 451,
+  "endLine" : 467,
+  "commits" : [ {
+    "commitHash" : "163a4bd2b863435bb69cc1181035e79d4335b5ad",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9e2202bc845ce6535f4a373b6a97483a178daf48",
+    "changeTags" : [ "SIGNATURE", "RENAME", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "f4742d1b396c64ba09f59b6bf5ad774d7c45b242",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "6a29dba09a3bebeb145260b7c4312e769ced2d45",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "b00fa93b222269a490bfb9a6480ed70c8525ac88",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fbe641d782b56b72eb130e37daf2d1552b4aac68",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6b157b44d0336e4d9c61f940b0ec19c26758af84",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5f609a83b99c64b29205a95fd5ea81f8c9845e7c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

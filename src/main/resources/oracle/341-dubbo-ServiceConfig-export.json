@@ -1,12 +1,90 @@
 {
-  "repositoryName": "dubbo",
-  "repositoryUrl": "https://github.com/apache/dubbo.git",
-  "startCommitHash": "00812ce41c44be6e5cd5e2b8e5bf602f806bbbca",
-  "file": "dubbo-config/dubbo-config-api/src/main/java/org/apache/dubbo/config/ServiceConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "export",
-  "startLine": 307,
-  "endLine": 344,
-  "commits": []
+  "repositoryName" : "dubbo",
+  "repositoryUrl" : "https://github.com/apache/dubbo.git",
+  "startCommitHash" : "00812ce41c44be6e5cd5e2b8e5bf602f806bbbca",
+  "file" : "dubbo-config/dubbo-config-api/src/main/java/org/apache/dubbo/config/ServiceConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "export",
+  "startLine" : 307,
+  "endLine" : 344,
+  "commits" : [ {
+    "commitHash" : "bfa46f59eb0054f86e6326f92a1c69cc40eeb58e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5caa8524a9a55d18145dec6c39cc886b89c84a96",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ba5ca1c150f57dc5f9b268e94539a46f911c87e5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e79e0214cb4c0121fd8370b4074ed3d8f23934f4",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "ba308219c60e9faa943d85b1bbbbe0b7d1be30df",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1bff54bad3ef2b5f00f5bec1fa1427f8c2f6604c",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  }, {
+    "commitHash" : "5c2161aa0e9a073a51dd14e0c0edb36668d371a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "067dba3afed44b5b91350e75e62de95ecce3c693",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9bccd5cfdd131e77c69cb2d45e970ffb10cf6c3c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a39fffebe56291ce154c3011faf572e1678d6841",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "84803247e4435030dec8a72295348d25e855cbdf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d0454fdbef0b7724cf5747a276f292eb14c8ab05",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8bc9257f4e09b2937e21842b90984dfcaefe97b6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c4815f56025411512aa49d3e06388bc8f1cf23ba",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "924ee551fb2f8d14fe56d210adba1f8e4a72b106",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b5bb1472496141dfc558a32b6d5b838d212e26b8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4aaaea43ae75bee99837183c5be37ca2cb942741",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fe71a91479896e8eb0087579ee19c954080ce8e5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ee77776296732aa7ee3c2e913210ff077ee9e0d5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c75db7dd8bcfbb48ed7f6fbaa39f2b1479629e55",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b0cf97ebc34d4accfd0b4532c2e5d8088fc003ac",
+    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "PARAMETER" ]
+  }, {
+    "commitHash" : "3e78bd8867c317376c11050fe10233ac9305b91c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "21871c77ca2d9812302b6acb4215351c8b934b55",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "66fbd3202a7d210d27ffbfa5505f3f580347cfc3",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "1be3c999d112215a1354ab396cb2fbb94f3d2a0e",
+    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "PARAMETER" ]
+  }, {
+    "commitHash" : "78accf78c2273d3d80ee9eba38a385d61e8fd8c7",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
