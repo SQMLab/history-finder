@@ -8,5 +8,20 @@
   "element" : "getBuildForDeprecatedMethods",
   "startLine" : 517,
   "endLine" : 528,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "e27b310065b3c036b5fc9d123f1d1d99d3058c00",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "9df94bdf16e4dd46018111c2f5b685a67dfda914",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
+    "commitHash" : "02fa8003c05726a58fc13c9856dd98610e1b410c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4e56128cd8e0d82448b583418c954675239ad764",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "2652a6e3b8bf390d256552d5e5938751163fc6bb",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

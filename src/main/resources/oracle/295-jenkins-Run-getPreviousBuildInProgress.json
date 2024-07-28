@@ -8,5 +8,17 @@
   "element" : "getPreviousBuildInProgress",
   "startLine" : 908,
   "endLine" : 939,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "e27b310065b3c036b5fc9d123f1d1d99d3058c00",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "264980c707c6cafc01369378b1e90d247561df78",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "125e49d45e40ff80d75138e03d4dc6a2d99a8812",
+    "changeTags" : [ "FORMAT", "ANNOTATION" ]
+  }, {
+    "commitHash" : "c04e63d9f0c0b1a3b0683e64838c685cdddcd265",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
