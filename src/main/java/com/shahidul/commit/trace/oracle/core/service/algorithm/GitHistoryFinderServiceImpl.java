@@ -81,6 +81,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(commitEntry.getCommitHash())
+                .parentCommitHash(commitEntry.getParentCommitHash())
                 .changeTags(changeTags)
                 .codeFragment(commitEntry.getMethodCode())
                 .documentation(commitEntry.getDocumentation())
@@ -93,8 +94,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
             String oldFile = parentEntry.getMethodContainerFile();
             commitBuilder.oldFile(oldFile)
                     .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                    .parentCommitHash(parentEntry.getCommitHash());
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
         }
 
         return commitBuilder
