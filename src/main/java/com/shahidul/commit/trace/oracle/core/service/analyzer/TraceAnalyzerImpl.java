@@ -80,7 +80,8 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                     analysisEntity.setCorrectCommits(correctCommits);
                     analysisEntity.setIncorrectCommits(incorrectCommits);
                     analysisEntity.setMissingCommits(missingCommits);
-                    analysisEntity.setPrecision((double) correctCommitSet.size() / commitSet.size());
+                    double precision = commitSet.isEmpty() ? 1 : (double) correctCommitSet.size() / commitSet.size();
+                    analysisEntity.setPrecision(precision);
                     AtomicInteger preferredExpectedCommitSize = new AtomicInteger(expectedHashSet.size());
                     if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
                         unexpectedHashSet.forEach(commitUdt -> {
