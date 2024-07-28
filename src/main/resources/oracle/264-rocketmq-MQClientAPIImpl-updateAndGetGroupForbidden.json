@@ -8,5 +8,8 @@
   "element" : "updateAndGetGroupForbidden",
   "startLine" : 2877,
   "endLine" : 2893,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "10326b479af2282310ea0f496f6c08229e4ae126",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

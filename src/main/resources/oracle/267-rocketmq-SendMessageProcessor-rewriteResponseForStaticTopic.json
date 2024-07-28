@@ -8,5 +8,8 @@
   "element" : "rewriteResponseForStaticTopic",
   "startLine" : 132,
   "endLine" : 157,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "3fadc8f30c898f9ddd6730ba4ac428894a1c1077",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

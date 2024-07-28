@@ -8,5 +8,8 @@
   "element" : "getSubscriptionGroup",
   "startLine" : 330,
   "endLine" : 356,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "cad0cfcecef88958b103059aea7b98395850226a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
