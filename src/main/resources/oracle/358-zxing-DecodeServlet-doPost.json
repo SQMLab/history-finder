@@ -1,12 +1,63 @@
 {
-  "repositoryName": "zxing",
-  "repositoryUrl": "https://github.com/zxing/zxing.git",
-  "startCommitHash": "a24f93093e01a63e0cd4814c954e4196cc5c3a4e",
-  "file": "zxingorg/src/main/java/com/google/zxing/web/DecodeServlet.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "doPost",
-  "startLine": 306,
-  "endLine": 333,
-  "commits": []
+  "repositoryName" : "zxing",
+  "repositoryUrl" : "https://github.com/zxing/zxing.git",
+  "startCommitHash" : "a24f93093e01a63e0cd4814c954e4196cc5c3a4e",
+  "file" : "zxingorg/src/main/java/com/google/zxing/web/DecodeServlet.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "doPost",
+  "startLine" : 306,
+  "endLine" : 333,
+  "commits" : [ {
+    "commitHash" : "431ae9e06ebb9181531a93c37a5f53394d3b8172",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6f96046deac66647aed05650fdf7610845a16a49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5927f6ef09a9bbd6c89196d2808a1ff45e04c325",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6ffb40e1fda3b439bcb78cfdb1cad359daaf8762",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ce072f02f929b4cada4e04c895d7b8ea447113df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "77746832475df47508cb6b51b4f1484dd2896dfd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5adcb269ad2c59e764c24a1c89df93aa0002ef32",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9bac0584f0010fb865c7ea5a2b7b205ca95a783e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "482e2fb3acbdc02cd895acb7e445700cb5b82500",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1bcc298ad386c346c73bde68a9d9718dd51e2d0d",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "2de2f413b6fbcf39f34ddec091c7fc7a340db95c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e5591c71fd91bba0ad9da8b219bbfb374a1da5ae",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6698e919e99f929c7de7fcce462f88b977f878e4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "df65c5b83efd0a04e627e56a18e129a731213625",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5e026d8535bce618a5f796a9fb6d776730ce7ab6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5c705313bb119f698c4d57bf082e7510024bdf96",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d4d5b349887c2e0b4c22cbfeba6fc1bc7ce50b1",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

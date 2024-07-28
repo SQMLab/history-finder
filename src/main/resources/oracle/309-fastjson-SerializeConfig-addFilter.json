@@ -1,12 +1,24 @@
 {
-  "repositoryName": "fastjson",
-  "repositoryUrl": "https://github.com/alibaba/fastjson.git",
-  "startCommitHash": "db11d2ade8eb093b71904c970f3cf3067220cb2b",
-  "file": "src/main/java/com/alibaba/fastjson/serializer/SerializeConfig.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "addFilter",
-  "startLine": 376,
-  "endLine": 393,
-  "commits": []
+  "repositoryName" : "fastjson",
+  "repositoryUrl" : "https://github.com/alibaba/fastjson.git",
+  "startCommitHash" : "db11d2ade8eb093b71904c970f3cf3067220cb2b",
+  "file" : "src/main/java/com/alibaba/fastjson/serializer/SerializeConfig.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "addFilter",
+  "startLine" : 376,
+  "endLine" : 393,
+  "commits" : [ {
+    "commitHash" : "6961034a25bc151887bfce7bdf6b38222718f18a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c0dcd11dd6620a04e9681bb7ec89e31265e7f0dd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6d193922a2ea56247fa6d33e52ab1472e848d02a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "65c7c0f76dd35ae2da2c9493c12c8eea211bafb2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,21 @@
 {
-  "repositoryName": "MPAndroidChart",
-  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
-  "startCommitHash": "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
-  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/data/ChartData.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getYMin",
-  "startLine": 216,
-  "endLine": 229,
-  "commits": []
+  "repositoryName" : "MPAndroidChart",
+  "repositoryUrl" : "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash" : "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
+  "file" : "MPChartLib/src/main/java/com/github/mikephil/charting/data/ChartData.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getYMin",
+  "startLine" : 216,
+  "endLine" : 229,
+  "commits" : [ {
+    "commitHash" : "0a55308975c769bd7fafdcb8085d48c1ac181553",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc81a21c6415ef931a6ded7d0a76626d7c2f6b18",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7beee61c22961c883027d48bb8a0139059d1ddfe",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

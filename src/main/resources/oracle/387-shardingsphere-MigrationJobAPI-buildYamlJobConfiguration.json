@@ -1,12 +1,69 @@
 {
-  "repositoryName": "shardingsphere",
-  "repositoryUrl": "https://github.com/apache/shardingsphere.git",
-  "startCommitHash": "a8174aed86929ef9a8204a8d8672c92426fa4938",
-  "file": "kernel/data-pipeline/scenario/migration/src/main/java/org/apache/shardingsphere/data/pipeline/scenario/migration/api/MigrationJobAPI.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "buildYamlJobConfiguration",
-  "startLine": 120,
-  "endLine": 166,
-  "commits": []
+  "repositoryName" : "shardingsphere",
+  "repositoryUrl" : "https://github.com/apache/shardingsphere.git",
+  "startCommitHash" : "a8174aed86929ef9a8204a8d8672c92426fa4938",
+  "file" : "kernel/data-pipeline/scenario/migration/src/main/java/org/apache/shardingsphere/data/pipeline/scenario/migration/api/MigrationJobAPI.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "buildYamlJobConfiguration",
+  "startLine" : 120,
+  "endLine" : 166,
+  "commits" : [ {
+    "commitHash" : "3503ce1f5825956c74b59a47c54f9f03c12353ee",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cb0cf03f9cc53ca78222fb645561218041d2f56d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0b736453ea5649343de9457111d21caf7f7db311",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "41c3a5d26b0ef093c7c5c19501bff88864a6f121",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "28814e9e0682a77bcb6ad81ab096b917fafd9d64",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d09b94c1347a2d3794ec971dd47518db7789342e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7b9b9b81f56c7a985fcc4c30b6736db4aa7592ba",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fbbb88220342ca0b1a5da1e22681f2b2f6aa11ee",
+    "changeTags" : [ "MOVE", "BODY" ]
+  }, {
+    "commitHash" : "41db48e6bb9323858a975a3003db3e3d7ef7e4f9",
+    "changeTags" : [ "MOVE", "BODY" ]
+  }, {
+    "commitHash" : "643b48699813204820e631b85cd9fa7f42ad70e8",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "213166a31ec7cb6947bfca25e542f09e59b5e407",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0d62a4b20f78a028882b6e31b8d990473cfd1269",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2be8804ebb4b2f604044f5c14cb6ea49862aca20",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5f8a7c197a4ba47470b4ace6f79b85d966fc8d26",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "26b0b04ed8b7329a02351168d82432cc00ece8be",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bd0a45b9b47e7d6471bf2a166d0dbccee96d6cc0",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "abacf862f249653c52b81cc9ca11b768e211c40f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "334a409201d91c1b95b8065a0ac15193a5d25ded",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "17221f1335f5557e524e994a2fe9a84ef560a456",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

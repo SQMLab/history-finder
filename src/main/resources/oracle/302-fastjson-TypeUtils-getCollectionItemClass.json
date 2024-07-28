@@ -1,12 +1,24 @@
 {
-  "repositoryName": "fastjson",
-  "repositoryUrl": "https://github.com/alibaba/fastjson.git",
-  "startCommitHash": "dd3de5f84bcbf0c13ad60df0c3feb9d564727447",
-  "file": "src/main/java/com/alibaba/fastjson/util/TypeUtils.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getCollectionItemClass",
-  "startLine": 2647,
-  "endLine": 2669,
-  "commits": []
+  "repositoryName" : "fastjson",
+  "repositoryUrl" : "https://github.com/alibaba/fastjson.git",
+  "startCommitHash" : "dd3de5f84bcbf0c13ad60df0c3feb9d564727447",
+  "file" : "src/main/java/com/alibaba/fastjson/util/TypeUtils.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getCollectionItemClass",
+  "startLine" : 2647,
+  "endLine" : 2669,
+  "commits" : [ {
+    "commitHash" : "e4ac7c829b942f5e8274625f46f1668f11bbb06a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2208b9646dccd77b13b2741abbed7255d1f333a1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "81ada55a69aaa46a6fc9c91a40859a408a60a986",
+    "changeTags" : [ "MOVE", "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "d3f141470ae5132134aba7ca0d00d29963b983f3",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

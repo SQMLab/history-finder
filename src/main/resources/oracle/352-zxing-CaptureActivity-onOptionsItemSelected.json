@@ -1,12 +1,60 @@
 {
-  "repositoryName": "zxing",
-  "repositoryUrl": "https://github.com/zxing/zxing.git",
-  "startCommitHash": "04595508b63c3bde614b59dac361b50bfadb8757",
-  "file": "android/src/com/google/zxing/client/android/CaptureActivity.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "onOptionsItemSelected",
-  "startLine": 362,
-  "endLine": 386,
-  "commits": []
+  "repositoryName" : "zxing",
+  "repositoryUrl" : "https://github.com/zxing/zxing.git",
+  "startCommitHash" : "04595508b63c3bde614b59dac361b50bfadb8757",
+  "file" : "android/src/com/google/zxing/client/android/CaptureActivity.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "onOptionsItemSelected",
+  "startLine" : 362,
+  "endLine" : 386,
+  "commits" : [ {
+    "commitHash" : "04595508b63c3bde614b59dac361b50bfadb8757",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "008c23fed8e89229e21b0c32a0c79f09618f8c83",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7513a4c89612f6e6037fe55a7f220591c5ae1c4a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "60df2dba0c4768f15fbcb1cd86026340b6d1238f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5cc9295451a3a2ccb83f1560067be0f278fec134",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08acd5b8f7f4500d127567bbd0a8640044afffc6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "db60385d7df7b64152e31f7847f01322624f9b34",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d7a841bc2bb6e9b11880f333e0d3117faf82a0bd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f30410ff78591e7f6fe5b53b87a768f28c435024",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e844ff06f4544a2329b71fdd8841ee815dd80813",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "833ca52c276892e86878961320bbd8f425f6c8be",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ae1241880b716e2cff6748c3c875b0d3fd557616",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "24580d6bac93a70f6cb253d7e3293df4b755b3f3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "131cfe4c5cf128ab547d02c69147480d5fd619e9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fd327c94c4a846cf8e75881c4bc8cb9eb6eea47e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "aef1dedb61b557a302ae1645747f6cf8f8ff0d08",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

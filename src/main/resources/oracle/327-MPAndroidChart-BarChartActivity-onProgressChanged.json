@@ -1,12 +1,84 @@
 {
-  "repositoryName": "MPAndroidChart",
-  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
-  "startCommitHash": "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
-  "file": "MPChartExample/src/main/java/com/xxmassdeveloper/mpchartexample/BarChartActivity.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "onProgressChanged",
-  "startLine": 283,
-  "endLine": 290,
-  "commits": []
+  "repositoryName" : "MPAndroidChart",
+  "repositoryUrl" : "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash" : "bc0be2cfe13e32a5d8adefaa507e3512d22d85fb",
+  "file" : "MPChartExample/src/main/java/com/xxmassdeveloper/mpchartexample/BarChartActivity.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "onProgressChanged",
+  "startLine" : 283,
+  "endLine" : 290,
+  "commits" : [ {
+    "commitHash" : "5030b36c86cfa2d076bb6b86fa8fcb37ce58557f",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "d67ea481af1e8528c617dfd404d0c7827b0134b2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "11212eb72dcc67bbbed4c09928f98b580b2fc524",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "699a9f4ce9ea1a8db76774e73cdedc29a189925d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0c4c74e1817218950d73a4c30173caa43c4d76a3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f36ba8de48ecc748a498d87595597edfb7abb0e8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3e0fc2e29ade5bccf756f5eb4b8884868f759764",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b0caebed4e7656a0006f9b8d1642453bef1e454d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "35faecc61f9da65558d778f34969e535d1301aa9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f9a3548278c7523e45938466f2870df550badc8a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e36d69fab63031319949205a806b7b412844c230",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8e21707d293edbd1a745341aa00b6763c48f07e7",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "98554a053fb454f46b3a75a81de371fa9cdea3ca",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "524f26043d4bc69c3d2dadeb32de629e9aec8c61",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fbc5324d87703d2f943d456d726b0a8e10c8b0b1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "808a5b21f676638b5d09cc324fd8c048b240a3fa",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "80afe1483c447e57554dd09186f8ce57051d8e50",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "256c028a3e58d2bd3e096140aa6fb1c9aa1319e3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "89da9a262ecee40806a23c66c5720c75f31cb3e5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2895a014b84c1874c6b912049b9c51596e753deb",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "846f5cca2db37efab924cf8e1e373c027edeeaa8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9c945acb2cd3b392ca6215a1fefb3f8910b0bf0a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "df7098dadb495ca92990343f10fb117bed002fec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c4d84682e7f500c91cb1c36fcc1b72a0db84df9d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

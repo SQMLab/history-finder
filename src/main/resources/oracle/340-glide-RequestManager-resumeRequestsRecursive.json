@@ -1,12 +1,18 @@
 {
-  "repositoryName": "glide",
-  "repositoryUrl": "https://github.com/bumptech/glide.git",
-  "startCommitHash": "3d6d038f7341dc71872d076b42d74492fec197b9",
-  "file": "library/src/main/java/com/bumptech/glide/RequestManager.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "resumeRequestsRecursive",
-  "startLine": 349,
-  "endLine": 355,
-  "commits": []
+  "repositoryName" : "glide",
+  "repositoryUrl" : "https://github.com/bumptech/glide.git",
+  "startCommitHash" : "3d6d038f7341dc71872d076b42d74492fec197b9",
+  "file" : "library/src/main/java/com/bumptech/glide/RequestManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "resumeRequestsRecursive",
+  "startLine" : 349,
+  "endLine" : 355,
+  "commits" : [ {
+    "commitHash" : "eaf720e934d8d71ed34c5bffb32cd4e72ff90495",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "ae2d3767a774deeee829a84e0b96ea0e5e0be9e6",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,21 @@
 {
-  "repositoryName": "j2objc",
-  "repositoryUrl": "https://github.com/google/j2objc.git",
-  "startCommitHash": "ecb1cdfd0cbb2db81099a43a3e42359f4c3be7d5",
-  "file": "translator/src/main/java/com/google/devtools/j2objc/gen/TypeDeclarationGenerator.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "printInterfaceType",
-  "startLine": 256,
-  "endLine": 271,
-  "commits": []
+  "repositoryName" : "j2objc",
+  "repositoryUrl" : "https://github.com/google/j2objc.git",
+  "startCommitHash" : "ecb1cdfd0cbb2db81099a43a3e42359f4c3be7d5",
+  "file" : "translator/src/main/java/com/google/devtools/j2objc/gen/TypeDeclarationGenerator.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "printInterfaceType",
+  "startLine" : 256,
+  "endLine" : 271,
+  "commits" : [ {
+    "commitHash" : "fcb446a0070820cb5b899c932e02681392006558",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bbef466990c5f8a6160a78312bab7129af5cc655",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "80ad3ed548ae9b8a091e81974eef9b4af5d2b176",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,87 @@
 {
-  "repositoryName": "zxing",
-  "repositoryUrl": "https://github.com/zxing/zxing.git",
-  "startCommitHash": "e7ed6aee2ffeaae1fb3b608352a62e7d5588cb13",
-  "file": "android/src/com/google/zxing/client/android/camera/CameraConfigurationManager.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setDesiredCameraParameters",
-  "startLine": 127,
-  "endLine": 188,
-  "commits": []
+  "repositoryName" : "zxing",
+  "repositoryUrl" : "https://github.com/zxing/zxing.git",
+  "startCommitHash" : "e7ed6aee2ffeaae1fb3b608352a62e7d5588cb13",
+  "file" : "android/src/com/google/zxing/client/android/camera/CameraConfigurationManager.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setDesiredCameraParameters",
+  "startLine" : 127,
+  "endLine" : 188,
+  "commits" : [ {
+    "commitHash" : "4199e41fb8bb7fa39d3827f7c892f3611d2fb654",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c3d649f6abe39f121ecedc9ea2e269152899fda6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f58271e14651c42a6ea2cf1d17dd1281206bf898",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "70b02ea882154d7e068765399a3cce8c75af90c2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1b403e81dbaa8483785d92b2b68a7067cff6614a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c1b1b631705922cfdf3e50a1f7b9d3f92ff7ba70",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4411eb5517106cdf7db809087be57f83f5cd1407",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e174140d8dad76d51bf61199abc37a418ede831a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "28f2a301c20bb74fe4827a1bceca4b8f2e5be61c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de6e9dbc52e866c2c1d2ae373299f4f1b8579036",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d1f5627551d8a1dd19ca2c618bb233a1d2c590f2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0d6eabd6fc5b4c2462dd9ebd9920c09e2ff80452",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e4432a09919976b705e56b04e638e78c67a38ac5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0ad4759e149473a081e9db970c0921d28c3fd9cf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "56fb333be60f43bab214d74f2f95384bbecd4934",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7f05aa2efb531d6015e972cd3bce070e02040b0f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "3faf91672e459cdb59b280a2aa6b6771b973d50c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5ec54ac140acc5f9ad33ece08b1d69b6155581c4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9fa7d9aba48378b89f9721a80934a30df04ac6ce",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8cc93b521b317ba98b8fd21e5984eb28dfe01503",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9e9e5671d9de5e7d73322bca50d932892e28aa7f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e22dd98452799bef773a72d582747e57033e6662",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e7aedd046877358857dff67a275fa9d02f807d3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "484fc75f44c6fd33ad22f29823693662de8a77df",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ad1e585a23a00994e31f0b7820c2e66b4beb86ca",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

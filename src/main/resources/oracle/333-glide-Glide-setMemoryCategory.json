@@ -1,12 +1,27 @@
 {
-  "repositoryName": "glide",
-  "repositoryUrl": "https://github.com/bumptech/glide.git",
-  "startCommitHash": "26ecf64550a07d1b8f958a8e3ef192028b4892ca",
-  "file": "library/src/main/java/com/bumptech/glide/Glide.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "setMemoryCategory",
-  "startLine": 502,
-  "endLine": 511,
-  "commits": []
+  "repositoryName" : "glide",
+  "repositoryUrl" : "https://github.com/bumptech/glide.git",
+  "startCommitHash" : "26ecf64550a07d1b8f958a8e3ef192028b4892ca",
+  "file" : "library/src/main/java/com/bumptech/glide/Glide.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "setMemoryCategory",
+  "startLine" : 502,
+  "endLine" : 511,
+  "commits" : [ {
+    "commitHash" : "0cffd1da977e9ca334032ebc1d798213a177aab7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "a73a5291e50d684cb1be0fca86b60bb6ac91d37d",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "128fcd2aa81d8205bf37d1dc2887f3d4e9cf2c5b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ac28599e2b40e0dd6b97f6a91849585531264622",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7050d58f72f666896e7f1ad6a27faafb0230fd37",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

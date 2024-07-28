@@ -1,12 +1,45 @@
 {
-  "repositoryName": "dubbo",
-  "repositoryUrl": "https://github.com/apache/dubbo.git",
-  "startCommitHash": "730695a7a26967889405b12fc54099bb006c8231",
-  "file": "dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/integration/RegistryDirectory.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "toRouters",
-  "startLine": 400,
-  "endLine": 425,
-  "commits": []
+  "repositoryName" : "dubbo",
+  "repositoryUrl" : "https://github.com/apache/dubbo.git",
+  "startCommitHash" : "730695a7a26967889405b12fc54099bb006c8231",
+  "file" : "dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/integration/RegistryDirectory.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "toRouters",
+  "startLine" : 400,
+  "endLine" : 425,
+  "commits" : [ {
+    "commitHash" : "b319fce427b70b642b98e7d50b91e5ac377f1f8c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1dfb1147344e012f0e070f67aed2d95a1d8d9377",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "175eab1b83e90d0d95961d38d4713a7add82ad48",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "805f7c764d2f82607c61a94cea1bb37f0062f3b5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "70edcf80e95f73390ece1527e982e1e9fa04037b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "50afb8775cb78acf1592516f31143afc2b6e7e38",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c84511c6a7a6665dcf03e1dd06cdf077c13c008a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6007fd30a80b2fa0a68c1dc0a263f125ed0dfb95",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "1646e6c733b03d34d73b20946e691a9123342137",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "18dee4e44df7a02cacb3070fda72e22d7078f910",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0e133c59ef53c3a92030881045b23e460e93ad1f",
+    "changeTags" : [ "BODY" ]
+  } ]
 }

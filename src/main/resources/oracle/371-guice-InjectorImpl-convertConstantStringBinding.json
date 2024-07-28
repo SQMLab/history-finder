@@ -1,12 +1,84 @@
 {
-  "repositoryName": "guice",
-  "repositoryUrl": "https://github.com/google/guice.git",
-  "startCommitHash": "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
-  "file": "core/src/com/google/inject/internal/InjectorImpl.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "convertConstantStringBinding",
-  "startLine": 451,
-  "endLine": 502,
-  "commits": []
+  "repositoryName" : "guice",
+  "repositoryUrl" : "https://github.com/google/guice.git",
+  "startCommitHash" : "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
+  "file" : "core/src/com/google/inject/internal/InjectorImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "convertConstantStringBinding",
+  "startLine" : 451,
+  "endLine" : 502,
+  "commits" : [ {
+    "commitHash" : "84e0ce89ba6afa8cbe7ded6e7baa49353167a11f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a84ec94fb7d97962cb31cff07cd55b316f0c8bf4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "65b8d8ad56fdc66bf710e2fe40bd2c9b429d6785",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "cdd0bd1edc712cbc228dd7fbd3d12244cd2f3caf",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "478760ff518ed16dbde89581cf69751f4f774115",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b2f1760648f0231cec447d837ba4651d75bbf315",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "74d714c1e72bb60706ed9df4d1982971c88c10aa",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "3ea8095def50d99f8f8a49c0fa6cc25e82217109",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5ae41eb77073b47e75c2dcf3766137f2352fbaf9",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "516e2ab11feba3634edf380c65df98fadc56a231",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5fb9d927f35fb7a3eaba259c985710143231d4be",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "76f1457621aa397c424eaa095744974e1ac85c11",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "163c48aafee02f9e918a6e7385f5b3312e8edfb6",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "c5c488efea1d9c7b51b160b3e201c66e0668301f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9dc32d4b6df8725f009a93f51e410564a362ccf0",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "df98fcd16ab0f74e5ba31af67cf98bd319a58e43",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1601ae5cc3d7931d4ce4b78e0b493acdd6132ff1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c0fe03bcd4190d756ade1466f8a8d713a82b7124",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3b1cd580f7d20d7cdcd68185085f9d89c4bacf17",
+    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "916f548e93b4735fcc503e746e52e3ede84b1215",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d273210860bda525fc25f2124e95b24b30d738ab",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "18f06bc95fed6ac1aed61e6d730ea661bea50c32",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "7c9d7792d4864733a4c61776ed31a176e77abf4d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "712705c67a467158c15930fe5b74021f0fb302a2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

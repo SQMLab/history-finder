@@ -1,12 +1,36 @@
 {
-  "repositoryName": "RxJava",
-  "repositoryUrl": "https://github.com/ReactiveX/RxJava.git",
-  "startCommitHash": "6300b1558c265cf80571acd882edace6a0be361f",
-  "file": "src/main/java/io/reactivex/rxjava3/core/Flowable.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "concatArray",
-  "startLine": 1397,
-  "endLine": 1406,
-  "commits": []
+  "repositoryName" : "RxJava",
+  "repositoryUrl" : "https://github.com/ReactiveX/RxJava.git",
+  "startCommitHash" : "6300b1558c265cf80571acd882edace6a0be361f",
+  "file" : "src/main/java/io/reactivex/rxjava3/core/Flowable.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "concatArray",
+  "startLine" : 1397,
+  "endLine" : 1406,
+  "commits" : [ {
+    "commitHash" : "1e4dbcf78a814993e80fa489a50d3369d7c4ecbd",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b57169babb184d0adc2fa28cf0425c4f0c1f8555",
+    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
+  }, {
+    "commitHash" : "a1693ecc9215027a7a3eae75272979ebb4d79a27",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "35c8da6ca2f0c446d9e50d1c5507cc80e5ccb996",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3f324c6889b5369b79bdd3dfb8b4854b650a90be",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "835e4f2a007ae11f9fbb4b04342d6a56df9c2709",
+    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "BODY", "PARAMETER" ]
+  }, {
+    "commitHash" : "000a174d87a901135f9665d3b11f3627fd2dc4ed",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "216082ce21b67516bc3bef015e3acaba7d28fc06",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

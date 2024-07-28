@@ -1,12 +1,33 @@
 {
-  "repositoryName": "guice",
-  "repositoryUrl": "https://github.com/google/guice.git",
-  "startCommitHash": "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
-  "file": "core/src/com/google/inject/internal/InjectorImpl.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "cleanup",
-  "startLine": 627,
-  "endLine": 656,
-  "commits": []
+  "repositoryName" : "guice",
+  "repositoryUrl" : "https://github.com/google/guice.git",
+  "startCommitHash" : "49b1a33c594fd92ad0d1d013fa91d689e8814a6c",
+  "file" : "core/src/com/google/inject/internal/InjectorImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "cleanup",
+  "startLine" : 627,
+  "endLine" : 656,
+  "commits" : [ {
+    "commitHash" : "84e0ce89ba6afa8cbe7ded6e7baa49353167a11f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "c2e24e2af07f40dfb551df1e1b1a57dfe54a17c5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a84ec94fb7d97962cb31cff07cd55b316f0c8bf4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3d98f869fc47a9e5275a053683742dfb5b3b2ada",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d51292d5a4a788b1275eb9ad55cf612e68640bbf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "74d714c1e72bb60706ed9df4d1982971c88c10aa",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "7df9cf3fc0067d9d44980ccbf246e44577ef03ef",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

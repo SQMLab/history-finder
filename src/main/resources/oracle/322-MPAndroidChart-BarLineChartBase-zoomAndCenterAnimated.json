@@ -1,12 +1,39 @@
 {
-  "repositoryName": "MPAndroidChart",
-  "repositoryUrl": "https://github.com/PhilJay/MPAndroidChart.git",
-  "startCommitHash": "58545bbbfa04b053d10784df9e041c4fc3d08b9d",
-  "file": "MPChartLib/src/main/java/com/github/mikephil/charting/charts/BarLineChartBase.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "zoomAndCenterAnimated",
-  "startLine": 717,
-  "endLine": 728,
-  "commits": []
+  "repositoryName" : "MPAndroidChart",
+  "repositoryUrl" : "https://github.com/PhilJay/MPAndroidChart.git",
+  "startCommitHash" : "58545bbbfa04b053d10784df9e041c4fc3d08b9d",
+  "file" : "MPChartLib/src/main/java/com/github/mikephil/charting/charts/BarLineChartBase.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "zoomAndCenterAnimated",
+  "startLine" : 717,
+  "endLine" : 728,
+  "commits" : [ {
+    "commitHash" : "29f4cc5c2c5c7e5468759bb5ad414e9855cd09c6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6d21817c8aed43dae6deb1bf7bb835518ecbe2f6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "38fbefe66b5f91f6723818073d0acfc8b461aa2f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "fcf26aa6adc44fff8d1700835690d400469ee84c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "8e2355c78f315679395d38283497e07109fe4839",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc81a21c6415ef931a6ded7d0a76626d7c2f6b18",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "42de21f3ca3a8d240bb8acc1362fca015d6b9a99",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "81eb08ffa9e62ed39bcb5971ee43097b053809c4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2dd9d5aa34899207fb5fdfffc33bd1ccea28dfb5",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "BODY" ]
+  } ]
 }

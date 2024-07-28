@@ -1,12 +1,42 @@
 {
-  "repositoryName": "glide",
-  "repositoryUrl": "https://github.com/bumptech/glide.git",
-  "startCommitHash": "526a0ab295078f92436b781af3b5837567adeefb",
-  "file": "library/src/main/java/com/bumptech/glide/load/resource/bitmap/Downsampler.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "decodeStream",
-  "startLine": 759,
-  "endLine": 808,
-  "commits": []
+  "repositoryName" : "glide",
+  "repositoryUrl" : "https://github.com/bumptech/glide.git",
+  "startCommitHash" : "526a0ab295078f92436b781af3b5837567adeefb",
+  "file" : "library/src/main/java/com/bumptech/glide/load/resource/bitmap/Downsampler.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "decodeStream",
+  "startLine" : 759,
+  "endLine" : 808,
+  "commits" : [ {
+    "commitHash" : "9281d8ed45591279b5fe646b136c956624a5da24",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "03271581e93fe551f38d713d1c30ef2070a6c035",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "1ed76ee49eae26999e808ce6fc18b2c43a192751",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "b5a0ed648bb39c6c8860c5d9191fe2710e1868d6",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "95fe2eee96bce0432d7c0991fdda9601d2505c61",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "54801bd931cc99ee7ed738bd179cfa2a805a415b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "853c68744fb62d95763c1a10d662643106e5d050",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "32f25e61f2e3deaf82a09ddb5abc0dcebacf4ff8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2ab0e01abe1fd7b31863b8dcbb753677d5c08cbf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "59f3d9cbbd73675f155e5cf9e7ccf99a3dce450f",
+    "changeTags" : [ "BODY" ]
+  } ]
 }

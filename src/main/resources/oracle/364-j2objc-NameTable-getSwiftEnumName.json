@@ -1,12 +1,15 @@
 {
-  "repositoryName": "j2objc",
-  "repositoryUrl": "https://github.com/google/j2objc.git",
-  "startCommitHash": "d3ff92fb4d154f63a3a142aa55cd02ad9b24cfcf",
-  "file": "translator/src/main/java/com/google/devtools/j2objc/util/NameTable.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getSwiftEnumName",
-  "startLine": 323,
-  "endLine": 337,
-  "commits": []
+  "repositoryName" : "j2objc",
+  "repositoryUrl" : "https://github.com/google/j2objc.git",
+  "startCommitHash" : "d3ff92fb4d154f63a3a142aa55cd02ad9b24cfcf",
+  "file" : "translator/src/main/java/com/google/devtools/j2objc/util/NameTable.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getSwiftEnumName",
+  "startLine" : 323,
+  "endLine" : 337,
+  "commits" : [ {
+    "commitHash" : "25f076a9b6513ee2b8d53ab6eb6789a9eacb60c2",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

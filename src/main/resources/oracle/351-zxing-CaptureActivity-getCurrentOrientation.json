@@ -1,12 +1,18 @@
 {
-  "repositoryName": "zxing",
-  "repositoryUrl": "https://github.com/zxing/zxing.git",
-  "startCommitHash": "04595508b63c3bde614b59dac361b50bfadb8757",
-  "file": "android/src/com/google/zxing/client/android/CaptureActivity.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getCurrentOrientation",
-  "startLine": 267,
-  "endLine": 286,
-  "commits": []
+  "repositoryName" : "zxing",
+  "repositoryUrl" : "https://github.com/zxing/zxing.git",
+  "startCommitHash" : "04595508b63c3bde614b59dac361b50bfadb8757",
+  "file" : "android/src/com/google/zxing/client/android/CaptureActivity.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getCurrentOrientation",
+  "startLine" : 267,
+  "endLine" : 286,
+  "commits" : [ {
+    "commitHash" : "f58271e14651c42a6ea2cf1d17dd1281206bf898",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b27b6c3d551d50510612ef32b518794aee7b612b",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

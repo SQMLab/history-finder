@@ -1,12 +1,27 @@
 {
-  "repositoryName": "dubbo",
-  "repositoryUrl": "https://github.com/apache/dubbo.git",
-  "startCommitHash": "9df0d154a5ff77de6572dce30cf8fb0f6d08963a",
-  "file": "dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/integration/RegistryProtocol.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "getRegistry",
-  "startLine": 455,
-  "endLine": 460,
-  "commits": []
+  "repositoryName" : "dubbo",
+  "repositoryUrl" : "https://github.com/apache/dubbo.git",
+  "startCommitHash" : "9df0d154a5ff77de6572dce30cf8fb0f6d08963a",
+  "file" : "dubbo-registry/dubbo-registry-api/src/main/java/org/apache/dubbo/registry/integration/RegistryProtocol.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "getRegistry",
+  "startLine" : 455,
+  "endLine" : 460,
+  "commits" : [ {
+    "commitHash" : "ff39bf36c35316061e7e028abd28dd392405e7f0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d8fc808425c4f1db028c4fdab45d7082a957d760",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "346166e674fea88d10dc43be82e387f547156709",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "5db015ccde960708decf19e07f40a1a6b4d95454",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "fd89c839447fdea828b7d0d248674281c45d019c",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  } ]
 }
