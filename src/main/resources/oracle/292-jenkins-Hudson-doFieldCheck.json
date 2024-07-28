@@ -8,5 +8,32 @@
   "element" : "doFieldCheck",
   "startLine" : 219,
   "endLine" : 248,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "e27b310065b3c036b5fc9d123f1d1d99d3058c00",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "1709ed3a2e08081869e79774eee2a6e88914ed54",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
+    "commitHash" : "b0c8e2bea2ff018f62bb91ce4a21238eb79ef447",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "70c10658148c3eab3b4c4122705e1ed3a12e193d",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "f7e9b4fbd1f43435b867a3763511c45a01098710",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "f27e2b5c8a5182b9bf03680d473d109bcf268bda",
+    "changeTags" : [ "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "26603ed4ba62af7462fd8c9e9ab528d21dbf4992",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ab5d148dae02f98e41573317e6b9b335ac904fb6",
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "6317d1e158443639c3d57ea998b3307ad6e8d977",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
