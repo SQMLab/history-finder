@@ -12,20 +12,20 @@
     "commitHash" : "9df0d154a5ff77de6572dce30cf8fb0f6d08963a",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "730695a7a26967889405b12fc54099bb006c8231",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "ba308219c60e9faa943d85b1bbbbe0b7d1be30df",
     "changeTags" : [ "BODY" ]
   }, {
-    "commitHash" : "346166e674fea88d10dc43be82e387f547156709",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "5db015ccde960708decf19e07f40a1a6b4d95454",
-    "changeTags" : [ "FILE_RENAME" ]
+    "commitHash" : "1abc66a46540d347f988a5bf258e3e8aa41599a1",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "c28171be8f162d486b7b1f8a62134b6f0be0be8d",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ce8b6e8972ddf8a78652d49f3ecde546420f46fa",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "ANNOTATION", "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "97e20f50c3d4cf537d28d6a711c4d006a8f2eda5",
     "changeTags" : [ "BODY" ]
@@ -34,6 +34,24 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1be3c999d112215a1354ab396cb2fbb94f3d2a0e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "62e204e424a723952439d0eb65cc8df4957bde34",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "470cc55ad1de72eb8a4a4e1c21d9a4af3c97f8e9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "550b40461197fbd9d1e6dc7ba5cb6ade8d7be77f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f65816db6f32c6f7e466de8906c4ab49b9ff74d1",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c5dd1ea581622f03038255a43a4f808707afe5f2",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c4e94958fd886994d2dfb78f28f0a77c52a5e7e7",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5008e0f2acd90a70590b0b9d8c40e5904d5dfcf8",
@@ -50,5 +68,8 @@
   }, {
     "commitHash" : "ecc34c247cfea3724cea64fde9433b25ebcf0fe9",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "42fac3eae1cff284d873423f2fe3a0b8bdf582bb",
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
