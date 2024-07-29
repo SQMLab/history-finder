@@ -21,6 +21,9 @@
     "commitHash" : "cdd0bd1edc712cbc228dd7fbd3d12244cd2f3caf",
     "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
   }, {
+    "commitHash" : "55bb902701f6e0277fbfaedd735f4315213957bf",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "478760ff518ed16dbde89581cf69751f4f774115",
     "changeTags" : [ "BODY" ]
   }, {
@@ -38,6 +41,9 @@
   }, {
     "commitHash" : "516e2ab11feba3634edf380c65df98fadc56a231",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "06898069ffc810f4dd71ef9aa8b63e2b67cacb8f",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "5fb9d927f35fb7a3eaba259c985710143231d4be",
     "changeTags" : [ "BODY" ]
