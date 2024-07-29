@@ -8,5 +8,26 @@
   "element" : "checkListResolve",
   "startLine" : 1118,
   "endLine" : 1134,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "cd000468bd744cada667ad80a7af3a7317ffc69b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f74708ac925a15788b62a9ce46d6e3a461706f4f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f458bd36a47890989f7e087ca32315fd500db755",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f9161b53b8ef3b42d26ffa4f232a70f4545b526c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "13b5c6bac4906f505b7aaa56d5b5d888139f2c2b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "89e40a313ac867051514de36ef94fbc9874def7f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6d6aae004c442026070d1fda2cff0a1bd4c8f53c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

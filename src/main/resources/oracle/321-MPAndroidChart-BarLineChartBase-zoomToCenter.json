@@ -13,21 +13,6 @@
     "changeTags" : [ "SIGNATURE", "RENAME" ]
   }, {
     "commitHash" : "e2cbafa049fd160267b277bce71a9e5e7b424273",
-    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
-  }, {
-    "commitHash" : "38fbefe66b5f91f6723818073d0acfc8b461aa2f",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "01f8a57550ce7e57f019fc8e4ad6a011fd97ebd9",
-    "changeTags" : [ "SIGNATURE", "RENAME" ]
-  }, {
-    "commitHash" : "cc81a21c6415ef931a6ded7d0a76626d7c2f6b18",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "42de21f3ca3a8d240bb8acc1362fca015d6b9a99",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "2dd9d5aa34899207fb5fdfffc33bd1ccea28dfb5",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
