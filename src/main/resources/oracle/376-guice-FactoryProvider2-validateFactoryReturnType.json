@@ -9,6 +9,9 @@
   "startLine" : 538,
   "endLine" : 547,
   "commits" : [ {
+    "commitHash" : "c11a251dbfb752ac1ff48ac6b777a4aa57bb533c",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "2ef22666df8b6f32425edb45e56ec60c9ab5b7ba",
     "changeTags" : [ "INTRODUCTION" ]
   } ]

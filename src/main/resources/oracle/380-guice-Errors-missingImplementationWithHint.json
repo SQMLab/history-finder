@@ -30,6 +30,9 @@
     "commitHash" : "dcf7bdacc232880b425c07171c49a75be5ddce93",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "55bb902701f6e0277fbfaedd735f4315213957bf",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "036e9a8276198faa34a884c0ac3c58491c1c210c",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
