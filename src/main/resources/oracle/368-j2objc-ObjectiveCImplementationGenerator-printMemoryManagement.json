@@ -12,7 +12,13 @@
     "commitHash" : "da2f6cdfda52c33097b2eb2c266e6c02bb717837",
     "changeTags" : [ "BODY" ]
   }, {
+    "commitHash" : "94c5f1446874fa5ade19016f461092d21c1a51d0",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "44d0b60bdbb9c5947d00afd1c46dac4c1517ff02",
+    "changeTags" : ["MOVE", "SIGNATURE", "BODY"]
+  }, {
+    "commitHash" : "55f30fac29768510f2b3bdb84d362ad0ee100836",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
