@@ -8,5 +8,71 @@
   "element" : "getPhotoCacheDir",
   "startLine" : 105,
   "endLine" : 119,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "5acc99f8fc7e772aeef8aa959ff2a9c203ab1aa6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0dcc33fe6957657b910484599c499430cdf3461c",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "8f8a1600826fd042abae9251cbad063dee5144b2",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "c375a2fbf594bdf422c45a1395a65823141a8bd5",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "0cffd1da977e9ca334032ebc1d798213a177aab7",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "86a3afa40b56bad2f0d1d51a2a148d897a912b89",
+    "changeTags" : [ "ANNOTATION" ]
+  }, {
+    "commitHash" : "f389e91ccecac6ddf736bbf1a4346782609eb034",
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "6840e4c22494617e679efb20896a6279dd08a9cf",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9e52382fa7e377bc336499d9f5000662445dba0f",
+    "changeTags" : [ "ANNOTATION", "BODY" ]
+  }, {
+    "commitHash" : "5f4610b54d517be58105bcf73ce3291ba79f9f40",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "ac28599e2b40e0dd6b97f6a91849585531264622",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "0e2e2b1b8df449b6e3223b090f5a55f1993e6c1f",
+    "changeTags" : [ "FILE_COPY" ]
+  }, {
+    "commitHash" : "0c67e6f7594012c85888df85e447aee15fb3797c",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "e81c2c3c8fe1533de8ba8137ea831a42378b35a9",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "0d133b4ecd1827f539e7a35b1cc8b2ea065c7b17",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "d66ef49022858664841d3d60d0d531bdd13bd882",
+    "changeTags" : [ "ANNOTATION", "BODY" ]
+  }, {
+    "commitHash" : "a4c32099c4041260ce386e9ec8d6f454387d2ee4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "b71bf819c59c4b8ea5e6a8b0929f5057ba6a01e1",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "75a875cec2a817841ea688a46ec4f1414d0c0202",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "81d2ccfbb0bf21224db07b2f85942d034e72e163",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "25df36450c0cb82c37aafb2f4df527d0e1e1fdea",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "9da7a0a7c35af75a6c477f1fc4a6ede27aa41e2b",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
