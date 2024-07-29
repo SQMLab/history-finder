@@ -9,11 +9,17 @@
   "startLine" : 437,
   "endLine" : 447,
   "commits" : [ {
+    "commitHash" : "730695a7a26967889405b12fc54099bb006c8231",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "0a9276d7bff60b7baddb9416eee2090a9711936f",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ff39bf36c35316061e7e028abd28dd392405e7f0",
     "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "1abc66a46540d347f988a5bf258e3e8aa41599a1",
+    "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "346166e674fea88d10dc43be82e387f547156709",
     "changeTags" : [ "FILE_RENAME" ]
