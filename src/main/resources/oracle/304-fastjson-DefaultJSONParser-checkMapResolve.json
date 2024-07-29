@@ -8,5 +8,17 @@
   "element" : "checkMapResolve",
   "startLine" : 1137,
   "endLine" : 1145,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "8253ae57ee2b93696840007c2d9a95d809a5c1af",
+    "changeTags" : [ "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "cd000468bd744cada667ad80a7af3a7317ffc69b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f74708ac925a15788b62a9ce46d6e3a461706f4f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a1bdbd674c0568d63d2c0b0235ff9914cb9f189a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
