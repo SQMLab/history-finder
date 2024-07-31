@@ -15,6 +15,9 @@
     "commitHash" : "4f53e8eedc8aca406f60ab4c1f7bc11577a6bf20",
     "changeTags" : [ "SIGNATURE", "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
+    "commitHash" : "0e89f967dda9718b5d00d0daa982b14d1d55bffd",
+    "changeTags" : [ "FORMAT" ]
+  }, {
     "commitHash" : "e0ea6b53a2f6f655563df87afad4540c53e6bb0c",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
