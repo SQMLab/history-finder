@@ -2,7 +2,7 @@
   "repositoryName" : "jmeter",
   "repositoryUrl" : "https://github.com/apache/jmeter.git",
   "startCommitHash" : "f55fd3a61398ee12ca5fd63aed2e5bab84321945",
-  "file" : "src/core/src/main/java/org/apache/jmeter/util/JMeterUtils.java",
+  "file" : "src/protocol/http/src/main/java/org/apache/jmeter/protocol/http/proxy/ProxyControl.java",
   "language" : "Java",
   "elementType" : "method",
   "element" : "deliverSampler",
