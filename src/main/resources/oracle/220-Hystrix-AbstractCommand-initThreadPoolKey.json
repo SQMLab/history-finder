@@ -8,5 +8,8 @@
   "element" : "initThreadPoolKey",
   "startLine" : 221,
   "endLine" : 234,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "d3d5b6e41a5505b64d56f874bde35b28915e46ae",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

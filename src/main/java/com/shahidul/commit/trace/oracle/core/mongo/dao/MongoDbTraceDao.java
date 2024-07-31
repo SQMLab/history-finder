@@ -108,9 +108,11 @@ public class MongoDbTraceDao implements TraceDao {
     }
 
     private void truncateDiff(List<CommitUdt> commitUdtList){
-        commitUdtList.forEach(commitUdt -> {
-            truncateDiff(commitUdt);
-        });
+        if (commitUdtList != null) {
+            commitUdtList.forEach(commitUdt -> {
+                truncateDiff(commitUdt);
+            });
+        }
     }
     private void truncateDiff(CommitUdt commitUdt){
         commitUdt.setDiff(Util.truncate(commitUdt.getDiff(), 5000));
