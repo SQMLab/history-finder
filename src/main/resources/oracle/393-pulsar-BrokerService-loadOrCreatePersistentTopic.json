@@ -1,12 +1,84 @@
 {
-  "repositoryName": "pulsar",
-  "repositoryUrl": "https://github.com/apache/pulsar.git",
-  "startCommitHash": "400a286ca09d4f45f388616fd996f0605f19e5a4",
-  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/BrokerService.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "loadOrCreatePersistentTopic",
-  "startLine": 1532,
-  "endLine": 1578,
-  "commits": []
+  "repositoryName" : "pulsar",
+  "repositoryUrl" : "https://github.com/apache/pulsar.git",
+  "startCommitHash" : "400a286ca09d4f45f388616fd996f0605f19e5a4",
+  "file" : "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/BrokerService.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "loadOrCreatePersistentTopic",
+  "startLine" : 1532,
+  "endLine" : 1578,
+  "commits" : [ {
+    "commitHash" : "428c18c8d0c3d135189920740192982e11ffb2bf",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "e08841114cece7e4dc64677505ab66271a2bace5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "45d882a2d864398f55fb786c1ef20cd42b9e99b4",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3e44d1e6e2ba4599d547c83cf7cb25350f0cc560",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "893fef982090b24b97ed8bab2581da7ed24d3513",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "10036d562d1a6440e2bf5f2d81e352e66a69642f",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "4ddbf6f909634751cc2cf1155daa462922416536",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "794aa20d9f2a4e668cc36465362d22e042e6e536",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5fcd0d18f8b33474fd8fb5faa3e2330fd88c554a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cc64889abe94d47f048e2f8e8fb10d6c37e695ec",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2ebf92178f63bac6b72a34569d28366a1345c982",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "6854b007aaba90128530808035d0402b27e93846",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4a4cce9c2047e1ae1102756d1f53532fcf2dced5",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "01422476248d23741ff74f68e9cbd48ddf097108",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "77d4c28d59604cb6ec589d3620ab1770e0523c87",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ff6de4a4f754ed7d14d64903f3baf05bdd90d23c",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "2ad89f475a0feced7242ce9de2ec2234dc24d1c7",
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "eaae9eafd059fba76200593f9a021312c2aa3d44",
+    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "fb3511dc561d65269429de1776ecc3906600aeeb",
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "BODY" ]
+  }, {
+    "commitHash" : "380e47e694fa28dc67947a81beb1d72e5039a84b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "70da31b082ea0ff7466cdf740fc0d6b443d21861",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "df34ae7c51881083f70935e3882ffb2ac5109dd8",
+    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+  }, {
+    "commitHash" : "28862505dc2705d6c753601576b608d63fb7fc23",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9f849c324969e160f9891203b2a2e4805fae5a1c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,21 @@
 {
-  "repositoryName": "pulsar",
-  "repositoryUrl": "https://github.com/apache/pulsar.git",
-  "startCommitHash": "20e83b96c3fcf10010977ab785093e105e4e40d8",
-  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/admin/impl/PersistentTopicsBase.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "validateNonPartitionTopicNameAsync",
-  "startLine": 4467,
-  "endLine": 4507,
-  "commits": []
+  "repositoryName" : "pulsar",
+  "repositoryUrl" : "https://github.com/apache/pulsar.git",
+  "startCommitHash" : "20e83b96c3fcf10010977ab785093e105e4e40d8",
+  "file" : "pulsar-broker/src/main/java/org/apache/pulsar/broker/admin/impl/PersistentTopicsBase.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "validateNonPartitionTopicNameAsync",
+  "startLine" : 4467,
+  "endLine" : 4507,
+  "commits" : [ {
+    "commitHash" : "0c50866fbc18525f82a04c3a918628b8b50a4de8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "4f53e8eedc8aca406f60ab4c1f7bc11577a6bf20",
+    "changeTags" : [ "SIGNATURE", "RENAME", "RETURN_TYPE", "BODY" ]
+  }, {
+    "commitHash" : "e0ea6b53a2f6f655563df87afad4540c53e6bb0c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }

@@ -1,12 +1,33 @@
 {
-  "repositoryName": "pulsar",
-  "repositoryUrl": "https://github.com/apache/pulsar.git",
-  "startCommitHash": "ae9616b7ee41e77dde590045b8e1d5bd04192ffc",
-  "file": "managed-ledger/src/main/java/org/apache/bookkeeper/mledger/impl/ManagedLedgerImpl.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "advanceCursorsIfNecessary",
-  "startLine": 2871,
-  "endLine": 2905,
-  "commits": []
+  "repositoryName" : "pulsar",
+  "repositoryUrl" : "https://github.com/apache/pulsar.git",
+  "startCommitHash" : "ae9616b7ee41e77dde590045b8e1d5bd04192ffc",
+  "file" : "managed-ledger/src/main/java/org/apache/bookkeeper/mledger/impl/ManagedLedgerImpl.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "advanceCursorsIfNecessary",
+  "startLine" : 2871,
+  "endLine" : 2905,
+  "commits" : [ {
+    "commitHash" : "ca77982758170993aa52c0f7f45bbf9ad72e368a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c9651ecb23b07ec8a9a00a001da222b479fb78c3",
+    "changeTags" : [ "SIGNATURE", "MODIFIER", "EXCEPTION", "BODY" ]
+  }, {
+    "commitHash" : "9032a9afc15e029d8f205761b5e104f44f9c4be0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "98e2c66a7b2d5fd42641527cd9ad6c3b497d65c7",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a6b1b34a5c028b74bd44c5b8f32b42752b6cec14",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a244ed3b5975055deb3bdfeb5d7b8fd6549b578a",
+    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+  }, {
+    "commitHash" : "6b9c90ff89f541e84662292d450f628597c4b95a",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
