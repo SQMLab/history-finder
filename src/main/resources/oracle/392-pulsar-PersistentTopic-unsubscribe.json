@@ -1,12 +1,39 @@
 {
-  "repositoryName": "pulsar",
-  "repositoryUrl": "https://github.com/apache/pulsar.git",
-  "startCommitHash": "9fd1b61fc45d06348af0241f002966087f1822a0",
-  "file": "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/persistent/PersistentTopic.java",
-  "language": "Java",
-  "elementType": "method",
-  "element": "unsubscribe",
-  "startLine": 1259,
-  "endLine": 1291,
-  "commits": []
+  "repositoryName" : "pulsar",
+  "repositoryUrl" : "https://github.com/apache/pulsar.git",
+  "startCommitHash" : "9fd1b61fc45d06348af0241f002966087f1822a0",
+  "file" : "pulsar-broker/src/main/java/org/apache/pulsar/broker/service/persistent/PersistentTopic.java",
+  "language" : "Java",
+  "elementType" : "method",
+  "element" : "unsubscribe",
+  "startLine" : 1259,
+  "endLine" : 1291,
+  "commits" : [ {
+    "commitHash" : "329e80b847bd6584cbb031a96d5416d4df488432",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "08540329c2c1eec262cb0bf728207025fd59f82b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f0b6348c3ccdf84c10f4c51e68d581034830833d",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "9026d1954d180cfb4b3a38f52217b14a3b5e3dc0",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "46720247d9a06daae9f8eae7740887c92406b2c3",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "a50fe878773a76ca974d1af6ea8b994a5df7f81a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "bad185a84b66cfd3b68e088b927baa2ad525dd01",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "70da31b082ea0ff7466cdf740fc0d6b443d21861",
+    "changeTags" : [ "MOVE" ]
+  }, {
+    "commitHash" : "9f849c324969e160f9891203b2a2e4805fae5a1c",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
