@@ -15,6 +15,9 @@
     "commitHash" : "c9651ecb23b07ec8a9a00a001da222b479fb78c3",
     "changeTags" : [ "SIGNATURE", "MODIFIER", "EXCEPTION", "BODY" ]
   }, {
+    "commitHash" : "421c2f861c80dab218b2d17247fe02de7fa4552c",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "9032a9afc15e029d8f205761b5e104f44f9c4be0",
     "changeTags" : [ "BODY" ]
   }, {
