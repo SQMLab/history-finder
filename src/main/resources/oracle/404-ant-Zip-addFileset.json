@@ -18,9 +18,6 @@
     "commitHash" : "cd67785ad9d2bcba5d774dab09c845e198b94746",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
-    "commitHash" : "9434671efa81b38a4ebc571a5ea531375b541758",
-    "changeTags" : [ "DOCUMENTATION" ]
-  }, {
     "commitHash" : "6ff47bd2ae578f044c720c1b2394c5045dc3cf2f",
     "changeTags" : [ "SIGNATURE", "PARAMETER" ]
   }, {

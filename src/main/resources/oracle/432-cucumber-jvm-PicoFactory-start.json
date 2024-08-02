@@ -52,39 +52,6 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "7209422e7115d17d9095df65fb8d3b727a03c27f",
-    "changeTags" : [ "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "fed864db00dac4a678d8c432c3da65475f3ed19e",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "d84d72b3648c77974e13a3dff8c29b54da3793e2",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "8c6c8cccd7176374052323e1894ede4723fba2ff",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "f723b7f551ebb8d2fda85e1a1e10302d439394ec",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "c135651cc2b3a032c1345207447a8289449a61ad",
-    "changeTags" : [ "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "d6a872ac4bc3f6559092d89135443ed3c7711ec0",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "f06c83ceb3a584e49591290ede2989126ea71c49",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "5f8f31b3d2b34050a93e27990ed25ce9274f49ac",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "25f313ac89d164bc977e27e8e72830097b54a40c",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "6d59b9f1691444c1cbf2623adbb9927f36d10a30",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "a9ca30aa8265d61aa8feda90def9093d39374c67",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
