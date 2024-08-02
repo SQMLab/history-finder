@@ -16,21 +16,6 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "5d0186f065b9ed4ff185234c860c7455343f1f39",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "1eb28b95d925c4bddadec9f10a4060544a00a3c6",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "028d430a3b48d05d0da133f44a0f07b9d72e6789",
-    "changeTags" : [ "FILE_RENAME" ]
-  }, {
-    "commitHash" : "752ea7b77a1779ed8b784dbd55a886cc00aeb8a6",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
-  }, {
-    "commitHash" : "845ba874cc5552f4deccf7d6262d351e4bbd72e4",
-    "changeTags" : [ "MOVE" ]
-  }, {
-    "commitHash" : "324eeb95ac860faf22595c41c058bf9aebbacd79",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
