@@ -19,7 +19,7 @@
     "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
   }, {
     "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "RENAME" ]
   }, {
     "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
     "changeTags" : [ "INTRODUCTION" ]
