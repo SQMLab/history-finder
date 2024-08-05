@@ -76,7 +76,7 @@
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
   }, {
     "commitHash" : "568621b465eae391185608c7f9d316491da356b7",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "SIGNATURE", "PARAMETER", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "7f6229863112bcc423075d2783341ac5cd4d2956",
     "changeTags" : [ "BODY" ]

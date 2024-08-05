@@ -25,13 +25,13 @@
     "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
   }, {
     "commitHash" : "8fac5717de1afef273a5a3bcdcff82e35b275d02",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "SIGNATURE", "RENAME", "PARAMETER", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "3706e0dea9e92dfed7e4e6fb9b8d02caea153d87",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "BODY", "SIGNATURE", "PARAMETER" ]
   }, {
     "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
     "changeTags" : [ "INTRODUCTION" ]

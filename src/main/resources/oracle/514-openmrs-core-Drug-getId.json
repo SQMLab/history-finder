@@ -13,10 +13,10 @@
     "changeTags" : [ "FILE_RENAME" ]
   }, {
     "commitHash" : "26e6f431f45373ad7fa52d01dfc544d1da516824",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "BODY", "RENAME" ]
   }, {
     "commitHash" : "8fac5717de1afef273a5a3bcdcff82e35b275d02",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "SIGNATURE", "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
     "changeTags" : [ "MOVE" ]
