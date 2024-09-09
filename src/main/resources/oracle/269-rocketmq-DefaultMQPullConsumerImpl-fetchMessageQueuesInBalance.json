@@ -8,5 +8,29 @@
   "element" : "fetchMessageQueuesInBalance",
   "startLine" : 739,
   "endLine" : 775,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "9edeb4ecd8ec22920f751b480a7a24ab40dde361",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "2126929a12840420270bb771b2ac8160d65e722b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "713bb9883b687cc18de388d92fe0c9cfd830cc04",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "f3d8d38f9ac6f32229cc9d0b32e0b763928981af",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "96cd2e4ed03e2c47a7d79d7e10980d154d2acb93",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "de6f9416aad7fad1c04966888239225bb7394a54",
+    "changeTags" : [ "FILE_COPY" ]
+  }, {
+    "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
+    "changeTags" : [ "FILE_RENAME" ]
+  }, {
+    "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
