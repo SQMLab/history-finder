@@ -18,6 +18,12 @@
     "commitHash" : "125e49d45e40ff80d75138e03d4dc6a2d99a8812",
     "changeTags" : [ "FORMAT", "ANNOTATION" ]
   }, {
+    "commitHash" : "c2cb5c315f8b4c8a9555ed3fa18ab3e863b1ed77",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "33db54459a80adb8fe435a96956d3f22dd033414",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "c04e63d9f0c0b1a3b0683e64838c685cdddcd265",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
