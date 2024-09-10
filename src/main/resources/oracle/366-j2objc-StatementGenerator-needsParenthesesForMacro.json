@@ -8,5 +8,11 @@
   "element" : "needsParenthesesForMacro",
   "startLine" : 944,
   "endLine" : 952,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "b97e9216a96f11c85343f0c5aeddc38237a9d19c",
+    "changeTags" : [ "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "ded2122e29b26a319b0832076a6ef5e29674916d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
