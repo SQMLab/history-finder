@@ -61,6 +61,12 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9cbeb0863f696a2df0535bfdf0d549a12bd5b796",
+    "changeTags" : [ "BODY", "SIGNATURE" ]
+  }, {
+    "commitHash" : "a24fd49d6a50888c76ebe9af1ff6d154547172a8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "05fccc801e667a016fbd5df908032606bb764ba4",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

@@ -106,6 +106,9 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "de68fa256887d9d5bdf2604f1d2defa31bce00cc",
+    "changeTags" : ["SIGNATURE", "RENAME", "MODIFIER"]
+  }, {
+    "commitHash" : "f2cb5d7360390503996c7a64e68da215a5e0f2fa",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
