@@ -34,7 +34,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
 
     @Override
     public void export(CommandLineInput commandLineInput) {
-        String cacheDirectory = commandLineInput.getCacheDirectory();
+        String cloneDirectory = commandLineInput.getCloneDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
         TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId());
         TraceService targetTraceService = traceServiceList.stream()

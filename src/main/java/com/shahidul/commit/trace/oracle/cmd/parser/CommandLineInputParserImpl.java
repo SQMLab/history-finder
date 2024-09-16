@@ -21,7 +21,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String repositoryCacheDirectory = commandLine.getOptionValue("clone-directory");
+        String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory");
         String repositoryUrl = commandLine.getOptionValue("repository-url");
         String[] urlParts = repositoryUrl.split("/");
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
@@ -31,7 +31,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .command(commandLine.getOptionValue("command"))
                 .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
                 .oracleFileId(oracleFileIdText != null ? Integer.parseInt(oracleFileIdText.trim()) : null)
-                .cacheDirectory(repositoryCacheDirectory)
+                .cloneDirectory(repositoryCloneDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
                 .startCommitHash(commandLine.getOptionValue("start-commit", "HEAD"))

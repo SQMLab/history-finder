@@ -13,7 +13,7 @@ import rnd.git.history.finder.enums.LanguageType;
 @Getter
 public class CommandLineInput {
     String command;
-    String cacheDirectory;
+    String cloneDirectory;
     TracerName tracerName;
     Integer oracleFileId;
     String repositoryUrl;
