@@ -11,6 +11,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperServiceImpl;
+import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
@@ -110,7 +111,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             json.get("expectedResult")
                                     .fields()
                                     .forEachRemaining(commit -> {
-                                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(Util.toChangeTags(commit.getValue().asText())).build());
+                                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(ChangeTagUtil.toChangeTagsFromCodeShovel(commit.getValue().asText())).build());
                                     });
                             List<InputCommit> ideaCommits = Arrays.stream(json.get("intelliJ").asText().split(" "))
                                     .sorted(Comparator.reverseOrder())

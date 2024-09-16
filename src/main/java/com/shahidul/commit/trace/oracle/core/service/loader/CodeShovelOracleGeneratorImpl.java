@@ -13,6 +13,7 @@ import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
+import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -132,7 +133,7 @@ public class CodeShovelOracleGeneratorImpl implements CodeShovelOracleGenerator 
             json.get("changeHistoryShort")
                     .fields()
                     .forEachRemaining(commit -> {
-                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(Util.toChangeTags(commit.getValue().asText())).build());
+                        commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(ChangeTagUtil.toChangeTagsFromCodeShovel(commit.getValue().asText())).build());
                     });
 
             return InputOracle.builder()
@@ -161,7 +162,7 @@ public class CodeShovelOracleGeneratorImpl implements CodeShovelOracleGenerator 
         json.get("changeHistoryShort")
                 .fields()
                 .forEachRemaining(commit -> {
-                    commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(Util.toChangeTags(commit.getValue().asText())).build());
+                    commits.add(InputCommit.builder().commitHash(commit.getKey()).changeTags(ChangeTagUtil.toChangeTagsFromCodeShovel(commit.getValue().asText())).build());
                 });
         AtomicInteger difficultChangeTagCount = new AtomicInteger(0);
         commits.forEach(commit -> commit.getChangeTags().forEach(changeTag -> {
