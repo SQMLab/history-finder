@@ -33,7 +33,7 @@ Please review the tags of the used images and set them to the same as you're run
 ### Running from command line prompt
 Commit Trace Detail:
 java -jar commit-trace-oracle-0.0.1-SNAPSHOT.jar -command commit-trace-detail -tracer-name historyFinder -clone-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ./cache/output/trace-detail.json 
-java -jar commit-trace-oracle-0.0.1-SNAPSHOT.jar -command commit-trace-detail tracer-name historyFinder clone-directory ../academic repository-url https://github.com/checkstyle/checkstyle.git start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java element-name fireErrors start-line 384 output-file ./cache/output/trace-detail.json
+java -jar commit-trace-oracle-0.0.1-SNAPSHOT.jar -command commit-trace-detail -tracer-name historyFinder -clone-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../cache/output/trace-detail.json
 
 Commit Trace Shaw:
 * -command commit-trace-shaw -clone-directory ../academic -repository-url https://github.com/checkstyle/checkstyle.git -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java -element-name fireErrors -start-line 384 -output-file ../cache/output/commit-trace-shaw.csv

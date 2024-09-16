@@ -44,6 +44,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
         traceExecutor.execute(traceEntity, targetTraceService);
         metadataResolverService.populateMetaData(traceEntity);
         CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
+        commitTraceOutput.setRepositoryFile(cloneDirectory + "/" + inputOracle.getRepositoryName());
         outputFileWriter.write(commandLineInput.getOutputFile(), commitTraceOutput);
 
     }

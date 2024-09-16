@@ -11,11 +11,15 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
+import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Shahidul Islam
@@ -61,11 +65,18 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
     @Override
     public CommitTraceOutput readOutput(TraceEntity traceEntity, TracerName tracerName) {
         AnalysisUdt analysisUdt = traceEntity.getAnalysis().get(tracerName.getCode());
+        List<InputCommit> commitList = analysisUdt.getCommits().stream().map(commitUdt -> InputCommit.builder()
+                .commitHash(commitUdt.getCommitHash())
+                .changeTags(commitUdt.getChangeTags())
+                .build()).toList();
+        List<OutputCommitDetail> commitDetailList = toCommitDetailList(analysisUdt.getCommits());
         return CommitTraceOutput.builder()
+                .tracerName(tracerName.getCode())
                 .repositoryName(traceEntity.getRepositoryName())
                 .repositoryUrl(traceEntity.getRepositoryUrl())
                 .startCommitHash(traceEntity.getStartCommitHash())
                 .file(traceEntity.getFile())
+                .fileName(Util.extractFileName(traceEntity.getFile()))
                 .language(traceEntity.getLanguageType())
                 .elementType(traceEntity.getElementType())
                 .element(traceEntity.getElementName())
@@ -74,12 +85,16 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .runtime(analysisUdt.getRuntime())
                 .precision(analysisUdt.getPrecision())
                 .recall(analysisUdt.getRecall())
-                .commits(analysisUdt.getCommits().stream().map(commitUdt -> InputCommit.builder()
-                        .commitHash(commitUdt.getCommitHash())
-                        .changeTags(commitUdt.getChangeTags())
-                        .build()).toList())
+                .commits(commitList)
+                .commitMap(commitList.stream().collect(Collectors.toMap(InputCommit::getCommitHash,
+                        commit-> ChangeTagUtil.toCodeShovelChangeText(commit.getChangeTags().stream().toList()),
+                        (x,y)-> x, LinkedHashMap::new)))
                 .commitHashes(analysisUdt.getCommits().stream().map(CommitUdt::getCommitHash).toList())
-                .commitDetails(toCommitDetailList(analysisUdt.getCommits()))
+                .commitDetails(commitDetailList)
+                .commitDetailMap(commitDetailList.stream().collect(Collectors.toMap(OutputCommitDetail::getCommitHash,
+                                commit-> commit,
+                                (x,y)-> x,
+                                LinkedHashMap::new)))
                 .build();
     }
 
@@ -97,6 +112,8 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .endLine(commitUdt.getEndLine())
                 .file(commitUdt.getNewFile())
                 .changeTags(commitUdt.getChangeTags())
+                .changeTagText(ChangeTagUtil.toCodeShovelChangeText(commitUdt.getChangeTags().stream().toList()))
+                .author(commitUdt.getAuthor())
                 .email(commitUdt.getEmail())
                 .shortMessage(commitUdt.getShortMessage())
                 .fullMessage(commitUdt.getFullMessage())
