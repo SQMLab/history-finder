@@ -1,6 +1,11 @@
 package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -8,4 +13,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
  */
 public interface TraceAnalyzer {
     TraceEntity analyze(TraceEntity traceEntity);
+
+    @NotNull
+    Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList);
 }

@@ -8,6 +8,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +27,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
     TraceDao traceDao;
 
     static final List<String> WEAK_RECALL_TRACER_LIST = Arrays.asList(TracerName.CODE_SHOVEL.getCode(),TracerName.CODE_TRACKER.getCode(), TracerName.GIT_LINE_RANGE.getCode(), TracerName.GIT_FUNC_NAME.getCode());
-    static final List<ChangeTag> UNDETECTED_CHANGE_TAGS = Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION);
+    static final List<ChangeTag> WEAKLY_EXPECTED_CHANGE_TAGS = Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION);
 
     @Override
     @Transactional
@@ -34,14 +35,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
         Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                 .collect(Collectors.toUnmodifiableSet());
-        Set<CommitUdt> unexpectedHashSet = traceEntity.getExpectedCommits()
-                .stream()
-                .filter(commitUdt -> !commitUdt.getChangeTags().isEmpty() &&
-                 commitUdt.getChangeTags()
-                        .stream()
-                        .filter(changeTag -> !UNDETECTED_CHANGE_TAGS.contains(changeTag)).count() == 0)
-                //.map(CommitUdt::getCommitHash)
-                .collect(Collectors.toUnmodifiableSet());
+        Set<CommitUdt> weaklyExpectedHashSet = getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits());
 
 
         Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
@@ -84,7 +78,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                     analysisEntity.setPrecision(precision);
                     AtomicInteger preferredExpectedCommitSize = new AtomicInteger(expectedHashSet.size());
                     if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
-                        unexpectedHashSet.forEach(commitUdt -> {
+                        weaklyExpectedHashSet.forEach(commitUdt -> {
                             if (!expectedHashSet.contains(commitUdt.getCommitHash())){
                                 preferredExpectedCommitSize.addAndGet(-1);
                             }
@@ -97,7 +91,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                         recall = 1.0;
                     }
                     analysisEntity.setRecall(recall);
-                    log.info("Tracer {}, expected {}, unexpected {}, preferred expected {}, correct {}, recall {}", entry.getKey(), expectedHashSet.size(), unexpectedHashSet.size(), preferredExpectedCommitSize, correctCommits.size(), recall);
+                    log.info("Tracer {}, expected {}, unexpected {}, preferred expected {}, correct {}, recall {}", entry.getKey(), expectedHashSet.size(), weaklyExpectedHashSet.size(), preferredExpectedCommitSize, correctCommits.size(), recall);
                     return analysisEntity;
                 }).toList();
         traceEntity.setPrecision(analysis.values()
@@ -114,5 +108,17 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
         return traceDao.save(traceEntity);
 
+    }
+
+    @Override
+    public @NotNull Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList) {
+        return expectedCommittList
+                .stream()
+                .filter(commitUdt -> !commitUdt.getChangeTags().isEmpty() &&
+                        commitUdt.getChangeTags()
+                                .stream()
+                                .filter(changeTag -> !WEAKLY_EXPECTED_CHANGE_TAGS.contains(changeTag)).count() == 0)
+                //.map(CommitUdt::getCommitHash)
+                .collect(Collectors.toUnmodifiableSet());
     }
 }
