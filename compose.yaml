@@ -5,13 +5,19 @@ services:
       - 'MONGO_INITDB_DATABASE=cto'
       - 'MONGO_INITDB_ROOT_USERNAME=cto'
       - 'MONGO_INITDB_ROOT_PASSWORD=cto123'
+    volumes:
+      - ~/dev/docker/mongo/data/db:/data/db
     ports:
       - '127.0.0.1:27017:27017'
   influxdb:
     image: 'influxdb:2.7.4'
+    volumes:
+      - ~/dev/docker/influxdb/var/lib/influxdb:/var/lib/influxdb
     ports:
       - '127.0.0.1:8086:8086'
   grafana:
     image: 'grafana/grafana:latest'
+    volumes:
+      - ~/dev/docker/grafana/var/lib/grafana:/var/lib/grafana
     ports:
       - '127.0.0.1:3000:3000'
