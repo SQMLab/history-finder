@@ -12,7 +12,7 @@ services:
   influxdb:
     image: 'influxdb:2.7.4'
     volumes:
-      - ~/dev/docker/influxdb/var/lib/influxdb:/var/lib/influxdb
+      - ~/dev/docker/influxdb/var/lib/influxdb2:/var/lib/influxdb2
     ports:
       - '127.0.0.1:8086:8086'
   grafana:

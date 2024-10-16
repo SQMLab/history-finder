@@ -6,8 +6,8 @@
   "language" : "Java",
   "elementType" : "method",
   "element" : "examineTopicStatsConcurrent",
-  "startLine" : 739,
-  "endLine" : 775,
+  "startLine" : 347,
+  "endLine" : 381,
   "commits" : [ {
     "commitHash" : "ad72dbee54919fc1cb28e98f4b3d284ced0a6b64",
     "changeTags" : [ "BODY" ]
