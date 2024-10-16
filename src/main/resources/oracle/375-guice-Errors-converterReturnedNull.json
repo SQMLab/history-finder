@@ -6,8 +6,8 @@
   "language" : "Java",
   "elementType" : "method",
   "element" : "ambiguousTypeConversion",
-  "startLine" : 193,
-  "endLine" : 205,
+  "startLine" : 241,
+  "endLine" : 258,
   "commits" : [ {
     "commitHash" : "bccee9c2c198d50b944675e85c33e69724ca61e0",
     "changeTags" : [ "BODY" ]
