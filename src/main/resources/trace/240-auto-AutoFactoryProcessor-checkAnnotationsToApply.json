@@ -1,0 +1,61 @@
+{
+  "traceMap" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "{",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"repositoryName\" : \"auto\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"repositoryUrl\" : \"https://github.com/google/auto.git\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"startCommitHash\" : \"67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"file\" : \"factory/src/main/java/com/google/auto/factory/processor/AutoFactoryProcessor.java\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"language\" : \"Java\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"elementType\" : \"method\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"element\" : \"checkAnnotationsToApply\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"startLine\" : 305,",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"endLine\" : 339,",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  \"commits\" : [ {",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "    \"commitHash\" : \"67772b26d0493bd1bb2bfb546d0ffd6e4affd0f5\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "    \"changeTags\" : [ \"FORMAT\" ]",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  }, {",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "    \"commitHash\" : \"b2a1c08859fe4974ffcdad85623afd28d41b5d43\",",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "    \"changeTags\" : [ \"INTRODUCTION\" ]",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "  } ]",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "}",
+        "changeTags" : [ ]
+      } ]
+    }
+  }
+}
