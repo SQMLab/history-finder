@@ -1,0 +1,64 @@
+{
+  "traceMap" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "6263197a62389c9dce0210cd9d65a6e601345edc",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "22e8e71156762b40ac93e2cbd42eacba00dbfb0c",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "7915d5e5f826a71c11e1c9183c84702410f7209a",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "30df089631cf3c7667b609e2b9689cb02230c64e",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "2239004907b29e00811fee9ded5a790172701a03",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "8e083e1b8879e732522bb9a560c82ff84b176cc9",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "9774c73e43dc2f628b9fb07a30ab4a595c0ee0a8",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "37f20c6924bc2b2d861508cdb79b78152cc01b60",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "89cd2f2a0b21368297323437fd15ba6341e4707b",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "4090f9a2b0a95e4da127e4786007542276d97520",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "3c14feb442219f58e0008a6242a24f1a492ca337",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "f305dd68f6524abc25c4ed88983f0e78b4e6c243",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "6753af270c8a966411f5574afa57f6e5ffe43dbe",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "f7b7b4745541a576eb0219468263487b07bac959",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "84a14fec299749a208251bce1a0eb9c1a8241d08",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "9bed8fbcfc52ced719f2dcafa3f30cbfd5e6bd57",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "e7663a306f40e9fcbc3096d17fb0f99fa3d11d1d",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "4332175c11dda5deb491f27a6ecf66661676ca47",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "263c10ab7c8e8fde9d3566bf59dccaa454ee2605",
+        "changeTags" : [ ]
+      } ]
+    }
+  }
+}

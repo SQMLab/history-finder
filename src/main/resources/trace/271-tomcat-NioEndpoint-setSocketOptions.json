@@ -1,0 +1,118 @@
+{
+  "traceMap" : {
+    "intelliJ" : {
+      "commits" : [ {
+        "commitHash" : "a5bcc5f52554a5e51c90ce32ac5ae4c9ffc25635",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "884b997f5a9a7da9f696d00574d3b727afbfae8c",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "e02480700374ae8147fb4b9a1d24b96e7fa23041",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "977d440678168f15388f4ae510d997267e98eb4c",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "135c080c087fc223b614c27c27c9cc798b0ee597",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "a8388e72ec1fe27d55d7b5a2b3aa01032ebb18d5",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "5f4d5b357f4388149845fa96d87930d6f664e252",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "49450836423be8ed1d1e3b6a46757f983ede9414",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "49d37dffb486f5c15a22d14fe858b3d7b12a0d66",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "7bbc448bb71906038ae61cd2fc8e89631a15823b",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "2e47b58fb3667f56a5d7332ffb6fd3c7ce13b8a0",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "c6cf74737c62399010f9abead54b8ec5a6f104a3",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "7b7442d87e08f0bd1134e7872e7cd15bf3509b64",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "e813ae0d9329ebf4b95c02043c39c676edb47d3c",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "2045d619a317af1cef2774402839e2ba15ef40cb",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "bc714fd2e3fca74d8931533770b6ee064b67287f",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "cd64a31b4556f9cce30322367a45d6fabcc6f575",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "5be711ae6fe62d6b3a7618b2bf2a92f3a24b3044",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "c3a535e0af70834cff602105a4f0976ce30b25fa",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "7790723bc0a65a193e3207afdeb410f278b4a20e",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "519d25725f3ef431c42c9b73d04aba3930a86a6d",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "96bf06d58b1f01b9a6ba05e9e84256f1121a4187",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "82c4cf9a9f5551377675524a8846ffbf820ecb91",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "9718447a0342866373fec40498e960040d58b738",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "c3d52938d84636b0e82d4a7cd95612afc49b26e5",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "26e9850af3b305405c42290d67a38eb61c765034",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "e67a33f15d980cba3efbb272985b610a7609e686",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "a01f578a4679bbaaf51837500d21720fa81a465a",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "a869f1a8bcac3f0cd7b2fa7ffa7199f7a23654dc",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "220bff69562c1e35a7cdeac89574dfda5bb6b80e",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "758a00623773f8706529dadab68fc9724c501ba0",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "e6d99af12f6ed23d0044d19b66457266dffb97cb",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "0c5927bd771d9a7d9c915ef91d7f5d08cbb9fccb",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "34bd7ef64c1a15df45f14afc90e61f67e469c819",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "8d339d077f3b20175e639bd0f5f1f84fe940afed",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "1b97f8c3b030cbf2366cdf3f51fe2f9d3256d249",
+        "changeTags" : [ ]
+      }, {
+        "commitHash" : "a84fabcbc6fee8a69253ad92a304b4718e96a7c9",
+        "changeTags" : [ ]
+      } ]
+    }
+  }
+}

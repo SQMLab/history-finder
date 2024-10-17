@@ -7,6 +7,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
+import com.shahidul.commit.trace.oracle.core.model.StaticInputTrace;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
@@ -19,8 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.codetracker.api.MethodTracker;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -144,6 +144,48 @@ public class DataSetLoaderImpl implements DataSetLoader {
                         }
                     }).collect(Collectors.toList());
 
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+
+    @Override
+    public void processIntelliJInputDump() {
+        try {
+            File rootFileDir = new File(MethodTracker.class.getClassLoader().getResource("intellij").getFile());
+            List<StaticInputTrace> inputOracleEntityList = Arrays.stream(rootFileDir.listFiles())
+                    .map(file -> {
+                        try {
+
+                            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+                            List<InputCommit> commitList = bufferedReader.lines()
+                                    .map(line -> {
+                                        String[] parts = line.split("\t");
+                                        return parts[0];
+                                    })
+                                    .map(commitHash -> InputCommit.builder().commitHash(commitHash).changeTags(new LinkedHashSet<>()).build())
+                                    .toList();
+                            bufferedReader.close();
+
+
+
+                            HashMap<String, InputTrace> analysis = new HashMap<>();
+                            analysis.put(TracerName.INTELLI_J.getCode(), InputTrace.builder().commits(commitList).build());
+
+                            StaticInputTrace inputTrace = StaticInputTrace.builder()
+                                    .traceMap(analysis)
+                                    .build();
+                            File outputFile = new File("./src/main/resources/trace", file.getName());
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, inputTrace);
+                            objectMapper.readValue(outputFile, StaticInputTrace.class);
+                            return inputTrace;
+
+                        } catch (Exception e) {
+                            log.error("File name {}", file.getName());
+                            throw new RuntimeException(e);
+                        }
+                    }).collect(Collectors.toList());
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
