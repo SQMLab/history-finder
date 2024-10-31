@@ -133,9 +133,6 @@
     "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "4e18d94748ac6d93c6f4bde54bb00d088805a67c",
-    "changeTags" : ["SIGNATURE", "PARAMETER"]
-  }, {
-    "commitHash" : "11683e55bc400c16baca0572a257e4f4a8dc2b42",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
