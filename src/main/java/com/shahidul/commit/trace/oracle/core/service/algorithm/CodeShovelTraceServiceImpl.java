@@ -69,7 +69,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
             traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(output.entrySet()
-                    .stream().map(this::toCommitEntity).toList()).build());
+                    .stream().map(commitEntry -> toCommitEntity(commitEntry, traceEntity)).toList()).build());
             return traceEntity;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -77,20 +77,25 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private CommitUdt toCommitEntity(Map.Entry<String, Ychange> commitEntry) {
+    private CommitUdt toCommitEntity(Map.Entry<String, Ychange> commitEntry, TraceEntity traceEntity) {
         Ychange change = commitEntry.getValue();
         com.google.gson.JsonObject json = change.toJsonObject();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
         JsonArray subChangeArray = null;
+        String commitHash = commitEntry.getKey();
+        String parentCommitHash = null;
+
         if (json.has("subchanges")){
             subChangeArray = json.get("subchanges").getAsJsonArray();
         }
         if (json.has("commitNameOld")) {
-            commitBuilder.parentCommitHash(json.get("commitNameOld").getAsString());
+            parentCommitHash = json.get("commitNameOld").getAsString();
+            commitBuilder.parentCommitHash(parentCommitHash);
         } else {
-            commitBuilder.parentCommitHash(findFirst(subChangeArray, "commitNameOld"));
+            parentCommitHash = findFirst(subChangeArray, "commitNameOld");
+            commitBuilder.parentCommitHash(parentCommitHash);
         }
-        commitBuilder.commitHash(commitEntry.getKey());
+        commitBuilder.commitHash(commitHash);
         if (json.has("commitDate")) {
             try {
                 commitBuilder.committedAt(new SimpleDateFormat().parse(json.get("commitDate").getAsString()));
@@ -125,7 +130,9 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             commitBuilder.startLine(newFunction.getNameLineNumber())
                     .endLine(newFunction.getEndLineNumber())
                     .oldFile(oldFile)
+                    .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitHash, oldFile, oldFunction.getNameLineNumber()))
                     .newFile(newFile)
+                    .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitHash, newFile, newFunction.getNameLineNumber()))
                     .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                     .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
                     .newElement(newFunction.getBody());

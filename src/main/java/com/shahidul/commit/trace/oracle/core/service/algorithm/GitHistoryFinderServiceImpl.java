@@ -27,7 +27,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return TracerName.EXPERIMENT_Y.getCode();
+        return TracerName.HISTORY_FINDER.getCode();
     }
 
     @Override
@@ -58,7 +58,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
             List<CommitUdt> commitUdtList = new ArrayList<>();
 
             for (int i = 0; i < historyEntryList.size(); i++) {
-                commitUdtList.add(toCommitEntity(historyEntryList.get(i)));
+                commitUdtList.add(toCommitEntity(historyEntryList.get(i), traceEntity));
             }
 
 
@@ -106,7 +106,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .build();
 
     }
-    private CommitUdt toCommitEntity(HistoryEntry historyEntry) {
+    private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
         LinkedHashSet<ChangeTag> changeTags = historyEntry.getChangeTagSet()
                 .stream()
                 .map(tag -> parseChangeType(tag.getCode()))
@@ -116,6 +116,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
         MethodHolder oldMethodHolder = historyEntry.getOldMethodHolder();
         String oldFile = oldMethodHolder != null ? oldMethodHolder.getFile() : null;
 
+        int startLine = newMethodHolder.getMethodSourceInfo().getStartLine();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(newMethodHolder.getCommitHash())
@@ -124,15 +125,17 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .documentation(rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
                 .parentCommitHash(oldMethodHolder != null? oldMethodHolder.getCommitHash() : null)
                 .newFile(newFile)
+                .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
                 .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getMethodRawSourceCode() : null, newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode()))
                 .docDiff(Util.getDiff(oldMethodHolder != null ? rnd.git.history.finder.Util.extractJavaDoc(oldMethodHolder.getMethodSourceInfo().getMethodDeclaration()) : null,
                         rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration())))
-                .startLine(newMethodHolder.getMethodSourceInfo().getStartLine())
+                .startLine(startLine)
                 .endLine(newMethodHolder.getMethodSourceInfo().getEndLine())
                 .oldFile(oldFile);
         if (oldFile != null){
             commitBuilder.fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
+                    .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), oldMethodHolder.getCommitHash(), oldFile, oldMethodHolder.getMethodSourceInfo().getStartLine()));
         }
         return commitBuilder.build();
 
