@@ -27,7 +27,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
 
     @Override
     public String getTracerName() {
-        return TracerName.EXPERIMENT_X.getCode();
+        return TracerName.HISTORY_FINDER.getCode();
     }
 
     @Override

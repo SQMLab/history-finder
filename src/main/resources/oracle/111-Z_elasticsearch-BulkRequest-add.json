@@ -27,19 +27,10 @@
     "commitHash" : "b5079ce0092e2dfd742fbe3aed8a8f95931a378d",
     "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
   }, {
-    "commitHash" : "bd4a03a426eb088ffcf78bb653edfb5879f9b7a0",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "51d53791fe71c9cb62bc992588a57cdfb500383f",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
-  }, {
-    "commitHash" : "248ac240ed67d29113affa92a60d33f1b7f38a70",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "1764ec56b38ce87f516efdf93bb4ab56e9dd829b",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
-  }, {
     "commitHash" : "80ca78479f5046f58374ed831f6b2c3d51f530f9",
+    "changeTags" : [ "SIGNATURE", "BODY" ]
+  }, {
+    "commitHash" : "602a0f183ed055ae4e0688fc0aa14cfb13c96306",
     "changeTags" : [ "SIGNATURE", "BODY" ]
   }, {
     "commitHash" : "57af01451045984812f247c99c099e723fd49433",
