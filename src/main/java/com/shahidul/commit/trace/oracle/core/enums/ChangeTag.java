@@ -19,6 +19,7 @@ public enum ChangeTag {
     DOCUMENTATION("documentation"),
     FILE_RENAME("file_rename"),
     FILE_COPY("file_copy"),
+    FILE_MOVE("file_move"),
     RENAME("rename"),
     MODIFIER("modifier"),
     ACCESS_MODIFIER("access_modifier"),
