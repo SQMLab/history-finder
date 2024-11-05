@@ -30,12 +30,6 @@
     "commitHash" : "a49240ade1974b948b20cf2c45d9129f04122735",
     "changeTags" : [ "SIGNATURE", "BODY", "PARAMETER" ]
   }, {
-    "commitHash" : "9d8bb069f68e2194db742981972c8930381b62c2",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
-    "commitHash" : "0128bff582b2d10bffff9ff497c3e6f697958b83",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
-  }, {
     "commitHash" : "e7a0111ce26bbce9c81f471ff925653fe0ead70d",
     "changeTags" : [ "SIGNATURE", "BODY" ]
   }, {
