@@ -88,15 +88,6 @@
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "d9bc18e804bf754b8cc11c4ce61a5dc1b9cda242",
-    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
-  }, {
-    "commitHash" : "7477a1e08fae75215763db8a837b8ca2a2bc9e6b",
-    "changeTags" : [ "DOCUMENTATION" ]
-  }, {
-    "commitHash" : "031ff96cd3a9e319689e7df5a0b6272c16202256",
-    "changeTags" : [ "DOCUMENTATION" ]
-  }, {
-    "commitHash" : "6627f7ad8fb08d6c23b83d6c9f0a6830e9e7085a",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

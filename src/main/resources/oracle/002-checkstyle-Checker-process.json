@@ -138,9 +138,6 @@
     "commitHash" : "0e3fe5643667a53079dbd114e5b1e9aa91fde083",
     "changeTags" : [ "MOVE", "BODY", "MODIFIER", "PARAMETER", "SIGNATURE" ]
   }, {
-    "commitHash" : "6c304950f62f06cb3c72e46869c3fa3fbdc1e7d7",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
-  }, {
     "commitHash" : "0fd69594a4c3e82f92f93f0371791da66938f8c3",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
