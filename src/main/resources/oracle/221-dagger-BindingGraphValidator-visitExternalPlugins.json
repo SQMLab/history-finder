@@ -16,9 +16,15 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "143854118dfdbb3bdb4f2fa251da6a48907f703a",
-    "changeTags" : [ "SIGNATURE", "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME", "SIGNATURE" ]
   }, {
     "commitHash" : "19cf82bf8114da08abbb55933b8af5762deeca90",
+    "changeTags" : [ "BODY", "RENAME", "SIGNATURE", "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "7acaca32eb3098c415bebb4361614f477ba948c8",
+    "changeTags" : [ "PACKAGE", "FILE_MOVE" ]
+  }, {
+    "commitHash" : "d94128446a9a5a5047dd19afcbfd9ca669eb49ee",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
