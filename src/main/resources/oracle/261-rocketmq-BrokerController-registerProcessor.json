@@ -8,5 +8,62 @@
   "element" : "registerProcessor",
   "startLine" : 945,
   "endLine" : 1059,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "dd09f2b78299eb4efe36e708246ee736b3d8b819",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "5cbb01e3736ccd545b799327907722d1bc2d80e6",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "3fadc8f30c898f9ddd6730ba4ac428894a1c1077",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d8119afb19286e8a1c1c1e137aaf1a524be72c1f",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "cad0cfcecef88958b103059aea7b98395850226a",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "ced6b023589d72c89cce0e6aefcdefa319900f71",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "46b2e1250b7d728b3a2212624603e785c578bdf1",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "c6c699ebf616c3e0199a9b71a7a441018b0e4757",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "c67a80a2ac89242aa099d94fdc5e6e032aee08b8",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "efa8e457e84a7406923594b9516545661b56765e",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "d8c446e854e6cce1b54c0d9d97f3189832b88001",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "81884c8df3009a01c18dcfbf83a5109831878527",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "703ac00bd271583c0290daad14e45f97f9991f49",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "58f1574b28bf8bf18a795036545c7a700437ed0b",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "11653ce24c72189f4e6121c4babe709b33bc0230",
+    "changeTags" : [ "BODY" ]
+  }, {
+    "commitHash" : "388ba7a58465245389a3592904b6fc7ef777dc7a",
+    "changeTags" : [ "FORMAT" ]
+  }, {
+    "commitHash" : "de6f9416aad7fad1c04966888239225bb7394a54",
+    "changeTags" : [ "MOVE", "FILE_COPY" ]
+  }, {
+    "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
+    "changeTags" : [ "PACKAGE", "FILE_MOVE" ]
+  }, {
+    "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
