@@ -22,7 +22,6 @@ public enum ChangeTag {
     FILE_MOVE("file_move"),
     RENAME("rename"),
     MODIFIER("modifier"),
-    ACCESS_MODIFIER("access_modifier"),
     RETURN_TYPE("return_type"),
     EXCEPTION("exception"),
     PARAMETER("parameter"),
