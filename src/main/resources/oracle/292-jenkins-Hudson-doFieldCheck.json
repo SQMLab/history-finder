@@ -24,22 +24,28 @@
     "commitHash" : "49e6ed2040060bd1e9999fdfb2be9a9a44118be9",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
+    "commitHash" : "49e6ed2040060bd1e9999fdfb2be9a9a44118be9",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
+    "commitHash" : "79b0db483fbcb9beb41004d5b6e1d0b8eb806916",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "79b0db483fbcb9beb41004d5b6e1d0b8eb806916",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "f7e9b4fbd1f43435b867a3763511c45a01098710",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
+    "commitHash" : "f7e9b4fbd1f43435b867a3763511c45a01098710",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "f27e2b5c8a5182b9bf03680d473d109bcf268bda",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "EXCEPTION", "SIGNATURE", "DOCUMENTATION" ]
   }, {
-    "commitHash" : "26603ed4ba62af7462fd8c9e9ab528d21dbf4992",
-    "changeTags" : [ "BODY" ]
+    "commitHash" : "f27e2b5c8a5182b9bf03680d473d109bcf268bda",
+    "changeTags" : [ "BODY", "RETURN_TYPE", "EXCEPTION", "SIGNATURE", "DOCUMENTATION" ]
   }, {
-    "commitHash" : "ab5d148dae02f98e41573317e6b9b335ac904fb6",
-    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
-  }, {
-    "commitHash" : "6317d1e158443639c3d57ea998b3307ad6e8d977",
+    "commitHash" : "4eac0db458c7a8a3b9f1e5a97778dcee3b21a473",
     "changeTags" : [ "INTRODUCTION" ]
   } ]
 }
