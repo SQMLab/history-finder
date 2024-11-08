@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -49,7 +50,7 @@ public class CommitSeries {
     @Column(name = "new_element")
     String newElement;
     @Column(name = "set_change_tag")
-    TreeSet<ChangeTag> changeTagSet;
+    List<ChangeTag> changeTagSet;
     @Column(name = "diff_url")
     String diffUrl;
     @Column(name = "old_file_url")

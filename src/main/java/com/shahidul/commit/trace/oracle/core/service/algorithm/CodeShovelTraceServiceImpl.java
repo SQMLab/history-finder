@@ -25,9 +25,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @author Shahidul Islam
@@ -144,7 +142,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private TreeSet<ChangeTag> toChangeTags(Ychange change) {
+    private List<ChangeTag> toChangeTags(Ychange change) {
         TreeSet<ChangeTag> changeTags = new TreeSet<>();
         if (change instanceof Yintroduced) {
             changeTags.add(ChangeTag.INTRODUCTION);
@@ -183,7 +181,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         if (changeTags.isEmpty()){
             throw new RuntimeException("Change tag mapping not found : " + change.getTypeAsString());
         }
-        return changeTags;
+        return new ArrayList<>(changeTags);
     }
 
     private String findFirst(JsonArray subChangeArray, String key){

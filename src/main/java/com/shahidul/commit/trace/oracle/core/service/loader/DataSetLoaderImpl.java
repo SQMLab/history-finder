@@ -169,7 +169,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         String[] parts = line.split("\t");
                                         return parts[0];
                                     })
-                                    .map(commitHash -> InputCommit.builder().commitHash(commitHash).changeTags(new TreeSet<>()).build())
+                                    .map(commitHash -> InputCommit.builder().commitHash(commitHash).changeTags(new ArrayList<>()).build())
                                     .toList();
                             bufferedReader.close();
 
@@ -264,7 +264,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     if (commit.getChangeTags().contains(ChangeTag.ACCESS_MODIFIER)) {
                         updatedTagSet.add(ChangeTag.MODIFIER);
                     }
-                    commit.setChangeTags(updatedTagSet);
+                    commit.setChangeTags(new ArrayList<>(updatedTagSet));
                 });
     }
 }

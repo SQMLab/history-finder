@@ -24,7 +24,7 @@ public class ChangeTagUtil {
         TAG_TO_CODE_SHOVEL.put(ChangeTag.FORMAT, "Yformatchange");
     }
 
-    public static TreeSet<ChangeTag> toChangeTagsFromCodeShovel(String change) {
+    public static List<ChangeTag> toChangeTagsFromCodeShovel(String change) {
         TreeSet<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
@@ -60,7 +60,7 @@ public class ChangeTagUtil {
                 changeTags.add(ChangeTag.FILE_MOVE);
             }
         }
-        return changeTags;
+        return new ArrayList<>(changeTags);
     }
 
     public static String toCodeShovelChangeText(List<ChangeTag> changeTagList) {
