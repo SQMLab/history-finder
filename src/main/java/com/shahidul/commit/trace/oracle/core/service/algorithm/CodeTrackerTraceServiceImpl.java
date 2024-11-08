@@ -121,7 +121,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .build();
     }
 
-    private TreeSet<ChangeTag> toChangeTagSet(Set<Change> changeList) {
+    private List<ChangeTag> toChangeTagSet(Set<Change> changeList) {
         TreeSet<ChangeTag> changeTagSet = new TreeSet<>();
         for (Change change:changeList) {
             Change.Type changeType = change.getType();
@@ -167,6 +167,6 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 throw new RuntimeException("Change type mapping not found : " + changeType);
             }
         }
-        return changeTagSet;
+        return new ArrayList<>(changeTagSet);
     }
 }

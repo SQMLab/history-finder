@@ -5,6 +5,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -16,5 +17,5 @@ public interface ExpectedCommitService {
     CommitUdt findCommit(String oracleFileName, String commitHash, TracerName fromTracer);
     CommitUdt deleteCommit(String oracleFileName, String commitHash);
     CommitUdt addCommit(String oracleFileName, String commitHash, TracerName fromTracer);
-    CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, TreeSet<ChangeTag> changeTagSet);
+    CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, List<ChangeTag> changeTagSet);
 }

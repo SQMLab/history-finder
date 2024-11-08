@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -33,7 +34,7 @@ public class OutputCommitDetail {
     @JsonIgnore
     String file;
     @JsonIgnore
-    TreeSet<ChangeTag> changeTags;
+    List<ChangeTag> changeTags;
     @JsonProperty("type")
     String changeTagText;
     @JsonProperty("commitAuthor")

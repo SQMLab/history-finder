@@ -113,7 +113,7 @@ public class InfluxDbManagerImpl implements InfluxDbManager {
                 .fileMoved(commitUdt.getFileMoved())
                 .oldElement(commitUdt.getOldElement())
                 .newElement(commitUdt.getNewElement())
-                .changeTagSet(commitUdt.getChangeTags())
+                .changeTagSet(new ArrayList<>(commitUdt.getChangeTags()))
                 .diffUrl(commitUdt.getDiffUrl())
                 .oldFileUrl(commitUdt.getOldFilUrl())
                 .newFileUrl(commitUdt.getNewFileUrl())

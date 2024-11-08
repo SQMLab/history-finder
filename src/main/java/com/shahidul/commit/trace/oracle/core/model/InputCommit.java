@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.TreeSet;
 
 /**
@@ -19,5 +20,5 @@ import java.util.TreeSet;
 @Data
 public class InputCommit {
     String commitHash;
-    TreeSet<ChangeTag> changeTags;
+    List<ChangeTag> changeTags;
 }
