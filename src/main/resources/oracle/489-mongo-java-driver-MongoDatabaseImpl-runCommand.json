@@ -10,10 +10,10 @@
   "endLine" : 159,
   "commits" : [ {
     "commitHash" : "8a25c0722f36dd8e2b3d83dc07c1f89823b1b095",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "ce655bb474b224c971ae43db4c30131692fe8db8",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "0a28ed5a9b2a55ad3723b33e641ec5598562dc56",
     "changeTags" : [ "BODY" ]
@@ -22,16 +22,16 @@
     "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "08f94b3b6aab5273d30440b98154261fe01bef83",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "7e284496435cdcccc07a8cd80e6d15519db839e3",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "75b8ea08349554594fc0538bfa179af27a317def",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e0243dc14760f12c4b96eb23d9f3ba80d2501a8c",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "ea546524078c6b907bebbca91d21fe9076b2ac73",
     "changeTags" : [ "BODY" ]
@@ -40,16 +40,16 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "260ec89ead68296272b15ded38274443ebb9af41",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "712cbb311458db1894799e979ddb4472e333d2e6",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "2d061194f3019386b4c99ede72affbc12567751f",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "126a01e8043ebe932378af83bb4ba634ba1b1260",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "ce8df7043b5ff6d45fd028980d7cc66616f8e50d",
     "changeTags" : [ "BODY" ]

@@ -10,19 +10,19 @@
   "endLine" : 838,
   "commits" : [ {
     "commitHash" : "6c18a6c4f4eb2249a4bc546a720c91b328411699",
-    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "ANNOTATION" ]
   }, {
     "commitHash" : "269285213d12f9e549f735b93f77d08d36dbbfb8",
-    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "ANNOTATION" ]
   }, {
     "commitHash" : "29239c765c22a7c1cb3a64476ebf0dfa9e2f9da0",
-    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "ANNOTATION" ]
   }, {
     "commitHash" : "9797511c56df4e9c7db964a6b83e67642df96c2d",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "2575275a04938e361a874ba685e50ac0e88df246",
-    "changeTags" : [ "RENAME", "SIGNATURE", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME" ]
   }, {
     "commitHash" : "07cf56f26cb5577c67f0d69cac970677633898da",
     "changeTags" : [ "INTRODUCTION" ]

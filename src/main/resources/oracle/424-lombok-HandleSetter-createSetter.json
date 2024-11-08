@@ -19,7 +19,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b439e4ce771813a12300c3006f9fcc12f25678d7",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "42f36e66fec9554205ed7caaab33c1c7be0db90b",
     "changeTags" : [ "BODY" ]
@@ -37,7 +37,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "19ad4fd57d32afad1a33f20613fbb2e7607cfee0",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "fb401d4887895d1ebb8529d6323797f1bc8072a2",
     "changeTags" : [ "INTRODUCTION" ]

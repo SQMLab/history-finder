@@ -37,7 +37,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1bcc298ad386c346c73bde68a9d9718dd51e2d0d",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "2de2f413b6fbcf39f34ddec091c7fc7a340db95c",
     "changeTags" : [ "BODY" ]

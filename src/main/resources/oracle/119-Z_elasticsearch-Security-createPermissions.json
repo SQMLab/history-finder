@@ -10,7 +10,7 @@
   "endLine" : 255,
   "commits" : [ {
     "commitHash" : "99f88f15c5febbca2d13b5b5fda27b844153bf1a",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "720ebe347d1410bce178e4f244237b9870403b84",
     "changeTags" : [ "BODY" ]
@@ -37,7 +37,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "15a62448343fd24f8e63f43b1e4b16f50005e4a5",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "dd41c68741a6f2f8c296f41dcf58e2a6ae6b29b1",
     "changeTags" : [ "BODY" ]
@@ -49,10 +49,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b889b3b437fd8a124ad8691d878d18339f20425b",
-    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "2ed2c4f884f01e51adf396aac3496bcc0a8f14c8",
-    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "86fc8ceac71fbcfe95d6675eeb6b2ffc2cb71d41",
     "changeTags" : [ "INTRODUCTION" ]

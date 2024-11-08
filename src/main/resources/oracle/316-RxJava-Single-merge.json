@@ -22,7 +22,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "b57169babb184d0adc2fa28cf0425c4f0c1f8555",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "6ba932c9a3752c6d85d65bd2292c3a47cab64fd6",
     "changeTags" : [ "BODY" ]
@@ -61,7 +61,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "7aa0b347cea8aa0e395a7f9ec488d7006647a329",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "7a1a4afad2984fb95265ec0af061fd1e87f0b75b",
     "changeTags" : [ "BODY" ]
@@ -70,13 +70,13 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "ed9a2c4b9de311929f2d8d5e37c3e078cb85db07",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "7a4d6330da7db2b954062b5b5fc042433db9c06a",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "835e4f2a007ae11f9fbb4b04342d6a56df9c2709",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "000a174d87a901135f9665d3b11f3627fd2dc4ed",
     "changeTags" : [ "BODY" ]

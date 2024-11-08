@@ -43,10 +43,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e35c51eb7d91d099e7e84e308d30010ecaa6a0c5",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "31e448ffd677d9360c4132a63b08fe53c860cf7c",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "418a493337a8837172032e62a53587e478f21c86",
     "changeTags" : [ "BODY" ]

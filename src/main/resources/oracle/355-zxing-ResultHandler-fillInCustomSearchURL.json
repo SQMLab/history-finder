@@ -22,7 +22,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3bad6fc4c5076d2a38fe14cb4f45bb6fbe38d864",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "b8b62c6e30e0e2bc7cccba59e883aa4476be620f",
     "changeTags" : [ "BODY" ]

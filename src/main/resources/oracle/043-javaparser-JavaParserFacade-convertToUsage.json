@@ -19,7 +19,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "09232ff6b0ea19e850482f3a87ac6ef1c063c759",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "f63811a47591d89b25a1de78686bdc6dfcaf42b9",
     "changeTags" : [ "BODY" ]
@@ -31,28 +31,28 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5d8d0cb7947efcf2282f7d056302dd905f348532",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "56377a22d552f0880ceccacf1aca1eafbc7094e4",
-    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "0f40221492b47df25615a1b5909fefa6f2d6fa0e",
-    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "33d37d1089463ba9af543996a05cac5955c46251",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "90c22f84a61e12130a8750d235acf7ed06305796",
-    "changeTags" : [ "PARAMETER", "SIGNATURE" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "52b60cf471dc9d7b53d8f22018d9c4e4fcc15923",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "07782fbbe149055d495e0c358da844734c08641f",
-    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "c990d23490f5c4ac4322119b03d5951b63eef055",
-    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "6e1380f412d334f1c887d15edf0b4610c3cf0da2",
     "changeTags" : [ "BODY" ]
@@ -73,7 +73,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "9c53c2cbc607ea694438ade8630be0c155a33162",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4601dfb9d1acf7f564948b7ddbb9201d62849ad7",
     "changeTags" : [ "BODY" ]
@@ -94,7 +94,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "82eb44707b620803d424188a1eb8708fcaf093cb",
-    "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "14c9305d49885a12acdb7c09d2e35ad29b5403cf",
     "changeTags" : [ "BODY" ]
@@ -103,13 +103,13 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8e655d386a595ea1927ebeded58939d7b8a7ce0c",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4a18b1ee8ed716d6e32e190f728f1eee57148872",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f4b07b1a2deac6d1b562424ac2380b92cec77a90",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "49719b4acbe10e3714ceb4f7040acac34709f558",
     "changeTags" : [ "FORMAT" ]
@@ -118,7 +118,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "fb388c36c0045c50744cf215521e5c280036aa70",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "1613b8d9cc00da012539ea3db05cdb0cc8153358",
     "changeTags" : [ "BODY" ]
@@ -157,7 +157,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "6650e5a3818c15de2883b71cd41524b0337e26f6",
-    "changeTags" : [ "MODIFIER", "SIGNATURE" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "2568d9ebe91ceb0a13c98b16f99593cd22084efa",
     "changeTags" : [ "INTRODUCTION" ]

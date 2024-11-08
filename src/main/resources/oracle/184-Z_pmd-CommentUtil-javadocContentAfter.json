@@ -22,10 +22,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "75daf38ed303bcdbfe1034fd3a070a4306402c2d",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "23769a3357f06d0c3f38e88bd9be6b654461de6e",
     "changeTags" : [ "FORMAT" ]

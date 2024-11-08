@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ac4ade24ce8ef5ff8d71ce3440998628cfdec39c",
-    "changeTags" : [ "FILE_RENAME", "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "FILE_MOVE", "MODIFIER" ]
   }, {
     "commitHash" : "0c4cddf3d0dfd17b85732a4bb00d3edc63dee2de",
     "changeTags" : [ "BODY" ]

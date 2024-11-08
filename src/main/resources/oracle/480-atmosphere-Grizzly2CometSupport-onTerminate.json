@@ -10,10 +10,10 @@
   "endLine" : 200,
   "commits" : [ {
     "commitHash" : "a04f6f742d7aca4e198aca78b48f75eb4ea4bc3a",
-    "changeTags" : [ "SIGNATURE", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "a22b0ac4e56c222746881beabfcfe96e1c95a8ce",
-    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "ANNOTATION" ]
   }, {
     "commitHash" : "6ee44a754c1fb1ac0df184f02c3d3644eac0cac3",
     "changeTags" : [ "INTRODUCTION" ]

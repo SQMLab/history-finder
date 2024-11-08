@@ -148,7 +148,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8226e3e64a7d4ace29eb08ab6c9fc9d4055f20c9",
-    "changeTags" : [ "FILE_RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "4cb9a65f450efa5f2a42128856c7b56e6d283386",
     "changeTags" : [ "BODY" ]
@@ -184,7 +184,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "40cc52cf5f5dc1dd1ee513410536bdc11422307d",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "0cdf29715af64edd05229c400f214417fecdef89",
     "changeTags" : [ "BODY" ]

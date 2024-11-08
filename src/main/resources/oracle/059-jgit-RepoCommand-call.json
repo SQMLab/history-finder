@@ -91,7 +91,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "dc4c673902a0847b270faf1771595d7c189a1943",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "a44a687fedbf1559277b8e6706819aa9be7bce39",
     "changeTags" : [ "BODY" ]

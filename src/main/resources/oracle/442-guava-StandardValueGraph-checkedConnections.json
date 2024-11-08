@@ -10,43 +10,43 @@
   "endLine" : 165,
   "commits" : [ {
     "commitHash" : "18cdc775081924cfeec87bfe5ff3547ed81784f6",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "31e08d06683a65c85dd9f1b743599494e2c2be5c",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "de8d63f55ce4db93b33025aa4ac6a5823c8c3e57",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "3ca1145c6b9ab856810b9300542da815a22b5a6c",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "cfe05dfda3ba79aa1bd3acce6b4e766eb7b9bc00",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "41becc60f5e1d8b121846c890478d39e6ec42979",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "6e62ae569837d8d2fc9d51c3ac6eddf0468f9143",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "57ec8ce480d75c69f90f72e4faaf13dda25a7f67",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "d6ef78ff26c28401c4bd8a61b75cfdf052b65696",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "e246cf9a801497b64c54de03ca7331d767e8588f",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "c1c5dae45283129c67eb7d5d2b5b90eff4c92c4c",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "BODY", "MODIFIER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "807760488eaaab1ced435ec07dab6be7e991fc47",
-    "changeTags" : [ "SIGNATURE", "MODIFIER", "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE", "MODIFIER" ]
   }, {
     "commitHash" : "b9731bcb3345be0f9a184fae26c6747351365c90",
-    "changeTags" : [ "SIGNATURE", "MODIFIER", "MOVE" ]
+    "changeTags" : [ "MOVE", "MODIFIER" ]
   }, {
     "commitHash" : "248ce9fde9013bb1562b1f1647abc6017c37811d",
     "changeTags" : [ "INTRODUCTION" ]

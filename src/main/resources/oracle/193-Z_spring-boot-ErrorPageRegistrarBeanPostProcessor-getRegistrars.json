@@ -10,13 +10,13 @@
   "endLine" : 85,
   "commits" : [ {
     "commitHash" : "0ba4830b4fb20deea040ca5e1c9a34651708b222",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4a189bdee7d1bd7fbdbd2593a8c9b8636a90bd39",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "67556ba8eaf22a352b03fe197a0c452f695835a6",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "d8f827d2249696a346bc11adf4ccacf61eeb888d",
     "changeTags" : [ "BODY" ]

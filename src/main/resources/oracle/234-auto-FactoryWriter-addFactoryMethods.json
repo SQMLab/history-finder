@@ -31,10 +31,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e62e0abd2fbdfd2512c292ef95d4d152a5ca0691",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "e63019a49c2081c61595c36e499ab244aa82c40b",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+    "changeTags" : [ "BODY", "MODIFIER", "PARAMETER" ]
   }, {
     "commitHash" : "1ee934285cabe3f19cb77cc6a7664682f29c0fde",
     "changeTags" : [ "BODY" ]

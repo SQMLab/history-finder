@@ -19,7 +19,7 @@
     "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
   }, {
     "commitHash" : "d76da58380c0f34ba9ced621ef6680e4da1b63bd",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "c890f0a7675f942866c18ec9db2a333ebf3bc243",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -91,34 +91,34 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3c6b48b5241b54f8ef1f4cddba0c00332898c2f1",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "2162679d688d00044d89cbf32a3d32bc97d781e8",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "a5598cc8add3634748e2f28c5368d822e90a1949",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "039e78212e6c1d935150a43844d1ee75e7f865a8",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "8109c7c02c06f2159b3d4f8774e5e9e37c62c5dd",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "85a44c2de7d4a0fcfde7f9346c67e5051a9b4721",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "0171308847013b98c4b268e3b795e9cfbde288a0",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "PARAMETER", "MOVE" ]
+    "changeTags" : [ "MOVE", "RENAME", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "5e004c563a93217352e362da7eb78446477e9fcb",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE" ]
   }, {
     "commitHash" : "c3aa5ab2b110314d0ed09a2bf3df26b1adf56041",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "70c6db6a960ff9f802230e87562dc67c599c8762",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "aa8e0b2dc9b26c7bdf44db22fab52e657d600ee5",
     "changeTags" : [ "INTRODUCTION" ]
