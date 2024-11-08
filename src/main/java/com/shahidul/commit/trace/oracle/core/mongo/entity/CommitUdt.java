@@ -26,7 +26,7 @@ public class CommitUdt implements Cloneable{
     Date committedAt;
     Integer startLine;
     Integer endLine;
-    LinkedHashSet<ChangeTag> changeTags;
+    Set<ChangeTag> changeTags;
     String oldFile;
     String newFile;
     Integer fileRenamed;

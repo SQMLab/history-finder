@@ -56,7 +56,11 @@ public class Util {
             }
         }
         return textBuilder.toString();*/
-        return Utl.getTextFragment(fileContent, startLine, endLine);
+        if (fileContent != null) {
+            return Utl.getTextFragment(fileContent, startLine, endLine);
+        }else {
+            return null;
+        }
     }
 
     public static String getDiff(String oldText, String newText) {

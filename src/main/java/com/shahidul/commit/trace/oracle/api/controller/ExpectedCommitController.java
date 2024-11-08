@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -34,7 +33,7 @@ public class ExpectedCommitController {
     }
 
     @GetMapping("/tag/update")
-    public CommitUdt updateTags(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam String fromTracer, @RequestParam LinkedHashSet<ChangeTag> changeTags) {
+    public CommitUdt updateTags(@RequestParam String oracleFileName, @RequestParam String commitHash, @RequestParam String fromTracer, @RequestParam Set<ChangeTag> changeTags) {
         return expectedCommitService.updateTags(oracleFileName, commitHash, TracerName.fromCode(fromTracer), changeTags);
     }
 

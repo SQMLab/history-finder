@@ -11,14 +11,10 @@ import lombok.Getter;
 @Getter
 public enum ChangeTag {
     INTRODUCTION("introduction"),
-    PACKAGE("package"),
     MOVE("move"),
     BODY("body"),
-    SIGNATURE("signature"),
     REMOVE("remove"),
     DOCUMENTATION("documentation"),
-    FILE_RENAME("file_rename"),
-    FILE_COPY("file_copy"),
     FILE_MOVE("file_move"),
     RENAME("rename"),
     MODIFIER("modifier"),
@@ -26,7 +22,14 @@ public enum ChangeTag {
     EXCEPTION("exception"),
     PARAMETER("parameter"),
     ANNOTATION("annotation"),
-    FORMAT("format");
+    FORMAT("format"),
+    //TODO : remove
+    PACKAGE("package"),
+    SIGNATURE("signature"),
+    FILE_RENAME("file_rename"),
+    FILE_COPY("file_copy"),
+    ACCESS_MODIFIER("access_modifier")
+    ;
     String code;
 
     public static ChangeTag fromTag(String tag) {

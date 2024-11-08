@@ -11,45 +11,41 @@ public class ChangeTagUtil {
     static {
         TAG_TO_CODE_SHOVEL = new HashMap<>();
         TAG_TO_CODE_SHOVEL.put(ChangeTag.INTRODUCTION, "Yintroduced");
-        TAG_TO_CODE_SHOVEL.put(ChangeTag.SIGNATURE, "Ysignaturechange");
+        //TAG_TO_CODE_SHOVEL.put(ChangeTag.SIGNATURE, "Ysignaturechange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.RENAME, "Yrename");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.PARAMETER, "Yparameterchange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.EXCEPTION, "Yexceptionschange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.MODIFIER, "Ymodifierchange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.BODY, "Ybodychange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.MOVE, "Ymovefromfile");
-        TAG_TO_CODE_SHOVEL.put(ChangeTag.FILE_RENAME, "Yfilerename");
+        TAG_TO_CODE_SHOVEL.put(ChangeTag.FILE_MOVE, "Yfilerename");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.DOCUMENTATION, "Ydocumentationchange");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.ANNOTATION, "Yannotationchnage");
         TAG_TO_CODE_SHOVEL.put(ChangeTag.FORMAT, "Yformatchange");
     }
 
-    public static LinkedHashSet<ChangeTag> toChangeTagsFromCodeShovel(String change) {
-        LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
+    public static Set<ChangeTag> toChangeTagsFromCodeShovel(String change) {
+        Set<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
                 changeTags.add(ChangeTag.INTRODUCTION);
             }
-            if (change.contains("Ysignaturechange")) {
+           /* if (change.contains("Ysignaturechange")) {
                 changeTags.add(ChangeTag.SIGNATURE);
-            }
+            }*/
             if (change.contains("Yrename")) {
                 changeTags.add(ChangeTag.RENAME);
             }
             if (change.contains("Yreturntypechange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
                 changeTags.add(ChangeTag.RETURN_TYPE);
             }
             if (change.contains("Yparameterchange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
                 changeTags.add(ChangeTag.PARAMETER);
             }
             if (change.contains("Ymodifierchange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
                 changeTags.add(ChangeTag.MODIFIER);
             }
             if (change.contains("Yexceptionschange")) {
-                changeTags.add(ChangeTag.SIGNATURE);
                 changeTags.add(ChangeTag.EXCEPTION);
             }
 
@@ -61,7 +57,7 @@ public class ChangeTagUtil {
                 changeTags.add(ChangeTag.MOVE);
             }
             if (change.contains("Yfilerename")) {
-                changeTags.add(ChangeTag.FILE_RENAME);
+                changeTags.add(ChangeTag.FILE_MOVE);
             }
         }
         return changeTags;
