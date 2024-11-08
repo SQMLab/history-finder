@@ -22,10 +22,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "19368f398576bcd1959ab20c8a09b98a4ed30c42",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e0d07733bd3f03c1337f200523bf9fec220d0cad",
-    "changeTags" : [ "SIGNATURE", "BODY" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "da9f167b31a7dbeae348688909b2dda66a74b24b",
     "changeTags" : [ "BODY" ]

@@ -19,10 +19,10 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "a922473c0835a757e7108c79ad52f103ace86030",
-    "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "06f6ac5d3edbc8dd20baf6e1b30900c189a68876",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "23d8e26438370d8c99c24c8b43d543e953775fd2",
     "changeTags" : [ "MOVE", "BODY" ]
@@ -40,7 +40,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f94112fbbaaf2ecc6a9ecb314a5565203ce779a7",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "82c420022ef3ffe3d7ad2172b4338ed12baf9e0e",
     "changeTags" : [ "BODY" ]

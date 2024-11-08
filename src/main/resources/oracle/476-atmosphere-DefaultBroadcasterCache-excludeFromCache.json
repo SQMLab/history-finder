@@ -10,13 +10,13 @@
   "endLine" : 62,
   "commits" : [ {
     "commitHash" : "14f421fd7fd2bddc09d9276299342f11d63c8da6",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "6bc3e0015e26011b1678349a6235d4033fe9164e",
     "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "882a6e43cd193c5164fe64edaa1cea49f72fd8ce",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "PARAMETER" ]
   }, {
     "commitHash" : "8ec28f1cc2e2602de6ec6872c93a6fe6773fd61f",
     "changeTags" : [ "INTRODUCTION" ]

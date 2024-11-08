@@ -10,10 +10,10 @@
   "endLine" : 179,
   "commits" : [ {
     "commitHash" : "8a25c0722f36dd8e2b3d83dc07c1f89823b1b095",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "ce655bb474b224c971ae43db4c30131692fe8db8",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4aff442ca79b606a586129d8dc0cfbb857c8d7c1",
     "changeTags" : [ "INTRODUCTION" ]

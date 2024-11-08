@@ -22,16 +22,16 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "346166e674fea88d10dc43be82e387f547156709",
-    "changeTags" : [ "FILE_MOVE", "PACKAGE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "5db015ccde960708decf19e07f40a1a6b4d95454",
-    "changeTags" : [ "FILE_MOVE", "PACKAGE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "c28171be8f162d486b7b1f8a62134b6f0be0be8d",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ce8b6e8972ddf8a78652d49f3ecde546420f46fa",
-    "changeTags" : [ "DOCUMENTATION", "ANNOTATION", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "ANNOTATION" ]
   }, {
     "commitHash" : "97e20f50c3d4cf537d28d6a711c4d006a8f2eda5",
     "changeTags" : [ "BODY" ]

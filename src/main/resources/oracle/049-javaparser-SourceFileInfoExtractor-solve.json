@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "09232ff6b0ea19e850482f3a87ac6ef1c063c759",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "e15d5a8aa84a34917e4ef47135dfc62e58ea7650",
     "changeTags" : [ "BODY" ]
@@ -22,7 +22,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9c53c2cbc607ea694438ade8630be0c155a33162",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "53afb5bd2717dfdefd3c3c37fa8520b5482082dd",
     "changeTags" : [ "BODY" ]
@@ -37,7 +37,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f4b07b1a2deac6d1b562424ac2380b92cec77a90",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "49719b4acbe10e3714ceb4f7040acac34709f558",
     "changeTags" : [ "FORMAT" ]
@@ -52,7 +52,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "37f93be6476b00be051173d0cde614fc8a3677e5",
-    "changeTags" : [ "MOVE", "BODY", "MODIFIER", "SIGNATURE" ]
+    "changeTags" : [ "MOVE", "BODY", "MODIFIER" ]
   }, {
     "commitHash" : "3a53155f2cd5727b9b0bcf7ccaf9bd24256f8adb",
     "changeTags" : [ "BODY" ]

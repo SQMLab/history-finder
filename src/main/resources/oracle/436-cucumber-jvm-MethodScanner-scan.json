@@ -13,7 +13,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "ac6cc73dbedcbdae4b67211fabc8c0da7a24330e",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "MODIFIER", "BODY" ]
+    "changeTags" : [ "BODY", "MODIFIER", "PARAMETER" ]
   }, {
     "commitHash" : "e6ce32e22028abde550d4211d073e21fd4982bc7",
     "changeTags" : [ "INTRODUCTION" ]

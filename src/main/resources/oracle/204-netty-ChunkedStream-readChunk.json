@@ -13,10 +13,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "0b5ff0ebda6707fc4e5926991fb0ea4c4bb4ba36",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
-    "changeTags" : [ "FILE_COPY" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4c0f5d5f8c5d353a45601d79acbc6bf315c85e22",
     "changeTags" : [ "BODY" ]

@@ -10,25 +10,25 @@
   "endLine" : 171,
   "commits" : [ {
     "commitHash" : "0ba4830b4fb20deea040ca5e1c9a34651708b222",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "2e51b48cd9ad9ad3e599aa0cb0b916061a061dfa",
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "b76ca0bf8f61aafe2f812911f208200c96c4bc69",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "266335339db46d2487ffafcff9a8c0a316552abc",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9e56c38b7ac49a87330581336bb36910416fbed5",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "30ac768cbfca5d6aaa3719028033c792da789853",
-    "changeTags" : [ "MOVE", "BODY", "MODIFIER", "PARAMETER", "SIGNATURE", "RENAME" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "PARAMETER" ]
   }, {
     "commitHash" : "ef4e83a879f34eac29700984137c0e68d5e4f8ae",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "27580e726fa907c57590a0935673d1d7c620c57a",
     "changeTags" : [ "INTRODUCTION" ]

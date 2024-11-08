@@ -10,7 +10,7 @@
   "endLine" : 1124,
   "commits" : [ {
     "commitHash" : "a83fb61ac07c0468cbc7a38526e92683883dd932",
-    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+    "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "a2c42330047bf955a6a585dcddf798920d4c8640",
     "changeTags" : [ "BODY" ]

@@ -10,13 +10,13 @@
   "endLine" : 1406,
   "commits" : [ {
     "commitHash" : "40ca8eff4a0d6559258489cf282471f5e3b1a229",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "14a95255e1b98f49a5344c0f7f793b530282ff66",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "fb6dab6847d858b22fe6a36558cf3b62dc10627d",
-    "changeTags" : [ "BODY", "SIGNATURE" ]
+    "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "c67263fffe26a0c4970fd34789766fb18a7411a8",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -28,7 +28,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "b57169babb184d0adc2fa28cf0425c4f0c1f8555",
-    "changeTags" : [ "BODY", "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "735add2c25cb08f175ab3fc5af0270587fada083",
     "changeTags" : [ "ANNOTATION" ]
@@ -61,7 +61,7 @@
     "changeTags" : [ "ANNOTATION" ]
   }, {
     "commitHash" : "835e4f2a007ae11f9fbb4b04342d6a56df9c2709",
-    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "BODY", "PARAMETER" ]
+    "changeTags" : [ "MOVE", "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "000a174d87a901135f9665d3b11f3627fd2dc4ed",
     "changeTags" : [ "BODY" ]

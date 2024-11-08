@@ -82,7 +82,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "02a4473c62d8240837bec297f0a1f3cb67ef8a7b",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "061063257ab8e16786d04eaddb5b5aba61dcd7f1",
     "changeTags" : [ "BODY" ]

@@ -13,16 +13,16 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "21f3cc32e2980a372bbeceaff42401e9b8947ec6",
-    "changeTags" : [ "MOVE", "BODY", "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "MOVE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
-    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "16d61282a1e65bcf05eea7246ecde70fd5678b21",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
     "changeTags" : [ "INTRODUCTION" ]

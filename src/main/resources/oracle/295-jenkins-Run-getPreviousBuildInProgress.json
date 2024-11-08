@@ -16,7 +16,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "125e49d45e40ff80d75138e03d4dc6a2d99a8812",
-    "changeTags" : [ "FORMAT", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "FORMAT" ]
   }, {
     "commitHash" : "c2cb5c315f8b4c8a9555ed3fa18ab3e863b1ed77",
     "changeTags" : [ "DOCUMENTATION" ]

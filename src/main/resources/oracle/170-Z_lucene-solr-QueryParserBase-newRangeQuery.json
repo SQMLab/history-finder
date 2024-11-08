@@ -16,25 +16,25 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "e8e4245d9b36123446546ff15967ac95429ea2b0",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "098371446aaab89b978cba936e9012055c67ef64",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5f30bedccc3f8a2ed14df05e3207ef9ed56965b2",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "308e0bd4a9d24ab613fb2b3e7a5e094452447917",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "c8c9ee2cb20c1497a28ae1adb80dcc57a1fa5ac9",
-    "changeTags" : [ "BODY", "PARAMETER", "SIGNATURE" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "8b4c80f04b4255b6f1f7309ffb01ccbea6db029b",
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "778d96752fa94636a2136ea2b4d58a3fcbe283ec",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "be66120dffb677ea4ce263282d6fd35956b84e78",
     "changeTags" : [ "BODY" ]

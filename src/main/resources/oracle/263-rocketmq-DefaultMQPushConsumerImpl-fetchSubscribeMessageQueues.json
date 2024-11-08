@@ -16,7 +16,7 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
     "changeTags" : [ "INTRODUCTION" ]

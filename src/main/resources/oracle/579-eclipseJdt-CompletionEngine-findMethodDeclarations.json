@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f4a6a4aada4b614e2acc0db0bdcfb1edac95da6d",
-    "changeTags" : [ "RENAME", "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
   }, {
     "commitHash" : "48d2e5271b9ec9e3f9d53b669ddceb5e8a4c0aff",
     "changeTags" : [ "BODY" ]
@@ -22,7 +22,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3d9ca5323b31c8907d129d4437482cfc3b641c64",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "1bc41d86328ad3eac9297a00debf41226dd10005",
     "changeTags" : [ "BODY" ]
@@ -34,16 +34,16 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5bd6b9d7331a9e7fe82d427994d62e0af1821389",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "9cbf7e62288f060b33b2dc1c1d579dae84747012",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "4b3b23614cfca32dd53fa7e699914bb6d6883a79",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a7e924b1651a1b9026ccc6590ce8e03365836a1b",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "3c755125fb6d43834cd7c6dfb58024a6d397b566",
     "changeTags" : [ "BODY" ]
@@ -58,10 +58,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "4258235f7bd226d0dfb8701ffe19643b12592deb",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "735ec08d01cb739d2750c79098bb1ec5f311fb83",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "25f2a2d3f2ea6a2ed84c0af6dba49f7f2a42eab8",
     "changeTags" : [ "BODY" ]
@@ -79,7 +79,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8d2d50bf52f3a634d35e42a58029fdbb46ec188a",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "948661c4cb198af70b598b9954e5159cb73d7234",
     "changeTags" : [ "BODY" ]
@@ -88,34 +88,34 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f72032f192993f6a000c445c6ab6a878ffda160a",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "092d49846655da2c4e511a256ba551dc4e15c674",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "c57706d05dc3654769cca2053ff9cb20fb0a6664",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "7e5cc03e445550d3cbc10c611218c79332074276",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "7ff0ccf2d889c8ccb2eec99187eac9efe4dc4e22",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "a56fdb9e1b8e5c1a02fedba085001b6a52d742b7",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "c85433e27f0fa74bfe8e06c38c1c02c51b5599d7",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "44855522f87e615f1ca0bfcda268b074e4443dfe",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "ba238895da0e9d116073a555bfb1c09f876bedf2",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "db0143bfca2398448195a62173050bd24d4fcb31",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "be6c0d208933ac936a6ccb6c66b03d3da13e3796",
     "changeTags" : [ "INTRODUCTION" ]

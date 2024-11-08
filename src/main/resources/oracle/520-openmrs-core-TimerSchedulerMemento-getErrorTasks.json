@@ -10,16 +10,16 @@
   "endLine" : 48,
   "commits" : [ {
     "commitHash" : "2274569e1fa138f18ea2c1a827d794d16cb930e7",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "52b0b68c74ab7892128991731e554f564020e723",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "8e4c6bd1b0c92d8cc9c966bf952672c34c660d2e",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE" ]
   }, {
     "commitHash" : "e059dac046f9d75d55e24d585acce10010602d5f",
-    "changeTags" : [ "MOVE", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "RENAME" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "20679480675d2157c5194f34154848dba4d0b415",
     "changeTags" : [ "INTRODUCTION" ]

@@ -82,10 +82,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b61d35e848e637ef85fde4ebe95d60ced171e963",
-    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+    "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "4e1454ded6e2fcf6cb789c004756883c3ea5f77e",
-    "changeTags" : [ "EXCEPTION", "SIGNATURE" ]
+    "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "edc1fee033a23189742cea1807d8029d1b77da00",
     "changeTags" : [ "BODY" ]

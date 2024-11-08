@@ -74,7 +74,6 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
                             filterOutDeprecatedChangeTag(inputOracle);
                             objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, inputOracle);
-
                             String oracleFileName = file.getName();
 
                             if (entityMap.containsKey(oracleFileName)) {
@@ -91,7 +90,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     }).collect(Collectors.toList());
 
             log.info("save completed");
-            return traceDao.saveAll(traceEntityList);
+           // return traceDao.saveAll(traceEntityList);
+            return traceEntityList;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -253,9 +253,18 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
         inputOracle.getCommits()
                 .forEach(commit-> {
-                    commit.setChangeTags(commit.getChangeTags().stream()
+                    TreeSet<ChangeTag> updatedTagSet = commit.getChangeTags().stream()
                             .filter(changeTagSet::contains)
-                            .collect(Collectors.toCollection(TreeSet::new)));
+                            .collect(Collectors.toCollection(TreeSet::new));
+                    if (commit.getChangeTags().contains(ChangeTag.PACKAGE)||
+                            commit.getChangeTags().contains(ChangeTag.FILE_RENAME)||
+                            commit.getChangeTags().contains(ChangeTag.FILE_COPY)) {
+                        updatedTagSet.add(ChangeTag.FILE_MOVE);
+                    }
+                    if (commit.getChangeTags().contains(ChangeTag.ACCESS_MODIFIER)) {
+                        updatedTagSet.add(ChangeTag.MODIFIER);
+                    }
+                    commit.setChangeTags(updatedTagSet);
                 });
     }
 }

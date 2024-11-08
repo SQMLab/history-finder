@@ -16,7 +16,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "06ed9445bf29ea30b1f094b2d0ff608cb76aa3f6",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "8c8738f26cad0edf91d6b97f4c103680517900d9",
     "changeTags" : [ "BODY" ]
@@ -25,7 +25,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "36d4c68f78b42759ccc4186927e6974c3cfb13a9",
-    "changeTags" : [ "SIGNATURE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "9cdf3fce30d7dc163d2cd76e7f101b1497a99c8f",
     "changeTags" : [ "BODY" ]

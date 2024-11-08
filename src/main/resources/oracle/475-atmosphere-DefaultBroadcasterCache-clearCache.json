@@ -10,16 +10,16 @@
   "endLine" : 57,
   "commits" : [ {
     "commitHash" : "2454cdf32e901dfcd85c7f2a0556ef06eb0562ab",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "16d1062390a6c8178e3897d44378db327ff09a60",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "14f421fd7fd2bddc09d9276299342f11d63c8da6",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "882a6e43cd193c5164fe64edaa1cea49f72fd8ce",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "8ec28f1cc2e2602de6ec6872c93a6fe6773fd61f",
     "changeTags" : [ "INTRODUCTION" ]

@@ -22,13 +22,13 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "5c879bc963cee235ea5d25fe319faf5143820c32",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
   }, {
     "commitHash" : "7971a252a595f09f433b6fc54345ff043d1f9c47",
-    "changeTags" : [ "SIGNATURE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "6ac8ef54f7c7c4d7708285a9248f37efe3dae495",
-    "changeTags" : [ "SIGNATURE", "EXCEPTION", "BODY" ]
+    "changeTags" : [ "BODY", "EXCEPTION" ]
   }, {
     "commitHash" : "12a3e23e4731eb53b88dedb2d9d8139f8b1a588c",
     "changeTags" : [ "BODY" ]
@@ -37,10 +37,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b57d9f307f61161b62a335734438fb0c49260c84",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "cbd88179051a51e66abac4c65d4af865c203c337",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "4dd9b6ef2e1cf321874e4a613e48bd2833f3453e",
     "changeTags" : [ "BODY" ]

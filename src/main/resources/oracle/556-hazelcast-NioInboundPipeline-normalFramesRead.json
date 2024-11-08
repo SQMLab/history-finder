@@ -10,19 +10,19 @@
   "endLine" : 83,
   "commits" : [ {
     "commitHash" : "04783ec7754e5582d77e269663d08a3747aaefad",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "RETURN_TYPE" ]
   }, {
     "commitHash" : "106ff93bbabdfbf99db422b39df3131c0fc8ac1b",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "345c2f37ced2e13b544072e27c83da49d5afb688",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "cf23c5ea7a5cfcca06a330b6120c8893f7468434",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "35eb5374fbc7174f55e20e773b983d796b457c83",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "e90aa5b181e41623d42e41560c98d1da423bda7a",
     "changeTags" : [ "MOVE" ]
@@ -31,22 +31,22 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "adc30a16536113e2fe7ec51ee3912e1b892be3db",
-    "changeTags" : [ "SIGNATURE", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE" ]
   }, {
     "commitHash" : "175b6d5395f42435794b9104ff04feaa93906fd9",
-    "changeTags" : [ "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME" ]
   }, {
     "commitHash" : "a182088b51af1e235be98254d484c0b2ad647df9",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "8ba551312132f6524ae07ab4eb903c7d195cc29a",
-    "changeTags" : [ "RENAME", "MOVE" ]
+    "changeTags" : [ "MOVE", "RENAME" ]
   }, {
     "commitHash" : "30c4ae09745d6062077925a54f27205b7401d8df",
-    "changeTags" : [ "RENAME", "SIGNATURE", "RETURN_TYPE", "MODIFIER", "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "9968588644f03611a0e57f0a9f958b64f9743fa8",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "468be36021410174bc5c97d91caf579bb176140c",
     "changeTags" : [ "INTRODUCTION" ]

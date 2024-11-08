@@ -37,7 +37,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b0e82a68b34512d23a5a60a9b5da0db86eb880b2",
-    "changeTags" : [ "SIGNATURE", "PARAMETER", "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "213466b3d4fd21b332c0b6882fea36cf1affef1c",
     "changeTags" : [ "BODY" ]

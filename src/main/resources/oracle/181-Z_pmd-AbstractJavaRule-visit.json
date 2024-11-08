@@ -16,16 +16,16 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "75daf38ed303bcdbfe1034fd3a070a4306402c2d",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "4bd104698fe03929e5eaea4dfc658ce620673a58",
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "86d6d24dad6ba51be61bfaa9905a2baabf994bf1",
-    "changeTags" : [ "FILE_RENAME" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "ea75c3016bf406fb43ccf50541249205de0c2b20",
     "changeTags" : [ "MOVE" ]

@@ -8,7 +8,7 @@
   "element" : "processAfters",
   "startLine" : 123,
   "endLine" : 148,
-  "commits" : [{
+  "commits" : [ {
     "commitHash" : "6d26b45afed18dd5fe1211ccfbac7eb2587aa9a9",
     "changeTags" : [ "BODY" ]
   }, {
@@ -16,10 +16,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
-    "changeTags" : [ "EXCEPTION", "MOVE", "BODY", "PARAMETER", "SIGNATURE", "RENAME" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "EXCEPTION", "PARAMETER" ]
   }, {
     "commitHash" : "688fbac7aa52a61bd864d6e5890507a95e71e287",
-    "changeTags" : [ "EXCEPTION", "MOVE", "BODY", "PARAMETER", "SIGNATURE", "RENAME" ]
+    "changeTags" : [ "MOVE", "BODY", "RENAME", "EXCEPTION", "PARAMETER" ]
   }, {
     "commitHash" : "da627b843fe81fa0fe52a046c1be8595630e9ae7",
     "changeTags" : [ "INTRODUCTION" ]
