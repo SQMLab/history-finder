@@ -87,12 +87,16 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
         LocationInfo oldLocation = oldMethod.getLocation();
         String diff = null;
         String newCodeFragment = null;
+        String oldCodeFragment = null;
         try {
-            String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getParentCommitId()), oldFile);
             String newFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getCommitId()), newFile);
-            String oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
             newCodeFragment = Util.readLineRange(newFileContent, newLocation.getStartLine(), newLocation.getEndLine());
-            diff = Util.getDiff(oldCodeFragment, newCodeFragment);
+            if (oldMethod != null) {
+                String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getParentCommitId()), oldFile);
+                oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
+            }else {
+                diff = Util.getDiff(oldCodeFragment, newCodeFragment);
+            }
         } catch (Exception ex) {
             log.error("Diff error ", ex);
         }
@@ -104,7 +108,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .startLine(newLocation.getStartLine())
                 .endLine(newLocation.getEndLine())
                 .codeFragment(newCodeFragment)
-                .changeTags(toChangeTagSet(historyInfo.getChangeType()))
+                .changeTags(toChangeTagSet(historyInfo.getChangeList()))
                 .oldFile(oldFile)
                 .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), historyInfo.getParentCommitId(), oldFile, historyInfo.getElementBefore().getLocation().getStartLine()))
                 .newFile(newFile)
@@ -117,46 +121,51 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .build();
     }
 
-    private LinkedHashSet<ChangeTag> toChangeTagSet(Change.Type changeType) {
-        LinkedHashSet<ChangeTag> changeTagSet = new LinkedHashSet<>();
-        if (changeType == Change.Type.INTRODUCED) {
-            changeTagSet.add(ChangeTag.INTRODUCTION);
-        }
-        if (changeType == Change.Type.REMOVED) {
-            changeTagSet.add(ChangeTag.REMOVE);
-        }
-        if (changeType == Change.Type.CONTAINER_CHANGE) {
-            changeTagSet.add(ChangeTag.PACKAGE);
-        }
-        if (changeType == Change.Type.BODY_CHANGE) {
-            changeTagSet.add(ChangeTag.BODY);
-        }
-        if (changeType == Change.Type.RENAME) {
-            changeTagSet.add(ChangeTag.RENAME);
-        }
-        if (changeType == Change.Type.MODIFIER_CHANGE) {
-            changeTagSet.add(ChangeTag.MODIFIER);
-        }
-        if (changeType == Change.Type.ACCESS_MODIFIER_CHANGE) {
-            changeTagSet.add(ChangeTag.MODIFIER);
-        }
-        if (changeType == Change.Type.RETURN_TYPE_CHANGE) {
-            changeTagSet.add(ChangeTag.SIGNATURE);
-            changeTagSet.add(ChangeTag.RETURN_TYPE);
-        }
-        if (changeType == Change.Type.EXCEPTION_CHANGE) {
-            changeTagSet.add(ChangeTag.SIGNATURE);
-            changeTagSet.add(ChangeTag.EXCEPTION);
-        }
-        if (changeType == Change.Type.PARAMETER_CHANGE) {
-            changeTagSet.add(ChangeTag.SIGNATURE);
-            changeTagSet.add(ChangeTag.PARAMETER);
-        }
-        if (changeType == Change.Type.ANNOTATION_CHANGE) {
-            changeTagSet.add(ChangeTag.ANNOTATION);
-        }
-        if (changeType == Change.Type.MOVED) {
-            changeTagSet.add(ChangeTag.MOVE);
+    private Set<ChangeTag> toChangeTagSet(Set<Change> changeList) {
+        Set<ChangeTag> changeTagSet = new TreeSet<>();
+        for (Change change:changeList) {
+            Change.Type changeType = change.getType();
+            if (changeType == Change.Type.INTRODUCED) {
+                changeTagSet.add(ChangeTag.INTRODUCTION);
+            }
+            if (changeType == Change.Type.REMOVED) {
+                throw new RuntimeException("Unknown change exception");
+                //changeTagSet.add(ChangeTag.REMOVE);
+            }
+            if (changeType == Change.Type.CONTAINER_CHANGE) {
+                changeTagSet.add(ChangeTag.FILE_MOVE);
+            }
+            if (changeType == Change.Type.BODY_CHANGE) {
+                changeTagSet.add(ChangeTag.BODY);
+            }
+            if (changeType == Change.Type.RENAME) {
+                changeTagSet.add(ChangeTag.RENAME);
+            }
+            if (changeType == Change.Type.MODIFIER_CHANGE || changeType == Change.Type.ACCESS_MODIFIER_CHANGE) {
+                changeTagSet.add(ChangeTag.MODIFIER);
+            }
+
+            if (changeType == Change.Type.RETURN_TYPE_CHANGE) {
+                changeTagSet.add(ChangeTag.RETURN_TYPE);
+            }
+            if (changeType == Change.Type.EXCEPTION_CHANGE) {
+                changeTagSet.add(ChangeTag.EXCEPTION);
+            }
+            if (changeType == Change.Type.PARAMETER_CHANGE) {
+                changeTagSet.add(ChangeTag.PARAMETER);
+            }
+            if (changeType == Change.Type.ANNOTATION_CHANGE) {
+                changeTagSet.add(ChangeTag.ANNOTATION);
+            }
+            if (changeType == Change.Type.MOVED) {
+                changeTagSet.add(ChangeTag.MOVE);
+            }
+            if (changeType == Change.Type.DOCUMENTATION_CHANGE) {
+                changeTagSet.add(ChangeTag.DOCUMENTATION);
+            }
+            if (changeTagSet.isEmpty()) {
+                throw new RuntimeException("Change type mapping not found : " + changeType);
+            }
         }
         return changeTagSet;
     }

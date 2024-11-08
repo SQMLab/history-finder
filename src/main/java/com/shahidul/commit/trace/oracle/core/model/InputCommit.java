@@ -20,5 +20,5 @@ import java.util.Set;
 @Data
 public class InputCommit {
     String commitHash;
-    LinkedHashSet<ChangeTag> changeTags;
+    Set<ChangeTag> changeTags;
 }

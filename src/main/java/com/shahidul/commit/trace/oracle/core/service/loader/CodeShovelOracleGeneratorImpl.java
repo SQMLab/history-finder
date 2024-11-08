@@ -37,11 +37,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CodeShovelOracleGeneratorImpl implements CodeShovelOracleGenerator {
     private static final Set<ChangeTag> DIFFICULT_CHANGE_TAG_SET = Set.of(
-            ChangeTag.PACKAGE,
+            ChangeTag.FILE_MOVE,
             ChangeTag.MOVE,
-            ChangeTag.SIGNATURE,
-            ChangeTag.FILE_RENAME,
-            ChangeTag.FILE_COPY,
             ChangeTag.RENAME);
     RepositoryNameUrlMappingConfiguration repositoryMappingConfiguration;
     CodeShovelOracleGeneratorConfiguration codeShovelOracleGeneratorConfiguration;

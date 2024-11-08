@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -33,7 +34,7 @@ public class OutputCommitDetail {
     @JsonIgnore
     String file;
     @JsonIgnore
-    LinkedHashSet<ChangeTag> changeTags;
+    Set<ChangeTag> changeTags;
     @JsonProperty("type")
     String changeTagText;
     @JsonProperty("commitAuthor")

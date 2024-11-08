@@ -25,8 +25,9 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -143,13 +144,10 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private LinkedHashSet<ChangeTag> toChangeTags(Ychange change) {
-        LinkedHashSet<ChangeTag> changeTags = new LinkedHashSet<>();
+    private Set<ChangeTag> toChangeTags(Ychange change) {
+        Set<ChangeTag> changeTags = new TreeSet<>();
         if (change instanceof Yintroduced) {
             changeTags.add(ChangeTag.INTRODUCTION);
-        }
-        if (change instanceof Ysignaturechange) {
-            changeTags.add(ChangeTag.SIGNATURE);
         }
         if (change instanceof Yrename) {
             changeTags.add(ChangeTag.RENAME);
@@ -175,12 +173,15 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             changeTags.add(ChangeTag.MOVE);
         }
         if (change instanceof Yfilerename) {
-            changeTags.add(ChangeTag.FILE_RENAME);
+            changeTags.add(ChangeTag.FILE_MOVE);
         }
         if (change instanceof  Ymultichange){
             for (Ychange subChange :  ((Ymultichange) change).getChanges()){
                 changeTags.addAll(toChangeTags(subChange));
             }
+        }
+        if (changeTags.isEmpty()){
+            throw new RuntimeException("Change tag mapping not found : " + change.getTypeAsString());
         }
         return changeTags;
     }

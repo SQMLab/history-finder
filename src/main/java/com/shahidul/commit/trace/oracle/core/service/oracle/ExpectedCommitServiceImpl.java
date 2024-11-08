@@ -10,8 +10,8 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Shahidul Islam
@@ -61,7 +61,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     }
 
     @Override
-    public CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, LinkedHashSet<ChangeTag> changeTagSet) {
+    public CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, Set<ChangeTag> changeTagSet) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         CommitUdt targetCommit = findTargetCommit(commitHash, fromTracer, traceEntity);
         targetCommit.setChangeTags(changeTagSet);

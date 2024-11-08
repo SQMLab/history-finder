@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.core.service.loader;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.model.InputTrace;
@@ -70,6 +71,10 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     .map(file -> {
                         try {
                             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
+
+                            filterOutDeprecatedChangeTag(inputOracle);
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, inputOracle);
+
                             String oracleFileName = file.getName();
 
                             if (entityMap.containsKey(oracleFileName)) {
@@ -164,7 +169,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                         String[] parts = line.split("\t");
                                         return parts[0];
                                     })
-                                    .map(commitHash -> InputCommit.builder().commitHash(commitHash).changeTags(new LinkedHashSet<>()).build())
+                                    .map(commitHash -> InputCommit.builder().commitHash(commitHash).changeTags(new TreeSet<>()).build())
                                     .toList();
                             bufferedReader.close();
 
@@ -232,4 +237,25 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
     }
 
+    private void filterOutDeprecatedChangeTag(InputOracle inputOracle){
+        Set<ChangeTag> changeTagSet = Set.of(ChangeTag.INTRODUCTION,
+                ChangeTag.MOVE,
+                ChangeTag.BODY,
+                ChangeTag.DOCUMENTATION,
+                ChangeTag.FILE_MOVE,
+                ChangeTag.RENAME,
+                ChangeTag.MODIFIER,
+                ChangeTag.RETURN_TYPE,
+                ChangeTag.EXCEPTION,
+                ChangeTag.PARAMETER,
+                ChangeTag.ANNOTATION,
+                ChangeTag.FORMAT);
+
+        inputOracle.getCommits()
+                .forEach(commit-> {
+                    commit.setChangeTags(commit.getChangeTags().stream()
+                            .filter(changeTagSet::contains)
+                            .collect(Collectors.toCollection(TreeSet::new)));
+                });
+    }
 }
