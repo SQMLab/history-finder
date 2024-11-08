@@ -78,7 +78,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
-        Set<ChangeTag> changeTags = commitEntry.getChangeTags()
+        TreeSet<ChangeTag> changeTags = commitEntry.getChangeTags()
                 .stream()
                 .map(tag -> parseChangeType(tag.getCode()))
                 .collect(Collectors.toCollection(TreeSet::new));
@@ -107,7 +107,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
 
     }
     private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
-        Set<ChangeTag> changeTags = historyEntry.getChangeTagSet()
+        TreeSet<ChangeTag> changeTags = historyEntry.getChangeTagSet()
                 .stream()
                 .map(tag -> parseChangeType(tag.getCode()))
                 .collect(Collectors.toCollection(TreeSet::new));

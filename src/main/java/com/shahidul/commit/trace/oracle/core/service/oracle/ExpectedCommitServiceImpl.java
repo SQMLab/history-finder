@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -61,7 +62,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
     }
 
     @Override
-    public CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, Set<ChangeTag> changeTagSet) {
+    public CommitUdt updateTags(String oracleFileName, String commitHash, TracerName fromTracer, TreeSet<ChangeTag> changeTagSet) {
         TraceEntity traceEntity = traceDao.findByOracleName(oracleFileName);
         CommitUdt targetCommit = findTargetCommit(commitHash, fromTracer, traceEntity);
         targetCommit.setChangeTags(changeTagSet);

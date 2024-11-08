@@ -19,10 +19,10 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "de6f9416aad7fad1c04966888239225bb7394a54",
-    "changeTags" : [ "MOVE", "FILE_COPY" ]
+    "changeTags" : [ "MOVE", "FILE_MOVE" ]
   }, {
     "commitHash" : "770c7f7defbe89eac285dcecb5bd4a5f27bf00c6",
-    "changeTags" : [ "PACKAGE", "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "66ca327aa3badadc8edabbcd6440f7633fd53e1d",
     "changeTags" : [ "INTRODUCTION" ]

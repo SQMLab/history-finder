@@ -16,10 +16,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a1732c2f2a09af05c4368bcc76dc59514b708444",
-    "changeTags" : [ "BODY", "MOVE" ]
+    "changeTags" : [ "MOVE", "BODY" ]
   }, {
     "commitHash" : "34c3e5c4d812b3335b613f1235c73af45fcf6e45",
-    "changeTags" : [ "DOCUMENTATION", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "32bd26e54fa49ee875259e2baefa1726db7beeb7",
     "changeTags" : [ "BODY" ]

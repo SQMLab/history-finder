@@ -144,8 +144,8 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
     }
 
-    private Set<ChangeTag> toChangeTags(Ychange change) {
-        Set<ChangeTag> changeTags = new TreeSet<>();
+    private TreeSet<ChangeTag> toChangeTags(Ychange change) {
+        TreeSet<ChangeTag> changeTags = new TreeSet<>();
         if (change instanceof Yintroduced) {
             changeTags.add(ChangeTag.INTRODUCTION);
         }
