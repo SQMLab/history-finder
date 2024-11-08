@@ -24,8 +24,8 @@ public class ChangeTagUtil {
         TAG_TO_CODE_SHOVEL.put(ChangeTag.FORMAT, "Yformatchange");
     }
 
-    public static Set<ChangeTag> toChangeTagsFromCodeShovel(String change) {
-        Set<ChangeTag> changeTags = new TreeSet<>();
+    public static TreeSet<ChangeTag> toChangeTagsFromCodeShovel(String change) {
+        TreeSet<ChangeTag> changeTags = new TreeSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
                 changeTags.add(ChangeTag.INTRODUCTION);

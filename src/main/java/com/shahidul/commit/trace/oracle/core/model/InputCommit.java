@@ -6,8 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -20,5 +19,5 @@ import java.util.Set;
 @Data
 public class InputCommit {
     String commitHash;
-    Set<ChangeTag> changeTags;
+    TreeSet<ChangeTag> changeTags;
 }

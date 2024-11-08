@@ -10,8 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -34,7 +33,7 @@ public class OutputCommitDetail {
     @JsonIgnore
     String file;
     @JsonIgnore
-    Set<ChangeTag> changeTags;
+    TreeSet<ChangeTag> changeTags;
     @JsonProperty("type")
     String changeTagText;
     @JsonProperty("commitAuthor")
