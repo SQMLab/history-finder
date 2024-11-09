@@ -49,13 +49,13 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e9f6eaff2e23fe9fd65552216e77c78d7ed3fab5",
-    "changeTags" : [ "MOVE", "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "8ba69b98ea2dd4d953189cd9f24ec5ba42b924a5",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "2433fb8d8fda093c8356df7f99527189db46e7b3",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "b7e4cf2d401fccfb69848d836f0fa6b26b8a195a",
     "changeTags" : [ "PARAMETER" ]

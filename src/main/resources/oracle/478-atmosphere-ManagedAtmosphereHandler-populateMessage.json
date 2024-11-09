@@ -16,7 +16,7 @@
     "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "ca70a785f9a575efa433e3c6406c86f65b94a47e",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "75ece67d6ad730cd8770b9173afc5432e6eceb70",
     "changeTags" : [ "INTRODUCTION" ]

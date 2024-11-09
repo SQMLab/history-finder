@@ -16,7 +16,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "59b7061fdc86d257864820da6714d165f4de4a78",
-    "changeTags" : [ "BODY", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "BODY" ]
   }, {
     "commitHash" : "8804ca786b0bd189789e1b48fd4d81b8bfb2dd0b",
     "changeTags" : [ "BODY" ]

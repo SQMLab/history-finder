@@ -100,7 +100,7 @@
     "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "b4fea47d5cff9f3c85e62c233c2fe86b1d616592",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "e693d9fa587db6f3392fb545cffbd3e50893c4a1",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -142,7 +142,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "14bd47551900ced88eeacf2a5f63c187ff72028c",
-    "changeTags" : [ "MOVE", "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "69a762e86ac075035bfcdc899aadf2b36abaf167",
     "changeTags" : [ "BODY" ]

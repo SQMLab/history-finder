@@ -143,7 +143,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     }
 
     private List<ChangeTag> toChangeTags(Ychange change) {
-        TreeSet<ChangeTag> changeTags = new TreeSet<>();
+        Set<ChangeTag> changeTags = new HashSet<>();
         if (change instanceof Yintroduced) {
             changeTags.add(ChangeTag.INTRODUCTION);
         }
@@ -181,7 +181,9 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         if (changeTags.isEmpty()){
             throw new RuntimeException("Change tag mapping not found : " + change.getTypeAsString());
         }
-        return new ArrayList<>(changeTags);
+        List<ChangeTag> changeList = new ArrayList<>(changeTags);
+        changeList.sort(ChangeTag.NATURAL_ORDER);
+        return changeList;
     }
 
     private String findFirst(JsonArray subChangeArray, String key){

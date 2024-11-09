@@ -16,16 +16,16 @@
     "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "a3cc1e4213768e0f3383e8ad87f988d3ff17a4c7",
-    "changeTags" : [ "MOVE", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "MOVE" ]
   }, {
     "commitHash" : "95293b46e06131a6927439af5d00c6349f2b1b59",
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "d62b37790ee4eb4cff0c8d991df8c651ce1909b5",
-    "changeTags" : [ "BODY", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "b88b8c2045ee816417113d198bdfe482a17f552c",
-    "changeTags" : [ "BODY", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "816e840ba86827af959e07a9753580647fdc24e6",
     "changeTags" : [ "BODY" ]

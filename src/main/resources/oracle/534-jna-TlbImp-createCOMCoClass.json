@@ -16,16 +16,16 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "55cca7220ad5908bfa53adb435404357b47a9204",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "4f84e1b32569193dd292915088d221167a656283",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "68010b675237bf32f5adfb62e4ec8bbd7a724a9f",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "d74598979a567e60f3568da9c6ff151f101f4789",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "6166a169e37ff6a107c80f17b1564fc0b758311c",
     "changeTags" : [ "INTRODUCTION" ]

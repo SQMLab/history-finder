@@ -16,7 +16,7 @@
     "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "c11a251dbfb752ac1ff48ac6b777a4aa57bb533c",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "4b91955979afbbfff317b36af89b6bd1a1aa9b47",
     "changeTags" : [ "BODY" ]

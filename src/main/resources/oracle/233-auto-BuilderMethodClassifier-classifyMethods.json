@@ -43,7 +43,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "41d78d29859afa4ab4d6a9650f2fc612d45d6f23",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "39b998770ac586c443d26c4507705e30de791363",
     "changeTags" : [ "BODY" ]

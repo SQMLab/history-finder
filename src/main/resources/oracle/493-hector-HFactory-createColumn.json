@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "0171308847013b98c4b268e3b795e9cfbde288a0",
-    "changeTags" : [ "MOVE", "RENAME", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "5e004c563a93217352e362da7eb78446477e9fcb",
     "changeTags" : [ "RETURN_TYPE" ]

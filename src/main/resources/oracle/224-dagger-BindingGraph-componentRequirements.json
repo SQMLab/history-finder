@@ -64,7 +64,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b50b8aeef85ecd095e91c379b4dac111873dc70f",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "76fe9b9538aebac75cefeab0739d3ae2e864cb7a",
     "changeTags" : [ "ANNOTATION" ]

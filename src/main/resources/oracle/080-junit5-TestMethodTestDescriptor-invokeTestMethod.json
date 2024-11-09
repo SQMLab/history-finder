@@ -109,7 +109,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b8f87c20c3c0f77bf1051123c9f43cea8eaa8ce8",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "b67bd2e32f8274fb0972e3a98157e2398140dcbf",
     "changeTags" : [ "BODY" ]

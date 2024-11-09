@@ -78,16 +78,18 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
     private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
-        TreeSet<ChangeTag> changeTags = commitEntry.getChangeTags()
+        Set<ChangeTag> changeTags = commitEntry.getChangeTags()
                 .stream()
                 .map(tag -> parseChangeType(tag.getCode()))
-                .collect(Collectors.toCollection(TreeSet::new));
+                .collect(Collectors.toCollection(HashSet::new));
         String newFile = commitEntry.getMethodContainerFile();
+        List<ChangeTag> orderedTagList = new ArrayList<>(changeTags);
+        orderedTagList.sort(ChangeTag.NATURAL_ORDER);
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(commitEntry.getCommitHash())
                 .parentCommitHash(commitEntry.getParentCommitHash())
-                .changeTags(new ArrayList<>(changeTags))
+                .changeTags(orderedTagList)
                 .codeFragment(commitEntry.getMethodCode())
                 .documentation(commitEntry.getDocumentation())
                 .newFile(newFile)
@@ -107,20 +109,22 @@ public class GitHistoryFinderServiceImpl implements TraceService {
 
     }
     private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
-        TreeSet<ChangeTag> changeTags = historyEntry.getChangeTagSet()
+        Set<ChangeTag> changeTags = historyEntry.getChangeTagSet()
                 .stream()
                 .map(tag -> parseChangeType(tag.getCode()))
-                .collect(Collectors.toCollection(TreeSet::new));
+                .collect(Collectors.toCollection(HashSet::new));
         MethodHolder newMethodHolder = historyEntry.getNewMethodHolder();
         String newFile = newMethodHolder.getFile();
         MethodHolder oldMethodHolder = historyEntry.getOldMethodHolder();
         String oldFile = oldMethodHolder != null ? oldMethodHolder.getFile() : null;
 
         int startLine = newMethodHolder.getMethodSourceInfo().getStartLine();
+        List<ChangeTag> orderedTagList = new ArrayList<>(changeTags);
+        orderedTagList.sort(ChangeTag.NATURAL_ORDER);
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
                 .commitHash(newMethodHolder.getCommitHash())
-                .changeTags(new ArrayList<>(changeTags))
+                .changeTags(orderedTagList)
                 .codeFragment(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
                 .documentation(rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
                 .parentCommitHash(oldMethodHolder != null? oldMethodHolder.getCommitHash() : null)

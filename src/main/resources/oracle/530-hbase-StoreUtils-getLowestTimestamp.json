@@ -28,10 +28,10 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "1abf20084a3c41fc83953fb470940fae4a4644cf",
-    "changeTags" : [ "MOVE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "028a672e2096c979f3d478b6d0200c203571fe51",
-    "changeTags" : [ "MOVE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "093c6fa19c1bd9b5925a52aa42fca63e5be397da",
     "changeTags" : [ "MOVE" ]

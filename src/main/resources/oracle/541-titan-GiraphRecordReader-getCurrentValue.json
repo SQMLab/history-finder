@@ -40,7 +40,7 @@
     "changeTags" : [ "RETURN_TYPE" ]
   }, {
     "commitHash" : "9a47a0c36d02635d43689a36d04828be5e2e5d0b",
-    "changeTags" : [ "MOVE", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "MOVE" ]
   }, {
     "commitHash" : "13284b0a4a28e4b17d14b5af6edc1a3a0b037794",
     "changeTags" : [ "FILE_MOVE" ]

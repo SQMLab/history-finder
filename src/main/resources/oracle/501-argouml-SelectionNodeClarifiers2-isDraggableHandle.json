@@ -19,10 +19,10 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "39ce1c3c72de2e4d0899a2be47c33f28c5364d8e",
-    "changeTags" : [ "MOVE", "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY", "MOVE" ]
   }, {
     "commitHash" : "92d7cdd4b0cc05b70a28402c15af0dcd6a558566",
-    "changeTags" : [ "MOVE", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "252047237afdf3226355fece44de54a08e246543",
     "changeTags" : [ "INTRODUCTION" ]

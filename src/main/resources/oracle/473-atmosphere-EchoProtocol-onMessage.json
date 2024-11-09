@@ -31,7 +31,7 @@
     "changeTags" : [ "RENAME", "PARAMETER" ]
   }, {
     "commitHash" : "074c2005746920d8714cdb6292869bc9cd274642",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "88773e9983e3011fcbffb79d19149349bb160eb0",
     "changeTags" : [ "RENAME" ]

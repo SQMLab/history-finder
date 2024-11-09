@@ -28,10 +28,10 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "43b8495a40e5a1b502a52f382f3b3792f27a08ed",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "MODIFIER", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "b36f04ece8bb2952d1e0e7f5c95c3f1c908e85d3",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "b57cd757597e9146f606abe8745ed08548e1e979",
     "changeTags" : [ "INTRODUCTION" ]

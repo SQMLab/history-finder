@@ -22,7 +22,7 @@
     "changeTags" : [ "ANNOTATION" ]
   }, {
     "commitHash" : "0cffd1da977e9ca334032ebc1d798213a177aab7",
-    "changeTags" : [ "BODY", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "BODY" ]
   }, {
     "commitHash" : "a73a5291e50d684cb1be0fca86b60bb6ac91d37d",
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
@@ -34,7 +34,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "f389e91ccecac6ddf736bbf1a4346782609eb034",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "ac28599e2b40e0dd6b97f6a91849585531264622",
     "changeTags" : [ "FILE_MOVE" ]

@@ -33,9 +33,9 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
     @Transactional
     public TraceEntity analyze(TraceEntity traceEntity) {
 
-        TreeSet<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
-                .collect(Collectors.toCollection(TreeSet::new));
-        TreeSet<CommitUdt> weaklyExpectedHashSet = getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits());
+        Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
+                .collect(Collectors.toCollection(HashSet::new));
+        Set<CommitUdt> weaklyExpectedHashSet = getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits());
 
 
         Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
@@ -111,7 +111,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
     }
 
     @Override
-    public @NotNull TreeSet<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList) {
+    public @NotNull Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList) {
         return expectedCommittList
                 .stream()
                 .filter(commitUdt -> !commitUdt.getChangeTags().isEmpty() &&
@@ -119,6 +119,6 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                                 .stream()
                                 .filter(changeTag -> !WEAKLY_EXPECTED_CHANGE_TAGS.contains(changeTag)).count() == 0)
                 //.map(CommitUdt::getCommitHash)
-                .collect(Collectors.toCollection(TreeSet::new));
+                .collect(Collectors.toCollection(HashSet::new));
     }
 }

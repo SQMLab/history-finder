@@ -22,7 +22,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "bac21bf5d77c8e15c608ecbf006d29e7af1dd68a",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "bc7f6d9e5b6d5d4788daf6f96a0e2f56055da06a",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -64,7 +64,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "d56d48f1a1933f138f5d97f42b71aa64fad6bc6f",
-    "changeTags" : [ "BODY", "FILE_MOVE", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "FILE_MOVE", "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "e73ea29593cdb8b4d9a11137b2188ca72673e98c",
     "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
@@ -91,10 +91,10 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "5b05ca635d1a661bf2be3baf60159d84834a9942",
-    "changeTags" : [ "BODY", "DOCUMENTATION", "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "65d0e3245ece52c70505c40e56bd49ea93e0a15f",
-    "changeTags" : [ "BODY", "DOCUMENTATION", "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "33884df84a9ec461b5c27233bc4859c0bb039ec8",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -106,7 +106,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "47e2c8210930a5eb57fba3eebdf9afef07772ae3",
-    "changeTags" : [ "BODY", "FILE_MOVE", "PARAMETER" ]
+    "changeTags" : [ "FILE_MOVE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "90df95391049122969c39332bfd4ed852dba6ea0",
     "changeTags" : [ "FILE_MOVE" ]
@@ -181,10 +181,10 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "b6a17eb9dc4251cdb91dd7f9f64ac20e467d2d73",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c3fe7358429b96fca5c7604d6f780a214f1957a0",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "54a66d7aac74083612510b8e4a03c9de3e7e8aab",
     "changeTags" : [ "DOCUMENTATION" ]

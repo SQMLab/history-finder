@@ -19,7 +19,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3d897c2787a174a212d7b9aa59ed94a750564a75",
-    "changeTags" : [ "BODY", "RENAME", "MODIFIER" ]
+    "changeTags" : [ "RENAME", "BODY", "MODIFIER" ]
   }, {
     "commitHash" : "66387b8dbdf0febc129ef30556ac93c8781f298c",
     "changeTags" : [ "BODY" ]
@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "634dd99dbe860f1982f9c1f5d08eb00e76783645",
-    "changeTags" : [ "MOVE", "BODY", "MODIFIER", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "45fe7f1b67838beacf8e479f313315397d02dbdb",
     "changeTags" : [ "FILE_MOVE" ]
@@ -43,10 +43,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "6d677609afba35b0a7c830d728ee0d2fb963e9b9",
-    "changeTags" : [ "BODY", "FILE_MOVE", "MODIFIER" ]
+    "changeTags" : [ "FILE_MOVE", "BODY", "MODIFIER" ]
   }, {
     "commitHash" : "6d3c6c33342d2435a55850c031b833897fa8dc6f",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "11dc53725340aff92fcff18c971fa6ef486f3bf0",
     "changeTags" : [ "BODY" ]
@@ -67,7 +67,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "4de7f846e0dd85354de7af94bd7ff81ac2487c24",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "RENAME", "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "515f80fdba5a7b03b1782062524469d3221efb6b",
     "changeTags" : [ "BODY" ]

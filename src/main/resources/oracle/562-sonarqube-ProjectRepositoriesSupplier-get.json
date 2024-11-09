@@ -52,10 +52,10 @@
     "changeTags" : [ ]
   }, {
     "commitHash" : "80b9f52b80c5ae3fcc81b8b8cc3209000a886b7f",
-    "changeTags" : [ "MOVE", "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "4be016e61f4d1e4fed297dd7eb3b3ccb286f0f81",
-    "changeTags" : [ "MOVE", "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "91c3bee035b2fe4249dca9f953f1a4b0e1b5474a",
     "changeTags" : [ "BODY" ]

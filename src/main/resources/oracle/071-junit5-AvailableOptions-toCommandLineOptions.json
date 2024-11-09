@@ -103,7 +103,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e9b1bd435dc182d13f610948024659a99bd727da",
-    "changeTags" : [ "MOVE", "BODY", "MODIFIER", "PARAMETER" ]
+    "changeTags" : [ "BODY", "MODIFIER", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "550e5b1d774d538ecfa22d7efe8fe893dcd9fa06",
     "changeTags" : [ "INTRODUCTION" ]

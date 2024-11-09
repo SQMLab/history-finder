@@ -19,22 +19,22 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "cfba7fcb6500d8217bd81ecfcb8f47ec48ad55f2",
-    "changeTags" : [ "MOVE", "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "MOVE" ]
   }, {
     "commitHash" : "7bd31bc52d296c558803ee633c49851afe13e9ff",
-    "changeTags" : [ "MOVE", "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "MOVE" ]
   }, {
     "commitHash" : "272fb51fc5f7dcbef163938c3230ef1e4f87640a",
     "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "14f36bfb794a37ac67b643924e8608421a8f549c",
-    "changeTags" : [ "MOVE", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "MOVE" ]
   }, {
     "commitHash" : "1b642da7883702abcc6f93b590cfe4cd3c271d4d",
     "changeTags" : [ "FILE_MOVE", "RETURN_TYPE" ]
   }, {
     "commitHash" : "7b8ec8c4770a2c856cc52f98feddb0231d172051",
-    "changeTags" : [ "MOVE", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "MOVE" ]
   }, {
     "commitHash" : "1e39cf737eed643f1aaed340fce5696eb760a7d8",
     "changeTags" : [ "FILE_MOVE" ]

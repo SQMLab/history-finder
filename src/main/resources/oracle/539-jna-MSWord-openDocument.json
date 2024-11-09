@@ -19,7 +19,7 @@
     "changeTags" : [ "INTRODUCTION" ]
   }, {
     "commitHash" : "fcf1f5c283ee83da50cfbf2b6d2900cc944eee18",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "4dda1bcdd164bd1cfc3ff46ec7b8884776797c16",
     "changeTags" : [ "BODY" ]

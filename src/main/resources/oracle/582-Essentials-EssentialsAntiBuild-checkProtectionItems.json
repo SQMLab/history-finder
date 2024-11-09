@@ -10,7 +10,7 @@
   "endLine" : 37,
   "commits" : [ {
     "commitHash" : "444ec11dc173b51c13859526718cd1e0935d3631",
-    "changeTags" : [ "MOVE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "275c865de38afe5ceea3f0ae9dfad56c3bb65edf",
     "changeTags" : [ "BODY", "MODIFIER", "PARAMETER" ]

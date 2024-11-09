@@ -22,7 +22,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "f9eff90317ab5876f6bbde9fde853584bc6875bc",
-    "changeTags" : [ "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY" ]
   }, {
     "commitHash" : "540583a0254874a832ea6e04d36745b44b2ea235",
     "changeTags" : [ "INTRODUCTION" ]

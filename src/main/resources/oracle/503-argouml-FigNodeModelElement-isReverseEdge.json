@@ -22,10 +22,10 @@
     "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "252047237afdf3226355fece44de54a08e246543",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "69d72c95ab869619dc476fbf4e7d4047e553fbf8",
-    "changeTags" : [ "MOVE", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "12b8c5d4d5302fad4463b5737e033ec8301c5cec",
     "changeTags" : [ "INTRODUCTION" ]

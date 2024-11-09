@@ -46,7 +46,7 @@
     "changeTags" : [ "ANNOTATION" ]
   }, {
     "commitHash" : "ebec0b29e283130345a96417d19c43c0be6e2c1c",
-    "changeTags" : [ "DOCUMENTATION", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]
   }, {
     "commitHash" : "35c8da6ca2f0c446d9e50d1c5507cc80e5ccb996",
     "changeTags" : [ "BODY" ]

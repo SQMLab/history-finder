@@ -10,7 +10,7 @@
   "endLine" : 167,
   "commits" : [ {
     "commitHash" : "991b9e7244fd848ab1806d42fd511e5e27d4ea29",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "RENAME", "BODY", "MODIFIER", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "57f2d295ae6825c076a2b1727209b6b25b45edda",
     "changeTags" : [ "BODY" ]

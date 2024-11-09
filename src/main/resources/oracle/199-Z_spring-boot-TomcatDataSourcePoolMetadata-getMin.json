@@ -13,7 +13,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "2e51b48cd9ad9ad3e599aa0cb0b916061a061dfa",
-    "changeTags" : [ "MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "MOVE" ]
   }, {
     "commitHash" : "69107cb1df70247a0b04b79e9989b5efcce52881",
     "changeTags" : [ "FILE_MOVE" ]

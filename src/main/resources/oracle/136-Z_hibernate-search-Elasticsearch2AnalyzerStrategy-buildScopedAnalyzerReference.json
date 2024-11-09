@@ -22,10 +22,10 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "5147cfbbbcb0596d25179833dd0ebc5633ea885e",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "679e1e7d5845925dbee16fa9742db77de5248aaf",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "11577f700d21d558e92f914c30b87d28c5636911",
     "changeTags" : [ "BODY" ]

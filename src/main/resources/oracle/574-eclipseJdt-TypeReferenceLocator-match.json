@@ -16,13 +16,13 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "0aef5635cdda5f8b487e6520930c462feef51cd5",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "02733ea32199eef92e7e8bc7be9f2db172e7eedd",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "59d8c0d8b554a42bbafdc0ad10f524f90fa03b31",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "3ba8416c88ea2caabb450ac956476cf3b7bed2e6",
     "changeTags" : [ "BODY" ]
@@ -31,31 +31,31 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "092d49846655da2c4e511a256ba551dc4e15c674",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "c57706d05dc3654769cca2053ff9cb20fb0a6664",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "7e5cc03e445550d3cbc10c611218c79332074276",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "7ff0ccf2d889c8ccb2eec99187eac9efe4dc4e22",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "a56fdb9e1b8e5c1a02fedba085001b6a52d742b7",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "c85433e27f0fa74bfe8e06c38c1c02c51b5599d7",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "44855522f87e615f1ca0bfcda268b074e4443dfe",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "ba238895da0e9d116073a555bfb1c09f876bedf2",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "3c340a30d5ee47c28968789969de0fd1189f5b30",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "be6c0d208933ac936a6ccb6c66b03d3da13e3796",
     "changeTags" : [ "INTRODUCTION" ]

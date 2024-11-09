@@ -19,7 +19,7 @@
     "changeTags" : [ "RENAME", "RETURN_TYPE" ]
   }, {
     "commitHash" : "bc1ec7f194faf511913bf07d5c72202fd235a815",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER" ]
+    "changeTags" : [ "RENAME", "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "8be7070b44af32af8443e2dc1872a05060428e3a",
     "changeTags" : [ "MOVE" ]

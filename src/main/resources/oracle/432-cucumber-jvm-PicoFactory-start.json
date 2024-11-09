@@ -28,7 +28,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "098b34c4c9a58817a253fdbfe25644864d90c1f7",
-    "changeTags" : [ "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY" ]
   }, {
     "commitHash" : "2c708b140b815c75c7e21b2fc5712b8f92aec628",
     "changeTags" : [ "FILE_MOVE" ]
