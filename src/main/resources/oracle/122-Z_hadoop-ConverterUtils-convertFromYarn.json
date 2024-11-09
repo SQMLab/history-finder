@@ -13,7 +13,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "acc0d3eb521e3c1d1b2f4be9b46c685ee921504b",
-    "changeTags" : [ "MOVE", "RENAME" ]
+    "changeTags" : [ "RENAME", "MOVE" ]
   }, {
     "commitHash" : "6a2f2551fd13f6d3c932cc9b592e2a23b616a7f5",
     "changeTags" : [ "PARAMETER" ]

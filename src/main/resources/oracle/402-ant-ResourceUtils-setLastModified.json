@@ -13,7 +13,7 @@
     "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "fa84f9f4612033d0b9d171822cc9af6593602f8e",
-    "changeTags" : [ "MOVE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "fbb9886634198d8377104bef9ec697fadeb134df",
     "changeTags" : [ "INTRODUCTION" ]

@@ -10,10 +10,10 @@
   "endLine" : 275,
   "commits" : [ {
     "commitHash" : "2e8d50a03846602d5ffb47f773ab1b1e1464156d",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "2716eea509a7be38ae53a8cc7fba7001e17c20eb",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "a18e453686fb2f5bbee101367bc40ce40a9f2c49",
     "changeTags" : [ "FILE_MOVE" ]

@@ -34,7 +34,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "4b2e851e19d38707af9cefe8a161a938981de697",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "df920f2c161d742f8586431b9e229e5258fdfee7",
     "changeTags" : [ "BODY" ]
@@ -43,25 +43,25 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "0a9a700edde7c51f66f77f41299099027c9315fc",
-    "changeTags" : [ "MOVE", "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY", "MOVE" ]
   }, {
     "commitHash" : "1545873828058a174dd7026030e654c2a6a3fd0f",
-    "changeTags" : [ "MOVE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "309e807f5ca0f3804def9cee9b3ea75fdc67f39b",
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "867bd38dd2a4b32253e896aa8856ce6102c44ffb",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "42fd686bf5deb9e0ff4ad5ad374be5cd9929dc85",
-    "changeTags" : [ "BODY", "RENAME", "MODIFIER", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "MODIFIER", "PARAMETER" ]
   }, {
     "commitHash" : "14b06a032b5a96322ff505a538bc32fa20bb3a18",
     "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "6ec7c41cafec079960dd4c6c4b4bc059a2153cb8",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "e6d2344484c4bcc539988e905571a2afd18db4a7",
     "changeTags" : [ "BODY" ]
@@ -70,7 +70,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9fd0a7e8564c651aec260090b7da95967ed437c0",
-    "changeTags" : [ "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY" ]
   }, {
     "commitHash" : "f339613622a526574d9344abbae45c0917fd6ad1",
     "changeTags" : [ "BODY", "PARAMETER" ]
@@ -85,7 +85,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "45ec6763608616a24b6a7be68d858f9836a245dc",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "a14d98db070a99d2974c5f9dc1c1b337bc306da4",
     "changeTags" : [ "MODIFIER" ]

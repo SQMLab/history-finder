@@ -25,7 +25,7 @@ public class ChangeTagUtil {
     }
 
     public static List<ChangeTag> toChangeTagsFromCodeShovel(String change) {
-        TreeSet<ChangeTag> changeTags = new TreeSet<>();
+        Set<ChangeTag> changeTags = new HashSet<>();
         if (change != null) {
             if (change.contains("Yintroduced")) {
                 changeTags.add(ChangeTag.INTRODUCTION);
@@ -60,7 +60,9 @@ public class ChangeTagUtil {
                 changeTags.add(ChangeTag.FILE_MOVE);
             }
         }
-        return new ArrayList<>(changeTags);
+        List<ChangeTag> orderedTagList = new ArrayList<>(changeTags);
+        orderedTagList.sort(ChangeTag.NATURAL_ORDER);
+        return orderedTagList;
     }
 
     public static String toCodeShovelChangeText(List<ChangeTag> changeTagList) {

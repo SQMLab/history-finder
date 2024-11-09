@@ -40,7 +40,7 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "4666f1c931f150ede3dffb2c858af0dce9afde0f",
-    "changeTags" : [ "MOVE", "BODY", "MODIFIER" ]
+    "changeTags" : [ "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "87abc75afb58a6fdfa23d2bf0cd8579731f79e0d",
     "changeTags" : [ "PARAMETER" ]

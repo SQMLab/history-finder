@@ -49,7 +49,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f719bd06a46b0c8f8249f5d4848db61947b920be",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "513a45b3091b88d1ad9020099bbd1aec04a8c686",
     "changeTags" : [ "BODY" ]

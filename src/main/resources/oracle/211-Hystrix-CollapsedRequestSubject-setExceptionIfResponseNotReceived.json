@@ -19,7 +19,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "702105030744472f62528caac413aa76d68eca6e",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "ed147529b8b96104d7ea8050d3212483b92b9835",
     "changeTags" : [ "INTRODUCTION" ]

@@ -22,7 +22,7 @@
     "changeTags" : [ "RENAME" ]
   }, {
     "commitHash" : "08f94b3b6aab5273d30440b98154261fe01bef83",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "7e284496435cdcccc07a8cd80e6d15519db839e3",
     "changeTags" : [ "BODY", "PARAMETER" ]
@@ -31,7 +31,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e0243dc14760f12c4b96eb23d9f3ba80d2501a8c",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "ea546524078c6b907bebbca91d21fe9076b2ac73",
     "changeTags" : [ "BODY" ]
@@ -40,7 +40,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "260ec89ead68296272b15ded38274443ebb9af41",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "712cbb311458db1894799e979ddb4472e333d2e6",
     "changeTags" : [ "FILE_MOVE" ]

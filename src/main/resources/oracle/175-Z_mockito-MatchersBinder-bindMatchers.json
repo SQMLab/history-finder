@@ -52,13 +52,13 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "110e46a16b4fa91c1856958e78cc45fe70fff9d2",
-    "changeTags" : [ "BODY", "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "BODY" ]
   }, {
     "commitHash" : "a925c010179fde193723dacebbd59c8896785325",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "363dce3b88179bb7b5ae6bd0580b19e1d0c15481",
-    "changeTags" : [ "MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "MOVE" ]
   }, {
     "commitHash" : "909a64e6e87ee0fb03ea67ddfcecb3b8f0d701fc",
     "changeTags" : [ "BODY" ]

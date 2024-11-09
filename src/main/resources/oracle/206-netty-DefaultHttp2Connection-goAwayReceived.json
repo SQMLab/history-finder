@@ -16,7 +16,7 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "804d8434dc7026d8ae9df1a3a2431fd3034c2594",
-    "changeTags" : [ "BODY", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "BODY" ]
   }, {
     "commitHash" : "d580245afc77f11e4b82a7f3320f5619b555c2ec",
     "changeTags" : [ "BODY" ]

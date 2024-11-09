@@ -61,10 +61,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "3a83d59afba5e6ec2ae21c95bc75d48d127efab2",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "MODIFIER", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "RENAME", "BODY", "MODIFIER", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "e7eafa811423a9cf76f03b9afec384616925d409",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "71c5e8c54eb51e8eb8176f807a6205abdd02f5ae",
     "changeTags" : [ "INTRODUCTION" ]

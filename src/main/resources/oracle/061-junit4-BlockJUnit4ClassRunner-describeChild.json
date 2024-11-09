@@ -64,7 +64,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "521fdb5aae536bd5055f6d0e4f09c5a7bdb5799f",
-    "changeTags" : [ "BODY", "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "BODY" ]
   }, {
     "commitHash" : "3d7fee93ddc21a6e849c36d5ae58b37b3d189665",
     "changeTags" : [ "FORMAT" ]

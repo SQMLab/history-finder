@@ -193,7 +193,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f415fb00bdcfe4931b43ca629ab4fb9bc3f67f16",
-    "changeTags" : [ "MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "MOVE" ]
   }, {
     "commitHash" : "ecefb777275fd26b37f10709f97810a3e6a69bb2",
     "changeTags" : [ "BODY" ]

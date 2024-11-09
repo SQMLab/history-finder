@@ -2,6 +2,9 @@ package com.shahidul.commit.trace.oracle.core.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Comparator;
 
 /**
  * @author Shahidul Islam
@@ -30,6 +33,7 @@ public enum ChangeTag {
     FILE_COPY("file_copy"),
     ACCESS_MODIFIER("access_modifier")
     ;
+    public static final Comparator<ChangeTag> NATURAL_ORDER = (o1, o2) -> o1.code.compareTo(o2.code);
     String code;
 
     public static ChangeTag fromTag(String tag) {
@@ -44,4 +48,5 @@ public enum ChangeTag {
         }
         throw new RuntimeException("Tag name mapping not listed " + tag);
     }
+
 }

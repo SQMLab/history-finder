@@ -106,7 +106,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5c705313bb119f698c4d57bf082e7510024bdf96",
-    "changeTags" : [ "BODY", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "13b637fa53bb1c6850685bfca04f26498a23b666",
     "changeTags" : [ "FORMAT" ]

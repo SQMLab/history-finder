@@ -37,13 +37,13 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "4d544d4f08b027ce318b088b112f03dccc566098",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "2119e9f26ed988746ee22d139d1eb1aca2bbb950",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "47db063c310cf47e4c544196acab2abfe62977b0",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "5df1eee7d689e18ac2f7b74410e7a30159d3afdc",
     "changeTags" : [ "BODY" ]
@@ -58,7 +58,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b78d7ba5d58fa77b831244444eef005a62883f9b",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "343a8ef99cbc23e27ada8eb5f8c1b752067a7e41",
     "changeTags" : [ "BODY" ]

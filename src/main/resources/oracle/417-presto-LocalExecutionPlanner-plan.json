@@ -163,7 +163,7 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "e0999f89c33214615dddf392ce5571467f84eb70",
-    "changeTags" : [ "BODY", "FILE_MOVE", "RETURN_TYPE" ]
+    "changeTags" : [ "FILE_MOVE", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "dee95fe8e41de58b94a6c1287950595c65952b1d",
     "changeTags" : [ "BODY" ]

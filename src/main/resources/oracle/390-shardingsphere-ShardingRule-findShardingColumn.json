@@ -16,7 +16,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "9e2202bc845ce6535f4a373b6a97483a178daf48",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "f4742d1b396c64ba09f59b6bf5ad774d7c45b242",
     "changeTags" : [ "MODIFIER" ]

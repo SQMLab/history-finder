@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f4a6a4aada4b614e2acc0db0bdcfb1edac95da6d",
-    "changeTags" : [ "BODY", "RENAME", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "48d2e5271b9ec9e3f9d53b669ddceb5e8a4c0aff",
     "changeTags" : [ "BODY" ]

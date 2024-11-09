@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "d6ef78ff26c28401c4bd8a61b75cfdf052b65696",
-    "changeTags" : [ "BODY", "FILE_MOVE", "RETURN_TYPE" ]
+    "changeTags" : [ "FILE_MOVE", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "9d2a5e9beaf310d81134e3629e5ffec1854f420c",
     "changeTags" : [ "BODY", "PARAMETER" ]

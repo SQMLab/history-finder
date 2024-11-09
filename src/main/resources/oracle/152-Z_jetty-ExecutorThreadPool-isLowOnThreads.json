@@ -10,7 +10,7 @@
   "endLine" : 267,
   "commits" : [ {
     "commitHash" : "a272fb6e391e126bbdd851bccfc6bde25870570e",
-    "changeTags" : [ "BODY", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "BODY" ]
   }, {
     "commitHash" : "a639ee9275e672ca21320f56f62f1648d24aa140",
     "changeTags" : [ "ANNOTATION" ]

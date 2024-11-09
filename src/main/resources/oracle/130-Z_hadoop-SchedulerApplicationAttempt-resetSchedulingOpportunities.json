@@ -22,7 +22,7 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "6772d07fdc0ad7d0cd1be851bf83ae0208abd391",
-    "changeTags" : [ "MOVE", "MODIFIER" ]
+    "changeTags" : [ "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "ae05623a75803d4e12a902ac4a24187540f56699",
     "changeTags" : [ "INTRODUCTION" ]

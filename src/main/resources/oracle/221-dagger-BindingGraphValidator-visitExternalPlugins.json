@@ -16,10 +16,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "143854118dfdbb3bdb4f2fa251da6a48907f703a",
-    "changeTags" : [ "BODY", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY" ]
   }, {
     "commitHash" : "19cf82bf8114da08abbb55933b8af5762deeca90",
-    "changeTags" : [ "BODY", "DOCUMENTATION", "RENAME" ]
+    "changeTags" : [ "RENAME", "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "7acaca32eb3098c415bebb4361614f477ba948c8",
     "changeTags" : [ "FILE_MOVE" ]

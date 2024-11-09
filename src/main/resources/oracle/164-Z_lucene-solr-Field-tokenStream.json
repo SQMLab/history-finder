@@ -85,7 +85,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5d4502ad0a3249fec5fcc1e28ce7074f67e8a027",
-    "changeTags" : [ "MOVE", "BODY", "RENAME", "EXCEPTION", "PARAMETER" ]
+    "changeTags" : [ "EXCEPTION", "RENAME", "BODY", "PARAMETER", "MOVE" ]
   }, {
     "commitHash" : "ffb3cbee57e1b075dac827bcc46bc95483c603e0",
     "changeTags" : [ "BODY" ]

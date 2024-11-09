@@ -16,7 +16,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "44d0b60bdbb9c5947d00afd1c46dac4c1517ff02",
-    "changeTags" : [ "MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "MOVE" ]
   }, {
     "commitHash" : "55f30fac29768510f2b3bdb84d362ad0ee100836",
     "changeTags" : [ "INTRODUCTION" ]

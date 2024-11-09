@@ -34,10 +34,10 @@
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "a239197a8fd17e3831af36bfb9b3c90c550a9bb1",
-    "changeTags" : [ "DOCUMENTATION", "ANNOTATION", "FORMAT" ]
+    "changeTags" : [ "ANNOTATION", "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "cffe9df0176b0ff895554ce7f2ea4d2f20062351",
-    "changeTags" : [ "DOCUMENTATION", "ANNOTATION", "FORMAT" ]
+    "changeTags" : [ "ANNOTATION", "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "9447289c87522d96d54228e817c5aa3cd04744c6",
     "changeTags" : [ "DOCUMENTATION" ]

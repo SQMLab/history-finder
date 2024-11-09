@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "861329226e3dffa0e096c3200fb6b96a1613ba83",
-    "changeTags" : [ "BODY", "DOCUMENTATION", "ANNOTATION" ]
+    "changeTags" : [ "ANNOTATION", "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "739cb35b637e8d4dd277d1133dbaeb2e2dc7d4ad",
     "changeTags" : [ "ANNOTATION" ]
@@ -46,7 +46,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f389e91ccecac6ddf736bbf1a4346782609eb034",
-    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
+    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
   }, {
     "commitHash" : "1abd60feee7f6321fe790a85e24e5376652ffc8b",
     "changeTags" : [ "BODY" ]

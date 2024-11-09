@@ -22,7 +22,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "084b06b48bae2b566bb1be3415b6c847d8ea3682",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "98ae0fb92c9335ec17f8710376183e18f5edd355",
     "changeTags" : [ "DOCUMENTATION" ]

@@ -253,9 +253,10 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
         inputOracle.getCommits()
                 .forEach(commit-> {
-                    TreeSet<ChangeTag> updatedTagSet = commit.getChangeTags().stream()
+                    Set<ChangeTag> updatedTagSet = commit.getChangeTags().stream()
                             .filter(changeTagSet::contains)
-                            .collect(Collectors.toCollection(TreeSet::new));
+                            .collect(Collectors.toCollection(HashSet::new));
+
                     if (commit.getChangeTags().contains(ChangeTag.PACKAGE)||
                             commit.getChangeTags().contains(ChangeTag.FILE_RENAME)||
                             commit.getChangeTags().contains(ChangeTag.FILE_COPY)) {
@@ -264,7 +265,8 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     if (commit.getChangeTags().contains(ChangeTag.ACCESS_MODIFIER)) {
                         updatedTagSet.add(ChangeTag.MODIFIER);
                     }
-                    commit.setChangeTags(new ArrayList<>(updatedTagSet));
+                    List<ChangeTag> orderedTagList = new ArrayList<>(updatedTagSet);
+                    commit.setChangeTags(orderedTagList);
                 });
     }
 }

@@ -31,7 +31,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "5d764abdc6360c78c1bd7ae8192f07292ad46498",
-    "changeTags" : [ "BODY", "RETURN_TYPE" ]
+    "changeTags" : [ "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "9dd2d6c18cc3e0aaa9936401be8cc72864729078",
     "changeTags" : [ "INTRODUCTION" ]

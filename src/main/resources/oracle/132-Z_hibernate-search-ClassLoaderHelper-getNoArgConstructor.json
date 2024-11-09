@@ -10,7 +10,7 @@
   "endLine" : 266,
   "commits" : [ {
     "commitHash" : "f4e45cb5068346eeca734c7fcbcff9867cc2f901",
-    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "5a1b370ede07aefa9eda8dcf5acc58e4f01c5384",
     "changeTags" : [ "BODY" ]

@@ -19,7 +19,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "832b096f4fcfde9e90d796470eb0ce2a26283e81",
-    "changeTags" : [ "BODY", "RETURN_TYPE", "EXCEPTION" ]
+    "changeTags" : [ "EXCEPTION", "RETURN_TYPE", "BODY" ]
   }, {
     "commitHash" : "4fac83ba1f80353e9544b15b95b8da9dc557041d",
     "changeTags" : [ "INTRODUCTION" ]
