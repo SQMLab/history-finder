@@ -349,7 +349,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                                 return traceEntity;
                             }
                         } catch (Exception e) {
-                            throw new RuntimeException(e);
+                            throw new RuntimeException(file.getName(), e);
                         }
                     }).collect(Collectors.toList());
 
