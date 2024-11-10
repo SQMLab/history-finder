@@ -13,10 +13,10 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "1db4cd7914d4f36224a4a8944e546650d5fc5a4d",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "5d8d0cb7947efcf2282f7d056302dd905f348532",
-    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "acdac6790f4424f8097b3aa6c888e825cac485f9",
     "changeTags" : [ "BODY" ]
@@ -31,10 +31,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e47162df70ac5344d1a7b8c08220474224e64536",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "c990d23490f5c4ac4322119b03d5951b63eef055",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "6e1380f412d334f1c887d15edf0b4610c3cf0da2",
     "changeTags" : [ "BODY" ]
@@ -79,7 +79,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "cb7655f9661f11dab8ec9e2533722d649a16e715",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "2c3f615e6b24358b86d6453e24dac35849ffde26",
     "changeTags" : [ "BODY" ]
@@ -106,7 +106,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "d393205e2ee874242b73e4fe819d1bc874587d8a",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "627b56302d259409e9bc50b20d77803484f18b5c",
     "changeTags" : [ "BODY" ]
@@ -115,10 +115,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8415b0bc2abfc2eb094745336a1cd27a4c96fa4b",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "8b8cc6cddbf5af0c93c4ceffd015f6328c932149",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "2f49331fb22511346eea8800d27907de44409d5b",
     "changeTags" : [ "INTRODUCTION" ]
