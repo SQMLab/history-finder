@@ -164,7 +164,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 changeTagSet.add(ChangeTag.DOCUMENTATION);
             }
             if (changeTagSet.isEmpty()) {
-                throw new RuntimeException("Change type mapping not found : " + changeType);
+               log.warn("Change type mapping not found : {}", changeType);
             }
         }
         List<ChangeTag> orderedTagList = new ArrayList<>(changeTagSet);
