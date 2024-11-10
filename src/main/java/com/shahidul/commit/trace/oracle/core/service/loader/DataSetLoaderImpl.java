@@ -10,6 +10,7 @@ import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.model.StaticInputTrace;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperServiceImpl;
@@ -19,6 +20,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.codetracker.api.MethodTracker;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -39,7 +41,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
     ObjectMapper objectMapper;
     TraceDao traceDao;
     OracleHelperService oracleHelperService;
-
+    Environment environment;
 
     @PostConstruct
     public void init() {
@@ -61,21 +63,23 @@ public class DataSetLoaderImpl implements DataSetLoader {
         log.info("loading data set ..");
         //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
         try {
+            String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
+            Set<Integer> oracleFileIdList = new HashSet<>(Util.parseOracleFileIds(oracleFileIdsText));
+
             Map<String, TraceEntity> entityMap = traceDao.findAll()
                     .stream()
                     .collect(Collectors.toMap(TraceEntity::getOracleFileName, Function.identity()));
 
             //rootFileDir = classPathResource.getFile();
             List<TraceEntity> traceEntityList = Arrays.stream(findOracleFiles())
-                    .limit(limit)
+                    .filter(file -> {
+                        Integer oracleFileId = Integer.valueOf(file.getName().substring(0, 3));
+                        return oracleFileIdList.contains(oracleFileId);
+                    })
                     .map(file -> {
                         try {
                             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
-
-                            filterOutDeprecatedChangeTag(inputOracle);
-                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, inputOracle);
                             String oracleFileName = file.getName();
-
                             if (entityMap.containsKey(oracleFileName)) {
                                 return entityMap.get(oracleFileName);
                             } else {
@@ -90,8 +94,7 @@ public class DataSetLoaderImpl implements DataSetLoader {
                     }).collect(Collectors.toList());
 
             log.info("save completed");
-           // return traceDao.saveAll(traceEntityList);
-            return traceEntityList;
+            return traceDao.saveAll(traceEntityList);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -257,16 +260,105 @@ public class DataSetLoaderImpl implements DataSetLoader {
                             .filter(changeTagSet::contains)
                             .collect(Collectors.toCollection(HashSet::new));
 
-                    if (commit.getChangeTags().contains(ChangeTag.PACKAGE)||
+                   /* if (commit.getChangeTags().contains(ChangeTag.PACKAGE)||
                             commit.getChangeTags().contains(ChangeTag.FILE_RENAME)||
                             commit.getChangeTags().contains(ChangeTag.FILE_COPY)) {
                         updatedTagSet.add(ChangeTag.FILE_MOVE);
                     }
                     if (commit.getChangeTags().contains(ChangeTag.ACCESS_MODIFIER)) {
                         updatedTagSet.add(ChangeTag.MODIFIER);
-                    }
+                    }*/
                     List<ChangeTag> orderedTagList = new ArrayList<>(updatedTagSet);
                     commit.setChangeTags(orderedTagList);
                 });
     }
+
+
+    private void updateExpectedCommitTagSet(InputOracle inputOracle, TraceEntity traceEntity){
+        List<TracerName> tracerNameList = List.of(TracerName.HISTORY_FINDER, TracerName.CODE_SHOVEL, TracerName.CODE_TRACKER);
+
+        Map<TracerName, Map<String, List<ChangeTag>>> changeTagBundle = new HashMap<>();
+        for (TracerName tracerName  : tracerNameList){
+            Map<String, List<ChangeTag>> changeTagMap = traceEntity.getAnalysis().get(tracerName.getCode())
+                    .getCommits()
+                    .stream()
+                    .collect(Collectors.toMap(CommitUdt::getCommitHash, CommitUdt::getChangeTags));
+            changeTagBundle.put(tracerName, changeTagMap);
+
+        }
+        inputOracle.getCommits()
+                .forEach(commit-> {
+                    String commitHash = commit.getCommitHash();
+                    Set<ChangeTag> updatedTagSet = new HashSet<>();
+                    for (TracerName tracerName  : tracerNameList){
+                        if (changeTagBundle.get(tracerName).containsKey(commitHash)){
+                            List<ChangeTag> predictedChanges = changeTagBundle.get(tracerName).get(commitHash);
+                            if (tracerName == TracerName.CODE_TRACKER && predictedChanges.size() == 1
+                                    && predictedChanges.getFirst() == ChangeTag.DOCUMENTATION) {
+                                updatedTagSet.clear();
+                                updatedTagSet.addAll(predictedChanges);
+                                break;
+                            }
+                            updatedTagSet.addAll(predictedChanges);
+                        }
+                    }
+
+                    List<ChangeTag> orderedTagList = new ArrayList<>(updatedTagSet);
+                    orderedTagList.sort(ChangeTag.NATURAL_ORDER);
+                    commit.setChangeTags(orderedTagList);
+                });
+
+    }
+
+    @Override
+    public List<TraceEntity> updateCommitChangeTag() {
+        log.info("loading data set ..");
+        //ClassPathResource classPathResource = new ClassPathResource("classpath:oracle/method/training", MethodTracker.class.getClassLoader());
+        try {
+            String oracleFileIdsText = environment.getProperty("run-config.oracle-file-ids", "1");
+            Set<Integer> oracleFileIdList = new HashSet<>(Util.parseOracleFileIds(oracleFileIdsText));
+
+            Map<String, TraceEntity> entityMap = traceDao.findAll()
+                    .stream()
+                    .collect(Collectors.toMap(TraceEntity::getOracleFileName, Function.identity()));
+
+            //rootFileDir = classPathResource.getFile();
+            List<TraceEntity> traceEntityList = Arrays.stream(findOracleFiles())
+                    .filter(file -> {
+                        Integer oracleFileId = Integer.valueOf(file.getName().substring(0, 3));
+                        return oracleFileIdList.contains(oracleFileId);
+                    })
+                    .map(file -> {
+                        try {
+                            InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
+/*
+                            filterOutDeprecatedChangeTag(inputOracle);
+                            objectMapper.writerWithDefaultPrettyPrinter().writeValue(file, inputOracle);*/
+                            String oracleFileName = file.getName();
+
+                            if (entityMap.containsKey(oracleFileName)) {
+                                TraceEntity traceEntity = entityMap.get(oracleFileName);
+                                updateExpectedCommitTagSet(inputOracle, traceEntity);
+                                objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("./src/main/resources/oracle", oracleFileName), inputOracle);
+                                return traceEntity;
+
+                            } else {
+                                TraceEntity traceEntity = oracleHelperService.build(inputOracle);
+                                traceEntity.setOracleFileId(Integer.valueOf(oracleFileName.substring(0, 3)));
+                                traceEntity.setOracleFileName(oracleFileName);
+                                return traceEntity;
+                            }
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    }).collect(Collectors.toList());
+
+            log.info("save completed");
+            //return traceDao.saveAll(traceEntityList);
+            return traceEntityList;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -79,12 +79,12 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
 
     private CommitUdt toCommitDiff(RepositoryService cachingRepositoryService, TraceEntity traceEntity, History.HistoryInfo<Method> historyInfo) {
 
-        Method oldMethod = historyInfo.getElementBefore();
         Method newMethod = historyInfo.getElementAfter();
         LocationInfo newLocation = newMethod.getLocation();
-        String oldFile = oldMethod.getFilePath();
         String newFile = newMethod.getFilePath();
-        LocationInfo oldLocation = oldMethod.getLocation();
+
+        Method oldMethod = historyInfo.getElementBefore();
+        String oldFile = oldMethod != null ? oldMethod.getFilePath() : null;
         String diff = null;
         String newCodeFragment = null;
         String oldCodeFragment = null;
@@ -92,11 +92,11 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             String newFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getCommitId()), newFile);
             newCodeFragment = Util.readLineRange(newFileContent, newLocation.getStartLine(), newLocation.getEndLine());
             if (oldMethod != null) {
+                LocationInfo oldLocation = oldMethod.getLocation();
                 String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getParentCommitId()), oldFile);
                 oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
-            }else {
-                diff = Util.getDiff(oldCodeFragment, newCodeFragment);
             }
+            diff = Util.getDiff(oldCodeFragment, newCodeFragment);
         } catch (Exception ex) {
             log.error("Diff error ", ex);
         }
