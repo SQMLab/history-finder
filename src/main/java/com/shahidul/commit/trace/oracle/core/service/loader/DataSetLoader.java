@@ -19,4 +19,6 @@ public interface DataSetLoader {
     void cleanDb();
 
     void updateExpectedCommit(List<TraceEntity> traceEntityList, TracerName fromTracer);
+
+    List<TraceEntity> updateCommitChangeTag();
 }

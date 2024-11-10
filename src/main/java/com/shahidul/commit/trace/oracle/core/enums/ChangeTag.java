@@ -15,7 +15,7 @@ import java.util.Comparator;
 public enum ChangeTag {
     INTRODUCTION("introduction"),
     MOVE("move"),
-    BODY("body"),
+    BODY("body"),                                                   
     REMOVE("remove"),
     DOCUMENTATION("documentation"),
     FILE_MOVE("file_move"),
@@ -25,13 +25,13 @@ public enum ChangeTag {
     EXCEPTION("exception"),
     PARAMETER("parameter"),
     ANNOTATION("annotation"),
-    FORMAT("format"),
+    FORMAT("format")/*,
     //TODO : remove
     PACKAGE("package"),
     SIGNATURE("signature"),
     FILE_RENAME("file_rename"),
     FILE_COPY("file_copy"),
-    ACCESS_MODIFIER("access_modifier")
+    ACCESS_MODIFIER("access_modifier")*/
     ;
     public static final Comparator<ChangeTag> NATURAL_ORDER = (o1, o2) -> o1.code.compareTo(o2.code);
     String code;

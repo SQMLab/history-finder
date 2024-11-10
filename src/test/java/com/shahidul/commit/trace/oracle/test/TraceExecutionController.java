@@ -144,6 +144,12 @@ class TraceExecutionController {
 
     }
 
+    @Test
+    void updateExpectedCommitChangeTag() {
+        dataSetLoader.updateCommitChangeTag();
+
+    }
+
     private DynamicTest createOracleTest(TraceEntity traceEntity, TraceService traceService) {
         return DynamicTest.dynamicTest(traceService.getTracerName(), () -> {
             traceExecutor.execute(traceEntity, traceService);
