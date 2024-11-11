@@ -19,7 +19,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "6a21c4345238322de5a121d53ddbdc76ec087a23",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "604defa67d3f166cdf12529ff8669c8a6c83e271",
     "changeTags" : [ "BODY", "PARAMETER" ]
