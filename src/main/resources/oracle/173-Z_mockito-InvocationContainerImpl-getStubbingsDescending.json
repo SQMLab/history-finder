@@ -16,7 +16,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "a5ec3322be0d02f5a44b4580064cb96797332ed8",
-    "changeTags" : [ "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "fe7bbabb82ce3d1000c13d39d6355c134e94ac27",
     "changeTags" : [ "FILE_MOVE" ]
