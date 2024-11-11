@@ -40,10 +40,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "7dd8dc62a5fa08e3cc99d2388ff62f5825151fb9",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "ANNOTATION", "BODY" ]
   }, {
     "commitHash" : "f813712f5b413b354560cd7cc006352e9defa9a3",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "39f8bd663ee944d92ecd8b1e33b5315807419c94",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -55,7 +55,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "7756feacd877093ad925d222c8bb911b6bb7c381",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "1291d6e1bd5ba6524c3fb68813aad807d123c2e1",
     "changeTags" : [ "BODY" ]
@@ -106,7 +106,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ec7d80b8519332ffb5f0595dddc9ef52de532730",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "e4fcad9f936ba492f28ec5f0421eea4b3f76f8aa",
     "changeTags" : [ "BODY" ]
@@ -139,7 +139,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1eaca6572091c014379e453299773e880a7766b9",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "af1dfd357743e6f4d5b9589ddb584f472a699e41",
     "changeTags" : [ "BODY", "PARAMETER" ]
