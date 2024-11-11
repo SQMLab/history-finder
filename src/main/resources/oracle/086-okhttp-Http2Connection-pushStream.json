@@ -19,7 +19,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "c9a89876de476983f273edbf108c365127c18c5e",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "c753d2e41ba667f9b5a31451a16ecbaecdc65d80",
     "changeTags" : [ "FILE_MOVE", "RETURN_TYPE" ]

@@ -40,7 +40,7 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "c9a89876de476983f273edbf108c365127c18c5e",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "0c1481a2d3d7482a3e0c4e63f8d99ba6cea9c24b",
     "changeTags" : [ "BODY" ]
@@ -70,7 +70,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "aa7e7a751c8e0096e18f792f3a737ed21d265ead",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "f6a46b8992e486fb881b77c2fd533dc4d71dfd5b",
     "changeTags" : [ "BODY" ]
@@ -85,25 +85,25 @@
     "changeTags" : [ "MOVE" ]
   }, {
     "commitHash" : "0b677ac70d37f9064d3a0c0914794f60f66d64be",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "112dcc40900d503ea7e416e0da0a8fd9b08a9c17",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "dac5aed3d5f9307b9d1ab0a8c7840b232d053ef3",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "749a65b776c8fc4b39b6463695980275da34da51",
-    "changeTags" : [ "EXCEPTION", "RETURN_TYPE", "BODY", "MODIFIER" ]
+    "changeTags" : [ "BODY", "EXCEPTION", "MODIFIER", "RENAME", "RETURN_TYPE" ]
   }, {
     "commitHash" : "2fb9064eb6ecbd5bafc0bc8fd0e42933dd13fe7a",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "f3a450bf4f0e9428cf8b3c2780236162bbeb803a",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a31a5192d1604131d5239fbf2f5280f1ac5eeeaa",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "9417fa5c2e84580411e0fa4905b1f109e2d49533",
     "changeTags" : [ "BODY" ]
@@ -127,13 +127,13 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "37c01895cca5ec2bec26a3d381611f0938acd6d0",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "e7d13c48027f676ef5a6b5abf2b8fbfdf0cc3538",
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "39b3b59f6f6cea6335f264b56e370787d92082e1",
-    "changeTags" : [ "BODY", "MOVE" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "c8e37ce19bf439a6a36931069fd01921ec67ae0b",
     "changeTags" : [ "INTRODUCTION" ]
