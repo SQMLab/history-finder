@@ -10,13 +10,13 @@
   "endLine" : 142,
   "commits" : [ {
     "commitHash" : "999240503d82d0a9c66d437e92216828e013466c",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "EXCEPTION" ]
   }, {
     "commitHash" : "67fd60a81eb3b686c6b97f05a33ddd113d82d290",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "3f3795c8a69d426afcb13b2e5d19b149600434c6",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "e62e2c6ceed94197abf53174b1707413639b592a",
     "changeTags" : [ "INTRODUCTION" ]

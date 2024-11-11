@@ -19,10 +19,10 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "6aacadc0dc552f87a703e31bee011ca31468f1b6",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "11550a13d902da4b1a9c47048a61593738d084c3",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "2ff16ff5c732cf0c81295eef7f0f86c82b136ea1",
     "changeTags" : [ "INTRODUCTION" ]
