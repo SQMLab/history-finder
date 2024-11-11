@@ -13,7 +13,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "4a7064d1ae323903a0d1353372aabadabebb1ed6",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "40b1dd3f495a59abef8a0cba5450526994c92c04",
     "changeTags" : [ "INTRODUCTION" ]

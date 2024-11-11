@@ -19,16 +19,16 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "74f8ae13034d90800da5573666dea3bea5d702ce",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "3e48bdbc333602a042b6b0fb7fb9e14625ab4ece",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9d544212e69269f155bb3a51f94a9b13cf1fa565",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "d6698308194625e7921b9c3ace27a918f42f26f1",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "74bdafe386ae6080d6f5ead852f9026061a65be4",
     "changeTags" : [ "BODY" ]
@@ -37,13 +37,13 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "4d544d4f08b027ce318b088b112f03dccc566098",
-    "changeTags" : [ "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "RETURN_TYPE" ]
   }, {
     "commitHash" : "2119e9f26ed988746ee22d139d1eb1aca2bbb950",
-    "changeTags" : [ "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "RETURN_TYPE" ]
   }, {
     "commitHash" : "47db063c310cf47e4c544196acab2abfe62977b0",
-    "changeTags" : [ "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "RETURN_TYPE" ]
   }, {
     "commitHash" : "5df1eee7d689e18ac2f7b74410e7a30159d3afdc",
     "changeTags" : [ "BODY" ]
@@ -55,19 +55,19 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1f659913a631d9e77e7cd9b9c9775e3249ef803a",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "b78d7ba5d58fa77b831244444eef005a62883f9b",
-    "changeTags" : [ "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "RETURN_TYPE" ]
   }, {
     "commitHash" : "343a8ef99cbc23e27ada8eb5f8c1b752067a7e41",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "228a4fdb6dc15d1b8615615e00825e7ce53a41fa",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9078554232f9de56849b5c35bf45b81a67a748c4",
-    "changeTags" : [ "BODY", "MODIFIER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "MODIFIER" ]
   }, {
     "commitHash" : "6753af270c8a966411f5574afa57f6e5ffe43dbe",
     "changeTags" : [ "BODY" ]
