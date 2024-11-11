@@ -28,13 +28,10 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "80ca78479f5046f58374ed831f6b2c3d51f530f9",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "602a0f183ed055ae4e0688fc0aa14cfb13c96306",
-    "changeTags" : [ "BODY" ]
-  }, {
-    "commitHash" : "57af01451045984812f247c99c099e723fd49433",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "15a62448343fd24f8e63f43b1e4b16f50005e4a5",
     "changeTags" : [ "FILE_MOVE" ]

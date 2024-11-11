@@ -16,13 +16,13 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "f0c9d8d08404ba2bad6c581bc76ecb1eef6c9bff",
-    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "ceb601db78aff9eeeef35a32b9a6fda26dbce555",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "6afa3db854c9b574faaf1499247a898c524eded7",
-    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "8ab260ef261f794ec394043f496d985411ad396f",
     "changeTags" : [ "BODY" ]
