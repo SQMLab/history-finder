@@ -91,10 +91,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "77f7820ffc9ec56f3e6ec88c9bb1f5b77445a25d",
-    "changeTags" : [ "FILE_MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "abcdd7d3b4e072923ac92a2ed99dbc6ce0954319",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "ac7bb522519cd8a600324aa909a5c17a110cb97f",
     "changeTags" : [ "INTRODUCTION" ]

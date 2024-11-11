@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "1bf8438b65858565dbb64736bfe13aae9cfc1b5a",
-    "changeTags" : [ "EXCEPTION", "BODY" ]
+    "changeTags" : [ "BODY", "EXCEPTION" ]
   }, {
     "commitHash" : "495a9a93e4a1157e707a01467e7cc3f600c88d19",
     "changeTags" : [ "INTRODUCTION" ]

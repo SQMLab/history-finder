@@ -19,10 +19,10 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "bb91daf8e0939d787ffb5a3eda05c2d626cd9851",
-    "changeTags" : [ "FORMAT" ]
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
   }, {
     "commitHash" : "30f2b16525dabb477373be9ed3e76bb98b200806",
-    "changeTags" : [ "FORMAT" ]
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
   }, {
     "commitHash" : "97afc5e205e1c6ac0f5a9aefabed92d58d88ab81",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -34,10 +34,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "7a3e99635d7ffcc4d730f27835eeaeb082003199",
-    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
   }, {
     "commitHash" : "96d7dd609920deb1336cf85dc6c9a3a0d5e30d15",
-    "changeTags" : [ "FILE_MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "9bd1be07aa38d7fa2de048845f7b13458c9420d7",
     "changeTags" : [ "BODY", "PARAMETER" ]
@@ -55,19 +55,19 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "de43b277b8f2e63051368a36e27a35c5ed0f0e0b",
-    "changeTags" : [ "RETURN_TYPE", "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "44e7458b19d5cd1900a765a440c96e85b81d25fc",
-    "changeTags" : [ "RENAME", "BODY", "MODIFIER", "PARAMETER" ]
+    "changeTags" : [ "BODY", "MODIFIER", "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "576377b9ad44028dc84c2f8487cfe8dbccb8c252",
-    "changeTags" : [ "BODY", "PARAMETER", "MOVE" ]
+    "changeTags" : [ "BODY", "MOVE", "PARAMETER" ]
   }, {
     "commitHash" : "57302f0df76fba83ba72a676bd660efeb5881af6",
-    "changeTags" : [ "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "a58514aec7e843339be24980e92aeeb759327ffb",
-    "changeTags" : [ "RETURN_TYPE", "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "4081076e513e84bb2376f889d4108e64e9a18653",
     "changeTags" : [ "INTRODUCTION" ]
