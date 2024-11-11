@@ -25,7 +25,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "0d96e17fb66ba6e7dc174c5c87a1c4cfc3fade33",
-    "changeTags" : [ "FILE_MOVE" ]
+    "changeTags" : [ "ANNOTATION", "DOCUMENTATION", "FILE_MOVE" ]
   }, {
     "commitHash" : "a2e588e96c3a763553d764d5c35a44b9eea41d75",
     "changeTags" : [ "FILE_MOVE" ]
@@ -34,16 +34,16 @@
     "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "961fd47344c55d21907607ec9672df6d4f3d2362",
-    "changeTags" : [ "FILE_MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "9da25e126d174ba6e6ae02596afa538a7cafe17b",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "9162134ee3dfc3e80a45d08e32fdbf8ed06e87be",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "ad553b10b4b2b1a78c9a0c91a6d50ebb1421ff3f",
-    "changeTags" : [ "PARAMETER" ]
+    "changeTags" : [ "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "cfed3cac24530762a6a8b99627b17f5b00ac9260",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -79,10 +79,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e1184f5a171d084f33ddca961836b17dabc63165",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "cecc46dfd9b0dd931bc8625560cdcd9bced45753",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "a150c7c86dcb16500114a601f76f476c06b0a782",
     "changeTags" : [ "BODY" ]
@@ -112,13 +112,13 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "cbf97077bae0db71dc3a7cade28c3b00587a8699",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER", "RENAME", "RETURN_TYPE" ]
   }, {
     "commitHash" : "f6372b05546e29c74e6809f4e54a096f537bcd5d",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "226ecd8efc45e4540bba43f6c604e891b5a94689",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "RETURN_TYPE" ]
   }, {
     "commitHash" : "75a91267a92e9fd4d171a3f18f2135e675687961",
     "changeTags" : [ "INTRODUCTION" ]

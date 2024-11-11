@@ -49,7 +49,7 @@
     "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "24a5aad1f49b4decf946f1df701e354a18544132",
-    "changeTags" : [ "RENAME" ]
+    "changeTags" : [ "ANNOTATION", "RENAME" ]
   }, {
     "commitHash" : "44e7458b19d5cd1900a765a440c96e85b81d25fc",
     "changeTags" : [ "BODY" ]
@@ -64,7 +64,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "521fdb5aae536bd5055f6d0e4f09c5a7bdb5799f",
-    "changeTags" : [ "FILE_MOVE", "BODY" ]
+    "changeTags" : [ "BODY", "FILE_MOVE" ]
   }, {
     "commitHash" : "3d7fee93ddc21a6e849c36d5ae58b37b3d189665",
     "changeTags" : [ "FORMAT" ]
