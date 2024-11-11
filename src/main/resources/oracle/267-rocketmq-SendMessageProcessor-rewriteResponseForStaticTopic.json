@@ -10,6 +10,6 @@
   "endLine" : 157,
   "commits" : [ {
     "commitHash" : "3fadc8f30c898f9ddd6730ba4ac428894a1c1077",
-    "changeTags" : [ "INTRODUCTION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "INTRODUCTION", "PARAMETER", "RENAME", "RETURN_TYPE" ]
   } ]
 }

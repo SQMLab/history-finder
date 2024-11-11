@@ -13,7 +13,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "53011ceadc706049cc92c03c3af401e8e1f5f206",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "76115a2a8681e5951aef9037120fa3babeffd9d3",
     "changeTags" : [ "BODY" ]
@@ -22,19 +22,19 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "fa6df26815cea9a429291f4452711b96b00f02b0",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c1aaa4ed16b6410a602074132c75da6c85d6a8ed",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ad6c5db660f644751c6cded22d0f94b7ad193541",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "31e4d5e0e5c3e96236933b0a58a339bea8a32df8",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "fea812963e0142f3770a0b778b1b08acba8ec1cb",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "3df857f441be3e8062c84eef49d72205b3ff91a7",
     "changeTags" : [ "INTRODUCTION" ]
