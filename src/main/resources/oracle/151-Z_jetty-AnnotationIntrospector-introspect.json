@@ -10,12 +10,12 @@
   "endLine" : 111,
   "commits" : [ {
     "commitHash" : "5e83df20c8842f3da1ccdec7c3152da6b8e5beac",
-    "changeTags" : [ "PARAMETER" ]
+    "changeTags" : [ ]
   }, {
     "commitHash" : "b4f4c0ae36ef23321b5b9cd0698fdf8acb907d6a",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ ]
   }, {
     "commitHash" : "314f94decc0e814baf31f500502020e05fcb73a2",
-    "changeTags" : [ "INTRODUCTION" ]
+    "changeTags" : [ ]
   } ]
 }

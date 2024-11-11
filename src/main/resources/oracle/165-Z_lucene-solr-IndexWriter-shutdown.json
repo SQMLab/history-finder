@@ -10,7 +10,7 @@
   "endLine" : 1039,
   "commits" : [ {
     "commitHash" : "5dfba25e3496063b82d53aa759796a639b1d8e3b",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "b7d8731bbf2a9278c22efa5a7fb43285236c90ba",
     "changeTags" : [ "FORMAT" ]
@@ -22,10 +22,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "ba04a792ce932779ecb44a971d3ae56dbe9a9a57",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "872bd9145cd9504fc16b318f7ea0a666d9429103",
-    "changeTags" : [ "BODY", "MODIFIER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "MODIFIER" ]
   }, {
     "commitHash" : "8559eafd99e5b569d4ad866e98f410fb4868fd4c",
     "changeTags" : [ "INTRODUCTION" ]

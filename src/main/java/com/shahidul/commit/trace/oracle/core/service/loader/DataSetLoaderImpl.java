@@ -279,16 +279,19 @@ public class DataSetLoaderImpl implements DataSetLoader {
 
         Map<TracerName, Map<String, List<ChangeTag>>> changeTagBundle = new HashMap<>();
         for (TracerName tracerName  : tracerNameList){
-            Set<String> addedCommitSet = new HashSet<>();
-            Map<String, List<ChangeTag>> changeTagMap = traceEntity.getAnalysis().get(tracerName.getCode())
-                    .getCommits()
-                    .stream()
-                    .filter(commitUdt -> {
-                        boolean isPresent = addedCommitSet.contains(commitUdt.getCommitHash());
-                        addedCommitSet.add(commitUdt.getCommitHash());
-                        return !isPresent;
-                    })
-                    .collect(Collectors.toMap(CommitUdt::getCommitHash, CommitUdt::getChangeTags));
+            Map<String, List<ChangeTag>> changeTagMap = new HashMap<>();
+            if (traceEntity.getAnalysis().containsKey(tracerName.getCode())) {
+                Set<String> addedCommitSet = new HashSet<>();
+                changeTagMap = traceEntity.getAnalysis().get(tracerName.getCode())
+                        .getCommits()
+                        .stream()
+                        .filter(commitUdt -> {
+                            boolean isPresent = addedCommitSet.contains(commitUdt.getCommitHash());
+                            addedCommitSet.add(commitUdt.getCommitHash());
+                            return !isPresent;
+                        })
+                        .collect(Collectors.toMap(CommitUdt::getCommitHash, CommitUdt::getChangeTags));
+            }
             changeTagBundle.put(tracerName, changeTagMap);
 
         }
