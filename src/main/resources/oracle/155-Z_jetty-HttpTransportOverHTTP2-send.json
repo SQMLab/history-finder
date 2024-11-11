@@ -13,25 +13,25 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "06454f64098e01b42347841211afed229d8798a0",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c285d6f8bbd839906e8c39d23db2f343be22c6ca",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "448100ff80f59b03af2aacb2ec8c3aded9423f59",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "6d485b2777b116ca4e09672ac8db8c4eadd46297",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "e21ad09e3ac693df23dca5013e3993bd947122df",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "705a68dfc41d512c813b7e40076462f5e9caf26d",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "98c328fb23493025036665ac1ad82849e01c8f70",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "d8961139f31a41485bd499a9ddde311be38e64e0",
     "changeTags" : [ "BODY" ]
@@ -43,10 +43,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e35c51eb7d91d099e7e84e308d30010ecaa6a0c5",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "31e448ffd677d9360c4132a63b08fe53c860cf7c",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "418a493337a8837172032e62a53587e478f21c86",
     "changeTags" : [ "BODY" ]
@@ -61,16 +61,16 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "17c03385d68fbf1baa4b8a8c8273a704df1928b6",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "86b0d7733803040f0b0a40c5864ca776c8872ef6",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "8681511f085262b42e0a31234c9ec15cbfe3413f",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "ad034f4d54aa4d6ce04c6fe3da8e8f48f63b21e5",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c1247ff6779c78917598a149d36e773702c490d5",
     "changeTags" : [ "INTRODUCTION" ]

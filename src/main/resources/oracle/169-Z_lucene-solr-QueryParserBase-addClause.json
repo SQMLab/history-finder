@@ -22,7 +22,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "8b4c80f04b4255b6f1f7309ffb01ccbea6db029b",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "649a0e83a47185fd5771e7d7492462d646789a80",
     "changeTags" : [ "BODY", "PARAMETER" ]
