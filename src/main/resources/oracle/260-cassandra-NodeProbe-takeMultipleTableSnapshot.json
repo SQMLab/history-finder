@@ -13,13 +13,13 @@
     "changeTags" : [ "INTRODUCTION" ]
   }, {
     "commitHash" : "ee9e38b7dc20a3b98e5a68904be35d727ed9c09c",
-    "changeTags" : [ "BODY", "DOCUMENTATION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "7159a754a5fcaa1b78a53089267ea7506e32e81d",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "0bd5170c4ff55c9f3307602de031d77883731883",
-    "changeTags" : [ "RENAME", "BODY", "DOCUMENTATION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "246f07b6806f48deb371a4a8ec47131c0f0a606d",
     "changeTags" : [ "DOCUMENTATION" ]

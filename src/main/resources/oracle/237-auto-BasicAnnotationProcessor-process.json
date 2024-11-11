@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "8f078e0e3e7821ffda93ce0b28f1f9bd7d8cef31",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "29aa5a3f7cf832762144afe3058f696c8eb5b9c3",
     "changeTags" : [ "INTRODUCTION" ]
