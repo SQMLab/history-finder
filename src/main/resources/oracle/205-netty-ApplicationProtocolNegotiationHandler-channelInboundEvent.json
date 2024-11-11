@@ -13,25 +13,25 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "e22bae7e966186b0981ee225946fb05875e13f0f",
-    "changeTags" : [ "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME" ]
   }, {
     "commitHash" : "ba47232b40ffd45709db6f459e6bad71dd3d82d5",
-    "changeTags" : [ "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME" ]
   }, {
     "commitHash" : "d3cf5bea6d7b0c1d78e207bd09c615a8c2da579c",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "93d7228d7c86549c6c6e209330c44335dba8c6a7",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "37d4b5a2f79be5e200fa04a6744292877afd05c1",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c62eb26b09658e810e2da9b323c70c811ac813ab",
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "f051b0c297db194abf31f9b2dc294ecc81fa1e45",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "ae0fbb45e49063f7be71fe6b1b6c37eb152b1552",
     "changeTags" : [ "BODY" ]
