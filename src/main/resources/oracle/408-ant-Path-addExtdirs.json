@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "72245569272f19cdf0052b3468de340a9759d346",
-    "changeTags" : [ "RENAME", "BODY", "MODIFIER", "PARAMETER", "MOVE" ]
+    "changeTags" : [ "BODY", "MODIFIER", "MOVE", "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "4ca5683c2a54ff4a141ed562a0f3b431b153b2c2",
     "changeTags" : [ "MOVE" ]
@@ -43,7 +43,7 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "6667e4cdd6d4914852b49e767b9f836a4d6941f2",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "a8d4fe6d9b8c7a4adb1704b12de610dc6e18fe94",
     "changeTags" : [ "BODY" ]
