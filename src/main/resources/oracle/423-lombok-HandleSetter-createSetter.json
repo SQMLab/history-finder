@@ -46,7 +46,7 @@
     "changeTags" : [ "BODY", "PARAMETER" ]
   }, {
     "commitHash" : "eb4cbcd8bbd7bf7784aa229e9b6c5fe0670fa7a5",
-    "changeTags" : [ "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME" ]
   }, {
     "commitHash" : "eb3250a2fa4a3a141cd8a1e552b8f3bbd8ea1726",
     "changeTags" : [ "BODY", "PARAMETER" ]
