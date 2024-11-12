@@ -46,9 +46,9 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "2dd9d5aa34899207fb5fdfffc33bd1ccea28dfb5",
-    "changeTags" : [ "BODY", "MODIFIER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "MODIFIER" ]
   }, {
     "commitHash" : "72cabd15aa98c4c18fd99a6199e353853f1c6545",
-    "changeTags" : [ "INTRODUCTION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "INTRODUCTION", "MODIFIER", "PARAMETER", "RENAME" ]
   } ]
 }
