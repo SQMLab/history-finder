@@ -16,7 +16,7 @@
     "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "238e8d6350f13c4ad57367ee0cf68e28f9c64bc2",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c7d055bb92c4b0b125d891294dd87faf70f18f58",
     "changeTags" : [ "BODY" ]
