@@ -40,10 +40,10 @@
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "f27e2b5c8a5182b9bf03680d473d109bcf268bda",
-    "changeTags" : [ "EXCEPTION", "RETURN_TYPE", "BODY", "DOCUMENTATION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "EXCEPTION", "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "f27e2b5c8a5182b9bf03680d473d109bcf268bda",
-    "changeTags" : [ "EXCEPTION", "RETURN_TYPE", "BODY", "DOCUMENTATION" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "EXCEPTION", "PARAMETER", "RETURN_TYPE" ]
   }, {
     "commitHash" : "4eac0db458c7a8a3b9f1e5a97778dcee3b21a473",
     "changeTags" : [ "INTRODUCTION" ]
