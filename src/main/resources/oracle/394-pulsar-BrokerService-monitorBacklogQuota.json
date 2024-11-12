@@ -40,7 +40,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "70da31b082ea0ff7466cdf740fc0d6b443d21861",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "9f849c324969e160f9891203b2a2e4805fae5a1c",
     "changeTags" : [ "INTRODUCTION" ]
