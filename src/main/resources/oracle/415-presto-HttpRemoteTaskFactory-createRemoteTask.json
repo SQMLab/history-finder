@@ -46,10 +46,10 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "b7da6f812078118ca210eff1fa3fa2cf8c55a0b0",
-    "changeTags" : [ "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "FORMAT" ]
   }, {
     "commitHash" : "36a60a6f6e029ddd890d0eb10de01f339eedfebb",
-    "changeTags" : [ "FILE_MOVE" ]
+    "changeTags" : [ "FILE_MOVE", "FORMAT" ]
   }, {
     "commitHash" : "4e9b04e4f68cfdb147284f8c11280d57d394a5fb",
     "changeTags" : [ "BODY", "PARAMETER" ]
