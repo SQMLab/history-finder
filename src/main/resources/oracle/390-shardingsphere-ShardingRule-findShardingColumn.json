@@ -16,13 +16,13 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "9e2202bc845ce6535f4a373b6a97483a178daf48",
-    "changeTags" : [ "RENAME", "RETURN_TYPE", "BODY" ]
+    "changeTags" : [ "BODY", "RENAME", "RETURN_TYPE" ]
   }, {
     "commitHash" : "f4742d1b396c64ba09f59b6bf5ad774d7c45b242",
-    "changeTags" : [ "MODIFIER" ]
+    "changeTags" : [ "DOCUMENTATION", "MODIFIER" ]
   }, {
     "commitHash" : "6a29dba09a3bebeb145260b7c4312e769ced2d45",
-    "changeTags" : [ "MODIFIER" ]
+    "changeTags" : [ "DOCUMENTATION", "MODIFIER" ]
   }, {
     "commitHash" : "b00fa93b222269a490bfb9a6480ed70c8525ac88",
     "changeTags" : [ "BODY" ]

@@ -49,16 +49,16 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "8ca89258c9b9e3e3c469292c04a5042736c3ec90",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "b06c7b52eddef0647a198b8b7b4dc1c4c3f26027",
-    "changeTags" : [ "BODY", "PARAMETER" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "PARAMETER" ]
   }, {
     "commitHash" : "e73924b07edf77cad69c4b02ed5ad9038ceaeb71",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "470d05d6c6bc1257e8433ec0a098d9f65ae02aa5",
-    "changeTags" : [ "MOVE" ]
+    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "38bff2d40bdf7d95a0dbaa761eb772640d3abe1b",
     "changeTags" : [ "INTRODUCTION" ]

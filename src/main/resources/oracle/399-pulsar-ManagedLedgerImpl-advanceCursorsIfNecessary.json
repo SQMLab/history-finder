@@ -10,16 +10,16 @@
   "endLine" : 2905,
   "commits" : [ {
     "commitHash" : "ca77982758170993aa52c0f7f45bbf9ad72e368a",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "c9651ecb23b07ec8a9a00a001da222b479fb78c3",
-    "changeTags" : [ "EXCEPTION", "BODY", "MODIFIER" ]
+    "changeTags" : [ "ANNOTATION", "BODY", "EXCEPTION", "MODIFIER" ]
   }, {
     "commitHash" : "421c2f861c80dab218b2d17247fe02de7fa4552c",
     "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "9032a9afc15e029d8f205761b5e104f44f9c4be0",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "98e2c66a7b2d5fd42641527cd9ad6c3b497d65c7",
     "changeTags" : [ "BODY" ]
@@ -28,7 +28,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a244ed3b5975055deb3bdfeb5d7b8fd6549b578a",
-    "changeTags" : [ "RENAME", "BODY" ]
+    "changeTags" : [ "BODY", "DOCUMENTATION", "RENAME" ]
   }, {
     "commitHash" : "6b9c90ff89f541e84662292d450f628597c4b95a",
     "changeTags" : [ "INTRODUCTION" ]
