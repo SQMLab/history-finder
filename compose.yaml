@@ -14,11 +14,10 @@ services:
     volumes:
       - ~/dev/docker/influxdb/var/lib/influxdb2:/var/lib/influxdb2
     ports:
-      - '8086:8086'
+      - '127.0.0.1:8086:8086'
   grafana:
     image: 'grafana/grafana:latest'
     volumes:
       - ~/dev/docker/grafana/var/lib/grafana:/var/lib/grafana
     ports:
       - '127.0.0.1:3000:3000'
-    user: 'root:root'
