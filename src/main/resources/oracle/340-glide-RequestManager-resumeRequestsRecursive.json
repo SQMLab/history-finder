@@ -10,7 +10,7 @@
   "endLine" : 355,
   "commits" : [ {
     "commitHash" : "eaf720e934d8d71ed34c5bffb32cd4e72ff90495",
-    "changeTags" : [ ]
+    "changeTags" : [ "MODIFIER" ]
   }, {
     "commitHash" : "54801bd931cc99ee7ed738bd179cfa2a805a415b",
     "changeTags" : [ "ANNOTATION", "DOCUMENTATION" ]

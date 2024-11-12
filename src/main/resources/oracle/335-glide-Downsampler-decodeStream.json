@@ -34,7 +34,7 @@
     "changeTags" : [ "FORMAT" ]
   }, {
     "commitHash" : "54801bd931cc99ee7ed738bd179cfa2a805a415b",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "DOCUMENTATION" ]
   }, {
     "commitHash" : "853c68744fb62d95763c1a10d662643106e5d050",
     "changeTags" : [ "BODY", "PARAMETER" ]
@@ -49,6 +49,6 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "a93a9410a720adbfcf76e280db4ed3fda5e939d7",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "INTRODUCTION" ]
   } ]
 }

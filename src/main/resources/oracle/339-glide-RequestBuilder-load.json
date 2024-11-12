@@ -43,13 +43,13 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "dffd0145eeda92f418c6f8252ed7d8f1e97195b0",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "PARAMETER" ]
   }, {
     "commitHash" : "f389e91ccecac6ddf736bbf1a4346782609eb034",
-    "changeTags" : [ "FORMAT", "DOCUMENTATION" ]
+    "changeTags" : [ "DOCUMENTATION", "FORMAT" ]
   }, {
     "commitHash" : "1abd60feee7f6321fe790a85e24e5376652ffc8b",
-    "changeTags" : [ "BODY" ]
+    "changeTags" : [ "RETURN_TYPE" ]
   }, {
     "commitHash" : "760bb12182742e7cb8dae45f2aa8e27af7e8b383",
     "changeTags" : [ "INTRODUCTION" ]
