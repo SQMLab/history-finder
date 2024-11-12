@@ -13,7 +13,7 @@
     "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "b5c8b725655d2ad8a715cfb1fbbdf25dbdcd4ceb",
-    "changeTags" : [ "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "527b992a074c1c65727bc52c820d40340f074a6b",
     "changeTags" : [ "DOCUMENTATION" ]
@@ -22,7 +22,7 @@
     "changeTags" : [ "ANNOTATION", "FORMAT" ]
   }, {
     "commitHash" : "92ab0e7971df9d1efc9345f17ad48355df95161a",
-    "changeTags" : [ "PARAMETER" ]
+    "changeTags" : [ "PARAMETER", "RENAME" ]
   }, {
     "commitHash" : "c2fd0a1ef514ec109f7f1b544f46bfb8338b7e8f",
     "changeTags" : [ "INTRODUCTION" ]
