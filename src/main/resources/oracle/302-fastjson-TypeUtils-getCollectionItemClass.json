@@ -31,7 +31,7 @@
     "changeTags" : [ "BODY" ]
   }, {
     "commitHash" : "81ada55a69aaa46a6fc9c91a40859a408a60a986",
-    "changeTags" : [ "BODY", "MODIFIER", "MOVE" ]
+    "changeTags" : [ "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "d3f141470ae5132134aba7ca0d00d29963b983f3",
     "changeTags" : [ "INTRODUCTION" ]
