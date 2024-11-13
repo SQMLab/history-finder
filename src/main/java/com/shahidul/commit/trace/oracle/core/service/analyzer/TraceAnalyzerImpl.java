@@ -79,10 +79,13 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                     AtomicInteger preferredExpectedCommitSize = new AtomicInteger(expectedHashSet.size());
                     if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
                         weaklyExpectedHashSet.forEach(commitUdt -> {
-                            if (!expectedHashSet.contains(commitUdt.getCommitHash())){
+                            if (!commitSet.contains(commitUdt.getCommitHash())){
                                 preferredExpectedCommitSize.addAndGet(-1);
                             }
                         });
+                    }
+                    if (expectedHashSet.size() != preferredExpectedCommitSize.get()){
+                        log.info("Expected commit Size {} and preferred commit size {}", expectedHashSet.size(), preferredExpectedCommitSize.get());
                     }
                     Double recall = null;
                     if (preferredExpectedCommitSize.get() > 0){
