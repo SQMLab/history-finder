@@ -90,9 +90,6 @@
     "commitHash" : "0a42c80c1151380f7f492ec75de5648cfe62d250",
     "changeTags" : [ "BODY" ]
   }, {
-    "commitHash" : "3e81482760f742d078e71b166cc0f7c3c2eb6abb",
-    "changeTags" : [ "BODY", "DOCUMENTATION" ]
-  }, {
     "commitHash" : "02a4473c62d8240837bec297f0a1f3cb67ef8a7b",
     "changeTags" : [ "FILE_MOVE" ]
   }, {

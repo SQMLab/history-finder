@@ -21,12 +21,6 @@
     "commitHash" : "a639ee9275e672ca21320f56f62f1648d24aa140",
     "changeTags" : [ "ANNOTATION" ]
   }, {
-    "commitHash" : "41ed9f29f41263c9facede20bddfaafa669b43c5",
-    "changeTags" : [ ]
-  }, {
-    "commitHash" : "0c8273f2ca1f9bf2064cd9c4c939d2546443f759",
-    "changeTags" : [ ]
-  }, {
     "commitHash" : "37fa778ea03aba953712348426393136e2314658",
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
