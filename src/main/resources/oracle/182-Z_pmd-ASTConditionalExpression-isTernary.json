@@ -12,6 +12,9 @@
     "commitHash" : "07516ee8ac8e698a6078a3f6025c0e9046d92e0c",
     "changeTags" : [ "ANNOTATION", "BODY", "DOCUMENTATION" ]
   }, {
+    "commitHash" : "80e27d049abfaabb52596975e6189e9f1ff4cb0a",
+    "changeTags" : [ "DOCUMENTATION" ]
+  }, {
     "commitHash" : "ad88b4784d78bf1698fac72cad3825144caf6863",
     "changeTags" : [ "FILE_MOVE" ]
   }, {

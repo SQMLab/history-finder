@@ -18,9 +18,6 @@
     "commitHash" : "67556ba8eaf22a352b03fe197a0c452f695835a6",
     "changeTags" : [ "FILE_MOVE", "RENAME" ]
   }, {
-    "commitHash" : "e473364e4ea01424eaaa015abbfb2295ecbc7297",
-    "changeTags" : [ "FORMAT" ]
-  }, {
     "commitHash" : "6ab376e2e88ac9f3a4b1aa3c2962cba29d44965b",
     "changeTags" : [ "FORMAT" ]
   }, {
