@@ -74,18 +74,6 @@
   }, {
     "commitHash" : "98f8035b44e9c120e25d663c9ec21eee0773645e",
     "changeTags" : [ "FILE_MOVE" ]
-  },  {
-    "commitHash" : "ac28599e2b40e0dd6b97f6a91849585531264622",
-    "changeTags" : [ "FILE_MOVE" ]
-  }, {
-    "commitHash" : "bcf4a0dae04a4ad14287eeb34069a97c96fe9bb1",
-    "changeTags" : [ "FILE_MOVE" ]
-  }, {
-    "commitHash" : "9fc12334a7d14347cd6951d0653264b2597bd3a0",
-    "changeTags" : [ "FILE_MOVE" ]
-  }, {
-    "commitHash" : "98f8035b44e9c120e25d663c9ec21eee0773645e",
-    "changeTags" : [ "FILE_MOVE" ]
   }, {
     "commitHash" : "c27229a159bfc992874609270ab8b57981fef339",
     "changeTags" : [ "BODY", "MODIFIER", "MOVE", "PARAMETER" ]
