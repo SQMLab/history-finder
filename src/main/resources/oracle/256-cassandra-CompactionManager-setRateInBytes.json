@@ -8,5 +8,8 @@
   "element" : "setRateInBytes",
   "startLine" : 217,
   "endLine" : 225,
-  "commits" : [ ]
+  "commits" : [ {
+    "commitHash" : "dd08314ed654aafa60b2a82fc4953aac171ba3ef",
+    "changeTags" : [ "INTRODUCTION" ]
+  } ]
 }
