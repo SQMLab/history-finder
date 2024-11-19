@@ -42,7 +42,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             }
         }
         return Arrays.stream(fileList)
-                .map(f-> f.substring(pathBuilder.length()))
+                //.map(f-> f.substring(pathBuilder.length()))
                 .sorted(Comparator.naturalOrder())
                 .toList();
     }

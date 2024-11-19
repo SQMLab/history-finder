@@ -8,25 +8,25 @@
 <h2>Multi-Section Workflow</h2>
 
 <!-- Section 1 : Repository URL -->
-<div id="section1" class="mt-4">
+<div id="repositoryUrlSection" class="mt-4">
     <h4>Section 1: Git Repository</h4>
     <div class="mb-3">
         <label for="gitRepoUrl" class="form-label">Enter Git Repository URL:</label>
         <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter Git repository URL">
     </div>
     <button class="btn btn-primary" onclick="cloneRepository()">Clone Repository</button>
-    <button class="btn btn-secondary" onclick="goToSection(2)">Already Cloned</button>
+    <button class="btn btn-secondary" onclick="showRepositoryListSection()">Already Cloned</button>
 </div>
 
 <!-- Section 2 : Repository List-->
-<div id="section2" class="mt-4 d-none">
+<div id="repositoryListSection" class="mt-4 d-none">
     <h4>Section 2: Select an Existing Repository</h4>
     <ul id="clonedRepoList" class="list-group"></ul>
-    <button class="btn btn-secondary mt-3" onclick="goToSection(1)">Back</button>
+    <button class="btn btn-secondary mt-3" onclick="showRepositoryUrlSection()">Back</button>
 </div>
 
 <!-- Section 3 : Commit Hash Input-->
-<div id="section3" class="mt-4 d-none">
+<div id="startCommitHashSection" class="mt-4 d-none">
     <h4>Section 3: Enter Commit Hash</h4>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label">Commit Hash:</label>
@@ -35,12 +35,12 @@
             <button class="btn btn-outline-secondary" onclick="fillHEAD()">HEAD</button>
         </div>
     </div>
-    <button class="btn btn-secondary mt-3" onclick="goToSection(2)">Back</button>
-    <button class="btn btn-primary" id="nextToSection4" onclick="goToSection(4)" disabled>Next</button>
+    <button class="btn btn-secondary mt-3" onclick="showRepositoryListSection()">Back</button>
+    <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection()" disabled>Next</button>
 </div>
 
 <!-- Section 4 : File Selection-->
-<div id="section4" class="mt-4 d-none">
+<div id="fileSection" class="mt-4 d-none">
     <h4>Section 4: Search and Select Files</h4>
     <div class="mb-3">
         <label for="fileSearch" class="form-label">Search File:</label>
@@ -57,11 +57,11 @@
     </ul>
 
     <!-- Back Button for Section 3 -->
-    <button class="btn btn-secondary mt-3" onclick="goToSection(3)">Back</button>
+    <button class="btn btn-secondary mt-3" onclick="showStartCommitHashSection()">Back</button>
 </div>
 
 <!-- Section 5 -->
-<div id="section5" class="mt-4 d-none">
+<div id="algorithmSection" class="mt-4 d-none">
     <h4>Section 5: Select Algorithms</h4>
     <div class="form-check">
         <input class="form-check-input" type="checkbox" id="historyFinder" name="algorithms" value="HistoryFinder">
@@ -89,25 +89,91 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['section1', 'section2', 'section3', 'section4', 'section5'];
+    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'algorithmSection'];
 
-    let methodInfo = {
-    repositoryName: '',
-    startCommitHash: '',
-    file: ''};
+    let state = {repositoryName : ''};
+
 
     // Navigate between sections
-    function goToSection(section) {
+    function revealSection(section) {
 <!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
         sectionList.forEach( s => {
-        console.log(s);
         document.getElementById(s).classList.add('d-none');
         });
-
-        document.getElementById(`section${section}`).classList.remove('d-none');
+        document.getElementById(section).classList.remove('d-none');
+    }
+      function showRepositoryUrlSection() {
+        revealSection('repositoryUrlSection');
+    }
+    function showRepositoryListSection() {
+        loadClonedRepositories(); // Load the list of cloned repositories
+        revealSection('repositoryListSection');
+    }
+    function showStartCommitHashSection() {
+        revealSection('startCommitHashSection');
     }
 
-    // Call API to load cloned repositories
+    function showFileSection() {
+    console.log('revealing file section..')
+        fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, '')
+        revealSection('fileSection');
+    }
+     function showAlgorithmSection() {
+        revealSection('algorithmSection');
+    }
+
+
+
+      function onSelectFile(file) {
+        console.log(`Selected file: ${file}`);
+        methodInfo.file = file;
+        goToSection(3); // Go to section 3 (Commit Hash)
+    }
+
+    // Existing methods for other sections...
+
+    // Attach goToSection2 to "Already Cloned" button
+    //document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
+     function cloneRepository() {
+            const url = document.getElementById('gitRepoUrl').value;
+            if (!url) {
+                alert("Please enter a Git repository URL.");
+                return;
+            }
+            // Simulate API call
+            setTimeout(() => {
+                const success = true; // Replace with actual API result
+                if (success) {
+                    goToSection(3);
+                } else {
+                    alert("Failed to clone repository. Try again.");
+                }
+            }, 2000);
+        }
+
+
+
+        function fillHEAD() {
+            document.getElementById('startCommitHash').value = "HEAD";
+            document.getElementById('startCommitHashNextButton').disabled = false;
+        }
+
+        function searchFiles() {
+            const filePath = document.getElementById('fileSearch').value;
+            // Simulate API call
+            console.log(`Searching files for: ${filePath}`);
+        }
+
+        function submitAlgorithms() {
+            const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
+            if (selectedAlgorithms.length === 0) {
+                alert("Please select at least one algorithm.");
+                return;
+            }
+            console.log("Selected algorithms:", selectedAlgorithms);
+        }
+
+        // Call API to load cloned repositories
     function loadClonedRepositories() {
         $.ajax({
             url: '/api/repository-list', // URL to Spring MVC backend API
@@ -120,9 +186,11 @@
                 response.forEach(function(repo) {
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
-                    li.textContent = repo;for(s in
+                    li.textContent = repo;
                     li.onclick = function() {
-                        selectClonedRepo(repo);
+                        console.log(state);
+                         state.repositoryName = repo;
+                         showStartCommitHashSection();
                     };
                     list.appendChild(li);
                 });
@@ -133,7 +201,7 @@
         });
     }
 
-    function fetchFileList(startCommitHash, repositoryName, path) {
+    function fetchFileList(repositoryName, startCommitHash, path) {
         $.ajax({
             url: '/api/path-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&path=' + path , // URL to Spring MVC backend API
             method: 'GET',
@@ -157,70 +225,6 @@
             }
         });
     }
-
-    // When the user selects a repository
-    function selectClonedRepo(repoName) {
-        console.log(`Selected repository: ${repoName}`);
-        methodInfo.repositoryName = repoName;
-        goToSection(3); // Go to section 3 (Commit Hash)
-    }
-      function onSelectFile(file) {
-        console.log(`Selected file: ${file}`);
-        methodInfo.file = file;
-        goToSection(3); // Go to section 3 (Commit Hash)
-    }
-
-    // Trigger loading cloned repositories when "Already Cloned" is clicked
-    function goToSection2() {
-        loadClonedRepositories(); // Load the list of cloned repositories
-        goToSection(2);
-    }
-
-    // Existing methods for other sections...
-
-    // Attach goToSection2 to "Already Cloned" button
-    document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
-     function cloneRepository() {
-            const url = document.getElementById('gitRepoUrl').value;
-            if (!url) {
-                alert("Please enter a Git repository URL.");
-                return;
-            }
-            // Simulate API call
-            setTimeout(() => {
-                const success = true; // Replace with actual API result
-                if (success) {
-                    goToSection(3);
-                } else {
-                    alert("Failed to clone repository. Try again.");
-                }
-            }, 2000);
-        }
-
-        function selectClonedRepo(repoName) {
-            console.log(`Selected repository: ${repoName}`);
-            goToSection(3);
-        }
-
-        function fillHEAD() {
-            document.getElementById('commitHash').value = "HEAD";
-            document.getElementById('nextToSection4').disabled = false;
-        }
-
-        function searchFiles() {
-            const filePath = document.getElementById('fileSearch').value;
-            // Simulate API call
-            console.log(`Searching files for: ${filePath}`);
-        }
-
-        function submitAlgorithms() {
-            const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
-            if (selectedAlgorithms.length === 0) {
-                alert("Please select at least one algorithm.");
-                return;
-            }
-            console.log("Selected algorithms:", selectedAlgorithms);
-        }
 </script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
