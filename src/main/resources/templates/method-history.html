@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Page 2 - Results</title>
+    <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+<h2>Results Table</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Commit Date</th>
+        <th>Author</th>
+        <th>Commit Hash</th>
+        <th>File Name</th>
+        <th>Change Type</th>
+        <th>Diff</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${results}">
+        <td><a href="#" th:text="${entry.commitDate}" th:onclick="'alert(`' + entry.commitDate + '`)'" class="text-decoration-none"></a></td>
+        <td>
+            <a href="#" th:onclick="'alert(`Name: ' + entry.authorName + ' Email: ' + entry.authorEmail + '`)'">
+                <span th:text="${entry.authorName}"></span>
+            </a>
+        </td>
+        <td><a th:href="@{#}" th:text="${entry.commitHash}"></a></td>
+        <td><a th:href="${entry.fileUrl}" th:text="${entry.fileName}"></a></td>
+        <td>
+            <a href="#" th:onclick="'alert(`' + entry.changeTypes + '`)'" th:text="${entry.changeType}"></a>
+        </td>
+        <td><a href="#" th:onclick="'alert(`' + entry.diffDetails + '`)'" th:text="Diff"></a></td>
+    </tr>
+    </tbody>
+</table>
+<script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
