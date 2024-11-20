@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.api.controller.ui;
 
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
+import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,5 +41,12 @@ public class MethodHistoryUiController {
                                     @RequestParam("startCommitHash") String startCommitHash,
                                     @RequestParam("path") String path) {
         return gitRepositoryUiService.findPathList(repositoryName, startCommitHash, path);
+    }
+    @GetMapping("/api/method-list")
+    @ResponseBody
+    public List<MethodLocationDto> getMethodList(@RequestParam("repositoryName") String repositoryName,
+                                                 @RequestParam("startCommitHash") String startCommitHash,
+                                                 @RequestParam("file") String file) {
+        return gitRepositoryUiService.findMethodLocationList(repositoryName, startCommitHash, file);
     }
 }

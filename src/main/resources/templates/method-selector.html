@@ -60,7 +60,19 @@
     <button class="btn btn-secondary mt-3" onclick="showStartCommitHashSection()">Back</button>
 </div>
 
-<!-- Section 5 -->
+<!-- Section 5 : File Selection-->
+<div id="methodSection" class="mt-4 d-none">
+    <h4>Section 5: Method Selection</h4>
+
+    <ul id="methodList" class="list-group">
+        <!-- Method items will be dynamically generated -->
+    </ul>
+
+    <!-- Back Button for Section 3 -->
+    <button class="btn btn-secondary mt-3" onclick="showFileSection()">Back</button>
+</div>
+
+<!-- Section 6 -->
 <div id="algorithmSection" class="mt-4 d-none">
     <h4>Section 5: Select Algorithms</h4>
     <div class="form-check">
@@ -89,113 +101,125 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'algorithmSection'];
+    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'methodSection','algorithmSection'];
 
-    let state = {repositoryName : ''};
+    let state = {repositoryName: ''};
 
 
     // Navigate between sections
     function revealSection(section) {
-<!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
-        sectionList.forEach( s => {
-        document.getElementById(s).classList.add('d-none');
+        <!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
+        sectionList.forEach(s => {
+            document.getElementById(s).classList.add('d-none');
         });
         document.getElementById(section).classList.remove('d-none');
     }
-      function showRepositoryUrlSection() {
+
+    function showRepositoryUrlSection() {
         revealSection('repositoryUrlSection');
     }
+
     function showRepositoryListSection() {
         loadClonedRepositories(); // Load the list of cloned repositories
         revealSection('repositoryListSection');
     }
+
     function showStartCommitHashSection() {
         revealSection('startCommitHashSection');
     }
 
     function showFileSection() {
-    console.log('revealing file section..')
+        console.log('revealing file section..')
         fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, '')
         revealSection('fileSection');
     }
-     function showAlgorithmSection() {
+    function showMethodList(file) {
+        fetchMethodList(state.repositoryName, document.getElementById('startCommitHash').value, file)
+        revealSection('methodSection');
+    }
+
+    function showAlgorithmSection() {
         revealSection('algorithmSection');
     }
 
 
-
-      function onSelectFile(file) {
+    function onSelectFile(file) {
         console.log(`Selected file: ${file}`);
-        methodInfo.file = file;
-        goToSection(3); // Go to section 3 (Commit Hash)
+        if (file.toLowerCase().endsWith('.java')) {
+            showMethodList(file)
+        } else {
+            fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, file)
+        }
+    }
+    function onSelectMethod(repositoryName, startCommitHash, file, methodName, startLine, endLine) {
+
     }
 
     // Existing methods for other sections...
 
     // Attach goToSection2 to "Already Cloned" button
     //document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
-     function cloneRepository() {
-            const url = document.getElementById('gitRepoUrl').value;
-            if (!url) {
-                alert("Please enter a Git repository URL.");
-                return;
+    function cloneRepository() {
+        const url = document.getElementById('gitRepoUrl').value;
+        if (!url) {
+            alert("Please enter a Git repository URL.");
+            return;
+        }
+        // Simulate API call
+        setTimeout(() => {
+            const success = true; // Replace with actual API result
+            if (success) {
+                goToSection(3);
+            } else {
+                alert("Failed to clone repository. Try again.");
             }
-            // Simulate API call
-            setTimeout(() => {
-                const success = true; // Replace with actual API result
-                if (success) {
-                    goToSection(3);
-                } else {
-                    alert("Failed to clone repository. Try again.");
-                }
-            }, 2000);
+        }, 2000);
+    }
+
+
+    function fillHEAD() {
+        document.getElementById('startCommitHash').value = "HEAD";
+        document.getElementById('startCommitHashNextButton').disabled = false;
+    }
+
+    function searchFiles() {
+        const filePath = document.getElementById('fileSearch').value;
+        // Simulate API call
+        console.log(`Searching files for: ${filePath}`);
+    }
+
+    function submitAlgorithms() {
+        const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
+        if (selectedAlgorithms.length === 0) {
+            alert("Please select at least one algorithm.");
+            return;
         }
+        console.log("Selected algorithms:", selectedAlgorithms);
+    }
 
-
-
-        function fillHEAD() {
-            document.getElementById('startCommitHash').value = "HEAD";
-            document.getElementById('startCommitHashNextButton').disabled = false;
-        }
-
-        function searchFiles() {
-            const filePath = document.getElementById('fileSearch').value;
-            // Simulate API call
-            console.log(`Searching files for: ${filePath}`);
-        }
-
-        function submitAlgorithms() {
-            const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
-            if (selectedAlgorithms.length === 0) {
-                alert("Please select at least one algorithm.");
-                return;
-            }
-            console.log("Selected algorithms:", selectedAlgorithms);
-        }
-
-        // Call API to load cloned repositories
+    // Call API to load cloned repositories
     function loadClonedRepositories() {
         $.ajax({
             url: '/api/repository-list', // URL to Spring MVC backend API
             method: 'GET',
-            success: function(response) {
+            success: function (response) {
                 const list = document.getElementById('clonedRepoList');
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
-                response.forEach(function(repo) {
+                response.forEach(function (repo) {
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
                     li.textContent = repo;
-                    li.onclick = function() {
+                    li.onclick = function () {
                         console.log(state);
-                         state.repositoryName = repo;
-                         showStartCommitHashSection();
+                        state.repositoryName = repo;
+                        showStartCommitHashSection();
                     };
                     list.appendChild(li);
                 });
             },
-            error: function() {
+            error: function () {
                 alert('Failed to load cloned repositories.');
             }
         });
@@ -203,24 +227,49 @@
 
     function fetchFileList(repositoryName, startCommitHash, path) {
         $.ajax({
-            url: '/api/path-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&path=' + path , // URL to Spring MVC backend API
+            url: '/api/path-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&path=' + path, // URL to Spring MVC backend API
             method: 'GET',
-            success: function(response) {
+            success: function (response) {
                 const list = document.getElementById('fileList');
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
-                response.forEach(function(file) {
+                response.forEach(function (file) {
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
-                    li.textContent = file;
-                    li.onclick = function() {
+                    let fileParts = file.split("/");
+                    li.textContent = fileParts[fileParts.length - 1];
+                    li.onclick = function () {
                         onSelectFile(file);
                     };
                     list.appendChild(li);
                 });
             },
-            error: function() {
+            error: function () {
+                alert('Failed to load file list.');
+            }
+        });
+    }
+    function fetchMethodList(repositoryName, startCommitHash, file) {
+        $.ajax({
+            url: '/api/method-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&file=' + file, // URL to Spring MVC backend API
+            method: 'GET',
+            success: function (response) {
+                const list = document.getElementById('methodList');
+                list.innerHTML = ''; // Clear previous list
+
+                // Dynamically populate the list
+                response.forEach(function (methodDto) {
+                    const li = document.createElement('li');
+                    li.classList.add('list-group-item');
+                    li.textContent = methodDto.signature;
+                    li.onclick = function () {
+                        onSelectMethod(repositoryName, startCommitHash, file, methodDto.methodName, methodDto.startLine, methodDto.endLine);
+                    };
+                    list.appendChild(li);
+                });
+            },
+            error: function () {
                 alert('Failed to load file list.');
             }
         });
