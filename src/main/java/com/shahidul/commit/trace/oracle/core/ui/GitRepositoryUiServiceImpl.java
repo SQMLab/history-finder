@@ -3,12 +3,17 @@ package com.shahidul.commit.trace.oracle.core.ui;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.enums.LanguageType;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +26,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     AppProperty appProperty;
+    CommitTraceDetailExportService traceDetailExportService;
 
     @Override
     public List<String> findRepositoryList() {
@@ -77,6 +83,25 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                         .build())
                 .sorted(Comparator.comparing(MethodLocationDto::getMethodName, String.CASE_INSENSITIVE_ORDER))
                 .toList();
+    }
+
+    @Override
+    public CommitTraceOutput findMethodHistory(String repositoryName, String commitHash, String file, String methodName, Integer startLine, Integer endLine, TracerName tracerName) {
+        CommandLineInput inputCommand = CommandLineInput.builder()
+                .command("")
+                .tracerName(tracerName)
+                .oracleFileId(null)
+                .cloneDirectory(appProperty.getRepositoryBasePath())
+                .repositoryUrl("")
+                .repositoryName(repositoryName)
+                .startCommitHash(commitHash)
+                .languageType(LanguageType.JAVA)
+                .file(file)
+                .methodName(methodName)
+                .startLine(startLine)
+                .endLine(endLine)
+                .build();
+        return traceDetailExportService.execute(inputCommand);
     }
 
 
