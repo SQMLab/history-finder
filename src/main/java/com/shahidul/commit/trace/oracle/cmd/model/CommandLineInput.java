@@ -23,5 +23,6 @@ public class CommandLineInput {
     String file;
     String methodName;
     Integer startLine;
+    Integer endLine;
     String outputFile;
 }

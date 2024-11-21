@@ -76,34 +76,41 @@
 <div id="algorithmSection" class="mt-4 d-none">
     <h4>Section 5: Select Algorithms</h4>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="historyFinder" name="algorithms" value="HistoryFinder">
+        <input class="form-check-input" type="checkbox" id="historyFinder" name="algorithms" value="HISTORY_FINDER">
         <label class="form-check-label" for="historyFinder">HistoryFinder</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="codeShovel" name="algorithms" value="CodeShovel">
+        <input class="form-check-input" type="checkbox" id="codeShovel" name="algorithms" value="CODE_SHOVEL">
         <label class="form-check-label" for="codeShovel">CodeShovel</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="codeTracker" name="algorithms" value="CodeTracker">
+        <input class="form-check-input" type="checkbox" id="codeTracker" name="algorithms" value="CODE_TRACKER">
         <label class="form-check-label" for="codeTracker">CodeTracker</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gitFuncname" name="algorithms" value="GitFuncName">
+        <input class="form-check-input" type="checkbox" id="gitFuncname" name="algorithms" value="GIT_FUNC_NAME">
         <label class="form-check-label" for="gitFuncname">Git Funcname</label>
     </div>
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gitLineRange" name="algorithms" value="GitLineRange">
+        <input class="form-check-input" type="checkbox" id="gitLineRange" name="algorithms" value="GIT_LINE_RANGE">
         <label class="form-check-label" for="gitLineRange">Git Line Range</label>
     </div>
-    <button class="btn btn-primary mt-3" onclick="submitAlgorithms()">Next</button>
+    <button class="btn btn-secondary mt-3" onclick="showMethodList()">Back</button>
+    <button class="btn btn-primary mt-3" onclick="onClickFindTrace()">Next</button>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'methodSection','algorithmSection'];
+    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection'];
 
-    let state = {repositoryName: ''};
+    let state = {
+        repositoryName: '',
+        file: '',
+        methodName: '',
+        startLine: '',
+        endLine: ''
+    };
 
 
     // Navigate between sections
@@ -133,12 +140,17 @@
         fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, '')
         revealSection('fileSection');
     }
-    function showMethodList(file) {
-        fetchMethodList(state.repositoryName, document.getElementById('startCommitHash').value, file)
+
+    function showMethodList() {
+        fetchMethodList(state.repositoryName, document.getElementById('startCommitHash').value, state.file)
         revealSection('methodSection');
     }
 
-    function showAlgorithmSection() {
+    function showAlgorithmSection(repositoryName, startCommitHash, file, methodName, startLine, endLine) {
+        state.file = file
+        state.methodName = methodName;
+        state.startLine = startLine;
+        state.endLine = endLine;
         revealSection('algorithmSection');
     }
 
@@ -146,19 +158,31 @@
     function onSelectFile(file) {
         console.log(`Selected file: ${file}`);
         if (file.toLowerCase().endsWith('.java')) {
-            showMethodList(file)
+            state.file = file;
+            showMethodList()
         } else {
             fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, file)
         }
     }
-    function onSelectMethod(repositoryName, startCommitHash, file, methodName, startLine, endLine) {
 
+    function onClickFindTrace() {
+        const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
+        if (selectedAlgorithms.length === 0) {
+            alert("Please select at least one algorithm.");
+            return;
+        }else{
+            selectedAlgorithms.forEach(algorithm => {
+                loadMethodHistory(state.repositoryName, document.getElementById('startCommitHash').value, state.file, state.methodName, state.startLine, state.endLine, algorithm)
+            });
+        }
+        console.log("Selected algorithms:", selectedAlgorithms);
     }
-
     // Existing methods for other sections...
 
     // Attach goToSection2 to "Already Cloned" button
     //document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
+
+
     function cloneRepository() {
         const url = document.getElementById('gitRepoUrl').value;
         if (!url) {
@@ -176,7 +200,6 @@
         }, 2000);
     }
 
-
     function fillHEAD() {
         document.getElementById('startCommitHash').value = "HEAD";
         document.getElementById('startCommitHashNextButton').disabled = false;
@@ -186,15 +209,6 @@
         const filePath = document.getElementById('fileSearch').value;
         // Simulate API call
         console.log(`Searching files for: ${filePath}`);
-    }
-
-    function submitAlgorithms() {
-        const selectedAlgorithms = Array.from(document.querySelectorAll('input[name="algorithms"]:checked')).map(checkbox => checkbox.value);
-        if (selectedAlgorithms.length === 0) {
-            alert("Please select at least one algorithm.");
-            return;
-        }
-        console.log("Selected algorithms:", selectedAlgorithms);
     }
 
     // Call API to load cloned repositories
@@ -250,6 +264,7 @@
             }
         });
     }
+
     function fetchMethodList(repositoryName, startCommitHash, file) {
         $.ajax({
             url: '/api/method-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&file=' + file, // URL to Spring MVC backend API
@@ -264,13 +279,33 @@
                     li.classList.add('list-group-item');
                     li.textContent = methodDto.signature;
                     li.onclick = function () {
-                        onSelectMethod(repositoryName, startCommitHash, file, methodDto.methodName, methodDto.startLine, methodDto.endLine);
+                        showAlgorithmSection(repositoryName, startCommitHash, file, methodDto.methodName, methodDto.startLine, methodDto.endLine);
                     };
                     list.appendChild(li);
                 });
             },
             error: function () {
                 alert('Failed to load file list.');
+            }
+        });
+    }
+
+    function loadMethodHistory(repositoryName, startCommitHash, file, methodName, startLine, endLine, tracerName) {
+        $.ajax({
+            url: '/ui/method-history?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&file=' + file
+                + "&methodName=" + methodName + "&startLine=" + startLine + "&endLine=" + endLine + "&tracerName=" + tracerName,
+            method: 'GET',
+            success: function (response) {
+                console.log(response)
+                // Open a new tab
+                let newTab = window.open(this.url);
+                // Write the AJAX response into the new tab
+                newTab.document.open();
+                newTab.document.write(response);
+                newTab.document.close();
+            },
+            error: function () {
+                alert('Failed to load commit trace.');
             }
         });
     }

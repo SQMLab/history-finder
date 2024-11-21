@@ -34,6 +34,13 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
 
     @Override
     public void export(CommandLineInput commandLineInput) {
+
+        outputFileWriter.write(commandLineInput.getOutputFile(), execute(commandLineInput));
+
+    }
+
+    @Override
+    public CommitTraceOutput execute(CommandLineInput commandLineInput) {
         String cloneDirectory = commandLineInput.getCloneDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
         TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId());
@@ -45,7 +52,6 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
         metadataResolverService.populateMetaData(traceEntity);
         CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
         commitTraceOutput.setRepositoryFile(cloneDirectory + "/" + inputOracle.getRepositoryName());
-        outputFileWriter.write(commandLineInput.getOutputFile(), commitTraceOutput);
-
+        return commitTraceOutput;
     }
 }

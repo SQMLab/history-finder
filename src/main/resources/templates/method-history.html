@@ -3,37 +3,124 @@
 <head>
     <title>Page 2 - Results</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .result-header, .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+        }
+
+        .result-header {
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+
+        .result-row {
+            background-color: #ffffff;
+        }
+
+        .details-view {
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .result-item {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .details-btn {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="container mt-5">
-<h2>Results Table</h2>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Commit Date</th>
-        <th>Author</th>
-        <th>Commit Hash</th>
-        <th>File Name</th>
-        <th>Change Type</th>
-        <th>Diff</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="entry : ${results}">
-        <td><a href="#" th:text="${entry.commitDate}" th:onclick="'alert(`' + entry.commitDate + '`)'" class="text-decoration-none"></a></td>
-        <td>
-            <a href="#" th:onclick="'alert(`Name: ' + entry.authorName + ' Email: ' + entry.authorEmail + '`)'">
-                <span th:text="${entry.authorName}"></span>
-            </a>
-        </td>
-        <td><a th:href="@{#}" th:text="${entry.commitHash}"></a></td>
-        <td><a th:href="${entry.fileUrl}" th:text="${entry.fileName}"></a></td>
-        <td>
-            <a href="#" th:onclick="'alert(`' + entry.changeTypes + '`)'" th:text="${entry.changeType}"></a>
-        </td>
-        <td><a href="#" th:onclick="'alert(`' + entry.diffDetails + '`)'" th:text="Diff"></a></td>
-    </tr>
-    </tbody>
-</table>
+<h2>Results</h2>
+
+<!-- Result Container for rows -->
+<div class="result-container">
+    <!-- Header Row -->
+    <div class="result-header">
+        <div class="result-item">Commit Date</div>
+        <div class="result-item">Author</div>
+        <div class="result-item">Commit Hash</div>
+        <div class="result-item">File Name</div>
+        <div class="result-item">Change Type</div>
+        <div class="result-item">Diff</div>
+        <div class="result-item">Details</div>
+    </div>
+
+    <!-- Iterating over each commit -->
+    <div th:each="commit : ${trace.commitDetails}">
+        <div class="result-row">
+            <div class="result-item" th:text="${commit.committedAt}"></div>
+            <div class="result-item">
+                <a href="#" th:onclick="'alert(`Name: ' + commit.author + ' Email: ' + commit.author + '`)'">
+                    <span th:text="${commit.author}"></span>
+                </a>
+            </div>
+            <div class="result-item">
+                <a th:href="@{#}" th:text="${commit.commitHash}"></a>
+            </div>
+            <div class="result-item">
+                <a th:href="${commit.file}" th:text="${commit.file}"></a>
+            </div>
+            <div class="result-item">
+                <a href="#" th:onclick="'alert(`' + commit.changeTypes + '`)'" th:text="${commit.changeTags}"></a>
+            </div>
+            <div class="result-item">
+                <a href="#" th:onclick="'alert(`' + commit.diff + '`)'" th:text="Diff"></a>
+            </div>
+            <div class="result-item">
+                <button class="btn btn-primary btn-sm details-btn">Details</button>
+            </div>
+        </div>
+
+        <!-- Details View (shown when the button is clicked) -->
+        <div class="details-view">
+            <h4>Commit Details</h4>
+            <p><strong>Commit Date:</strong> <span th:text="${commit.committedAt}"></span></p>
+            <p><strong>Author:</strong> <span th:text="${commit.author}"></span> (<span th:text="${commit.author}"></span>)</p>
+            <p><strong>Commit Hash:</strong> <span th:text="${commit.commitHash}"></span></p>
+            <p><strong>File Name:</strong> <span th:text="${commit.file}"></span></p>
+            <p><strong>Change Type:</strong> <span th:text="${commit.changeTags}"></span></p>
+            <pre><strong>Diff:</strong> <code th:text="${commit.diff}"></code></pre>
+        </div>
+    </div>
+</div>
+
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // For each "Details" button
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const row = event.target.closest('.result-row');
+                const detailsView = row.nextElementSibling; // Next element is the details view
+
+                // Toggle the visibility of the details view
+                if (detailsView.style.display === 'block') {
+                    detailsView.style.display = 'none';
+                    event.target.textContent = 'Details'; // Change button text back to "Details"
+                } else {
+                    detailsView.style.display = 'block';
+                    event.target.textContent = 'Close'; // Change button text to "Close"
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

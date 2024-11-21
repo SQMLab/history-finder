@@ -1,5 +1,7 @@
 package com.shahidul.commit.trace.oracle.api.controller.ui;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import lombok.AllArgsConstructor;
@@ -23,10 +25,17 @@ public class MethodHistoryUiController {
         return "method-selector";
     }
 
-    @PostMapping("ui/method-history")
-    public String showMethodHistoryUi(Model model) {
-        // Populate results for demonstration
-        model.addAttribute("results", null);
+    @GetMapping("ui/method-history")
+    public String showMethodHistoryUi(@RequestParam("repositoryName") String repositoryName,
+                                      @RequestParam("startCommitHash") String startCommitHash,
+                                      @RequestParam("file") String file,
+                                      @RequestParam("methodName") String methodName,
+                                      @RequestParam("startLine") Integer startLine,
+                                      @RequestParam("endLine") Integer endLine,
+                                      @RequestParam("tracerName") TracerName tracerName,
+                                      Model model) {
+        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryName, startCommitHash, file, methodName, startLine, endLine, tracerName);
+        model.addAttribute("trace", traceOutput);
         return "method-history";
     }
     @GetMapping("/api/repository-list")

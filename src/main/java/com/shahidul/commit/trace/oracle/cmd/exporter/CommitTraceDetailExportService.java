@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.cmd.exporter;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
+import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 
 /**
  * @author Shahidul Islam
@@ -8,4 +9,5 @@ import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
  */
 public interface CommitTraceDetailExportService {
     void export(CommandLineInput commandLineInput);
+    CommitTraceOutput execute(CommandLineInput commandLineInput);
 }
