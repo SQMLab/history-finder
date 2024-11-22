@@ -36,6 +36,7 @@ public class CommitUdt implements Cloneable{
     String email;
     String shortMessage;
     String fullMessage;
+    String commitUrl;
     String diffUrl;
     String oldFilUrl;
     String newFileUrl;
