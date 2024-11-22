@@ -3,27 +3,58 @@
 <head>
     <title>Method Selection</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-label {
+            white-space: normal; /* Allows text to wrap */
+            word-wrap: break-word; /* Break long words if necessary */
+        }
+    </style>
 </head>
 <body class="container mt-5">
-<h2>Multi-Section Workflow</h2>
+<h2>Commit Trace</h2>
+
+<!-- Add the Modal for Repository Selection -->
+<div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="repositoryListModalLabel">Existing repository selection</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>Select an Existing Repository</h4>
+                <ul id="clonedRepoList" class="list-group"></ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Section 1 : Repository URL -->
 <div id="repositoryUrlSection" class="mt-4">
-    <h4>Section 1: Git Repository</h4>
+    <h4>Step 1: Git Repository</h4>
     <div class="mb-3">
-        <label for="gitRepoUrl" class="form-label">Enter Git Repository URL:</label>
-        <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter Git repository URL">
+        <label for="gitRepoUrl" class="form-label">
+            Enter Git Repository URL:<br>
+            For example:<br>
+            https://github.com/shahidul2k9/commit-trace-oracle<br>
+            https://github.com/shahidul2k9/commit-trace-oracle.git<br>
+            git@github.com:shahidul2k9/commit-trace-oracle.git<br>
+            gh repo clone shahidul2k9/commit-trace-oracle
+            /home/repository/commit-trace-oracle
+        </label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Repository Location">
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal" onclick="loadClonedRepositories()">Browse</button>
+        </div>
     </div>
-    <button class="btn btn-primary" onclick="cloneRepository()">Clone Repository</button>
-    <button class="btn btn-secondary" onclick="showRepositoryListSection()">Already Cloned</button>
+    <div class="text-center mt-3">
+        <button class="btn btn-primary" onclick="checkoutRepository('')">Next</button>
+    </div>
 </div>
 
-<!-- Section 2 : Repository List-->
-<div id="repositoryListSection" class="mt-4 d-none">
-    <h4>Section 2: Select an Existing Repository</h4>
-    <ul id="clonedRepoList" class="list-group"></ul>
-    <button class="btn btn-secondary mt-3" onclick="showRepositoryUrlSection()">Back</button>
-</div>
 
 <!-- Section 3 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
@@ -35,9 +66,13 @@
             <button class="btn btn-outline-secondary" onclick="fillHEAD()">HEAD</button>
         </div>
     </div>
-    <button class="btn btn-secondary mt-3" onclick="showRepositoryListSection()">Back</button>
-    <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection()" disabled>Next</button>
+    <!-- Buttons horizontally centered and aligned -->
+    <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
+        <button class="btn btn-secondary" onclick="showRepositoryLocationSection()">Back</button>
+        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection(true)" disabled>Next</button>
+    </div>
 </div>
+
 
 <!-- Section 4 : File Selection-->
 <div id="fileSection" class="mt-4 d-none">
@@ -69,7 +104,7 @@
     </ul>
 
     <!-- Back Button for Section 3 -->
-    <button class="btn btn-secondary mt-3" onclick="showFileSection()">Back</button>
+    <button class="btn btn-secondary mt-3" onclick="showFileSection(false)">Back</button>
 </div>
 
 <!-- Section 6 -->
@@ -102,10 +137,15 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection', 'repositoryListSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection'];
+    const sectionList = ['repositoryUrlSection',  'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection'];
 
     let state = {
-        repositoryName: '',
+        repository: {
+            host: '',
+            accountName: '',
+            repositoryName: '',
+            path: ''
+        },
         file: '',
         methodName: '',
         startLine: '',
@@ -122,32 +162,29 @@
         document.getElementById(section).classList.remove('d-none');
     }
 
-    function showRepositoryUrlSection() {
-        revealSection('repositoryUrlSection');
-    }
 
-    function showRepositoryListSection() {
-        loadClonedRepositories(); // Load the list of cloned repositories
-        revealSection('repositoryListSection');
+    function showRepositoryLocationSection() {
+        revealSection('repositoryUrlSection');
     }
 
     function showStartCommitHashSection() {
         revealSection('startCommitHashSection');
     }
 
-    function showFileSection() {
+    function showFileSection(needToFetch) {
         console.log('revealing file section..')
-        fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, '')
+        if (needToFetch) {
+            fetchFileList(state.file)
+        }
         revealSection('fileSection');
     }
 
     function showMethodList() {
-        fetchMethodList(state.repositoryName, document.getElementById('startCommitHash').value, state.file)
+        fetchMethodList(state.file)
         revealSection('methodSection');
     }
 
-    function showAlgorithmSection(repositoryName, startCommitHash, file, methodName, startLine, endLine) {
-        state.file = file
+    function showAlgorithmSection(methodName, startLine, endLine) {
         state.methodName = methodName;
         state.startLine = startLine;
         state.endLine = endLine;
@@ -161,7 +198,7 @@
             state.file = file;
             showMethodList()
         } else {
-            fetchFileList(state.repositoryName, document.getElementById('startCommitHash').value, file)
+            fetchFileList(file)
         }
     }
 
@@ -172,7 +209,7 @@
             return;
         }else{
             selectedAlgorithms.forEach(algorithm => {
-                loadMethodHistory(state.repositoryName, document.getElementById('startCommitHash').value, state.file, state.methodName, state.startLine, state.endLine, algorithm)
+                loadMethodHistory(state.file, state.methodName, state.startLine, state.endLine, algorithm)
             });
         }
         console.log("Selected algorithms:", selectedAlgorithms);
@@ -183,22 +220,7 @@
     //document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
 
 
-    function cloneRepository() {
-        const url = document.getElementById('gitRepoUrl').value;
-        if (!url) {
-            alert("Please enter a Git repository URL.");
-            return;
-        }
-        // Simulate API call
-        setTimeout(() => {
-            const success = true; // Replace with actual API result
-            if (success) {
-                goToSection(3);
-            } else {
-                alert("Failed to clone repository. Try again.");
-            }
-        }, 2000);
-    }
+
 
     function fillHEAD() {
         document.getElementById('startCommitHash').value = "HEAD";
@@ -209,6 +231,44 @@
         const filePath = document.getElementById('fileSearch').value;
         onSelectFile(filePath)
     }
+
+
+    function dismissRepositoryListDialog() {
+        const modalElement = document.getElementById('repositoryListModal');
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+        if (modalInstance) {
+            modalInstance.hide(); // Hides the modal and its backdrop
+        }
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) {
+            backdrop.remove();
+        }
+    }
+
+    function checkoutRepository(location) {
+        if (location === ''){
+            location = document.getElementById('gitRepoUrl').value;
+        }
+        if (!location) {
+            alert("Please enter a Git repository URL.");
+            return;
+        }
+
+        $.ajax({
+            url: '/api/checkout-repository?location=' + location,
+            method: 'GET',
+            success: function (response) {
+                state.repository = response;
+                showStartCommitHashSection();
+
+            },
+            error: function () {
+                alert('Failed to load file list.');
+            }
+        });
+    }
+
 
     // Call API to load cloned repositories
     function loadClonedRepositories() {
@@ -225,9 +285,8 @@
                     li.classList.add('list-group-item');
                     li.textContent = repo;
                     li.onclick = function () {
-                        console.log(state);
-                        state.repositoryName = repo;
-                        showStartCommitHashSection();
+                        dismissRepositoryListDialog()
+                        checkoutRepository(repo)
                     };
                     list.appendChild(li);
                 });
@@ -238,10 +297,18 @@
         });
     }
 
-    function fetchFileList(repositoryName, startCommitHash, path) {
+    function fetchFileList(path) {
         $.ajax({
-            url: '/api/path-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&path=' + path, // URL to Spring MVC backend API
+            url: '/api/path-list',
             method: 'GET',
+            data: {
+                startCommitHash: document.getElementById('startCommitHash').value,
+                repositoryHostName: state.repository.host,
+                repositoryAccountName: state.repository.accountName,
+                repositoryName: state.repository.repositoryName,
+                repositoryPath: state.repository.path,
+                path: path
+            },
             success: function (response) {
                 const list = document.getElementById('fileList');
                 list.innerHTML = ''; // Clear previous list
@@ -265,10 +332,18 @@
         });
     }
 
-    function fetchMethodList(repositoryName, startCommitHash, file) {
+    function fetchMethodList(file) {
         $.ajax({
-            url: '/api/method-list?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&file=' + file, // URL to Spring MVC backend API
+            url: '/api/method-list',
             method: 'GET',
+            data:{
+                startCommitHash: document.getElementById('startCommitHash').value,
+                repositoryHostName: state.repository.host,
+                repositoryAccountName: state.repository.accountName,
+                repositoryName: state.repository.repositoryName,
+                repositoryPath: state.repository.path,
+                file: file
+            },
             success: function (response) {
                 const list = document.getElementById('methodList');
                 list.innerHTML = ''; // Clear previous list
@@ -279,7 +354,7 @@
                     li.classList.add('list-group-item');
                     li.textContent = methodDto.signature;
                     li.onclick = function () {
-                        showAlgorithmSection(repositoryName, startCommitHash, file, methodDto.methodName, methodDto.startLine, methodDto.endLine);
+                        showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
                     };
                     list.appendChild(li);
                 });
@@ -290,11 +365,23 @@
         });
     }
 
-    function loadMethodHistory(repositoryName, startCommitHash, file, methodName, startLine, endLine, tracerName) {
+    function loadMethodHistory(file, methodName, startLine, endLine, tracerName) {
         $.ajax({
-            url: '/ui/method-history?startCommitHash=' + startCommitHash + '&repositoryName=' + repositoryName + '&file=' + file
-                + "&methodName=" + methodName + "&startLine=" + startLine + "&endLine=" + endLine + "&tracerName=" + tracerName,
+            url: '/ui/method-history',
             method: 'GET',
+            data:{
+                startCommitHash: document.getElementById('startCommitHash').value,
+                repositoryHostName: state.repository.host,
+                repositoryAccountName: state.repository.accountName,
+                repositoryName: state.repository.repositoryName,
+                repositoryPath: state.repository.path,
+                file: file,
+                methodName: methodName,
+                startLine: startLine,
+                endLine: endLine,
+                tracerName: tracerName
+
+            },
             success: function (response) {
                 console.log(response)
                 // Open a new tab
