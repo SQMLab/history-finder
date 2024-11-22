@@ -76,11 +76,11 @@
             </div>
             <div class="result-item" th:text="${#strings.substring(commit.commitHash, 0, 7)}"></div>
             <div class="result-item">
-                <span th:text="${commit.file != null ? #strings.listSplit(commit.file, '/').getLast() : ''}"></span>
+                <span th:text="${commit.newFile != null ? #strings.listSplit(commit.newFile, '/').getLast() : ''}"></span>
             </div>
             <div class="result-item">
                 <span th:text="${commit.displayChangeTags.size() > 1
-                     ? #strings.concat(commit.displayChangeTags.get(0), '..')
+                     ? #strings.concat(commit.displayChangeTags.get(0), ' ..')
                      : commit.displayChangeTags.get(0)}"></span>
             </div>
             <div class="result-item">
@@ -89,17 +89,18 @@
         </div>
 
         <div class="details-view">
-            <p><strong>Commit Date: </strong> <span
-                    th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></span></p>
+            <p><strong>Commit Date: </strong> <span th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></span></p>
             <p><strong>Author: </strong> <span th:text="${commit.author}"></span> (<span
                     th:text="${commit.author}"></span>)</p>
-            <p><strong>Commit Hash: </strong> <a th:href="@{#}" th:text="${commit.commitHash}"></a></p>
-            <p><strong>File Name: </strong> <a th:href="${commit.newFileUrl}"
-                                               th:text="${commit.file != null ? #strings.listSplit(commit.file, '/').getLast() : ''}"></a>
-            </p>
+            <p><strong>Commit Hash: </strong> <a th:href="${commit.commitUrl}" th:text="${commit.commitHash}"></a></p>
+            <p><strong>New: </strong> <a th:href="${commit.newFileUrl}" th:text="${commit.newFile}"></a></p>
+            <p><strong>Old: </strong> <a th:href="${commit.oldFilUrl}" th:text="${commit.oldFile}"></a></p>
             <p><strong>Change Type: </strong>
                 <span th:text="${#strings.listJoin(commit.displayChangeTags, ', ')}"></span>
             </p>
+            <p><strong>Short Commit Message: </strong> <span th:text="${commit.shortMessage}"></span></p>
+            <p><strong>Full Commit Message: </strong> <span th:text="${commit.fullMessage}"></span></p>
+            <p><strong>Diff URL: </strong> <a th:href="${commit.diffUrl}">Link</a></p>
             <pre><strong>Diff: </strong> <code th:text="${commit.diff}"></code></pre>
         </div>
     </div>

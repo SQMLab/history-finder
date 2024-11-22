@@ -45,6 +45,9 @@ public class Util {
     public static String gitRawFileUrl(String repositoryUrl, String commitHash, String file, Integer lineNumber){
         return repositoryUrl.replaceAll("\\.git", "") + "/blob/" + commitHash + "/" + file + (lineNumber != null ? "#L" + lineNumber : "");
     }
+    public static String getCommitUrl(String repositoryUrl, String commitHash){
+        return repositoryUrl.replaceAll("\\.git", "") + "/commit/" + commitHash;
+    }
 
     public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
        /* StringBuilder textBuilder = new StringBuilder();

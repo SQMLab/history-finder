@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
-import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -32,7 +31,9 @@ public class OutputCommitDetail {
     @JsonIgnore
     Integer endLine;
     @JsonIgnore
-    String file;
+    String newFile;
+    @JsonIgnore
+    String oldFile;
     @JsonIgnore
     List<ChangeTag> changeTags;
     List<String> displayChangeTags;
@@ -46,6 +47,7 @@ public class OutputCommitDetail {
     String shortMessage;
     @JsonIgnore
     String fullMessage;
+    String commitUrl;
     String diffUrl;
     String oldFilUrl;
     String newFileUrl;

@@ -84,6 +84,7 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                     return commitUdt;
                 })
                 .map(commitUdt -> {
+                    commitUdt.setCommitUrl(Util.getCommitUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash()));
                     commitUdt.setDiffUrl(Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash(), commitUdt.getNewFile()));
                     if (commitUdt.getNewFileUrl() == null) {
                         if (commitUdt.getOldFilUrl() != null) {
