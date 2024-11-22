@@ -69,7 +69,10 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         } else {
             return Collections.emptyList();
         }*/
-        return buildCompactTree(file, "");
+        List<String> files = buildCompactTree(file, "");
+        return files.stream()
+                .map(f-> path.isEmpty() ? f : path + "/" + f)
+                .toList();
     }
 
     @Override
@@ -136,48 +139,85 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         List<File> javaFiles = new ArrayList<>();
         for (File file : files) {
             if (file.isDirectory()) {
-                directories.add(file);
+                // Filter out directories that start with '.' or have no .java files in their subtree
+                if (!file.getName().startsWith(".") && containsJavaFilesInSubtree(file)) {
+                    directories.add(file);
+                }
             } else if (file.getName().endsWith(".java")) {
                 javaFiles.add(file);
             }
         }
 
-        // Add .java files in the current directory
-        for (File file : javaFiles) {
-            result.add((prefix.isEmpty() ? "" : prefix + ".") + file.getName());
+        // Add directories to the result, compacting if necessary
+        for (File directory : directories) {
+            String compactedPath = compactDirectory(directory, prefix.isEmpty() ? directory.getName() : prefix + "/" + directory.getName());
+            result.add(compactedPath);
         }
 
-        // Process directories
-        for (File directory : directories) {
-            // Count .java files in the subtree
-            List<File> javaFilesInSubtree = listJavaFilesInSubtree(directory);
-
-            if (javaFilesInSubtree.size() > 1) {
-                // If more than one Java file in the subtree, compact the package
-                result.add(prefix.isEmpty() ? directory.getName() : prefix + "." + directory.getName());
-            } else {
-                // Otherwise, recursively process the directory
-                result.addAll(buildCompactTree(directory, prefix.isEmpty() ? directory.getName() : prefix + "." + directory.getName()));
-            }
+        // Add .java files only if they are at the root of the current package
+        for (File file : javaFiles) {
+            result.add((prefix.isEmpty() ? "" : prefix + "/") + file.getName());
         }
 
         return result;
     }
 
-    private static List<File> listJavaFilesInSubtree(File dir) {
-        List<File> javaFiles = new ArrayList<>();
-        File[] files = dir.listFiles();
+    private static String compactDirectory(File directory, String prefix) {
+        File current = directory;
+        String compactedPath = prefix;
 
-        if (files != null) {
+        while (true) {
+            File[] files = current.listFiles();
+            if (files == null) {
+                break;
+            }
+
+            // Separate directories and .java files
+            List<File> subDirectories = new ArrayList<>();
+            List<File> javaFiles = new ArrayList<>();
             for (File file : files) {
                 if (file.isDirectory()) {
-                    javaFiles.addAll(listJavaFilesInSubtree(file));
+                    // Filter out directories starting with '.' or without .java files in their subtree
+                    if (!file.getName().startsWith(".") && containsJavaFilesInSubtree(file)) {
+                        subDirectories.add(file);
+                    }
                 } else if (file.getName().endsWith(".java")) {
                     javaFiles.add(file);
                 }
             }
+
+            // Stop compaction if there are multiple subdirectories or Java files
+            if (javaFiles.size() > 0 || subDirectories.size() != 1) {
+                break;
+            }
+
+            // Continue compacting into the single subdirectory
+            current = subDirectories.get(0);
+            compactedPath += "/" + current.getName();
         }
 
-        return javaFiles;
+        return compactedPath;
     }
+
+    private static boolean containsJavaFilesInSubtree(File dir) {
+        File[] files = dir.listFiles();
+
+        if (files == null) {
+            return false;
+        }
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                // Recursively check subdirectories
+                if (containsJavaFilesInSubtree(file)) {
+                    return true;
+                }
+            } else if (file.getName().endsWith(".java")) {
+                return true; // Found a .java file
+            }
+        }
+
+        return false; // No .java files in this directory or its subtree
+    }
+
 }

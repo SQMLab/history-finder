@@ -56,7 +56,7 @@ public class MongoDbTraceDao implements TraceDao {
 
     @Override
     public TraceEntity findByOracleHash(String oracleHash) {
-        return traceRepository.findByUid(oracleHash);
+        return traceRepository.findTopByUid(oracleHash);
     }
 
     @Override

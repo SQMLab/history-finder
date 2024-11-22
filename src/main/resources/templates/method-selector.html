@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Multi-Section Workflow</title>
+    <title>Method Selection</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container mt-5">
@@ -207,8 +207,7 @@
 
     function searchFiles() {
         const filePath = document.getElementById('fileSearch').value;
-        // Simulate API call
-        console.log(`Searching files for: ${filePath}`);
+        onSelectFile(filePath)
     }
 
     // Call API to load cloned repositories
@@ -252,7 +251,8 @@
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
                     let fileParts = file.split("/");
-                    li.textContent = fileParts[fileParts.length - 1];
+                    li.textContent = file
+                    //li.textContent = fileParts[fileParts.length - 1];
                     li.onclick = function () {
                         onSelectFile(file);
                     };
