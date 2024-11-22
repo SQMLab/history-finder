@@ -18,6 +18,7 @@ import org.codetracker.api.MethodTracker;
 import org.codetracker.change.Change;
 import org.codetracker.element.Method;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.lib.Constants;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
@@ -54,11 +55,14 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
         try (Repository repository = gitService.cloneIfNotExists(repositoryLocation,
                 traceEntity.getRepositoryUrl())) {
             RepositoryService cachingRepository = new CachingRepositoryService(new Git(repository), repository, traceEntity.getRepositoryName(), repositoryLocation);
-
+            String startCommitId = traceEntity.getStartCommitHash();
+            if ("HEAD".equalsIgnoreCase(traceEntity.getStartCommitHash())){
+                startCommitId = repository.resolve(Constants.HEAD).getName();
+            }
             MethodTracker methodTracker = CodeTracker.methodTracker()
                     .repository(repository)
                     .filePath(traceEntity.getFile())
-                    .startCommitId(traceEntity.getStartCommitHash())
+                    .startCommitId(startCommitId)
                     .methodName(traceEntity.getElementName())
                     .methodDeclarationLineNumber(traceEntity.getStartLine())
                     .build();
@@ -66,7 +70,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             History<Method> methodHistory = methodTracker.track();
 
 
-            List<CommitUdt> gitCommitList = methodHistory.getHistoryInfoList().stream()
+            List<CommitUdt> gitCommitList = methodHistory.getHistoryInfoList().reversed().stream()
                     .map(historyInfo -> toCommitDiff(cachingRepository, traceEntity, historyInfo))
                     .collect(Collectors.toList());
             traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(gitCommitList).build());

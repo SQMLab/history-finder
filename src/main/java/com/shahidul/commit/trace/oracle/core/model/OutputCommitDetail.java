@@ -35,6 +35,7 @@ public class OutputCommitDetail {
     String file;
     @JsonIgnore
     List<ChangeTag> changeTags;
+    List<String> displayChangeTags;
     @JsonProperty("type")
     String changeTagText;
     @JsonProperty("commitAuthor")
@@ -45,8 +46,9 @@ public class OutputCommitDetail {
     String shortMessage;
     @JsonIgnore
     String fullMessage;
-    @JsonIgnore
     String diffUrl;
+    String oldFilUrl;
+    String newFileUrl;
     String diff;
     @JsonIgnore
     String docDiff;

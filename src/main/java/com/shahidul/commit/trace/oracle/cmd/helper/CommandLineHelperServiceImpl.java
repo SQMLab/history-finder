@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.cmd.helper;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
+import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
@@ -14,9 +15,11 @@ import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -72,6 +75,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
         List<OutputCommitDetail> commitDetailList = toCommitDetailList(analysisUdt.getCommits());
         return CommitTraceOutput.builder()
                 .tracerName(tracerName.getCode())
+                .displayTracerName(displayText(tracerName.name()))
                 .repositoryName(traceEntity.getRepositoryName())
                 .repositoryUrl(traceEntity.getRepositoryUrl())
                 .startCommitHash(traceEntity.getStartCommitHash())
@@ -112,15 +116,29 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .endLine(commitUdt.getEndLine())
                 .file(commitUdt.getNewFile())
                 .changeTags(commitUdt.getChangeTags())
+                .displayChangeTags(displayChangeTags(commitUdt.getChangeTags()))
                 .changeTagText(ChangeTagUtil.toCodeShovelChangeText(commitUdt.getChangeTags().stream().toList()))
                 .author(commitUdt.getAuthor())
                 .email(commitUdt.getEmail())
                 .shortMessage(commitUdt.getShortMessage())
                 .fullMessage(commitUdt.getFullMessage())
                 .diff(commitUdt.getDiff())
-                .diff(commitUdt.getDiff())
+                .diffUrl(commitUdt.getDiffUrl())
+                .oldFilUrl(commitUdt.getOldFilUrl())
+                .newFileUrl(commitUdt.getNewFileUrl())
                 .docDiff(commitUdt.getDocDiff())
                 .diffDetail(commitUdt.getDiffDetail())
                 .build();
+    }
+    private List<String> displayChangeTags(List<ChangeTag> changeTags) {
+        return changeTags.stream()
+                .map(tag-> displayText(tag.getCode()))
+                .toList();
+
+    }
+
+    @NotNull
+    private static String displayText(String tag) {
+        return Arrays.stream(tag.split("_")).map(word -> word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase()).collect(Collectors.joining(" "));
     }
 }

@@ -70,8 +70,8 @@ public class Util {
             return oldText;
         }*/
         try {
-            RawText sourceOld = new RawText((oldText == null ? "" : oldText).getBytes());
-            RawText sourceNew = new RawText((newText == null ? "" : newText).getBytes());
+            RawText sourceOld = new RawText((oldText == null ? "" : oldText).getBytes(StandardCharsets.UTF_8));
+            RawText sourceNew = new RawText((newText == null ? "" : newText).getBytes(StandardCharsets.UTF_8));
             DiffAlgorithm diffAlgorithm = new HistogramDiff();
             RawTextComparator textComparator = RawTextComparator.DEFAULT;
             EditList editList = diffAlgorithm.diff(textComparator, sourceOld, sourceNew);
@@ -79,7 +79,7 @@ public class Util {
             DiffFormatter formatter = new DiffFormatter(out);
             formatter.setContext(1000);
             formatter.format(editList, sourceOld, sourceNew);
-            return out.toString(StandardCharsets.UTF_8.name());
+            return out.toString(StandardCharsets.UTF_8);
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }

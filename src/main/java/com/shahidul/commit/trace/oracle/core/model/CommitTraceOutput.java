@@ -23,6 +23,7 @@ import java.util.Map;
 public class CommitTraceOutput {
     @JsonProperty("origin")
     String tracerName;
+    String displayTracerName;
     String repositoryName;
     String repositoryUrl;
     @JsonProperty("repositoryPath")
