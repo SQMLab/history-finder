@@ -47,7 +47,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             pathBuilder.append("/").append(path);
         }
         File file = new File(pathBuilder.toString());
-        if (file.exists()) {
+      /*  if (file.exists()) {
             if (file.isFile()) {
                 return List.of(file.getName());
             } else {
@@ -58,17 +58,18 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                         return f.getName().endsWith(".java");
                     }
                 }))).map(f -> {
-                   /* if (f.isDirectory()) {
+                   *//* if (f.isDirectory()) {
                         return f.getName() + "/";
                     }else{
                         return f.getName();
-                    }*/
+                    }*//*
                     return path.isEmpty() ? f.getName() : path + "/" + f.getName();
                 }).sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
             }
         } else {
             return Collections.emptyList();
-        }
+        }*/
+        return buildCompactTree(file, "");
     }
 
     @Override
@@ -120,5 +121,63 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         return new JavaParser()
                 .parse(sourceCode).getResult()
                 .orElseThrow(() -> new RuntimeException("Failed to to parse code as compilation unit"));
+    }
+
+    private static List<String> buildCompactTree(File dir, String prefix) {
+        List<String> result = new ArrayList<>();
+        File[] files = dir.listFiles();
+
+        if (files == null || files.length == 0) {
+            return result;
+        }
+
+        // Separate directories and .java files
+        List<File> directories = new ArrayList<>();
+        List<File> javaFiles = new ArrayList<>();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                directories.add(file);
+            } else if (file.getName().endsWith(".java")) {
+                javaFiles.add(file);
+            }
+        }
+
+        // Add .java files in the current directory
+        for (File file : javaFiles) {
+            result.add((prefix.isEmpty() ? "" : prefix + ".") + file.getName());
+        }
+
+        // Process directories
+        for (File directory : directories) {
+            // Count .java files in the subtree
+            List<File> javaFilesInSubtree = listJavaFilesInSubtree(directory);
+
+            if (javaFilesInSubtree.size() > 1) {
+                // If more than one Java file in the subtree, compact the package
+                result.add(prefix.isEmpty() ? directory.getName() : prefix + "." + directory.getName());
+            } else {
+                // Otherwise, recursively process the directory
+                result.addAll(buildCompactTree(directory, prefix.isEmpty() ? directory.getName() : prefix + "." + directory.getName()));
+            }
+        }
+
+        return result;
+    }
+
+    private static List<File> listJavaFilesInSubtree(File dir) {
+        List<File> javaFiles = new ArrayList<>();
+        File[] files = dir.listFiles();
+
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    javaFiles.addAll(listJavaFilesInSubtree(file));
+                } else if (file.getName().endsWith(".java")) {
+                    javaFiles.add(file);
+                }
+            }
+        }
+
+        return javaFiles;
     }
 }
