@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Page 2 - Results</title>
+    <title>Commit Trace</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .result-container {
@@ -37,13 +37,15 @@
         }
 
         .result-item {
-            flex: 1;
+            flex: 1; /* Each column gets an equal share of the row's width */
+            text-align: center; /* Optional: Center the text in each column */
             padding: 5px;
         }
 
         .details-btn {
             cursor: pointer;
         }
+
         .centered-title {
             text-align: center;
         }
@@ -51,7 +53,6 @@
 </head>
 <body class="container mt-5">
 <h2 th:text="${trace.displayTracerName}" class="centered-title"></h2>
-
 
 <!-- Result Container for rows -->
 <div class="result-container">
@@ -124,24 +125,6 @@
             });
         });
     });
-
-    function formatChangeTags(tags) {
-        return tags
-            .map(tag => {
-                // Handle cases where the tag is empty or contains underscores
-                if (!tag) return ''; // If tag is empty, return an empty string
-
-                // Split by underscore if there are any
-                return tag
-                    .split('_')  // Split by underscore
-                    .map(word => {
-                        // Capitalize the first letter of each word and lowercase the rest
-                        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-                    })
-                    .join(' ');  // Join the words back with a space
-            })
-            .join(', ');  // Join all tags with a comma and space
-    }
 </script>
 </body>
 </html>

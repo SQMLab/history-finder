@@ -84,8 +84,8 @@ public class FileStoreTraceDao implements TraceDao {
 
     @NotNull
     private Stream<File> listTraceFiles() {
-        return Arrays.stream(Objects.requireNonNull(new File(appProperty.getTraceCacheDirectory())
-                .listFiles()));
+        File[] listedFiles = new File(appProperty.getTraceCacheDirectory()).listFiles();
+        return Arrays.stream(listedFiles == null ? new File[0] : listedFiles);
     }
 
     @Override
