@@ -4,19 +4,94 @@
     <title>Method Selection</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .form-label {
-            white-space: normal; /* Allows text to wrap */
+        .centered-label {
+            display: block;       /* Ensures the label occupies the full width */
+            text-align: center;   /* Centers the text horizontally */
+            white-space: normal;  /* Allows wrapping for long text */
             word-wrap: break-word; /* Break long words if necessary */
+            margin: 0 auto;       /* Optional, for alignment consistency */
+        }
+        .centered-form-check {
+            display: flex;
+            justify-content: center;  /* Horizontally center */
+            align-items: center;      /* Vertically align checkbox and label */
+            gap: 0.5rem;              /* Adds space between checkbox and label */
+        }
+        .centered-form-check input {
+            vertical-align: middle;   /* Ensures the checkbox is aligned to the middle */
+            margin: 0;                /* Removes any default margin around checkboxes */
+        }
+        .stepper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .stepper .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .stepper .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #ccc;
+            transform: translateY(-50%);
+        }
+        .stepper .step.active .circle {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+        .stepper .step.completed .circle {
+            background-color: #198754;
+            color: #fff;
+        }
+        .stepper .circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            background-color: #f8f9fa;
+            color: #000;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body class="container mt-5">
+<div class="stepper">
+    <div class="step active" id="step-repository">
+        <div class="circle">1</div>
+        <div>Repository</div>
+    </div>
+    <div class="step" id="step-commit">
+        <div class="circle">2</div>
+        <div>Commit Hash</div>
+    </div>
+    <div class="step" id="step-file">
+        <div class="circle">3</div>
+        <div>File</div>
+    </div>
+    <div class="step" id="step-method">
+        <div class="circle">4</div>
+        <div>Method</div>
+    </div>
+    <div class="step" id="step-algorithm">
+        <div class="circle">5</div>
+        <div>Algorithm</div>
+    </div>
+</div>
 <!-- Add the Modal for Repository Selection -->
 <div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="repositoryListModalLabel">Existing repository selection</h5>
+                <h5 class="modal-title" id="repositoryListModalLabel">Repository Selection</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -31,16 +106,15 @@
 </div>
 
 <!-- Section 1 : Repository URL -->
-<div id="repositoryUrlSection" class="mt-4">
-    <h4>Repository</h4>
+<div id="repositoryUrlSection" class="mt-4" >
+    <h4 class="text-center">Repository Selection</h4>
     <div class="mb-3">
-        <label for="gitRepoUrl" class="form-label">
-            Enter Git Repository URL:<br>
-            For example:<br>
+        <label for="gitRepoUrl" class="centered-label">
+            Example:<br>
             https://github.com/shahidul2k9/commit-trace-oracle<br>
             https://github.com/shahidul2k9/commit-trace-oracle.git<br>
             git@github.com:shahidul2k9/commit-trace-oracle.git<br>
-            gh repo clone shahidul2k9/commit-trace-oracle
+<!--            gh repo clone shahidul2k9/commit-trace-oracle<br>-->
             /home/repository/commit-trace-oracle
         </label>
         <div class="input-group">
@@ -56,9 +130,9 @@
 
 <!-- Section 3 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
-    <h4>Commit Hash</h4>
+    <h4 class="text-center">Enter Commit Hash</h4>
     <div class="mb-3">
-        <label for="startCommitHash" class="form-label">Commit Hash:</label>
+        <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
             <input type="text" class="form-control" id="startCommitHash" placeholder="Enter commit hash">
             <button class="btn btn-outline-secondary" onclick="fillHEAD()">HEAD</button>
@@ -74,9 +148,9 @@
 
 <!-- Section 4 : File Selection-->
 <div id="fileSection" class="mt-4 d-none">
-    <h4>File</h4>
+    <h4 class="text-center">File Selection</h4>
     <div class="mb-3">
-        <label for="fileSearch" class="form-label">Search File:</label>
+        <label for="fileSearch" class="form-label"></label>
         <div class="input-group">
             <input type="text" class="form-control" id="fileSearch" placeholder="Enter file path">
             <button class="btn btn-outline-secondary" onclick="searchFiles()">Search</button>
@@ -98,7 +172,7 @@
 
 <!-- Section 5 : File Selection-->
 <div id="methodSection" class="mt-4 d-none">
-    <h4>Method</h4>
+    <h4 class="text-center">Method Selection</h4>
 
     <ul id="methodList" class="list-group">
         <!-- Method items will be dynamically generated -->
@@ -113,35 +187,38 @@
 
 <!-- Section 6 -->
 <div id="algorithmSection" class="mt-4 d-none">
-    <h4>Algorithm</h4>
-    <div class="form-check">
+    <h4 class="text-center">Select Algorithm</h4>
+    <div class="centered-form-check mt-2">
         <input class="form-check-input" type="checkbox" id="historyFinder" name="algorithms" value="HISTORY_FINDER">
-        <label class="form-check-label" for="historyFinder">HistoryFinder</label>
+        <label class="form-check-label" for="historyFinder">History Finder</label>
     </div>
-    <div class="form-check">
+    <div class="centered-form-check mt-2">
         <input class="form-check-input" type="checkbox" id="codeShovel" name="algorithms" value="CODE_SHOVEL">
-        <label class="form-check-label" for="codeShovel">CodeShovel</label>
+        <label class="form-check-label" for="codeShovel">Code Shovel</label>
     </div>
-    <div class="form-check">
+    <div class="centered-form-check mt-2">
         <input class="form-check-input" type="checkbox" id="codeTracker" name="algorithms" value="CODE_TRACKER">
-        <label class="form-check-label" for="codeTracker">CodeTracker</label>
+        <label class="form-check-label" for="codeTracker">Code Tracker</label>
     </div>
-    <div class="form-check">
+    <div class="centered-form-check mt-2">
         <input class="form-check-input" type="checkbox" id="gitFuncname" name="algorithms" value="GIT_FUNC_NAME">
         <label class="form-check-label" for="gitFuncname">Git Funcname</label>
     </div>
-    <div class="form-check">
+    <div class="centered-form-check mt-2">
         <input class="form-check-input" type="checkbox" id="gitLineRange" name="algorithms" value="GIT_LINE_RANGE">
         <label class="form-check-label" for="gitLineRange">Git Line Range</label>
     </div>
+    <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
     <button class="btn btn-secondary mt-3" onclick="showMethodList()">Back</button>
     <button class="btn btn-primary mt-3" onclick="onClickFindTrace()">Next</button>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
     const sectionList = ['repositoryUrlSection',  'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection'];
+    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm'];
 
     let state = {
         repository: {
@@ -158,14 +235,34 @@
 
 
     // Navigate between sections
-    function revealSection(section) {
+  /*  function revealSection(section) {
         <!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
         sectionList.forEach(s => {
             document.getElementById(s).classList.add('d-none');
         });
         document.getElementById(section).classList.remove('d-none');
     }
+*/
 
+    function revealSection(section) {
+        sectionList.forEach((s, index) => {
+            const element = document.getElementById(s);
+            const step = document.getElementById(steps[index]);
+
+            if (s === section) {
+                element.classList.remove('d-none');
+                step.classList.add('active');
+                step.classList.remove('completed');
+            } else {
+                element.classList.add('d-none');
+                if (steps.indexOf(step.id) < steps.indexOf(steps[sectionList.indexOf(section)])) {
+                    step.classList.add('completed');
+                } else {
+                    step.classList.remove('completed', 'active');
+                }
+            }
+        });
+    }
 
     function showRepositoryLocationSection() {
         revealSection('repositoryUrlSection');
