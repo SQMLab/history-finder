@@ -80,8 +80,8 @@
             </div>
             <div class="result-item">
                 <span th:text="${commit.displayChangeTags.size() > 1
-                     ? #strings.concat(commit.displayChangeTags.get(0), ' ..')
-                     : commit.displayChangeTags.get(0)}"></span>
+                     ? #strings.concat(commit.displayChangeTags.getFirst(), ' ..')
+                     : (commit.displayChangeTags.size() == 1 ? commit.displayChangeTags.getFirst() : '')}"></span>
             </div>
             <div class="result-item">
                 <button class="btn btn-primary btn-sm details-btn">Details</button>

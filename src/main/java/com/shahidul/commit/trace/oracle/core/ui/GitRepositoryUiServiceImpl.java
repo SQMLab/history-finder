@@ -82,12 +82,14 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     public List<MethodLocationDto> findMethodLocationList(String repositoryPath, String repositoryName, String commitHash, String file) {
         List<MethodDeclaration> methodDeclarationList = parseAllMethods(repositoryPath, repositoryName, commitHash, file);
         return methodDeclarationList.stream()
-                .map(dec -> MethodLocationDto.builder()
+                .map(dec -> {
+
+                    return MethodLocationDto.builder()
                         .methodName(dec.getSignature().getName())
                         .signature(dec.getDeclarationAsString())
-                        .startLine(dec.getBegin().get().line)
+                        .startLine(dec.getName().getBegin().get().line) //dec.getBegin() includes annotations
                         .endLine(dec.getEnd().get().line)
-                        .build())
+                        .build();})
                 .sorted(Comparator.comparing(MethodLocationDto::getMethodName, String.CASE_INSENSITIVE_ORDER))
                 .toList();
     }

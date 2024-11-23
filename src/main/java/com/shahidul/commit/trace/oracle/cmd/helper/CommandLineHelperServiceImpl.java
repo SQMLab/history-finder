@@ -18,10 +18,7 @@ import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -45,7 +42,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .elementType("method")
                 .element(commandLineInput.getMethodName())
                 .startLine(commandLineInput.getStartLine())
-                .endLine(null)
+                .endLine(commandLineInput.getEndLine())
                 .commits(new ArrayList<>())
                 .build();
     }
@@ -133,6 +130,9 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .build();
     }
     private List<String> displayChangeTags(List<ChangeTag> changeTags) {
+        if (changeTags == null){
+            return Collections.emptyList();
+        }
         return changeTags.stream()
                 .map(tag-> displayText(tag.getCode()))
                 .toList();
