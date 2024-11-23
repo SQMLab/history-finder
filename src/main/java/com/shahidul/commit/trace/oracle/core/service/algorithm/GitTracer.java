@@ -91,6 +91,7 @@ public abstract class GitTracer implements TraceService {
                         .tracerName(getTracerName())
                         .parentCommitHash(parentCommitHash)
                         .commitHash(commitHash)
+                        .changeTags(Collections.emptyList())
                         .oldFile(oldFile)
                         .newFile(newFile)
                         .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
