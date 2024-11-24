@@ -96,7 +96,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h4>Select an Existing Repository</h4>
+                <h4 id="repositoryListHeaderText"></h4>
                 <ul id="clonedRepoList" class="list-group"></ul>
             </div>
             <div class="modal-footer">
@@ -410,16 +410,17 @@
             success: function (response) {
                 hideSpinner()
                 const list = document.getElementById('clonedRepoList');
+                document.getElementById('repositoryListHeaderText').innerText = 'List of repositories in path ' + response.repositoryPath;
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
-                response.forEach(function (repo) {
+                response.repositoryList.forEach(function (repositoryName) {
                     const li = document.createElement('li');
                     li.classList.add('list-group-item');
-                    li.textContent = repo;
+                    li.textContent = repositoryName;
                     li.onclick = function () {
                         dismissRepositoryListDialog()
-                        checkoutRepository(repo)
+                        checkoutRepository(repositoryName)
                     };
                     list.appendChild(li);
                 });
@@ -488,19 +489,26 @@
             },
             success: function (response) {
                 hideSpinner()
-                const list = document.getElementById('methodList');
-                list.innerHTML = ''; // Clear previous list
+                const methodListView = document.getElementById('methodList');
+                methodListView.innerHTML = ''; // Clear previous list
 
-                // Dynamically populate the list
-                response.forEach(function (methodDto) {
-                    const li = document.createElement('li');
-                    li.classList.add('list-group-item');
-                    li.textContent = methodDto.signature;
-                    li.onclick = function () {
-                        showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
-                    };
-                    list.appendChild(li);
-                });
+                if (response.length === 0){
+                    const methodView = document.createElement('li');
+                    methodView.classList.add('list-group-item');
+                    methodView.textContent = 'No method found';
+                    methodListView.appendChild(methodView);
+
+                }else {
+                    response.forEach(function (methodDto) {
+                        const methodView = document.createElement('li');
+                        methodView.classList.add('list-group-item');
+                        methodView.textContent = methodDto.signature;
+                        methodView.onclick = function () {
+                            showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
+                        };
+                        methodListView.appendChild(methodView);
+                    });
+                }
             },
             error: function (xhr) {
                 hideSpinner();
