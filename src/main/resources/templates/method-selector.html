@@ -134,8 +134,8 @@
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="startCommitHash" placeholder="Enter commit hash">
-            <button class="btn btn-outline-secondary" onclick="fillHEAD()">HEAD</button>
+            <input type="text" class="form-control" id="startCommitHash" placeholder="Enter commit hash" oninput="validateCommitHash()">
+            <button class="btn btn-outline-secondary" onclick="fillHead()">HEAD</button>
         </div>
     </div>
     <!-- Buttons horizontally centered and aligned -->
@@ -144,7 +144,6 @@
         <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection(true)" disabled>Next</button>
     </div>
 </div>
-
 
 <!-- Section 4 : File Selection-->
 <div id="fileSection" class="mt-4 d-none">
@@ -324,9 +323,23 @@
 
 
 
-    function fillHEAD() {
-        document.getElementById('startCommitHash').value = "HEAD";
-        document.getElementById('startCommitHashNextButton').disabled = false;
+
+    function validateCommitHash() {
+        const commitHashInput = document.getElementById("startCommitHash");
+        const nextButton = document.getElementById("startCommitHashNextButton");
+
+        // Check if input is a valid SHA-1 hash or "HEAD"
+        const isValidHash = /^[a-fA-F0-9]{40}$/.test(commitHashInput.value) || commitHashInput.value === "HEAD";
+
+        // Enable the "Next" button if the input is valid
+        nextButton.disabled = !isValidHash;
+    }
+
+    // Function to set "HEAD" as the value
+    function fillHead() {
+        const commitHashInput = document.getElementById("startCommitHash");
+        commitHashInput.value = "HEAD"; // Set "HEAD" as the input value
+        validateCommitHash(); // Re-validate the input
     }
 
     function searchFiles() {
