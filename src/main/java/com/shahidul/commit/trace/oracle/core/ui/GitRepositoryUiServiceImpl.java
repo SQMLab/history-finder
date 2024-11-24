@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.core.ui;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
+import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
@@ -34,12 +35,15 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     CommitTraceDetailExportService traceDetailExportService;
 
     @Override
-    public List<String> findRepositoryList() {
+    public RepositoryListResponse findRepositoryList() {
         File cloneDirectory = new File(appProperty.getRepositoryBasePath());
         String[] repoArrays = cloneDirectory.list();
         List<String> repositoryList = Arrays.asList(repoArrays != null ? repoArrays : new String[0]);
         repositoryList.sort(String.CASE_INSENSITIVE_ORDER);
-        return repositoryList;
+        return RepositoryListResponse.builder()
+                .repositoryPath(appProperty.getRepositoryBasePath())
+                .repositoryList(repositoryList)
+                .build();
     }
 
     @Override

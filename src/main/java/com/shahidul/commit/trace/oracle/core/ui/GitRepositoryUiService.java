@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.ui;
 
+import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
@@ -8,7 +9,7 @@ import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import java.util.List;
 
 public interface GitRepositoryUiService {
-    List<String> findRepositoryList();
+    RepositoryListResponse findRepositoryList();
     List<String> findPathList(String repositoryPath,
                               String repositoryName,
                               String startCommitHash,

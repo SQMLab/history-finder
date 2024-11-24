@@ -48,6 +48,9 @@ public class Util {
     public static String getCommitUrl(String repositoryUrl, String commitHash){
         return repositoryUrl.replaceAll("\\.git", "") + "/commit/" + commitHash;
     }
+    public static String getUserSearchUrl(String authorName){
+        return "https://github.com/search?q=" + authorName + "&type=Users";
+    }
 
     public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
        /* StringBuilder textBuilder = new StringBuilder();

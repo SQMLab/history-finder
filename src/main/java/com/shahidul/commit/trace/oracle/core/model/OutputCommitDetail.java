@@ -41,6 +41,7 @@ public class OutputCommitDetail {
     String changeTagText;
     @JsonProperty("commitAuthor")
     String author;
+    String authorSearchUrl;
     @JsonIgnore
     String email;
     @JsonProperty("commitMessage")

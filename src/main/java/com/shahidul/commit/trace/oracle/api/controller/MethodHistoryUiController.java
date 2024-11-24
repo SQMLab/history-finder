@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.api.controller;
 
+import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
@@ -53,7 +54,7 @@ public class MethodHistoryUiController {
 
     @GetMapping("/api/repository-list")
     @ResponseBody
-    public List<String> getRepositoryList() {
+    public RepositoryListResponse getRepositoryList() {
         return gitRepositoryUiService.findRepositoryList();
     }
 

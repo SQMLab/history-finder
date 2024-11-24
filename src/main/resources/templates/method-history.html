@@ -90,17 +90,17 @@
 
         <div class="details-view">
             <p><strong>Commit Date: </strong> <span th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></span></p>
-            <p><strong>Author: </strong> <span th:text="${commit.author}"></span> (<span
-                    th:text="${commit.author}"></span>)</p>
-            <p><strong>Commit Hash: </strong> <a th:href="${commit.commitUrl}" th:text="${commit.commitHash}"></a></p>
-            <p><strong>New: </strong> <a th:href="${commit.newFileUrl}" th:text="${commit.newFile}"></a></p>
-            <p><strong>Old: </strong> <a th:href="${commit.oldFilUrl}" th:text="${commit.oldFile}"></a></p>
+            <p><strong>Author: </strong> <span th:text="${commit.author}"></span> </p>
+            <p><strong>Author: </strong> <a th:href="${commit.authorSearchUrl}" target="_blank" th:text="${commit.author}"></a></p>
+            <p><strong>Commit Hash: </strong> <a th:href="${commit.commitUrl}" target="_blank" th:text="${commit.commitHash}"></a></p>
+            <p><strong>New: </strong> <a th:href="${commit.newFileUrl}" target="_blank" th:text="${commit.newFile}"></a></p>
+            <p><strong>Old: </strong> <a th:href="${commit.oldFilUrl}" target="_blank" th:text="${commit.oldFile}"></a></p>
             <p><strong>Change Type: </strong>
                 <span th:text="${#strings.listJoin(commit.displayChangeTags, ', ')}"></span>
             </p>
             <p><strong>Short Commit Message: </strong> <span th:text="${commit.shortMessage}"></span></p>
             <p><strong>Full Commit Message: </strong> <span th:text="${commit.fullMessage}"></span></p>
-            <p><strong>Diff URL: </strong> <a th:href="${commit.diffUrl}">Link</a></p>
+            <p><strong>Diff URL: </strong> <a th:href="${commit.diffUrl}" target="_blank">Link</a></p>
             <pre><strong>Diff: </strong> <code th:text="${commit.diff}"></code></pre>
         </div>
     </div>
