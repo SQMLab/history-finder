@@ -1,3 +1,5 @@
+server:
+  port: ${SERVER_PORT:8080}
 cmd:
   shell: ${CMD_SHELL}
 influxdb:
@@ -33,4 +35,5 @@ oracle:
 trace:
   file-directory: ${TRACE_FILE_DIRECTORY}
   cache-directory: ${TRACE_CACHE_DIRECTORY}
+  cache-directory-clean-start: ${TRACE_CLEAN_DIRECTORY_CLEAN_START}
   enable-mongodb: ${TRACE_ENABLE_MONGODB}
