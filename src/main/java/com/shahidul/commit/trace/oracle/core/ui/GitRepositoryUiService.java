@@ -9,8 +9,14 @@ import java.util.List;
 
 public interface GitRepositoryUiService {
     List<String> findRepositoryList();
-    List<String> findPathList(String repositoryPath, String repositoryName, String commitHash, String path);
-    List<MethodLocationDto> findMethodLocationList(String repositoryPath, String repositoryName, String commitHash, String file);
+    List<String> findPathList(String repositoryPath,
+                              String repositoryName,
+                              String startCommitHash,
+                              String path);
+    List<MethodLocationDto> findMethodLocationList(String repositoryPath,
+                                                   String repositoryName,
+                                                   String commitHash,
+                                                   String file);
     CommitTraceOutput findMethodHistory(String repositoryHostName,
                                         String repositoryAccountName,
                                         String repositoryPath,

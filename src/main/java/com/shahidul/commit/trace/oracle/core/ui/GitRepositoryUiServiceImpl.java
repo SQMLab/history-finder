@@ -38,12 +38,17 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         List<String> repositoryList = Arrays.asList(repoArrays != null ? repoArrays : new String[0]);
         repositoryList.sort(String.CASE_INSENSITIVE_ORDER);
         return repositoryList;
-
     }
 
     @Override
-    public List<String> findPathList(String repositoryPath, String repositoryName, String commitHash, String path) {
-        //TODO : checkout commit
+    public List<String> findPathList(String repositoryPath, String repositoryName, String startCommitHash, String path) {
+        GitService gitService = new GitServiceImpl();
+        try (Repository repository = gitService.cloneIfNotExists(repositoryPath + "/" + repositoryName, "")){
+            gitService.checkout(repository, startCommitHash);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         StringBuilder pathBuilder = new StringBuilder(repositoryPath)
                 .append("/").append(repositoryName);
         if (!path.isEmpty()) {
