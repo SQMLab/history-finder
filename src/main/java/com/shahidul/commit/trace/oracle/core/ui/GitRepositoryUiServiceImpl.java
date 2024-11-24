@@ -7,6 +7,8 @@ import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportServ
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.error.CtoError;
+import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
@@ -43,10 +45,10 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     @Override
     public List<String> findPathList(String repositoryPath, String repositoryName, String startCommitHash, String path) {
         GitService gitService = new GitServiceImpl();
-        try (Repository repository = gitService.cloneIfNotExists(repositoryPath + "/" + repositoryName, "")){
+        try (Repository repository = gitService.cloneIfNotExists(repositoryPath + "/" + repositoryName, "")) {
             gitService.checkout(repository, startCommitHash);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new CtoException(CtoError.Git_Checkout_Failed, e);
         }
 
         StringBuilder pathBuilder = new StringBuilder(repositoryPath)
@@ -84,23 +86,33 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     }
 
     @Override
-    public List<MethodLocationDto> findMethodLocationList(String repositoryPath, String repositoryName, String commitHash, String file) {
+    public List<MethodLocationDto> findMethodLocationList(String repositoryPath,
+                                                          String repositoryName,
+                                                          String commitHash,
+                                                          String file) {
         List<MethodDeclaration> methodDeclarationList = parseAllMethods(repositoryPath, repositoryName, commitHash, file);
         return methodDeclarationList.stream()
-                .map(dec -> {
-
-                    return MethodLocationDto.builder()
+                .map(dec -> MethodLocationDto.builder()
                         .methodName(dec.getSignature().getName())
                         .signature(dec.getDeclarationAsString())
                         .startLine(dec.getName().getBegin().get().line) //dec.getBegin() includes annotations
                         .endLine(dec.getEnd().get().line)
-                        .build();})
+                        .build())
                 .sorted(Comparator.comparing(MethodLocationDto::getMethodName, String.CASE_INSENSITIVE_ORDER))
                 .toList();
     }
 
     @Override
-    public CommitTraceOutput findMethodHistory(String repositoryHostName, String repositoryAccountName, String repositoryPath, String repositoryName, String commitHash, String file, String methodName, Integer startLine, Integer endLine, TracerName tracerName) {
+    public CommitTraceOutput findMethodHistory(String repositoryHostName,
+                                               String repositoryAccountName,
+                                               String repositoryPath,
+                                               String repositoryName,
+                                               String commitHash,
+                                               String file,
+                                               String methodName,
+                                               Integer startLine,
+                                               Integer endLine,
+                                               TracerName tracerName) {
         CommandLineInput inputCommand = CommandLineInput.builder()
                 .command("")
                 .tracerName(tracerName)
@@ -115,7 +127,11 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 .startLine(startLine)
                 .endLine(endLine)
                 .build();
-        return traceDetailExportService.execute(inputCommand);
+        try {
+            return traceDetailExportService.execute(inputCommand);
+        }catch (Exception e) {
+            throw new CtoException(CtoError.Trace_Execution_Failed, e);
+        }
     }
 
     @Override
@@ -126,21 +142,21 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         if (checkoutInfo.getHost() != null && checkoutInfo.getAccountName() != null) {
             repositoryUrl = checkoutInfo.getHost() + "/" + checkoutInfo.getAccountName() + "/" + checkoutInfo.getRepositoryName() + ".git";
         }
-        try (Repository repository = gitService.cloneIfNotExists(checkoutInfo.getPath() + "/" + checkoutInfo.getRepositoryName(), repositoryUrl)){
-            if (checkoutInfo.getHost() == null){
+        try (Repository repository = gitService.cloneIfNotExists(checkoutInfo.getPath() + "/" + checkoutInfo.getRepositoryName(), repositoryUrl)) {
+            if (checkoutInfo.getHost() == null) {
                 String localOriginUrl = repository.getConfig().getString("remote", "origin", "url");
                 log.info(localOriginUrl);
                 if (localOriginUrl != null) {
                     String[] parts = localOriginUrl.replaceFirst("^(https?://[^/]+)/([^/]+)/([^/]+)(\\.git)?$", "$1,$2,$3").split(",");
                     checkoutInfo.setHost(parts[0]);
                     checkoutInfo.setAccountName(parts[1]);
-                }else {
+                } else {
                     log.warn("Remote not configured");
                 }
             }
             return checkoutInfo;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new CtoException(CtoError.Git_Checkout_Failed, e);
         }
     }
 
@@ -165,10 +181,10 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         else if (input.matches(sshPattern)) {
             String[] parts = input.replaceFirst(sshPattern, "$1,$2,$3").split(",");
             return RepositoryCheckoutResponse.builder()
-                    .host("https://"+parts[0])
+                    .host("https://" + parts[0])
                     .accountName(parts[1])
                     .repositoryName(parts[2].replace(".git", ""))
-                    .path(appProperty.getRepositoryBasePath() )
+                    .path(appProperty.getRepositoryBasePath())
                     .build();
         }
         // Check if input matches GitHub CLI format
@@ -191,7 +207,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             int lastSlash = input.lastIndexOf('/');
             if (lastSlash != -1) {
                 return RepositoryCheckoutResponse.builder()
-                        .path(input.substring(0,lastSlash))
+                        .path(input.substring(0, lastSlash))
                         .repositoryName(input.substring(lastSlash + 1))
                         .build();
             } else {
@@ -203,7 +219,10 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         }
     }
 
-    private List<MethodDeclaration> parseAllMethods(String repositoryPath, String repositoryName, String commitHash, String file) {
+    private List<MethodDeclaration> parseAllMethods(String repositoryPath,
+                                                    String repositoryName,
+                                                    String commitHash,
+                                                    String file) {
         File javaFile = new File(repositoryPath + "/" + repositoryName + "/" + file);
         try {
             String fileContent = FileUtils.readFileToString(javaFile, StandardCharsets.UTF_8);
@@ -217,7 +236,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     private CompilationUnit parseCompilationUnit(String sourceCode) {
         return new JavaParser()
                 .parse(sourceCode).getResult()
-                .orElseThrow(() -> new RuntimeException("Failed to to parse code as compilation unit"));
+                .orElseThrow(() -> new CtoException(CtoError.Java_Method_Parsing_Failed));
     }
 
     private static List<String> buildCompactTree(File dir, String prefix) {

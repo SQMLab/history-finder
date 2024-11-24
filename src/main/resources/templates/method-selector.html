@@ -4,6 +4,9 @@
     <title>Method Selection</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        #spinnerOverlay {
+            background-color: rgba(255, 255, 255, 0.1); /* Lighter dimming effect */
+        }
         .centered-label {
             display: block;       /* Ensures the label occupies the full width */
             text-align: center;   /* Centers the text horizontally */
@@ -213,6 +216,29 @@
     </div>
 </div>
 
+<div id="spinnerOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-light bg-opacity-25 d-flex align-items-center justify-content-center" style="z-index: 1050;">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="errorModalBody">
+                <!-- Error message will be dynamically set -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -373,13 +399,17 @@
         $.ajax({
             url: '/api/checkout-repository?location=' + location,
             method: 'GET',
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
+                hideSpinner()
                 state.repository = response;
                 showStartCommitHashSection();
-
             },
-            error: function () {
-                alert('Failed to load file list.');
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
             }
         });
     }
@@ -390,7 +420,11 @@
         $.ajax({
             url: '/api/repository-list', // URL to Spring MVC backend API
             method: 'GET',
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
+                hideSpinner()
                 const list = document.getElementById('clonedRepoList');
                 list.innerHTML = ''; // Clear previous list
 
@@ -406,8 +440,9 @@
                     list.appendChild(li);
                 });
             },
-            error: function () {
-                alert('Failed to load cloned repositories.');
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
             }
         });
     }
@@ -424,7 +459,11 @@
                 repositoryPath: state.repository.path,
                 path: path
             },
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
+                hideSpinner()
                 const list = document.getElementById('fileList');
                 list.innerHTML = ''; // Clear previous list
 
@@ -441,8 +480,9 @@
                     list.appendChild(li);
                 });
             },
-            error: function () {
-                alert('Failed to load file list.');
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
             }
         });
     }
@@ -459,7 +499,11 @@
                 repositoryPath: state.repository.path,
                 file: file
             },
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
+                hideSpinner()
                 const list = document.getElementById('methodList');
                 list.innerHTML = ''; // Clear previous list
 
@@ -474,13 +518,15 @@
                     list.appendChild(li);
                 });
             },
-            error: function () {
-                alert('Failed to load file list.');
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
             }
         });
     }
 
     function loadMethodHistory(file, methodName, startLine, endLine, tracerName) {
+       /*
         $.ajax({
             url: '/ui/method-history',
             method: 'GET',
@@ -497,21 +543,75 @@
                 tracerName: tracerName
 
             },
+            beforeSend: function () {
+                showSpinner();
+            },
             success: function (response) {
+                hideSpinner()
                 console.log(response)
                 // Open a new tab
-                let newTab = window.open(this.url);
+                let newTab = window.open(this.url, '_blank');
                 // Write the AJAX response into the new tab
                 newTab.document.open();
                 newTab.document.write(response);
                 newTab.document.close();
             },
-            error: function () {
-                alert('Failed to load commit trace.');
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
             }
-        });
+        });*/
+        let baseUrl = '/ui/method-history';
+        let params = new URLSearchParams({
+            startCommitHash: document.getElementById('startCommitHash').value,
+            repositoryHostName: state.repository.host,
+            repositoryAccountName: state.repository.accountName,
+            repositoryName: state.repository.repositoryName,
+            repositoryPath: state.repository.path,
+            file: file,
+            methodName: methodName,
+            startLine: startLine,
+            endLine: endLine,
+            tracerName: tracerName
+        }).toString();
+
+// Open the URL in a new tab
+        let fullUrl = `${baseUrl}?${params}`;
+        window.open(fullUrl, '_blank');
     }
+    let spinnerTimer; // To track the timeout
+    let spinnerStartTime; // To track when the spinner was shown
+
+    function showSpinner() {
+        // Record the time when the spinner is shown
+        spinnerStartTime = Date.now();
+
+        // Show the spinner
+        const spinnerOverlay = document.getElementById('spinnerOverlay');
+        spinnerOverlay.classList.remove('d-none');
+    }
+
+    function hideSpinner(minimumDelay = 1000) { // Default minimum delay of 500ms
+        const elapsedTime = Date.now() - spinnerStartTime;
+
+        // Calculate remaining time to enforce the minimum delay
+        const remainingTime = Math.max(minimumDelay - elapsedTime, 0);
+
+        // Use setTimeout to hide the spinner after the remaining time
+        spinnerTimer = setTimeout(() => {
+            const spinnerOverlay = document.getElementById('spinnerOverlay');
+            spinnerOverlay.classList.add('d-none');
+        }, remainingTime);
+    }
+
+    function showErrorModal(xhr) {
+        const msg = xhr.responseJSON?.message || "Failed to process request";
+        document.getElementById('errorModalLabel').innerText = 'Server Error';
+        document.getElementById('errorModalBody').innerText = msg;
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
+    }
+
 </script>
-<script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
