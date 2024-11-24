@@ -11,8 +11,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
@@ -58,7 +56,7 @@ public class ExpectedCommitServiceImpl implements ExpectedCommitService {
                 return commit;
             }
         }
-        throw new CtoException(CtoError.Commit_Already_exist);
+        throw new CtoException(CtoError.Commit_Already_Exist);
     }
 
     @Override

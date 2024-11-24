@@ -1,4 +1,4 @@
-package com.shahidul.commit.trace.oracle.api.controller.ui;
+package com.shahidul.commit.trace.oracle.api.controller;
 
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
@@ -37,34 +37,47 @@ public class MethodHistoryUiController {
                                       @RequestParam("endLine") Integer endLine,
                                       @RequestParam("tracerName") TracerName tracerName,
                                       Model model) {
-        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName, repositoryAccountName, repositoryPath, repositoryName, startCommitHash, file, methodName, startLine, endLine, tracerName);
+        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
+                repositoryAccountName,
+                repositoryPath,
+                repositoryName,
+                startCommitHash,
+                file,
+                methodName,
+                startLine,
+                endLine,
+                tracerName);
         model.addAttribute("trace", traceOutput);
         return "method-history";
     }
+
     @GetMapping("/api/repository-list")
     @ResponseBody
     public List<String> getRepositoryList() {
         // Sample list, in a real scenario, this would query a database or file system
         return gitRepositoryUiService.findRepositoryList();
     }
+
     @GetMapping("/api/path-list")
     @ResponseBody
     public List<String> getPathList(
-                                    @RequestParam("repositoryPath") String repositoryPath,
-                                    @RequestParam("repositoryName") String repositoryName,
-                                    @RequestParam("startCommitHash") String startCommitHash,
-                                    @RequestParam("path") String path) {
+            @RequestParam("repositoryPath") String repositoryPath,
+            @RequestParam("repositoryName") String repositoryName,
+            @RequestParam("startCommitHash") String startCommitHash,
+            @RequestParam("path") String path) {
         return gitRepositoryUiService.findPathList(repositoryPath, repositoryName, startCommitHash, path);
     }
+
     @GetMapping("/api/method-list")
     @ResponseBody
     public List<MethodLocationDto> getMethodList(
-                                                 @RequestParam("repositoryPath") String repositoryPath,
-                                                 @RequestParam("repositoryName") String repositoryName,
-                                                 @RequestParam("startCommitHash") String startCommitHash,
-                                                 @RequestParam("file") String file) {
+            @RequestParam("repositoryPath") String repositoryPath,
+            @RequestParam("repositoryName") String repositoryName,
+            @RequestParam("startCommitHash") String startCommitHash,
+            @RequestParam("file") String file) {
         return gitRepositoryUiService.findMethodLocationList(repositoryPath, repositoryName, startCommitHash, file);
     }
+
     @GetMapping("/api/checkout-repository")
     @ResponseBody
     public RepositoryCheckoutResponse checkoutRepository(@RequestParam("location") String location) {
