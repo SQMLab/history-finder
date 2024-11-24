@@ -5,6 +5,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -58,6 +59,7 @@ public class OracleHelperServiceImpl implements OracleHelperService {
         String uid = generateOracleHash(inputOracle);
         return TraceEntity.builder()
                 .uid(uid)
+                .oracleFileName(inputOracle.getRepositoryName() + '-' + Util.extractFileName(inputOracle.getFile()) + "-" + inputOracle.getElement())
                 .repositoryName(inputOracle.getRepositoryName())
                 .repositoryUrl(inputOracle.getRepositoryUrl())
                 .startCommitHash(inputOracle.getStartCommitHash())

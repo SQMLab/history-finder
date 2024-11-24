@@ -70,9 +70,10 @@ public class FileStoreTraceDao implements TraceDao {
     @Override
     public TraceEntity findByOracleHash(String oracleHash) {
         return findAll()
-                .stream().filter(traceEntity -> oracleHash.equalsIgnoreCase(traceEntity.getUid()))
+                .stream()
+                .filter(traceEntity -> oracleHash.equalsIgnoreCase(traceEntity.getUid()))
                 .findFirst()
-                .orElseGet(null);
+                .orElse(null);
     }
 
     @Override

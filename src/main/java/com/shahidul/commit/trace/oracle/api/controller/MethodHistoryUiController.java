@@ -54,7 +54,6 @@ public class MethodHistoryUiController {
     @GetMapping("/api/repository-list")
     @ResponseBody
     public List<String> getRepositoryList() {
-        // Sample list, in a real scenario, this would query a database or file system
         return gitRepositoryUiService.findRepositoryList();
     }
 

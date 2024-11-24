@@ -32,4 +32,6 @@ public class AppProperty {
     String traceFileDirectory;
     @Value("${trace.cache-directory}")
     String traceCacheDirectory;
+    @Value("${trace.cache-directory-clean-start:false}")
+    Boolean traceCacheDirectoryCleanStart;
 }

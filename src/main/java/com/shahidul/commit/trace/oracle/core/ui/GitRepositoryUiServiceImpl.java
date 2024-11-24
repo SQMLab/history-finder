@@ -130,6 +130,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         try {
             return traceDetailExportService.execute(inputCommand);
         }catch (Exception e) {
+            log.error("Failed to execute trace", e);
             throw new CtoException(CtoError.Trace_Execution_Failed, e);
         }
     }
