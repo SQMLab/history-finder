@@ -130,7 +130,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .parentCommitHash(oldMethodHolder != null? oldMethodHolder.getCommitHash() : null)
                 .newFile(newFile)
                 .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
-                .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getMethodRawSourceCode() : null, newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode()))
+                .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getFullCode() : null, newMethodHolder.getMethodSourceInfo().getFullCode()))
                 .docDiff(Util.getDiff(oldMethodHolder != null ? rnd.git.history.finder.Util.extractJavaDoc(oldMethodHolder.getMethodSourceInfo().getMethodDeclaration()) : null,
                         rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration())))
                 .startLine(startLine)

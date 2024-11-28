@@ -3,6 +3,14 @@
 <head>
     <title>Commit Trace</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css"
+    />
+
     <style>
         .result-container {
             display: flex;
@@ -90,38 +98,82 @@
 
         <div class="details-view">
             <p><strong>Commit Date: </strong> <span th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></span></p>
-            <p><strong>Author: </strong> <span th:text="${commit.author}"></span> </p>
             <p><strong>Author: </strong> <a th:href="${commit.authorSearchUrl}" target="_blank" th:text="${commit.author}"></a></p>
             <p><strong>Commit Hash: </strong> <a th:href="${commit.commitUrl}" target="_blank" th:text="${commit.commitHash}"></a></p>
-            <p><strong>New: </strong> <a th:href="${commit.newFileUrl}" target="_blank" th:text="${commit.newFile}"></a></p>
-            <p><strong>Old: </strong> <a th:href="${commit.oldFilUrl}" target="_blank" th:text="${commit.oldFile}"></a></p>
+            <p><strong>New: </strong> <a class="new-file" th:href="${commit.newFileUrl}" target="_blank" th:text="${commit.newFile}"></a></p>
+            <p><strong>Old: </strong> <a class="old-file" th:href="${commit.oldFileUrl}" target="_blank" th:text="${commit.oldFile}"></a></p>
             <p><strong>Change Type: </strong>
                 <span th:text="${#strings.listJoin(commit.displayChangeTags, ', ')}"></span>
             </p>
             <p><strong>Short Commit Message: </strong> <span th:text="${commit.shortMessage}"></span></p>
             <p><strong>Full Commit Message: </strong> <span th:text="${commit.fullMessage}"></span></p>
             <p><strong>Diff URL: </strong> <a th:href="${commit.diffUrl}" target="_blank">Link</a></p>
-            <pre><strong>Diff: </strong> <code th:text="${commit.diff}"></code></pre>
+            <div class="diff-output"></div>
+            <code class="raw-diff" th:text="${commit.diff}" style="display: none;"></code>
         </div>
     </div>
 </div>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // For each "Details" button
+    document.addEventListener('DOMContentLoaded', () => {false
+        // Render diffs using diff2html
+        document.querySelectorAll('.details-view').forEach(detailsView => {
+            const oldFile = detailsView.querySelector('.old-file').textContent;
+            const newFile = detailsView.querySelector('.new-file').textContent;
+
+            const diffText = detailsView.querySelector('.raw-diff').textContent;
+            const diffDivElement = detailsView.querySelector('.diff-output');
+            // let coloredDiff = Diff2Html.html(diffText, {drawFileList: true, matching: 'lines', highlight: true});
+            // //diffDivElement.innerHTML = coloredDiff;
+            // console.log('raw diff\n' + diffText)
+            // console.log('colored diff\n' + coloredDiff)
+
+            const unifiedDiff = "--- " + (oldFile ? oldFile : newFile) + '\n'
+            + "+++ " + newFile + "\n"
+            + diffText;
+            console.log(unifiedDiff)
+/*            const unifiedDiff = `
+    diff --git a/sample.js b/sample.js
+index 0000001..0ddf2ba
+--- a/sample.js
++++ b/sample.js
+@@ -1 +1 @@
+-console.log("Hello World!")
++console.log("Hello from Diff2Html!")`;*/
+
+            const targetElement = diffDivElement;
+            const configuration = {
+                drawFileList: false,
+                fileListToggle: false,
+                fileListStartVisible: false,
+                fileContentToggle: false,
+                matching: 'lines',
+                // diffStyle: 'line',
+                outputFormat: 'line-by-line',
+                synchronisedScroll: true,
+                highlight: true,
+                renderNothingWhenEmpty: false,
+            };
+            const diff2htmlUi = new Diff2HtmlUI(targetElement, unifiedDiff, configuration);
+            diff2htmlUi.draw();
+            diff2htmlUi.highlightCode()
+        });
+
+        // Toggle details view
         document.querySelectorAll('.details-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const row = event.target.closest('.result-row');
-                const detailsView = row.nextElementSibling; // Next element is the details view
+                const detailsView = row.nextElementSibling;
 
                 // Toggle the visibility of the details view
                 if (detailsView.style.display === 'block') {
                     detailsView.style.display = 'none';
-                    event.target.textContent = 'Details'; // Change button text back to "Details"
+                    event.target.textContent = 'Details';
                 } else {
                     detailsView.style.display = 'block';
-                    event.target.textContent = 'Close'; // Change button text to "Close"
+                    event.target.textContent = 'Close';
                 }
             });
         });
