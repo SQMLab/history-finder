@@ -40,3 +40,12 @@ Commit Trace Shaw:
 
 Expected Commit Update:
 http://localhost:8080/api/oracle/commit/delete?oracleFileName=?&commitHash=?
+
+Git Function Name Configuration
+touch ~/.gitattributes
+echo "*.java diff=java" >> ~/.gitattributes
+git config --global core.attributesfile ~/.gitattributes
+
+Running Jar
+Run Command : java -jar commit-trace-oracle-0.0.2-SNAPSHOT.jar
+Open : http://localhost:8080/

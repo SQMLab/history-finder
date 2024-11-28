@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.shahidul</groupId>
     <artifactId>commit-trace-oracle</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>commit-trace-oracle</name>
     <description>Commit Trace Oracle</description>
     <properties>

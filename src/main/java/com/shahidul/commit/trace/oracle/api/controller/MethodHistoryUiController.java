@@ -28,7 +28,7 @@ public class MethodHistoryUiController {
         return "method-selector";
     }
 
-    @GetMapping("ui/method-history")
+    @GetMapping({"ui/method-history", "/"})
     public String showMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
                                       @RequestParam("repositoryAccountName") String repositoryAccountName,
                                       @RequestParam("repositoryPath") String repositoryPath,
