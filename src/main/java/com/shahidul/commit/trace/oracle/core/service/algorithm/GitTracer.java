@@ -96,7 +96,7 @@ public abstract class GitTracer implements TraceService {
                         .newFile(newFile)
                         .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                         .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                        .diff(diff)
+                        .diff(diff.substring(diff.indexOf("@@")))
                         .build());
                 parentCommitHash = commitHash;
             }

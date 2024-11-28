@@ -50,7 +50,7 @@ public class OutputCommitDetail {
     String fullMessage;
     String commitUrl;
     String diffUrl;
-    String oldFilUrl;
+    String oldFileUrl;
     String newFileUrl;
     String diff;
     @JsonIgnore

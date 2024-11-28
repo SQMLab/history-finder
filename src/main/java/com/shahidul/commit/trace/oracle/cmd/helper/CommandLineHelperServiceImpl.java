@@ -124,7 +124,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .commitUrl(commitUdt.getCommitUrl())
                 .diffUrl(commitUdt.getDiffUrl())
                 .authorSearchUrl(Util.getUserSearchUrl(commitUdt.getAuthor()))
-                .oldFilUrl(commitUdt.getOldFilUrl())
+                .oldFileUrl(commitUdt.getOldFilUrl())
                 .newFileUrl(commitUdt.getNewFileUrl())
                 .docDiff(commitUdt.getDocDiff())
                 .diffDetail(commitUdt.getDiffDetail())
