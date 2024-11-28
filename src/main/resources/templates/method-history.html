@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Commit Trace</title>
+    <title th:text="${trace.displayTracerName}"></title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" />
@@ -60,7 +60,8 @@
     </style>
 </head>
 <body class="container mt-5">
-<h2 th:text="${trace.displayTracerName}" class="centered-title"></h2>
+<h2 th:text="${trace.displayTracerName + ': ' + (trace.runtime / 1000) + ' s'}" class="centered-title"></h2>
+
 
 <!-- Result Container for rows -->
 <div class="result-container">
