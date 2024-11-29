@@ -1,12 +1,16 @@
-name: Build and Publish JAR
+name: Build, Publish, and Deploy JARs
 
 on:
   push:
     branches:
-      - master
+      - master  # Trigger workflow on pushes to the master branch
+
+permissions:
+  packages: write  # Allow GitHub Actions to publish to GitHub Packages
+  contents: write  # Allow GitHub Actions to push to the repository
 
 jobs:
-  build-and-publish:
+  build-publish-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,10 +23,40 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+
       - name: Build JAR with Maven
         run: mvn clean package
 
-      - name: Push JAR to Repository
+      - name: Deploy JARs to GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn deploy:deploy-file \
+            -Dfile=lib/codeshovel-0.3.1-SNAPSHOT.jar \
+            -DgroupId=com.felixgrund.codeshovel \
+            -DartifactId=codeshovel \
+            -Dversion=0.3.1-SNAPSHOT \
+            -Dpackaging=jar \
+            -DrepositoryId=github \
+            -Durl=https://maven.pkg.github.com/<username>/<repository>
+
+          mvn deploy:deploy-file \
+            -Dfile=lib/git-history-finder-1.0.3-SNAPSHOT.jar \
+            -DgroupId=rnd \
+            -DartifactId=git-history-finder \
+            -Dversion=1.0.3-SNAPSHOT \
+            -Dpackaging=jar \
+            -DrepositoryId=github \
+            -Durl=https://maven.pkg.github.com/<username>/<repository>
+
+      - name: Push Built JAR to Repository
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -30,6 +64,7 @@ jobs:
           cp target/*.jar artifacts/
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin master  # Ensure no conflicts
           git add artifacts/*.jar
-          git commit -m "Publish JAR [skip ci]"
-          git push
+          git commit -m "Publish JAR [skip ci]" || echo "No changes to commit"
+          git push origin master
