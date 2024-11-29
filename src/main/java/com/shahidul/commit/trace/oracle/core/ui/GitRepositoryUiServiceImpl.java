@@ -25,7 +25,10 @@ import rnd.git.history.finder.enums.LanguageType;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -104,6 +107,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                         .build())
                 .sorted(Comparator.comparing(MethodLocationDto::getMethodName, String.CASE_INSENSITIVE_ORDER))
                 .toList();
+
     }
 
     @Override
@@ -131,12 +135,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 .startLine(startLine)
                 .endLine(endLine)
                 .build();
-        try {
-            return traceDetailExportService.execute(inputCommand);
-        }catch (Exception e) {
-            log.error("Failed to execute trace", e);
-            throw new CtoException(CtoError.Trace_Execution_Failed, e);
-        }
+        return traceDetailExportService.execute(inputCommand);
     }
 
     @Override
@@ -161,7 +160,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             }
             return checkoutInfo;
         } catch (Exception e) {
-            throw new CtoException(CtoError.Git_Checkout_Failed, e);
+            throw new RuntimeException(e);
         }
     }
 
