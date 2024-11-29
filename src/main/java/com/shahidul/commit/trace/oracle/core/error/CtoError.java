@@ -17,7 +17,10 @@ public enum CtoError {
     Commit_Already_Exist("1005", "Commit already exist"),
     Git_Checkout_Failed("1006", "Failed to checkout commit"),
     Java_Method_Parsing_Failed("1007", "Failed to parse methods"),
-    Trace_Execution_Failed("1008", "Failed to execute trace"),
+    Failed_To_Execute_Trace("1008", "Failed to execute trace"),
+    Failed_To_Find_Methods("1009", "Failed to find methods"),
+    Failed_To_Find_Paths("1010", "Failed to find paths"),
+    Failed_To_Find_Repositories("1011", "Failed to find repositories"),
     ;
     private String code;
     private String msg;
