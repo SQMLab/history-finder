@@ -1,4 +1,4 @@
-from src.util import toUpperFirst
+from util import toUpperFirst
 import config
 
 trace = config.db["trace"]
