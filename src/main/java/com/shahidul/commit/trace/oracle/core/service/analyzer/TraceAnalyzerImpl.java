@@ -26,16 +26,19 @@ import java.util.stream.Collectors;
 public class TraceAnalyzerImpl implements TraceAnalyzer {
     TraceDao traceDao;
 
-    static final List<String> WEAK_RECALL_TRACER_LIST = Arrays.asList(TracerName.CODE_SHOVEL.getCode(),TracerName.CODE_TRACKER.getCode(), TracerName.GIT_LINE_RANGE.getCode(), TracerName.GIT_FUNC_NAME.getCode());
-    static final List<ChangeTag> WEAKLY_EXPECTED_CHANGE_TAGS = Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION);
-
+    static final Map<String, List<ChangeTag>> WEAKLY_EXPECTED_CHANGE_TAG_MAPPING = Map.of(
+            TracerName.CODE_SHOVEL.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
+            TracerName.INTELLI_J.getCode(),Arrays.asList( ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
+            TracerName.GIT_LINE_RANGE.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
+            TracerName.GIT_FUNC_NAME.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
+            TracerName.CODE_TRACKER.getCode(),Arrays.asList( ChangeTag.FORMAT, ChangeTag.DOCUMENTATION)
+            );
     @Override
     @Transactional
     public TraceEntity analyze(TraceEntity traceEntity) {
 
         Set<String> expectedHashSet = traceEntity.getExpectedCommits().stream().map(CommitUdt::getCommitHash)
                 .collect(Collectors.toCollection(HashSet::new));
-        Set<CommitUdt> weaklyExpectedHashSet = getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits());
 
 
         Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
@@ -60,11 +63,7 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
                     Set<String> commitSet = analysisEntity.getCommits()
                             .stream().map(CommitUdt::getCommitHash)
                             .collect(Collectors.toSet());
-                    List<CommitUdt> missingCommits = traceEntity.getExpectedCommits()
-                            .stream()
-                            .filter(commitEntity -> !commitSet.contains(commitEntity.getCommitHash()))
-                            .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
-                            .toList();
+
                     analysisEntity.setCommits(analysisEntity.getCommits()
                             .stream()
                             .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
@@ -73,27 +72,38 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
                     analysisEntity.setCorrectCommits(correctCommits);
                     analysisEntity.setIncorrectCommits(incorrectCommits);
-                    analysisEntity.setMissingCommits(missingCommits);
                     double precision = commitSet.isEmpty() ? 1 : (double) correctCommitSet.size() / commitSet.size();
                     analysisEntity.setPrecision(precision);
-                    AtomicInteger preferredExpectedCommitSize = new AtomicInteger(expectedHashSet.size());
-                    if (WEAK_RECALL_TRACER_LIST.contains(entry.getKey())) {
-                        weaklyExpectedHashSet.forEach(commitUdt -> {
-                            if (!commitSet.contains(commitUdt.getCommitHash())){
-                                preferredExpectedCommitSize.addAndGet(-1);
-                            }
-                        });
-                    }
-                    if (expectedHashSet.size() != preferredExpectedCommitSize.get()){
-                        log.info("Expected commit Size {} and preferred commit size {}", expectedHashSet.size(), preferredExpectedCommitSize.get());
+                    List<CommitUdt> missingCommits = new ArrayList<>();
+                    Set<CommitUdt> weaklyExpectedHashSet = getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits(), TracerName.fromCode(entry.getKey()));
+
+                    Set<String> weaklyExpectedCommitSet = weaklyExpectedHashSet.stream().map(CommitUdt::getCommitHash).collect(Collectors.toSet());
+
+                    traceEntity.getExpectedCommits()
+                            .forEach(commitUdt -> {
+                                if(!commitSet.contains(commitUdt.getCommitHash())){
+                                    if (!weaklyExpectedCommitSet.contains(commitUdt.getCommitHash())){
+                                        missingCommits.add(commitUdt);
+                                    }
+                                }
+                            });
+                    missingCommits.sort(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())));
+                    int preferredExpectedCommitSize = correctCommits.size() + missingCommits.size();
+
+                    analysisEntity.setMissingCommits(missingCommits);
+
+                    if (expectedHashSet.size() != preferredExpectedCommitSize){
+                        log.info("Expected commit Size {} and preferred commit size {}", expectedHashSet.size(), preferredExpectedCommitSize);
                     }
                     Double recall = null;
-                    if (preferredExpectedCommitSize.get() > 0){
-                        recall = (double) correctCommitSet.size() / preferredExpectedCommitSize.get();
+                    if (preferredExpectedCommitSize > 0){
+                        recall = (double) correctCommitSet.size() / preferredExpectedCommitSize;
                     }else {
                         recall = 1.0;
                     }
                     analysisEntity.setRecall(recall);
+                    Double f1Score = 2 * precision * recall / (precision + recall);
+                    analysisEntity.setF1Score(f1Score);
                     log.info("Tracer {}, expected {}, unexpected {}, preferred expected {}, correct {}, recall {}", entry.getKey(), expectedHashSet.size(), weaklyExpectedHashSet.size(), preferredExpectedCommitSize, correctCommits.size(), recall);
                     return analysisEntity;
                 }).toList();
@@ -114,13 +124,14 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
     }
 
     @Override
-    public @NotNull Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList) {
+    public @NotNull Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList, TracerName tracerName) {
+        List<ChangeTag> weaklyExpectedTags = WEAKLY_EXPECTED_CHANGE_TAG_MAPPING.getOrDefault(tracerName.getCode(), Collections.emptyList());
         return expectedCommittList
                 .stream()
                 .filter(commitUdt -> !commitUdt.getChangeTags().isEmpty() &&
                         commitUdt.getChangeTags()
                                 .stream()
-                                .filter(changeTag -> !WEAKLY_EXPECTED_CHANGE_TAGS.contains(changeTag)).count() == 0)
+                                .filter(changeTag -> !weaklyExpectedTags.contains(changeTag)).count() == 0)
                 //.map(CommitUdt::getCommitHash)
                 .collect(Collectors.toCollection(HashSet::new));
     }
