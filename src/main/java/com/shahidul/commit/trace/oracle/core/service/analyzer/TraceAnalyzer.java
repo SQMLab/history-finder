@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
+import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import org.jetbrains.annotations.NotNull;
@@ -15,5 +16,5 @@ public interface TraceAnalyzer {
     TraceEntity analyze(TraceEntity traceEntity);
 
     @NotNull
-    Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList);
+    Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList, TracerName tracerName);
 }

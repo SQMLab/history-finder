@@ -19,6 +19,7 @@ import java.util.List;
 public class AnalysisUdt {
     Double precision;
     Double recall;
+    Double f1Score;
     Long runtime;
     List<CommitUdt> commits;
     /**
@@ -30,7 +31,7 @@ public class AnalysisUdt {
      */
     List<CommitUdt> incorrectCommits;
     /**
-     * True Negative
+     * False Negative
      */
     List<CommitUdt> missingCommits;
 }

@@ -15,7 +15,6 @@ import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
-import kotlin.collections.ArrayDeque;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -56,7 +55,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
 
         metadataResolverService.populateMetaData(finalTraceEntity);
         aggregatorTracer.trace(finalTraceEntity);
-        String csvText = buildCsv(traceEntity);
+        String csvText = buildCsv(traceEntity, commandLineInput.getTracerName());
 
         try {
             outputFileWriter.write(commandLineInput.getOutputFile(), csvText);
@@ -65,7 +64,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
         }
     }
 
-    private String buildCsv(TraceEntity traceEntity) {
+    private String buildCsv(TraceEntity traceEntity, TracerName tracerName) {
 
         List<String> headerList = new ArrayList<>();
         Map<String, Set<String>> commitSetMap = new HashMap<>();
@@ -85,7 +84,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
             // addColumn(TracerName.EXPECTED.getCode(), traceEntity.getExpectedCommits(), headerBuilder, commitShawBuilder);
             String stronglyExpected = "stronglyExpected";
             headerList.add(stronglyExpected);
-            Set<String> weaklyExpectedCommitSet = traceAnalyzer.getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits())
+            Set<String> weaklyExpectedCommitSet = traceAnalyzer.getWeaklyExpectedCommitSet(traceEntity.getExpectedCommits(), tracerName)
                     .stream().map(CommitUdt::getCommitHash).collect(Collectors.toSet());
             Set<String> stronglyExpectedCommitSet = expectedCommitSet.stream()
                     .filter(commitHash -> !weaklyExpectedCommitSet.contains(commitHash))
