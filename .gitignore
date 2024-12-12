@@ -35,3 +35,4 @@ src/main/resources/local.yml
 src/main/resources/intellij
 /cache/
 /config
+__pycache__/
