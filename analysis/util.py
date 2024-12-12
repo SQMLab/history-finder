@@ -3,3 +3,5 @@ def toUpperFirst(s):
         return s[0].upper() + s[1:]
     else:
         return s
+def isWeakCommit(tags, weakTags):
+    return len(list(filter(lambda tag: tag not in weakTags, tags))) == 0
