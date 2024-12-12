@@ -37,21 +37,19 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
 
 boxColors = ['red', 'blue', 'green', 'yellow', 'purple'] #, 'orange'
 
-boxPositions = []
-datasetLabelPositions = []
-boxData = []
 
-position = 0
 datasetLength = len(datasetLabels)
 # Create a box plot
 boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(12, 5), sharey=True)
-#cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(12, 5), sharey=True)
+cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(12, 5), sharey=False)
 
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     boxPlot = boxPlotAxes[datasetIndex]
+    cdfPlot = cdfAxes[datasetIndex]
     boxPlot.set_ylim(0, 50)
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = runtimeStatistics[tracerName]
+        runtimes = np.sort(runtimes)
         boxPlot.boxplot(
             runtimes,
             positions=[tracerIndex + 1],
@@ -59,12 +57,23 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
             widths=0.5,
             boxprops=dict(facecolor=boxColors[tracerIndex])
         )
+        print(runtimes,  end=',')
         # Set x-axis labels and title
+        cdf = np.arange(1, len(runtimes) + 1) / len(runtimes)
+        label = toUpperFirst(tracerName) if datasetIndex + 1 == datasetLength  else ''
+        cdfPlot.plot(runtimes, cdf, label = label,  color=boxColors[tracerIndex])
+
     boxPlot.set_xticks([tracerIndex + 1 for tracerIndex in range(len(tracerList))])
     boxPlot.set_xticklabels([toUpperFirst(tracerName) for tracerName in tracerList], rotation=45, ha="right")
     boxPlot.set_title(datasetLabels[datasetIndex])
+
+    cdfPlot.set_title(datasetLabels[datasetIndex])
     if datasetIndex == 0:
-        boxPlot.set_ylabel("Execution Time (s)")  # Add y-axis label to the first subplot
+        boxPlot.set_ylabel("Execution Time (s)")
+        cdfPlot.set_ylabel("CDF")
+    if datasetIndex == datasetLength - 1:
+        cdfPlot.legend(title="Tools", bbox_to_anchor=(1.05, 1), loc='upper left')
+        cdfPlot.grid(axis='y', linestyle='--', alpha=0.7)
 
 #
 # # Apply consistent colors to boxes
