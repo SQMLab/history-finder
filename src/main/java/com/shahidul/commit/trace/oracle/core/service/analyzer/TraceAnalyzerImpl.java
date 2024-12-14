@@ -28,9 +28,9 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
 
     static final Map<String, List<ChangeTag>> WEAKLY_EXPECTED_CHANGE_TAG_MAPPING = Map.of(
             TracerName.CODE_SHOVEL.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
-            TracerName.INTELLI_J.getCode(),Arrays.asList( ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
-            TracerName.GIT_LINE_RANGE.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
-            TracerName.GIT_FUNC_NAME.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.FORMAT, ChangeTag.DOCUMENTATION),
+            TracerName.INTELLI_J.getCode(),Arrays.asList( ChangeTag.ANNOTATION, ChangeTag.DOCUMENTATION),
+            TracerName.GIT_LINE_RANGE.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.DOCUMENTATION),
+            TracerName.GIT_FUNC_NAME.getCode(),Arrays.asList(ChangeTag.ANNOTATION, ChangeTag.DOCUMENTATION),
             TracerName.CODE_TRACKER.getCode(),Arrays.asList( ChangeTag.FORMAT, ChangeTag.DOCUMENTATION)
             );
     @Override
