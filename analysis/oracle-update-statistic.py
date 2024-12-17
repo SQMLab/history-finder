@@ -19,6 +19,11 @@ historyFinderFiles = [f for f in os.listdir(baseDirectorMap['historyFinder']) if
 historyFinderFiles = list(sorted(filter(lambda f: int(f.split('-')[0]) <= 200, historyFinderFiles)))
 assert len(historyFinderFiles) == 200, f'There should be 200 method histories but found {len(historyFinderFiles)}'
 updateList = []
+commitCountMap = {
+    'historyFinder': 0,
+    'codeShovel': 0,
+    'codeTracker': 0
+}
 for f in historyFinderFiles:
     jsonFileMap = {
         'historyFinder': json.load(open(baseDirectorMap['historyFinder'] + f, 'r')),
@@ -30,8 +35,10 @@ for f in historyFinderFiles:
         'codeShovel': set(jsonFileMap['codeShovel']['expectedResult'].keys()),
         'codeTracker': set([commit['commitId'] for commit in jsonFileMap['codeTracker']['expectedChanges']])
     }
+    for oracleKey, commitSet in commitSetMap.items():
+        commitCountMap[oracleKey] += len(commitSet)
 
-    update = {oldOracleName: {'addedCommits': set(), 'removedCommits': set()} for oldOracleName in OLD_ORACLES}
+    update = {oldOracleName: {'stronglyAddedCommits': set(), 'addedCommits': set(), 'removedCommits': set()} for oldOracleName in OLD_ORACLES}
     update['file'] = f
 
     for oracleName in OLD_ORACLES:
@@ -43,23 +50,34 @@ for f in historyFinderFiles:
         commitHash = commit['commitHash']
         tags = commit['changeTags']
         for oracleName in OLD_ORACLES:
-            if commitHash not in commitSetMap[oracleName] and not isWeakCommit(tags, WEAK_TAG_MAP[oracleName]):
+            if commitHash not in commitSetMap[oracleName]:
                 update[oracleName]['addedCommits'].add(commitHash)
+                if not isWeakCommit(tags, WEAK_TAG_MAP[oracleName]):
+                    update[oracleName]['stronglyAddedCommits'].add(commitHash)
     updateList.append(update)
 
-updateStatistics = {oracleName: {'changedMethodCount': 0, 'addedCommitCount': 0, 'removedCommitCount': 0}
+updateStatistics = {oracleName: {'stronglyChangedMethodCount': 0,
+                                 'changedMethodCount': 0,
+                                 'stronglyAddedCommitCount': 0,
+                                 'addedCommitCount': 0,
+                                 'removedCommitCount': 0}
                     for oracleName in OLD_ORACLES}
 
 for update in updateList:
     for oracleName in OLD_ORACLES:
+        stronglyAddedCommitSet = update[oracleName]['stronglyAddedCommits']
         addedCommitSet = update[oracleName]['addedCommits']
         removedCommitSet = update[oracleName]['removedCommits']
+        updateStatistics[oracleName]['stronglyAddedCommitCount'] += len(stronglyAddedCommitSet)
         updateStatistics[oracleName]['addedCommitCount'] += len(addedCommitSet)
         updateStatistics[oracleName]['removedCommitCount'] += len(removedCommitSet)
+        if len(stronglyAddedCommitSet) > 0 or len(removedCommitSet) > 0:
+            updateStatistics[oracleName]['stronglyChangedMethodCount'] += 1
         if len(addedCommitSet) > 0 or len(removedCommitSet) > 0:
             updateStatistics[oracleName]['changedMethodCount'] += 1
 
 for oracleName in OLD_ORACLES:
-    print(f'{toUpperFirst(oracleName)} & {updateStatistics[oracleName]["changedMethodCount"]} & {updateStatistics[oracleName]["addedCommitCount"]} & {updateStatistics[oracleName]["removedCommitCount"]} \\\\')
-
-print(updateList)
+    print(f'{toUpperFirst(oracleName)} & {updateStatistics[oracleName]["changedMethodCount"]} & {updateStatistics[oracleName]["stronglyChangedMethodCount"]} &  {updateStatistics[oracleName]["addedCommitCount"]} & {updateStatistics[oracleName]["stronglyAddedCommitCount"]} & {updateStatistics[oracleName]["removedCommitCount"]} \\\\')
+for oracleKey, commitCount in commitCountMap.items():
+    print(f'{toUpperFirst(oracleKey)}  {commitCount}')
+#print(updateList)
