@@ -81,7 +81,8 @@ public class MethodHistoryUiController {
             @RequestParam("startCommitHash") String startCommitHash,
             @RequestParam("path") String path) {
         try {
-            return gitRepositoryUiService.findPathList(repositoryPath, repositoryName, startCommitHash, path);
+            String formattedPath = path.replaceAll("[/\\\\]+$", "");
+            return gitRepositoryUiService.findPathList(repositoryPath, repositoryName, startCommitHash, formattedPath);
         } catch (Exception e) {
             log.error("Failed to find paths", e);
             throw new CtoException(CtoError.Failed_To_Find_Paths, e);

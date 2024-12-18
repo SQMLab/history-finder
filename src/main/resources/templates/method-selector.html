@@ -87,12 +87,12 @@
         <div>Algorithm</div>
     </div>
 </div>
-<!-- Add the Modal for Repository Selection -->
+<!-- ARepository Selection Pop Up-->
 <div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="repositoryListModalLabel">Repository Selection</h5>
+                <h5 class="modal-title" id="repositoryListModalLabel">Selection a Repository</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -119,7 +119,7 @@
             /home/repository/commit-trace-oracle
         </label>
         <div class="input-group">
-            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Repository Location">
+            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter repository location">
             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal" onclick="loadClonedRepositories()">Browse</button>
         </div>
     </div>
@@ -131,7 +131,7 @@
 
 <!-- Section 3 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
-    <h4 class="text-center">Enter Commit Hash</h4>
+    <h4 class="text-center">Commit Hash Selection</h4>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
@@ -152,7 +152,7 @@
     <div class="mb-3">
         <label for="fileSearch" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="fileSearch" placeholder="Enter path">
+            <input type="text" class="form-control" id="fileSearch" placeholder="search by file path">
             <button class="btn btn-outline-secondary" onclick="searchFiles()">Search</button>
         </div>
     </div>
@@ -162,6 +162,10 @@
     <ul id="fileList" class="list-group">
         <!-- File items will be dynamically generated -->
     </ul>
+    <!-- No file found message -->
+    <div id="noFileFound" class="text-center mt-4 d-none">
+        <p style="font-size: 2em; color: gray; margin-top: 1em; margin-bottom: 1em;">No file found</p>
+    </div>
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
@@ -170,13 +174,24 @@
 </div>
 
 
-<!-- Section 5 : File Selection-->
+<!-- Section 5 : Method Selection-->
 <div id="methodSection" class="mt-4 d-none">
     <h4 class="text-center">Method Selection</h4>
-
+    <div class="mb-3">
+        <label for="methodSearch" class="form-label"></label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="methodSearch" placeholder="Search method">
+<!--            <button class="btn btn-outline-secondary" onclick="searchMethods()">Search</button>-->
+        </div>
+    </div>
     <ul id="methodList" class="list-group">
         <!-- Method items will be dynamically generated -->
     </ul>
+
+    <!-- No method found message -->
+    <div id="noMethodFound" class="text-center mt-4 d-none">
+        <p style="font-size: 2em; color: gray; margin-top: 1em; margin-bottom: 1em;">No method found</p>
+    </div>
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
@@ -237,6 +252,7 @@
             path: ''
         },
         file: '',
+        methodList: [],
         methodName: '',
         startLine: '',
         endLine: ''
@@ -356,8 +372,21 @@
         const filePath = document.getElementById('fileSearch').value;
         onSelectFile(filePath)
     }
+    document.getElementById('fileSearch').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default action of the Enter key
+            searchFiles(); // Trigger the searchFiles function
+        }
+    });
 
-
+    function searchMethods() {
+        const targetMethodName = document.getElementById('methodSearch').value;
+        let matchingMethodList = state.methodList.filter(method=> method.methodName.toLowerCase().includes(targetMethodName.toLowerCase()));
+        displayMethodList(matchingMethodList)
+    }
+    document.getElementById('methodSearch').addEventListener('input', function(event) {
+        searchMethods();
+    });
     function dismissRepositoryListDialog() {
         const modalElement = document.getElementById('repositoryListModal');
         const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
@@ -376,7 +405,7 @@
             location = document.getElementById('gitRepoUrl').value;
         }
         if (!location) {
-            showError('Repository', "Please enter a Git repository URL.")
+            showError('Repository', "Please enter a valid Git repository location.")
             return;
         }
 
@@ -410,7 +439,8 @@
             success: function (response) {
                 hideSpinner()
                 const list = document.getElementById('clonedRepoList');
-                document.getElementById('repositoryListHeaderText').innerText = 'List of repositories in path ' + response.repositoryPath;
+                document.getElementById('repositoryListHeaderText').innerText = 'Repositories scanned from directory ' + response.repositoryPath
+                    + '\n Scan directory is configurable in application.yml';
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
@@ -447,23 +477,32 @@
             beforeSend: function () {
                 showSpinner();
             },
-            success: function (response) {
+            success: function (fileList) {
                 hideSpinner()
-                const list = document.getElementById('fileList');
-                list.innerHTML = ''; // Clear previous list
+                const fileListView = document.getElementById('fileList');
+                const noFileFoundView = document.getElementById('noFileFound');
+                fileListView.innerHTML = ''; // Clear previous list
 
-                // Dynamically populate the list
-                response.forEach(function (file) {
-                    const li = document.createElement('li');
-                    li.classList.add('list-group-item');
-                    let fileParts = file.split("/");
-                    li.textContent = file
-                    //li.textContent = fileParts[fileParts.length - 1];
-                    li.onclick = function () {
-                        onSelectFile(file);
-                    };
-                    list.appendChild(li);
-                });
+                if (fileList.length === 0){
+                    noFileFoundView.classList.remove('d-none');
+                    fileListView.classList.add('d-none');
+                }else {
+                    noFileFoundView.classList.add('d-none');
+                    fileListView.classList.remove('d-none');
+                    // Dynamically populate the list
+                    fileList.forEach(function (file) {
+                        const li = document.createElement('li');
+                        li.classList.add('list-group-item');
+                        let fileParts = file.split("/");
+                        li.textContent = file
+                        //li.textContent = fileParts[fileParts.length - 1];
+                        li.onclick = function () {
+                            onSelectFile(file);
+                        };
+                        fileListView.appendChild(li);
+                    });
+                }
+
             },
             error: function (xhr) {
                 hideSpinner();
@@ -489,26 +528,8 @@
             },
             success: function (response) {
                 hideSpinner()
-                const methodListView = document.getElementById('methodList');
-                methodListView.innerHTML = ''; // Clear previous list
-
-                if (response.length === 0){
-                    const methodView = document.createElement('li');
-                    methodView.classList.add('list-group-item');
-                    methodView.textContent = 'No method found';
-                    methodListView.appendChild(methodView);
-
-                }else {
-                    response.forEach(function (methodDto) {
-                        const methodView = document.createElement('li');
-                        methodView.classList.add('list-group-item');
-                        methodView.textContent = methodDto.signature;
-                        methodView.onclick = function () {
-                            showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
-                        };
-                        methodListView.appendChild(methodView);
-                    });
-                }
+                state.methodList = response
+                displayMethodList(response)
             },
             error: function (xhr) {
                 hideSpinner();
@@ -517,6 +538,29 @@
         });
     }
 
+    function displayMethodList(methodList){
+        const methodListView = document.getElementById('methodList');
+        const noMethodFoundView = document.getElementById('noMethodFound');
+
+        methodListView.innerHTML = ''; // Clear previous list
+
+        if (methodList.length === 0){
+            noMethodFoundView.classList.remove('d-none');
+            methodListView.classList.add('d-none');
+        }else {
+            noMethodFoundView.classList.add('d-none');
+            methodListView.classList.remove('d-none');
+            methodList.forEach(function (methodDto) {
+                const methodView = document.createElement('li');
+                methodView.classList.add('list-group-item');
+                methodView.textContent = methodDto.signature;
+                methodView.onclick = function () {
+                    showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
+                };
+                methodListView.appendChild(methodView);
+            });
+        }
+    }
     function loadMethodHistory(file, methodName, startLine, endLine, tracerName) {
        /*
         $.ajax({
