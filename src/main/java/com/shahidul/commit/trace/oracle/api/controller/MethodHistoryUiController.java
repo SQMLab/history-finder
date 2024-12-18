@@ -25,12 +25,12 @@ import java.util.List;
 public class MethodHistoryUiController {
     GitRepositoryUiService gitRepositoryUiService;
 
-    @GetMapping("ui/method-selector")
+    @GetMapping({"ui/method-selector", "/"})
     public String showMethodSelectorUi() {
         return "method-selector";
     }
 
-    @GetMapping({"ui/method-history", "/"})
+    @GetMapping({"ui/method-history"})
     public String showMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
                                       @RequestParam("repositoryAccountName") String repositoryAccountName,
                                       @RequestParam("repositoryPath") String repositoryPath,

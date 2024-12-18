@@ -27,6 +27,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
         String tracerNameText = commandLine.getOptionValue("tracer-name", null);
         String oracleFileIdText = commandLine.getOptionValue("oracle-file-id");
+        String endLine = commandLine.getOptionValue("end-line", null);
         return CommandLineInput.builder()
                 .command(commandLine.getOptionValue("command"))
                 .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
@@ -39,6 +40,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .file(commandLine.getOptionValue("file"))
                 .methodName(commandLine.getOptionValue("element-name"))
                 .startLine(Integer.parseInt(commandLine.getOptionValue("start-line")))
+                .endLine(endLine != null ? Integer.parseInt(endLine) : null)
                 .outputFile(commandLine.getOptionValue("output-file"))
                 .build();
     }
@@ -104,6 +106,12 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .hasArg(true)
                 .desc(" Start line number of the method")
                 .required(true)
+                .build());
+        options.addOption(Option.builder()
+                .longOpt("end-line")
+                .hasArg(true)
+                .desc(" End line number of the method")
+                .required(false)
                 .build());
         options.addOption(Option.builder()
                 .longOpt("language")
