@@ -322,6 +322,7 @@
     function onSelectFile(file) {
         console.log(`Selected file: ${file}`);
         if (file.toLowerCase().endsWith('.java')) {
+            document.getElementById("methodSearch").value = '';
             state.file = file;
             showMethodList()
         } else {
@@ -479,6 +480,7 @@
             },
             success: function (fileList) {
                 hideSpinner()
+                document.getElementById("fileSearch").value = path;
                 const fileListView = document.getElementById('fileList');
                 const noFileFoundView = document.getElementById('noFileFound');
                 fileListView.innerHTML = ''; // Clear previous list
