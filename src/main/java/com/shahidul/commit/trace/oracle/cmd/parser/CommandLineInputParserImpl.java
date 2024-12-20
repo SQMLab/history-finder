@@ -24,7 +24,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory");
         String repositoryUrl = commandLine.getOptionValue("repository-url");
         String[] urlParts = repositoryUrl.split("/");
-        int repositoryNameIndex = repositoryUrl.endsWith(".git") ? urlParts.length - 2 : urlParts.length - 1;
+        String repositoryName = repositoryUrl.endsWith(".git") ? urlParts[urlParts.length - 1].substring(0, urlParts[urlParts.length - 1].length()- ".git".length()) : urlParts[urlParts.length - 1];
         String tracerNameText = commandLine.getOptionValue("tracer-name", null);
         String oracleFileIdText = commandLine.getOptionValue("oracle-file-id");
         String endLine = commandLine.getOptionValue("end-line", null);
@@ -34,7 +34,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .oracleFileId(oracleFileIdText != null ? Integer.parseInt(oracleFileIdText.trim()) : null)
                 .cloneDirectory(repositoryCloneDirectory)
                 .repositoryUrl(repositoryUrl)
-                .repositoryName(urlParts[repositoryNameIndex])
+                .repositoryName(repositoryName)
                 .startCommitHash(commandLine.getOptionValue("start-commit", "HEAD"))
                 .languageType(LanguageType.valueOf(commandLine.getOptionValue("language", "Java").toUpperCase()))
                 .file(commandLine.getOptionValue("file"))

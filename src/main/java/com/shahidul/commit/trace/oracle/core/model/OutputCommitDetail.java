@@ -52,6 +52,12 @@ public class OutputCommitDetail {
     String diffUrl;
     String oldFileUrl;
     String newFileUrl;
+    @JsonProperty("daysBetweenCommits")
+    Double daysBetweenCommits;
+    @JsonProperty("commitsBetweenForRepo")
+    Integer commitCountBetweenForRepo;
+    @JsonProperty("commitsBetweenForFile")
+    Integer commitCountBetweenForFile;
     String diff;
     @JsonIgnore
     String docDiff;

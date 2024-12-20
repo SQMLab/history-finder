@@ -142,5 +142,12 @@ public class Util {
         String[] fileParts = file.split("/");
         return fileParts[fileParts.length - 1];
     }
+    public static String concatPath(String prefix, String suffix){
+        if (prefix.endsWith("/")){
+            return prefix + suffix;
+        }else{
+            return prefix + "/" + suffix;
+        }
 
+    }
 }

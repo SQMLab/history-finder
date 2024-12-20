@@ -4,6 +4,8 @@ import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.service.git.CtoGitService;
+import com.shahidul.commit.trace.oracle.core.service.git.CtoGitServiceImpl;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,8 @@ import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 /**
@@ -56,20 +60,14 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
 
 
     private List<CommitUdt> injectMetaData(TraceEntity traceEntity, List<CommitUdt> commitUdtList, Repository repository, Map<String, RevCommit> cachedCommitMap) {
+        CtoGitService ctoGitService = new CtoGitServiceImpl(repository);
         return Optional.of(commitUdtList)
                 .orElseGet(Collections::emptyList)
                 .stream()
                 .map(commitUdt -> {
                     String commitHash = commitUdt.getCommitHash();
-                    if (!cachedCommitMap.containsKey(commitHash)) {
-                        RevCommit revCommit = null;
-                        try {
-                            revCommit = repository.parseCommit(ObjectId.fromString(commitHash));
-                        } catch (IOException e) {
-                            log.warn("Commit parse exception", e);
-                        }
-                        cachedCommitMap.put(commitHash, revCommit);
-                    }
+                    cacheRevCommit(repository, cachedCommitMap, commitHash);
+                    cacheRevCommit(repository, cachedCommitMap, commitUdt.getParentCommitHash());
                     if (cachedCommitMap.containsKey(commitHash)) {
                         RevCommit revCommit = cachedCommitMap.get(commitHash);
                         PersonIdent authorIdent = revCommit.getAuthorIdent();
@@ -80,6 +78,15 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                         commitUdt.setShortMessage(revCommit.getShortMessage());
                         commitUdt.setFullMessage(revCommit.getFullMessage());
                         commitUdt.setCommittedAt(new Date(1000L * revCommit.getCommitTime()));
+                        if (cachedCommitMap.containsKey(commitUdt.getParentCommitHash())){
+                            RevCommit revParentCommit = cachedCommitMap.get(commitUdt.getParentCommitHash());
+                            int commitTimeDiffInSecond = revCommit.getCommitTime() - revParentCommit.getCommitTime();
+                            double daysBetweenCommits = (double) commitTimeDiffInSecond / (60 * 60 * 24);
+                            commitUdt.setDaysBetweenCommits(new BigDecimal(daysBetweenCommits).setScale(2, RoundingMode.HALF_UP).doubleValue());
+                            commitUdt.setCommitCountBetweenForRepo(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(commitUdt.getParentCommitHash()), null));
+                            commitUdt.setCommitCountBetweenForFile(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(commitUdt.getParentCommitHash()), commitUdt.getNewFile()));
+                        }
+
                     }
                     return commitUdt;
                 })
@@ -96,5 +103,16 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                     return commitUdt;
                 })
                 .toList();
+    }
+
+    private static void cacheRevCommit(Repository repository, Map<String, RevCommit> cachedCommitMap, String commitHash) {
+        if (!cachedCommitMap.containsKey(commitHash) && commitHash != null) {
+            try {
+                RevCommit revCommit = repository.parseCommit(ObjectId.fromString(commitHash));
+                cachedCommitMap.put(commitHash, revCommit);
+            } catch (IOException e) {
+                log.warn("Commit parse exception", e);
+            }
+        }
     }
 }

@@ -50,7 +50,8 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         try {
-            String repositoryLocation = appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName();
+            String rootCloneDirectory = traceEntity.getCloneDirectory() != null ? traceEntity.getCloneDirectory() : appProperty.getRepositoryBasePath();
+            String repositoryLocation = Util.concatPath(rootCloneDirectory, traceEntity.getRepositoryName());
 
             Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
             Git git = new Git(repository);
@@ -84,7 +85,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         String commitHash = commitEntry.getKey();
         String parentCommitHash = null;
 
-        if (json.has("subchanges")){
+        if (json.has("subchanges")) {
             subChangeArray = json.get("subchanges").getAsJsonArray();
         }
         if (json.has("commitNameOld")) {
@@ -109,13 +110,13 @@ public class CodeShovelTraceServiceImpl implements TraceService {
 
         if (json.has("diff")) {
             commitBuilder.diff(json.get("diff").getAsString());
-        }else {
+        } else {
             commitBuilder.diff(findFirst(subChangeArray, "diff"));
         }
-        Ycomparefunctionchange compareFunctionChange = change instanceof Ycomparefunctionchange? (Ycomparefunctionchange) change : null;
-        if (compareFunctionChange == null && change instanceof Ymultichange){
-            for (Ychange subChange : ((Ymultichange) change).getChanges()){
-                if (subChange instanceof Ycomparefunctionchange){
+        Ycomparefunctionchange compareFunctionChange = change instanceof Ycomparefunctionchange ? (Ycomparefunctionchange) change : null;
+        if (compareFunctionChange == null && change instanceof Ymultichange) {
+            for (Ychange subChange : ((Ymultichange) change).getChanges()) {
+                if (subChange instanceof Ycomparefunctionchange) {
                     compareFunctionChange = (Ycomparefunctionchange) subChange;
                     break;
                 }
@@ -173,12 +174,12 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         if (change instanceof Yfilerename) {
             changeTags.add(ChangeTag.FILE_MOVE);
         }
-        if (change instanceof  Ymultichange){
-            for (Ychange subChange :  ((Ymultichange) change).getChanges()){
+        if (change instanceof Ymultichange) {
+            for (Ychange subChange : ((Ymultichange) change).getChanges()) {
                 changeTags.addAll(toChangeTags(subChange));
             }
         }
-        if (changeTags.isEmpty()){
+        if (changeTags.isEmpty()) {
             throw new RuntimeException("Change tag mapping not found : " + change.getTypeAsString());
         }
         List<ChangeTag> changeList = new ArrayList<>(changeTags);
@@ -186,7 +187,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         return changeList;
     }
 
-    private String findFirst(JsonArray subChangeArray, String key){
+    private String findFirst(JsonArray subChangeArray, String key) {
         if (subChangeArray != null) {
             for (int i = 0; i < subChangeArray.size(); i++) {
                 if (subChangeArray.get(i).getAsJsonObject().has(key)) {

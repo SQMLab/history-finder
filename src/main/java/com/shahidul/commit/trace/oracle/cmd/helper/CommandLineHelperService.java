@@ -12,6 +12,6 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
  **/
 public interface CommandLineHelperService {
     InputOracle toInputOracle(CommandLineInput commandLineInput);
-    TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId);
+    TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId, String cloneDirectory);
     CommitTraceOutput readOutput(TraceEntity traceEntity, TracerName tracerName);
 }

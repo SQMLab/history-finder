@@ -67,6 +67,8 @@ public class GitHistoryFinderServiceImpl implements TraceService {
            for (int i = 0; i < commitList.size(); i++) {
                 commitUdtList.add(toCommitEntity(commitList.get(i), i + 1 < commitList.size() ? commitList.get(i + 1) : null));
             }*/
+            traceEntity.setAnalyzedCommitCount(historyFinderOutput.getAnalyzedCommitCount());
+            traceEntity.setMethodId(historyFinderOutput.getMethodId());
             traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder()
                     .commits(commitUdtList)
                     .build());

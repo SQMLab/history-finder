@@ -37,6 +37,8 @@ public class TraceEntity {
     @Indexed
     Integer oracleFileId;
     @Field
+    String cloneDirectory;
+    @Field
     String oracleFileName;
     @Field
     String repositoryName;
@@ -53,6 +55,8 @@ public class TraceEntity {
     @Field
     String elementName;
     @Field
+    String methodId;
+    @Field
     Integer startLine;
     @Field
     Integer endLine;
@@ -60,6 +64,8 @@ public class TraceEntity {
     Double precision;
     @Field
     Double recall;
+    @Field
+    Integer analyzedCommitCount;
     @Field
     @Version
     Integer version;
