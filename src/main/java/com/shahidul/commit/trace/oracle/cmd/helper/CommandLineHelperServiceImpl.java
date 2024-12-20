@@ -48,14 +48,16 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
     }
 
     @Override
-    public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId) {
+    public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId, String cloneDirectory) {
         if (optionalOracleFileId != null) {
             return traceDao.findByOracleId(optionalOracleFileId);
         } else {
             String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
             TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
             if (traceEntity == null) {
-                return oracleHelperService.build(inputOracle);
+                traceEntity = oracleHelperService.build(inputOracle);
+                traceEntity.setCloneDirectory(cloneDirectory);
+                return traceEntity;
             } else {
                 return traceEntity;
             }
@@ -81,6 +83,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .language(traceEntity.getLanguageType())
                 .elementType(traceEntity.getElementType())
                 .element(traceEntity.getElementName())
+                .methodId(traceEntity.getMethodId())
                 .startLine(traceEntity.getStartLine())
                 .endLine(traceEntity.getEndLine())
                 .runtime(analysisUdt.getRuntime())
@@ -120,6 +123,9 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .email(commitUdt.getEmail())
                 .shortMessage(commitUdt.getShortMessage())
                 .fullMessage(commitUdt.getFullMessage())
+                .daysBetweenCommits(commitUdt.getDaysBetweenCommits())
+                .commitCountBetweenForRepo(commitUdt.getCommitCountBetweenForRepo())
+                .commitCountBetweenForFile(commitUdt.getCommitCountBetweenForFile())
                 .diff(commitUdt.getDiff())
                 .commitUrl(commitUdt.getCommitUrl())
                 .diffUrl(commitUdt.getDiffUrl())

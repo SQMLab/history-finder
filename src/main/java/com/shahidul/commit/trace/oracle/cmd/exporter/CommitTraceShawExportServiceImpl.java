@@ -45,7 +45,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
     public void export(CommandLineInput commandLineInput) {
         String cloneDirectory = commandLineInput.getCloneDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
-        TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, null);
+        TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, null,cloneDirectory );
         TraceEntity finalTraceEntity = traceEntity;
         List<TraceEntity> traceEntityList = traceServiceList.stream()
                 //.filter(traceService -> traceService.getTracerName().equals(TracerName.INTELLI_J.getCode()))

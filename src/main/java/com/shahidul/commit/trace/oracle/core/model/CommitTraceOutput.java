@@ -40,17 +40,20 @@ public class CommitTraceOutput {
     String elementType;
     @JsonProperty("functionName")
     String element;
+    @JsonProperty("functionId")
+    String methodId;
     @JsonProperty("functionStartLine")
     Integer startLine;
     @JsonProperty("functionEndLine")
     Integer endLine;
-
     @JsonIgnore
     Double precision;
     @JsonIgnore
     Double recall;
     @JsonProperty("timeTaken")
     Long runtime;
+    @JsonProperty("numCommitsSeen")
+    Integer analyzedCommitCount;
     @JsonProperty("changeHistory")
     List<String> commitHashes;
     @JsonIgnore

@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
+import com.felixgrund.codeshovel.wrappers.Commit;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,6 +43,9 @@ public class CommitUdt implements Cloneable{
     String newFileUrl;
     String codeFragment;
     String documentation;
+    Double daysBetweenCommits;
+    Integer commitCountBetweenForRepo;
+    Integer commitCountBetweenForFile;
     //@Transient
     String diff;
     String docDiff;
