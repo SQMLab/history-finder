@@ -3,11 +3,9 @@ package com.shahidul.commit.trace.oracle.cmd.helper;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
-import com.shahidul.commit.trace.oracle.core.model.InputCommit;
-import com.shahidul.commit.trace.oracle.core.model.InputOracle;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
-import com.shahidul.commit.trace.oracle.core.model.OutputCommitDetail;
+import com.shahidul.commit.trace.oracle.core.model.*;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AdditionalCommitInfoUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
@@ -104,11 +102,26 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
 
     private List<OutputCommitDetail> toCommitDetailList(List<CommitUdt> commitUdtList) {
         return commitUdtList.stream()
-                .map(this::toOutputCommitDetail)
+                .map(commitUdt-> {
+                    OutputCommitDetail commitDetail = toOutputCommitDetailWithoutSubChange(commitUdt);
+                    if (commitUdt.getSubChangeList() != null) {
+                        List<OutputCommitDetail> subChangeCommitList = commitUdt.getSubChangeList().stream().map(subChangeInfo -> {
+                            OutputCommitDetail subCommitDetail = toOutputCommitDetailWithoutSubChange(commitUdt);
+                            List<ChangeTag> subChangeTag = List.of(subChangeInfo.getChangeTag());
+                            subCommitDetail.setChangeTags(subChangeTag);
+                            subCommitDetail.setDisplayChangeTags(displayChangeTags(subChangeTag));
+                            subCommitDetail.setChangeTagText(ChangeTagUtil.toCodeShovelChangeText(subChangeTag));
+                            subCommitDetail.setAdditionalCommitInfo(toAdditionalCommitInfo(subChangeInfo));
+                            return subCommitDetail;
+                        }).toList();
+                        commitDetail.setSubChangeList(subChangeCommitList);
+                    }
+                    return commitDetail;
+                })
                 .toList();
     }
 
-    private OutputCommitDetail toOutputCommitDetail(CommitUdt commitUdt) {
+    private OutputCommitDetail toOutputCommitDetailWithoutSubChange(CommitUdt commitUdt) {
         return OutputCommitDetail.builder()
                 .commitHash(commitUdt.getCommitHash())
                 .committedAt(commitUdt.getCommittedAt())
@@ -132,9 +145,25 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .authorSearchUrl(Util.getUserSearchUrl(commitUdt.getAuthor()))
                 .oldFileUrl(commitUdt.getOldFilUrl())
                 .newFileUrl(commitUdt.getNewFileUrl())
+                .additionalCommitInfo(toAdditionalCommitInfo(commitUdt.getAdditionalInfo()))
+                .newCode(commitUdt.getNewElement())
                 .docDiff(commitUdt.getDocDiff())
                 .diffDetail(commitUdt.getDiffDetail())
                 .build();
+    }
+
+    private AdditionalCommitInfo toAdditionalCommitInfo(AdditionalCommitInfoUdt additionalCommitInfoUdt) {
+        if (additionalCommitInfoUdt != null) {
+            return AdditionalCommitInfo.builder()
+                    .oldMethodName(additionalCommitInfoUdt.getOldMethodName())
+                    .newMethodName(additionalCommitInfoUdt.getNewMethodName())
+                    .oldSignature(additionalCommitInfoUdt.getOldSignature())
+                    .newSignature(additionalCommitInfoUdt.getNewSignature())
+                    .oldFile(additionalCommitInfoUdt.getOldFile())
+                    .newFile(additionalCommitInfoUdt.getNewFile())
+                    .build();
+        }
+        return null;
     }
     private List<String> displayChangeTags(List<ChangeTag> changeTags) {
         if (changeTags == null){

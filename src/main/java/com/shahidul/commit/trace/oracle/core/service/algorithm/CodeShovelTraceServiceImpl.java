@@ -10,14 +10,17 @@ import com.felixgrund.codeshovel.util.Utl;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.AdditionalCommitInfoUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.util.GitServiceImpl;
@@ -33,8 +36,10 @@ import java.util.*;
  */
 @Service("CODE_SHOVEL")
 @AllArgsConstructor
+@Slf4j
 public class CodeShovelTraceServiceImpl implements TraceService {
     AppProperty appProperty;
+    private static final Map<String, ChangeTag> CHANGE_TAG_MAP = new HashMap<>();
 
     @Override
     public String getTracerName() {
@@ -81,20 +86,10 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         Ychange change = commitEntry.getValue();
         com.google.gson.JsonObject json = change.toJsonObject();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder().tracerName(getTracerName());
-        JsonArray subChangeArray = null;
         String commitHash = commitEntry.getKey();
         String parentCommitHash = null;
 
-        if (json.has("subchanges")) {
-            subChangeArray = json.get("subchanges").getAsJsonArray();
-        }
-        if (json.has("commitNameOld")) {
-            parentCommitHash = json.get("commitNameOld").getAsString();
-            commitBuilder.parentCommitHash(parentCommitHash);
-        } else {
-            parentCommitHash = findFirst(subChangeArray, "commitNameOld");
-            commitBuilder.parentCommitHash(parentCommitHash);
-        }
+
         commitBuilder.commitHash(commitHash);
         if (json.has("commitDate")) {
             try {
@@ -103,15 +98,45 @@ public class CodeShovelTraceServiceImpl implements TraceService {
                 throw new RuntimeException(e);
             }
         }
+
         if (json.has("type")) {
             commitBuilder.changeTags(toChangeTags(change));
         }
-        //TODO : source & destination file if (json.has())
+        if (json.has("extendedDetails")) {
+            commitBuilder.additionalInfo(parseExtendedDetail(json.get("extendedDetails").getAsJsonObject()));
+        }
+        JsonObject jsonDetail = null;
+        JsonArray subChangeArray = null;
 
-        if (json.has("diff")) {
-            commitBuilder.diff(json.get("diff").getAsString());
+        if (json.has("subchanges")) {
+            subChangeArray = json.get("subchanges").getAsJsonArray();
+            if (subChangeArray.size() > 0) {
+                jsonDetail = subChangeArray.get(0).getAsJsonObject();
+            }
+            commitBuilder.subChangeList(parseSubChanges(subChangeArray));
+        }
+        if (jsonDetail == null){
+            jsonDetail = json;
+        }
+        if (jsonDetail.has("commitNameOld")) {
+            parentCommitHash = jsonDetail.get("commitNameOld").getAsString();
+            commitBuilder.parentCommitHash(parentCommitHash);
+        }
+
+        if (jsonDetail.has("commitAuthor")) {
+            commitBuilder.author(jsonDetail.get("commitAuthor").getAsString());
+        }
+        if (jsonDetail.has("commitAuthorOld")) {
+            commitBuilder.oldAuthor(jsonDetail.get("commitAuthorOld").getAsString());
+        }
+
+        if (jsonDetail.has("diff")) {
+            commitBuilder.diff(jsonDetail.get("diff").getAsString());
         } else {
             commitBuilder.diff(findFirst(subChangeArray, "diff"));
+        }
+        if (jsonDetail.has("actualSource")){
+            commitBuilder.newElement(jsonDetail.get("actualSource").getAsString());
         }
         Ycomparefunctionchange compareFunctionChange = change instanceof Ycomparefunctionchange ? (Ycomparefunctionchange) change : null;
         if (compareFunctionChange == null && change instanceof Ymultichange) {
@@ -134,13 +159,48 @@ public class CodeShovelTraceServiceImpl implements TraceService {
                     .newFile(newFile)
                     .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitHash, newFile, newFunction.getNameLineNumber()))
                     .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                    .newElement(newFunction.getBody());
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
+        }
+        if (jsonDetail.has("path")) {
+            commitBuilder.newFile(jsonDetail.get("path").getAsString());
         }
 
         return commitBuilder
                 .build();
 
+    }
+
+    private AdditionalCommitInfoUdt parseExtendedDetail(JsonObject extendedInfo) {
+        return AdditionalCommitInfoUdt.builder()
+                .oldSignature(extendedInfo.has("oldValue") ? extendedInfo.get("oldValue").getAsString() : null)
+                .newSignature(extendedInfo.has("newValue") ? extendedInfo.get("newValue").getAsString() : null)
+                .oldFile(extendedInfo.has("oldPath") ? extendedInfo.get("oldPath").getAsString() : null)
+                .newFile(extendedInfo.has("newPath") ? extendedInfo.get("newPath").getAsString() : null)
+                .oldMethodName(extendedInfo.has("oldMethodName") ? extendedInfo.get("oldMethodName").getAsString() : null)
+                .newMethodName(extendedInfo.has("newMethodName") ? extendedInfo.get("newMethodName").getAsString() : null)
+                .build();
+
+    }
+
+    private List<AdditionalCommitInfoUdt> parseSubChanges(JsonArray subChangeArray) {
+        List<AdditionalCommitInfoUdt> subChangeList = new ArrayList<>();
+        for (int i = 0; i < subChangeArray.size(); i++) {
+            JsonObject subChange = subChangeArray.get(i).getAsJsonObject();
+            AdditionalCommitInfoUdt additionalInfo;
+            if (subChange.has("extendedDetails")) {
+                additionalInfo = parseExtendedDetail(subChange.get("extendedDetails").getAsJsonObject());
+            } else {
+                additionalInfo = AdditionalCommitInfoUdt.builder().build();
+            }
+            try {
+                String changeTypeText = subChange.get("type").getAsString();
+                additionalInfo.setChangeTag(CHANGE_TAG_MAP.get(changeTypeText));
+            }catch (Exception e){
+                log.warn("Failed to detect change type", e);
+            }
+            subChangeList.add(additionalInfo);
+        }
+        return subChangeList;
     }
 
     private List<ChangeTag> toChangeTags(Ychange change) {
@@ -187,6 +247,17 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         return changeList;
     }
 
+    static {
+        CHANGE_TAG_MAP.put("Yintroduced",ChangeTag.INTRODUCTION);
+        CHANGE_TAG_MAP.put("Yrename",ChangeTag.RENAME);
+        CHANGE_TAG_MAP.put("Yreturntypechange",ChangeTag.RETURN_TYPE);
+        CHANGE_TAG_MAP.put("Yparameterchange",ChangeTag.PARAMETER);
+        CHANGE_TAG_MAP.put("Ymodifierchange",ChangeTag.MODIFIER);
+        CHANGE_TAG_MAP.put("Yexceptionschange",ChangeTag.EXCEPTION);
+        CHANGE_TAG_MAP.put("Ybodychange",ChangeTag.BODY);
+        CHANGE_TAG_MAP.put("Ymovefromfile",ChangeTag.MOVE);
+        CHANGE_TAG_MAP.put("Yfilerename",ChangeTag.FILE_MOVE);
+    }
     private String findFirst(JsonArray subChangeArray, String key) {
         if (subChangeArray != null) {
             for (int i = 0; i < subChangeArray.size(); i++) {

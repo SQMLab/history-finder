@@ -1,8 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.*;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OutputCommitDetail {
     @JsonProperty("commitName")
     String commitHash;
@@ -30,7 +29,7 @@ public class OutputCommitDetail {
     Integer startLine;
     @JsonIgnore
     Integer endLine;
-    @JsonIgnore
+    @JsonProperty("path")
     String newFile;
     @JsonIgnore
     String oldFile;
@@ -58,9 +57,15 @@ public class OutputCommitDetail {
     Integer commitCountBetweenForRepo;
     @JsonProperty("commitsBetweenForFile")
     Integer commitCountBetweenForFile;
+    @JsonProperty("extendedDetails")
+    AdditionalCommitInfo additionalCommitInfo;
+    @JsonProperty("actualSource")
+    String newCode;
     String diff;
     @JsonIgnore
     String docDiff;
     @JsonIgnore
     String diffDetail;
+    @JsonProperty("subchanges")
+    List<OutputCommitDetail> subChangeList;
 }
