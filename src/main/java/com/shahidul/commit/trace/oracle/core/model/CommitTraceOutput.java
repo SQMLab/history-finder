@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import lombok.AllArgsConstructor;
@@ -20,6 +21,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CommitTraceOutput {
     @JsonProperty("origin")
     String tracerName;
