@@ -45,9 +45,14 @@
         }
 
         .result-item {
-            flex: 1; /* Each column gets an equal share of the row's width */
-            text-align: center; /* Optional: Center the text in each column */
+            flex: none;
+            /*min-width: 100px;*/
+            /*max-width: 100px;*/
+            text-align: center;
             padding: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .details-btn {
@@ -67,32 +72,32 @@
 <div class="result-container">
     <!-- Header Row -->
     <div class="result-header">
-        <div class="result-item">Commit Date</div>
-        <div class="result-item">Author</div>
-        <div class="result-item">Commit Hash</div>
-        <div class="result-item">File</div>
-        <div class="result-item">Change</div>
-        <div class="result-item">Details</div>
+        <div class="result-item" style="min-width: 150px; max-width: 150px;">Commit Date</div>
+        <div class="result-item" style="min-width: 150px; max-width: 150px;">Author</div>
+        <div class="result-item" style="min-width: 130px; max-width: 130px;">Commit Hash</div>
+        <div class="result-item" style="min-width: 180px; max-width: 180px;">File</div>
+        <div class="result-item" style="min-width: 150px; max-width: 150px;">Change</div>
+        <div class="result-item" style="min-width: 80px; max-width: 80px;">Details</div>
     </div>
 
     <!-- Iterating over each commit -->
     <div th:each="commit : ${trace.commitDetails}">
         <div class="result-row">
             <!-- Formatting the committedAt date -->
-            <div class="result-item" th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></div>
-            <div class="result-item">
+            <div class="result-item" style="min-width: 150px; max-width: 150px;" th:text="${#dates.format(commit.committedAt, 'dd-MM-yy HH:mm a')}"></div>
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">
                 <span th:text="${commit.author}"></span>
             </div>
-            <div class="result-item" th:text="${#strings.substring(commit.commitHash, 0, 7)}"></div>
-            <div class="result-item">
+            <div class="result-item" style="min-width: 130px; max-width: 130px;" th:text="${#strings.substring(commit.commitHash, 0, 7)}"></div>
+            <div class="result-item" style="min-width: 180px; max-width: 180px;">
                 <span th:text="${commit.newFile != null ? #strings.listSplit(commit.newFile, '/').getLast() : ''}"></span>
             </div>
-            <div class="result-item">
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">
                 <span th:text="${commit.displayChangeTags.size() > 1
-                     ? #strings.concat(commit.displayChangeTags.getFirst(), ' ..')
+                     ? 'Multi'
                      : (commit.displayChangeTags.size() == 1 ? commit.displayChangeTags.getFirst() : '')}"></span>
             </div>
-            <div class="result-item">
+            <div class="result-item" style="min-width: 80px; max-width: 80px;">
                 <button class="btn btn-primary btn-sm details-btn">Details</button>
             </div>
         </div>
