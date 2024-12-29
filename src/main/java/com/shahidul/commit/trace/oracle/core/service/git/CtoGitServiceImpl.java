@@ -28,7 +28,8 @@ public class CtoGitServiceImpl implements CtoGitService {
 
         int commitCount = 0;
         for (RevCommit revCommit : logCommand.call()) {
-            if (revCommit.getName().equalsIgnoreCase(ancestorCommit.getName()) || revCommit.getCommitTime() < ancestorCommit.getCommitTime()) {
+            if (revCommit.getName().equalsIgnoreCase(ancestorCommit.getName())
+                    || revCommit.getCommitTime() < ancestorCommit.getCommitTime()) {
                 break;
             }
             commitCount += 1;

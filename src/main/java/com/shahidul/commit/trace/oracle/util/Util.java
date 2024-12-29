@@ -4,6 +4,9 @@ import com.felixgrund.codeshovel.util.Utl;
 import jakarta.xml.bind.DatatypeConverter;
 import lombok.SneakyThrows;
 import org.eclipse.jgit.diff.*;
+import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.api.GitService;
+import org.refactoringminer.util.GitServiceImpl;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
@@ -20,6 +23,23 @@ import java.util.stream.IntStream;
 public class Util {
     public static String formatOracleFileId(int oracleFileId) {
         return String.format("%03d", oracleFileId);
+    }
+    public static String findRepositoryName(String url){
+        String urlWithoutDotGit;
+        if (url.toLowerCase().endsWith(".git")){
+            urlWithoutDotGit = url.substring(0, url.length() - ".git".length());
+        }else {
+            urlWithoutDotGit = url;
+        }
+        return extractLastPart(urlWithoutDotGit);
+    }
+    public static String getRepoUrlFromLocalPath(String path){
+        GitService gitService = new GitServiceImpl();
+        try (Repository repository = gitService.cloneIfNotExists(path, null)) {
+            return repository.getConfig().getString("remote", "origin", "url");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static boolean isFileRenamed(String oldFile, String newFile) {
@@ -138,7 +158,7 @@ public class Util {
         }
     }
 
-    public static String extractFileName(String file){
+    public static String extractLastPart(String file){
         String[] fileParts = file.split("/");
         return fileParts[fileParts.length - 1];
     }
