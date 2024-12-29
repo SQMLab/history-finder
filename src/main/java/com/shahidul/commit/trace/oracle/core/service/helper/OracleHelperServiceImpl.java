@@ -59,7 +59,7 @@ public class OracleHelperServiceImpl implements OracleHelperService {
         String uid = generateOracleHash(inputOracle);
         return TraceEntity.builder()
                 .uid(uid)
-                .oracleFileName(inputOracle.getRepositoryName() + '-' + Util.extractFileName(inputOracle.getFile()) + "-" + inputOracle.getElement())
+                .oracleFileName(inputOracle.getRepositoryName() + '-' + Util.extractLastPart(inputOracle.getFile()) + "-" + inputOracle.getElement())
                 .repositoryName(inputOracle.getRepositoryName())
                 .repositoryUrl(inputOracle.getRepositoryUrl())
                 .startCommitHash(inputOracle.getStartCommitHash())

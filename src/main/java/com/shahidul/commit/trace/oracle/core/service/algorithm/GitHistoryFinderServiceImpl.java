@@ -67,10 +67,11 @@ public class GitHistoryFinderServiceImpl implements TraceService {
            for (int i = 0; i < commitList.size(); i++) {
                 commitUdtList.add(toCommitEntity(commitList.get(i), i + 1 < commitList.size() ? commitList.get(i + 1) : null));
             }*/
-            traceEntity.setAnalyzedCommitCount(historyFinderOutput.getAnalyzedCommitCount());
             traceEntity.setMethodId(historyFinderOutput.getMethodId());
             traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder()
                     .commits(commitUdtList)
+                    .analyzedCommitCount(historyFinderOutput.getAnalyzedCommitCount())
+                    .methodId(historyFinderOutput.getMethodId())
                     .build());
             return traceEntity;
         } catch (Exception e) {
@@ -110,6 +111,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .build();
 
     }
+
     private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
         Set<ChangeTag> changeTags = historyEntry.getChangeTagSet()
                 .stream()
@@ -129,7 +131,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .changeTags(orderedTagList)
                 .codeFragment(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
                 .documentation(rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
-                .parentCommitHash(oldMethodHolder != null? oldMethodHolder.getCommitHash() : null)
+                .parentCommitHash(oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null)
                 .newFile(newFile)
                 .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
                 .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getFullCode() : null, newMethodHolder.getMethodSourceInfo().getFullCode()))
@@ -138,7 +140,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .startLine(startLine)
                 .endLine(newMethodHolder.getMethodSourceInfo().getEndLine())
                 .oldFile(oldFile);
-        if (oldFile != null){
+        if (oldFile != null) {
             commitBuilder.fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                     .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
                     .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), oldMethodHolder.getCommitHash(), oldFile, oldMethodHolder.getMethodSourceInfo().getStartLine()));

@@ -21,6 +21,8 @@ public class AnalysisUdt {
     Double recall;
     Double f1Score;
     Long runtime;
+    String methodId;
+    Integer analyzedCommitCount;
     List<CommitUdt> commits;
     /**
      * True Positive

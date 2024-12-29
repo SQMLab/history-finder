@@ -65,8 +65,6 @@ public class TraceEntity {
     @Field
     Double recall;
     @Field
-    Integer analyzedCommitCount;
-    @Field
     @Version
     Integer version;
     @Field

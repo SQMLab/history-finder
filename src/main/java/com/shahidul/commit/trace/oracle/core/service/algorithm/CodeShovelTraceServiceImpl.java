@@ -73,8 +73,12 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
-            traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(output.entrySet()
-                    .stream().map(commitEntry -> toCommitEntity(commitEntry, traceEntity)).toList()).build());
+            traceEntity.getAnalysis().put(getTracerName(),
+                    AnalysisUdt.builder()
+                            .commits(output.entrySet().stream().map(commitEntry -> toCommitEntity(commitEntry, traceEntity)).toList())
+                            .analyzedCommitCount(output.getNumCommitsSeen())
+                            .methodId(output.getFunctionId())
+                            .build());
             return traceEntity;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -115,7 +119,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             }
             commitBuilder.subChangeList(parseSubChanges(subChangeArray));
         }
-        if (jsonDetail == null){
+        if (jsonDetail == null) {
             jsonDetail = json;
         }
         if (jsonDetail.has("commitNameOld")) {
@@ -135,8 +139,8 @@ public class CodeShovelTraceServiceImpl implements TraceService {
         } else {
             commitBuilder.diff(findFirst(subChangeArray, "diff"));
         }
-        if (jsonDetail.has("actualSource")){
-            commitBuilder.newElement(jsonDetail.get("actualSource").getAsString());
+        if (jsonDetail.has("actualSource")) {
+            commitBuilder.codeFragment(jsonDetail.get("actualSource").getAsString());
         }
         Ycomparefunctionchange compareFunctionChange = change instanceof Ycomparefunctionchange ? (Ycomparefunctionchange) change : null;
         if (compareFunctionChange == null && change instanceof Ymultichange) {
@@ -195,7 +199,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             try {
                 String changeTypeText = subChange.get("type").getAsString();
                 additionalInfo.setChangeTag(CHANGE_TAG_MAP.get(changeTypeText));
-            }catch (Exception e){
+            } catch (Exception e) {
                 log.warn("Failed to detect change type", e);
             }
             subChangeList.add(additionalInfo);
@@ -248,16 +252,17 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     }
 
     static {
-        CHANGE_TAG_MAP.put("Yintroduced",ChangeTag.INTRODUCTION);
-        CHANGE_TAG_MAP.put("Yrename",ChangeTag.RENAME);
-        CHANGE_TAG_MAP.put("Yreturntypechange",ChangeTag.RETURN_TYPE);
-        CHANGE_TAG_MAP.put("Yparameterchange",ChangeTag.PARAMETER);
-        CHANGE_TAG_MAP.put("Ymodifierchange",ChangeTag.MODIFIER);
-        CHANGE_TAG_MAP.put("Yexceptionschange",ChangeTag.EXCEPTION);
-        CHANGE_TAG_MAP.put("Ybodychange",ChangeTag.BODY);
-        CHANGE_TAG_MAP.put("Ymovefromfile",ChangeTag.MOVE);
-        CHANGE_TAG_MAP.put("Yfilerename",ChangeTag.FILE_MOVE);
+        CHANGE_TAG_MAP.put("Yintroduced", ChangeTag.INTRODUCTION);
+        CHANGE_TAG_MAP.put("Yrename", ChangeTag.RENAME);
+        CHANGE_TAG_MAP.put("Yreturntypechange", ChangeTag.RETURN_TYPE);
+        CHANGE_TAG_MAP.put("Yparameterchange", ChangeTag.PARAMETER);
+        CHANGE_TAG_MAP.put("Ymodifierchange", ChangeTag.MODIFIER);
+        CHANGE_TAG_MAP.put("Yexceptionschange", ChangeTag.EXCEPTION);
+        CHANGE_TAG_MAP.put("Ybodychange", ChangeTag.BODY);
+        CHANGE_TAG_MAP.put("Ymovefromfile", ChangeTag.MOVE);
+        CHANGE_TAG_MAP.put("Yfilerename", ChangeTag.FILE_MOVE);
     }
+
     private String findFirst(JsonArray subChangeArray, String key) {
         if (subChangeArray != null) {
             for (int i = 0; i < subChangeArray.size(); i++) {

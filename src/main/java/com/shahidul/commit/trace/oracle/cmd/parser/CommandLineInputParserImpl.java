@@ -2,6 +2,7 @@ package com.shahidul.commit.trace.oracle.cmd.parser;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.util.Util;
 import org.apache.commons.cli.*;
 import org.springframework.stereotype.Service;
 import rnd.git.history.finder.enums.LanguageType;
@@ -21,10 +22,17 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory");
+        String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory", ".");
         String repositoryUrl = commandLine.getOptionValue("repository-url");
-        String[] urlParts = repositoryUrl.split("/");
-        String repositoryName = repositoryUrl.endsWith(".git") ? urlParts[urlParts.length - 1].substring(0, urlParts[urlParts.length - 1].length()- ".git".length()) : urlParts[urlParts.length - 1];
+        String repositoryName = Util.findRepositoryName(repositoryUrl);
+
+        String remoteRepositoryUrl;
+        if (!repositoryUrl.startsWith("https://") && !repositoryUrl.startsWith("git@")){
+            remoteRepositoryUrl = Util.getRepoUrlFromLocalPath(repositoryUrl);
+            repositoryCloneDirectory = repositoryUrl.substring(0, repositoryUrl.lastIndexOf(repositoryName));
+        }else {
+            remoteRepositoryUrl = repositoryUrl;
+        }
         String tracerNameText = commandLine.getOptionValue("tracer-name", null);
         String oracleFileIdText = commandLine.getOptionValue("oracle-file-id");
         String endLine = commandLine.getOptionValue("end-line", null);
@@ -33,12 +41,12 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .tracerName(tracerNameText != null ? TracerName.fromCode(tracerNameText) : null)
                 .oracleFileId(oracleFileIdText != null ? Integer.parseInt(oracleFileIdText.trim()) : null)
                 .cloneDirectory(repositoryCloneDirectory)
-                .repositoryUrl(repositoryUrl)
+                .repositoryUrl(remoteRepositoryUrl)
                 .repositoryName(repositoryName)
                 .startCommitHash(commandLine.getOptionValue("start-commit", "HEAD"))
                 .languageType(LanguageType.valueOf(commandLine.getOptionValue("language", "Java").toUpperCase()))
                 .file(commandLine.getOptionValue("file"))
-                .methodName(commandLine.getOptionValue("element-name"))
+                .methodName(commandLine.getOptionValue("method-name"))
                 .startLine(Integer.parseInt(commandLine.getOptionValue("start-line")))
                 .endLine(endLine != null ? Integer.parseInt(endLine) : null)
                 .outputFile(commandLine.getOptionValue("output-file"))
@@ -69,13 +77,13 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .addOption(Option.builder()
                         .longOpt("clone-directory")
                         .hasArg(true)
-                        .desc("Full path on the local system where repositories will be stored")
-                        .required(true)
+                        .desc("Full path on the local system where repositories will be stored, default is current directory")
+                        .required(false)
                         .build())
                 .addOption(Option.builder()
                         .longOpt("repository-url")
                         .hasArg(true)
-                        .desc("Repository URL e.g. github URL")
+                        .desc("Repository local path or remote URL")
                         .required(true)
                         .build());
 
@@ -83,8 +91,8 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         options.addOption(Option.builder()
                 .longOpt("start-commit")
                 .hasArg(true)
-                .desc(" Relative path file path from the root of repository")
-                .required(true)
+                .desc(" Start commit hash, default is HEAD")
+                .required(false)
                 .build());
 
         options.addOption(Option.builder()
@@ -95,7 +103,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .build());
 
         options.addOption(Option.builder()
-                .longOpt("element-name")
+                .longOpt("method-name")
                 .hasArg(true)
                 .desc(" Method name to trace change history")
                 .required(true)

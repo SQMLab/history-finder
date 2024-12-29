@@ -11,6 +11,7 @@ import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolver
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +52,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
         traceExecutor.execute(traceEntity, targetTraceService);
         metadataResolverService.populateMetaData(traceEntity);
         CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
-        commitTraceOutput.setRepositoryFile(cloneDirectory + "/" + inputOracle.getRepositoryName());
+        commitTraceOutput.setRepositoryFile(Util.concatPath(cloneDirectory, inputOracle.getRepositoryName()));
         return commitTraceOutput;
     }
 }
