@@ -8,6 +8,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import rnd.git.history.finder.dto.*;
 import rnd.git.history.finder.enums.LanguageType;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
  */
 @Service("HISTORY_FINDER")
 @AllArgsConstructor
+@Slf4j
 public class GitHistoryFinderServiceImpl implements TraceService {
     AppProperty appProperty;
 
