@@ -9,6 +9,8 @@ import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
+import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
+import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzerImpl;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.util.Util;
@@ -29,6 +31,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
     OracleHelperService oracleHelperService;
     CommandLineHelperService commandLineHelperService;
     OutputFileWriter outputFileWriter;
+    TraceAnalyzer traceAnalyzer;
     MetadataResolverService metadataResolverService;
     TraceExecutor traceExecutor;
 
@@ -51,6 +54,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
                 .orElseThrow(() -> new RuntimeException("Tracer not found"));
         traceExecutor.execute(traceEntity, targetTraceService);
         metadataResolverService.populateMetaData(traceEntity);
+        traceAnalyzer.sortCommits(traceEntity);
         CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
         commitTraceOutput.setRepositoryFile(Util.concatPath(cloneDirectory, inputOracle.getRepositoryName()));
         return commitTraceOutput;

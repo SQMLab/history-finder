@@ -92,12 +92,13 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
         String diff = null;
         String newCodeFragment = null;
         String oldCodeFragment = null;
+        String parentCommitId = "0".equals(historyInfo.getParentCommitId()) ? null : historyInfo.getParentCommitId();
         try {
             String newFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getCommitId()), newFile);
             newCodeFragment = Util.readLineRange(newFileContent, newLocation.getStartLine(), newLocation.getEndLine());
-            if (oldMethod != null) {
+            if (oldMethod != null && parentCommitId != null) {
                 LocationInfo oldLocation = oldMethod.getLocation();
-                String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(historyInfo.getParentCommitId()), oldFile);
+                String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(parentCommitId), oldFile);
                 oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
             }
             diff = Util.getDiff(oldCodeFragment, newCodeFragment);
@@ -106,7 +107,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
         }
         return CommitUdt.builder()
                 .tracerName(getTracerName())
-                .parentCommitHash(historyInfo.getParentCommitId())
+                .parentCommitHash(parentCommitId)
                 .commitHash(historyInfo.getCommitId())
                 .committedAt(new Date(historyInfo.getCommitTime()))
                 .startLine(newLocation.getStartLine())
@@ -114,7 +115,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .codeFragment(newCodeFragment)
                 .changeTags(toChangeTagSet(historyInfo.getChangeList()))
                 .oldFile(oldFile)
-                .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), historyInfo.getParentCommitId(), oldFile, historyInfo.getElementBefore().getLocation().getStartLine()))
+                .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitId, oldFile, historyInfo.getElementBefore().getLocation().getStartLine()))
                 .newFile(newFile)
                 .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), historyInfo.getCommitId(), newFile, newLocation.getStartLine()))
                 .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)

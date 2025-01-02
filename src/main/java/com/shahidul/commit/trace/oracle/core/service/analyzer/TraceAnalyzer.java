@@ -14,6 +14,7 @@ import java.util.Set;
  */
 public interface TraceAnalyzer {
     TraceEntity analyze(TraceEntity traceEntity);
+    TraceEntity sortCommits(TraceEntity traceEntity);
 
     @NotNull
     Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList, TracerName tracerName);

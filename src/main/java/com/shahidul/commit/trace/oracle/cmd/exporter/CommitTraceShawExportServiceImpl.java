@@ -55,6 +55,7 @@ public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportSe
 
         metadataResolverService.populateMetaData(finalTraceEntity);
         aggregatorTracer.trace(finalTraceEntity);
+        traceAnalyzer.sortCommits(traceEntity);
         String csvText = buildCsv(traceEntity, commandLineInput.getTracerName());
 
         try {

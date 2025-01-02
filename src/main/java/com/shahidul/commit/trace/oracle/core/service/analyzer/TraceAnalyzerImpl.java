@@ -124,6 +124,22 @@ public class TraceAnalyzerImpl implements TraceAnalyzer {
     }
 
     @Override
+    public TraceEntity sortCommits(TraceEntity traceEntity) {
+
+
+        Map<String, AnalysisUdt> analysis = traceEntity.getAnalysis();
+        analysis.values()
+                .stream()
+                .peek(analysisEntity -> analysisEntity.setCommits(analysisEntity.getCommits()
+                        .stream()
+                        .sorted(Comparator.comparing(CommitUdt::getCommittedAt, Comparator.nullsLast(Comparator.reverseOrder())))
+                        .toList())).toList();
+
+
+        return traceDao.save(traceEntity);
+    }
+
+    @Override
     public @NotNull Set<CommitUdt> getWeaklyExpectedCommitSet(List<CommitUdt> expectedCommittList, TracerName tracerName) {
         List<ChangeTag> weaklyExpectedTags = WEAKLY_EXPECTED_CHANGE_TAG_MAPPING.getOrDefault(tracerName.getCode(), Collections.emptyList());
         return expectedCommittList
