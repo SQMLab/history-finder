@@ -73,7 +73,7 @@ In this file, the following services have been defined:
 | `-repository-url <url>`        | URL of the GitHub repository (e.g., `https://github.com/checkstyle/checkstyle.git`).        |
 | `-start-commit <hash>`         | Start commit hash (e.g., `HEAD` or `119fd4fb33bef9f5c66fc950396669af842c21a3`).             |
 | `-file <path>`                 | Path to the Java file (e.g., `src/main/java/com/puppycrawl/tools/checkstyle/Checker.java`). |
-| `-element-name <name>`         | Name of the method (e.g., `fireErrors`).                                                    |
+| `-method-name <name>`         | Name of the method (e.g., `fireErrors`).                                                    |
 | `-start-line <number>`         | Start line number of the method (e.g., `384`).                                              |
 | `-end-line <number>`           | End line number of the method (e.g., `399`).                                                |
 | `-output-file <path>`          | Path to store the output file (e.g., `./cache/output/trace-detail.json`).                   |
@@ -91,7 +91,7 @@ java -jar history-finder.jar \
     -repository-url https://github.com/checkstyle/checkstyle.git \
     -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 \
     -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
-    -element-name fireErrors \
+    -method-name fireErrors \
     -start-line 384 \
     -end-line 399 \
     -output-file ../cache/output/trace-detail.json
@@ -106,7 +106,7 @@ java -jar history-finder.jar \
     -repository-url https://github.com/checkstyle/checkstyle.git \
     -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 \
     -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
-    -element-name fireErrors \
+    -method-name fireErrors \
     -start-line 384 \
     -end-line 399 \
     -output-file ../cache/output/commit-trace-shaw.csv
