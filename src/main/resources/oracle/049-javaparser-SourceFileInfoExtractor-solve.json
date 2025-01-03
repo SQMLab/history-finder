@@ -52,7 +52,7 @@
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
   }, {
     "commitHash" : "37f93be6476b00be051173d0cde614fc8a3677e5",
-    "changeTags" : [ "BODY", "DOCUMENTATION", "INTRODUCTION", "MODIFIER", "MOVE" ]
+    "changeTags" : [ "BODY", "MODIFIER", "MOVE" ]
   }, {
     "commitHash" : "3a53155f2cd5727b9b0bcf7ccaf9bd24256f8adb",
     "changeTags" : [ "BODY", "DOCUMENTATION" ]
