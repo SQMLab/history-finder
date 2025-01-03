@@ -22,6 +22,7 @@ public class CommitUdt implements Cloneable{
     String tracerName;
     String commitHash;
     String parentCommitHash;
+    String ancestorCommitHash;
     Date committedAt;
     Integer startLine;
     Integer endLine;
