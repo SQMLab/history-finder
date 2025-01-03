@@ -68,6 +68,8 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                     String commitHash = commitUdt.getCommitHash();
                     cacheRevCommit(repository, cachedCommitMap, commitHash);
                     cacheRevCommit(repository, cachedCommitMap, commitUdt.getParentCommitHash());
+                    String ancestorCommitHash = commitUdt.getAncestorCommitHash();
+                    cacheRevCommit(repository, cachedCommitMap, ancestorCommitHash);
                     if (cachedCommitMap.containsKey(commitHash)) {
                         RevCommit revCommit = cachedCommitMap.get(commitHash);
                         PersonIdent authorIdent = revCommit.getAuthorIdent();
@@ -78,13 +80,13 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                         commitUdt.setShortMessage(revCommit.getShortMessage());
                         commitUdt.setFullMessage(revCommit.getFullMessage());
                         commitUdt.setCommittedAt(new Date(1000L * revCommit.getCommitTime()));
-                        if (cachedCommitMap.containsKey(commitUdt.getParentCommitHash())){
-                            RevCommit revParentCommit = cachedCommitMap.get(commitUdt.getParentCommitHash());
-                            int commitTimeDiffInSecond = revCommit.getCommitTime() - revParentCommit.getCommitTime();
+                        if (ancestorCommitHash != null && cachedCommitMap.containsKey(ancestorCommitHash)){
+                            RevCommit revAncestorCommit = cachedCommitMap.get(ancestorCommitHash);
+                            int commitTimeDiffInSecond = revCommit.getCommitTime() - revAncestorCommit.getCommitTime();
                             double daysBetweenCommits = (double) commitTimeDiffInSecond / (60 * 60 * 24);
                             commitUdt.setDaysBetweenCommits(new BigDecimal(daysBetweenCommits).setScale(2, RoundingMode.HALF_UP).doubleValue());
-                            commitUdt.setCommitCountBetweenForRepo(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(commitUdt.getParentCommitHash()), null));
-                            commitUdt.setCommitCountBetweenForFile(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(commitUdt.getParentCommitHash()), commitUdt.getNewFile()));
+                            commitUdt.setCommitCountBetweenForRepo(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(ancestorCommitHash), null));
+                            commitUdt.setCommitCountBetweenForFile(ctoGitService.countCommit(cachedCommitMap.get(commitHash), cachedCommitMap.get(ancestorCommitHash), commitUdt.getNewFile()));
                         }
 
                     }

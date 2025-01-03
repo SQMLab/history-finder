@@ -82,37 +82,6 @@ public class GitHistoryFinderServiceImpl implements TraceService {
 
     }
 
-    private CommitUdt toCommitEntity(Commit commitEntry, Commit parentEntry) {
-        Set<ChangeTag> changeTags = commitEntry.getChangeTags()
-                .stream()
-                .map(tag -> parseChangeType(tag.getCode()))
-                .collect(Collectors.toCollection(HashSet::new));
-        String newFile = commitEntry.getMethodContainerFile();
-        List<ChangeTag> orderedTagList = new ArrayList<>(changeTags);
-        orderedTagList.sort(ChangeTag.NATURAL_ORDER);
-        CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
-                .tracerName(getTracerName())
-                .commitHash(commitEntry.getCommitHash())
-                .parentCommitHash(commitEntry.getParentCommitHash())
-                .changeTags(orderedTagList)
-                .codeFragment(commitEntry.getMethodCode())
-                .documentation(commitEntry.getDocumentation())
-                .newFile(newFile)
-                .diff(Util.getDiff(parentEntry != null ? parentEntry.getMethodCode() : null, commitEntry.getMethodCode()))
-                .docDiff(Util.getDiff(parentEntry != null ? parentEntry.getDocumentation() : null, commitEntry.getDocumentation()))
-                .startLine(commitEntry.getStartLine())
-                .endLine(commitEntry.getEndLine());
-        if (parentEntry != null) {
-            String oldFile = parentEntry.getMethodContainerFile();
-            commitBuilder.oldFile(oldFile)
-                    .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
-        }
-
-        return commitBuilder
-                .build();
-
-    }
 
     private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
         Set<ChangeTag> changeTags = historyEntry.getChangeTagSet()
@@ -134,6 +103,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .codeFragment(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
                 .documentation(rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
                 .parentCommitHash(oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null)
+                .ancestorCommitHash(historyEntry.getAncestorCommitHash())
                 .newFile(newFile)
                 .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
                 .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getMethodRawSourceCode() : null, newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode()))
