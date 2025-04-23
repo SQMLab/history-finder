@@ -45,19 +45,21 @@ MARKERS = ['h', 'd', 'x', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
 datasetLength = len(datasetLabels)
 # Create a box plot
-boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(12, 4), constrained_layout=True, sharey=False)
-cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(12, 4), sharey=False)
-boxPlotRuntimeLimit = [40, 15, 50]
-cdfPlotRuntimeLimitAndStepSize = [[40, 5], [30, 5], [80, 10]]
+boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(20, 5), constrained_layout=True, sharey=False)
+cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(20, 5), sharey=False)
+boxPlotRuntimeLimit = [50, 50, 50]
+cdfPlotRuntimeLimitAndStepSize = [[40, 4], [40, 4], [40, 4]]
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     boxPlot = boxPlotAxes[datasetIndex]
     cdfPlot = cdfAxes[datasetIndex]
     boxPlot.set_ylim(0, boxPlotRuntimeLimit[datasetIndex])
+    boxPlot.set_yticks(np.arange(0, boxPlotRuntimeLimit[datasetIndex] + 1, 5))
+
     step = 10
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = runtimeStatistics[tracerName]
         runtimes = np.sort(runtimes)
-        label = toUpperFirst(tracerName) if datasetIndex + 1 == datasetLength else ''
+        label = toUpperFirst(tracerName) if datasetIndex  == 0 else ''
         boxPlot.boxplot(
             runtimes,
             label=label,
@@ -90,17 +92,20 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
     cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0] + 1,
                                  cdfPlotRuntimeLimitAndStepSize[datasetIndex][1]))
-    cdfPlot.grid(axis='both', linestyle='--', alpha=0.7)
-    boxPlot.legend()
+    cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
+    boxPlot.grid(axis='both', linestyle='--', alpha=0.5)
+    # boxPlot.legend()
     boxPlot.set_xticks([])
     if datasetIndex == 0:
-        boxPlot.set_ylabel("Execution Time (s)")
+        boxPlot.set_ylabel("Execution Time (seconds)")
         cdfPlot.set_ylabel("CDF")
-    if datasetIndex == datasetLength - 1:
-        cdfPlot.legend(title="Tools", bbox_to_anchor=(1.05, 1), loc='upper left')
-        boxPlot.legend(title="Tools", bbox_to_anchor=(1.05, 1), loc='upper left')
+
+        cdfPlot.legend(title="Tools", loc='lower right')
+        boxPlot.legend(title="Tools", loc='upper left')
+
+
 boxPlotFigure.supxlabel('Tools')
-cdfFigure.supxlabel('Execution Time (s)')
+cdfFigure.supxlabel('Execution Time (seconds)')
 #
 # # Apply consistent colors to boxes
 # for i, patch in enumerate(box['boxes']):
@@ -123,7 +128,8 @@ cdfFigure.supxlabel('Execution Time (s)')
 # # Add grid for better readability
 # ax.grid(axis='y', linestyle='--', alpha=0.7)
 
-plt.savefig("../cache/execution-time-box-plot.png", dpi=300, bbox_inches='tight')
+cdfFigure.savefig("../cache/execution-time-cdf.png", dpi=300, bbox_inches='tight')
+boxPlotFigure.savefig("../cache/execution-time-box-plot.png", dpi=300, bbox_inches='tight')
 # Show the plot
 plt.tight_layout()
 plt.show()
