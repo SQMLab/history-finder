@@ -48,7 +48,7 @@ datasetLength = len(datasetLabels)
 boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(20, 5), constrained_layout=True, sharey=False)
 cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(20, 5), sharey=False)
 boxPlotRuntimeLimit = [50, 50, 50]
-cdfPlotRuntimeLimitAndStepSize = [[40, 4], [40, 4], [40, 4]]
+cdfPlotRuntimeLimitAndStepSize = [[40, 5], [40, 5], [40, 5]]
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     boxPlot = boxPlotAxes[datasetIndex]
     cdfPlot = cdfAxes[datasetIndex]
@@ -59,7 +59,7 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = runtimeStatistics[tracerName]
         runtimes = np.sort(runtimes)
-        label = toUpperFirst(tracerName) if datasetIndex  == 0 else ''
+        label = toUpperFirst(tracerName) if datasetIndex == 0 else ''
         boxPlot.boxplot(
             runtimes,
             label=label,
@@ -80,7 +80,9 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
         if runtimes[-1] > x_sub[-1]:
             x_sub = np.append(x_sub, runtimes[-1])
             y_sub = np.append(y_sub, cdf[-1])
-        cdfPlot.plot(x_sub, y_sub, label=label, color=cdfPlotColors[tracerIndex], linewidth=1.5,
+        cdfPlot.plot(x_sub, y_sub, label=label, color=cdfPlotColors[tracerIndex], linewidth=3,
+                     markersize=12,
+                     markeredgewidth=2,
                      linestyle=LINE_STYLES[tracerIndex], marker=MARKERS[tracerIndex])
 
     # boxPlot.set_xticks([tracerIndex + 1 for tracerIndex in range(len(tracerList))])
@@ -101,9 +103,7 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
         cdfPlot.set_ylabel("CDF")
 
         cdfPlot.legend(title="Tools", loc='lower right')
-        boxPlot.legend(title="Tools", loc='upper left')
-
-
+        boxPlot.legend(title="Tools", loc='upper left',  prop={'size': 12}, title_fontsize=13)
 boxPlotFigure.supxlabel('Tools')
 cdfFigure.supxlabel('Execution Time (seconds)')
 #
