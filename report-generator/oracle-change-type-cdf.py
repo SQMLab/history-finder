@@ -1,9 +1,10 @@
-import os
 import json
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 
-from util import isWeakCommit, toUpperFirst
+from util import toUpperFirst
 
 baseDirectorMap = {
     'codeShovel': "../src/main/resources/stubs/input/",
@@ -12,19 +13,22 @@ baseDirectorMap = {
     'historyFinder': "../src/main/resources/oracle/"
 }
 
-
-fileMap = {oracleKey : [os.path.join(baseDirectory, f) for f in os.listdir(baseDirectory) if
-                      os.path.isfile(os.path.join(baseDirectory, f))] for oracleKey, baseDirectory in baseDirectorMap.items()}
-fileMap['codeShovelNew'] = list(sorted(filter(lambda f: int(f.split('/')[-1].split('-')[0]) <= 200, fileMap['codeShovelNew'])))
-fileMap['historyFinder'] = list(sorted(filter(lambda f: 201 <= int(f.split('/')[-1].split('-')[0]) <= 400, fileMap['historyFinder'])))
-
+fileMap = {oracleKey: [os.path.join(baseDirectory, f) for f in os.listdir(baseDirectory) if
+                       os.path.isfile(os.path.join(baseDirectory, f))] for oracleKey, baseDirectory in
+           baseDirectorMap.items()}
+fileMap['codeShovelNew'] = list(
+    sorted(filter(lambda f: int(f.split('/')[-1].split('-')[0]) <= 200, fileMap['codeShovelNew'])))
+fileMap['historyFinder'] = list(
+    sorted(filter(lambda f: 201 <= int(f.split('/')[-1].split('-')[0]) <= 400, fileMap['historyFinder'])))
+TAGS = ['MOVE', 'RENAME', 'BODY', 'MULTI']
 commitCountMap = {
-    key : [] for key in fileMap.keys()
+    key: {tag: [] for tag in TAGS} for key in fileMap.keys()
 }
 for oracleKey in fileMap:
     for file in fileMap[oracleKey]:
         commitSet = set()
         jsonFile = json.load(open(file, 'r'))
+        tagCountMap = {tag: 0 for tag in TAGS}
         match oracleKey:
             case 'codeShovel':
                 commitSet |= jsonFile['expectedResult'].keys()
@@ -33,9 +37,12 @@ for oracleKey in fileMap:
                     commitSet.add(changeItem['commitId'])
             case 'codeShovelNew' | 'historyFinder':
                 for changeItem in jsonFile['commits']:
-                    commitSet.add(changeItem['commitHash'])
-        commitCountMap[oracleKey].append(max(len(commitSet) - 1, 0))
-
+                    changeTag = changeItem['changeTag']
+                    for tag in TAGS:
+                        tagCountMap[tag] += 1 if tag in changeTag else 0
+                    tagCountMap['MULTI'] += 1 if len(changeTag) > 1 in changeTag else 0
+        for tag in TAGS:
+            commitCountMap[oracleKey][tag].append(tagCountMap[tag])
 
 boxplotColors = ['#d9a999', '#80c080', '#c080c0', '#a8a8a8', '#e0b88f']
 cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
@@ -43,9 +50,9 @@ cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 HATCHES = ['xx', '//', '.', 'O.', '*']
 MARKERS = ['h', 'd', 'x', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
-cdfFigure, cdfAxes = plt.subplots(1, 1, figsize=(10, 10), sharey=False)
-for subplotIndex in range(1):
-    cdfPlot = cdfAxes[subplotIndex] if isinstance(cdfAxes,list) else cdfAxes
+cdfFigure, cdfAxes = plt.subplots(2, 2, figsize=(10, 10), sharey=False)
+for subplotIndex in range(2):
+    cdfPlot = cdfAxes[subplotIndex] if isinstance(cdfAxes, list) else cdfAxes
 
     step = 10
     cdfIndex = 0
@@ -59,8 +66,8 @@ for subplotIndex in range(1):
         # Set x-axis labels and title
         cdf = np.arange(1, len(commitCounts) + 1) / len(commitCounts)
 
-        x_sub = commitCounts[cdfIndex ::step]
-        y_sub = cdf[cdfIndex ::step]
+        x_sub = commitCounts[cdfIndex::step]
+        y_sub = cdf[cdfIndex::step]
         # x_sub = commitCounts[::]
         # y_sub = cdf[::]
 
@@ -79,10 +86,9 @@ for subplotIndex in range(1):
     # boxPlot.legend()
     if subplotIndex == 0:
         cdfPlot.set_ylabel("CDF")
-        cdfPlot.legend(title="Oracles", loc='lower right')
+        cdfPlot.legend(title="Change Types", loc='lower right')
 
-
-cdfFigure.supxlabel('Number of revisions of method')
+cdfFigure.supxlabel('Number of revisions')
 #
 # # Apply consistent colors to boxes
 # for i, patch in enumerate(box['boxes']):
@@ -105,7 +111,7 @@ cdfFigure.supxlabel('Number of revisions of method')
 # # Add grid for better readability
 # ax.grid(axis='y', linestyle='--', alpha=0.7)
 
-cdfFigure.savefig("../cache/method-revisions-cdf.png", dpi=300, bbox_inches='tight')
+cdfFigure.savefig("../cache/change-type-cdf.png", dpi=300, bbox_inches='tight')
 # Show the plot
 plt.tight_layout()
 plt.show()
