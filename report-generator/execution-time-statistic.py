@@ -41,21 +41,20 @@ boxplotColors = ['#d9a999', '#80c080', '#c080c0', '#a8a8a8', '#e0b88f']
 cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 
 HATCHES = ['xx', '//', '.', 'O.', '*']
-MARKERS = ['h', 'd', 'x', '>', '*']
+MARKERS = ['p', 'd', 's', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
 datasetLength = len(datasetLabels)
 # Create a box plot
 boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(20, 5), constrained_layout=True, sharey=False)
 cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(20, 5), sharey=False)
 boxPlotRuntimeLimit = [50, 50, 50]
-cdfPlotRuntimeLimitAndStepSize = [[40, 5], [40, 5], [40, 5]]
+cdfPlotRuntimeLimitAndStepSize = [[60, 5], [60, 5], [60, 5]]
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     boxPlot = boxPlotAxes[datasetIndex]
     cdfPlot = cdfAxes[datasetIndex]
     boxPlot.set_ylim(0, boxPlotRuntimeLimit[datasetIndex])
     boxPlot.set_yticks(np.arange(0, boxPlotRuntimeLimit[datasetIndex] + 1, 5))
 
-    step = 10
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = runtimeStatistics[tracerName]
         runtimes = np.sort(runtimes)
@@ -74,38 +73,34 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
         # Set x-axis labels and title
         cdf = np.arange(1, len(runtimes) + 1) / len(runtimes)
 
-        x_sub = runtimes[tracerIndex + 10::step]
-        y_sub = cdf[tracerIndex + 10::step]
-        # Append last point if it's not already included
-        if runtimes[-1] > x_sub[-1]:
-            x_sub = np.append(x_sub, runtimes[-1])
-            y_sub = np.append(y_sub, cdf[-1])
-        cdfPlot.plot(x_sub, y_sub, label=label, color=cdfPlotColors[tracerIndex], linewidth=3,
+        cdfPlot.plot(runtimes, cdf, label=label, color=cdfPlotColors[tracerIndex], linewidth=3,
                      markersize=12,
                      markeredgewidth=2,
-                     linestyle=LINE_STYLES[tracerIndex], marker=MARKERS[tracerIndex])
+                     linestyle=LINE_STYLES[tracerIndex], marker=MARKERS[tracerIndex], markevery=0.1)
 
     # boxPlot.set_xticks([tracerIndex + 1 for tracerIndex in range(len(tracerList))])
     # boxPlot.set_xticklabels([toUpperFirst(tracerName) for tracerName in tracerList], rotation=45, ha="right")
-    boxPlot.set_title(datasetLabels[datasetIndex])
+    boxPlot.set_title(datasetLabels[datasetIndex], fontsize=20)
 
+    cdfPlot.tick_params(axis='both', labelsize=18)
     cdfPlot.set_xlim(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0])
-    cdfPlot.set_title(datasetLabels[datasetIndex])
+    cdfPlot.set_title(datasetLabels[datasetIndex], fontsize=20)
     cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
     cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0] + 1,
                                  cdfPlotRuntimeLimitAndStepSize[datasetIndex][1]))
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
     boxPlot.grid(axis='both', linestyle='--', alpha=0.5)
+    boxPlot.tick_params(axis='both', labelsize=18)
     # boxPlot.legend()
     boxPlot.set_xticks([])
     if datasetIndex == 0:
-        boxPlot.set_ylabel("Execution Time (seconds)")
-        cdfPlot.set_ylabel("CDF")
+        boxPlot.set_ylabel("Execution Time (seconds)", fontsize=20)
+        cdfPlot.set_ylabel("CDF", fontsize=20)
 
         cdfPlot.legend(title="Tools", loc='lower right', fontsize=18, title_fontsize=20)
         boxPlot.legend(title="Tools", loc='upper left', fontsize=18, title_fontsize=20)
-boxPlotFigure.supxlabel('Tools')
-cdfFigure.supxlabel('Execution Time (seconds)')
+boxPlotFigure.supxlabel('Tools', fontsize=20)
+cdfFigure.supxlabel('Execution Time (seconds)', fontsize=20)
 #
 # # Apply consistent colors to boxes
 # for i, patch in enumerate(box['boxes']):
@@ -127,9 +122,8 @@ cdfFigure.supxlabel('Execution Time (seconds)')
 #
 # # Add grid for better readability
 # ax.grid(axis='y', linestyle='--', alpha=0.7)
-
+plt.tight_layout()
 cdfFigure.savefig("../cache/execution-time-cdf.png", dpi=300, bbox_inches='tight')
 boxPlotFigure.savefig("../cache/execution-time-box-plot.png", dpi=300, bbox_inches='tight')
 # Show the plot
-plt.tight_layout()
 plt.show()
