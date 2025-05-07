@@ -1,3 +1,4 @@
+import collections
 import json
 import os
 
@@ -20,7 +21,10 @@ fileMap['codeShovelNew'] = list(
     sorted(filter(lambda f: int(f.split('/')[-1].split('-')[0]) <= 200, fileMap['codeShovelNew'])))
 fileMap['historyFinder'] = list(
     sorted(filter(lambda f: 201 <= int(f.split('/')[-1].split('-')[0]) <= 400, fileMap['historyFinder'])))
-TAGS = ['MOVE', 'RENAME', 'BODY', 'MULTI']
+TAGS = ['MOVE', 'RENAME', 'BODY', 'MULTIPLE']
+CODE_SHOVEL_TYPE_MAPPING = {'MOVE': 'Ymovefromfile', 'RENAME': 'Yrename', 'BODY': 'Ybodychange',
+                            'MULTIPLE': 'Ymultichange'}
+CODE_TRACKER_TYPE_MAPPING = {'MOVE': 'moved', 'RENAME': 'rename', 'BODY': 'body change'}
 commitCountMap = {
     key: {tag: [] for tag in TAGS} for key in fileMap.keys()
 }
@@ -28,19 +32,29 @@ for oracleKey in fileMap:
     for file in fileMap[oracleKey]:
         commitSet = set()
         jsonFile = json.load(open(file, 'r'))
-        tagCountMap = {tag: 0 for tag in TAGS}
+        tagCountMap = collections.Counter(TAGS)
         match oracleKey:
             case 'codeShovel':
-                commitSet |= jsonFile['expectedResult'].keys()
+                for _, changeText in jsonFile['expectedResult'].items():
+                    for tag, codeShoveTag in CODE_SHOVEL_TYPE_MAPPING.items():
+                        if codeShoveTag in changeText:
+                            tagCountMap[tag] += 1
             case 'codeTracker':
+                changeCount = collections.Counter()
                 for changeItem in jsonFile['expectedChanges']:
-                    commitSet.add(changeItem['commitId'])
+                    for tag, codeTrackerTag in CODE_TRACKER_TYPE_MAPPING.items():
+                        if codeTrackerTag == changeItem["changeType"]:
+                            tagCountMap[tag] += 1
+                    changeCount[changeItem['commitId']] += 1
+                for _, count in changeCount.items():
+                    if count > 1:
+                        tagCountMap['MULTIPLE'] += 1
             case 'codeShovelNew' | 'historyFinder':
                 for changeItem in jsonFile['commits']:
-                    changeTag = changeItem['changeTag']
+                    changeTag = changeItem['changeTags']
                     for tag in TAGS:
                         tagCountMap[tag] += 1 if tag in changeTag else 0
-                    tagCountMap['MULTI'] += 1 if len(changeTag) > 1 in changeTag else 0
+                    tagCountMap['MULTIPLE'] += 1 if len(changeTag) > 1 in changeTag else 0
         for tag in TAGS:
             commitCountMap[oracleKey][tag].append(tagCountMap[tag])
 
@@ -51,22 +65,23 @@ HATCHES = ['xx', '//', '.', 'O.', '*']
 MARKERS = ['h', 'd', 'x', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
 cdfFigure, cdfAxes = plt.subplots(2, 2, figsize=(10, 10), sharey=False)
-for subplotIndex in range(2):
-    cdfPlot = cdfAxes[subplotIndex] if isinstance(cdfAxes, list) else cdfAxes
+subplotIndex = 0
+for oracleKey, changeMap in commitCountMap.items():
+    cdfPlot = cdfAxes[subplotIndex // 2][subplotIndex % 2]
 
     step = 10
     cdfIndex = 0
-    for oracleKey, commitCountSeq in commitCountMap.items():
-        commitCounts = list(commitCountSeq)
-        commitCounts = np.sort(commitCounts)
-        label = toUpperFirst(oracleKey) if subplotIndex == 0 else ''
+    for changeTag, countSeq in changeMap.items():
+        changeCountSeq = list(countSeq)
+        changeCountSeq = np.sort(changeCountSeq)
+        label = toUpperFirst(changeTag)
 
         # step += tracerIndex + 1
-        print(commitCounts, end=',')
+        print(changeCountSeq, end=',')
         # Set x-axis labels and title
-        cdf = np.arange(1, len(commitCounts) + 1) / len(commitCounts)
+        cdf = np.arange(1, len(changeCountSeq) + 1) / len(changeCountSeq)
 
-        x_sub = commitCounts[cdfIndex::step]
+        x_sub = changeCountSeq[cdfIndex::step]
         y_sub = cdf[cdfIndex::step]
         # x_sub = commitCounts[::]
         # y_sub = cdf[::]
@@ -78,17 +93,17 @@ for subplotIndex in range(2):
         cdfIndex += 1
 
     # cdfPlot.set_xlim(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0])
-    # cdfPlot.set_title(datasetLabels[datasetIndex])
+    cdfPlot.set_title(toUpperFirst(oracleKey))
     # cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
     # cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0] + 1,
     #                              cdfPlotRuntimeLimitAndStepSize[datasetIndex][1]))
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
     # boxPlot.legend()
-    if subplotIndex == 0:
-        cdfPlot.set_ylabel("CDF")
-        cdfPlot.legend(title="Change Types", loc='lower right')
-
-cdfFigure.supxlabel('Number of revisions')
+    cdfPlot.set_ylabel("CDF")
+    cdfPlot.set_xlabel("Number of revisions")
+    cdfPlot.legend(title="Change Types", loc='lower right', fontsize=14, title_fontsize=16)
+    subplotIndex += 1
+# cdfFigure.supxlabel('Number of revisions')
 #
 # # Apply consistent colors to boxes
 # for i, patch in enumerate(box['boxes']):
