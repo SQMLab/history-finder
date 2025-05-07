@@ -43,7 +43,7 @@ cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 HATCHES = ['xx', '//', '.', 'O.', '*']
 MARKERS = ['h', 'd', 'x', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
-cdfFigure, cdfAxes = plt.subplots(1, 1, figsize=(10, 10), sharey=False)
+cdfFigure, cdfAxes = plt.subplots(1, 1, figsize=(8, 8), sharey=False)
 for subplotIndex in range(1):
     cdfPlot = cdfAxes[subplotIndex] if isinstance(cdfAxes,list) else cdfAxes
 
@@ -79,7 +79,7 @@ for subplotIndex in range(1):
     # boxPlot.legend()
     if subplotIndex == 0:
         cdfPlot.set_ylabel("CDF")
-        cdfPlot.legend(title="Oracles", loc='lower right')
+        cdfPlot.legend(title="Oracles", loc='lower right', fontsize=14, title_fontsize=16)
 
 
 cdfFigure.supxlabel('Number of revisions of method')

@@ -102,8 +102,8 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
         boxPlot.set_ylabel("Execution Time (seconds)")
         cdfPlot.set_ylabel("CDF")
 
-        cdfPlot.legend(title="Tools", loc='lower right')
-        boxPlot.legend(title="Tools", loc='upper left',  prop={'size': 12}, title_fontsize=13)
+        cdfPlot.legend(title="Tools", loc='lower right', fontsize=18, title_fontsize=20)
+        boxPlot.legend(title="Tools", loc='upper left', fontsize=18, title_fontsize=20)
 boxPlotFigure.supxlabel('Tools')
 cdfFigure.supxlabel('Execution Time (seconds)')
 #
