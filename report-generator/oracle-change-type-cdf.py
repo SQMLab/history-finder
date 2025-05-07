@@ -1,7 +1,7 @@
 import collections
 import json
 import os
-
+from matplotlib.ticker import MaxNLocator
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -62,18 +62,19 @@ boxplotColors = ['#d9a999', '#80c080', '#c080c0', '#a8a8a8', '#e0b88f']
 cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 
 HATCHES = ['xx', '//', '.', 'O.', '*']
-MARKERS = ['h', 'd', 'x', '>', '*']
+MARKERS = ['p', 'd', 's', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
 cdfFigure, cdfAxes = plt.subplots(2, 2, figsize=(10, 10), sharey=False)
 subplotIndex = 0
 for oracleKey, changeMap in commitCountMap.items():
     cdfPlot = cdfAxes[subplotIndex // 2][subplotIndex % 2]
 
-    step = 10
     cdfIndex = 0
+    maxX = 0
     for changeTag, countSeq in changeMap.items():
         changeCountSeq = list(countSeq)
         changeCountSeq = np.sort(changeCountSeq)
+        maxX = max(maxX, changeCountSeq[-1])
         label = toUpperFirst(changeTag)
 
         # step += tracerIndex + 1
@@ -81,26 +82,25 @@ for oracleKey, changeMap in commitCountMap.items():
         # Set x-axis labels and title
         cdf = np.arange(1, len(changeCountSeq) + 1) / len(changeCountSeq)
 
-        x_sub = changeCountSeq[cdfIndex::step]
-        y_sub = cdf[cdfIndex::step]
-        # x_sub = commitCounts[::]
-        # y_sub = cdf[::]
 
-        cdfPlot.plot(x_sub, y_sub, label=label, color=cdfPlotColors[cdfIndex], linewidth=3,
+        cdfPlot.plot(changeCountSeq, cdf, label=label, color=cdfPlotColors[cdfIndex], linewidth=3,
                      markersize=10,
                      markeredgewidth=2,
-                     linestyle=LINE_STYLES[cdfIndex], marker=MARKERS[cdfIndex])
+                     linestyle=LINE_STYLES[cdfIndex], marker=MARKERS[cdfIndex], markevery=0.1)
         cdfIndex += 1
 
     # cdfPlot.set_xlim(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0])
-    cdfPlot.set_title(toUpperFirst(oracleKey))
-    # cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
-    # cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0] + 1,
-    #                              cdfPlotRuntimeLimitAndStepSize[datasetIndex][1]))
+    cdfPlot.tick_params(axis='both', labelsize=18)
+    cdfPlot.set_title(toUpperFirst(oracleKey), fontsize=20)
+    cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
+    xticks = np.arange(0, maxX, 10)
+    cdfPlot.set_xticks(xticks)
+    cdfPlot.set_xticklabels([str(t) if i % 2 == 0 or maxX <= 100 else '' for i, t in enumerate(xticks)])
+    # cdfPlot.xaxis.set_major_locator(MaxNLocator(nbins=10))
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
     # boxPlot.legend()
-    cdfPlot.set_ylabel("CDF")
-    cdfPlot.set_xlabel("Number of revisions")
+    cdfPlot.set_ylabel("CDF", fontsize=20)
+    cdfPlot.set_xlabel("Number of revisions", fontsize=20)
     cdfPlot.legend(title="Change Types", loc='lower right', fontsize=14, title_fontsize=16)
     subplotIndex += 1
 # cdfFigure.supxlabel('Number of revisions')
@@ -126,7 +126,7 @@ for oracleKey, changeMap in commitCountMap.items():
 # # Add grid for better readability
 # ax.grid(axis='y', linestyle='--', alpha=0.7)
 
+plt.tight_layout()
 cdfFigure.savefig("../cache/change-type-cdf.png", dpi=300, bbox_inches='tight')
 # Show the plot
-plt.tight_layout()
 plt.show()

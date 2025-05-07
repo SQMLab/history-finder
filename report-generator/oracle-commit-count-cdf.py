@@ -41,13 +41,12 @@ boxplotColors = ['#d9a999', '#80c080', '#c080c0', '#a8a8a8', '#e0b88f']
 cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 
 HATCHES = ['xx', '//', '.', 'O.', '*']
-MARKERS = ['h', 'd', 'x', '>', '*']
+MARKERS = ['p', 'd', 's', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
-cdfFigure, cdfAxes = plt.subplots(1, 1, figsize=(8, 8), sharey=False)
+cdfFigure, cdfAxes = plt.subplots(1, 1, figsize=(6, 6), sharey=False)
 for subplotIndex in range(1):
     cdfPlot = cdfAxes[subplotIndex] if isinstance(cdfAxes,list) else cdfAxes
 
-    step = 10
     cdfIndex = 0
     for oracleKey, commitCountSeq in commitCountMap.items():
         commitCounts = list(commitCountSeq)
@@ -59,30 +58,26 @@ for subplotIndex in range(1):
         # Set x-axis labels and title
         cdf = np.arange(1, len(commitCounts) + 1) / len(commitCounts)
 
-        x_sub = commitCounts[cdfIndex ::step]
-        y_sub = cdf[cdfIndex ::step]
-        # x_sub = commitCounts[::]
-        # y_sub = cdf[::]
-
-        cdfPlot.plot(x_sub, y_sub, label=label, color=cdfPlotColors[cdfIndex], linewidth=3,
+        cdfPlot.plot(commitCounts, cdf, label=label, color=cdfPlotColors[cdfIndex], linewidth=3,
                      markersize=10,
                      markeredgewidth=2,
-                     linestyle=LINE_STYLES[cdfIndex], marker=MARKERS[cdfIndex])
+                     linestyle=LINE_STYLES[cdfIndex], marker=MARKERS[cdfIndex], markevery=0.1)
         cdfIndex += 1
-
+    cdfPlot.tick_params(axis='both', labelsize=18)
     # cdfPlot.set_xlim(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0])
     # cdfPlot.set_title(datasetLabels[datasetIndex])
-    # cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
-    # cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0] + 1,
-    #                              cdfPlotRuntimeLimitAndStepSize[datasetIndex][1]))
+    cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
+    xticks = np.arange(0, 160,10)
+    cdfPlot.set_xticks(xticks)
+    cdfPlot.set_xticklabels([str(t) if i % 2 == 0 else '' for i, t in enumerate(xticks)])
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
     # boxPlot.legend()
     if subplotIndex == 0:
-        cdfPlot.set_ylabel("CDF")
+        cdfPlot.set_ylabel("CDF", fontsize=20)
         cdfPlot.legend(title="Oracles", loc='lower right', fontsize=14, title_fontsize=16)
 
 
-cdfFigure.supxlabel('Number of revisions of method')
+cdfFigure.supxlabel('Number of revisions of method', fontsize=20)
 #
 # # Apply consistent colors to boxes
 # for i, patch in enumerate(box['boxes']):
@@ -105,7 +100,7 @@ cdfFigure.supxlabel('Number of revisions of method')
 # # Add grid for better readability
 # ax.grid(axis='y', linestyle='--', alpha=0.7)
 
+plt.tight_layout()
 cdfFigure.savefig("../cache/method-revisions-cdf.png", dpi=300, bbox_inches='tight')
 # Show the plot
-plt.tight_layout()
 plt.show()
