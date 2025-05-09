@@ -22,6 +22,8 @@ fileMap['codeShovelNew'] = list(
 fileMap['historyFinder'] = list(
     sorted(filter(lambda f: 201 <= int(f.split('/')[-1].split('-')[0]) <= 400, fileMap['historyFinder'])))
 TAGS = ['MOVE', 'RENAME', 'BODY', 'MULTIPLE']
+X_ASIS_LABEL_MAP = {'MOVE': 'Number of method moves', 'RENAME' : 'Number of method renames', 'BODY': 'Number of method body changes', 'MULTIPLE': 'Number of multiple changes'}
+TITLE_MAP = {'MOVE': 'Method Move', 'RENAME' : 'Method Rename', 'BODY': 'Method Body Change', 'MULTIPLE': 'Multiple Type Change'}
 CODE_SHOVEL_TYPE_MAPPING = {'MOVE': 'Ymovefromfile', 'RENAME': 'Yrename', 'BODY': 'Ybodychange',
                             'MULTIPLE': 'Ymultichange'}
 CODE_TRACKER_TYPE_MAPPING = {'MOVE': 'moved', 'RENAME': 'rename', 'BODY': 'body change'}
@@ -32,7 +34,7 @@ for oracleKey in fileMap:
     for file in fileMap[oracleKey]:
         commitSet = set()
         jsonFile = json.load(open(file, 'r'))
-        tagCountMap = collections.Counter(TAGS)
+        tagCountMap = {changeTag: 0 for changeTag in TAGS}
         match oracleKey:
             case 'codeShovel':
                 for _, changeText in jsonFile['expectedResult'].items():
@@ -54,7 +56,7 @@ for oracleKey in fileMap:
                     changeTag = changeItem['changeTags']
                     for tag in TAGS:
                         tagCountMap[tag] += 1 if tag in changeTag else 0
-                    tagCountMap['MULTIPLE'] += 1 if len(changeTag) > 1 in changeTag else 0
+                    tagCountMap['MULTIPLE'] += 1 if len(changeTag) > 1 else 0
         for tag in TAGS:
             commitCountMap[oracleKey][tag].append(tagCountMap[tag])
 
@@ -65,19 +67,22 @@ HATCHES = ['xx', '//', '.', 'O.', '*']
 MARKERS = ['p', 'd', 's', '>', '*']
 LINE_STYLES = [':', '--', '-.', '-', (0, (4, 2, 1, 2))]
 cdfFigure, cdfAxes = plt.subplots(2, 2, figsize=(10, 10), sharey=False)
+# cdfFigure.subplots_adjust(hspace=5)
 subplotIndex = 0
-for oracleKey, changeMap in commitCountMap.items():
+for changeTag in TAGS:
     cdfPlot = cdfAxes[subplotIndex // 2][subplotIndex % 2]
 
     cdfIndex = 0
     maxX = 0
-    for changeTag, countSeq in changeMap.items():
+    for oracleKey, changeTypeMap in commitCountMap.items():
+        countSeq = changeTypeMap[changeTag]
         changeCountSeq = list(countSeq)
         changeCountSeq = np.sort(changeCountSeq)
         maxX = max(maxX, changeCountSeq[-1])
-        label = toUpperFirst(changeTag)
+        label = toUpperFirst(oracleKey)
 
         # step += tracerIndex + 1
+        print(f'{changeTag}: {oracleKey} :')
         print(changeCountSeq, end=',')
         # Set x-axis labels and title
         cdf = np.arange(1, len(changeCountSeq) + 1) / len(changeCountSeq)
@@ -90,18 +95,17 @@ for oracleKey, changeMap in commitCountMap.items():
         cdfIndex += 1
 
     # cdfPlot.set_xlim(0, cdfPlotRuntimeLimitAndStepSize[datasetIndex][0])
-    cdfPlot.tick_params(axis='both', labelsize=18)
-    cdfPlot.set_title(toUpperFirst(oracleKey), fontsize=20)
+    cdfPlot.tick_params(axis='y', labelsize=18)
+    cdfPlot.tick_params(axis='x', labelsize=14 if changeTag == 'BODY' else 18)
+    cdfPlot.set_title(toUpperFirst(TITLE_MAP[changeTag]), fontsize=20)
     cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
-    xticks = np.arange(0, maxX, 10)
-    cdfPlot.set_xticks(xticks)
-    cdfPlot.set_xticklabels([str(t) if i % 2 == 0 or maxX <= 100 else '' for i, t in enumerate(xticks)])
-    # cdfPlot.xaxis.set_major_locator(MaxNLocator(nbins=10))
+    cdfPlot.xaxis.set_major_locator(MaxNLocator(nbins=10, integer=True))
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
     # boxPlot.legend()
     cdfPlot.set_ylabel("CDF", fontsize=20)
-    cdfPlot.set_xlabel("Number of revisions", fontsize=20)
-    cdfPlot.legend(title="Change Types", loc='lower right', fontsize=14, title_fontsize=16)
+    cdfPlot.set_xlabel(X_ASIS_LABEL_MAP[changeTag], fontsize=20)
+    if subplotIndex == 0:
+        cdfPlot.legend(title="Oracles", loc='lower right', fontsize=14, title_fontsize=16)
     subplotIndex += 1
 # cdfFigure.supxlabel('Number of revisions')
 #
