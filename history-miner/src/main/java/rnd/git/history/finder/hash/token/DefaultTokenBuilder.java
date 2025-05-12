@@ -1,0 +1,173 @@
+package rnd.git.history.finder.hash.token;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import rnd.git.history.finder.hash.token.filter.ITokenFilter;
+import rnd.git.history.finder.hash.token.filter.NullFilter;
+import rnd.git.history.finder.parser.implementation.MethodSourceInfo;
+
+
+public final class DefaultTokenBuilder implements ITokenBuilder {
+
+	private ITokenFilter tokenFilterChain = NullFilter.INSTANCE; 
+
+	public DefaultTokenBuilder() {
+		super();
+	}
+
+	@Override
+	public void setFilterChain(ITokenFilter tokenFilter){
+		tokenFilterChain = tokenFilter;
+	}
+	
+/* (non-Javadoc)
+ * @see ca.usask.cs.srlab.simcad.hash.ITokenBuilder#generateToken(java.lang.String)
+ */
+@Override
+public Collection<String> generateToken(MethodSourceInfo codeFragment) {
+	List<String> tokenList = new ArrayList<String>();
+	long loc = codeFragment.getEndLine() - codeFragment.getStartLine() + 1; // codeFragment.lines().count();
+																			// //computeActualLineOfCode(codeFragment);
+	String tokenSeparator = loc < 100 ? " \t\n\r\f" : "\n"; // if block is big, split with line only!
+
+	StringTokenizer stToken = new StringTokenizer(codeFragment.getMethodDeclaration().toString(), tokenSeparator);
+	
+    while(stToken.hasMoreElements()) {
+    	
+    	String superToken = stToken.nextToken();
+    	//if(superToken.length() == 0){System.out.println("################gotcha!##############");continue;}
+    	
+    		//superToken.length() > 13 && 
+	    	if(superToken.contains(".")){
+	    		String[] subParts = superToken.split ("(?=[.])"); //split by .
+				for(String subToken : subParts){
+					if(subToken.length() <= 10){
+//System.out.println(subToken);
+						//addToken(subToken, tokenList);
+						tokenList.add(subToken);
+			    	}else{  //if string is greater than 10, break it more 
+			    		String[] subSubTokens = subToken.split ("(?=[>])"); //split by camel case NOTE: removed split by _
+						for(String subSubToken : subSubTokens){
+//System.out.println(subToken);
+//							addToken(subSubToken, tokenList);
+							tokenList.add(subSubToken);
+					    }
+			    	}
+			    }
+	    	}else if(superToken.length() <= 10){
+//System.out.println(superToken);
+//	    		addToken(superToken, tokenList);
+	    		tokenList.add(superToken);
+	    	}else{  //if string is greater than 7, break it more 
+				
+				String[] subParts; 
+				if(superToken.matches("[A-Z0-9|_|-|\\W]+")){ //uppercase constant declaration
+					subParts = superToken.split ("(?=[_|.|>])"); //NOTE: removed split by _
+				}else
+					if(loc < 7)
+						subParts = superToken.split ("(?=[[A-Z]|_|.|>])"); //split by camel case. NOTE: removed split by [A-Z] _
+					else
+						subParts = superToken.split ("(?=[_|.|>])"); //split by camel case. NOTE: removed split by [A-Z] _
+				
+				for(String subToken : subParts){
+//System.out.println("subToken);
+//					addToken(subToken, tokenList);
+					tokenList.add(subToken);
+			    }
+	    
+	    	}
+	    	//if(loc<6)
+	    		//seconderyHashMinFreq = 0; //overriding the default one
+    	
+    }
+	
+    return tokenList;
+}
+
+private void addToken(String token, List<String> tokenList){
+	String filteredToken = tokenFilterChain.doFilterAndInvokeNext(token);
+	if(filteredToken != null)
+		tokenList.add(filteredToken);
+}
+
+public static int computeActualLineOfCode(String codeBlock) {
+	String []line = codeBlock.split("\n");
+	int loc = 0; 
+	for(String ln : line){
+		if(ln.length() > 0)
+			loc++;
+	}
+	return loc;
+}
+
+
+/*
+ * Test code
+//Map<String, Short> tokenMap = new 
+//TreeMap<String, Short>();
+
+if(method == 1){
+	String[] parts = rawData.split("\\W+");//"(?<=\\G...)");
+	for(String token : parts){
+    	short num = tokenMap.get(token) == null ? 0 : (short)(tokenMap.get(token));
+		tokenMap.put(token, ++num);
+    }
+}
+else if(method == 2){
+	String[] parts = rawData.split("(?<=\\G...)");
+	for(String token : parts){
+    	short num = tokenMap.get(token) == null ? 0 : (short)(tokenMap.get(token));
+		tokenMap.put(token, ++num);
+    }
+}if(method == 3){
+	
+	
+}else if(method == 4){
+	
+//	String tokenSeparator;
+//	tokenSeparator = "\n\r\f";  //if block is big, split with line only!
+//	
+//	StringTokenizer stToken = new StringTokenizer(refinedData, tokenSeparator);
+//	
+	//String refinedData = doDataRerinement(rawData);
+	
+	String lines[] = rawData.split("\n");
+	int lineNumberTag = 1010;
+    //while(stToken.hasMoreElements()) {
+    for(String superToken:lines){
+    	superToken = doLineRerinement(superToken);
+    	if(superToken.length() == 0) continue;
+		//String superToken = stToken.nextToken();
+		String modToken = superToken.trim() + lineNumberTag++; 
+		short num = tokenMap.get(modToken) == null ? 0 : (short)(tokenMap.get(modToken));
+        tokenMap.put(modToken, ++num);
+	}
+	
+}else if(method == 5){
+	
+	//String refinedData = doDataRerinement(rawData);
+	
+	String lines[] = rawData.split("\n");
+	int lineNumberTag = 1010;
+    //while(stToken.hasMoreElements()) {
+    for(String superToken:lines){
+    	if(superToken.length() == 0) continue;
+		//String superToken = stToken.nextToken();
+    	String subTokens[] = superToken.split("//");
+    	for(String subToken : subTokens){
+    		String modToken = null;
+    		if(subToken.startsWith(":")){
+    			modToken = subToken.substring(1).trim() + lineNumberTag++; 
+    		}else
+    			modToken = subToken.trim();
+			short num = tokenMap.get(modToken) == null ? 0 : (short)(tokenMap.get(modToken));
+        	tokenMap.put(modToken, ++num);
+    	}
+	}
+}
+*/
+
+}
