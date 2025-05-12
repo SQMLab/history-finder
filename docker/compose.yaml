@@ -1,5 +1,6 @@
 services:
   mongodb:
+    container_name: history-finder-mongodb
     image: 'mongo:5.0'
     environment:
       - 'MONGO_INITDB_DATABASE=cto'
@@ -10,12 +11,14 @@ services:
     ports:
       - '127.0.0.1:27017:27017'
   influxdb:
+    container_name: history-finder-influxdb
     image: 'influxdb:2.7.4'
     volumes:
       - ~/dev/docker/influxdb/var/lib/influxdb2:/var/lib/influxdb2
     ports:
       - '127.0.0.1:8086:8086'
   grafana:
+    container_name: history-finder-grafana
     image: 'grafana/grafana:latest'
     volumes:
       - ~/dev/docker/grafana/var/lib/grafana:/var/lib/grafana
