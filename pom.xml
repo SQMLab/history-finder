@@ -23,5 +23,6 @@
     </properties>
     <modules>
         <module>history-aggregator</module>
+        <module>history-miner</module>
     </modules>
 </project>
