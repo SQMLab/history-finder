@@ -10,7 +10,7 @@
     </parent>
     <groupId>rnd</groupId>
     <artifactId>history-aggregator</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>history-aggregator</name>
     <description>History Aggregator</description>
     <properties>
@@ -20,12 +20,12 @@
         -->
 
     </properties>
-    <repositories>
-        <repository>
-            <id>local-library</id>
-            <url>file://${project.basedir}/history-aggregator/lib</url>
-        </repository>
-    </repositories>
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <id>local-library</id>-->
+    <!--            <url>file://${project.basedir}/history-aggregator/lib</url>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
 
 
     <dependencies>
@@ -71,21 +71,22 @@
         <dependency>
             <groupId>rnd</groupId>
             <artifactId>history-miner</artifactId>
-        </dependency>
-  <!--      <dependency>
-            <groupId>com.felixgrund.codeshovel</groupId>
-            <artifactId>codeshovel</artifactId>
-            <version>0.3.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/codeshovel-0.3.1-SNAPSHOT.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>rnd</groupId>
-            <artifactId>git-history-finder</artifactId>
             <version>1.0.3-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/git-history-finder-1.0.3-SNAPSHOT.jar</systemPath>
-        </dependency>-->
+        </dependency>
+        <!--      <dependency>
+                  <groupId>com.felixgrund.codeshovel</groupId>
+                  <artifactId>codeshovel</artifactId>
+                  <version>0.3.1-SNAPSHOT</version>
+                  <scope>system</scope>
+                  <systemPath>${project.basedir}/lib/codeshovel-0.3.1-SNAPSHOT.jar</systemPath>
+              </dependency>
+              <dependency>
+                  <groupId>rnd</groupId>
+                  <artifactId>git-history-finder</artifactId>
+                  <version>1.0.3-SNAPSHOT</version>
+                  <scope>system</scope>
+                  <systemPath>${project.basedir}/lib/git-history-finder-1.0.3-SNAPSHOT.jar</systemPath>
+              </dependency>-->
 
         <dependency>
             <groupId>javax.xml.bind</groupId>
@@ -175,6 +176,30 @@
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>rename-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+<!--                                <copy-->
+<!--                                        toFile="${project.build.directory}/${project.artifactId}-${project.version}.jar"-->
+<!--                                        file="${project.build.directory}/${project.build.finalName}.jar"/>-->
+                                <copy
+                                        file="${project.build.directory}/${project.build.finalName}.jar"
+                                        tofile="${project.build.directory}/history-finder-${project.version}.jar"/>
+
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
