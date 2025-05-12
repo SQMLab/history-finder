@@ -8,7 +8,7 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.shahidul</groupId>
+    <groupId>rnd</groupId>
     <artifactId>history-aggregator</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <name>history-aggregator</name>
@@ -70,8 +70,7 @@
 
         <dependency>
             <groupId>rnd</groupId>
-            <artifactId>git-history-finder</artifactId>
-            <version>1.0.3-SNAPSHOT</version>
+            <artifactId>history-miner</artifactId>
         </dependency>
   <!--      <dependency>
             <groupId>com.felixgrund.codeshovel</groupId>
