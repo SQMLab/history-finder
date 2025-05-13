@@ -1,4 +1,4 @@
-# Commit Trace Oracle
+# History Finder
 
 ## Prerequisites
 Following tools and frameworks are required for running the project:
