@@ -156,3 +156,8 @@ Contributions are welcome! Feel free to fork the repository, submit a pull reque
 ---
 
 [//]: # (## License)
+## License
+
+This project is licensed under the **GNU General Public License v3.0**.
+
+For more information, see the [LICENSE](./LICENSE) file.
