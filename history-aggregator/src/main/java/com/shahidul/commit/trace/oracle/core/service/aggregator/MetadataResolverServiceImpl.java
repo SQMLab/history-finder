@@ -15,6 +15,7 @@ import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.jgit.JgitService;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -66,10 +67,10 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                 .stream()
                 .map(commitUdt -> {
                     String commitHash = commitUdt.getCommitHash();
-                    cacheRevCommit(repository, cachedCommitMap, commitHash);
-                    cacheRevCommit(repository, cachedCommitMap, commitUdt.getParentCommitHash());
+                    cacheRevCommit(ctoGitService, cachedCommitMap, commitHash);
+                    cacheRevCommit(ctoGitService, cachedCommitMap, commitUdt.getParentCommitHash());
                     String ancestorCommitHash = commitUdt.getAncestorCommitHash();
-                    cacheRevCommit(repository, cachedCommitMap, ancestorCommitHash);
+                    cacheRevCommit(ctoGitService, cachedCommitMap, ancestorCommitHash);
                     if (cachedCommitMap.containsKey(commitHash)) {
                         RevCommit revCommit = cachedCommitMap.get(commitHash);
                         PersonIdent authorIdent = revCommit.getAuthorIdent();
@@ -107,10 +108,10 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                 .toList();
     }
 
-    private static void cacheRevCommit(Repository repository, Map<String, RevCommit> cachedCommitMap, String commitHash) {
+    private static void cacheRevCommit(CtoGitService ctoGitService, Map<String, RevCommit> cachedCommitMap, String commitHash) {
         if (!cachedCommitMap.containsKey(commitHash) && commitHash != null) {
             try {
-                RevCommit revCommit = repository.parseCommit(ObjectId.fromString(commitHash));
+                RevCommit revCommit = ctoGitService.getRepository().parseCommit(ctoGitService.createCommitObjectId(commitHash));
                 cachedCommitMap.put(commitHash, revCommit);
             } catch (IOException e) {
                 log.warn("Commit parse exception", e);

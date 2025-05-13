@@ -193,9 +193,15 @@ public class YJavaParser implements Parser {
                 /*int startLine = methodDeclaration.getBegin().get().line;
                 int endLine = methodDeclaration.getEnd().get().line;*/
                 int startLine = methodDeclaration.getName().getBegin().isPresent() ? methodDeclaration.getName().getBegin().get().line : 0;
-                int endLine = methodDeclaration.getEnd().isPresent()? methodDeclaration.getEnd().get().line : 0;
+                int startLineIncludingDoc = methodDeclaration.getName().getBegin().isPresent() ? methodDeclaration.getName().getBegin().get().line : 0;
+                startLineIncludingDoc = Math.min(methodDeclaration.getJavadocComment().isPresent() ? methodDeclaration.getJavadocComment().get().getBegin().get().line : startLineIncludingDoc, startLineIncludingDoc);
+                startLineIncludingDoc = Math.min(methodDeclaration.getComment().isPresent() ? methodDeclaration.getComment().get().getBegin().get().line : startLineIncludingDoc, startLineIncludingDoc);
+                int endLine = methodDeclaration.getEnd().isPresent() ? methodDeclaration.getEnd().get().line : 0;
                 int methodAnnotationSize = methodDeclaration.getAnnotations().size();
                 String methodsRawSource = lineListInFile.subList(startLine - 1, endLine).stream().map(Object::toString)
+                        .collect(Collectors.joining("\n"));
+
+                String fullCode = lineListInFile.subList(startLineIncludingDoc - 1, endLine).stream().map(Object::toString)
                         .collect(Collectors.joining("\n"));
 
                 String annotationText = methodDeclaration.getAnnotations()
@@ -207,7 +213,7 @@ public class YJavaParser implements Parser {
                         .startLine(startLine)
                         .endLine(endLine)
                         .methodRawSourceCode(methodsRawSource)
-                        .fullCode(methodDeclaration.toString())
+                        .fullCode(fullCode)
                         .annotation(annotationText)
                         .build();
 
@@ -248,17 +254,17 @@ public class YJavaParser implements Parser {
         }
     }
 
-    private CompilationUnit parseCompilationUnit(String sourceCode){
+    private CompilationUnit parseCompilationUnit(String sourceCode) {
         return new JavaParser()
                 .parse(sourceCode).getResult()
-                .orElseThrow(()-> new RuntimeException("Failed to to parse code as compilation unit"));
+                .orElseThrow(() -> new RuntimeException("Failed to to parse code as compilation unit"));
     }
 
-    private MethodDeclaration parseMethodDeclaration(String sourceCode){
+    private MethodDeclaration parseMethodDeclaration(String sourceCode) {
         return new JavaParser()
                 .parseBodyDeclaration(sourceCode)
                 .getResult()
-                .orElseThrow(()-> new RuntimeException("Failed to parse code as method declaration"))
+                .orElseThrow(() -> new RuntimeException("Failed to parse code as method declaration"))
                 .asMethodDeclaration();
     }
 

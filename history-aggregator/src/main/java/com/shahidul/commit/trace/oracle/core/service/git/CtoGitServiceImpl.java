@@ -12,9 +12,10 @@ import java.io.IOException;
 
 public class CtoGitServiceImpl implements CtoGitService {
     private Git git;
-
+    private Repository repository;
     public CtoGitServiceImpl(Repository repository) {
         this.git = new Git(repository);
+        this.repository = repository;
     }
 
     @SneakyThrows
@@ -37,12 +38,27 @@ public class CtoGitServiceImpl implements CtoGitService {
 
         return commitCount;
     }
-    private ObjectId createCommitObjectId(String startCommit) throws IOException {
-        if ("HEAD".equalsIgnoreCase(startCommit)) {
+    @Override
+    public ObjectId createCommitObjectId(String commitHashOrHead) throws IOException {
+        if ("HEAD".equalsIgnoreCase(commitHashOrHead)) {
             return git.getRepository().resolve(Constants.HEAD);
         } else {
-            return ObjectId.fromString(startCommit);
+            return ObjectId.fromString(commitHashOrHead);
         }
+    }
+
+    @Override
+    public String resolveAsCommitHash(String commitHashOrHead) throws IOException {
+        if ("HEAD".equalsIgnoreCase(commitHashOrHead)) {
+            return git.getRepository().resolve(Constants.HEAD).getName();
+        } else {
+            return commitHashOrHead;
+        }
+    }
+
+    @Override
+    public Repository getRepository() {
+        return repository;
     }
 
 }
