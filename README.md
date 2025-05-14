@@ -111,53 +111,34 @@ To enable the `git log <commit> --no-merges -L:<funcname>:<file>` command, confi
    ```
 
 ---
-## Prerequisites
-Following tools and frameworks are required for running the project:
+
+# How to Contribute
+
+Contributions are welcome! Feel free to fork the repository, submit a pull request, or open an issue to suggest improvements.
+
+## Building and Running Project
+Following tools are required for running the project:
 
 * [Apache Maven 3.5+](https://maven.apache.org/)
 * [Git](https://git-scm.com/)
+* [Java 21](https://www.oracle.com/java/technologies/downloads)
+
+Optionally following tools and services are required for visualizing commit history produced by different tools.
 * [Docker](https://www.docker.com/)
-* [Java 8](https://www.oracle.com/java/technologies/java8.html)
-* [Spring Framework](https://spring.io/)
 * [MongoDB 5.0](https://www.mongodb.com)
 * [InfluxDB 2.7.4](https://www.influxdata.com/)
-* [Grafana](https://grafana.com/)[commit-trace-shaw.csv](..%2Frepertory%2Fcommit-trace-shaw.csv)
-
-### Configuration
-
-#### Git
-* To ignore local.yml file change execute command 'git update-index --assume-unchanged .\src\main\resources\local.yml'
-* OR  git update-index --skip-worktree src/main/resources/local.yml
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
-
-### Docker Compose support
-
-This project contains a Docker Compose file named `compose.yaml`.
-In this file, the following services have been defined:
-
-* mongodb: [`mongo:latest`](https://hub.docker.com/_/mongo)
+* [Grafana](https://grafana.com/)
 
 ---
 ## Reference Study
-1. **Code Shovel**
-   - Commit : [30dbe880cb6766612ddf0ee406c10e1461c902f7](https://github.com/ataraxie/codeshovel/tree/30dbe880cb6766612ddf0ee406c10e1461c902f7)
-2. **Code Tracker**
-   - Commit : [f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85](https://github.com/jodavimehran/code-tracker/tree/f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85)
+This study compares results against multiple oracles and evaluates runtime performance relative to prior studies using the following version.   
+1. [Code Shovel](https://github.com/ataraxie/codeshovel/tree/30dbe880cb6766612ddf0ee406c10e1461c902f7)
+2. [Code Tracker](https://github.com/jodavimehran/code-tracker/tree/f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85)
 
 ## Notes
 - Ensure the required tools (Git, Java) are installed before running the application.
 - For assistance or bug reports, open an issue in the repository.
 
----
-
-## Support and Contributions
-
-Contributions are welcome! Feel free to fork the repository, submit a pull request, or open an issue to suggest improvements.
-
----
 
 [//]: # (## License)
 ## License
