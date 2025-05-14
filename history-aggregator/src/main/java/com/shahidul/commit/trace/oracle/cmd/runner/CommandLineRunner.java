@@ -1,13 +1,18 @@
-package com.shahidul.commit.trace.oracle.cmd;
+package com.shahidul.commit.trace.oracle.cmd.runner;
 
-import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
-import com.shahidul.commit.trace.oracle.cmd.parser.CommandLineInputParser;
+import com.github.javaparser.utils.Log;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceShawExportService;
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
+import com.shahidul.commit.trace.oracle.cmd.parser.CommandLineInputParser;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Component;
+
+import java.awt.*;
+import java.net.URI;
 
 /**
  * @author Shahidul Islam
@@ -17,6 +22,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Slf4j
 public class CommandLineRunner implements org.springframework.boot.CommandLineRunner {
+    AppProperty appProperty;
     CommandLineInputParser inputParser;
     CommitTraceShawExportService commitTraceShawExportService;
     CommitTraceDetailExportService commitTraceDetailExportService;
@@ -34,6 +40,17 @@ public class CommandLineRunner implements org.springframework.boot.CommandLineRu
                 commitTraceShawExportService.export(commandLineInput);
             } else throw new RuntimeException("Invalid command");
             applicationContext.close();
+        } else {
+            String url = "http://localhost:" + String.valueOf(appProperty.getServerPort());
+            try {
+                if (Desktop.isDesktopSupported()) {
+                    Desktop.getDesktop().browse(new URI(url));
+                } else {
+                    Runtime.getRuntime().exec("xdg-open " + url);
+                }
+            } catch (Exception e) {
+                Log.info("Server is running open browser and browse URL: " + url);
+            }
         }
     }
 }

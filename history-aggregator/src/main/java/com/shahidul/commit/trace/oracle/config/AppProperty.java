@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class AppProperty {
+    @Value("${server.port}")
+    Integer serverPort;
     @Value("${repository.clone-directory}")
     String repositoryBasePath;
     @Value("${cmd.shell}")
