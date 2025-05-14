@@ -1,37 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <title>Method Selection</title>
     <link href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css"/>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css"
+    />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"></script>
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
     <style>
         #spinnerOverlay {
             background-color: rgba(255, 255, 255, 0.1); /* Lighter dimming effect */
         }
+
         .centered-label {
-            display: block;       /* Ensures the label occupies the full width */
-            text-align: center;   /* Centers the text horizontally */
-            white-space: normal;  /* Allows wrapping for long text */
+            display: block; /* Ensures the label occupies the full width */
+            text-align: center; /* Centers the text horizontally */
+            white-space: normal; /* Allows wrapping for long text */
             word-wrap: break-word; /* Break long words if necessary */
-            margin: 0 auto;       /* Optional, for alignment consistency */
+            margin: 0 auto; /* Optional, for alignment consistency */
         }
+
         #algorithmSection .btn-primary {
             white-space: normal; /* Enable text wrapping */
-            max-width: 250px;    /* Limit button width */
+            max-width: 250px; /* Limit button width */
         }
+
         .centered-form-check input {
-            vertical-align: middle;   /* Ensures the checkbox is aligned to the middle */
-            margin: 0;                /* Removes any default margin around checkboxes */
+            vertical-align: middle; /* Ensures the checkbox is aligned to the middle */
+            margin: 0; /* Removes any default margin around checkboxes */
         }
+
         .stepper {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
         }
+
         .stepper .step {
             flex: 1;
             text-align: center;
             position: relative;
         }
+
         .stepper .step:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -42,14 +58,17 @@
             background: #ccc;
             transform: translateY(-50%);
         }
+
         .stepper .step.active .circle {
             background-color: #0d6efd;
             color: #fff;
         }
+
         .stepper .step.completed .circle {
             background-color: #198754;
             color: #fff;
         }
+
         .stepper .circle {
             display: inline-flex;
             align-items: center;
@@ -61,6 +80,58 @@
             background-color: #f8f9fa;
             color: #000;
             margin-bottom: 0.5rem;
+        }
+
+        /*Method History Style*/
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .result-header, .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f7f7f7;
+        }
+
+        .result-header {
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+
+        .result-row {
+            background-color: #ffffff;
+        }
+
+        .details-view {
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .result-item {
+            flex: none;
+            /*min-width: 100px;*/
+            /*max-width: 100px;*/
+            text-align: center;
+            padding: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .details-btn {
+            cursor: pointer;
+        }
+
+        .centered-title {
+            text-align: center;
         }
     </style>
 </head>
@@ -86,9 +157,14 @@
         <div class="circle">5</div>
         <div>Algorithm</div>
     </div>
+    <div class="step" id="step-method-history">
+        <div class="circle">6</div>
+        <div>Algorithm</div>
+    </div>
 </div>
 <!-- ARepository Selection Pop Up-->
-<div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel" aria-hidden="true">
+<div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -107,7 +183,7 @@
 </div>
 
 <!-- Section 1 : Repository URL -->
-<div id="repositoryUrlSection" class="mt-4" >
+<div id="repositoryUrlSection" class="mt-4">
     <h4 class="text-center">Repository Selection</h4>
     <div class="mb-3">
         <label for="gitRepoUrl" class="centered-label">
@@ -115,12 +191,14 @@
             https://github.com/shahidul2k9/commit-trace-oracle<br>
             https://github.com/shahidul2k9/commit-trace-oracle.git<br>
             git@github.com:shahidul2k9/commit-trace-oracle.git<br>
-<!--            gh repo clone shahidul2k9/commit-trace-oracle<br>-->
+            <!--            gh repo clone shahidul2k9/commit-trace-oracle<br>-->
             /home/repository/commit-trace-oracle
         </label>
         <div class="input-group">
             <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter repository location">
-            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal" onclick="loadClonedRepositories()">Browse</button>
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal"
+                    onclick="loadClonedRepositories()">Browse
+            </button>
         </div>
     </div>
     <div class="text-center mt-3">
@@ -129,24 +207,26 @@
 </div>
 
 
-<!-- Section 3 : Commit Hash Input-->
+<!-- Section 2 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
     <h4 class="text-center">Commit Hash Selection</h4>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="startCommitHash" placeholder="Enter commit hash" oninput="validateCommitHash()">
+            <input type="text" class="form-control" id="startCommitHash" placeholder="Enter commit hash"
+                   oninput="validateCommitHash()">
             <button class="btn btn-outline-secondary" onclick="fillHead()">HEAD</button>
         </div>
     </div>
     <!-- Buttons horizontally centered and aligned -->
     <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
         <button class="btn btn-secondary" onclick="showRepositoryLocationSection()">Back</button>
-        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection(true)" disabled>Next</button>
+        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection(true)" disabled>Next
+        </button>
     </div>
 </div>
 
-<!-- Section 4 : File Selection-->
+<!-- Section 3 : File Selection-->
 <div id="fileSection" class="mt-4 d-none">
     <h4 class="text-center">File Selection</h4>
     <div class="mb-3">
@@ -174,14 +254,14 @@
 </div>
 
 
-<!-- Section 5 : Method Selection-->
+<!-- Section 4 : Method Selection-->
 <div id="methodSection" class="mt-4 d-none">
     <h4 class="text-center">Method Selection</h4>
     <div class="mb-3">
         <label for="methodSearch" class="form-label"></label>
         <div class="input-group">
             <input type="text" class="form-control" id="methodSearch" placeholder="Search method">
-<!--            <button class="btn btn-outline-secondary" onclick="searchMethods()">Search</button>-->
+            <!--            <button class="btn btn-outline-secondary" onclick="searchMethods()">Search</button>-->
         </div>
     </div>
     <ul id="methodList" class="list-group">
@@ -200,7 +280,7 @@
 </div>
 
 
-<!-- Section 6 -->
+<!-- Section 5 -->
 <div id="algorithmSection" class="mt-4 d-none">
     <h4 class="text-center">Select Algorithm</h4>
     <div class="d-flex flex-column align-items-center gap-3 mt-4">
@@ -215,7 +295,31 @@
     </div>
 </div>
 
-<div id="spinnerOverlay" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-light bg-opacity-25 d-flex align-items-center justify-content-center" style="z-index: 1050;">
+<!-- Section 6 -->
+<div id="methodHistory" class="mt-4 d-none">
+    <h2 id="methodHistoryHeader" class="centered-title"></h2>
+    <div id="methodHistoryContainer" class="result-container">
+        <!-- Header Row -->
+        <div class="result-header">
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">Commit Date</div>
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">Author</div>
+            <div class="result-item" style="min-width: 130px; max-width: 130px;">Commit Hash</div>
+            <div class="result-item" style="min-width: 180px; max-width: 180px;">File</div>
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">Change</div>
+            <div class="result-item" style="min-width: 80px; max-width: 80px;">Details</div>
+        </div>
+        <!-- Dynamic content will be injected here -->
+        <div id="methodHistoryRows"></div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-secondary" onclick="revealSection('algorithmSection')">Back</button>
+    </div>
+</div>
+
+
+<div id="spinnerOverlay"
+     class="d-none position-fixed top-0 start-0 w-100 h-100 bg-light bg-opacity-25 d-flex align-items-center justify-content-center"
+     style="z-index: 1050;">
     <div class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
@@ -241,8 +345,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection',  'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection'];
-    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm'];
+    const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection', 'methodHistory'];
+    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm', 'step-method-history'];
 
     let state = {
         repository: {
@@ -260,14 +364,14 @@
 
 
     // Navigate between sections
-  /*  function revealSection(section) {
-        <!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
-        sectionList.forEach(s => {
-            document.getElementById(s).classList.add('d-none');
-        });
-        document.getElementById(section).classList.remove('d-none');
-    }
-*/
+    /*  function revealSection(section) {
+          <!--        document.querySelectorAll('div[id^="section"]').forEach(div => div.classList.add('d-none'));-->
+          sectionList.forEach(s => {
+              document.getElementById(s).classList.add('d-none');
+          });
+          document.getElementById(section).classList.remove('d-none');
+      }
+  */
 
     function revealSection(section) {
         sectionList.forEach((s, index) => {
@@ -348,9 +452,6 @@
     //document.querySelector('button[onclick="goToSection(2)"]').onclick = goToSection2;
 
 
-
-
-
     function validateCommitHash() {
         const commitHashInput = document.getElementById("startCommitHash");
         const nextButton = document.getElementById("startCommitHashNextButton");
@@ -373,7 +474,8 @@
         const filePath = document.getElementById('fileSearch').value;
         onSelectFile(filePath)
     }
-    document.getElementById('fileSearch').addEventListener('keydown', function(event) {
+
+    document.getElementById('fileSearch').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent the default action of the Enter key
             searchFiles(); // Trigger the searchFiles function
@@ -382,12 +484,14 @@
 
     function searchMethods() {
         const targetMethodName = document.getElementById('methodSearch').value;
-        let matchingMethodList = state.methodList.filter(method=> method.methodName.toLowerCase().includes(targetMethodName.toLowerCase()));
+        let matchingMethodList = state.methodList.filter(method => method.methodName.toLowerCase().includes(targetMethodName.toLowerCase()));
         displayMethodList(matchingMethodList)
     }
-    document.getElementById('methodSearch').addEventListener('input', function(event) {
+
+    document.getElementById('methodSearch').addEventListener('input', function (event) {
         searchMethods();
     });
+
     function dismissRepositoryListDialog() {
         const modalElement = document.getElementById('repositoryListModal');
         const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
@@ -402,7 +506,7 @@
     }
 
     function checkoutRepository(location) {
-        if (location === ''){
+        if (location === '') {
             location = document.getElementById('gitRepoUrl').value;
         }
         if (!location) {
@@ -485,10 +589,10 @@
                 const noFileFoundView = document.getElementById('noFileFound');
                 fileListView.innerHTML = ''; // Clear previous list
 
-                if (fileList.length === 0){
+                if (fileList.length === 0) {
                     noFileFoundView.classList.remove('d-none');
                     fileListView.classList.add('d-none');
-                }else {
+                } else {
                     noFileFoundView.classList.add('d-none');
                     fileListView.classList.remove('d-none');
                     // Dynamically populate the list
@@ -517,7 +621,7 @@
         $.ajax({
             url: '/api/method-list',
             method: 'GET',
-            data:{
+            data: {
                 startCommitHash: document.getElementById('startCommitHash').value,
                 repositoryHostName: state.repository.host,
                 repositoryAccountName: state.repository.accountName,
@@ -540,16 +644,16 @@
         });
     }
 
-    function displayMethodList(methodList){
+    function displayMethodList(methodList) {
         const methodListView = document.getElementById('methodList');
         const noMethodFoundView = document.getElementById('noMethodFound');
 
         methodListView.innerHTML = ''; // Clear previous list
 
-        if (methodList.length === 0){
+        if (methodList.length === 0) {
             noMethodFoundView.classList.remove('d-none');
             methodListView.classList.add('d-none');
-        }else {
+        } else {
             noMethodFoundView.classList.add('d-none');
             methodListView.classList.remove('d-none');
             methodList.forEach(function (methodDto) {
@@ -563,42 +667,8 @@
             });
         }
     }
-    function loadMethodHistory(file, methodName, startLine, endLine, tracerName) {
-       /*
-        $.ajax({
-            url: '/ui/method-history',
-            method: 'GET',
-            data:{
-                startCommitHash: document.getElementById('startCommitHash').value,
-                repositoryHostName: state.repository.host,
-                repositoryAccountName: state.repository.accountName,
-                repositoryName: state.repository.repositoryName,
-                repositoryPath: state.repository.path,
-                file: file,
-                methodName: methodName,
-                startLine: startLine,
-                endLine: endLine,
-                tracerName: tracerName
 
-            },
-            beforeSend: function () {
-                showSpinner();
-            },
-            success: function (response) {
-                hideSpinner()
-                console.log(response)
-                // Open a new tab
-                let newTab = window.open(this.url, '_blank');
-                // Write the AJAX response into the new tab
-                newTab.document.open();
-                newTab.document.write(response);
-                newTab.document.close();
-            },
-            error: function (xhr) {
-                hideSpinner();
-                showErrorModal(xhr);
-            }
-        });*/
+    function loadMethodHistory(file, methodName, startLine, endLine, tracerName) {
         let baseUrl = '/ui/method-history';
         let params = new URLSearchParams({
             startCommitHash: document.getElementById('startCommitHash').value,
@@ -613,10 +683,38 @@
             tracerName: tracerName
         }).toString();
 
-// Open the URL in a new tab
-        let fullUrl = `${baseUrl}?${params}`;
-        window.open(fullUrl, '_blank');
+        $.ajax({
+            url: '/api/method-history',
+            method: 'GET',
+            data: {
+                startCommitHash: document.getElementById('startCommitHash').value,
+                repositoryHostName: state.repository.host,
+                repositoryAccountName: state.repository.accountName,
+                repositoryName: state.repository.repositoryName,
+                repositoryPath: state.repository.path,
+                file: file,
+                methodName: methodName,
+                startLine: startLine,
+                endLine: endLine,
+                tracerName: tracerName
+
+            },
+            beforeSend: function () {
+                showSpinner();
+                document.getElementById('methodHistoryRows').innerHTML = '';
+                revealSection('methodHistory');
+            },
+            success: function (response) {
+                hideSpinner()
+                showMethodHistorySection(response)
+            },
+            error: function (xhr) {
+                hideSpinner();
+                showErrorModal(xhr);
+            }
+        });
     }
+
     let spinnerTimer; // To track the timeout
     let spinnerStartTime; // To track when the spinner was shown
 
@@ -653,6 +751,106 @@
         const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
         errorModal.show();
     }
+
+
+    async function showMethodHistorySection(data) {
+        const container = document.getElementById('methodHistoryRows');
+        data.commitDetails.forEach(commit => {
+            const row = document.createElement('div');
+            row.className = 'result-row';
+
+            row.innerHTML = `
+                    <div class="result-item" style="min-width: 150px; max-width: 150px;">${formatDate(commit.commitDate)}</div>
+                    <div class="result-item" style="min-width: 150px; max-width: 150px;">${commit.commitAuthor}</div>
+                    <div class="result-item" style="min-width: 130px; max-width: 130px;">${commit.commitName.slice(0, 7)}</div>
+                    <div class="result-item" style="min-width: 180px; max-width: 180px;">${commit.path?.split('/').pop() || ''}</div>
+                    <div class="result-item" style="min-width: 150px; max-width: 150px;">${formatChange(commit.displayChangeTags)}</div>
+                    <div class="result-item" style="min-width: 80px; max-width: 80px;">
+                        <button class="btn btn-primary btn-sm details-btn">Details</button>
+                    </div>
+                `;
+
+            const details = document.createElement('div');
+            details.className = 'details-view';
+            details.style.display = 'none';
+
+            details.innerHTML = `
+                    <p><strong>Commit Date:</strong> ${formatDate(commit.commitDate)}</p>
+                    <p><strong>Author:</strong> <a href="${commit.authorSearchUrl}" target="_blank">${commit.commitAuthor}</a></p>
+                    <p><strong>Commit Hash:</strong> <a href="${commit.commitUrl}" target="_blank">${commit.commitName}</a></p>
+                    <p><strong>New:</strong> <a class="new-file" href="${commit.newFileUrl}" target="_blank">${commit.path}</a></p>
+                    <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl}" target="_blank">${commit.oldFile}</a></p>
+                    <p><strong>Change Type:</strong> ${commit.displayChangeTags?.join(', ') || ''}</p>
+                    <p><strong>Short Commit Message:</strong> ${commit.shortMessage}</p>
+                    <p><strong>Full Commit Message:</strong> ${commit.fullMessage}</p>
+                    <p><strong>Diff URL:</strong> <a href="${commit.diffUrl}" target="_blank">Link</a></p>
+                    <div class="diff-output"></div>
+                    <code class="raw-diff" style="display: none;">${commit.diff}</code>
+                `;
+
+            container.appendChild(row);
+            container.appendChild(details);
+        });
+        setupDiffRendering();
+        setupDetailsToggle();
+    }
+
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+    }
+
+    function formatChange(tags) {
+        if (!tags || tags.length === 0) return '';
+        if (tags.length > 1) return 'Multi';
+        return tags[0];
+    }
+
+    function setupDetailsToggle() {
+        document.querySelectorAll('.details-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const row = event.target.closest('.result-row');
+                const detailsView = row.nextElementSibling;
+                const isVisible = detailsView.style.display === 'block';
+                detailsView.style.display = isVisible ? 'none' : 'block';
+                event.target.textContent = isVisible ? 'Details' : 'Close';
+            });
+        });
+    }
+
+    function setupDiffRendering() {
+        document.querySelectorAll('.details-view').forEach(detailsView => {
+            const oldFile = detailsView.querySelector('.old-file')?.textContent || '';
+            const newFile = detailsView.querySelector('.new-file')?.textContent || '';
+            const diffText = detailsView.querySelector('.raw-diff')?.textContent || '';
+            const diffDivElement = detailsView.querySelector('.diff-output');
+
+            const unifiedDiff = `--- ${oldFile || newFile}\n+++ ${newFile}\n${diffText}`;
+            const config = {
+                drawFileList: false,
+                fileListToggle: false,
+                fileListStartVisible: false,
+                fileContentToggle: false,
+                matching: 'lines',
+                outputFormat: 'line-by-line',
+                synchronisedScroll: true,
+                highlight: true,
+                renderNothingWhenEmpty: false,
+            };
+            const diff2htmlUi = new Diff2HtmlUI(diffDivElement, unifiedDiff, config);
+            diff2htmlUi.draw();
+            diff2htmlUi.highlightCode();
+        });
+    }
+
+    // document.addEventListener('DOMContentLoaded', fetchCommitHistory);
 
 </script>
 </body>

@@ -31,7 +31,6 @@ public class OutputCommitDetail {
     Integer endLine;
     @JsonProperty("path")
     String newFile;
-    @JsonIgnore
     String oldFile;
     @JsonIgnore
     List<ChangeTag> changeTags;

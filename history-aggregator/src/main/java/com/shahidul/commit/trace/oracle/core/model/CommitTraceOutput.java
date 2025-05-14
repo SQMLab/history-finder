@@ -58,12 +58,10 @@ public class CommitTraceOutput {
     Integer analyzedCommitCount;
     @JsonProperty("changeHistory")
     List<String> commitHashes;
-    @JsonIgnore
-    List<InputCommit> commits;
     @JsonProperty("changeHistoryShort")
     Map<String, String> commitMap;
-    @JsonIgnore
-    List<OutputCommitDetail> commitDetails;
     @JsonProperty("changeHistoryDetails")
     Map<String, OutputCommitDetail> commitDetailMap;
+    List<InputCommit> commits;
+    List<OutputCommitDetail> commitDetails;
 }

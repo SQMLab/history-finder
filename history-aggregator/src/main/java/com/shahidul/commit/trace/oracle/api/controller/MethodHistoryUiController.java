@@ -62,6 +62,34 @@ public class MethodHistoryUiController {
         return "method-history";
     }
 
+    @GetMapping({"api/method-history"})
+    @ResponseBody
+    public CommitTraceOutput getMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
+                                                @RequestParam("repositoryAccountName") String repositoryAccountName,
+                                                @RequestParam("repositoryPath") String repositoryPath,
+                                                @RequestParam("repositoryName") String repositoryName,
+                                                @RequestParam("startCommitHash") String startCommitHash,
+                                                @RequestParam("file") String file,
+                                                @RequestParam("methodName") String methodName,
+                                                @RequestParam("startLine") Integer startLine,
+                                                @RequestParam("endLine") Integer endLine,
+                                                @RequestParam("tracerName") TracerName tracerName
+                                                ) {
+
+        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
+                repositoryAccountName,
+                repositoryPath,
+                repositoryName,
+                startCommitHash,
+                file,
+                methodName,
+                startLine,
+                endLine,
+                tracerName);
+        return traceOutput;
+
+    }
+
     @GetMapping("/api/repository-list")
     @ResponseBody
     public RepositoryListResponse getRepositoryList() {
