@@ -2,7 +2,7 @@ package com.shahidul.commit.trace.oracle.cmd.runner;
 
 import com.github.javaparser.utils.Log;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
-import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceShawExportService;
+import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceComparisonExportService;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.cmd.parser.CommandLineInputParser;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
@@ -24,7 +24,7 @@ import java.net.URI;
 public class CommandLineRunner implements org.springframework.boot.CommandLineRunner {
     AppProperty appProperty;
     CommandLineInputParser inputParser;
-    CommitTraceShawExportService commitTraceShawExportService;
+    CommitTraceComparisonExportService commitTraceComparisonExportService;
     CommitTraceDetailExportService commitTraceDetailExportService;
     ConfigurableApplicationContext applicationContext;
 
@@ -36,12 +36,12 @@ public class CommandLineRunner implements org.springframework.boot.CommandLineRu
             String command = commandLineInput.getCommand();
             if ("commit-trace-detail".equalsIgnoreCase(command)) {
                 commitTraceDetailExportService.export(commandLineInput);
-            } else if ("commit-trace-shaw".equalsIgnoreCase(command)) {
-                commitTraceShawExportService.export(commandLineInput);
+            } else if ("commit-trace-comparison".equalsIgnoreCase(command)) {
+                commitTraceComparisonExportService.export(commandLineInput);
             } else throw new RuntimeException("Invalid command");
             applicationContext.close();
         } else {
-            String url = "http://localhost:" + String.valueOf(appProperty.getServerPort());
+            String url = "http://localhost:" + appProperty.getServerPort();
             try {
                 if (Desktop.isDesktopSupported()) {
                     Desktop.getDesktop().browse(new URI(url));

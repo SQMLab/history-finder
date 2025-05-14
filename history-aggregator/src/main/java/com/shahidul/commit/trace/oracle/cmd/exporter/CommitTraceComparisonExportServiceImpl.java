@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class CommitTraceShawExportServiceImpl implements CommitTraceShawExportService {
+public class CommitTraceComparisonExportServiceImpl implements CommitTraceComparisonExportService {
 
     List<TraceService> traceServiceList;
     TraceDao traceDao;
