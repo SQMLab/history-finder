@@ -1,45 +1,13 @@
-# History Finder
+<h1>History Finder</h1>
+HistoryFinder is a high-recall method-level change history tracker. It improves on state-of-the-art tools, offering a validated oracles and GUI for software evolution analysis.
 
-## Prerequisites
-Following tools and frameworks are required for running the project:
+# How to Use
 
-* [Apache Maven 3.5+](https://maven.apache.org/)
-* [Git](https://git-scm.com/)
-* [Docker](https://www.docker.com/)
-* [Java 8](https://www.oracle.com/java/technologies/java8.html)
-* [Spring Framework](https://spring.io/)
-* [MongoDB 5.0](https://www.mongodb.com)
-* [InfluxDB 2.7.4](https://www.influxdata.com/)
-* [Grafana](https://grafana.com/)[commit-trace-shaw.csv](..%2Frepertory%2Fcommit-trace-shaw.csv)
-
-### Configuration
-
-#### Git
-* To ignore local.yml file change execute command 'git update-index --assume-unchanged .\src\main\resources\local.yml'
-* OR  git update-index --skip-worktree src/main/resources/local.yml
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
-
-### Docker Compose support
-
-This project contains a Docker Compose file named `compose.yaml`.
-In this file, the following services have been defined:
-
-* mongodb: [`mongo:latest`](https://hub.docker.com/_/mongo)
-
----
-## Reference Study
-1. **Code Shovel**
-   - Commit : [30dbe880cb6766612ddf0ee406c10e1461c902f7](https://github.com/ataraxie/codeshovel/tree/30dbe880cb6766612ddf0ee406c10e1461c902f7)
-2. **Code Tracker**
-   - Commit : [f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85](https://github.com/jodavimehran/code-tracker/tree/f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85)
 ## Web UI
 
 ### Steps to Run the Web Interface
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/shaifulcse/HistoryFinder/releases/download/release-1.06/history-finder.jar)
+    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.3/history-finder-1.0.0.jar)
 2. **Run the JAR file**:
    ```bash
    java -jar history-finder.jar
@@ -142,6 +110,41 @@ To enable the `git log <commit> --no-merges -L:<funcname>:<file>` command, confi
    ```
 
 ---
+## Prerequisites
+Following tools and frameworks are required for running the project:
+
+* [Apache Maven 3.5+](https://maven.apache.org/)
+* [Git](https://git-scm.com/)
+* [Docker](https://www.docker.com/)
+* [Java 8](https://www.oracle.com/java/technologies/java8.html)
+* [Spring Framework](https://spring.io/)
+* [MongoDB 5.0](https://www.mongodb.com)
+* [InfluxDB 2.7.4](https://www.influxdata.com/)
+* [Grafana](https://grafana.com/)[commit-trace-shaw.csv](..%2Frepertory%2Fcommit-trace-shaw.csv)
+
+### Configuration
+
+#### Git
+* To ignore local.yml file change execute command 'git update-index --assume-unchanged .\src\main\resources\local.yml'
+* OR  git update-index --skip-worktree src/main/resources/local.yml
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
+
+### Docker Compose support
+
+This project contains a Docker Compose file named `compose.yaml`.
+In this file, the following services have been defined:
+
+* mongodb: [`mongo:latest`](https://hub.docker.com/_/mongo)
+
+---
+## Reference Study
+1. **Code Shovel**
+   - Commit : [30dbe880cb6766612ddf0ee406c10e1461c902f7](https://github.com/ataraxie/codeshovel/tree/30dbe880cb6766612ddf0ee406c10e1461c902f7)
+2. **Code Tracker**
+   - Commit : [f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85](https://github.com/jodavimehran/code-tracker/tree/f9b4f6c5055ceeb8ab781168c6db0cccd2ca0c85)
 
 ## Notes
 - Ensure the required tools (Git, Java) are installed before running the application.
