@@ -137,31 +137,32 @@
 </head>
 <body class="container mt-5">
 <div class="stepper">
-    <div class="step active" id="step-repository">
+    <div class="step active" id="step-repository" data-section="repositoryUrlSection">
         <div class="circle">1</div>
         <div>Repository</div>
     </div>
-    <div class="step" id="step-commit">
+    <div class="step" id="step-commit" data-section="startCommitHashSection">
         <div class="circle">2</div>
         <div>Commit Hash</div>
     </div>
-    <div class="step" id="step-file">
+    <div class="step" id="step-file" data-section="fileSection">
         <div class="circle">3</div>
         <div>File</div>
     </div>
-    <div class="step" id="step-method">
+    <div class="step" id="step-method" data-section="methodSection">
         <div class="circle">4</div>
         <div>Method</div>
     </div>
-    <div class="step" id="step-algorithm">
+    <div class="step" id="step-algorithm" data-section="algorithmSection">
         <div class="circle">5</div>
         <div>Algorithm</div>
     </div>
-    <div class="step" id="step-method-history">
+    <div class="step" id="step-method-history" data-section="methodHistory">
         <div class="circle">6</div>
         <div>Method History</div>
     </div>
 </div>
+
 <!-- ARepository Selection Pop Up-->
 <div class="modal fade" id="repositoryListModal" tabindex="-1" aria-labelledby="repositoryListModalLabel"
      aria-hidden="true">
@@ -349,6 +350,7 @@
     const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm', 'step-method-history'];
 
     let state = {
+        sectionIndex: 0,
         repository: {
             host: '',
             accountName: '',
@@ -374,6 +376,10 @@
   */
 
     function revealSection(section) {
+        const newIndex = sectionList.indexOf(section);
+        if (newIndex > state.sectionIndex) {
+            state.sectionIndex = newIndex;
+        }
         sectionList.forEach((s, index) => {
             const element = document.getElementById(s);
             const step = document.getElementById(steps[index]);
@@ -392,6 +398,22 @@
             }
         });
     }
+    document.querySelectorAll('.stepper .step').forEach((step, index) => {
+        step.style.cursor = 'pointer';
+        step.addEventListener('click', () => {
+            const sectionId = step.getAttribute('data-section');
+
+            if (!sectionId) return;
+
+            // Allow only going backward or to the current step
+            if (index <= state.sectionIndex) {
+                revealSection(sectionId);
+            } else {
+                console.warn('Forward navigation is restricted.');
+            }
+        });
+    });
+
 
     function showRepositoryLocationSection() {
         revealSection('repositoryUrlSection');
