@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.api.controller;
 import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
+import com.shahidul.commit.trace.oracle.core.error.exception.BaseException;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
@@ -86,6 +87,11 @@ public class MethodHistoryUiController {
                 startLine,
                 endLine,
                 tracerName);
+
+        if (traceOutput.getCommitDetails().isEmpty()){
+            String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
+            throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
+        }
         return traceOutput;
 
     }

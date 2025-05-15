@@ -21,6 +21,10 @@ public enum CtoError {
     Failed_To_Find_Methods("1009", "Failed to find methods"),
     Failed_To_Find_Paths("1010", "Failed to find paths"),
     Failed_To_Find_Repositories("1011", "Failed to find repositories"),
+    CodeShovel_Failure("1012", "CodeShovel failed to generate method history"),
+    Git_Function_Name_Failure("1013", "GitFunctionName command failed to generate method history"),
+    Tool_X_Failed_To_Generate_Method_History("1014", "%s failed to generate method history")
+
     ;
     private String code;
     private String msg;
