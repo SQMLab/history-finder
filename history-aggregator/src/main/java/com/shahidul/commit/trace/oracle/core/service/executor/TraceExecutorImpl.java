@@ -1,6 +1,8 @@
 package com.shahidul.commit.trace.oracle.core.service.executor;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
+import com.shahidul.commit.trace.oracle.core.error.CtoError;
+import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
@@ -39,14 +41,18 @@ public class TraceExecutorImpl implements TraceExecutor {
                 }).toList();
     }
 
-    @SneakyThrows
     @Override
     @Transactional
     public TraceEntity execute(TraceEntity traceEntity, TraceService traceService) {
 
         String rootCloneDirectory = traceEntity.getCloneDirectory() != null ? traceEntity.getCloneDirectory() : appProperty.getRepositoryBasePath();
         String repositoryLocation = Util.concatPath(rootCloneDirectory, traceEntity.getRepositoryName());
-        Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
+        Repository repository = null;
+        try {
+            repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
+        } catch (Exception e) {
+            throw new CtoException(CtoError.Git_Checkout_Failed, e);
+        }
         repository.close();
         StopWatch clock = new StopWatch();
         clock.start();

@@ -14,6 +14,8 @@ import com.google.gson.JsonObject;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
+import com.shahidul.commit.trace.oracle.core.error.CtoError;
+import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AdditionalCommitInfoUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
@@ -73,6 +75,10 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             startEnv.setFileName(Utl.getFileName(startEnv.getFilePath()));
             //startEnv.setOutputFilePath(outputFilePath);
             Yresult output = ShovelExecution.runSingle(startEnv, startEnv.getFilePath(), true);
+            /*Throwing exception from here will cause to no null history
+            if (output.isEmpty()){
+                throw new CtoException(CtoError.CodeShovel_Failure);
+            }*/
             traceEntity.getAnalysis().put(getTracerName(),
                     AnalysisUdt.builder()
                             .commits(output.entrySet().stream().map(commitEntry -> toCommitEntity(commitEntry, traceEntity)).toList())
@@ -81,7 +87,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
                             .build());
             return traceEntity;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new CtoException(CtoError.CodeShovel_Failure, e);
         }
 
     }
