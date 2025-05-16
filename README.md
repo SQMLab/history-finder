@@ -39,7 +39,7 @@ java -jar history-finder.jar \
     -tracer-name historyFinder \
     -clone-directory ./repository \
     -repository-url https://github.com/checkstyle/checkstyle.git \
-    -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 \
+    -start-commit HEAD \
     -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
     -method-name fireErrors \
     -start-line 384 \
@@ -54,7 +54,7 @@ java -jar history-finder.jar \
     -command commit-trace-comparison \
     -clone-directory ./repository \
     -repository-url https://github.com/checkstyle/checkstyle.git \
-    -start-commit 119fd4fb33bef9f5c66fc950396669af842c21a3 \
+    -start-commit HEAD \
     -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
     -method-name fireErrors \
     -start-line 384 \

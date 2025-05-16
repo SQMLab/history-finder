@@ -57,8 +57,7 @@ public class CodeShovelTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         try {
-            String rootCloneDirectory = traceEntity.getCloneDirectory() != null ? traceEntity.getCloneDirectory() : appProperty.getRepositoryBasePath();
-            String repositoryLocation = Util.concatPath(rootCloneDirectory, traceEntity.getRepositoryName());
+            String repositoryLocation = Util.getLocalProjectDirectory(traceEntity.getCloneDirectory(), appProperty.getRepositoryBasePath(), traceEntity.getRepositoryName());
 
             Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
             Git git = new Git(repository);

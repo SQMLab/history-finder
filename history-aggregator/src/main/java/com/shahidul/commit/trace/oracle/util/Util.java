@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.util;
 import com.felixgrund.codeshovel.util.Utl;
 import jakarta.xml.bind.DatatypeConverter;
 import lombok.SneakyThrows;
+import org.apache.http.util.TextUtils;
 import org.eclipse.jgit.diff.*;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
@@ -169,5 +170,13 @@ public class Util {
             return prefix + "/" + suffix;
         }
 
+    }
+
+    public static String getLocalProjectDirectory(String baseDirectory, String defaultBaseDirectory, String projectName){
+        if (TextUtils.isEmpty(baseDirectory)){
+            return concatPath(defaultBaseDirectory,  projectName);
+        }else {
+            return concatPath(baseDirectory, projectName);
+        }
     }
 }

@@ -69,6 +69,10 @@
             background-color: #0d6efd;
             color: #fff;
         }
+        .stepper .step.active.last-active > div:not(.circle) {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
 
         .stepper .step.completed .circle {
             background-color: #198754;
@@ -137,7 +141,9 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-
+        .result-item i {
+            margin-right: 10px;
+        }
         .details-btn {
             cursor: pointer;
         }
@@ -150,7 +156,7 @@
 <body class="container mt-5">
 
 <div class="stepper">
-    <div class="step active" id="step-repository" data-section="repositoryUrlSection">
+    <div class="step" id="step-repository" data-section="repositoryUrlSection">
         <div class="circle"><i class="fas fa-folder-open"></i></div>
         <div>Repository</div>
     </div>
@@ -186,7 +192,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h4 id="repositoryListHeaderText"></h4>
+                <p id="repositoryListHeaderText" class="text-center fs-4"></p>
                 <ul id="clonedRepoList" class="list-group"></ul>
             </div>
             <div class="modal-footer">
@@ -315,12 +321,24 @@
     <div id="methodHistoryContainer" class="result-container">
         <!-- Header Row -->
         <div class="result-header">
-            <div class="result-item" style="min-width: 150px; max-width: 150px;">Commit Date</div>
-            <div class="result-item" style="min-width: 150px; max-width: 150px;">Author</div>
-            <div class="result-item" style="min-width: 130px; max-width: 130px;">Commit Hash</div>
-            <div class="result-item" style="min-width: 180px; max-width: 180px;">File</div>
-            <div class="result-item" style="min-width: 150px; max-width: 150px;">Change</div>
-            <div class="result-item" style="min-width: 80px; max-width: 80px;">Details</div>
+            <div class="result-item" style="min-width: 145px; max-width: 145px;">
+                <i class="fas fa-calendar-alt me-1"></i>Commit Date
+            </div>
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">
+                <i class="fas fa-user me-1"></i>Author
+            </div>
+            <div class="result-item" style="min-width: 130px; max-width: 130px;">
+                <i class="fas fa-code-branch me-1"></i>Commit Hash
+            </div>
+            <div class="result-item" style="min-width: 180px; max-width: 180px;">
+                <i class="fas fa-file-code me-1"></i>File
+            </div>
+            <div class="result-item" style="min-width: 150px; max-width: 150px;">
+                <i class="fas fa-edit me-1"></i>Change
+            </div>
+            <div class="result-item" style="min-width: 100px; max-width: 100px;">
+                <i class="fas fa-info-circle me-1"></i>Details
+            </div>
         </div>
         <!-- Remove scroll restriction here -->
         <div id="methodHistoryRows"></div>
@@ -388,6 +406,9 @@
         endLine: ''
     };
 
+    document.addEventListener("DOMContentLoaded", () => {
+        revealSection('repositoryUrlSection');
+    });
 
     // Navigate between sections
     /*  function revealSection(section) {
@@ -404,21 +425,26 @@
             const element = document.getElementById(s);
             const step = document.getElementById(steps[index]);
 
+            // Always remove 'last-active' initially
+            step.classList.remove('last-active');
+
             if (s === section) {
                 element.classList.remove('d-none');
-                step.classList.add('active');
+                step.classList.add('active', 'last-active');
                 step.classList.remove('completed');
                 state.currentSection = section;
             } else {
                 element.classList.add('d-none');
                 if (steps.indexOf(step.id) < steps.indexOf(steps[sectionList.indexOf(section)])) {
                     step.classList.add('completed');
+                    step.classList.remove('active');
                 } else {
                     step.classList.remove('completed', 'active');
                 }
             }
         });
     }
+
 
     document.querySelectorAll('.stepper .step').forEach((step, index) => {
         step.style.cursor = 'pointer';
@@ -602,7 +628,7 @@
                 hideSpinner()
                 const list = document.getElementById('clonedRepoList');
                 document.getElementById('repositoryListHeaderText').innerText = 'Cloned repositories in ' + response.repositoryPath
-                    + ' directory. To show repositories from a different directory update application.yml';
+                    + ' directory. To show repositories from a different directory update application.yml file.';
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
@@ -845,8 +871,8 @@
                     <p><strong>New:</strong> <a class="new-file" href="${commit.newFileUrl}" target="_blank">${commit.path}</a></p>
                     <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl}" target="_blank">${commit.oldFile}</a></p>
                     <p><strong>Change Type:</strong> ${commit.displayChangeTags?.join(', ') || ''}</p>
-                    <p><strong>Short Commit Message:</strong> ${commit.shortMessage}</p>
-                    <p><strong>Full Commit Message:</strong> ${commit.fullMessage}</p>
+                    <p><strong>Short Commit Message:</strong> ${commit.shortMessage || 'N/A'}</p>
+                    <p><strong>Full Commit Message:</strong> ${commit.fullMessage || 'N/A'}</p>
                     <p><strong>Diff URL:</strong> <a href="${commit.diffUrl}" target="_blank">Link</a></p>
                     <div class="diff-output"></div>
                     <code class="raw-diff" style="display: none;">${commit.diff}</code>

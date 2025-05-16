@@ -8,7 +8,6 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
@@ -45,11 +44,9 @@ public class TraceExecutorImpl implements TraceExecutor {
     @Transactional
     public TraceEntity execute(TraceEntity traceEntity, TraceService traceService) {
 
-        String rootCloneDirectory = traceEntity.getCloneDirectory() != null ? traceEntity.getCloneDirectory() : appProperty.getRepositoryBasePath();
-        String repositoryLocation = Util.concatPath(rootCloneDirectory, traceEntity.getRepositoryName());
         Repository repository = null;
         try {
-            repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
+            repository = new GitServiceImpl().cloneIfNotExists(Util.getLocalProjectDirectory(traceEntity.getCloneDirectory(), appProperty.getRepositoryBasePath(), traceEntity.getRepositoryName()), traceEntity.getRepositoryUrl());
         } catch (Exception e) {
             throw new CtoException(CtoError.Git_Checkout_Failed, e);
         }

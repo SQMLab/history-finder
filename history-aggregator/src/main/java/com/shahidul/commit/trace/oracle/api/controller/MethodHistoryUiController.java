@@ -12,8 +12,8 @@ import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -75,7 +75,7 @@ public class MethodHistoryUiController {
                                                 @RequestParam("startLine") Integer startLine,
                                                 @RequestParam("endLine") Integer endLine,
                                                 @RequestParam("tracerName") TracerName tracerName
-                                                ) {
+    ) {
 
         CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
                 repositoryAccountName,
@@ -88,7 +88,7 @@ public class MethodHistoryUiController {
                 endLine,
                 tracerName);
 
-        if (traceOutput.getCommitDetails().isEmpty()){
+        if (traceOutput.getCommitDetails().isEmpty()) {
             String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
             throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
         }
@@ -145,7 +145,11 @@ public class MethodHistoryUiController {
             return gitRepositoryUiService.checkoutRepository(location);
         } catch (Exception e) {
             log.error("Failed to checkout repository", e);
-            throw new CtoException(CtoError.Git_Checkout_Failed, e);
+            if (e instanceof BaseException) {
+                throw e;
+            } else {
+                throw new CtoException(CtoError.Git_Checkout_Failed, e);
+            }
         }
     }
 }

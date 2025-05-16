@@ -9,6 +9,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.util.TextUtils;
 import org.springframework.stereotype.Service;
 import rnd.git.history.finder.dto.*;
 import rnd.git.history.finder.enums.LanguageType;
@@ -43,7 +44,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
         try {
 
             HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                    .cacheDirectory(appProperty.getRepositoryBasePath())
+                    .cacheDirectory(TextUtils.isBlank(traceEntity.getCloneDirectory()) ? appProperty.getRepositoryBasePath() : traceEntity.getCloneDirectory())
                     .repositoryUrl(traceEntity.getRepositoryUrl())
                     .startCommitHash(traceEntity.getStartCommitHash())
                     .repositoryName(traceEntity.getRepositoryName())

@@ -50,7 +50,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
     @Override
     public TraceEntity trace(TraceEntity traceEntity) {
         GitService gitService = new GitServiceImpl();
-        String repositoryLocation = appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName();
+        String repositoryLocation = Util.getLocalProjectDirectory(traceEntity.getCloneDirectory(), appProperty.getRepositoryBasePath() , traceEntity.getRepositoryName());
 
         try (Repository repository = gitService.cloneIfNotExists(repositoryLocation,
                 traceEntity.getRepositoryUrl())) {
