@@ -9,13 +9,11 @@ import com.shahidul.commit.trace.oracle.core.service.git.CtoGitServiceImpl;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jgit.lib.ObjectId;
 import org.eclipse.jgit.lib.PersonIdent;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
-import rnd.git.history.finder.jgit.JgitService;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -40,7 +38,7 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
 
         Repository repository = null;
         try {
-            repository = new GitServiceImpl().cloneIfNotExists(appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName(), traceEntity.getRepositoryUrl());
+            repository = new GitServiceImpl().cloneIfNotExists(Util.getLocalProjectDirectory(traceEntity.getCloneDirectory(), appProperty.getRepositoryBasePath(), traceEntity.getRepositoryName()), traceEntity.getRepositoryUrl());
         } catch (Exception e) {
             throw new RuntimeException(traceEntity.getRepositoryUrl(), e);
         }

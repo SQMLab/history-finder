@@ -151,16 +151,20 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 String localOriginUrl = repository.getConfig().getString("remote", "origin", "url");
                 log.info(localOriginUrl);
                 if (localOriginUrl != null) {
-                    String[] parts = localOriginUrl.replaceFirst("^(https?://[^/]+)/([^/]+)/([^/]+)(\\.git)?$", "$1,$2,$3").split(",");
-                    checkoutInfo.setHost(parts[0]);
-                    checkoutInfo.setAccountName(parts[1]);
+                    RepositoryCheckoutResponse locallyStoredRepositoryInfo = parseRepository(localOriginUrl);
+                    if (checkoutInfo.getHost() == null || checkoutInfo.getHost().isEmpty()) {
+                        checkoutInfo.setHost(locallyStoredRepositoryInfo.getHost());
+                    }
+                    if (checkoutInfo.getAccountName() == null || checkoutInfo.getAccountName().isEmpty()) {
+                        checkoutInfo.setAccountName(locallyStoredRepositoryInfo.getAccountName());
+                    }
                 } else {
                     log.warn("Remote not configured");
                 }
             }
             return checkoutInfo;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new CtoException(CtoError.Failed_To_Find_Repositories, e);
         }
     }
 
@@ -177,7 +181,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             return RepositoryCheckoutResponse.builder()
                     .host(parts[0])
                     .accountName(parts[1])
-                    .repositoryName(parts[2].replace(".git", ""))
+                    .repositoryName(parts[2].replace(".git", "")) // TODO: repository name is not always the folder name of project it might be different
                     .path(appProperty.getRepositoryBasePath())
                     .build();
         }

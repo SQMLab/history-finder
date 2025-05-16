@@ -39,7 +39,7 @@ public abstract class GitTracer implements TraceService {
 
     public TraceEntity trace(TraceEntity traceEntity, String logCommand) {
         try {
-            String repositoryLocation = appProperty.getRepositoryBasePath() + "/" + traceEntity.getRepositoryName();
+            String repositoryLocation = Util.getLocalProjectDirectory(traceEntity.getCloneDirectory(), appProperty.getRepositoryBasePath(), traceEntity.getRepositoryName());
             Repository repository = new GitServiceImpl().cloneIfNotExists(repositoryLocation, traceEntity.getRepositoryUrl());
             Git git = new Git(repository);
             CachingRepositoryService cachingRepositoryService = new CachingRepositoryService(git, repository, traceEntity.getRepositoryName(), repositoryLocation);
