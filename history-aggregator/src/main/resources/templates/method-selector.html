@@ -88,6 +88,7 @@
             margin-bottom: 0.5rem;
             font-size: 1.5rem;
         }
+
         .stepper .step.completed::after {
             background: #198754; /* green for completed */
         }
@@ -147,29 +148,30 @@
     </style>
 </head>
 <body class="container mt-5">
+
 <div class="stepper">
     <div class="step active" id="step-repository" data-section="repositoryUrlSection">
-        <div class="circle">1</div>
+        <div class="circle"><i class="fas fa-folder-open"></i></div>
         <div>Repository</div>
     </div>
     <div class="step" id="step-commit" data-section="startCommitHashSection">
-        <div class="circle">2</div>
+        <div class="circle"><i class="fas fa-code-branch"></i></div>
         <div>Commit Hash</div>
     </div>
     <div class="step" id="step-file" data-section="fileSection">
-        <div class="circle">3</div>
+        <div class="circle"><i class="fas fa-file-code"></i></div>
         <div>File</div>
     </div>
     <div class="step" id="step-method" data-section="methodSection">
-        <div class="circle">4</div>
+        <div class="circle"><i class="fas fa-code"></i></div>
         <div>Method</div>
     </div>
     <div class="step" id="step-algorithm" data-section="algorithmSection">
-        <div class="circle">5</div>
+        <div class="circle"><i class="fas fa-screwdriver-wrench"></i></div>
         <div>Algorithm</div>
     </div>
     <div class="step" id="step-method-history" data-section="methodHistory">
-        <div class="circle">6</div>
+        <div class="circle"><i class="fas fa-history"></i></div>
         <div>Method History</div>
     </div>
 </div>
@@ -180,7 +182,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="repositoryListModalLabel">Selection a Repository</h5>
+                <h5 class="modal-title" id="repositoryListModalLabel">Repository Selection</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -196,16 +198,8 @@
 
 <!-- Section 1 : Repository URL -->
 <div id="repositoryUrlSection" class="mt-4">
-    <h4 class="text-center">Repository Selection</h4>
+    <p class="text-center fs-4">Enter a remote URL (HTTPS or SSH) or a local directory of git project</p>
     <div class="mb-3">
-        <label for="gitRepoUrl" class="centered-label">
-            Example:<br>
-            https://github.com/shahidul2k9/commit-trace-oracle<br>
-            https://github.com/shahidul2k9/commit-trace-oracle.git<br>
-            git@github.com:shahidul2k9/commit-trace-oracle.git<br>
-            <!--            gh repo clone shahidul2k9/commit-trace-oracle<br>-->
-            /home/repository/commit-trace-oracle
-        </label>
         <div class="input-group">
             <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter repository location">
             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal"
@@ -221,11 +215,12 @@
 
 <!-- Section 2 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
-    <h4 class="text-center">Commit Hash Selection</h4>
+    <p class="text-center fs-4">Enter the starting commit hash to begin tracing method history backward.<br/>Leave empty to use
+        the latest commit (HEAD) by default.</p>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="startCommitHash" placeholder="Start commit hash (default HEAD)"
+            <input type="text" class="form-control" id="startCommitHash" placeholder="Start commit hash"
                    oninput="validateCommitHash()">
             <!--            <button class="btn btn-outline-secondary" onclick="fillHead()">HEAD</button>-->
         </div>
@@ -240,7 +235,7 @@
 
 <!-- Section 3 : File Selection-->
 <div id="fileSection" class="mt-4 d-none">
-    <h4 class="text-center">File Selection</h4>
+    <p class="text-center fs-4">Select a Java file to display the list of methods it contains.</p>
     <div class="mb-3">
         <label for="fileSearch" class="form-label"></label>
         <div class="input-group">
@@ -268,7 +263,7 @@
 
 <!-- Section 4 : Method Selection-->
 <div id="methodSection" class="mt-4 d-none">
-    <h4 class="text-center">Method Selection</h4>
+    <p class="text-center fs-4">Select a method</p>
     <div class="mb-3">
         <label for="methodSearch" class="form-label"></label>
         <div class="input-group">
@@ -294,7 +289,7 @@
 
 <!-- Section 5 -->
 <div id="algorithmSection" class="mt-4 d-none">
-    <h4 class="text-center">Select Algorithm</h4>
+    <p class="text-center fs-4">Select an implementation that uncovers method-level history.</p>
     <div class="d-flex flex-column align-items-center gap-3 mt-4">
         <button class="btn btn-primary w-50" onclick="runAlgorithm('HISTORY_FINDER')">History Finder</button>
         <button class="btn btn-primary w-50" onclick="runAlgorithm('CODE_SHOVEL')">Code Shovel</button>
@@ -311,7 +306,7 @@
 <div id="methodHistory" class="mt-4 d-none">
     <h4 id="methodHistoryHeader" class="centered-title"></h4>
     <div id="executionInfo" class="d-flex gap-4 mt-3 mb-4 justify-content-center text-center">
-    <div id="executionTime" class="d-flex align-items-center large-text">
+        <div id="executionTime" class="d-flex align-items-center large-text">
             <i class="fa-solid fa-clock me-2"></i>
             <strong>Execution Time:</strong>
             <span id="executionTimeValue" class="ms-2">0s</span>
@@ -606,8 +601,8 @@
             success: function (response) {
                 hideSpinner()
                 const list = document.getElementById('clonedRepoList');
-                document.getElementById('repositoryListHeaderText').innerText = 'Repositories scanned from directory ' + response.repositoryPath
-                    + '\n Scan directory is configurable in application.yml';
+                document.getElementById('repositoryListHeaderText').innerText = 'Cloned repositories in ' + response.repositoryPath
+                    + ' directory. To show repositories from a different directory update application.yml';
                 list.innerHTML = ''; // Clear previous list
 
                 // Dynamically populate the list
