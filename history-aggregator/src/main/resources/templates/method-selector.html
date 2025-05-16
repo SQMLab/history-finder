@@ -627,7 +627,7 @@
             success: function (response) {
                 hideSpinner()
                 const list = document.getElementById('clonedRepoList');
-                document.getElementById('repositoryListHeaderText').innerText = 'Cloned repositories in ' + response.repositoryPath
+                document.getElementById('repositoryListHeaderText').innerText = 'List of repositories in ' + response.repositoryPath
                     + ' directory. To show repositories from a different directory update application.yml file.';
                 list.innerHTML = ''; // Clear previous list
 

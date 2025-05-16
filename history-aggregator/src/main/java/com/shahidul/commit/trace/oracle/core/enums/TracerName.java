@@ -29,7 +29,7 @@ public enum TracerName {
 
     public static TracerName fromCode(String code) {
         for (TracerName tracerName : values()) {
-            if (tracerName.getCode().equals(code)) {
+            if (tracerName.getCode().equalsIgnoreCase(code)) {
                 return tracerName;
             }
         }
