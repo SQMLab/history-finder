@@ -8,7 +8,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 ### Steps to Run the Web Interface
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.3/history-finder-1.0.0.jar)
+    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.3/history-finder.jar)
 2. **Run the JAR file**:
    ```bash
    java -jar history-finder.jar

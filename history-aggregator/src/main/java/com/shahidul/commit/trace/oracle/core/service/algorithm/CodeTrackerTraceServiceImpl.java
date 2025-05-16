@@ -99,7 +99,11 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
             if (oldMethod != null && parentCommitId != null) {
                 LocationInfo oldLocation = oldMethod.getLocation();
                 String oldFileContent = cachingRepositoryService.findFileContent(cachingRepositoryService.findCommitByName(parentCommitId), oldFile);
-                oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
+                try {
+                    oldCodeFragment = Util.readLineRange(oldFileContent, oldLocation.getStartLine(), oldLocation.getEndLine());
+                }catch (Exception e){
+                    log.error("Failed to read old code fragment");
+                }
             }
             diff = Util.getDiff(oldCodeFragment, newCodeFragment);
         } catch (Exception ex) {
