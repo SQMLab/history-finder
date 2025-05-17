@@ -18,7 +18,7 @@ Ensure the following tools and frameworks are installed before running the proje
 
 ### Steps to Run the Web Interface
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/shaifulcse/HistoryFinder/releases/download/release-1.06/history-finder.jar)
+    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 2. **Run the JAR file**:
    ```bash
    java -jar history-finder.jar
@@ -32,7 +32,7 @@ Ensure the following tools and frameworks are installed before running the proje
 
 ### Steps to Use the CLI
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/shaifulcse/HistoryFinder/releases/download/release-1.06/history-finder.jar)
+    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 2. **Run Commands**:
    ```bash
    java -jar history-finder.jar <OPTIONS>
