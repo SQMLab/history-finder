@@ -10,7 +10,7 @@
     </parent>
     <groupId>rnd</groupId>
     <artifactId>history-aggregator</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.4</version>
     <name>history-aggregator</name>
     <description>History Aggregator</description>
     <properties>
@@ -182,10 +182,7 @@
                                     <target>
                                         <copy
                                                 file="${project.build.directory}/${project.build.finalName}.jar"
-                                                tofile="${project.build.directory}/history-finder.jar"/>
-<!--                                        <copy-->
-<!--                                                file="${project.build.directory}/${project.build.finalName}.jar"-->
-<!--                                                tofile="${project.build.directory}/history-finder-${project.version}.jar"/>-->
+                                                tofile="${project.build.directory}/history-finder-${project.version}.jar"/>
                                     </target>
                                 </configuration>
                             </execution>
