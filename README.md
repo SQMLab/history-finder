@@ -8,10 +8,10 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 ### Steps to Run the Web Interface
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
+    - [Download history-finder-0.0.4.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 2. **Run the JAR file**:
    ```bash
-   java -jar history-finder.jar
+   java -jar history-finder-0.0.4.jar
    ```
 3. **Access the Web Interface**:
     - Open your browser and navigate to: [http://localhost:8080](http://localhost:8080)
@@ -22,10 +22,10 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 ### Steps to Use the CLI
 1. **Download the JAR file**:
-    - [Download history-finder.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
+    - [Download history-finder-0.0.4.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 2. **Run Commands**:
    ```bash
-   java -jar history-finder.jar <OPTIONS>
+   java -jar history-finder-0.0.4.jar <OPTIONS>
    ```
 
 ---
@@ -34,7 +34,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 #### **Generate Method History with a state-of-the-art implementation (e.g.,CodeShovel, CodeTracker, HistoryFinder )**
 ```bash
-java -jar history-finder.jar \
+java -jar history-finder-0.0.4.jar \
     -command commit-trace-detail \
     -tracer-name historyFinder \
     -clone-directory ./repository \
@@ -50,7 +50,7 @@ java -jar history-finder.jar \
 
 #### **Generate Compare Method History with different state-of-the-art implementations**
 ```bash
-java -jar history-finder.jar \
+java -jar history-finder-0.0.4.jar \
     -command commit-trace-comparison \
     -clone-directory ./repository \
     -repository-url https://github.com/checkstyle/checkstyle.git \
