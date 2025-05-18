@@ -9,11 +9,16 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 ### Steps to Run the Web Interface
 1. **Download the JAR file**:
     - [Download history-finder-0.0.4.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
-2. **Run the JAR file**:
+
+2. **Download and configure the application.yml file**:
+    - [Download application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/application.yml)
+    - For example, show the path to the git repository in REPOSITORY_CLONE_DIRECTORY: /home/shaiful/research/github_repos/  
+
+3. **Run the JAR file**:
    ```bash
    java -jar history-finder-0.0.4.jar
    ```
-3. **Access the Web Interface**:
+4. **Access the Web Interface**:
     - Open your browser and navigate to: [http://localhost:8080](http://localhost:8080)
 
 ---
