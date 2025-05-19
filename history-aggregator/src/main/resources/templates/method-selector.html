@@ -59,7 +59,7 @@
             content: '';
             position: absolute;
             top: 25%;
-            right: -65%;
+            right: -62%;
             width: 100%;
             height: 6px;
             background: #ccc;
@@ -151,6 +151,23 @@
         .centered-title {
             text-align: center;
         }
+        /*Tab Style*/
+        .open-tab-icon {
+            position: absolute;
+            top: 8px;
+            right: 2px;
+            cursor: pointer;
+            color: #6c757d;
+            font-size: 0.85rem;
+            z-index: 2;
+            pointer-events: auto;
+        }
+
+        .open-tab-icon:hover {
+            color: #0d6efd;
+        }
+
+
     </style>
 </head>
 <body class="container mt-5">
@@ -171,10 +188,6 @@
     <div class="step" id="step-method" data-section="methodSection">
         <div class="circle"><i class="fas fa-code"></i></div>
         <div>Method</div>
-    </div>
-    <div class="step" id="step-algorithm" data-section="algorithmSection">
-        <div class="circle"><i class="fas fa-screwdriver-wrench"></i></div>
-        <div>Algorithm</div>
     </div>
     <div class="step" id="step-method-history" data-section="methodHistory">
         <div class="circle"><i class="fas fa-history"></i></div>
@@ -292,25 +305,57 @@
     </div>
 </div>
 
-
-<!-- Section 5 -->
-<div id="algorithmSection" class="mt-4 d-none">
-    <p class="text-center fs-4">Select an implementation that uncovers method-level history.</p>
-    <div class="d-flex flex-column align-items-center gap-3 mt-4">
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('HISTORY_FINDER')">History Finder</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('CODE_SHOVEL')">Code Shovel</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('CODE_TRACKER')">Code Tracker</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('GIT_FUNC_NAME')">Git Function Name</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('GIT_LINE_RANGE')">Git Line Range</button>
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary" onclick="showMethodList()">Back</button>
-    </div>
-</div>
-
 <!-- Section 6 -->
 <div id="methodHistory" class="mt-4 d-none">
     <h4 id="methodHistoryHeader" class="centered-title"></h4>
+    <ul class="nav nav-tabs justify-content-center mt-4" id="algorithmTabs" role="tablist">
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link active" id="tab-history-finder" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('HISTORY_FINDER')">
+                History Finder
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('HISTORY_FINDER')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-code-shovel" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('CODE_SHOVEL')">
+                Code Shovel
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('CODE_SHOVEL')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-code-tracker" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('CODE_TRACKER')">
+                Code Tracker
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('CODE_TRACKER')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-git-func" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('GIT_FUNC_NAME')">
+                Git Function Name
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('GIT_FUNC_NAME')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative" role="presentation">
+            <button class="nav-link" id="tab-git-line" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('GIT_LINE_RANGE')">
+                Git Line Range
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('GIT_LINE_RANGE')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+    </ul>
+
     <div id="executionInfo" class="d-flex gap-4 mt-3 mb-4 justify-content-center text-center">
         <div id="executionTime" class="d-flex align-items-center large-text">
             <i class="fa-solid fa-clock me-2"></i>
@@ -344,7 +389,7 @@
         <div id="methodHistoryRows"></div>
     </div>
     <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary" onclick="revealSection('algorithmSection')">Back</button>
+        <button class="btn btn-secondary" onclick="showMethodList()">Back</button>
     </div>
 </div>
 
@@ -377,8 +422,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection', 'methodHistory'];
-    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm', 'step-method-history'];
+    const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'methodHistory'];
+    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method',  'step-method-history'];
     const algorithmNameMap = new Map([
         ['HISTORY_FINDER', 'History Finder'],
         ['CODE_SHOVEL', 'Code Shovel'],
@@ -407,7 +452,23 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-        revealSection('repositoryUrlSection');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('tracerName')) {
+            state.repository = {
+                host: urlParams.get('repositoryHostName'),
+                accountName: urlParams.get('repositoryAccountName'),
+                repositoryName: urlParams.get('repositoryName'),
+                path: urlParams.get('repositoryPath')
+            };
+            state.file = urlParams.get('file');
+            state.methodName = urlParams.get('methodName');
+            state.startLine = urlParams.get('startLine');
+            state.endLine = urlParams.get('endLine');
+
+            runAlgorithm(urlParams.get('tracerName'));
+        } else {
+            revealSection('repositoryUrlSection');
+        }
     });
 
     // Navigate between sections
@@ -494,7 +555,7 @@
         state.methodName = methodName;
         state.startLine = startLine;
         state.endLine = endLine;
-        revealSection('algorithmSection');
+        runAlgorithm('HISTORY_FINDER')
     }
 
 
@@ -512,9 +573,9 @@
     function runAlgorithm(algorithm) {
         console.log(`Running algorithm: ${algorithm}`);
         // Pass the selected algorithm to `loadMethodHistory`
+        revealSection('methodHistory');
         document.getElementById('methodHistoryHeader').innerHTML = algorithmNameMap.get(algorithm);
         document.getElementById('methodHistoryRows').innerHTML = '';
-        revealSection('methodHistory');
         loadMethodHistory(
             state.file,
             state.methodName,
@@ -523,6 +584,25 @@
             algorithm
         );
     }
+
+    function openNewTab(algorithm) {
+        const params = new URLSearchParams({
+            startCommitHash: getStartCommitHash(),
+            repositoryHostName: state.repository.host,
+            repositoryAccountName: state.repository.accountName,
+            repositoryName: state.repository.repositoryName,
+            repositoryPath: state.repository.path,
+            file: state.file,
+            methodName: state.methodName,
+            startLine: state.startLine,
+            endLine: state.endLine,
+            tracerName: algorithm
+        }).toString();
+
+        const url = `?${params}`;
+        window.open(url, '_blank');
+    }
+
 
     // Existing methods for other sections...
 
