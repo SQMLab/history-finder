@@ -64,32 +64,15 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             pathBuilder.append("/").append(path);
         }
         File file = new File(pathBuilder.toString());
-      /*  if (file.exists()) {
-            if (file.isFile()) {
-                return List.of(file.getName());
-            } else {
-                return Arrays.stream(Objects.requireNonNull(file.listFiles(f -> {
-                    if (f.isDirectory()) {
-                        return !f.getName().startsWith(".");
-                    } else {
-                        return f.getName().endsWith(".java");
-                    }
-                }))).map(f -> {
-                   *//* if (f.isDirectory()) {
-                        return f.getName() + "/";
-                    }else{
-                        return f.getName();
-                    }*//*
-                    return path.isEmpty() ? f.getName() : path + "/" + f.getName();
-                }).sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
-            }
-        } else {
-            return Collections.emptyList();
-        }*/
-        List<String> files = buildCompactTree(file, "");
-        return files.stream()
-                .map(f -> path.isEmpty() ? f : path + "/" + f)
-                .toList();
+        if (file.exists() && file.isFile() && file.getName().toLowerCase().endsWith(".java")) {
+            return List.of(path);
+        }else{
+            List<String> files = buildCompactTree(file, "");
+            return files.stream()
+                    .map(f -> path.isEmpty() ? f : path + "/" + f)
+                    .toList();
+        }
+
     }
 
     @Override
@@ -264,7 +247,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 if (!file.getName().startsWith(".") && containsJavaFilesInSubtree(file)) {
                     directories.add(file);
                 }
-            } else if (file.getName().endsWith(".java")) {
+            } else if (file.getName().toLowerCase().endsWith(".java")) {
                 javaFiles.add(file);
             }
         }

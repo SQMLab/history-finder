@@ -34,6 +34,7 @@ public class MethodHistoryUiController {
             @RequestParam(required = false) String repositoryAccountName,
             @RequestParam(required = false) String repositoryName,
             @RequestParam(required = false) String repositoryPath,
+            @RequestParam(required = false) String repositoryLocation,
             @RequestParam(required = false) String file,
             @RequestParam(required = false) String methodName,
             @RequestParam(required = false) String startLine,
@@ -46,6 +47,7 @@ public class MethodHistoryUiController {
         model.addAttribute("repositoryAccountName", repositoryAccountName);
         model.addAttribute("repositoryName", repositoryName);
         model.addAttribute("repositoryPath", repositoryPath);
+        model.addAttribute("repositoryLocation", repositoryLocation);
         model.addAttribute("file", file);
         model.addAttribute("methodName", methodName);
         model.addAttribute("startLine", startLine);

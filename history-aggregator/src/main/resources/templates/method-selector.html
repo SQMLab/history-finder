@@ -69,6 +69,7 @@
             background-color: #0d6efd;
             color: #fff;
         }
+
         .stepper .step.active.last-active > div:not(.circle) {
             font-weight: bold;
             font-size: 1.5rem;
@@ -141,9 +142,11 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
         .result-item i {
             margin-right: 10px;
         }
+
         .details-btn {
             cursor: pointer;
         }
@@ -151,6 +154,7 @@
         .centered-title {
             text-align: center;
         }
+
         /*Tab Style*/
         .open-tab-icon {
             position: absolute;
@@ -165,6 +169,7 @@
             padding: 2px; /* Optional: adds spacing around icon */
             border-radius: 4px; /* Optional: smoother visual if padding is added */
         }
+
         .open-tab-icon:hover {
             color: #0d6efd;
         }
@@ -229,14 +234,15 @@
         </div>
     </div>
     <div class="text-center mt-3">
-        <button class="btn btn-primary" onclick="checkoutRepository('')">Next</button>
+        <button class="btn btn-primary" onclick="checkoutRepository()">Next</button>
     </div>
 </div>
 
 
 <!-- Section 2 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
-    <p class="text-center fs-4">Enter the starting commit hash to begin tracing method history backward.<br/>Leave empty to use
+    <p class="text-center fs-4">Enter the starting commit hash to begin tracing method history backward.<br/>Leave empty
+        to use
         the latest commit (HEAD) by default.</p>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
@@ -424,7 +430,7 @@
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
     const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'methodHistory'];
-    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method',  'step-method-history'];
+    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-method-history'];
     const algorithmNameMap = new Map([
         ['HISTORY_FINDER', 'History Finder'],
         ['CODE_SHOVEL', 'Code Shovel'],
@@ -454,6 +460,15 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('repositoryLocation')){
+            setRepositoryLocation(urlParams.get('repositoryLocation'))
+        }
+        if (urlParams.has('startCommitHash')){
+            setStartCommitHash(urlParams.get('startCommitHash'))
+        }
+        if (urlParams.has('file')){
+            setFile(urlParams.get('file'))
+        }
         if (urlParams.has('tracerName')) {
             state.repository = {
                 host: urlParams.get('repositoryHostName'),
@@ -593,6 +608,7 @@
             repositoryAccountName: state.repository.accountName,
             repositoryName: state.repository.repositoryName,
             repositoryPath: state.repository.path,
+            repositoryLocation: getRepositoryLocation(),
             file: state.file,
             methodName: state.methodName,
             startLine: state.startLine,
@@ -626,7 +642,10 @@
         const value = document.getElementById('startCommitHash').value.trim();
         return value ? value : 'HEAD';
     }
-
+    function setStartCommitHash(startCommitHash) {
+        document.getElementById('startCommitHash').value = startCommitHash;
+        validateCommitHash()
+    }
     // Function to set "HEAD" as the value
     function fillHead() {
         const commitHashInput = document.getElementById("startCommitHash");
@@ -635,10 +654,15 @@
     }
 
     function searchFiles() {
-        const filePath = document.getElementById('fileSearch').value;
-        onSelectFile(filePath)
+        fetchFileList(getFile())
     }
 
+    function setFile(file){
+        document.getElementById('fileSearch').value = file;
+    }
+    function getFile(){
+        return document.getElementById('fileSearch').value;
+    }
     document.getElementById('fileSearch').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent the default action of the Enter key
@@ -669,34 +693,36 @@
         }
     }
 
-    function checkoutRepository(location) {
-        if (location === '') {
-            location = document.getElementById('gitRepoUrl').value;
-        }
-        if (!location) {
+    function checkoutRepository() {
+        repositoryLocation = getRepositoryLocation()
+        if (!repositoryLocation) {
             showError('Repository', "Please enter a valid Git repository location.")
-            return;
+        } else {
+            $.ajax({
+                url: '/api/checkout-repository?location=' + repositoryLocation,
+                method: 'GET',
+                beforeSend: function () {
+                    showSpinner();
+                },
+                success: function (response) {
+                    hideSpinner()
+                    state.repository = response;
+                    showStartCommitHashSection();
+                },
+                error: function (xhr) {
+                    hideSpinner();
+                    showErrorModal(xhr);
+                }
+            });
         }
-
-        $.ajax({
-            url: '/api/checkout-repository?location=' + location,
-            method: 'GET',
-            beforeSend: function () {
-                showSpinner();
-            },
-            success: function (response) {
-                hideSpinner()
-                state.repository = response;
-                showStartCommitHashSection();
-            },
-            error: function (xhr) {
-                hideSpinner();
-                showErrorModal(xhr);
-            }
-        });
     }
 
-
+    function setRepositoryLocation(repositoryLocation) {
+        document.getElementById('gitRepoUrl').value = repositoryLocation
+    }
+    function getRepositoryLocation() {
+        return document.getElementById('gitRepoUrl').value
+    }
     // Call API to load cloned repositories
     function loadClonedRepositories() {
         $.ajax({
@@ -718,8 +744,9 @@
                     li.classList.add('list-group-item');
                     li.textContent = repositoryName;
                     li.onclick = function () {
+                        setRepositoryLocation(response.repositoryPath + '/' + repositoryName)
                         dismissRepositoryListDialog()
-                        checkoutRepository(repositoryName)
+                        checkoutRepository()
                     };
                     list.appendChild(li);
                 });
@@ -1049,6 +1076,7 @@
             selectAlgorithmTab(tabId);
         }
     }
+
     function selectAlgorithmTab(tabId) {
         const tabElement = document.getElementById(tabId);
         if (tabElement) {
