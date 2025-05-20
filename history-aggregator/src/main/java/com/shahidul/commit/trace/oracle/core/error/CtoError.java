@@ -22,7 +22,7 @@ public enum CtoError {
     Failed_To_Find_Paths("1010", "Failed to find paths"),
     Failed_To_Find_Repositories("1011", "Failed to find repositories"),
     CodeShovel_Failure("1012", "CodeShovel failed to generate method history"),
-    Git_Function_Name_Failure("1013", "GitFunctionName command failed to generate method history"),
+    Git_Function_Name_Failure("1013", "Failed to generate method history. Please ensure that Git is properly configured to use the git log func name command. For setup instructions, refer to the README file."),
     Tool_X_Failed_To_Generate_Method_History("1014", "%s failed to generate method history")
 
     ;

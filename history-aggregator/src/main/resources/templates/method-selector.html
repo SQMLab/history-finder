@@ -59,7 +59,7 @@
             content: '';
             position: absolute;
             top: 25%;
-            right: -65%;
+            right: -62%;
             width: 100%;
             height: 6px;
             background: #ccc;
@@ -69,6 +69,7 @@
             background-color: #0d6efd;
             color: #fff;
         }
+
         .stepper .step.active.last-active > div:not(.circle) {
             font-weight: bold;
             font-size: 1.5rem;
@@ -141,9 +142,11 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
+
         .result-item i {
             margin-right: 10px;
         }
+
         .details-btn {
             cursor: pointer;
         }
@@ -151,6 +154,27 @@
         .centered-title {
             text-align: center;
         }
+
+        /*Tab Style*/
+        .open-tab-icon {
+            position: absolute;
+            top: -4px; /* Move it up */
+            right: -2px; /* Move it further right */
+            cursor: pointer;
+            color: #6c757d;
+            font-size: 0.85rem;
+            z-index: 3; /* Increased to stay above tab elevation */
+            pointer-events: auto;
+            background-color: white; /* Prevent overlap line showing behind icon */
+            padding: 2px; /* Optional: adds spacing around icon */
+            border-radius: 4px; /* Optional: smoother visual if padding is added */
+        }
+
+        .open-tab-icon:hover {
+            color: #0d6efd;
+        }
+
+
     </style>
 </head>
 <body class="container mt-5">
@@ -171,10 +195,6 @@
     <div class="step" id="step-method" data-section="methodSection">
         <div class="circle"><i class="fas fa-code"></i></div>
         <div>Method</div>
-    </div>
-    <div class="step" id="step-algorithm" data-section="algorithmSection">
-        <div class="circle"><i class="fas fa-screwdriver-wrench"></i></div>
-        <div>Algorithm</div>
     </div>
     <div class="step" id="step-method-history" data-section="methodHistory">
         <div class="circle"><i class="fas fa-history"></i></div>
@@ -204,37 +224,38 @@
 
 <!-- Section 1 : Repository URL -->
 <div id="repositoryUrlSection" class="mt-4">
-    <p class="text-center fs-4">Enter a remote URL (HTTPS or SSH) or a local directory of git project</p>
+    <p class="text-center fs-4">Enter a remote URL (HTTPS/SSH) or a local directory of git project</p>
     <div class="mb-3">
         <div class="input-group">
-            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter repository location">
+            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Repository Location">
             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal"
                     onclick="loadClonedRepositories()">Browse
             </button>
         </div>
     </div>
     <div class="text-center mt-3">
-        <button class="btn btn-primary" onclick="checkoutRepository('')">Next</button>
+        <button class="btn btn-primary" onclick="checkoutRepository()">Next</button>
     </div>
 </div>
 
 
 <!-- Section 2 : Commit Hash Input-->
 <div id="startCommitHashSection" class="mt-4 d-none">
-    <p class="text-center fs-4">Enter the starting commit hash to begin tracing method history backward.<br/>Leave empty to use
+    <p class="text-center fs-4">Enter the starting commit hash to begin tracing method history backward.<br/>Leave empty
+        to use
         the latest commit (HEAD) by default.</p>
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="startCommitHash" placeholder="Start commit hash"
+            <input type="text" class="form-control" id="startCommitHash" placeholder="Start Commit Hash"
                    oninput="validateCommitHash()">
             <!--            <button class="btn btn-outline-secondary" onclick="fillHead()">HEAD</button>-->
         </div>
     </div>
     <!-- Buttons horizontally centered and aligned -->
     <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
-        <button class="btn btn-secondary" onclick="showRepositoryLocationSection()">Back</button>
-        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection(true)" disabled>Next
+        <button class="btn btn-secondary" onclick="revealSection('repositoryUrlSection', true)">Back</button>
+        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="revealSection('fileSection', true)" disabled>Next
         </button>
     </div>
 </div>
@@ -262,7 +283,7 @@
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
-        <button class="btn btn-secondary" onclick="showStartCommitHashSection()">Back</button>
+        <button class="btn btn-secondary" onclick="revealSection('startCommitHashSection', true)">Back</button>
     </div>
 </div>
 
@@ -274,7 +295,7 @@
         <label for="methodSearch" class="form-label"></label>
         <div class="input-group">
             <input type="text" class="form-control" id="methodSearch" placeholder="Search method">
-            <!--            <button class="btn btn-outline-secondary" onclick="searchMethods()">Search</button>-->
+            <!--            <button class="btn btn-outline-secondary" onclick="applyMethodFiler()">Search</button>-->
         </div>
     </div>
     <ul id="methodList" class="list-group">
@@ -288,29 +309,60 @@
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
-        <button class="btn btn-secondary" onclick="showFileSection(false)">Back</button>
+        <button class="btn btn-secondary" onclick="revealSection('fileSection', true)">Back</button>
     </div>
 </div>
-
 
 <!-- Section 5 -->
-<div id="algorithmSection" class="mt-4 d-none">
-    <p class="text-center fs-4">Select an implementation that uncovers method-level history.</p>
-    <div class="d-flex flex-column align-items-center gap-3 mt-4">
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('HISTORY_FINDER')">History Finder</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('CODE_SHOVEL')">Code Shovel</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('CODE_TRACKER')">Code Tracker</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('GIT_FUNC_NAME')">Git Function Name</button>
-        <button class="btn btn-primary w-50" onclick="runAlgorithm('GIT_LINE_RANGE')">Git Line Range</button>
-    </div>
-    <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary" onclick="showMethodList()">Back</button>
-    </div>
-</div>
-
-<!-- Section 6 -->
 <div id="methodHistory" class="mt-4 d-none">
-    <h4 id="methodHistoryHeader" class="centered-title"></h4>
+    <ul class="nav nav-tabs justify-content-center mt-4" id="algorithmTabs" role="tablist">
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link active" id="tab-history-finder" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('HISTORY_FINDER')">
+                History Finder
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('HISTORY_FINDER')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-code-shovel" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('CODE_SHOVEL')">
+                Code Shovel
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('CODE_SHOVEL')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-code-tracker" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('CODE_TRACKER')">
+                Code Tracker
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('CODE_TRACKER')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative me-2" role="presentation">
+            <button class="nav-link" id="tab-git-func" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('GIT_FUNC_NAME')">
+                Git Function Name
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('GIT_FUNC_NAME')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+        <li class="nav-item position-relative" role="presentation">
+            <button class="nav-link" id="tab-git-line" data-bs-toggle="tab" type="button"
+                    onclick="runAlgorithm('GIT_LINE_RANGE')">
+                Git Line Range
+            </button>
+            <span class="open-tab-icon" onclick="openNewTab('GIT_LINE_RANGE')" title="Open in new tab">
+            <i class="fas fa-arrow-up-right-from-square"></i>
+        </span>
+        </li>
+    </ul>
+
     <div id="executionInfo" class="d-flex gap-4 mt-3 mb-4 justify-content-center text-center">
         <div id="executionTime" class="d-flex align-items-center large-text">
             <i class="fa-solid fa-clock me-2"></i>
@@ -344,7 +396,7 @@
         <div id="methodHistoryRows"></div>
     </div>
     <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary" onclick="revealSection('algorithmSection')">Back</button>
+        <button class="btn btn-secondary" onclick=" revealSection('methodSection', true)">Back</button>
     </div>
 </div>
 
@@ -377,8 +429,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-    const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'algorithmSection', 'methodHistory'];
-    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-algorithm', 'step-method-history'];
+    const sectionList = ['repositoryUrlSection', 'startCommitHashSection', 'fileSection', 'methodSection', 'methodHistory'];
+    const steps = ['step-repository', 'step-commit', 'step-file', 'step-method', 'step-method-history'];
     const algorithmNameMap = new Map([
         ['HISTORY_FINDER', 'History Finder'],
         ['CODE_SHOVEL', 'Code Shovel'],
@@ -407,7 +459,32 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-        revealSection('repositoryUrlSection');
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('repositoryLocation')) {
+            setRepositoryLocation(urlParams.get('repositoryLocation'))
+        }
+        if (urlParams.has('startCommitHash')) {
+            setStartCommitHash(urlParams.get('startCommitHash'))
+        }
+        if (urlParams.has('file')) {
+            setFile(urlParams.get('file'))
+        }
+        if (urlParams.has('tracerName')) {
+            state.repository = {
+                host: urlParams.get('repositoryHostName'),
+                accountName: urlParams.get('repositoryAccountName'),
+                repositoryName: urlParams.get('repositoryName'),
+                path: urlParams.get('repositoryPath')
+            };
+            state.file = urlParams.get('file');
+            state.methodName = urlParams.get('methodName');
+            state.startLine = urlParams.get('startLine');
+            state.endLine = urlParams.get('endLine');
+
+            selectTabByTracerName(urlParams.get('tracerName'))
+        } else {
+            revealSection('repositoryUrlSection', true);
+        }
     });
 
     // Navigate between sections
@@ -420,7 +497,7 @@
       }
   */
 
-    function revealSection(section) {
+    function revealSection(section, updateContent = false) {
         sectionList.forEach((s, index) => {
             const element = document.getElementById(s);
             const step = document.getElementById(steps[index]);
@@ -443,6 +520,19 @@
                 }
             }
         });
+        if (updateContent) {
+            if (section === 'repositoryUrlSection') {
+            } else if (section === 'startCommitHashSection') {
+                validateCommitHash()
+
+            } else if (section === 'fileSection') {
+                searchFiles()
+            } else if (section === 'methodSection') {
+                fetchMethodList(state.file)
+            } else if (section === 'methodHistory') {
+
+            }
+        }
     }
 
 
@@ -461,49 +551,28 @@
                 }
             });
             if (targetIndex < currentIndex) {
-                revealSection(targetSectionName)
+                revealSection(targetSectionName, true)
             }
         });
     });
 
 
-    function showRepositoryLocationSection() {
-        revealSection('repositoryUrlSection');
-    }
-
-    function showStartCommitHashSection() {
-        state.file = ''
-        revealSection('startCommitHashSection');
-        validateCommitHash()
-    }
-
-    function showFileSection(needToFetch) {
-        console.log('revealing file section..')
-        if (needToFetch) {
-            fetchFileList(state.file)
-        }
-        revealSection('fileSection');
-    }
-
-    function showMethodList() {
-        fetchMethodList(state.file)
-        revealSection('methodSection');
-    }
 
     function showAlgorithmSection(methodName, startLine, endLine) {
         state.methodName = methodName;
         state.startLine = startLine;
         state.endLine = endLine;
-        revealSection('algorithmSection');
+        revealSection('methodHistory', true);
+        selectTabByTracerName('HISTORY_FINDER')
     }
 
 
     function onSelectFile(file) {
         console.log(`Selected file: ${file}`);
         if (file.toLowerCase().endsWith('.java')) {
-            document.getElementById("methodSearch").value = '';
             state.file = file;
-            showMethodList()
+            document.getElementById("methodSearch").value = '';
+            revealSection('methodSection', true)
         } else {
             fetchFileList(file)
         }
@@ -512,9 +581,8 @@
     function runAlgorithm(algorithm) {
         console.log(`Running algorithm: ${algorithm}`);
         // Pass the selected algorithm to `loadMethodHistory`
-        document.getElementById('methodHistoryHeader').innerHTML = algorithmNameMap.get(algorithm);
-        document.getElementById('methodHistoryRows').innerHTML = '';
         revealSection('methodHistory');
+        document.getElementById('methodHistoryRows').innerHTML = '';
         loadMethodHistory(
             state.file,
             state.methodName,
@@ -523,6 +591,26 @@
             algorithm
         );
     }
+
+    function openNewTab(algorithm) {
+        const params = new URLSearchParams({
+            startCommitHash: getStartCommitHash(),
+            repositoryHostName: state.repository.host,
+            repositoryAccountName: state.repository.accountName,
+            repositoryName: state.repository.repositoryName,
+            repositoryPath: state.repository.path,
+            repositoryLocation: getRepositoryLocation(),
+            file: state.file,
+            methodName: state.methodName,
+            startLine: state.startLine,
+            endLine: state.endLine,
+            tracerName: algorithm
+        }).toString();
+
+        const url = `?${params}`;
+        window.open(url, '_blank');
+    }
+
 
     // Existing methods for other sections...
 
@@ -539,11 +627,17 @@
 
         // Enable the "Next" button if the input is valid
         nextButton.disabled = !isValidHash;
+        setFile('')
     }
 
     function getStartCommitHash() {
         const value = document.getElementById('startCommitHash').value.trim();
         return value ? value : 'HEAD';
+    }
+
+    function setStartCommitHash(startCommitHash) {
+        document.getElementById('startCommitHash').value = startCommitHash;
+        validateCommitHash()
     }
 
     // Function to set "HEAD" as the value
@@ -554,8 +648,15 @@
     }
 
     function searchFiles() {
-        const filePath = document.getElementById('fileSearch').value;
-        onSelectFile(filePath)
+        fetchFileList(getFile())
+    }
+
+    function setFile(file) {
+        document.getElementById('fileSearch').value = file;
+    }
+
+    function getFile() {
+        return document.getElementById('fileSearch').value;
     }
 
     document.getElementById('fileSearch').addEventListener('keydown', function (event) {
@@ -565,14 +666,14 @@
         }
     });
 
-    function searchMethods() {
+    function applyMethodFiler() {
         const targetMethodName = document.getElementById('methodSearch').value;
         let matchingMethodList = state.methodList.filter(method => method.methodName.toLowerCase().includes(targetMethodName.toLowerCase()));
         displayMethodList(matchingMethodList)
     }
 
     document.getElementById('methodSearch').addEventListener('input', function (event) {
-        searchMethods();
+        applyMethodFiler();
     });
 
     function dismissRepositoryListDialog() {
@@ -588,33 +689,38 @@
         }
     }
 
-    function checkoutRepository(location) {
-        if (location === '') {
-            location = document.getElementById('gitRepoUrl').value;
-        }
-        if (!location) {
+    function checkoutRepository() {
+        repositoryLocation = getRepositoryLocation()
+        if (!repositoryLocation) {
             showError('Repository', "Please enter a valid Git repository location.")
-            return;
+        } else {
+            $.ajax({
+                url: '/api/checkout-repository?location=' + repositoryLocation,
+                method: 'GET',
+                beforeSend: function () {
+                    showSpinner();
+                },
+                success: function (response) {
+                    hideSpinner()
+                    state.repository = response;
+                    setStartCommitHash('')
+                    revealSection('startCommitHashSection', false)
+                },
+                error: function (xhr) {
+                    hideSpinner();
+                    showErrorModal(xhr);
+                }
+            });
         }
-
-        $.ajax({
-            url: '/api/checkout-repository?location=' + location,
-            method: 'GET',
-            beforeSend: function () {
-                showSpinner();
-            },
-            success: function (response) {
-                hideSpinner()
-                state.repository = response;
-                showStartCommitHashSection();
-            },
-            error: function (xhr) {
-                hideSpinner();
-                showErrorModal(xhr);
-            }
-        });
     }
 
+    function setRepositoryLocation(repositoryLocation) {
+        document.getElementById('gitRepoUrl').value = repositoryLocation
+    }
+
+    function getRepositoryLocation() {
+        return document.getElementById('gitRepoUrl').value
+    }
 
     // Call API to load cloned repositories
     function loadClonedRepositories() {
@@ -637,8 +743,9 @@
                     li.classList.add('list-group-item');
                     li.textContent = repositoryName;
                     li.onclick = function () {
+                        setRepositoryLocation(response.repositoryPath + '/' + repositoryName)
                         dismissRepositoryListDialog()
-                        checkoutRepository(repositoryName)
+                        checkoutRepository()
                     };
                     list.appendChild(li);
                 });
@@ -719,6 +826,7 @@
                 hideSpinner()
                 state.methodList = response
                 displayMethodList(response)
+                applyMethodFiler()
             },
             error: function (xhr) {
                 hideSpinner();
@@ -744,6 +852,7 @@
                 methodView.classList.add('list-group-item');
                 methodView.textContent = methodDto.signature;
                 methodView.onclick = function () {
+                    console.log('Selected method:', methodDto);
                     showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
                 };
                 methodListView.appendChild(methodView);
@@ -869,8 +978,8 @@
                     <p><strong>Author:</strong> <a href="${commit.authorSearchUrl}" target="_blank">${commit.commitAuthor}</a></p>
                     <p><strong>Commit Hash:</strong> <a href="${commit.commitUrl}" target="_blank">${commit.commitName}</a></p>
                     <p><strong>New:</strong> <a class="new-file" href="${commit.newFileUrl}" target="_blank">${commit.path}</a></p>
-                    <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl}" target="_blank">${commit.oldFile}</a></p>
-                    <p><strong>Change Type:</strong> ${commit.displayChangeTags?.join(', ') || ''}</p>
+                    <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl || commit.newFileUrl}" target="_blank">${commit.oldFile || commit.path}</a></p>
+                    <p><strong>Change Type:</strong> ${(commit.displayChangeTags?.length ? commit.displayChangeTags.join(', ') : 'N/A')}</p>
                     <p><strong>Short Commit Message:</strong> ${commit.shortMessage || 'N/A'}</p>
                     <p><strong>Full Commit Message:</strong> ${commit.fullMessage || 'N/A'}</p>
                     <p><strong>Diff URL:</strong> <a href="${commit.diffUrl}" target="_blank">Link</a></p>
@@ -899,7 +1008,7 @@
     }
 
     function formatChange(tags) {
-        if (!tags || tags.length === 0) return '';
+        if (!tags || tags.length === 0) return 'N/A';
         if (tags.length > 1) return 'Multi';
         return tags[0];
     }
@@ -923,7 +1032,10 @@
             const diffText = detailsView.querySelector('.raw-diff')?.textContent || '';
             const diffDivElement = detailsView.querySelector('.diff-output');
 
-            const unifiedDiff = `--- ${oldFile || newFile}\n+++ ${newFile}\n${diffText}`;
+            const oldFileForHeaderDiff = (oldFile && oldFile !== 'N/A') ? oldFile : newFile;
+
+
+            const unifiedDiff = `--- ${oldFileForHeaderDiff}\n+++ ${newFile}\n${diffText}`;
             const config = {
                 drawFileList: false,
                 fileListToggle: false,
@@ -954,6 +1066,34 @@
     function stopExecutionTimer() {
         clearInterval(state.timerInterval);
     }
+
+    function selectTabByTracerName(tracerName) {
+        const tracerToTabId = {
+            'HISTORY_FINDER': 'tab-history-finder',
+            'CODE_SHOVEL': 'tab-code-shovel',
+            'CODE_TRACKER': 'tab-code-tracker',
+            'GIT_FUNC_NAME': 'tab-git-func',
+            'GIT_LINE_RANGE': 'tab-git-line',
+        };
+        const tabId = tracerToTabId[tracerName];
+        if (tabId) {
+            selectAlgorithmTab(tabId);
+        }
+    }
+
+    function selectAlgorithmTab(tabId) {
+        const tabElement = document.getElementById(tabId);
+        if (tabElement) {
+            console.log(`Selecting tab: ${tabId}`);
+            const tab = new bootstrap.Tab(tabElement);
+            tab.show();
+            tabElement.click();
+        } else {
+            console.warn(`Tab element not found: ${tabId}`);
+        }
+    }
+
+
 
 </script>
 </body>

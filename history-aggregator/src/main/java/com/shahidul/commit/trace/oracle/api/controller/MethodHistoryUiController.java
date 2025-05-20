@@ -26,10 +26,36 @@ import java.util.List;
 public class MethodHistoryUiController {
     GitRepositoryUiService gitRepositoryUiService;
 
-    @GetMapping({"ui/method-selector", "/"})
-    public String showMethodSelectorUi() {
+    @GetMapping({"/ui/method-selector", "/"})
+    public String showMethodSelectorUi(
+            @RequestParam(required = false) String tracerName,
+            @RequestParam(required = false) String startCommitHash,
+            @RequestParam(required = false) String repositoryHostName,
+            @RequestParam(required = false) String repositoryAccountName,
+            @RequestParam(required = false) String repositoryName,
+            @RequestParam(required = false) String repositoryPath,
+            @RequestParam(required = false) String repositoryLocation,
+            @RequestParam(required = false) String file,
+            @RequestParam(required = false) String methodName,
+            @RequestParam(required = false) String startLine,
+            @RequestParam(required = false) String endLine,
+            Model model) {
+
+        model.addAttribute("tracerName", tracerName);
+        model.addAttribute("startCommitHash", startCommitHash);
+        model.addAttribute("repositoryHostName", repositoryHostName);
+        model.addAttribute("repositoryAccountName", repositoryAccountName);
+        model.addAttribute("repositoryName", repositoryName);
+        model.addAttribute("repositoryPath", repositoryPath);
+        model.addAttribute("repositoryLocation", repositoryLocation);
+        model.addAttribute("file", file);
+        model.addAttribute("methodName", methodName);
+        model.addAttribute("startLine", startLine);
+        model.addAttribute("endLine", endLine);
+
         return "method-selector";
     }
+
 
     @GetMapping({"ui/method-history"})
     public String showMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
@@ -76,7 +102,6 @@ public class MethodHistoryUiController {
                                                 @RequestParam("endLine") Integer endLine,
                                                 @RequestParam("tracerName") TracerName tracerName
     ) {
-
         CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
                 repositoryAccountName,
                 repositoryPath,
@@ -89,8 +114,12 @@ public class MethodHistoryUiController {
                 tracerName);
 
         if (traceOutput.getCommitDetails().isEmpty()) {
-            String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
-            throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
+            if (TracerName.GIT_FUNC_NAME.equals(tracerName)) {
+                throw new CtoException(CtoError.Git_Function_Name_Failure);
+            } else {
+                String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
+                throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
+            }
         }
         return traceOutput;
 
