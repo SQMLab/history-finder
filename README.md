@@ -12,7 +12,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 2. **Download and configure the application.yml file**:
     - [Download application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/application.yml)
-    - For example, show the path to the directory that contains the git repositories (e.g., REPOSITORY_CLONE_DIRECTORY: /home/shaiful/research/github_repos/)  
+    - For example, show the path to the directory that contains the git repositories (e.g., REPOSITORY_CLONE_DIRECTORY: /home/user/research/github_repos/)  
 
 3. **Run the JAR file**:
    ```bash
