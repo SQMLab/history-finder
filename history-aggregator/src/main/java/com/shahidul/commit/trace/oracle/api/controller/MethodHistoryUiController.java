@@ -100,7 +100,6 @@ public class MethodHistoryUiController {
                                                 @RequestParam("endLine") Integer endLine,
                                                 @RequestParam("tracerName") TracerName tracerName
     ) {
-
         CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
                 repositoryAccountName,
                 repositoryPath,
@@ -113,8 +112,12 @@ public class MethodHistoryUiController {
                 tracerName);
 
         if (traceOutput.getCommitDetails().isEmpty()) {
-            String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
-            throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
+            if (TracerName.GIT_FUNC_NAME.equals(tracerName)) {
+                throw new CtoException(CtoError.Git_Function_Name_Failure);
+            } else {
+                String formattedName = Character.toUpperCase(tracerName.getCode().charAt(0)) + tracerName.getCode().substring(1);
+                throw new BaseException(CtoError.Tool_X_Failed_To_Generate_Method_History.getCode(), CtoError.Tool_X_Failed_To_Generate_Method_History.getMsg().formatted(formattedName));
+            }
         }
         return traceOutput;
 

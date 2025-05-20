@@ -154,15 +154,17 @@
         /*Tab Style*/
         .open-tab-icon {
             position: absolute;
-            top: 8px;
-            right: 2px;
+            top: -4px; /* Move it up */
+            right: -2px; /* Move it further right */
             cursor: pointer;
             color: #6c757d;
             font-size: 0.85rem;
-            z-index: 2;
+            z-index: 3; /* Increased to stay above tab elevation */
             pointer-events: auto;
+            background-color: white; /* Prevent overlap line showing behind icon */
+            padding: 2px; /* Optional: adds spacing around icon */
+            border-radius: 4px; /* Optional: smoother visual if padding is added */
         }
-
         .open-tab-icon:hover {
             color: #0d6efd;
         }
@@ -217,7 +219,7 @@
 
 <!-- Section 1 : Repository URL -->
 <div id="repositoryUrlSection" class="mt-4">
-    <p class="text-center fs-4">Enter a remote URL (HTTPS or SSH) or a local directory of git project</p>
+    <p class="text-center fs-4">Enter a remote URL (HTTPS/SSH) or a local directory of git project</p>
     <div class="mb-3">
         <div class="input-group">
             <input type="text" class="form-control" id="gitRepoUrl" placeholder="Repository Location">
@@ -301,13 +303,12 @@
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
-        <button class="btn btn-secondary" onclick="showFileSection(false)">Back</button>
+        <button class="btn btn-secondary" onclick="showFileSection(true)">Back</button>
     </div>
 </div>
 
 <!-- Section 6 -->
 <div id="methodHistory" class="mt-4 d-none">
-    <h4 id="methodHistoryHeader" class="centered-title"></h4>
     <ul class="nav nav-tabs justify-content-center mt-4" id="algorithmTabs" role="tablist">
         <li class="nav-item position-relative me-2" role="presentation">
             <button class="nav-link active" id="tab-history-finder" data-bs-toggle="tab" type="button"
@@ -529,6 +530,7 @@
 
 
     function showRepositoryLocationSection() {
+        //document.getElementById('gitRepoUrl').value = state.repository.path;
         revealSection('repositoryUrlSection');
     }
 
@@ -574,7 +576,6 @@
         console.log(`Running algorithm: ${algorithm}`);
         // Pass the selected algorithm to `loadMethodHistory`
         revealSection('methodHistory');
-        document.getElementById('methodHistoryHeader').innerHTML = algorithmNameMap.get(algorithm);
         document.getElementById('methodHistoryRows').innerHTML = '';
         loadMethodHistory(
             state.file,
@@ -950,7 +951,7 @@
                     <p><strong>Commit Hash:</strong> <a href="${commit.commitUrl}" target="_blank">${commit.commitName}</a></p>
                     <p><strong>New:</strong> <a class="new-file" href="${commit.newFileUrl}" target="_blank">${commit.path}</a></p>
                     <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl}" target="_blank">${commit.oldFile}</a></p>
-                    <p><strong>Change Type:</strong> ${commit.displayChangeTags?.join(', ') || ''}</p>
+                    <p><strong>Change Type:</strong> ${(commit.displayChangeTags?.length ? commit.displayChangeTags.join(', ') : 'N/A')}</p>
                     <p><strong>Short Commit Message:</strong> ${commit.shortMessage || 'N/A'}</p>
                     <p><strong>Full Commit Message:</strong> ${commit.fullMessage || 'N/A'}</p>
                     <p><strong>Diff URL:</strong> <a href="${commit.diffUrl}" target="_blank">Link</a></p>
@@ -979,7 +980,7 @@
     }
 
     function formatChange(tags) {
-        if (!tags || tags.length === 0) return '';
+        if (!tags || tags.length === 0) return 'N/A';
         if (tags.length > 1) return 'Multi';
         return tags[0];
     }
