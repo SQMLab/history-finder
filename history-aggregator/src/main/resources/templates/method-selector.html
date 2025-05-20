@@ -254,8 +254,8 @@
     </div>
     <!-- Buttons horizontally centered and aligned -->
     <div class="d-flex justify-content-center align-items-center mt-3 gap-3">
-        <button class="btn btn-secondary" onclick="showRepositoryLocationSection()">Back</button>
-        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="showFileSection()" disabled>Next
+        <button class="btn btn-secondary" onclick="revealSection('repositoryUrlSection', true)">Back</button>
+        <button class="btn btn-primary" id="startCommitHashNextButton" onclick="revealSection('fileSection', true)" disabled>Next
         </button>
     </div>
 </div>
@@ -283,7 +283,7 @@
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
-        <button class="btn btn-secondary" onclick="showStartCommitHashSection()">Back</button>
+        <button class="btn btn-secondary" onclick="revealSection('startCommitHashSection', true)">Back</button>
     </div>
 </div>
 
@@ -309,7 +309,7 @@
 
     <!-- Back Button for Section 3 -->
     <div class="text-center mt-3">
-        <button class="btn btn-secondary" onclick="showFileSection()">Back</button>
+        <button class="btn btn-secondary" onclick="revealSection('fileSection', true)">Back</button>
     </div>
 </div>
 
@@ -396,7 +396,7 @@
         <div id="methodHistoryRows"></div>
     </div>
     <div class="d-flex justify-content-center mt-3">
-        <button class="btn btn-secondary" onclick="showMethodList()">Back</button>
+        <button class="btn btn-secondary" onclick=" revealSection('methodSection', true)">Back</button>
     </div>
 </div>
 
@@ -460,13 +460,13 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('repositoryLocation')){
+        if (urlParams.has('repositoryLocation')) {
             setRepositoryLocation(urlParams.get('repositoryLocation'))
         }
-        if (urlParams.has('startCommitHash')){
+        if (urlParams.has('startCommitHash')) {
             setStartCommitHash(urlParams.get('startCommitHash'))
         }
-        if (urlParams.has('file')){
+        if (urlParams.has('file')) {
             setFile(urlParams.get('file'))
         }
         if (urlParams.has('tracerName')) {
@@ -483,7 +483,7 @@
 
             selectTabByTracerName(urlParams.get('tracerName'))
         } else {
-            revealSection('repositoryUrlSection');
+            revealSection('repositoryUrlSection', true);
         }
     });
 
@@ -497,7 +497,7 @@
       }
   */
 
-    function revealSection(section) {
+    function revealSection(section, updateContent = false) {
         sectionList.forEach((s, index) => {
             const element = document.getElementById(s);
             const step = document.getElementById(steps[index]);
@@ -520,6 +520,19 @@
                 }
             }
         });
+        if (updateContent) {
+            if (section === 'repositoryUrlSection') {
+            } else if (section === 'startCommitHashSection') {
+                validateCommitHash()
+
+            } else if (section === 'fileSection') {
+                searchFiles()
+            } else if (section === 'methodSection') {
+                fetchMethodList(state.file)
+            } else if (section === 'methodHistory') {
+
+            }
+        }
     }
 
 
@@ -538,32 +551,12 @@
                 }
             });
             if (targetIndex < currentIndex) {
-                revealSection(targetSectionName)
+                revealSection(targetSectionName, true)
             }
         });
     });
 
 
-    function showRepositoryLocationSection() {
-        //document.getElementById('gitRepoUrl').value = state.repository.path;
-        revealSection('repositoryUrlSection');
-    }
-
-    function showStartCommitHashSection() {
-        revealSection('startCommitHashSection');
-        validateCommitHash()
-    }
-
-    function showFileSection() {
-        console.log('revealing file section..')
-        searchFiles()
-        revealSection('fileSection');
-    }
-
-    function showMethodList() {
-        fetchMethodList(state.file)
-        revealSection('methodSection');
-    }
 
     function showAlgorithmSection(methodName, startLine, endLine) {
         state.methodName = methodName;
@@ -578,7 +571,7 @@
         if (file.toLowerCase().endsWith('.java')) {
             state.file = file;
             document.getElementById("methodSearch").value = '';
-            showMethodList()
+            revealSection('methodSection', true)
         } else {
             fetchFileList(file)
         }
@@ -640,10 +633,12 @@
         const value = document.getElementById('startCommitHash').value.trim();
         return value ? value : 'HEAD';
     }
+
     function setStartCommitHash(startCommitHash) {
         document.getElementById('startCommitHash').value = startCommitHash;
         validateCommitHash()
     }
+
     // Function to set "HEAD" as the value
     function fillHead() {
         const commitHashInput = document.getElementById("startCommitHash");
@@ -655,12 +650,14 @@
         fetchFileList(getFile())
     }
 
-    function setFile(file){
+    function setFile(file) {
         document.getElementById('fileSearch').value = file;
     }
-    function getFile(){
+
+    function getFile() {
         return document.getElementById('fileSearch').value;
     }
+
     document.getElementById('fileSearch').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent the default action of the Enter key
@@ -706,7 +703,7 @@
                     hideSpinner()
                     state.repository = response;
                     setStartCommitHash('')
-                    showStartCommitHashSection();
+                    revealSection('startCommitHashSection', false)
                 },
                 error: function (xhr) {
                     hideSpinner();
@@ -719,9 +716,11 @@
     function setRepositoryLocation(repositoryLocation) {
         document.getElementById('gitRepoUrl').value = repositoryLocation
     }
+
     function getRepositoryLocation() {
         return document.getElementById('gitRepoUrl').value
     }
+
     // Call API to load cloned repositories
     function loadClonedRepositories() {
         $.ajax({
