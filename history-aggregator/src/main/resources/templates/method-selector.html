@@ -220,7 +220,7 @@
     <p class="text-center fs-4">Enter a remote URL (HTTPS or SSH) or a local directory of git project</p>
     <div class="mb-3">
         <div class="input-group">
-            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Enter repository location">
+            <input type="text" class="form-control" id="gitRepoUrl" placeholder="Repository Location">
             <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#repositoryListModal"
                     onclick="loadClonedRepositories()">Browse
             </button>
@@ -239,7 +239,7 @@
     <div class="mb-3">
         <label for="startCommitHash" class="form-label"></label>
         <div class="input-group">
-            <input type="text" class="form-control" id="startCommitHash" placeholder="Start commit hash"
+            <input type="text" class="form-control" id="startCommitHash" placeholder="Start Commit Hash"
                    oninput="validateCommitHash()">
             <!--            <button class="btn btn-outline-secondary" onclick="fillHead()">HEAD</button>-->
         </div>
@@ -465,7 +465,7 @@
             state.startLine = urlParams.get('startLine');
             state.endLine = urlParams.get('endLine');
 
-            runAlgorithm(urlParams.get('tracerName'));
+            selectTabByTracerName(urlParams.get('tracerName'))
         } else {
             revealSection('repositoryUrlSection');
         }
@@ -555,7 +555,7 @@
         state.methodName = methodName;
         state.startLine = startLine;
         state.endLine = endLine;
-        runAlgorithm('HISTORY_FINDER')
+        selectTabByTracerName('HISTORY_FINDER')
     }
 
 
@@ -1034,6 +1034,29 @@
     function stopExecutionTimer() {
         clearInterval(state.timerInterval);
     }
+
+    function selectTabByTracerName(tracerName) {
+        const tracerToTabId = {
+            'HISTORY_FINDER': 'tab-history-finder',
+            'CODE_SHOVEL': 'tab-code-shovel',
+            'CODE_TRACKER': 'tab-code-tracker',
+            'GIT_FUNC_NAME': 'tab-git-func',
+            'GIT_LINE_RANGE': 'tab-git-line',
+        };
+        const tabId = tracerToTabId[tracerName];
+        if (tabId) {
+            selectAlgorithmTab(tabId);
+        }
+    }
+    function selectAlgorithmTab(tabId) {
+        const tabElement = document.getElementById(tabId);
+        if (tabElement) {
+            const tab = new bootstrap.Tab(tabElement);
+            tab.show();  // This activates the tab visually
+            tabElement.click();  // This triggers your onclick="runAlgorithm(...)"
+        }
+    }
+
 
 </script>
 </body>
