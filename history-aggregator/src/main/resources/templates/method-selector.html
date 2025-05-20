@@ -562,6 +562,7 @@
         state.methodName = methodName;
         state.startLine = startLine;
         state.endLine = endLine;
+        revealSection('methodHistory', true);
         selectTabByTracerName('HISTORY_FINDER')
     }
 
@@ -851,6 +852,7 @@
                 methodView.classList.add('list-group-item');
                 methodView.textContent = methodDto.signature;
                 methodView.onclick = function () {
+                    console.log('Selected method:', methodDto);
                     showAlgorithmSection(methodDto.methodName, methodDto.startLine, methodDto.endLine);
                 };
                 methodListView.appendChild(methodView);
@@ -1082,11 +1084,15 @@
     function selectAlgorithmTab(tabId) {
         const tabElement = document.getElementById(tabId);
         if (tabElement) {
+            console.log(`Selecting tab: ${tabId}`);
             const tab = new bootstrap.Tab(tabElement);
-            tab.show();  // This activates the tab visually
-            tabElement.click();  // This triggers your onclick="runAlgorithm(...)"
+            tab.show();
+            tabElement.click();
+        } else {
+            console.warn(`Tab element not found: ${tabId}`);
         }
     }
+
 
 
 </script>
