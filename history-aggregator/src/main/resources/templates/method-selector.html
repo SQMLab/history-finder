@@ -976,7 +976,7 @@
                     <p><strong>Author:</strong> <a href="${commit.authorSearchUrl}" target="_blank">${commit.commitAuthor}</a></p>
                     <p><strong>Commit Hash:</strong> <a href="${commit.commitUrl}" target="_blank">${commit.commitName}</a></p>
                     <p><strong>New:</strong> <a class="new-file" href="${commit.newFileUrl}" target="_blank">${commit.path}</a></p>
-                    <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl}" target="_blank">${commit.oldFile}</a></p>
+                    <p><strong>Old:</strong> <a class="old-file" href="${commit.oldFileUrl || commit.newFileUrl}" target="_blank">${commit.oldFile || commit.path}</a></p>
                     <p><strong>Change Type:</strong> ${(commit.displayChangeTags?.length ? commit.displayChangeTags.join(', ') : 'N/A')}</p>
                     <p><strong>Short Commit Message:</strong> ${commit.shortMessage || 'N/A'}</p>
                     <p><strong>Full Commit Message:</strong> ${commit.fullMessage || 'N/A'}</p>
@@ -1030,7 +1030,10 @@
             const diffText = detailsView.querySelector('.raw-diff')?.textContent || '';
             const diffDivElement = detailsView.querySelector('.diff-output');
 
-            const unifiedDiff = `--- ${oldFile || newFile}\n+++ ${newFile}\n${diffText}`;
+            const oldFileForHeaderDiff = (oldFile && oldFile !== 'N/A') ? oldFile : newFile;
+
+
+            const unifiedDiff = `--- ${oldFileForHeaderDiff}\n+++ ${newFile}\n${diffText}`;
             const config = {
                 drawFileList: false,
                 fileListToggle: false,
