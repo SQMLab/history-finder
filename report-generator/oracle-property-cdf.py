@@ -157,8 +157,9 @@ for propertyKeyIndex, propertyKey in enumerate(REPOSITORY_PROPERTY_KEYS):
     #cdfPlot.set_yticks(np.arange(0, 1.1, 0.1))
     # cdfPlot.set_xticks(np.arange(0, cdfPlotRuntimeLimitAndStepSize[propertyKeyIndex][0] + 1, cdfPlotRuntimeLimitAndStepSize[propertyKeyIndex][1]))
     cdfPlot.grid(axis='both', linestyle='--', alpha=0.5)
-    if propertyKeyIndex == 0:
+    if propertyKeyIndex %2 ==0:
         cdfPlot.set_ylabel("CDF", fontsize=20)
+    if propertyKeyIndex == 0:
         cdfPlot.legend(title="Oracle", loc='lower right', fontsize=18, title_fontsize=20)
     cdfPlot.set_xlabel("#" + propertyKey.capitalize(), fontsize=24)
 # cdfFigure.supxlabel('Execution Time (seconds)', fontsize=20)
