@@ -20,16 +20,29 @@ oracleDirectoryMap = {
     'codeShovel': "../oracle/codeshovel-oracle-updated",
     'historyFinder': "../oracle/historyfinder-oracle"
 }
-# REPOSITORY_ROOT_DIRECTORY = "../../../repository"
-# repositoryNameMap = {oracleKey : set() for oracleKey in oracleDirectoryMap.keys()}
+repositoryCommitHashMap = {}
+REPOSITORY_ROOT_DIRECTORY = "../../../repository"
+repositoryNameMap = {oracleKey : set() for oracleKey in oracleDirectoryMap.keys()}
 # for oracleKey, directory in oracleDirectoryMap.items():
 #     files = os.listdir(directory)
 #     for f in files:
 #         if f.endswith('.json'):
 #             jsonFile = json.load(open(os.path.join(oracleDirectoryMap[oracleKey], f), 'r'))
 #             repositoryNameMap[oracleKey].add(jsonFile['repositoryName'])
+#             repositoryCommitHashMap[jsonFile['repositoryName']] = commitHash = jsonFile['startCommitHash']
 #
 # repositoryPropertyMap = {oracleKey : {propertyKey: [] for propertyKey in REPOSITORY_PROPERTY_KEYS} for oracleKey in repositoryNameMap.keys()}
+#
+# def checkout_repo_to_commit(repo_path, commit_hash):
+#     try:
+#         subprocess.run(["git", "checkout", commit_hash],
+#                        cwd=repo_path,
+#                        check=True,
+#                        stdout=subprocess.PIPE,
+#                        stderr=subprocess.PIPE)
+#     except subprocess.CalledProcessError as e:
+#         print(f"✖ Failed to checkout: {repo_path} {e.stderr.decode().strip()}")
+#         #raise e
 #
 # def count_java_files(repo_path):
 #     java_file_count = 0
@@ -37,6 +50,7 @@ oracleDirectoryMap = {
 #         for file in files:
 #             if file.endswith(".java"):
 #                 java_file_count += 1
+#     print(f'{repo_path}: {java_file_count} java files found')
 #     return java_file_count
 #
 # def count_commits(repo_path):
@@ -110,15 +124,19 @@ oracleDirectoryMap = {
 # for oracleKey, repositorySet in repositoryNameMap.items():
 #     for repositoryName in repositorySet:
 #         repositoryDirectory = os.path.join(REPOSITORY_ROOT_DIRECTORY, repositoryName)
+#         checkout_repo_to_commit(repositoryDirectory, repositoryCommitHashMap[repositoryName])
 #         repositoryPropertyMap[oracleKey]['file'].append(count_java_files(repositoryDirectory))
 #         repositoryPropertyMap[oracleKey]['commit'].append(count_commits(repositoryDirectory))
 #         repositoryPropertyMap[oracleKey]['method'].append(count_methods_with_javaparser(repositoryDirectory, '../lib/javaparser-core-3.26.3.jar'))
 #         repositoryPropertyMap[oracleKey]['line'].append(count_lines_in_java_files(repositoryDirectory))
-
-
+#
+# for oracleKey in ORACLE_KEYS:
+#     for propertyKey in REPOSITORY_PROPERTY_KEYS:
+#         repositoryPropertyMap[oracleKey][propertyKey].sort()
+#
 # print(repositoryPropertyMap)
-repositoryPropertyMap = {'codeShovel': {'file': [2925, 774, 14163, 1454, 7486, 500, 5583, 4907, 12112, 978, 48, 84948, 5310, 0, 4973, 515, 1912, 3619, 14915, 471], 'commit': [28377, 1117, 35756, 8395, 50436, 8061, 29778, 14027, 27497, 6126, 5691, 453507, 15484, 34921, 30008, 5127, 9484, 1028, 19261, 2513], 'method': [12158, 6410, 89826, 7816, 34423, 7963, 40867, 20416, 108564, 5019, 128, 355530, 24707, 0, 34898, 5025, 19577, 26463, 90403, 2419], 'line': [223261, 174240, 2479985, 176015, 757660, 182277, 1026186, 541523, 2888540, 97259, 3859, 6102599, 547745, 0, 1001860, 104392, 336363, 563779, 1795155, 45350]}, 'historyFinder': {'file': [615, 1436, 1581, 1526, 7765, 1973, 724, 2997, 4153, 223, 5119, 4632, 499, 415, 1884, 2705, 4926, 317, 3713, 1779], 'commit': [2052, 3830, 7429, 17908, 42464, 11589, 2869, 3864, 12641, 2065, 5789, 12558, 3568, 2081, 6017, 26153, 29651, 1703, 7201, 34752], 'method': [3785, 5649, 13617, 11740, 24356, 17141, 6527, 10833, 32067, 2059, 63775, 42923, 2513, 2547, 17282, 28886, 43650, 1871, 21954, 12048], 'line': [106049, 161599, 244820, 249453, 531601, 361235, 115315, 243398, 836264, 42872, 1860203, 1029641, 67815, 78866, 473130, 641116, 1068230, 56471, 422528, 311151]}}
-print(repositoryPropertyMap)
+repositoryPropertyMap = {'codeShovel': {'file': [246, 320, 327, 465, 863, 911, 1364, 1429, 1730, 1950, 2497, 2695, 4319, 6400, 6884, 7661, 9038, 9542, 10399, 59580], 'commit': [2121, 2228, 3253, 4695, 4781, 4811, 5230, 6065, 6172, 7622, 9100, 13359, 14366, 15990, 17041, 17818, 19805, 30500, 40353, 226106], 'method': [2385, 2387, 4202, 4276, 5176, 5980, 9925, 10592, 12748, 13396, 14067, 18709, 19211, 37929, 48345, 53178, 55861, 66099, 88211, 282655], 'line': [44691, 57790, 74859, 83212, 99170, 143776, 176747, 207921, 246973, 278637, 371089, 431133, 541820, 1031118, 1094879, 1127836, 1575512, 1671057, 2402075, 4942529]}, 'historyFinder': {'file': [223, 319, 414, 486, 621, 725, 1436, 1539, 1579, 1783, 1884, 1973, 2705, 3121, 3656, 4157, 4632, 4999, 5119, 7523], 'commit': [1786, 2014, 2065, 2074, 2901, 3363, 3830, 3961, 5782, 6017, 7422, 7465, 11589, 12558, 12660, 18086, 26153, 29883, 34978, 42386], 'method': [1901, 2059, 2433, 2525, 3823, 5649, 6530, 11786, 12056, 12583, 13596, 17141, 17282, 21702, 23483, 28886, 32115, 42923, 44280, 63768], 'line': [42872, 57466, 66161, 78173, 106737, 115468, 161599, 244458, 251321, 254101, 311241, 361235, 417010, 473130, 512843, 641116, 838208, 1029641, 1083947, 1860096]}}
+
 cdfPlotColors = ['brown', 'green', 'purple', 'dimgray', 'peru']
 HATCHES = ['xx', '//', '.', 'O.', '*']
 MARKERS = ["^", "d", "o", "v", "p", "s", "<", ">"]
