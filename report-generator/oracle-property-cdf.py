@@ -29,7 +29,7 @@ repositoryNameMap = {oracleKey : set() for oracleKey in oracleDirectoryMap.keys(
 #         if f.endswith('.json'):
 #             jsonFile = json.load(open(os.path.join(oracleDirectoryMap[oracleKey], f), 'r'))
 #             repositoryNameMap[oracleKey].add(jsonFile['repositoryName'])
-#             repositoryCommitHashMap[jsonFile['repositoryName']] = commitHash = jsonFile['startCommitHash']
+#             repositoryCommitHashMap[jsonFile['repositoryName']]  = jsonFile['startCommitHash']
 #
 # repositoryPropertyMap = {oracleKey : {propertyKey: [] for propertyKey in REPOSITORY_PROPERTY_KEYS} for oracleKey in repositoryNameMap.keys()}
 #
