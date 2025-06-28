@@ -54,16 +54,20 @@ def save_git_log_graph(repo_dir, file_path, output_filename, commit_hash=None):
     except subprocess.CalledProcessError as e:
         print(f"Error running git log: {e.stderr.decode()}")
 
-
+projects = []
 
 for oracleKey, directory in oracleDirectoryMap.items():
     files = os.listdir(directory)
+    files.sort()
     for f in files:
         if f.endswith('.json'):
             jsonFile = json.load(open(os.path.join(oracleDirectoryMap[oracleKey], f), 'r'))
-            save_git_log_graph(
-                repo_dir=os.path.join(REPOSITORY_ROOT_DIRECTORY, jsonFile['repositoryName']),
-                file_path=jsonFile['file'],
-                output_filename=f"../cache/graph/{f.replace('.json', '.graph')}",
-                commit_hash=jsonFile['startCommitHash']
-            )
+            # save_git_log_graph(
+            #     repo_dir=os.path.join(REPOSITORY_ROOT_DIRECTORY, jsonFile['repositoryName']),
+            #     file_path=jsonFile['file'],
+            #     output_filename=f"../cache/graph/{f.replace('.json', '.graph')}",
+            #     commit_hash=jsonFile['startCommitHash']
+            # )
+            if jsonFile['repositoryName'] not in projects:
+                projects.append(jsonFile['repositoryName'])
+print(projects)
