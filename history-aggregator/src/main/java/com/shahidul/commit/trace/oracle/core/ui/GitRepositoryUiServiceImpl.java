@@ -1,5 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.ui;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
@@ -20,6 +21,7 @@ import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.InputOracle;
 import rnd.git.history.finder.enums.LanguageType;
 
 import java.io.File;
@@ -29,11 +31,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Service
 @AllArgsConstructor
 @Slf4j
 public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
+    private final ObjectMapper objectMapper;
     AppProperty appProperty;
     CommitTraceDetailExportService traceDetailExportService;
 
@@ -66,7 +70,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         File file = new File(pathBuilder.toString());
         if (file.exists() && file.isFile() && file.getName().toLowerCase().endsWith(".java")) {
             return List.of(path);
-        }else{
+        } else {
             List<String> files = buildCompactTree(file, "");
             return files.stream()
                     .map(f -> path.isEmpty() ? f : path + "/" + f)
@@ -148,6 +152,50 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
             return checkoutInfo;
         } catch (Exception e) {
             throw new CtoException(CtoError.Failed_To_Find_Repositories, e);
+        }
+    }
+
+    @Override
+    public List<String> getOracleFileList() {
+
+        File folder = new File(appProperty.getOracleFileDirectory()); // Replace with your actual directory path
+
+
+        // Regex for any digits followed by a hyphen (e.g., 1-, 001-, 123456-)
+        Pattern pattern = Pattern.compile("^\\d+-");
+
+        List<File> matchingFiles = new ArrayList<>();
+        listMatchingFilesRecursively(folder, pattern, matchingFiles);
+
+        List<String> fileNames = new ArrayList<>();
+        for (File file : matchingFiles) {
+            fileNames.add(file.getName());
+        }
+        fileNames.sort(Comparator.naturalOrder());
+        return fileNames;
+//        return List.of("001-checkstyle-Checker-fireErrors.json");
+    }
+
+    @Override
+    public CommitTraceOutput findOracleMethodHistory(String fileName, TracerName tracerName) {
+
+        File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
+        InputOracle inputOracle = null;
+        try {
+            inputOracle = objectMapper.readValue(file, InputOracle.class);
+            RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
+            return findMethodHistory(repositoryInfo.getHost(),
+                    repositoryInfo.getAccountName(),
+                    repositoryInfo.getPath(),
+                    inputOracle.getRepositoryName(),
+                    inputOracle.getStartCommitHash(),
+                    inputOracle.getFile(),
+                    inputOracle.getElement(),
+                    inputOracle.getStartLine(),
+                    inputOracle.getEndLine(),
+                    tracerName);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -324,4 +372,37 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         return false; // No .java files in this directory or its subtree
     }
 
+    private static void listMatchingFilesRecursively(File dir, Pattern pattern, List<File> result) {
+        if (dir == null || !dir.exists()) return;
+
+        File[] files = dir.listFiles();
+        if (files == null) return;
+
+        for (File file : files) {
+            if (file.isDirectory()) {
+                listMatchingFilesRecursively(file, pattern, result);
+            } else if (pattern.matcher(file.getName()).find()) {
+                result.add(file);
+            }
+        }
+    }
+
+    private static File findFile(File dir, String targetFileName) {
+
+        File[] files = dir.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                log.info(file.getPath());
+                if (file.isDirectory()) {
+                    File targetFile = findFile(file, targetFileName);
+                    if (targetFile != null) {
+                        return targetFile;
+                    }
+                } else if (targetFileName.equalsIgnoreCase(file.getName())) {
+                    return file;
+                }
+            }
+        }
+        return null;
+    }
 }

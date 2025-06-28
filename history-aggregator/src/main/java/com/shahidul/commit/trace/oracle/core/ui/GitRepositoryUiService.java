@@ -10,14 +10,17 @@ import java.util.List;
 
 public interface GitRepositoryUiService {
     RepositoryListResponse findRepositoryList();
+
     List<String> findPathList(String repositoryPath,
                               String repositoryName,
                               String startCommitHash,
                               String path);
+
     List<MethodLocationDto> findMethodLocationList(String repositoryPath,
                                                    String repositoryName,
                                                    String commitHash,
                                                    String file);
+
     CommitTraceOutput findMethodHistory(String repositoryHostName,
                                         String repositoryAccountName,
                                         String repositoryPath,
@@ -28,5 +31,11 @@ public interface GitRepositoryUiService {
                                         Integer startLine,
                                         Integer endLine,
                                         TracerName tracerName);
+
     RepositoryCheckoutResponse checkoutRepository(String location);
+
+    List<String> getOracleFileList();
+
+    CommitTraceOutput findOracleMethodHistory(String file, TracerName tracerName);
+
 }

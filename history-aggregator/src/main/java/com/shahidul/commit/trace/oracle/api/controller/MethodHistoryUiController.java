@@ -181,4 +181,32 @@ public class MethodHistoryUiController {
             }
         }
     }
+
+    @GetMapping({"ui/oracle-list"})
+    public String oracleList(Model model) {
+
+        return "oracle-list";
+    }
+
+    @GetMapping("/api/oracle-files")
+    @ResponseBody
+    public List<String> getOracleFiles() {
+        return gitRepositoryUiService.getOracleFileList();
+
+    }
+
+    @GetMapping({"ui/view-oracle-method-history"})
+    public String viewOracleMethodHistory(
+            @RequestParam("file") String file,
+            @RequestParam("tracerName") TracerName tracerName,
+            Model model) {
+        try {
+            CommitTraceOutput traceOutput = gitRepositoryUiService.findOracleMethodHistory(file, tracerName);
+            model.addAttribute("trace", traceOutput);
+        } catch (Exception e) {
+            log.error("Failed to execute trace", e);
+            throw new CtoException(CtoError.Failed_To_Execute_Trace, e);
+        }
+        return "method-history";
+    }
 }
