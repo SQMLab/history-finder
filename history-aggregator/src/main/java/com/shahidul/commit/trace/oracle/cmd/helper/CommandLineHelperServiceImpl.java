@@ -108,7 +108,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                     if (commitUdt.getSubChangeList() != null) {
                         List<OutputCommitDetail> subChangeCommitList = commitUdt.getSubChangeList().stream().map(subChangeInfo -> {
                             OutputCommitDetail subCommitDetail = toOutputCommitDetailWithoutSubChange(commitUdt);
-                            List<ChangeTag> subChangeTag = List.of(subChangeInfo.getChangeTag());
+                            List<ChangeTag> subChangeTag = subChangeInfo.getChangeTag() != null? List.of(subChangeInfo.getChangeTag()) : Collections.emptyList();
                             subCommitDetail.setChangeTags(subChangeTag);
                             subCommitDetail.setDisplayChangeTags(displayChangeTags(subChangeTag));
                             subCommitDetail.setChangeTagText(ChangeTagUtil.toCodeShovelChangeText(subChangeTag));
