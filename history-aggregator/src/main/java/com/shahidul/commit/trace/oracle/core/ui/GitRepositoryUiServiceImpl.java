@@ -6,14 +6,18 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
+import com.shahidul.commit.trace.oracle.cmd.helper.CommandLineHelperService;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
+import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -38,8 +42,10 @@ import java.util.regex.Pattern;
 @Slf4j
 public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     private final ObjectMapper objectMapper;
+    private final TraceRepository traceRepository;
     AppProperty appProperty;
     CommitTraceDetailExportService traceDetailExportService;
+    CommandLineHelperService commandLineHelperService;
 
     @Override
     public RepositoryListResponse findRepositoryList() {
@@ -179,24 +185,33 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     @Override
     public CommitTraceOutput findOracleMethodHistory(String fileName, TracerName tracerName) {
 
-        File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
-        InputOracle inputOracle = null;
-        try {
-            inputOracle = objectMapper.readValue(file, InputOracle.class);
-            RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
-            return findMethodHistory(repositoryInfo.getHost(),
-                    repositoryInfo.getAccountName(),
-                    repositoryInfo.getPath(),
-                    inputOracle.getRepositoryName(),
-                    inputOracle.getStartCommitHash(),
-                    inputOracle.getFile(),
-                    inputOracle.getElement(),
-                    inputOracle.getStartLine(),
-                    inputOracle.getEndLine(),
-                    tracerName);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        TraceEntity precomputedEntity = traceRepository.findByOracleFileName(fileName);
+        if (precomputedEntity != null && precomputedEntity.getAnalysis().containsKey(tracerName.getCode())) {
+            CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(precomputedEntity, tracerName);
+            return commitTraceOutput;
+            //commitTraceOutput.setRepositoryFile(Util.concatPath(cloneDirectory, inputOracle.getRepositoryName()));
+
+        } else {
+            File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
+            InputOracle inputOracle = null;
+            try {
+                inputOracle = objectMapper.readValue(file, InputOracle.class);
+                RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
+                return findMethodHistory(repositoryInfo.getHost(),
+                        repositoryInfo.getAccountName(),
+                        repositoryInfo.getPath(),
+                        inputOracle.getRepositoryName(),
+                        inputOracle.getStartCommitHash(),
+                        inputOracle.getFile(),
+                        inputOracle.getElement(),
+                        inputOracle.getStartLine(),
+                        inputOracle.getEndLine(),
+                        tracerName);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
+
     }
 
     private RepositoryCheckoutResponse parseRepository(String input) {
