@@ -93,6 +93,7 @@ public class OracleTest {
         List<TraceEntity> traceEntityList = traceDao.findByOracleFileIdList(oracleFileIdList);
         List<TracerName> tracerList = Arrays.stream(environment.getProperty("run-config.tracer-name", "historyFinder").split(","))
                 .filter(code -> !code.isBlank())
+                .map(String::trim)
                 .map(TracerName::fromCode)
                 .sorted(Comparator.comparingInt(DEFAULT_EXECUTION_SEQUENCE::indexOf))
                 .collect(Collectors.toCollection(ArrayList::new));
