@@ -18,7 +18,9 @@ import org.eclipse.jgit.revwalk.filter.RevFilter;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -56,9 +58,27 @@ public abstract class GitTracer implements TraceService {
             log.info("Execution ... {}", logCommand);
 
 
-            Process process = runtime.exec(cmd, null, new File(repositoryLocation));
-            process.waitFor(30, TimeUnit.SECONDS);
+//            Process process = runtime.exec(cmd, null, new File(repositoryLocation));
+            Process process = new ProcessBuilder(cmd)
+                    .directory(new File(repositoryLocation))
+//                    .redirectErrorStream(true)
+//                    .redirectOutput(ProcessBuilder.Redirect.INHERIT)
+                    .start();
 
+            StringBuilder outputBuilder = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    outputBuilder.append(line).append(System.lineSeparator());
+                }
+            }
+
+            boolean isTimeout = !process.waitFor(120, TimeUnit.SECONDS);
+
+            if (isTimeout){
+                process.destroyForcibly();
+            }
             Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getStartCommitHash());
 
             LogCommand logCommandFile = git.log().add(startCommit.getId()).addPath(traceEntity.getFile()).setRevFilter(RevFilter.NO_MERGES);
@@ -70,7 +90,8 @@ public abstract class GitTracer implements TraceService {
 
             List<CommitUdt> commitUdtList = new ArrayList<>();
 
-            Scanner scanner = new Scanner(process.getInputStream());
+            //Scanner scanner = new Scanner(process.getInputStream());
+            Scanner scanner = new Scanner(outputBuilder.toString());
             scanner.useDelimiter(DIVIDER);
             String parentCommitHash = traceEntity.getStartCommitHash();
             while (scanner.hasNext()) {
