@@ -29,7 +29,7 @@ for dataset in config.datasetList:
 datasetLabels = [dataset['oracleName'] for dataset in config.datasetList]
 
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
-    print(f'{datasetLabels[datasetIndex]}')
+    print(f'{datasetLabels[datasetIndex]} Dataset')
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = np.array(runtimeStatistics[tracerName])
         print(
@@ -69,7 +69,7 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
             medianprops=dict(color='black', linewidth=1.5)
         )
         # step += tracerIndex + 1
-        print(runtimes, end=',')
+        # print(runtimes, end=',')
         # Set x-axis labels and title
         cdf = np.arange(1, len(runtimes) + 1) / len(runtimes)
 
