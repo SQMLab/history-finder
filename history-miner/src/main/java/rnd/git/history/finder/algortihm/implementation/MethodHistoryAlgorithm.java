@@ -1,6 +1,5 @@
 package rnd.git.history.finder.algortihm.implementation;
 
-import java.io.FileNotFoundException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
@@ -115,7 +114,7 @@ public class MethodHistoryAlgorithm implements Algorithm {
                 Map<String, MethodMap> methodMapCache = new HashMap<>();
                 for (RevCommit directParentRevCommit : revCommitU.getParents()) {
                     try {
-                        methodMapCache.put(directParentRevCommit.getName(), javaParser.getAllMethodsInFile(directParentRevCommit.getName(), file));
+                        methodMapCache.put(directParentRevCommit.getName(), javaParser.getAllMethodsInFile(directParentRevCommit.getName(), file, true));
                     } catch (Exception e) {
                         log.debug("Failed to extract all methods in file {}.", file, e);
                     }
@@ -261,7 +260,7 @@ public class MethodHistoryAlgorithm implements Algorithm {
         // ## method was changed or introduced
         // match by body as we already done matching sigs on these methods
         log.info("=============== searchInsideFileWithBodySimilarityMatching ==================");
-        MethodMap childFileMethodMapping = javaParser.getAllMethodsInFile(childMethodHolder.getCommitHash(), childMethodHolder.getFile());
+        MethodMap childFileMethodMapping = javaParser.getAllMethodsInFile(childMethodHolder.getCommitHash(), childMethodHolder.getFile(), true);
         MethodMap methodMapDiff = subtract(parentFileMethodMap, childFileMethodMapping);
 
         List<MethodSourceInfo> nameMatchingMethodList = !isOtherFile ? methodMapDiff.getAllByMethodName(childMethodHolder.getMethodSourceInfo().getMethodDeclaration().getNameAsString()) : new ArrayList<>();
@@ -317,7 +316,7 @@ public class MethodHistoryAlgorithm implements Algorithm {
         if (!matchingRenamedFileList.isEmpty()) {
             for (FileChangeDto fileChangeDto : matchingRenamedFileList) {
                 String oldFile = fileChangeDto.getOldFile();
-                MethodMap parentMethodMap = javaParser.getAllMethodsInFile(likelyParentCommit, oldFile);
+                MethodMap parentMethodMap = javaParser.getAllMethodsInFile(likelyParentCommit, oldFile, false);
                 MethodHolder parentMethodHolder = searchInsideFileWithSignatureMatching(childMethodHolder, parentMethodMap, likelyParentCommit, oldFile);
                 if (parentMethodHolder == null) {
                     parentMethodHolder = searchInsideFileWithBodySimilarityMatching(parentMethodMap, childMethodHolder, likelyParentCommit, oldFile, true);
@@ -524,10 +523,10 @@ public class MethodHistoryAlgorithm implements Algorithm {
 
             MethodMap applicableMethodMap;
             try {
-                MethodMap likelyParentCommitMethodMap = javaParser.getAllMethodsInFile(likelyParentCommitHash, fileChange.getOldFile());
+                MethodMap likelyParentCommitMethodMap = javaParser.getAllMethodsInFile(likelyParentCommitHash, fileChange.getOldFile(), false);
                 applicableMethodMap = likelyParentCommitMethodMap;
                 try {
-                    MethodMap childCommitMethodMap = javaParser.getAllMethodsInFile(currentMethodHolder.getCommitHash(), fileChange.getOldFile());
+                    MethodMap childCommitMethodMap = javaParser.getAllMethodsInFile(currentMethodHolder.getCommitHash(), fileChange.getOldFile(), false);
                     applicableMethodMap = subtract(likelyParentCommitMethodMap, childCommitMethodMap);
                 } catch (Exception ignored) {
                     log.info("Ignoring exception");
