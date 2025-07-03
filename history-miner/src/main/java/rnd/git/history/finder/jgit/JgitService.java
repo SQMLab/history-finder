@@ -41,6 +41,11 @@ public class JgitService {
             .expireAfterWrite(1, TimeUnit.MINUTES)
             .build();
 
+    private Cache<String, RevCommit> revCommitCache = Caffeine.newBuilder()
+            .maximumSize(1000)
+            .expireAfterWrite(1, TimeUnit.MINUTES)
+            .build();
+
     static JaroWinkler jaroWinkler = new JaroWinkler();
 
     public JgitService(String cacheDirectory, String repositoryUrl, String repositoryName) {
@@ -162,13 +167,20 @@ public class JgitService {
 
 
     public RevCommit getRevCommit(String commitHash) {
-        RevWalk revWalk = new RevWalk(repository);
+        RevCommit revCommitCacheIfPresent = revCommitCache.getIfPresent(commitHash);
+        if (revCommitCacheIfPresent != null){
+            return revCommitCacheIfPresent;
+        }else{
+            RevWalk revWalk = new RevWalk(repository);
 
-        try {
-            return revWalk.parseCommit(repository.resolve(commitHash));
-        } catch (IOException e) {
-            log.error("Failed to resolve commit {}", commitHash, e);
-            throw new RuntimeException(e);
+            try {
+                RevCommit revCommit = revWalk.parseCommit(repository.resolve(commitHash));
+                revCommitCache.put(commitHash, revCommit);
+                return revCommit;
+            } catch (IOException e) {
+                log.error("Failed to resolve commit {}", commitHash, e);
+                throw new RuntimeException(e);
+            }
         }
     }
 
