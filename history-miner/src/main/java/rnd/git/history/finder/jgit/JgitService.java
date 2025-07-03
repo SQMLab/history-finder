@@ -38,7 +38,7 @@ public class JgitService {
     private DiffCollector diffCollector;
     private Cache<String, byte[]> gitFileCache = Caffeine.newBuilder()
             .maximumSize(1000)
-            .expireAfterWrite(1, TimeUnit.MINUTES)
+            .expireAfterWrite(5, TimeUnit.MINUTES)
             .build();
 
     private Cache<String, RevCommit> revCommitCache = Caffeine.newBuilder()
