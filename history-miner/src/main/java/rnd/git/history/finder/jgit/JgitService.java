@@ -1,5 +1,7 @@
 package rnd.git.history.finder.jgit;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import info.debatty.java.stringsimilarity.JaroWinkler;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +26,7 @@ import rnd.git.history.finder.dto.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -33,7 +36,10 @@ public class JgitService {
     private Repository repository;
     private Git git;
     private DiffCollector diffCollector;
-    private CacheableMap<String, byte[]> gitFileCache = new CacheableMap<>(1000);
+    private Cache<String, byte[]> gitFileCache = Caffeine.newBuilder()
+            .maximumSize(1000)
+            .expireAfterWrite(1, TimeUnit.MINUTES)
+            .build();
 
     static JaroWinkler jaroWinkler = new JaroWinkler();
 
@@ -77,8 +83,9 @@ public class JgitService {
                 }
                 ObjectId objectId = treeWalk.getObjectId(0);
                 String objectKey = objectId.getName();
-                if (gitFileCache.containsKey(objectKey)) {
-                    return gitFileCache.get(objectKey);
+                byte[] cacheIfPresent = gitFileCache.getIfPresent(objectKey);
+                if (cacheIfPresent != null) {
+                    return cacheIfPresent;
                 }else{
                     ObjectLoader loader = repository.open(objectId);
                     revWalk.dispose();

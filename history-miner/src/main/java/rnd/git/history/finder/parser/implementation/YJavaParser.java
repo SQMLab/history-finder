@@ -2,8 +2,11 @@ package rnd.git.history.finder.parser.implementation;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.javaparser.ast.expr.AnnotationExpr;
 import lombok.extern.slf4j.Slf4j;
 import rnd.git.history.finder.dto.CacheableMap;
@@ -23,7 +26,10 @@ import com.github.javaparser.ast.body.MethodDeclaration;
 public class YJavaParser implements Parser {
     private JgitService jgitService;
 
-    private final CacheableMap<String, MethodMap> methodCache = new CacheableMap<>(100);
+    private final Cache<String, MethodMap> methodCache = Caffeine.newBuilder()
+            .maximumSize(1000)
+            .expireAfterWrite(1, TimeUnit.MINUTES)
+            .build();
 
 
     private static final SimhashGenerator simhashGenerator = new SimhashGenerator();
@@ -188,8 +194,9 @@ public class YJavaParser implements Parser {
         }
         MethodMap sigToMethodDeclaration = new MethodMap();
         try {
-            if (methodCache.containsKey(fileContentHash)) {
-                return methodCache.get(fileContentHash);
+            MethodMap cacheIfPresent = methodCache.getIfPresent(fileContentHash);
+            if (cacheIfPresent != null) {
+                return cacheIfPresent;
             }
 
             List<String> lineListInFile = Util.toLineList(fileContentBytes);
