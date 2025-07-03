@@ -231,12 +231,12 @@ public class YJavaParser implements Parser {
                         .annotation(annotationText)
                         .build();
 
-                long[] simhash = simhashGenerator.generateSimhash(msi);
+        /*        long[] simhash = simhashGenerator.generateSimhash(msi);
 
                 msi.setSimHash1(simhash[0]);
                 msi.setSimHash2(simhash[1]);
 
-                String methodName = methodDeclaration.getNameAsString();
+                String methodName = methodDeclaration.getNameAsString();*/
                 sigToMethodDeclaration.put(msi);
 
               /* avoid inner class method with same signature
