@@ -33,6 +33,7 @@ public class JgitService {
     private Repository repository;
     private Git git;
     private DiffCollector diffCollector;
+    private CacheableMap<String, byte[]> gitFileCache = new CacheableMap<>(1000);
 
     static JaroWinkler jaroWinkler = new JaroWinkler();
 
@@ -47,16 +48,13 @@ public class JgitService {
     public String getHeadCommitHash() throws IOException {
         return repository.resolve(Constants.HEAD).getName();
     }
-    public String getFileContent(FileHistory fileHistory) throws IOException {
-        return getFileContent(fileHistory.getCommit(), fileHistory.getPath());
-    }
 
     // file must be relative to the actual repo (e.g., from src/)
     public String getFileContent(String commitHash, String file) throws IOException {
-        return new String(readFileContentByte(commitHash, file), StandardCharsets.UTF_8);
+        return new String(readFileContentByte(commitHash, file, true), StandardCharsets.UTF_8);
     }
 
-    public byte[] readFileContentByte(String commitHash, String file) throws IOException {
+    public byte[] readFileContentByte(String commitHash, String file, boolean insertIntoCache) throws IOException {
         // source:
         // https://github.com/centic9/jgit-cookbook/blob/master/src/main/java/org/dstadler/jgit/api/ReadFileFromCommit.java
 
@@ -78,10 +76,19 @@ public class JgitService {
                     throw new FileNotFoundException("Did not find expected file: " + file);
                 }
                 ObjectId objectId = treeWalk.getObjectId(0);
-                ObjectLoader loader = repository.open(objectId);
-                revWalk.dispose();
-                // and then one can the loader to read the file
-                return loader.getBytes();
+                String objectKey = objectId.getName();
+                if (gitFileCache.containsKey(objectKey)) {
+                    return gitFileCache.get(objectKey);
+                }else{
+                    ObjectLoader loader = repository.open(objectId);
+                    revWalk.dispose();
+                    byte[] bytes = loader.getBytes();
+                    if (insertIntoCache) {
+                        gitFileCache.put(objectKey, bytes);
+                    }
+                    return bytes;
+                }
+
             }
         }
     }
