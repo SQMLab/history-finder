@@ -56,7 +56,7 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
                 log.info("{} -- {}", commit.getNewMethodHolder().getCommitHash(), Arrays.toString(commit.getChangeTagSet().toArray()));
             }
             long endTime = System.nanoTime();
-            long totalTime = (endTime - startTime) / 1000000;
+            long totalTime = (endTime - startTime) / 1_000_000;
             log.info("execution time: " + totalTime + " milliseconds");
 
 
