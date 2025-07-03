@@ -23,7 +23,7 @@ import com.github.javaparser.ast.body.MethodDeclaration;
 public class YJavaParser implements Parser {
     private JgitService jgitService;
 
-    private final CacheableMap<String, MethodMap> methodCache = new CacheableMap<>(1000);
+    private final CacheableMap<String, MethodMap> methodCache = new CacheableMap<>(100);
 
 
     private static final SimhashGenerator simhashGenerator = new SimhashGenerator();
@@ -82,7 +82,7 @@ public class YJavaParser implements Parser {
 //        //System.out.println(content);
 //        System.out.println("Invalid method name or line number");z
         try {
-            MethodMap allMethodsInFile = getAllMethodsInFile(commitHash, file);
+            MethodMap allMethodsInFile = getAllMethodsInFile(commitHash, file, true);
             Optional<MethodSourceInfo> intendedMethod = allMethodsInFile.values().stream()
                     .filter(m -> m.getMethodDeclaration().getSignature().getName().equals(methodName))
                     .sorted(Comparator.comparing(m -> Math.abs(m.getStartLine() - startLine))).findFirst();
@@ -101,7 +101,7 @@ public class YJavaParser implements Parser {
     @Override
     public MethodHolder findMethod(String commitHash, String file, String methodName, String fullMethodSignature) {
         try {
-            Optional<MethodSourceInfo> intendedMethod = getAllMethodsInFile(commitHash, file)
+            Optional<MethodSourceInfo> intendedMethod = getAllMethodsInFile(commitHash, file, true)
                     .getAllByMethodName(methodName)
                     .stream()
                     .filter(m -> m.getMethodDeclaration().getDeclarationAsString().equals(fullMethodSignature))
@@ -172,15 +172,22 @@ public class YJavaParser implements Parser {
     }
 
     /**
-     * @param file, commitHash
+     * @param file,           commitHash
+     * @param insertIntoCache
      * @return Map of signature, MethodSourceInfo
      * @throws IOException
      */
-    public MethodMap getAllMethodsInFile(String commitHash, String file) {
+    public MethodMap getAllMethodsInFile(String commitHash, String file, Boolean insertIntoCache) {
+        byte[] fileContentBytes;
+        String fileContentHash;
+        try {
+            fileContentBytes = jgitService.readFileContentByte(commitHash, file, insertIntoCache);
+            fileContentHash = Util.sha1(fileContentBytes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         MethodMap sigToMethodDeclaration = new MethodMap();
         try {
-            byte[] fileContentBytes = jgitService.readFileContentByte(commitHash, file);
-            String fileContentHash = Util.sha1(fileContentBytes);
             if (methodCache.containsKey(fileContentHash)) {
                 return methodCache.get(fileContentHash);
             }
@@ -242,7 +249,9 @@ public class YJavaParser implements Parser {
                     System.out.println("************************************");
                 }
             }
-            //methodCache.put(fileContentHash, sigToMethodDeclaration);
+            if (insertIntoCache) {
+                methodCache.put(fileContentHash, sigToMethodDeclaration);
+            }
             return sigToMethodDeclaration;
         } catch (Exception exception) {
             //sigToMethodDeclaration = null;
