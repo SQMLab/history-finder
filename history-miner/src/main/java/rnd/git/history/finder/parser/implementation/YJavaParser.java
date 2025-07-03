@@ -28,7 +28,7 @@ public class YJavaParser implements Parser {
 
     private final Cache<String, MethodMap> methodCache = Caffeine.newBuilder()
             .maximumSize(1000)
-            .expireAfterWrite(5, TimeUnit.MINUTES)
+            .expireAfterWrite(1, TimeUnit.MINUTES)
             .build();
 
 
