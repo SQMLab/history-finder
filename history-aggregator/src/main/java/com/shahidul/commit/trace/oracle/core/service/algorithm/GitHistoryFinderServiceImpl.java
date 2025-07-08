@@ -44,7 +44,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
         try {
 
             HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                    .cacheDirectory(TextUtils.isBlank(traceEntity.getCloneDirectory()) ? appProperty.getRepositoryBasePath() : traceEntity.getCloneDirectory())
+                    .cloneDirectory(TextUtils.isBlank(traceEntity.getCloneDirectory()) ? appProperty.getRepositoryBasePath() : traceEntity.getCloneDirectory())
                     .repositoryUrl(traceEntity.getRepositoryUrl())
                     .startCommitHash(traceEntity.getStartCommitHash())
                     .repositoryName(traceEntity.getRepositoryName())

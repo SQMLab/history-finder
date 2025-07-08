@@ -1,8 +1,16 @@
 package rnd.git.history.finder;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.github.javaparser.Range;
 import rnd.git.history.finder.cmd.CommandLineInputParserImpl;
 import rnd.git.history.finder.dto.HistoryFinderInput;
+import rnd.git.history.finder.dto.HistoryFinderOutput;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
     /*
@@ -26,7 +34,16 @@ public class Main {
         HistoryFinderInput finderInput = commandLineInputParser.parse(args);
 
         HistoryFinderServiceImpl historyFinderService = new HistoryFinderServiceImpl();
-        historyFinderService.findSync(finderInput);
+        HistoryFinderOutput historyFinderOutput = historyFinderService.findSync(finderInput);
+        try {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            File outputFile = new File(finderInput.getOutputFile());
+            outputFile.getParentFile().mkdirs(); // Ensure parent directories exist
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, historyFinderOutput);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

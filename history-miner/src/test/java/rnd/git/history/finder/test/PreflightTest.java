@@ -29,7 +29,7 @@ public class PreflightTest
     public void test51JGitRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://gerrit.googlesource.com/jgit")
                 .startCommitHash("bd1a82502680b5de5bf86f6c4470185fd1602386")
                 .repositoryName("jgit")
@@ -44,7 +44,7 @@ public class PreflightTest
     public void test52JGitRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://gerrit.googlesource.com/jgit")
                 .startCommitHash("bd1a82502680b5de5bf86f6c4470185fd1602386")
                 .repositoryName("jgit")
@@ -60,7 +60,7 @@ public class PreflightTest
     public void testCheckstyleRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -76,7 +76,7 @@ public class PreflightTest
     public void testCheckstyleRepositoryOracle02() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -91,7 +91,7 @@ public class PreflightTest
     public void testCheckstyleRepositoryOracle03() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -107,7 +107,7 @@ public class PreflightTest
     public void test05() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -123,7 +123,7 @@ public class PreflightTest
     public void test09() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -139,7 +139,7 @@ public class PreflightTest
     public void testJavaParser() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/javaparser/javaparser.git")
                 .startCommitHash("97555053af3025556efe1a168fd7943dac28a2a6")
                 .repositoryName("javaparser")
@@ -154,7 +154,7 @@ public class PreflightTest
     public void testSpringBootRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cacheDirectory("../academic")
+                .cloneDirectory("../academic")
                 .repositoryUrl("https://github.com/spring-projects/spring-boot.git")
                 .startCommitHash("5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a")
                 .repositoryName("spring-boot")
