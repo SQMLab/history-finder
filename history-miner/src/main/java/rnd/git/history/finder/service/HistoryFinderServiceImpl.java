@@ -1,8 +1,6 @@
 package rnd.git.history.finder.service;
 
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.jgit.lib.Constants;
 import rnd.git.history.finder.algortihm.Algorithm;
 import rnd.git.history.finder.algortihm.implementation.MethodHistoryAlgorithm;
 import rnd.git.history.finder.dto.*;
@@ -28,7 +26,7 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
 
 
         try {
-            JgitService jgitService = new JgitService(input.getCacheDirectory(), input.getRepositoryUrl(), input.getRepositoryName());
+            JgitService jgitService = new JgitService(input.getCloneDirectory(), input.getRepositoryUrl(), input.getRepositoryName());
             Parser parser;
             if (input.getLanguageType() == LanguageType.JAVA) {
                 parser = new YJavaParser(jgitService);

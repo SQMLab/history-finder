@@ -11,7 +11,7 @@ import rnd.git.history.finder.enums.LanguageType;
 @Builder
 @Getter
 public class HistoryFinderInput {
-    String cacheDirectory;
+    String cloneDirectory;
     String repositoryUrl;
     String repositoryName;
     String startCommitHash;
@@ -19,4 +19,5 @@ public class HistoryFinderInput {
     String file;
     String methodName;
     Integer startLine;
+    String outputFile;
 }

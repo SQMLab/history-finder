@@ -1,5 +1,6 @@
 package rnd.git.history.finder.parser.implementation;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MethodSourceInfo implements Cloneable {
 
+    @JsonIgnore
     private MethodDeclaration methodDeclaration;
 
     @Builder.Default

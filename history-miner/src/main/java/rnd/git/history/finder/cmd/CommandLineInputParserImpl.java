@@ -18,19 +18,20 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String repositoryCacheDirectory = commandLine.getOptionValue("cache-directory");
+        String repositoryCacheDirectory = commandLine.getOptionValue("clone-directory");
         String repositoryUrl = commandLine.getOptionValue("repository-url");
         String[] urlParts = repositoryUrl.replace(".git", "").split("/");
         int repositoryNameIndex =  urlParts.length - 1;
         return HistoryFinderInput.builder()
-                .cacheDirectory(repositoryCacheDirectory)
+                .cloneDirectory(repositoryCacheDirectory)
                 .repositoryUrl(repositoryUrl)
                 .repositoryName(urlParts[repositoryNameIndex])
                 .startCommitHash(commandLine.getOptionValue("start-commit", "HEAD"))
                 .languageType(LanguageType.valueOf(commandLine.getOptionValue("language", "Java").toUpperCase()))
                 .file(commandLine.getOptionValue("file"))
-                .methodName(commandLine.getOptionValue("element-name"))
+                .methodName(commandLine.getOptionValue("method-name"))
                 .startLine(Integer.parseInt(commandLine.getOptionValue("start-line")))
+                .outputFile(commandLine.getOptionValue("output-file"))
                 .build();
     }
 
@@ -38,7 +39,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         Options options = new Options();
 
         options.addOption(Option.builder()
-                .longOpt("cache-directory")
+                .longOpt("clone-directory")
                 .hasArg(true)
                 .desc("Full path on the local system where repositories will be stored")
                 .required(true)
@@ -66,7 +67,7 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
                 .build());
 
         options.addOption(Option.builder()
-                .longOpt("element-name")
+                .longOpt("method-name")
                 .hasArg(true)
                 .desc(" Method name to trace change history")
                 .required(true)

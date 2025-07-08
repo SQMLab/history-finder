@@ -16,7 +16,8 @@ for dataset in config.datasetList:
             for tracerName in tracerList:
                 if tracerName in r.get('analysis'):
                     analysis = r.get('analysis')[tracerName]
-                    runtimeStatistics[tracerName].append(analysis['runtime'] / 1000)
+                    if analysis['runtime'] is not None:
+                        runtimeStatistics[tracerName].append(analysis['runtime'] / 1000)
                 else:
                     # print(f'Warning: {oracleName} {dataset["range"]} {r.get("oracleFileId")} {tracerName} is not in analysis')
                     pass
@@ -47,13 +48,13 @@ datasetLength = len(datasetLabels)
 # Create a box plot
 boxPlotFigure, boxPlotAxes = plt.subplots(1, datasetLength, figsize=(20, 5), constrained_layout=True, sharey=False)
 cdfFigure, cdfAxes = plt.subplots(1, datasetLength, figsize=(20, 5), sharey=False)
-boxPlotRuntimeLimit = [50, 50, 50]
+boxPlotRuntimeLimit = [20, 20, 50]
 cdfPlotRuntimeLimitAndStepSize = [[60, 5], [60, 5], [60, 5]]
 for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
     boxPlot = boxPlotAxes[datasetIndex]
     cdfPlot = cdfAxes[datasetIndex]
     boxPlot.set_ylim(0, boxPlotRuntimeLimit[datasetIndex])
-    boxPlot.set_yticks(np.arange(0, boxPlotRuntimeLimit[datasetIndex] + 1, 5))
+    boxPlot.set_yticks(np.arange(0, boxPlotRuntimeLimit[datasetIndex] + 1, 5 if datasetIndex == 2 else 2))
 
     for tracerIndex, tracerName in enumerate(tracerList):
         runtimes = runtimeStatistics[tracerName]
@@ -98,8 +99,8 @@ for datasetIndex, runtimeStatistics in enumerate(runtimeStatisticsList):
         cdfPlot.set_ylabel("CDF", fontsize=20)
 
         cdfPlot.legend(title="Tools", loc='lower right', fontsize=18, title_fontsize=20)
-        boxPlot.legend(title="Tools", loc='upper left', fontsize=18, title_fontsize=20)
-boxPlotFigure.supxlabel('Tools', fontsize=20)
+        boxPlot.legend(title="Tools", loc='upper right', fontsize=18, title_fontsize=20)
+boxPlotFigure.supxlabel('Method history generation tools', fontsize=20)
 cdfFigure.supxlabel('Execution Time (seconds)', fontsize=20)
 #
 # # Apply consistent colors to boxes

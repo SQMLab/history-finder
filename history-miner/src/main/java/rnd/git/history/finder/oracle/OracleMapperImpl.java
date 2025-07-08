@@ -12,7 +12,7 @@ public class OracleMapperImpl implements OracleMapper {
     @Override
     public HistoryFinderInput toHistoryFinderInput(InputOracle inputOracle, String cacheDirectory) {
         return HistoryFinderInput.builder()
-                .cacheDirectory(cacheDirectory)
+                .cloneDirectory(cacheDirectory)
                 .repositoryUrl(inputOracle.getRepositoryUrl())
                 .startCommitHash(inputOracle.getStartCommitHash())
                 .repositoryName(inputOracle.getRepositoryName())
