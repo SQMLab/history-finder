@@ -117,7 +117,7 @@
 
     function handleFileSelect(file) {
         const tool = document.getElementById('toolDropdown').value;
-        const url = `${window.location.origin}/ui/view-oracle-method-history?file=${encodeURIComponent(file)}&tracerName=${encodeURIComponent(tool)}`;
+        const url = `${window.location.origin}/ui/view-oracle-method-history?oracleFile=${encodeURIComponent(file)}&tracerName=${encodeURIComponent(tool)}`;
         window.open(url, '_blank');
     }
 
