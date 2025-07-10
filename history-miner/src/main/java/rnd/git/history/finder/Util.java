@@ -21,6 +21,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -310,5 +312,30 @@ public class Util {
             throw new RuntimeException(ex);
         }
 
+    }
+    /**
+     * Expands paths containing ~ (home), . (current), or .. (parent) into a fully resolved absolute path.
+     *
+     * @param inputPath The raw input path (e.g., "~/../my-folder/./file.txt")
+     * @return The fully expanded and normalized absolute path
+     */
+    public static String expandPath(String inputPath) {
+        if (inputPath == null || inputPath.isEmpty()) {
+            throw new IllegalArgumentException("Input path must not be null or empty");
+        }
+
+        // Expand ~ to home directory
+        if (inputPath.startsWith("~")) {
+            String userHome = System.getProperty("user.home");
+            inputPath = userHome + inputPath.substring(1);
+        }
+
+        try {
+            // Convert to Path, resolve absolute path and normalize . and ..
+            Path path = Paths.get(inputPath);
+            return path.toAbsolutePath().normalize().toString();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to expand path: " + inputPath, e);
+        }
     }
 }

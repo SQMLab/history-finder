@@ -4,7 +4,7 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import rnd.git.history.finder.dto.HistoryFinderInput;
-import rnd.git.history.finder.dto.HistoryFinderOutput;
+import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.service.HistoryFinderService;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
 
@@ -28,7 +28,7 @@ public class PreflightTest
     public void test51JGitRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://gerrit.googlesource.com/jgit")
                 .startCommitHash("bd1a82502680b5de5bf86f6c4470185fd1602386")
                 .repositoryName("jgit")
@@ -38,12 +38,13 @@ public class PreflightTest
                 .startLine(161)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
+
     public void test52JGitRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://gerrit.googlesource.com/jgit")
                 .startCommitHash("bd1a82502680b5de5bf86f6c4470185fd1602386")
                 .repositoryName("jgit")
@@ -53,13 +54,13 @@ public class PreflightTest
                 .startLine(409)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     public void testCheckstyleRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -69,13 +70,13 @@ public class PreflightTest
                 .startLine(384)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     public void testCheckstyleRepositoryOracle02() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -85,12 +86,13 @@ public class PreflightTest
                 .startLine(206)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
+
     public void testCheckstyleRepositoryOracle03() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -100,13 +102,13 @@ public class PreflightTest
                 .startLine(104)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     public void test05() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -116,13 +118,13 @@ public class PreflightTest
                 .startLine(875)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     public void test09() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
                 .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
                 .repositoryName("checkstyle")
@@ -132,13 +134,13 @@ public class PreflightTest
                 .startLine(412)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     public void testJavaParser() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/javaparser/javaparser.git")
                 .startCommitHash("97555053af3025556efe1a168fd7943dac28a2a6")
                 .repositoryName("javaparser")
@@ -148,12 +150,13 @@ public class PreflightTest
                 .startLine(519)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
+
     public void testSpringBootRepository() {
 
         HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
-                .cloneDirectory("../academic")
+                .cloneDirectory("~/dev/project/repository")
                 .repositoryUrl("https://github.com/spring-projects/spring-boot.git")
                 .startCommitHash("5cfe8dbee950dbf3a8de3ece2f6f3363f13d904a")
                 .repositoryName("spring-boot")
@@ -163,7 +166,7 @@ public class PreflightTest
                 .startLine(115)
                 .build();
 
-        HistoryFinderOutput output = historyFinderService.findSync(historyFinderInput);
+        historyFinderService.findSync(historyFinderInput);
     }
 
     /**
