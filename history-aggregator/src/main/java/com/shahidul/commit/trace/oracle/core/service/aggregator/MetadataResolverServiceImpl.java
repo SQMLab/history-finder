@@ -94,13 +94,13 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                 .map(commitUdt -> {
                     commitUdt.setCommitUrl(Util.getCommitUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash()));
                     commitUdt.setDiffUrl(Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash(), commitUdt.getNewFile()));
-                    if (commitUdt.getNewFileUrl() == null) {
-                        if (commitUdt.getOldFilUrl() != null) {
-                            commitUdt.setOldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
-                        }
+                    if (commitUdt.getNewFileUrl() == null && commitUdt.getNewFile() != null) {
                         commitUdt.setNewFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash(), commitUdt.getNewFile(), commitUdt.getStartLine()));
                     }
 
+                    if (commitUdt.getOldFilUrl() == null && commitUdt.getOldFile() != null) {
+                        commitUdt.setOldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
+                    }
                     return commitUdt;
                 })
                 .toList();

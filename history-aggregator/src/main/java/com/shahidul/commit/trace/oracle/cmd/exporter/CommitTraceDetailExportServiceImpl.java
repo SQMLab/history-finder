@@ -48,7 +48,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
         TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId(), cloneDirectory);
         //Skip for oracles
-        if (!traceEntity.getAnalysis().containsKey(commandLineInput.getTracerName().getCode())) {
+        if (!traceEntity.getAnalysis().containsKey(commandLineInput.getTracerName().getCode()) || forceExecute) {
 
             TraceService targetTraceService = traceServiceList.stream()
                     .filter(traceService -> traceService.getTracerName().equals(commandLineInput.getTracerName().getCode()))

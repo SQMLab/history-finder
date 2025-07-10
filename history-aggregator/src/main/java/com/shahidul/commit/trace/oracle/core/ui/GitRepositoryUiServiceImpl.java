@@ -404,7 +404,6 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         File[] files = dir.listFiles();
         if (files != null) {
             for (File file : files) {
-                log.info(file.getPath());
                 if (file.isDirectory()) {
                     File targetFile = findFile(file, targetFileName);
                     if (targetFile != null) {
