@@ -3,8 +3,8 @@ package com.shahidul.commit.trace.oracle.core.service.algorithm;
 import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.felixgrund.codeshovel.wrappers.Commit;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
+import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
@@ -76,7 +76,7 @@ public abstract class GitTracer implements TraceService {
 
             boolean isTimeout = !process.waitFor(120, TimeUnit.SECONDS);
 
-            if (isTimeout){
+            if (isTimeout) {
                 process.destroyForcibly();
             }
             Commit startCommit = cachingRepositoryService.findCommitByName(traceEntity.getStartCommitHash());
@@ -93,9 +93,12 @@ public abstract class GitTracer implements TraceService {
             //Scanner scanner = new Scanner(process.getInputStream());
             Scanner scanner = new Scanner(outputBuilder.toString());
             scanner.useDelimiter(DIVIDER);
-            String parentCommitHash = traceEntity.getStartCommitHash();
             while (scanner.hasNext()) {
                 String commitHash = scanner.next().strip();
+
+                RevCommit revCommit = cachingRepositoryService.findRevCommitById(repository.resolve(commitHash));
+                //TODO: How to link if more than one parent commit?
+                RevCommit revParentCommit = revCommit.getParent(0);
                 CommitUdt.CommitUdtBuilder commitEntityBuilder = CommitUdt.builder();
                 if (fileHistory.containsKey(commitHash)) {
                     Commit commit = fileHistory.get(commitHash);
@@ -106,20 +109,21 @@ public abstract class GitTracer implements TraceService {
                 }
                 String diff = scanner.next().strip();
                 String[] diffHeaderParts = diff.substring(0, diff.indexOf("\n")).split(" ");
-                String oldFile = diffHeaderParts[diffHeaderParts.length - 2].substring(2);
+                String oldFile = scanner.hasNext() ? diffHeaderParts[diffHeaderParts.length - 2].substring(2) : null;
                 String newFile = diffHeaderParts[diffHeaderParts.length - 1].substring(2);
+                if (oldFile != null) {
+                    commitEntityBuilder.fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
+                            .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
+                }
                 commitUdtList.add(commitEntityBuilder
                         .tracerName(getTracerName())
-                        .parentCommitHash(parentCommitHash)
+                        .parentCommitHash(revParentCommit.getName())
                         .commitHash(commitHash)
                         .changeTags(Collections.emptyList())
                         .oldFile(oldFile)
                         .newFile(newFile)
-                        .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                        .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
                         .diff(diff.substring(diff.indexOf("@@")))
                         .build());
-                parentCommitHash = commitHash;
             }
             scanner.close();
 

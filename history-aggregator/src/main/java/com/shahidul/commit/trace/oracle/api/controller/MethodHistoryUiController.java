@@ -6,6 +6,7 @@ import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.BaseException;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 
@@ -26,7 +29,7 @@ import java.util.List;
 public class MethodHistoryUiController {
     GitRepositoryUiService gitRepositoryUiService;
 
-    @GetMapping({"/ui/method-selector", "/"})
+    @GetMapping({"/ui/method-history", "/"})
     public String showMethodSelectorUi(
             @RequestParam(required = false) String tracerName,
             @RequestParam(required = false) String startCommitHash,
@@ -39,6 +42,7 @@ public class MethodHistoryUiController {
             @RequestParam(required = false) String methodName,
             @RequestParam(required = false) String startLine,
             @RequestParam(required = false) String endLine,
+            @RequestParam(required = false) String oracleFileId,
             Model model) {
 
         model.addAttribute("tracerName", tracerName);
@@ -52,40 +56,8 @@ public class MethodHistoryUiController {
         model.addAttribute("methodName", methodName);
         model.addAttribute("startLine", startLine);
         model.addAttribute("endLine", endLine);
+        model.addAttribute("oracleFileId", oracleFileId);
 
-        return "method-selector";
-    }
-
-
-    @GetMapping({"ui/method-history"})
-    public String showMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
-                                      @RequestParam("repositoryAccountName") String repositoryAccountName,
-                                      @RequestParam("repositoryPath") String repositoryPath,
-                                      @RequestParam("repositoryName") String repositoryName,
-                                      @RequestParam("startCommitHash") String startCommitHash,
-                                      @RequestParam("file") String file,
-                                      @RequestParam("methodName") String methodName,
-                                      @RequestParam("startLine") Integer startLine,
-                                      @RequestParam("endLine") Integer endLine,
-                                      @RequestParam("tracerName") TracerName tracerName,
-                                      Model model) {
-        try {
-
-            CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
-                    repositoryAccountName,
-                    repositoryPath,
-                    repositoryName,
-                    startCommitHash,
-                    file,
-                    methodName,
-                    startLine,
-                    endLine,
-                    tracerName);
-            model.addAttribute("trace", traceOutput);
-        } catch (Exception e) {
-            log.error("Failed to execute trace", e);
-            throw new CtoException(CtoError.Failed_To_Execute_Trace, e);
-        }
         return "method-history";
     }
 
@@ -100,7 +72,8 @@ public class MethodHistoryUiController {
                                                 @RequestParam("methodName") String methodName,
                                                 @RequestParam("startLine") Integer startLine,
                                                 @RequestParam("endLine") Integer endLine,
-                                                @RequestParam("tracerName") TracerName tracerName
+                                                @RequestParam("tracerName") TracerName tracerName,
+                                                @RequestParam(value = "forceExecute", required = false) Boolean forceExecute
     ) {
         CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
                 repositoryAccountName,
@@ -111,7 +84,9 @@ public class MethodHistoryUiController {
                 methodName,
                 startLine,
                 endLine,
-                tracerName);
+                tracerName,
+                forceExecute != null ? forceExecute : false
+        );
 
         if (traceOutput.getCommitDetails().isEmpty()) {
             if (TracerName.GIT_FUNC_NAME.equals(tracerName)) {
@@ -197,16 +172,26 @@ public class MethodHistoryUiController {
 
     @GetMapping({"ui/view-oracle-method-history"})
     public String viewOracleMethodHistory(
-            @RequestParam("file") String file,
+            @RequestParam("oracleFile") String oracleFile,
             @RequestParam("tracerName") TracerName tracerName,
             Model model) {
         try {
-            CommitTraceOutput traceOutput = gitRepositoryUiService.findOracleMethodHistory(file, tracerName);
-            model.addAttribute("trace", traceOutput);
+            HistoryInputParam historyInputParam = gitRepositoryUiService.findOracleMethodHistory(oracleFile, tracerName);
+            return "redirect:/ui/method-history" +
+                    "?tracerName=" + tracerName +
+                    "&startCommitHash=" + historyInputParam.getStartCommitHash() +
+                    "&repositoryHostName=" + URLEncoder.encode(historyInputParam.getRepositoryHostName(), StandardCharsets.UTF_8) +
+                    "&repositoryAccountName=" + historyInputParam.getRepositoryAccountName() +
+                    "&repositoryName=" + historyInputParam.getRepositoryName() +
+                    "&repositoryPath=" + URLEncoder.encode(historyInputParam.getRepositoryPath(), StandardCharsets.UTF_8) +
+                    "&repositoryLocation=" + URLEncoder.encode(historyInputParam.getRepositoryUrl(), StandardCharsets.UTF_8) +
+                    "&file=" + URLEncoder.encode(historyInputParam.getFile(), StandardCharsets.UTF_8) +
+                    "&methodName=" + historyInputParam.getMethodName() +
+                    "&startLine=" + historyInputParam.getStartLine() +
+                    "&endLine=" + historyInputParam.getEndLine();
         } catch (Exception e) {
             log.error("Failed to execute trace", e);
             throw new CtoException(CtoError.Failed_To_Execute_Trace, e);
         }
-        return "method-history";
     }
 }

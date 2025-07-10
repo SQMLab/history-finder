@@ -13,7 +13,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
-import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
 import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
@@ -113,7 +113,8 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                                                String methodName,
                                                Integer startLine,
                                                Integer endLine,
-                                               TracerName tracerName) {
+                                               TracerName tracerName,
+                                               boolean forceExecute) {
         CommandLineInput inputCommand = CommandLineInput.builder()
                 .command("")
                 .tracerName(tracerName)
@@ -128,7 +129,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 .startLine(startLine)
                 .endLine(endLine)
                 .build();
-        return traceDetailExportService.execute(inputCommand);
+        return traceDetailExportService.execute(inputCommand, forceExecute);
     }
 
     @Override
@@ -183,33 +184,29 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     }
 
     @Override
-    public CommitTraceOutput findOracleMethodHistory(String fileName, TracerName tracerName) {
+    public HistoryInputParam findOracleMethodHistory(String fileName, TracerName tracerName) {
 
-        TraceEntity precomputedEntity = traceRepository.findByOracleFileName(fileName);
-        if (precomputedEntity != null && precomputedEntity.getAnalysis().containsKey(tracerName.getCode())) {
-            CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(precomputedEntity, tracerName);
-            return commitTraceOutput;
-            //commitTraceOutput.setRepositoryFile(Util.concatPath(cloneDirectory, inputOracle.getRepositoryName()));
+        File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
+        try {
+            InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
+            RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
+            return HistoryInputParam.builder()
+                    .repositoryName(repositoryInfo.getRepositoryName())
+                    .startCommitHash(inputOracle.getStartCommitHash())
+                    .file(inputOracle.getFile())
+                    .methodName(inputOracle.getElement())
+                    .startLine(inputOracle.getStartLine())
+                    .endLine(inputOracle.getEndLine())
+                    .repositoryPath(repositoryInfo.getPath())
+                    .repositoryUrl(inputOracle.getRepositoryUrl())
+                    .repositoryHostName(repositoryInfo.getHost())
+                    .repositoryAccountName(repositoryInfo.getAccountName())
+                    .oracleFileId(Util.extractOracleFileId(fileName))
+                    .tracerName(tracerName)
+                    .build();
 
-        } else {
-            File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
-            InputOracle inputOracle = null;
-            try {
-                inputOracle = objectMapper.readValue(file, InputOracle.class);
-                RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
-                return findMethodHistory(repositoryInfo.getHost(),
-                        repositoryInfo.getAccountName(),
-                        repositoryInfo.getPath(),
-                        inputOracle.getRepositoryName(),
-                        inputOracle.getStartCommitHash(),
-                        inputOracle.getFile(),
-                        inputOracle.getElement(),
-                        inputOracle.getStartLine(),
-                        inputOracle.getEndLine(),
-                        tracerName);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -407,7 +404,6 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         File[] files = dir.listFiles();
         if (files != null) {
             for (File file : files) {
-                log.info(file.getPath());
                 if (file.isDirectory()) {
                     File targetFile = findFile(file, targetFileName);
                     if (targetFile != null) {

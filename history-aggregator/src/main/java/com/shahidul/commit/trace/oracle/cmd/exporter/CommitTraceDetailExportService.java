@@ -9,5 +9,5 @@ import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
  */
 public interface CommitTraceDetailExportService {
     void export(CommandLineInput commandLineInput);
-    CommitTraceOutput execute(CommandLineInput commandLineInput);
+    CommitTraceOutput execute(CommandLineInput commandLineInput, boolean forceExecute);
 }

@@ -3,6 +3,7 @@ package com.shahidul.commit.trace.oracle.core.ui;
 import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 
@@ -30,12 +31,13 @@ public interface GitRepositoryUiService {
                                         String methodName,
                                         Integer startLine,
                                         Integer endLine,
-                                        TracerName tracerName);
+                                        TracerName tracerName,
+                                        boolean forceExecute);
 
     RepositoryCheckoutResponse checkoutRepository(String location);
 
     List<String> getOracleFileList();
 
-    CommitTraceOutput findOracleMethodHistory(String file, TracerName tracerName);
+    HistoryInputParam findOracleMethodHistory(String file, TracerName tracerName);
 
 }

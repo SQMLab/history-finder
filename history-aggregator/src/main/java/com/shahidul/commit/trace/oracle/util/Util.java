@@ -158,6 +158,9 @@ public class Util {
             return lastPart;
         }
     }
+    public static Integer extractOracleFileId(String oracleFileName){
+        return Integer.parseInt(oracleFileName.split("-")[0]);
+    }
 
     public static String extractLastPart(String file){
         String[] fileParts = file.split("/");

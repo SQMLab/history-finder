@@ -10,7 +10,6 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
 import com.shahidul.commit.trace.oracle.core.service.algorithm.TraceService;
 import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzer;
-import com.shahidul.commit.trace.oracle.core.service.analyzer.TraceAnalyzerImpl;
 import com.shahidul.commit.trace.oracle.core.service.executor.TraceExecutor;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.util.Util;
@@ -39,22 +38,26 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
     @Override
     public void export(CommandLineInput commandLineInput) {
 
-        outputFileWriter.write(commandLineInput.getOutputFile(), execute(commandLineInput));
+        outputFileWriter.write(commandLineInput.getOutputFile(), execute(commandLineInput, true));
 
     }
 
     @Override
-    public CommitTraceOutput execute(CommandLineInput commandLineInput) {
+    public CommitTraceOutput execute(CommandLineInput commandLineInput, boolean forceExecute) {
         String cloneDirectory = commandLineInput.getCloneDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
         TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId(), cloneDirectory);
-        TraceService targetTraceService = traceServiceList.stream()
-                .filter(traceService -> traceService.getTracerName().equals(commandLineInput.getTracerName().getCode()))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Tracer not found"));
-        traceExecutor.execute(traceEntity, targetTraceService);
-        metadataResolverService.populateMetaData(traceEntity);
-        traceAnalyzer.sortCommits(traceEntity);
+        //Skip for oracles
+        if (!traceEntity.getAnalysis().containsKey(commandLineInput.getTracerName().getCode()) || forceExecute) {
+
+            TraceService targetTraceService = traceServiceList.stream()
+                    .filter(traceService -> traceService.getTracerName().equals(commandLineInput.getTracerName().getCode()))
+                    .findFirst()
+                    .orElseThrow(() -> new RuntimeException("Tracer not found"));
+            traceExecutor.execute(traceEntity, targetTraceService);
+            metadataResolverService.populateMetaData(traceEntity);
+            traceAnalyzer.sortCommits(traceEntity);
+        }
         CommitTraceOutput commitTraceOutput = commandLineHelperService.readOutput(traceEntity, commandLineInput.getTracerName());
         commitTraceOutput.setRepositoryFile(Util.concatPath(cloneDirectory, inputOracle.getRepositoryName()));
         return commitTraceOutput;

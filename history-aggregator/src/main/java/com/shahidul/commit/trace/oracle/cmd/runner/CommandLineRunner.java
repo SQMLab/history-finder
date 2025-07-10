@@ -30,26 +30,30 @@ public class CommandLineRunner implements org.springframework.boot.CommandLineRu
 
     @Override
     public void run(String... args) {
-        if (args.length > 0) {
-            CommandLineInput commandLineInput = inputParser.parse(args);
-            log.info("CMD input {}", commandLineInput.getFile());
-            String command = commandLineInput.getCommand();
-            if ("commit-trace-detail".equalsIgnoreCase(command)) {
-                commitTraceDetailExportService.export(commandLineInput);
-            } else if ("commit-trace-comparison".equalsIgnoreCase(command)) {
-                commitTraceComparisonExportService.export(commandLineInput);
-            } else throw new RuntimeException("Invalid command");
-            applicationContext.close();
-        } else {
-            String url = "http://localhost:" + appProperty.getServerPort();
-            try {
-                if (Desktop.isDesktopSupported()) {
-                    Desktop.getDesktop().browse(new URI(url));
-                } else {
-                    Runtime.getRuntime().exec("xdg-open " + url);
+        if (args.length == 1 && args[0].contains("--no-browser")){
+            log.info("Silent command line runner is running");
+        }else{
+            if (args.length > 0) {
+                CommandLineInput commandLineInput = inputParser.parse(args);
+                log.info("CMD input {}", commandLineInput.getFile());
+                String command = commandLineInput.getCommand();
+                if ("commit-trace-detail".equalsIgnoreCase(command)) {
+                    commitTraceDetailExportService.export(commandLineInput);
+                } else if ("commit-trace-comparison".equalsIgnoreCase(command)) {
+                    commitTraceComparisonExportService.export(commandLineInput);
+                } else throw new RuntimeException("Invalid command");
+                applicationContext.close();
+            } else {
+                String url = "http://localhost:" + appProperty.getServerPort();
+                try {
+                    if (Desktop.isDesktopSupported()) {
+                        Desktop.getDesktop().browse(new URI(url));
+                    } else {
+                        Runtime.getRuntime().exec("xdg-open " + url);
+                    }
+                } catch (Exception e) {
+                    Log.info("Server is running open browser and browse URL: " + url);
                 }
-            } catch (Exception e) {
-                Log.info("Server is running open browser and browse URL: " + url);
             }
         }
     }
