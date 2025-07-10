@@ -2,7 +2,6 @@ package com.shahidul.commit.trace.oracle.cmd.helper;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
-import com.shahidul.commit.trace.oracle.core.model.*;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AdditionalCommitInfoUdt;
@@ -10,7 +9,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
-import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
+import rnd.git.history.finder.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -144,7 +143,7 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .diff(commitUdt.getDiff())
                 .commitUrl(commitUdt.getCommitUrl())
                 .diffUrl(commitUdt.getDiffUrl())
-                .authorSearchUrl(Util.getUserSearchUrl(commitUdt.getAuthor()))
+                .authorSearchUrl(rnd.git.history.finder.Util.getUserSearchUrl(commitUdt.getAuthor()))
                 .oldFileUrl(commitUdt.getOldFilUrl())
                 .newFileUrl(commitUdt.getNewFileUrl())
                 .additionalCommitInfo(toAdditionalCommitInfo(commitUdt.getAdditionalInfo()))

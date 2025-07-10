@@ -13,7 +13,7 @@ import rnd.git.history.finder.enums.LanguageType;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
-import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
+import rnd.git.history.finder.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

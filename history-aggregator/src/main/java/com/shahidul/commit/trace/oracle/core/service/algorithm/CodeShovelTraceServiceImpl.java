@@ -164,9 +164,9 @@ public class CodeShovelTraceServiceImpl implements TraceService {
             commitBuilder.startLine(newFunction.getNameLineNumber())
                     .endLine(newFunction.getEndLineNumber())
                     .oldFile(oldFile)
-                    .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitHash, oldFile, oldFunction.getNameLineNumber()))
+                    .oldFilUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitHash, oldFile, oldFunction.getNameLineNumber()))
                     .newFile(newFile)
-                    .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitHash, newFile, newFunction.getNameLineNumber()))
+                    .newFileUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitHash, newFile, newFunction.getNameLineNumber()))
                     .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                     .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
         }

@@ -1,4 +1,4 @@
-package com.shahidul.commit.trace.oracle.util;
+package rnd.git.history.finder.util;
 
 import rnd.git.history.finder.dto.ChangeTag;
 

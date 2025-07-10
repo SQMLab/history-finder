@@ -6,6 +6,7 @@ import info.debatty.java.stringsimilarity.JaroWinkler;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.LogCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.diff.DiffEntry;
 import org.eclipse.jgit.diff.DiffFormatter;
@@ -516,6 +517,29 @@ public class JgitService {
         return linkedCommits;
     }
 
+    @SneakyThrows
+    public int countCommit(RevCommit startCommit, RevCommit ancestorCommit, String path) {
+        LogCommand logCommand = git.log()
+                .add(createCommitObjectId(startCommit.getName()));
+        if (path != null) {
+            logCommand.addPath(path);
+        }
+
+        int commitCount = 0;
+        for (RevCommit revCommit : logCommand.call()) {
+            if (revCommit.getName().equalsIgnoreCase(ancestorCommit.getName())
+                    || revCommit.getCommitTime() < ancestorCommit.getCommitTime()) {
+                break;
+            }
+            commitCount += 1;
+        }
+
+        return commitCount;
+    }
+
+    public String getRepositoryUrl() {
+        return git.getRepository().getConfig().getString("remote", "origin", "url");
+    }
     private Git cloneIfNeeded(String projectPath, String url, String username, String secret) {
         try {
             File rootDirectory = new File(projectPath);

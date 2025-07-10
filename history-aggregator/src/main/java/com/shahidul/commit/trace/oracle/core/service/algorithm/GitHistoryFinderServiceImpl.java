@@ -105,9 +105,9 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                 .parentCommitHash(oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null)
                 .ancestorCommitHash(historyEntry.getAncestorCommitHash())
                 .newFile(newFile)
-                .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
-                .diff(Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getFullCode() : null, newMethodHolder.getMethodSourceInfo().getFullCode()))
-                .docDiff(Util.getDiff(oldMethodHolder != null ? rnd.git.history.finder.Util.extractJavaDoc(oldMethodHolder.getMethodSourceInfo().getMethodDeclaration()) : null,
+                .newFileUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
+                .diff(rnd.git.history.finder.Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getFullCode() : null, newMethodHolder.getMethodSourceInfo().getFullCode()))
+                .docDiff(rnd.git.history.finder.Util.getDiff(oldMethodHolder != null ? rnd.git.history.finder.Util.extractJavaDoc(oldMethodHolder.getMethodSourceInfo().getMethodDeclaration()) : null,
                         rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration())))
                 .startLine(startLine)
                 .endLine(newMethodHolder.getMethodSourceInfo().getEndLine())
@@ -115,7 +115,7 @@ public class GitHistoryFinderServiceImpl implements TraceService {
         if (oldFile != null) {
             commitBuilder.fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                     .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                    .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), oldMethodHolder.getCommitHash(), oldFile, oldMethodHolder.getMethodSourceInfo().getStartLine()));
+                    .oldFilUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), oldMethodHolder.getCommitHash(), oldFile, oldMethodHolder.getMethodSourceInfo().getStartLine()));
         }
         return commitBuilder.build();
 
