@@ -7,10 +7,10 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 ## Web UI
 
 ### Steps to Run the Web Interface
-1. **Download the JAR file**:
+1. **Download the History Finder JAR**:
     - [Download history-finder-0.0.4.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 
-2. **Download and configure the application.yml file**:
+2. **Download and configure the `application.yml` file**:
     - [Download application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/application.yml)
     - For example, show the path to the directory that contains the git repositories (e.g., REPOSITORY_CLONE_DIRECTORY: /home/user/research/github_repos/)  
 
@@ -30,7 +30,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
     - [Download history-finder-0.0.4.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.4/history-finder-0.0.4.jar)
 2. **Run Commands**:
    ```bash
-   java -jar history-finder-0.0.4.jar <OPTIONS>
+      java -jar history-finder-0.0.4.jar <OPTIONS>
    ```
 
 ---
@@ -39,32 +39,32 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 #### **Generate Method History with a state-of-the-art implementation (e.g.,CodeShovel, CodeTracker, HistoryFinder )**
 ```bash
-java -jar history-finder-0.0.4.jar \
-    -command commit-trace-detail \
-    -tracer-name historyFinder \
-    -clone-directory ./repository \
-    -repository-url https://github.com/checkstyle/checkstyle.git \
-    -start-commit HEAD \
-    -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
-    -method-name fireErrors \
-    -start-line 384 \
-    -end-line 399 \
-    -output-file ./output/trace-detail.json
+   java -jar history-finder-0.0.4.jar \
+       -command commit-trace-detail \
+       -tracer-name historyFinder \
+       -clone-directory ./repository \
+       -repository-url https://github.com/checkstyle/checkstyle.git \
+       -start-commit HEAD \
+       -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
+       -method-name fireErrors \
+       -start-line 384 \
+       -end-line 399 \
+       -output-file ./output/trace-detail.json
 
 ```
 
 #### **Generate Compare Method History with different state-of-the-art implementations**
 ```bash
-java -jar history-finder-0.0.4.jar \
-    -command commit-trace-comparison \
-    -clone-directory ./repository \
-    -repository-url https://github.com/checkstyle/checkstyle.git \
-    -start-commit HEAD \
-    -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
-    -method-name fireErrors \
-    -start-line 384 \
-    -end-line 399 \
-    -output-file ./output/commit-trace-comparison.csv
+   java -jar history-finder-0.0.4.jar \
+       -command commit-trace-comparison \
+       -clone-directory ./repository \
+       -repository-url https://github.com/checkstyle/checkstyle.git \
+       -start-commit HEAD \
+       -file src/main/java/com/puppycrawl/tools/checkstyle/Checker.java \
+       -method-name fireErrors \
+       -start-line 384 \
+       -end-line 399 \
+       -output-file ./output/commit-trace-comparison.csv
 
 ```
 
@@ -92,6 +92,38 @@ java -jar history-finder-0.0.4.jar \
 | `-end-line <number>`           | End line number of the method (e.g., `399`).                                                |
 | `-output-file <path>`          | Path to store the output file (e.g., `./cache/output/trace-detail.json`).                   |
 
+
+
+## Library Integration
+
+### Dependency
+1. **Maven Dependency `pom.xml`**:
+   ```xml
+   <dependency>
+       <groupId>org.sqmlab.history-finder</groupId>
+       <artifactId>history-finder</artifactId>
+       <version>0.0.4</version>
+   </dependency>
+   ```
+2. **Alternative Gradle Dependency `build.gradle`**:
+   ```groovy
+    implementation 'rnd:history-finder-library:1.0.3-SNAPSHOT'
+   ```
+3. **Uncover Method History**:
+   ```java
+   HistoryFinderInput historyFinderInput = HistoryFinderInput.builder()
+                .cloneDirectory("~/dev/project/repository")
+                .repositoryUrl("https://github.com/checkstyle/checkstyle.git")
+                .startCommitHash("119fd4fb33bef9f5c66fc950396669af842c21a3")
+                .repositoryName("checkstyle")
+                .languageType(LanguageType.JAVA)
+                .file("src/main/java/com/puppycrawl/tools/checkstyle/Checker.java")
+                .methodName("fireErrors")
+                .startLine(384)
+                .build();
+   CommitTraceOutput commitTraceOutput = historyFinderService.findSync(historyFinderInput);
+   ```
+---
 
 ## Advanced Configuration
 
@@ -150,4 +182,4 @@ This study compares results against multiple oracles and evaluates runtime perfo
 
 This project is licensed under the **GNU General Public License v3.0**.
 
-For more information, see the [LICENSE](./LICENSE) file.
+For more information, see the [LICENSE](./LICENSE).
