@@ -1,8 +1,10 @@
 package com.shahidul.commit.trace.oracle.config;
 
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import rnd.git.history.finder.Util;
 
 /**
  * @author Shahidul Islam
@@ -36,4 +38,13 @@ public class AppProperty {
     String traceCacheDirectory;
     @Value("${trace.cache-directory-clean-start:false}")
     Boolean traceCacheDirectoryCleanStart;
+
+    @PostConstruct
+    public void expandPaths() {
+        this.repositoryBasePath = Util.expandPath(repositoryBasePath);
+        this.oracleFileDirectory = Util.expandPath(oracleFileDirectory);
+        this.traceFileDirectory = Util.expandPath(traceFileDirectory);
+        this.traceCacheDirectory = Util.expandPath(traceCacheDirectory);
+    }
 }
+
