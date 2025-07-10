@@ -1,10 +1,10 @@
 package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import rnd.git.history.finder.dto.ChangeTag;
 
 @Builder
 @NoArgsConstructor

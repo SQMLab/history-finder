@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import rnd.git.history.finder.dto.InputCommit;
 
 import java.util.List;
 

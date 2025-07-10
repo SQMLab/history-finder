@@ -12,7 +12,6 @@ import com.felixgrund.codeshovel.wrappers.StartEnvironment;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
@@ -27,6 +26,7 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

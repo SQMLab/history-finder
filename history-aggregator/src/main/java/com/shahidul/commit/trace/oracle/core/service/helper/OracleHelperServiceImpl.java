@@ -1,6 +1,5 @@
 package com.shahidul.commit.trace.oracle.core.service.helper;
 
-import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
@@ -8,6 +7,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.enums.LanguageType;
 
 import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
@@ -64,7 +64,7 @@ public class OracleHelperServiceImpl implements OracleHelperService {
                 .repositoryUrl(inputOracle.getRepositoryUrl())
                 .startCommitHash(inputOracle.getStartCommitHash())
                 .file(inputOracle.getFile())
-                .languageType(LanguageType.fromCode(inputOracle.getLanguage()))
+                .languageType(LanguageType.from(inputOracle.getLanguage()))
                 .elementType(inputOracle.getElementType())
                 .elementName(inputOracle.getElement())
                 .startLine(inputOracle.getStartLine())

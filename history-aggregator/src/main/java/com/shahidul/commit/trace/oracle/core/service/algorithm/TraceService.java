@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import rnd.git.history.finder.dto.ChangeTag;
 
 /**
  * @author Shahidul Islam

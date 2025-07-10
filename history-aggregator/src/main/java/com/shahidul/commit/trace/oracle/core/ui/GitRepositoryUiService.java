@@ -2,7 +2,7 @@ package com.shahidul.commit.trace.oracle.core.ui;
 
 import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;

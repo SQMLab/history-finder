@@ -1,6 +1,5 @@
 package com.shahidul.commit.trace.oracle.core.service.analyzer;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
@@ -11,9 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 /**

@@ -1,15 +1,14 @@
-package com.shahidul.commit.trace.oracle.core.model;
+package rnd.git.history.finder.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import rnd.git.history.finder.enums.LanguageType;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 

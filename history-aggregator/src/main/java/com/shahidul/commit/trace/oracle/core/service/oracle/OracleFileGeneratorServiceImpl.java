@@ -1,13 +1,12 @@
 package com.shahidul.commit.trace.oracle.core.service.oracle;
 
-import com.shahidul.commit.trace.oracle.core.model.InputCommit;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
-import com.shahidul.commit.trace.oracle.core.model.InputTrace;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.storage.StaticTraceDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.InputCommit;
 
 import java.util.List;
 

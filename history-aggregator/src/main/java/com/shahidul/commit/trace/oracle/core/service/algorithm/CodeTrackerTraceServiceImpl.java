@@ -3,7 +3,6 @@ package com.shahidul.commit.trace.oracle.core.service.algorithm;
 import com.felixgrund.codeshovel.services.RepositoryService;
 import com.felixgrund.codeshovel.services.impl.CachingRepositoryService;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
@@ -23,6 +22,7 @@ import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.util.*;
 import java.util.stream.Collectors;

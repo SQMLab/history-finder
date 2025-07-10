@@ -2,16 +2,14 @@ package com.shahidul.commit.trace.oracle.core.influx.series;
 
 import com.influxdb.annotations.Column;
 import com.influxdb.annotations.Measurement;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.time.Instant;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam
