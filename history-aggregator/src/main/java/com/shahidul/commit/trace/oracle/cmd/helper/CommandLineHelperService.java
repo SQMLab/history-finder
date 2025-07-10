@@ -3,7 +3,7 @@ package com.shahidul.commit.trace.oracle.cmd.helper;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 /**

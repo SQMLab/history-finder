@@ -5,7 +5,6 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import rnd.git.history.finder.dto.HistoryFinderInput;
 import rnd.git.history.finder.dto.HistoryFinderOutput;
-import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.service.HistoryFinderService;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
 

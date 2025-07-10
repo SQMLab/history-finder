@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.LinkedHashSet;
+import java.util.List;
 
 /**
  * @author Shahidul Islam
@@ -18,5 +18,5 @@ import java.util.LinkedHashSet;
 @Data
 public class InputCommit {
     String commitHash;
-    LinkedHashSet<ChangeTag> changeTags;
+    List<ChangeTag> changeTags;
 }

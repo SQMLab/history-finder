@@ -1,9 +1,9 @@
 package com.shahidul.commit.trace.oracle.cmd.helper;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.model.*;
+import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AdditionalCommitInfoUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
@@ -15,6 +15,7 @@ import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
+import rnd.git.history.finder.dto.*;
 
 import java.util.*;
 import java.util.stream.Collectors;

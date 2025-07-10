@@ -1,9 +1,7 @@
 package rnd.git.history.finder.oracle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import rnd.git.history.finder.dto.HistoryFinderInput;
 import rnd.git.history.finder.dto.InputOracle;
-import rnd.git.history.finder.enums.LanguageType;
 
 import java.io.File;
 import java.io.IOException;

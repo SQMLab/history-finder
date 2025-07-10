@@ -4,7 +4,7 @@ import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.cmd.helper.CommandLineHelperService;
 import com.shahidul.commit.trace.oracle.cmd.writer.OutputFileWriter;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;

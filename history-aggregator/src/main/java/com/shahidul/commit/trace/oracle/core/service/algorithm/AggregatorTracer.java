@@ -1,7 +1,6 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
 import com.shahidul.commit.trace.oracle.config.AppProperty;
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
@@ -11,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.util.*;
 import java.util.function.Function;

@@ -1,13 +1,10 @@
 package com.shahidul.commit.trace.oracle.core.service.oracle;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import rnd.git.history.finder.dto.ChangeTag;
 
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * @author Shahidul Islam

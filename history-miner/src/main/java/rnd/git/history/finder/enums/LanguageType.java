@@ -1,17 +1,23 @@
 package rnd.git.history.finder.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * @author Shahidul Islam
- * @since 2/2/2024
+ * @since 3/23/2024
  */
+@AllArgsConstructor
+@Getter
 public enum LanguageType {
-    JAVA,PYTHON;
-    public static LanguageType from(String language){
+    JAVA("Java");
+    String code;
+    public static LanguageType from(String code){
         for (LanguageType languageType : values()){
-            if (languageType.name().equalsIgnoreCase(language)){
+            if (languageType.getCode().equalsIgnoreCase(code)){
                 return languageType;
             }
         }
-        throw new RuntimeException("Unsupported Language : " + language);
+        throw new RuntimeException("Illegal argument exception : " + code);
     }
 }

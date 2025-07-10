@@ -1,6 +1,5 @@
 package com.shahidul.commit.trace.oracle.core.mongo.entity;
 
-import com.shahidul.commit.trace.oracle.core.enums.LanguageType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +12,7 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import rnd.git.history.finder.enums.LanguageType;
 
 import java.util.Date;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.shahidul.commit.trace.oracle.core.service.oracle;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
@@ -9,6 +8,7 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.ChangeTag;
 
 import java.util.List;
 

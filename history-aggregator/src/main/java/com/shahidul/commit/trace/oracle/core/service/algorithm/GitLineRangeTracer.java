@@ -1,11 +1,11 @@
 package com.shahidul.commit.trace.oracle.core.service.algorithm;
 
-import com.shahidul.commit.trace.oracle.core.enums.ChangeTag;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.ChangeTag;
 
 /**
  * @author Shahidul Islam

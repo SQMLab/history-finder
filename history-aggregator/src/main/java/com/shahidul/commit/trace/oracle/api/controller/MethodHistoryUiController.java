@@ -5,7 +5,7 @@ import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.BaseException;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
 import com.shahidul.commit.trace.oracle.core.ui.GitRepositoryUiService;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;

@@ -1,7 +1,7 @@
 package com.shahidul.commit.trace.oracle.cmd.exporter;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
-import com.shahidul.commit.trace.oracle.core.model.CommitTraceOutput;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 
 /**
  * @author Shahidul Islam
