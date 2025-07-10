@@ -51,7 +51,7 @@ for toolName in ['codeShovel', 'historyFinder', 'codeTracker']:
                     ]
                 if toolName == 'historyFinder':
                     cmd = [
-                        "java", "-jar", '../history-aggregator/lib/history-miner-1.0.3-SNAPSHOT.jar',
+                        "java", "-jar", '../history-aggregator/lib/history-finder-library-1.0.3-SNAPSHOT.jar',
                         "-clone-directory", REPOSITORY_ROOT_DIRECTORY,
                         "-repository-url", repositoryUrl,
                         "-start-commit", startCommit,
