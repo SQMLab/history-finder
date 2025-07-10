@@ -21,6 +21,8 @@ import java.util.List;
 public class OutputCommitDetail {
     @JsonProperty("commitName")
     String commitHash;
+    String parentCommitHash;
+    String ancestorCommitHash;
     @JsonProperty("commitDate")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yy HH:mm a")
     Date committedAt;
@@ -59,6 +61,7 @@ public class OutputCommitDetail {
     AdditionalCommitInfo additionalCommitInfo;
     @JsonProperty("actualSource")
     String newCode;
+    String newDoc;
     String diff;
     @JsonIgnore
     String docDiff;

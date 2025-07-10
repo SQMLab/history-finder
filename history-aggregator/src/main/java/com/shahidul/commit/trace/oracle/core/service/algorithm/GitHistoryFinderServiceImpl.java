@@ -10,11 +10,15 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.util.TextUtils;
 import org.springframework.stereotype.Service;
-import rnd.git.history.finder.dto.*;
+import rnd.git.history.finder.dto.ChangeTag;
+import rnd.git.history.finder.dto.CommitTraceOutput;
+import rnd.git.history.finder.dto.HistoryFinderInput;
+import rnd.git.history.finder.dto.OutputCommitDetail;
 import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.service.HistoryFinderServiceImpl;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -53,14 +57,14 @@ public class GitHistoryFinderServiceImpl implements TraceService {
                     .startLine(traceEntity.getStartLine())
                     .build();
             HistoryFinderServiceImpl historyFinderService = new HistoryFinderServiceImpl();
-            HistoryFinderOutput historyFinderOutput = historyFinderService.findSync(historyFinderInput);
+            CommitTraceOutput historyFinderOutput = historyFinderService.findSync(historyFinderInput);
 
 
-            List<HistoryEntry> historyEntryList = historyFinderOutput.getHistoryEntryList();
+            List<OutputCommitDetail> historyEntryList = historyFinderOutput.getCommitDetails();
             List<CommitUdt> commitUdtList = new ArrayList<>();
 
             for (int i = 0; i < historyEntryList.size(); i++) {
-                commitUdtList.add(toCommitEntity(historyEntryList.get(i), traceEntity));
+                commitUdtList.add(toCommitEntity(historyEntryList.get(i)));
             }
 
 
@@ -83,39 +87,32 @@ public class GitHistoryFinderServiceImpl implements TraceService {
     }
 
 
-    private CommitUdt toCommitEntity(HistoryEntry historyEntry, TraceEntity traceEntity) {
-        Set<ChangeTag> changeTags = historyEntry.getChangeTagSet()
+    private CommitUdt toCommitEntity(OutputCommitDetail historyEntry) {
+        List<ChangeTag> orderedTagList = historyEntry.getChangeTags()
                 .stream()
-                .map(tag -> parseChangeType(tag.getCode()))
-                .collect(Collectors.toCollection(HashSet::new));
-        MethodHolder newMethodHolder = historyEntry.getNewMethodHolder();
-        String newFile = newMethodHolder.getFile();
-        MethodHolder oldMethodHolder = historyEntry.getOldMethodHolder();
-        String oldFile = oldMethodHolder != null ? oldMethodHolder.getFile() : null;
+                .map(tag -> parseChangeType(tag.getCode())).distinct().sorted(ChangeTag.NATURAL_ORDER).collect(Collectors.toList());
 
-        int startLine = newMethodHolder.getMethodSourceInfo().getStartLine();
-        List<ChangeTag> orderedTagList = new ArrayList<>(changeTags);
-        orderedTagList.sort(ChangeTag.NATURAL_ORDER);
+        String oldFile = historyEntry.getOldFile();
+        String newFile = historyEntry.getNewFile();
         CommitUdt.CommitUdtBuilder commitBuilder = CommitUdt.builder()
                 .tracerName(getTracerName())
-                .commitHash(newMethodHolder.getCommitHash())
+                .commitHash(historyEntry.getCommitHash())
                 .changeTags(orderedTagList)
-                .codeFragment(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
-                .documentation(rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
-                .parentCommitHash(oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null)
+                .codeFragment(historyEntry.getNewCode())
+                .documentation(historyEntry.getNewDoc())
+                .parentCommitHash(historyEntry.getParentCommitHash())
                 .ancestorCommitHash(historyEntry.getAncestorCommitHash())
                 .newFile(newFile)
-                .newFileUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), newMethodHolder.getCommitHash(), newFile, startLine))
-                .diff(rnd.git.history.finder.Util.getDiff(oldMethodHolder != null ? oldMethodHolder.getMethodSourceInfo().getFullCode() : null, newMethodHolder.getMethodSourceInfo().getFullCode()))
-                .docDiff(rnd.git.history.finder.Util.getDiff(oldMethodHolder != null ? rnd.git.history.finder.Util.extractJavaDoc(oldMethodHolder.getMethodSourceInfo().getMethodDeclaration()) : null,
-                        rnd.git.history.finder.Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration())))
-                .startLine(startLine)
-                .endLine(newMethodHolder.getMethodSourceInfo().getEndLine())
-                .oldFile(oldFile);
+                .newFileUrl(historyEntry.getNewFileUrl())
+                .diff(historyEntry.getDiff())
+                .docDiff(historyEntry.getDocDiff())
+                .startLine(historyEntry.getStartLine())
+                .endLine(historyEntry.getEndLine())
+                .oldFile(oldFile)
+                .oldFilUrl(historyEntry.getOldFileUrl());
         if (oldFile != null) {
             commitBuilder.fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
-                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
-                    .oldFilUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), oldMethodHolder.getCommitHash(), oldFile, oldMethodHolder.getMethodSourceInfo().getStartLine()));
+                    .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0);
         }
         return commitBuilder.build();
 

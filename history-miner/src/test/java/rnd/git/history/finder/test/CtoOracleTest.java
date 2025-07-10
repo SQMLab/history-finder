@@ -46,9 +46,9 @@ public class CtoOracleTest {
                 .map(oracleExecutionContext -> DynamicContainer.dynamicContainer(oracleExecutionContext.getInputOracle().getOracleFileName(),
                         Stream.of(
                                 DynamicTest.dynamicTest("History Finder", () -> {
-                                    HistoryFinderOutput historyFinderOutput = historyFinderService.findSync(oracleExecutionContext.getHistoryFinderInput());
-                                    oracleExecutionContext.setOutputCommitSet(historyFinderOutput.getHistoryEntryList()
-                                            .stream().map(entry-> entry.getNewMethodHolder().getCommitHash()).collect(Collectors.toUnmodifiableSet()));
+                                    CommitTraceOutput historyFinderOutput = historyFinderService.findSync(oracleExecutionContext.getHistoryFinderInput());
+                                    oracleExecutionContext.setOutputCommitSet(historyFinderOutput.getCommitDetails()
+                                            .stream().map(OutputCommitDetail::getCommitHash).collect(Collectors.toUnmodifiableSet()));
                                 }),
                                 DynamicTest.dynamicTest("Commit Count", () -> {
                                     int outputCommitCount = oracleExecutionContext.getOutputCommitSet().size();

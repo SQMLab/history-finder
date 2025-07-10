@@ -87,6 +87,8 @@ public class HistoryFinderOutputConverterImpl implements HistoryFinderOutputConv
         OutputCommitDetail.OutputCommitDetailBuilder commitDetailBuilder = OutputCommitDetail.builder();
         commitDetailBuilder
                 .commitHash(newMethodHolder.getCommitHash())
+                .parentCommitHash(oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null)
+                .ancestorCommitHash(historyEntry.getAncestorCommitHash())
                 .committedAt(new Date(revCommit.getCommitTime() * 1000L))
                 .startLine(newMethodHolder.getMethodSourceInfo().getStartLine())
                 .endLine(newMethodHolder.getMethodSourceInfo().getEndLine())
@@ -110,6 +112,7 @@ public class HistoryFinderOutputConverterImpl implements HistoryFinderOutputConv
                 .newFileUrl(Util.gitRawFileUrl(repositoryUrl, newMethodHolder.getCommitHash(), newMethodHolder.getFile(), newMethodHolder.getMethodSourceInfo().getStartLine()))
                 .additionalCommitInfo(toAdditionalCommitInfo(oldMethodHolder, newMethodHolder))
                 .newCode(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
+                .newDoc(Util.extractJavaDoc(newMethodHolder.getMethodSourceInfo().getMethodDeclaration()))
                 .diffDetail(null);
         if (revAncestorCommit != null) {
             commitDetailBuilder.commitCountBetweenForRepo(jgitService.countCommit(revCommit, revAncestorCommit, null))

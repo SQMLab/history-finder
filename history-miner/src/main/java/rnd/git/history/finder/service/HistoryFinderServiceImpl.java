@@ -1,9 +1,13 @@
 package rnd.git.history.finder.service;
 
 import lombok.extern.slf4j.Slf4j;
+import rnd.git.history.finder.Util;
 import rnd.git.history.finder.algortihm.Algorithm;
 import rnd.git.history.finder.algortihm.implementation.MethodHistoryAlgorithm;
-import rnd.git.history.finder.dto.*;
+import rnd.git.history.finder.dto.CommitTraceOutput;
+import rnd.git.history.finder.dto.HistoryEntry;
+import rnd.git.history.finder.dto.HistoryFinderInput;
+import rnd.git.history.finder.dto.Method;
 import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.jgit.JgitService;
 import rnd.git.history.finder.parser.Parser;
@@ -12,7 +16,6 @@ import rnd.git.history.finder.util.HistoryFinderOutputConverter;
 import rnd.git.history.finder.util.HistoryFinderOutputConverterImpl;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -25,12 +28,13 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
     HistoryFinderOutputConverter converter = new HistoryFinderOutputConverterImpl();
 
     @Override
-    public HistoryFinderOutput findSync(HistoryFinderInput input) {
+    public CommitTraceOutput findSync(HistoryFinderInput input) {
         long startTime = System.nanoTime();
 
 
         try {
-            JgitService jgitService = new JgitService(input.getCloneDirectory(), input.getRepositoryUrl(), input.getRepositoryName());
+            String expandedCloneDirectory = Util.expandPath(input.getCloneDirectory());
+            JgitService jgitService = new JgitService(expandedCloneDirectory, input.getRepositoryUrl(), input.getRepositoryName());
             Parser parser;
             if (input.getLanguageType() == LanguageType.JAVA) {
                 parser = new YJavaParser(jgitService);
@@ -62,14 +66,7 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
             log.info("execution time: " + totalTime + " milliseconds");
 
 
-            CommitTraceOutput traceOutput = converter.convert(jgitService, input, changeHistory, totalTime, method.getAnalyzedCommitCount(), method.getMethodId());
-            return HistoryFinderOutput.builder()
-                    .commitList(Collections.emptyList())
-                    .historyEntryList(changeHistory)
-                    .executionTime(totalTime)
-                    .analyzedCommitCount(method.getAnalyzedCommitCount())
-                    .methodId(method.getMethodId())
-                    .build();
+            return converter.convert(jgitService, input, changeHistory, totalTime, method.getAnalyzedCommitCount(), method.getMethodId());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
