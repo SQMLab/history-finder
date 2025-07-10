@@ -11,11 +11,15 @@ import jakarta.xml.bind.DatatypeConverter;
 import lombok.SneakyThrows;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.eclipse.jgit.diff.*;
 import org.eclipse.jgit.revwalk.RevCommit;
 import rnd.git.history.finder.dto.*;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.*;
@@ -247,5 +251,64 @@ public class Util {
     }
     public static String sanitizeFunctionId(String ident) {
         return ident.replaceAll(":", "__").replaceAll("#", "__").replaceAll("<", "__").replaceAll(">", "__");
+    }
+    public static String extractLastPart(String file){
+        String[] fileParts = file.split("/");
+        return fileParts[fileParts.length - 1];
+    }
+
+    public static Double daysBetweenCommit(int commitTimInSecond, int ancestorCommitTimeInSecond) {
+        int commitTimeDiffInSecond = commitTimInSecond -ancestorCommitTimeInSecond;
+        double daysBetweenCommits = (double) commitTimeDiffInSecond / (60 * 60 * 24);
+        return new BigDecimal(daysBetweenCommits).setScale(2, RoundingMode.HALF_UP).doubleValue();
+    }
+
+    @SneakyThrows
+    public static String sha256(byte[] content) {
+        MessageDigest crypt = MessageDigest.getInstance("SHA-256");
+        crypt.reset();
+        crypt.update(content);
+        return DatatypeConverter.printHexBinary(crypt.digest());
+    }
+    //TODO: Check it it supports line number or not
+    public static String getDiffUrl(String repositoryUrl, String parentCommitHash, String commitHash, String file) {
+        String fileSection = "";
+        if (file != null){
+            fileSection =  "#diff-" + sha256(file.getBytes(StandardCharsets.UTF_8)).toLowerCase();
+        }
+        return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash  + fileSection;
+    }
+
+    public static String gitRawFileUrl(String repositoryUrl, String commitHash, String file, Integer lineNumber){
+        return repositoryUrl.replaceAll("\\.git", "") + "/blob/" + commitHash + "/" + file + (lineNumber != null ? "#L" + lineNumber : "");
+    }
+    public static String getCommitUrl(String repositoryUrl, String commitHash){
+        return repositoryUrl.replaceAll("\\.git", "") + "/commit/" + commitHash;
+    }
+    public static String getUserSearchUrl(String authorName){
+        return "https://github.com/search?q=" + authorName + "&type=Users";
+    }
+
+    public static String getDiff(String oldText, String newText) {
+    /*    if (oldText == null){
+            return newText;
+        }else if (newText ==  null){
+            return oldText;
+        }*/
+        try {
+            RawText sourceOld = new RawText((oldText == null ? "" : oldText).getBytes(StandardCharsets.UTF_8));
+            RawText sourceNew = new RawText((newText == null ? "" : newText).getBytes(StandardCharsets.UTF_8));
+            DiffAlgorithm diffAlgorithm = new HistogramDiff();
+            RawTextComparator textComparator = RawTextComparator.DEFAULT;
+            EditList editList = diffAlgorithm.diff(textComparator, sourceOld, sourceNew);
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            DiffFormatter formatter = new DiffFormatter(out);
+            formatter.setContext(1000);
+            formatter.format(editList, sourceOld, sourceNew);
+            return out.toString(StandardCharsets.UTF_8);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+
     }
 }

@@ -92,14 +92,14 @@ public class MetadataResolverServiceImpl implements MetadataResolverService {
                     return commitUdt;
                 })
                 .map(commitUdt -> {
-                    commitUdt.setCommitUrl(Util.getCommitUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash()));
-                    commitUdt.setDiffUrl(Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash(), commitUdt.getNewFile()));
+                    commitUdt.setCommitUrl(rnd.git.history.finder.Util.getCommitUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash()));
+                    commitUdt.setDiffUrl(rnd.git.history.finder.Util.getDiffUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getCommitHash(), commitUdt.getNewFile()));
                     if (commitUdt.getNewFileUrl() == null && commitUdt.getNewFile() != null) {
-                        commitUdt.setNewFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash(), commitUdt.getNewFile(), commitUdt.getStartLine()));
+                        commitUdt.setNewFileUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getCommitHash(), commitUdt.getNewFile(), commitUdt.getStartLine()));
                     }
 
                     if (commitUdt.getOldFilUrl() == null && commitUdt.getOldFile() != null) {
-                        commitUdt.setOldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
+                        commitUdt.setOldFilUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), commitUdt.getParentCommitHash(), commitUdt.getOldFile(), commitUdt.getStartLine()));
                     }
                     return commitUdt;
                 })

@@ -55,23 +55,7 @@ public class Util {
         return !oldFile.substring(0, oldFileNameStartIndex + 1).equals(newFile.substring(0, newFileNameStartIndex + 1));
     }
 
-    public static String getDiffUrl(String repositoryUrl, String parentCommitHash, String commitHash, String file) {
-        String fileSection = "";
-        if (file != null){
-            fileSection =  "#diff-" + sha256(file.getBytes(StandardCharsets.UTF_8)).toLowerCase();
-        }
-        return repositoryUrl.replaceAll("\\.git", "") + "/compare/" + parentCommitHash + "..." + commitHash  + fileSection;
-    }
 
-    public static String gitRawFileUrl(String repositoryUrl, String commitHash, String file, Integer lineNumber){
-        return repositoryUrl.replaceAll("\\.git", "") + "/blob/" + commitHash + "/" + file + (lineNumber != null ? "#L" + lineNumber : "");
-    }
-    public static String getCommitUrl(String repositoryUrl, String commitHash){
-        return repositoryUrl.replaceAll("\\.git", "") + "/commit/" + commitHash;
-    }
-    public static String getUserSearchUrl(String authorName){
-        return "https://github.com/search?q=" + authorName + "&type=Users";
-    }
 
     public static String readLineRange(String fileContent, Integer startLine, Integer endLine) {
        /* StringBuilder textBuilder = new StringBuilder();
@@ -90,28 +74,6 @@ public class Util {
         }
     }
 
-    public static String getDiff(String oldText, String newText) {
-    /*    if (oldText == null){
-            return newText;
-        }else if (newText ==  null){
-            return oldText;
-        }*/
-        try {
-            RawText sourceOld = new RawText((oldText == null ? "" : oldText).getBytes(StandardCharsets.UTF_8));
-            RawText sourceNew = new RawText((newText == null ? "" : newText).getBytes(StandardCharsets.UTF_8));
-            DiffAlgorithm diffAlgorithm = new HistogramDiff();
-            RawTextComparator textComparator = RawTextComparator.DEFAULT;
-            EditList editList = diffAlgorithm.diff(textComparator, sourceOld, sourceNew);
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            DiffFormatter formatter = new DiffFormatter(out);
-            formatter.setContext(1000);
-            formatter.format(editList, sourceOld, sourceNew);
-            return out.toString(StandardCharsets.UTF_8);
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
-        }
-
-    }
 
     public static String truncate(String text, int limit) {
         if (text == null || text.length() <= limit) {
@@ -141,13 +103,7 @@ public class Util {
                 .sorted()
                 .toList();
     }
-    @SneakyThrows
-    public static String sha256(byte[] content) {
-        MessageDigest crypt = MessageDigest.getInstance("SHA-256");
-        crypt.reset();
-        crypt.update(content);
-        return DatatypeConverter.printHexBinary(crypt.digest());
-    }
+
 
     public static String extractClassNameFromFile(String file){
         String[] fileParts = file.split("/");
@@ -163,8 +119,7 @@ public class Util {
     }
 
     public static String extractLastPart(String file){
-        String[] fileParts = file.split("/");
-        return fileParts[fileParts.length - 1];
+        return rnd.git.history.finder.Util.extractLastPart(file);
     }
     public static String concatPath(String prefix, String suffix){
         if (prefix.endsWith("/")){

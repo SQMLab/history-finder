@@ -105,7 +105,7 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                     log.error("Failed to read old code fragment");
                 }
             }
-            diff = Util.getDiff(oldCodeFragment, newCodeFragment);
+            diff = rnd.git.history.finder.Util.getDiff(oldCodeFragment, newCodeFragment);
         } catch (Exception ex) {
             log.error("Diff error ", ex);
         }
@@ -119,9 +119,9 @@ public class CodeTrackerTraceServiceImpl implements TraceService {
                 .codeFragment(newCodeFragment)
                 .changeTags(toChangeTagSet(historyInfo.getChangeList()))
                 .oldFile(oldFile)
-                .oldFilUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitId, oldFile, historyInfo.getElementBefore().getLocation().getStartLine()))
+                .oldFilUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), parentCommitId, oldFile, historyInfo.getElementBefore().getLocation().getStartLine()))
                 .newFile(newFile)
-                .newFileUrl(Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), historyInfo.getCommitId(), newFile, newLocation.getStartLine()))
+                .newFileUrl(rnd.git.history.finder.Util.gitRawFileUrl(traceEntity.getRepositoryUrl(), historyInfo.getCommitId(), newFile, newLocation.getStartLine()))
                 .fileRenamed(Util.isFileRenamed(oldFile, newFile) ? 1 : 0)
                 .fileMoved(Util.isFileMoved(oldFile, newFile) ? 1 : 0)
                 .oldElement(oldMethod.getName())

@@ -8,6 +8,8 @@ import rnd.git.history.finder.enums.LanguageType;
 import rnd.git.history.finder.jgit.JgitService;
 import rnd.git.history.finder.parser.Parser;
 import rnd.git.history.finder.parser.implementation.YJavaParser;
+import rnd.git.history.finder.util.HistoryFinderOutputConverter;
+import rnd.git.history.finder.util.HistoryFinderOutputConverterImpl;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -20,6 +22,8 @@ import java.util.List;
  */
 @Slf4j
 public class HistoryFinderServiceImpl implements HistoryFinderService {
+    HistoryFinderOutputConverter converter = new HistoryFinderOutputConverterImpl();
+
     @Override
     public HistoryFinderOutput findSync(HistoryFinderInput input) {
         long startTime = System.nanoTime();
@@ -38,15 +42,15 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
                     = new MethodHistoryAlgorithm(parser);
 
             String startCommitId = null;
-            if ("HEAD".equalsIgnoreCase(input.getStartCommitHash())){
+            if ("HEAD".equalsIgnoreCase(input.getStartCommitHash())) {
                 startCommitId = jgitService.getHeadCommitHash();
-            }else {
+            } else {
                 startCommitId = input.getStartCommitHash();
             }
             Method method = parser.retrieveGivenMethodFromFile(startCommitId, input.getFile(), input.getMethodName(), input.getStartLine());
             algorithm.compute(method);
             List<HistoryEntry> changeHistory = method.getHistoryEntryList();
-            for (HistoryEntry commit : changeHistory){
+            for (HistoryEntry commit : changeHistory) {
                 Date commitedAt = null;
                /* if (commit.getCommitInfo() != null){
                     commitedAt = new Date(commit.getCommitInfo().getTime() * 1000L);
@@ -58,6 +62,7 @@ public class HistoryFinderServiceImpl implements HistoryFinderService {
             log.info("execution time: " + totalTime + " milliseconds");
 
 
+            CommitTraceOutput traceOutput = converter.convert(jgitService, input, changeHistory, totalTime, method.getAnalyzedCommitCount(), method.getMethodId());
             return HistoryFinderOutput.builder()
                     .commitList(Collections.emptyList())
                     .historyEntryList(changeHistory)

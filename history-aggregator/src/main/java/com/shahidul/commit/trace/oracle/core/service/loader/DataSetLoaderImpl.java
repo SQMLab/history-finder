@@ -12,7 +12,6 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperServiceImpl;
-import com.shahidul.commit.trace.oracle.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
@@ -22,6 +21,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import rnd.git.history.finder.dto.ChangeTag;
 import rnd.git.history.finder.dto.InputCommit;
+import rnd.git.history.finder.util.ChangeTagUtil;
 
 import java.io.*;
 import java.util.*;
