@@ -6,15 +6,12 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.shahidul.commit.trace.oracle.api.payload.RepositoryListResponse;
 import com.shahidul.commit.trace.oracle.cmd.exporter.CommitTraceDetailExportService;
-import com.shahidul.commit.trace.oracle.cmd.helper.CommandLineHelperService;
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 import com.shahidul.commit.trace.oracle.core.error.exception.CtoException;
-import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.model.HistoryInputParam;
-import com.shahidul.commit.trace.oracle.core.mongo.repository.TraceRepository;
 import com.shahidul.commit.trace.oracle.core.ui.dto.MethodLocationDto;
 import com.shahidul.commit.trace.oracle.core.ui.dto.RepositoryCheckoutResponse;
 import com.shahidul.commit.trace.oracle.util.Util;
@@ -25,6 +22,7 @@ import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.util.GitServiceImpl;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 import rnd.git.history.finder.dto.InputOracle;
 import rnd.git.history.finder.enums.LanguageType;
 
@@ -42,10 +40,8 @@ import java.util.regex.Pattern;
 @Slf4j
 public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     private final ObjectMapper objectMapper;
-    private final TraceRepository traceRepository;
     AppProperty appProperty;
     CommitTraceDetailExportService traceDetailExportService;
-    CommandLineHelperService commandLineHelperService;
 
     @Override
     public RepositoryListResponse findRepositoryList() {
