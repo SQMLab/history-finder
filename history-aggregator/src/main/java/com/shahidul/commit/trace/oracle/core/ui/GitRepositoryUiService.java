@@ -22,17 +22,14 @@ public interface GitRepositoryUiService {
                                                    String commitHash,
                                                    String file);
 
-    CommitTraceOutput findMethodHistory(String repositoryHostName,
-                                        String repositoryAccountName,
-                                        String repositoryPath,
-                                        String repositoryName,
+    CommitTraceOutput findMethodHistory(String repositoryUrl,
                                         String commitHash,
                                         String file,
                                         String methodName,
                                         Integer startLine,
                                         Integer endLine,
                                         TracerName tracerName,
-                                        boolean forceExecute);
+                                        boolean useCache);
 
     RepositoryCheckoutResponse checkoutRepository(String location);
 

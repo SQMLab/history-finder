@@ -9,5 +9,5 @@ import rnd.git.history.finder.dto.CommitTraceOutput;
  */
 public interface CommitTraceDetailExportService {
     void export(CommandLineInput commandLineInput);
-    CommitTraceOutput execute(CommandLineInput commandLineInput, boolean forceExecute);
+    CommitTraceOutput execute(CommandLineInput commandLineInput, boolean useCache);
 }

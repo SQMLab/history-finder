@@ -100,24 +100,23 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
     }
 
     @Override
-    public CommitTraceOutput findMethodHistory(String repositoryHostName,
-                                               String repositoryAccountName,
-                                               String repositoryPath,
-                                               String repositoryName,
+    public CommitTraceOutput findMethodHistory(String repositoryUrl,
                                                String commitHash,
                                                String file,
                                                String methodName,
                                                Integer startLine,
                                                Integer endLine,
                                                TracerName tracerName,
-                                               boolean forceExecute) {
+                                               boolean useCache) {
+        RepositoryCheckoutResponse repository = checkoutRepository(repositoryUrl);
+
         CommandLineInput inputCommand = CommandLineInput.builder()
                 .command("")
                 .tracerName(tracerName)
                 .oracleFileId(null)
-                .cloneDirectory(repositoryPath)
-                .repositoryUrl(repositoryHostName + "/" + repositoryAccountName + "/" + repositoryName + ".git")
-                .repositoryName(repositoryName)
+                .cloneDirectory(repository.getPath())
+                .repositoryUrl(repositoryUrl)
+                .repositoryName(repository.getRepositoryName())
                 .startCommitHash(commitHash)
                 .languageType(LanguageType.JAVA)
                 .file(file)
@@ -125,7 +124,7 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                 .startLine(startLine)
                 .endLine(endLine)
                 .build();
-        return traceDetailExportService.execute(inputCommand, forceExecute);
+        return traceDetailExportService.execute(inputCommand, useCache);
     }
 
     @Override
@@ -139,7 +138,6 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         try (Repository repository = gitService.cloneIfNotExists(checkoutInfo.getPath() + "/" + checkoutInfo.getRepositoryName(), repositoryUrl)) {
             if (checkoutInfo.getHost() == null) {
                 String localOriginUrl = repository.getConfig().getString("remote", "origin", "url");
-                log.info(localOriginUrl);
                 if (localOriginUrl != null) {
                     RepositoryCheckoutResponse locallyStoredRepositoryInfo = parseRepository(localOriginUrl);
                     if (checkoutInfo.getHost() == null || checkoutInfo.getHost().isEmpty()) {
@@ -185,18 +183,13 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
         File file = findFile(new File(appProperty.getOracleFileDirectory()), fileName);
         try {
             InputOracle inputOracle = objectMapper.readValue(file, InputOracle.class);
-            RepositoryCheckoutResponse repositoryInfo = checkoutRepository(inputOracle.getRepositoryUrl());
             return HistoryInputParam.builder()
-                    .repositoryName(repositoryInfo.getRepositoryName())
                     .startCommitHash(inputOracle.getStartCommitHash())
                     .file(inputOracle.getFile())
                     .methodName(inputOracle.getElement())
                     .startLine(inputOracle.getStartLine())
                     .endLine(inputOracle.getEndLine())
-                    .repositoryPath(repositoryInfo.getPath())
                     .repositoryUrl(inputOracle.getRepositoryUrl())
-                    .repositoryHostName(repositoryInfo.getHost())
-                    .repositoryAccountName(repositoryInfo.getAccountName())
                     .oracleFileId(Util.extractOracleFileId(fileName))
                     .tracerName(tracerName)
                     .build();
