@@ -10,4 +10,7 @@ public class RepositoryCheckoutResponse {
     String accountName;
     String repositoryName;
     String path;
+    public String getRemoteUrl() {
+        return String.format("%s/%s/%s", host, accountName, repositoryName);
+    }
 }

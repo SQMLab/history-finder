@@ -371,7 +371,7 @@
             <span id="executionTimeValue" class="ms-2">0s</span>
         </div>
     </div>
-    <div class="d-flex justify-content-center mt-2 mb-2">
+    <div class="d-flex justify-content-center mt-2 mb-2 d-none">
         <button class="btn btn-outline-primary rounded-circle" style="width: 40px; height: 40px;"
                 onclick="refreshMethodHistory()" title="Refresh">
             <i class="fas fa-sync-alt"></i>
@@ -454,12 +454,7 @@
         currentSection: '',
         startTimestamp: null,
         timerInterval: null,
-        repository: {
-            host: '',
-            accountName: '',
-            repositoryName: '',
-            path: ''
-        },
+        repositoryUrl: '',
         file: '',
         methodList: [],
         methodName: '',
@@ -469,8 +464,8 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('repositoryLocation')) {
-            setRepositoryLocation(urlParams.get('repositoryLocation'))
+        if (urlParams.has('repositoryUrl')) {
+            setRepositoryLocation(urlParams.get('repositoryUrl'))
         }
         if (urlParams.has('startCommitHash')) {
             setStartCommitHash(urlParams.get('startCommitHash'))
@@ -479,12 +474,7 @@
             setFile(urlParams.get('file'))
         }
         if (urlParams.has('tracerName')) {
-            state.repository = {
-                host: urlParams.get('repositoryHostName'),
-                accountName: urlParams.get('repositoryAccountName'),
-                repositoryName: urlParams.get('repositoryName'),
-                path: urlParams.get('repositoryPath')
-            };
+            state.repositoryUrl = urlParams.get('repositoryUrl');
             state.file = urlParams.get('file');
             state.methodName = urlParams.get('methodName');
             state.startLine = urlParams.get('startLine');
@@ -597,11 +587,7 @@
     function openNewTab(algorithm) {
         const params = new URLSearchParams({
             startCommitHash: getStartCommitHash(),
-            repositoryHostName: state.repository.host,
-            repositoryAccountName: state.repository.accountName,
-            repositoryName: state.repository.repositoryName,
-            repositoryPath: state.repository.path,
-            repositoryLocation: getRepositoryLocation(),
+            repositoryUrl: getRepositoryLocation(),
             file: state.file,
             methodName: state.methodName,
             startLine: state.startLine,
@@ -697,14 +683,14 @@
             showError('Repository', "Please enter a valid Git repository location.")
         } else {
             $.ajax({
-                url: '/api/checkout-repository?location=' + repositoryLocation,
+                url: '/api/checkout-repository?repositoryUrl=' + repositoryLocation,
                 method: 'GET',
                 beforeSend: function () {
                     showSpinner();
                 },
                 success: function (response) {
                     hideSpinner()
-                    state.repository = response;
+                    state.repositoryUrl = repositoryLocation;
                     setStartCommitHash('')
                     revealSection('startCommitHashSection', false)
                 },
@@ -716,8 +702,8 @@
         }
     }
 
-    function setRepositoryLocation(repositoryLocation) {
-        document.getElementById('gitRepoUrl').value = repositoryLocation
+    function setRepositoryLocation(repositoryUrl) {
+        document.getElementById('gitRepoUrl').value = repositoryUrl
     }
 
     function getRepositoryLocation() {
@@ -765,10 +751,7 @@
             method: 'GET',
             data: {
                 startCommitHash: getStartCommitHash(),
-                repositoryHostName: state.repository.host,
-                repositoryAccountName: state.repository.accountName,
-                repositoryName: state.repository.repositoryName,
-                repositoryPath: state.repository.path,
+                repositoryUrl: state.repositoryUrl,
                 path: path
             },
             beforeSend: function () {
@@ -815,10 +798,7 @@
             method: 'GET',
             data: {
                 startCommitHash: getStartCommitHash(),
-                repositoryHostName: state.repository.host,
-                repositoryAccountName: state.repository.accountName,
-                repositoryName: state.repository.repositoryName,
-                repositoryPath: state.repository.path,
+                repositoryUrl: state.repositoryUrl,
                 file: file
             },
             beforeSend: function () {
@@ -862,7 +842,7 @@
         }
     }
 
-    function loadMethodHistory(file, methodName, startLine, endLine, tracerName, forceExecute = false) {
+    function loadMethodHistory(file, methodName, startLine, endLine, tracerName, useCache = false) {
 
 
         $.ajax({
@@ -870,16 +850,13 @@
             method: 'GET',
             data: {
                 startCommitHash: getStartCommitHash(),
-                repositoryHostName: state.repository.host,
-                repositoryAccountName: state.repository.accountName,
-                repositoryName: state.repository.repositoryName,
-                repositoryPath: state.repository.path,
+                repositoryUrl: state.repositoryUrl,
                 file: file,
                 methodName: methodName,
                 startLine: startLine,
                 endLine: endLine,
                 tracerName: tracerName,
-                forceExecute: forceExecute
+                useCache: useCache
 
             },
             beforeSend: function () {
@@ -1095,7 +1072,7 @@
             if (tracerName.startsWith('GIT_FUNCTION_NAME')){
                 tracerName = 'GIT_FUNC_NAME';
             }
-            loadMethodHistory(state.file, state.methodName, state.startLine, state.endLine, tracerName, true);
+            loadMethodHistory(state.file, state.methodName, state.startLine, state.endLine, tracerName, false);
         } else {
             showError('Refresh Error', 'Missing method details to reload history.');
         }

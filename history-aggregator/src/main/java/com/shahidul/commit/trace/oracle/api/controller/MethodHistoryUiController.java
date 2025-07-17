@@ -33,11 +33,7 @@ public class MethodHistoryUiController {
     public String showMethodSelectorUi(
             @RequestParam(required = false) String tracerName,
             @RequestParam(required = false) String startCommitHash,
-            @RequestParam(required = false) String repositoryHostName,
-            @RequestParam(required = false) String repositoryAccountName,
-            @RequestParam(required = false) String repositoryName,
-            @RequestParam(required = false) String repositoryPath,
-            @RequestParam(required = false) String repositoryLocation,
+            @RequestParam(required = false) String repositoryUrl,
             @RequestParam(required = false) String file,
             @RequestParam(required = false) String methodName,
             @RequestParam(required = false) String startLine,
@@ -47,11 +43,7 @@ public class MethodHistoryUiController {
 
         model.addAttribute("tracerName", tracerName);
         model.addAttribute("startCommitHash", startCommitHash);
-        model.addAttribute("repositoryHostName", repositoryHostName);
-        model.addAttribute("repositoryAccountName", repositoryAccountName);
-        model.addAttribute("repositoryName", repositoryName);
-        model.addAttribute("repositoryPath", repositoryPath);
-        model.addAttribute("repositoryLocation", repositoryLocation);
+        model.addAttribute("repositoryUrl", repositoryUrl);
         model.addAttribute("file", file);
         model.addAttribute("methodName", methodName);
         model.addAttribute("startLine", startLine);
@@ -63,29 +55,23 @@ public class MethodHistoryUiController {
 
     @GetMapping({"api/method-history"})
     @ResponseBody
-    public CommitTraceOutput getMethodHistoryUi(@RequestParam("repositoryHostName") String repositoryHostName,
-                                                @RequestParam("repositoryAccountName") String repositoryAccountName,
-                                                @RequestParam("repositoryPath") String repositoryPath,
-                                                @RequestParam("repositoryName") String repositoryName,
+    public CommitTraceOutput getMethodHistoryUi(@RequestParam("repositoryUrl") String repositoryUrl,
                                                 @RequestParam("startCommitHash") String startCommitHash,
                                                 @RequestParam("file") String file,
                                                 @RequestParam("methodName") String methodName,
                                                 @RequestParam("startLine") Integer startLine,
-                                                @RequestParam("endLine") Integer endLine,
+                                                @RequestParam(value = "endLine", required = false) Integer endLine,
                                                 @RequestParam("tracerName") TracerName tracerName,
-                                                @RequestParam(value = "forceExecute", required = false) Boolean forceExecute
+                                                @RequestParam(value = "useCache", required = false) Boolean useCache
     ) {
-        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryHostName,
-                repositoryAccountName,
-                repositoryPath,
-                repositoryName,
+        CommitTraceOutput traceOutput = gitRepositoryUiService.findMethodHistory(repositoryUrl,
                 startCommitHash,
                 file,
                 methodName,
                 startLine,
                 endLine,
                 tracerName,
-                forceExecute != null ? forceExecute : false
+                useCache != null ? useCache : false
         );
 
         if (traceOutput.getCommitDetails().isEmpty()) {
@@ -114,13 +100,13 @@ public class MethodHistoryUiController {
     @GetMapping("/api/path-list")
     @ResponseBody
     public List<String> getPathList(
-            @RequestParam("repositoryPath") String repositoryPath,
-            @RequestParam("repositoryName") String repositoryName,
+            @RequestParam("repositoryUrl") String repositoryUrl,
             @RequestParam("startCommitHash") String startCommitHash,
             @RequestParam("path") String path) {
         try {
             String formattedPath = path.replaceAll("[/\\\\]+$", "");
-            return gitRepositoryUiService.findPathList(repositoryPath, repositoryName, startCommitHash, formattedPath);
+            RepositoryCheckoutResponse repository = checkoutRepository(repositoryUrl);
+            return gitRepositoryUiService.findPathList(repository.getPath(), repository.getRepositoryName(), startCommitHash, formattedPath);
         } catch (Exception e) {
             log.error("Failed to find paths", e);
             throw new CtoException(CtoError.Failed_To_Find_Paths, e);
@@ -130,12 +116,12 @@ public class MethodHistoryUiController {
     @GetMapping("/api/method-list")
     @ResponseBody
     public List<MethodLocationDto> getMethodList(
-            @RequestParam("repositoryPath") String repositoryPath,
-            @RequestParam("repositoryName") String repositoryName,
+            @RequestParam("repositoryUrl") String repositoryUrl,
             @RequestParam("startCommitHash") String startCommitHash,
             @RequestParam("file") String file) {
         try {
-            return gitRepositoryUiService.findMethodLocationList(repositoryPath, repositoryName, startCommitHash, file);
+            RepositoryCheckoutResponse repository = checkoutRepository(repositoryUrl);
+            return gitRepositoryUiService.findMethodLocationList(repository.getPath(), repository.getRepositoryName(), startCommitHash, file);
         } catch (Exception e) {
             log.error("Failed to find methods", e);
             throw new CtoException(CtoError.Failed_To_Find_Methods, e);
@@ -144,7 +130,7 @@ public class MethodHistoryUiController {
 
     @GetMapping("/api/checkout-repository")
     @ResponseBody
-    public RepositoryCheckoutResponse checkoutRepository(@RequestParam("location") String location) {
+    public RepositoryCheckoutResponse checkoutRepository(@RequestParam("repositoryUrl") String location) {
         try {
             return gitRepositoryUiService.checkoutRepository(location);
         } catch (Exception e) {
@@ -180,14 +166,11 @@ public class MethodHistoryUiController {
             return "redirect:/ui/method-history" +
                     "?tracerName=" + tracerName +
                     "&startCommitHash=" + historyInputParam.getStartCommitHash() +
-                    "&repositoryHostName=" + URLEncoder.encode(historyInputParam.getRepositoryHostName(), StandardCharsets.UTF_8) +
-                    "&repositoryAccountName=" + historyInputParam.getRepositoryAccountName() +
-                    "&repositoryName=" + historyInputParam.getRepositoryName() +
-                    "&repositoryPath=" + URLEncoder.encode(historyInputParam.getRepositoryPath(), StandardCharsets.UTF_8) +
-                    "&repositoryLocation=" + URLEncoder.encode(historyInputParam.getRepositoryUrl(), StandardCharsets.UTF_8) +
+                    "&repositoryUrl=" + URLEncoder.encode(historyInputParam.getRepositoryUrl(), StandardCharsets.UTF_8) +
                     "&file=" + URLEncoder.encode(historyInputParam.getFile(), StandardCharsets.UTF_8) +
                     "&methodName=" + historyInputParam.getMethodName() +
                     "&startLine=" + historyInputParam.getStartLine() +
+                    "&useCache=True" +
                     "&endLine=" + historyInputParam.getEndLine();
         } catch (Exception e) {
             log.error("Failed to execute trace", e);
