@@ -60,7 +60,7 @@ public class MethodHistoryUiController {
                                                 @RequestParam("file") String file,
                                                 @RequestParam("methodName") String methodName,
                                                 @RequestParam("startLine") Integer startLine,
-                                                @RequestParam("endLine") Integer endLine,
+                                                @RequestParam(value = "endLine", required = false) Integer endLine,
                                                 @RequestParam("tracerName") TracerName tracerName,
                                                 @RequestParam(value = "useCache", required = false) Boolean useCache
     ) {

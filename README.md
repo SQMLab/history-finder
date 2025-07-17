@@ -124,6 +124,36 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
    CommitTraceOutput commitTraceOutput = historyFinderService.findSync(historyFinderInput);
    ```
 ---
+---
+
+## REST API Usage
+
+HistoryFinder provides a RESTful API for retrieving method-level change history.
+
+### Endpoint:
+```
+GET /api/method-history
+```
+
+### Request Parameters:
+
+| Parameter       | Type                                                                                 | Required | Description                                                                                     |
+|-----------------|--------------------------------------------------------------------------------------|----------|-------------------------------------------------------------------------------------------------|
+| `repositoryUrl` | String                                                                               | ✅ | URL of the Git repository (e.g., `https://github.com/user/project.git`) or local git repository |
+| `startCommitHash` | String                                                                               | ✅ | Starting commit hash for tracing (e.g., `HEAD`)                                                 |
+| `file` | String                                                                               | ✅ | Path to the Java source file (relative to the repository root)                                  |
+| `methodName` | String                                                                               | ✅ | Name of the method to trace                                                                     |
+| `startLine` | Integer                                                                              | ✅ | Starting line number of the method                                                              |
+| `tracerName` | Enum (`HISTORY_FINDER`, `CODE_SHOVEL`, `CODE_TRACKER`, `GIT_LINE_RANGE`, `GIT_FUNC_NAME`) | ✅ | Name of the tracing tool                                                                        |
+
+---
+
+### Example Request:
+```
+GET http://localhost:8080/api/method-history?tracerName=HISTORY_FINDER&startCommitHash=119fd4fb33bef9f5c66fc950396669af842c21a3&repositoryUrl=https%3A%2F%2Fgithub.com%2Fcheckstyle%2Fcheckstyle.git&file=src%2Fmain%2Fjava%2Fcom%2Fpuppycrawl%2Ftools%2Fcheckstyle%2FChecker.java&methodName=fireErrors&startLine=384
+```
+
+---
 
 ## Advanced Configuration
 

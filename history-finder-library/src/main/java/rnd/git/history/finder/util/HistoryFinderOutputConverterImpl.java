@@ -108,7 +108,7 @@ public class HistoryFinderOutputConverterImpl implements HistoryFinderOutputConv
                 .commitUrl(Util.getCommitUrl(repositoryUrl, newMethodHolder.getCommitHash()))
                 .diffUrl(Util.getDiffUrl(repositoryUrl, oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null, newMethodHolder.getCommitHash(), newMethodHolder.getFile()))
                 .authorSearchUrl(Util.getUserSearchUrl(authorIdent != null ? authorIdent.getName() : null))
-                .oldFileUrl(Util.gitRawFileUrl(repositoryUrl, oldMethodHolder != null ? oldMethodHolder.getCommitHash() : null, oldMethodHolder != null ? oldMethodHolder.getFile() : null, newMethodHolder.getMethodSourceInfo().getStartLine()))
+                .oldFileUrl(oldMethodHolder != null ? Util.gitRawFileUrl(repositoryUrl, oldMethodHolder.getCommitHash(), oldMethodHolder.getFile(), newMethodHolder.getMethodSourceInfo().getStartLine()) : null)
                 .newFileUrl(Util.gitRawFileUrl(repositoryUrl, newMethodHolder.getCommitHash(), newMethodHolder.getFile(), newMethodHolder.getMethodSourceInfo().getStartLine()))
                 .additionalCommitInfo(toAdditionalCommitInfo(oldMethodHolder, newMethodHolder))
                 .newCode(newMethodHolder.getMethodSourceInfo().getMethodRawSourceCode())
