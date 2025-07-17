@@ -9,12 +9,12 @@ import com.shahidul.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.CommitUdt;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
-import rnd.git.history.finder.util.ChangeTagUtil;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 import rnd.git.history.finder.dto.*;
+import rnd.git.history.finder.util.ChangeTagUtil;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,20 +46,21 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
     }
 
     @Override
-    public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId, String cloneDirectory) {
-        if (optionalOracleFileId != null) {
-            return traceDao.findByOracleId(optionalOracleFileId);
-        } else {
-            String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
-            TraceEntity traceEntity = traceDao.findByOracleHash(oracleHash);
-            if (traceEntity == null) {
-                traceEntity = oracleHelperService.build(inputOracle);
-                traceEntity.setCloneDirectory(cloneDirectory);
-                return traceEntity;
+    public TraceEntity loadOracle(InputOracle inputOracle, Integer optionalOracleFileId, String cloneDirectory, boolean useCache) {
+        TraceEntity traceEntity = null;
+        if (useCache) {
+            if (optionalOracleFileId != null) {
+                return traceDao.findByOracleId(optionalOracleFileId);
             } else {
-                return traceEntity;
+                String oracleHash = oracleHelperService.generateOracleHash(inputOracle);
+                traceEntity = traceDao.findByOracleHash(oracleHash);
             }
         }
+        if (traceEntity == null) {
+            traceEntity = oracleHelperService.build(inputOracle);
+            traceEntity.setCloneDirectory(cloneDirectory);
+        }
+        return traceEntity;
     }
 
     @Override
@@ -90,25 +91,25 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
                 .recall(analysisUdt.getRecall())
                 .commits(commitList)
                 .commitMap(commitList.stream().collect(Collectors.toMap(InputCommit::getCommitHash,
-                        commit-> ChangeTagUtil.toCodeShovelChangeText(commit.getChangeTags().stream().toList()),
-                        (x,y)-> x, LinkedHashMap::new)))
+                        commit -> ChangeTagUtil.toCodeShovelChangeText(commit.getChangeTags().stream().toList()),
+                        (x, y) -> x, LinkedHashMap::new)))
                 .commitHashes(analysisUdt.getCommits().stream().map(CommitUdt::getCommitHash).toList())
                 .commitDetails(commitDetailList)
                 .commitDetailMap(commitDetailList.stream().collect(Collectors.toMap(OutputCommitDetail::getCommitHash,
-                                commit-> commit,
-                                (x,y)-> x,
-                                LinkedHashMap::new)))
+                        commit -> commit,
+                        (x, y) -> x,
+                        LinkedHashMap::new)))
                 .build();
     }
 
     private List<OutputCommitDetail> toCommitDetailList(List<CommitUdt> commitUdtList) {
         return commitUdtList.stream()
-                .map(commitUdt-> {
+                .map(commitUdt -> {
                     OutputCommitDetail commitDetail = toOutputCommitDetailWithoutSubChange(commitUdt);
                     if (commitUdt.getSubChangeList() != null) {
                         List<OutputCommitDetail> subChangeCommitList = commitUdt.getSubChangeList().stream().map(subChangeInfo -> {
                             OutputCommitDetail subCommitDetail = toOutputCommitDetailWithoutSubChange(commitUdt);
-                            List<ChangeTag> subChangeTag = subChangeInfo.getChangeTag() != null? List.of(subChangeInfo.getChangeTag()) : Collections.emptyList();
+                            List<ChangeTag> subChangeTag = subChangeInfo.getChangeTag() != null ? List.of(subChangeInfo.getChangeTag()) : Collections.emptyList();
                             subCommitDetail.setChangeTags(subChangeTag);
                             subCommitDetail.setDisplayChangeTags(displayChangeTags(subChangeTag));
                             subCommitDetail.setChangeTagText(ChangeTagUtil.toCodeShovelChangeText(subChangeTag));
@@ -166,12 +167,13 @@ public class CommandLineHelperServiceImpl implements CommandLineHelperService {
         }
         return null;
     }
+
     private List<String> displayChangeTags(List<ChangeTag> changeTags) {
-        if (changeTags == null){
+        if (changeTags == null) {
             return Collections.emptyList();
         }
         return changeTags.stream()
-                .map(tag-> displayText(tag.getCode()))
+                .map(tag -> displayText(tag.getCode()))
                 .toList();
 
     }

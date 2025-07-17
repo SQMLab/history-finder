@@ -1,10 +1,9 @@
 package com.shahidul.commit.trace.oracle.cmd.exporter;
 
-import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.cmd.helper.CommandLineHelperService;
+import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
 import com.shahidul.commit.trace.oracle.cmd.writer.OutputFileWriter;
 import com.shahidul.commit.trace.oracle.core.model.InputOracle;
-import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.mongo.dao.TraceDao;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 import com.shahidul.commit.trace.oracle.core.service.aggregator.MetadataResolverService;
@@ -15,6 +14,7 @@ import com.shahidul.commit.trace.oracle.core.service.helper.OracleHelperService;
 import com.shahidul.commit.trace.oracle.util.Util;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.CommitTraceOutput;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class CommitTraceDetailExportServiceImpl implements CommitTraceDetailExpo
     public CommitTraceOutput execute(CommandLineInput commandLineInput, boolean useCache) {
         String cloneDirectory = commandLineInput.getCloneDirectory();
         InputOracle inputOracle = commandLineHelperService.toInputOracle(commandLineInput);
-        TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId(), cloneDirectory);
+        TraceEntity traceEntity = commandLineHelperService.loadOracle(inputOracle, commandLineInput.getOracleFileId(), cloneDirectory, useCache);
         //Skip for oracles
         if (!traceEntity.getAnalysis().containsKey(commandLineInput.getTracerName().getCode()) || !useCache) {
 

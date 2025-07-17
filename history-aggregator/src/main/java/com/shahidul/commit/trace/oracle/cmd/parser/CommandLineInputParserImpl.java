@@ -1,6 +1,7 @@
 package com.shahidul.commit.trace.oracle.cmd.parser;
 
 import com.shahidul.commit.trace.oracle.cmd.model.CommandLineInput;
+import com.shahidul.commit.trace.oracle.config.AppProperty;
 import com.shahidul.commit.trace.oracle.core.enums.TracerName;
 import com.shahidul.commit.trace.oracle.util.Util;
 import org.apache.commons.cli.*;
@@ -13,6 +14,7 @@ import rnd.git.history.finder.enums.LanguageType;
  */
 @Service
 public class CommandLineInputParserImpl implements CommandLineInputParser {
+    AppProperty appProperty;
     @Override
     public CommandLineInput parse(String[] args) {
         CommandLineParser commandLineParser = new DefaultParser();
@@ -22,14 +24,13 @@ public class CommandLineInputParserImpl implements CommandLineInputParser {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory", ".");
+        String repositoryCloneDirectory = commandLine.getOptionValue("clone-directory", appProperty.getRepositoryBasePath());
         String repositoryUrl = commandLine.getOptionValue("repository-url");
         String repositoryName = Util.findRepositoryName(repositoryUrl);
 
         String remoteRepositoryUrl;
         if (!repositoryUrl.startsWith("https://") && !repositoryUrl.startsWith("git@")){
             remoteRepositoryUrl = Util.getRepoUrlFromLocalPath(repositoryUrl);
-            repositoryCloneDirectory = repositoryUrl.substring(0, repositoryUrl.lastIndexOf(repositoryName));
         }else {
             remoteRepositoryUrl = repositoryUrl;
         }

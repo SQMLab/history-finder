@@ -110,12 +110,13 @@ public class GitRepositoryUiServiceImpl implements GitRepositoryUiService {
                                                boolean useCache) {
         RepositoryCheckoutResponse repository = checkoutRepository(repositoryUrl);
 
+
         CommandLineInput inputCommand = CommandLineInput.builder()
                 .command("")
                 .tracerName(tracerName)
                 .oracleFileId(null)
                 .cloneDirectory(repository.getPath())
-                .repositoryUrl(repositoryUrl)
+                .repositoryUrl(repository.getRemoteUrl())
                 .repositoryName(repository.getRepositoryName())
                 .startCommitHash(commitHash)
                 .languageType(LanguageType.JAVA)
