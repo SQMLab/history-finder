@@ -222,7 +222,7 @@
     <distributionManagement>
         <repository>
             <id>history-finder-user</id>
-            <url>https://maven.pkg.github.com/SQMLab/history-finder</url>
+            <url>https://maven.pkg.github.com/USER_NAME/history-finder</url>
         </repository>
     </distributionManagement>
 </project>
