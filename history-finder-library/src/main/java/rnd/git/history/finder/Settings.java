@@ -2,9 +2,9 @@ package rnd.git.history.finder;
 
 public class Settings {
 	
-	public static String OUTPUT_DIR = "C:/Users/SharifUddin/source/research_repo/output";
+	public static String OUTPUT_DIR = "~/source/research_repo/output";
     public static String lang = "java";
-    public static String repoPath = "C:/Users/SharifUddin/source/research_repo";
+    public static String repoPath = "~/source/research_repo";
     
     public static String repoName = "spring-boot";
 //    public static int methodStartLineNumber = 184;

@@ -1,0 +1,49 @@
+package rnd.method.history.commit.trace.oracle.core.service.algorithm;
+
+import rnd.method.history.commit.trace.oracle.core.enums.TracerName;
+import rnd.method.history.commit.trace.oracle.core.model.InputTrace;
+import rnd.method.history.commit.trace.oracle.core.mongo.entity.AnalysisUdt;
+import rnd.method.history.commit.trace.oracle.core.mongo.entity.CommitUdt;
+import rnd.method.history.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import rnd.method.history.commit.trace.oracle.core.storage.StaticTraceDao;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import rnd.git.history.finder.dto.ChangeTag;
+
+import java.util.List;
+
+/**
+ * @since 3/23/2024
+ */
+@AllArgsConstructor
+@Service
+public class IntelliJTraceService implements TraceService {
+    StaticTraceDao staticTraceDao;
+
+    @Override
+    public String getTracerName() {
+        return TracerName.INTELLI_J.getCode();
+    }
+
+    @Override
+    public ChangeTag parseChangeType(String rawChangeType) {
+        return null;
+    }
+
+    @Override
+    public TraceEntity trace(TraceEntity traceEntity) {
+
+        InputTrace trace = staticTraceDao.findTrace(traceEntity.getOracleFileName(), TracerName.INTELLI_J);
+
+        List<CommitUdt> commitList = trace.getCommits()
+                .stream()
+                .map(commit -> CommitUdt.builder()
+                        .tracerName(getTracerName())
+                        .commitHash(commit.getCommitHash())
+                        .changeTags(commit.getChangeTags())
+                        .build())
+                .toList();
+        traceEntity.getAnalysis().put(getTracerName(), AnalysisUdt.builder().commits(commitList).build());
+        return traceEntity;
+    }
+}
