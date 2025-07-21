@@ -13,7 +13,6 @@ import rnd.git.history.finder.dto.ChangeTag;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 3/23/2024
  */
 @AllArgsConstructor

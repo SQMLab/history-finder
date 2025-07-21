@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import rnd.git.history.finder.parser.implementation.MethodSourceInfo;
 
 /**
- * @author Shahidul Islam
  * @since 20/7/24
  **/
 @Data

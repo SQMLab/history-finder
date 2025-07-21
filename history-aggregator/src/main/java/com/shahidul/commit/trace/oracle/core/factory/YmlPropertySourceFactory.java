@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @author Shahidul Islam
  * @since 14/7/24
  **/
 public class YmlPropertySourceFactory implements PropertySourceFactory {

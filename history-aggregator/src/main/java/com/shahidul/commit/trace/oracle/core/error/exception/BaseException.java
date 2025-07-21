@@ -3,7 +3,6 @@ package com.shahidul.commit.trace.oracle.core.error.exception;
 import lombok.Getter;
 
 /**
- * @author Shahidul Islam
  * @since 3/22/2024
  */
 @Getter

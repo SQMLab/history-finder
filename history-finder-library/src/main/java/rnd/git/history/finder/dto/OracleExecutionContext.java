@@ -6,7 +6,6 @@ import lombok.Data;
 import java.util.Set;
 
 /**
- * @author Shahidul Islam
  * @since 23/5/24
  **/
 @Data

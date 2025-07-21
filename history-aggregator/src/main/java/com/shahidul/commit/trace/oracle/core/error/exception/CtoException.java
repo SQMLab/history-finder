@@ -3,7 +3,6 @@ package com.shahidul.commit.trace.oracle.core.error.exception;
 import com.shahidul.commit.trace.oracle.core.error.CtoError;
 
 /**
- * @author Shahidul Islam
  * @since 3/22/2024
  */
 public class CtoException extends BaseException{

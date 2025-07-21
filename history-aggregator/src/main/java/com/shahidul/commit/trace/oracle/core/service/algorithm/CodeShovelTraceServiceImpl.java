@@ -33,7 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @author Shahidul Islam
  * @since 11/12/2023
  */
 @Service("CODE_SHOVEL")

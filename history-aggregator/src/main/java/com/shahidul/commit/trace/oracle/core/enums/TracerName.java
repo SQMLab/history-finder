@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 11/13/2023
  */
 @Getter

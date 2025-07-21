@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 /**
- * @author Shahidul Islam
  * @since 15/6/24
  **/
 public class MethodMap {

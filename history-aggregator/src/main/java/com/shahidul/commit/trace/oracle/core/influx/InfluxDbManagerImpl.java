@@ -21,7 +21,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 /**
- * @author Shahidul Islam
  * @since 12/3/2023
  */
 @Repository

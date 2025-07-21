@@ -19,7 +19,6 @@ import rnd.git.history.finder.dto.CommitTraceOutput;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 19/5/24
  **/
 @Service

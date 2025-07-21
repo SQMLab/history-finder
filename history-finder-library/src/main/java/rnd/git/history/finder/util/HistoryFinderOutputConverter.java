@@ -8,7 +8,6 @@ import rnd.git.history.finder.jgit.JgitService;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 2025-07-10
  */
 public interface HistoryFinderOutputConverter {

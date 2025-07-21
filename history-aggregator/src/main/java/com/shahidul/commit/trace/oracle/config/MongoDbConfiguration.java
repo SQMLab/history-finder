@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 /**
- * @author Shahidul Islam
  * @since 11/10/2023
  */
 @Configuration

@@ -7,7 +7,6 @@ import rnd.git.history.finder.dto.CommitTraceOutput;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 /**
- * @author Shahidul Islam
  * @since 19/5/24
  **/
 public interface CommandLineHelperService {

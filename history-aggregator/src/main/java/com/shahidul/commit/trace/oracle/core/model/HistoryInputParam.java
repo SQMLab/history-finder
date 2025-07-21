@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author Shahidul Islam
  * @since 2025-07-09
  */
 @Builder

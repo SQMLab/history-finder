@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author Shahidul Islam
  * @since 11/6/24
  **/
 public class CacheableMap<K, V> extends LinkedHashMap<K, V> {

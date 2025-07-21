@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * @author Shahidul Islam
  * @since 3/23/2024
  */
 @Repository

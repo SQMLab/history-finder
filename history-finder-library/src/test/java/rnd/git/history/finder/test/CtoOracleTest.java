@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * @author Shahidul Islam
  * @since 23/5/24
  **/
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

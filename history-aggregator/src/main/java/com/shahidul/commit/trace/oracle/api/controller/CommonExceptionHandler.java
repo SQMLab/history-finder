@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
- * @author Shahidul Islam
  * @since 4/3/2024
  */
 @ControllerAdvice
