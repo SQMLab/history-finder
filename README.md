@@ -100,7 +100,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 1. **Maven Dependency `pom.xml`**:
    ```xml
      <dependency>
-         <groupId>ca.sqmlab</groupId>
+         <groupId>rnd</groupId>
          <artifactId>history-finder-library</artifactId>
          <version>1.0.3-SNAPSHOT</version>
      </dependency>
@@ -158,7 +158,7 @@ GET http://localhost:8080/api/method-history?tracerName=HISTORY_FINDER&startComm
 ## Advanced Configuration
 
 ### Tool Configuration
-To customize the application, create or download the configuration file ([application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.3/application.yml)) and place it in the same directory as `history-finder.jar`.
+To customize the application, create or download the configuration file ([application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.5/application.yml)) and place it in the same directory as `history-finder.jar`.
 
 | **Configuration Key**          | **Default Value** | **Description**                          |
 |---------------------------------|----------------|------------------------------------------|
