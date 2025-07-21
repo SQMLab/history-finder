@@ -1,5 +1,6 @@
 package rnd.method.history.commit.trace.oracle.cmd.parser;
 
+import lombok.AllArgsConstructor;
 import rnd.method.history.commit.trace.oracle.cmd.model.CommandLineInput;
 import rnd.method.history.commit.trace.oracle.config.AppProperty;
 import rnd.method.history.commit.trace.oracle.core.enums.TracerName;
@@ -12,6 +13,7 @@ import rnd.git.history.finder.enums.LanguageType;
  * @since 2/2/2024
  */
 @Service
+@AllArgsConstructor
 public class CommandLineInputParserImpl implements CommandLineInputParser {
     AppProperty appProperty;
     @Override
