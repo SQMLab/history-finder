@@ -1,0 +1,61 @@
+package rnd.method.history.commit.trace.oracle.core.mongo.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Transient;
+import rnd.git.history.finder.dto.ChangeTag;
+
+import java.util.Date;
+import java.util.List;
+
+/**
+ * @since 11/10/2023
+ */
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+public class CommitUdt implements Cloneable{
+    String tracerName;
+    String commitHash;
+    String parentCommitHash;
+    String ancestorCommitHash;
+    Date committedAt;
+    Integer startLine;
+    Integer endLine;
+    List<ChangeTag> changeTags;
+    String oldFile;
+    String newFile;
+    Integer fileRenamed;
+    Integer fileMoved;
+    String oldElement;
+    String newElement;
+    String author;
+    String oldAuthor;
+    String email;
+    String shortMessage;
+    String fullMessage;
+    String commitUrl;
+    String diffUrl;
+    String oldFilUrl;
+    String newFileUrl;
+    String codeFragment;
+    String documentation;
+    Double daysBetweenCommits;
+    Integer commitCountBetweenForRepo;
+    Integer commitCountBetweenForFile;
+    AdditionalCommitInfoUdt additionalInfo;
+    List<AdditionalCommitInfoUdt> subChangeList;
+    //@Transient
+    String diff;
+    String docDiff;
+    @Transient
+    String diffDetail;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}

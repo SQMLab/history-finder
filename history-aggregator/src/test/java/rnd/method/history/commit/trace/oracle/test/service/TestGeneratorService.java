@@ -1,0 +1,26 @@
+package rnd.method.history.commit.trace.oracle.test.service;
+
+import rnd.method.history.commit.trace.oracle.core.mongo.entity.TraceEntity;
+import rnd.method.history.commit.trace.oracle.core.service.algorithm.TraceService;
+import org.junit.jupiter.api.DynamicNode;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+/**
+ * @since 2/7/2024
+ */
+public interface TestGeneratorService {
+    Stream<DynamicNode> prepareTest(List<TraceEntity> traceEntityList, List<TraceService> traceServiceList, Boolean forceCompute);
+
+    DynamicNode executeAlgorithms(TraceEntity traceEntity, List<TraceService> traceServiceList, Boolean forceCompute);
+
+    DynamicNode metaDataOps(TraceEntity traceEntity);
+    DynamicNode analysisOps(TraceEntity traceEntity);
+
+    DynamicNode timeSeriesOps(TraceEntity traceEntity);
+
+    DynamicNode deleteTimesSeriesOps(TraceEntity traceEntity);
+
+    DynamicNode insertIntoTimeSeriesOps(TraceEntity traceEntity);
+}
