@@ -1,7 +1,6 @@
 package com.shahidul.commit.trace.oracle.cmd.writer;
 
 /**
- * @author Shahidul Islam
  * @since 19/5/24
  **/
 public interface OutputFileWriter {

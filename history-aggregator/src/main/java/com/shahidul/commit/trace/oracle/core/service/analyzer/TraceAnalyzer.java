@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author Shahidul Islam
  * @since 11/13/2023
  */
 public interface TraceAnalyzer {

@@ -15,7 +15,6 @@ import java.awt.*;
 import java.net.URI;
 
 /**
- * @author Shahidul Islam
  * @since 4/27/2024
  */
 @Component

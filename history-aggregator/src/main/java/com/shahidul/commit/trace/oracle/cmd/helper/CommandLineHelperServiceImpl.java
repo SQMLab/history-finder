@@ -20,7 +20,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author Shahidul Islam
  * @since 19/5/24
  **/
 @Component

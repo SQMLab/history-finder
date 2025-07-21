@@ -13,7 +13,6 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 3/5/2024
  */
 @Repository

@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 19/5/24
  **/
 @Builder

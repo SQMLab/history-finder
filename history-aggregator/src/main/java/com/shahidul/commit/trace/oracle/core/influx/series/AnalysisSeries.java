@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 
 /**
- * @author Shahidul Islam
  * @since 12/1/2023
  */
 @Builder

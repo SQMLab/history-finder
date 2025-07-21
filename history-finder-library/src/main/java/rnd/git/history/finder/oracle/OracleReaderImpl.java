@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * @author Shahidul Islam
  * @since 23/5/24
  **/
 public class OracleReaderImpl implements OracleReader {

@@ -5,7 +5,6 @@ import rnd.git.history.finder.parser.implementation.MethodSourceInfo;
 
 
 /**
- * @author Shahidul Islam
  * @since 11/6/24
  **/
 @AllArgsConstructor

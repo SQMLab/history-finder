@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import rnd.git.history.finder.Util;
 
 /**
- * @author Shahidul Islam
  * @since 11/12/2023
  */
 @Component

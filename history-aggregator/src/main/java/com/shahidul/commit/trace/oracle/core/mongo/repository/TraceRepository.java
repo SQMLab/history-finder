@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 11/10/2023
  */
 @Repository

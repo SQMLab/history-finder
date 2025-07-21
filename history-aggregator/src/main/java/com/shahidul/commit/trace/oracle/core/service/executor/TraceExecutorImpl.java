@@ -17,7 +17,6 @@ import org.springframework.util.StopWatch;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 11/12/2023
  */
 @Service

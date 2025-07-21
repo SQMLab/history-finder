@@ -26,7 +26,6 @@ import java.util.stream.Stream;
 import static com.shahidul.commit.trace.oracle.core.enums.TracerName.DEFAULT_EXECUTION_SEQUENCE;
 
 /**
- * @author Shahidul Islam
  * @since 2/6/2024
  */
 @SpringBootTest

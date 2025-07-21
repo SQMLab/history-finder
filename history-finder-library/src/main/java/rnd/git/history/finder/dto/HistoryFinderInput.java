@@ -5,7 +5,6 @@ import lombok.Getter;
 import rnd.git.history.finder.enums.LanguageType;
 
 /**
- * @author Shahidul Islam
  * @since 2/2/2024
  */
 @Builder

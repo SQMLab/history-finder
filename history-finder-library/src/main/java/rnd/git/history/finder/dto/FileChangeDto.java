@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.eclipse.jgit.diff.DiffEntry;
 
 /**
- * @author Shahidul Islam
  * @since 12/7/24
  **/
 @Builder

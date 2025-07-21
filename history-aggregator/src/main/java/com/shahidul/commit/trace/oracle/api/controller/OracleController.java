@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Shahidul Islam
  * @since 3/22/2024
  */
 @AllArgsConstructor

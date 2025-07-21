@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import java.time.Duration;
 
 /**
- * @author Shahidul Islam
  * @since 12/1/2023
  */
 @Configuration

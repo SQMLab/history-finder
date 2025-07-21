@@ -11,7 +11,6 @@ import org.springframework.context.annotation.PropertySources;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 14/7/24
  **/
 @Configuration

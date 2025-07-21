@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author Shahidul Islam
  * @since 01/03/2024
  */
 @Service("HISTORY_FINDER")

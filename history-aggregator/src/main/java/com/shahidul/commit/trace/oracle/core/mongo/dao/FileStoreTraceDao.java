@@ -15,7 +15,6 @@ import java.util.*;
 import java.util.stream.Stream;
 
 /**
- * @author Shahidul Islam
  * @since 14/6/24
  **/
 @Slf4j

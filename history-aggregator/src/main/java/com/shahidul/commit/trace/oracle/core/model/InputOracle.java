@@ -9,7 +9,6 @@ import rnd.git.history.finder.dto.InputCommit;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 11/10/2023
  */
 @Builder

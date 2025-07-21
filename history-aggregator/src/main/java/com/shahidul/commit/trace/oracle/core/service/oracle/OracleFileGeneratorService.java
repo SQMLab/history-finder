@@ -4,7 +4,6 @@ import com.shahidul.commit.trace.oracle.core.model.InputOracle;
 import com.shahidul.commit.trace.oracle.core.mongo.entity.TraceEntity;
 
 /**
- * @author Shahidul Islam
  * @since 3/22/2024
  */
 public interface OracleFileGeneratorService {

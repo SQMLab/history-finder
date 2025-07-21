@@ -12,7 +12,6 @@ import java.time.Instant;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 12/1/2023
  */
 @Builder

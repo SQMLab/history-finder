@@ -5,7 +5,6 @@ import com.shahidul.commit.trace.oracle.core.influx.series.CommitSeries;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 12/1/2023
  */
 public interface CommitSeriesRepository {

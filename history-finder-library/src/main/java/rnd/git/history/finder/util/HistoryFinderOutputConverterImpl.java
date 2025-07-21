@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author Shahidul Islam
  * @since 2025-07-10
  */
 public class HistoryFinderOutputConverterImpl implements HistoryFinderOutputConverter {

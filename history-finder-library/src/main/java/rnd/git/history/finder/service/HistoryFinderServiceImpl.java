@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 2/2/2024
  */
 @Slf4j

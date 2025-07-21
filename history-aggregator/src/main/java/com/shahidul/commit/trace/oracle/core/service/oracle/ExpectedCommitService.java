@@ -7,7 +7,6 @@ import rnd.git.history.finder.dto.ChangeTag;
 import java.util.List;
 
 /**
- * @author Shahidul Islam
  * @since 3/19/2024
  */
 public interface ExpectedCommitService {

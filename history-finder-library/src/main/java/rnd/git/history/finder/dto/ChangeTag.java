@@ -6,7 +6,6 @@ import lombok.Getter;
 import java.util.Comparator;
 
 /**
- * @author Shahidul Islam
  * @since 12/23/2023
  */
 @AllArgsConstructor

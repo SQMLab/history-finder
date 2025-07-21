@@ -5,7 +5,6 @@ import rnd.git.history.finder.dto.HistoryFinderInput;
 import rnd.git.history.finder.enums.LanguageType;
 
 /**
- * @author Shahidul Islam
  * @since 2/2/2024
  */
 public class CommandLineInputParserImpl implements CommandLineInputParser {

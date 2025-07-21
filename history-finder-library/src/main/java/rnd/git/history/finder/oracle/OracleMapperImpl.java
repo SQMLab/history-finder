@@ -5,7 +5,6 @@ import rnd.git.history.finder.dto.InputOracle;
 import rnd.git.history.finder.enums.LanguageType;
 
 /**
- * @author Shahidul Islam
  * @since 23/5/24
  **/
 public class OracleMapperImpl implements OracleMapper {

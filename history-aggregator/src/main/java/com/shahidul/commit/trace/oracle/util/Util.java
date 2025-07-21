@@ -18,7 +18,6 @@ import java.util.Set;
 import java.util.stream.IntStream;
 
 /**
- * @author Shahidul Islam
  * @since 12/20/2023
  */
 public class Util {
