@@ -8,10 +8,10 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 ### Steps to Run the Web Interface
 1. **Download the History Finder JAR**:
-    - [Download history-finder-0.0.5.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.5/history-finder-0.0.5.jar)
+    - [Download history-finder-0.0.5.jar](https://zenodo.org/records/16287212?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjU4YjY4MTNhLTUwYzMtNDIyZS1iNDYwLTk1NjZiOTI4NjE3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJjMmI2MzQ3MTMxMTFjNTQ3YWJjNWVmNWM1MDFhZDcwZCJ9._yMhx3GpRCjfLL9TQ02mCLbxnff34Xem1uLNkULwHqIQgT0TokdHoXHc6HpVfqmcJozOBqdb4wFf83Z4NSxNvg)
 
 2. **Download and configure the `application.yml` file**:
-    - [Download application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.5/application.yml)
+    - [Download application.yml](https://zenodo.org/records/16287212?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjU4YjY4MTNhLTUwYzMtNDIyZS1iNDYwLTk1NjZiOTI4NjE3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJjMmI2MzQ3MTMxMTFjNTQ3YWJjNWVmNWM1MDFhZDcwZCJ9._yMhx3GpRCjfLL9TQ02mCLbxnff34Xem1uLNkULwHqIQgT0TokdHoXHc6HpVfqmcJozOBqdb4wFf83Z4NSxNvg)
     - For example, show the path to the directory that contains the git repositories (e.g., REPOSITORY_CLONE_DIRECTORY: /home/user/research/github_repos/)  
 
 3. **Run the JAR file**:
@@ -27,7 +27,7 @@ HistoryFinder offers flexible usage options: through a Web UI for ease of use, a
 
 ### Steps to Use the CLI
 1. **Download the JAR file**:
-    - [Download history-finder-0.0.5.jar](https://github.com/SQMLab/history-finder/releases/download/release-0.0.5/history-finder-0.0.5.jar)
+    - [Download history-finder-0.0.5.jar](https://zenodo.org/records/16287212?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjU4YjY4MTNhLTUwYzMtNDIyZS1iNDYwLTk1NjZiOTI4NjE3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJjMmI2MzQ3MTMxMTFjNTQ3YWJjNWVmNWM1MDFhZDcwZCJ9._yMhx3GpRCjfLL9TQ02mCLbxnff34Xem1uLNkULwHqIQgT0TokdHoXHc6HpVfqmcJozOBqdb4wFf83Z4NSxNvg)
 2. **Run Commands**:
    ```bash
       java -jar history-finder-0.0.5.jar <OPTIONS>
@@ -158,7 +158,7 @@ GET http://localhost:8080/api/method-history?tracerName=HISTORY_FINDER&startComm
 ## Advanced Configuration
 
 ### Tool Configuration
-To customize the application, create or download the configuration file ([application.yml](https://github.com/SQMLab/history-finder/releases/download/release-0.0.5/application.yml)) and place it in the same directory as `history-finder.jar`.
+To customize the application, create or download the configuration file ([application.yml](https://zenodo.org/records/16287212?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjU4YjY4MTNhLTUwYzMtNDIyZS1iNDYwLTk1NjZiOTI4NjE3MyIsImRhdGEiOnt9LCJyYW5kb20iOiJjMmI2MzQ3MTMxMTFjNTQ3YWJjNWVmNWM1MDFhZDcwZCJ9._yMhx3GpRCjfLL9TQ02mCLbxnff34Xem1uLNkULwHqIQgT0TokdHoXHc6HpVfqmcJozOBqdb4wFf83Z4NSxNvg)) and place it in the same directory as `history-finder.jar`.
 
 | **Configuration Key**          | **Default Value** | **Description**                          |
 |---------------------------------|----------------|------------------------------------------|
