@@ -8,7 +8,7 @@
         <version>3.1.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>ca.sqmlab</groupId>
+    <groupId>rnd</groupId>
     <artifactId>history-aggregator</artifactId>
     <version>0.0.5</version>
     <name>history-aggregator</name>
@@ -69,7 +69,7 @@
         </dependency>
 
         <dependency>
-            <groupId>ca.sqmlab</groupId>
+            <groupId>rnd</groupId>
             <artifactId>history-finder-library</artifactId>
             <version>1.0.3-SNAPSHOT</version>
         </dependency>
