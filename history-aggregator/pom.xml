@@ -10,7 +10,7 @@
     </parent>
     <groupId>rnd</groupId>
     <artifactId>history-aggregator</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <name>history-aggregator</name>
     <description>History Aggregator</description>
     <properties>
